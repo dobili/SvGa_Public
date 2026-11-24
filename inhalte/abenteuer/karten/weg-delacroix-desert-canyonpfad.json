@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 150,
+ "nextobjectid": 152,
  "layers": [
   {
    "id": 1,
@@ -1440,7 +1440,7 @@
     0,
     1,
     1,
-    4,
+    1,
     4,
     4,
     4,
@@ -1762,7 +1762,7 @@
     1,
     4,
     4,
-    1,
+    4,
     1,
     1,
     1,
@@ -2078,10 +2078,10 @@
     0,
     0,
     0,
-    1,
-    1,
     4,
     4,
+    4,
+    4,
     1,
     1,
     1,
@@ -2206,7 +2206,7 @@
     0,
     0,
     0,
-    4,
+    1,
     4,
     4,
     4,
@@ -2401,7 +2401,7 @@
     4,
     4,
     4,
-    4,
+    1,
     1,
     1,
     1,
@@ -2527,8 +2527,8 @@
     0,
     0,
     4,
-    1,
-    1,
+    4,
+    4,
     1,
     4,
     4,
@@ -2687,7 +2687,7 @@
     0,
     0,
     4,
-    1,
+    4,
     1,
     1,
     4,
@@ -2821,8 +2821,8 @@
     4,
     4,
     4,
-    1,
-    1,
+    4,
+    4,
     1,
     1,
     1,
@@ -2847,7 +2847,7 @@
     0,
     4,
     4,
-    1,
+    4,
     1,
     1,
     0,
@@ -18280,6 +18280,52 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      }
+     ]
+    },
+    {
+     "id": 150,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2544,
+     "y": 64,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 151,
+     "name": "cc4Gleis",
+     "type": "moebel",
+     "x": 2544,
+     "y": 96,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

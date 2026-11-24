@@ -123,7 +123,7 @@ python -m pipeline.abenteuer.proportionen [--alle] [--messen PRIVAT]   # Möbel 
 python -m pipeline.abenteuer.proportionen [--alle]   # dazu seit AP8a: Außenteile (Bäume, Zäune, Büsche, AUSSEN_BAENDER) und „unscharf“ (Maßstab unter 0,7)
 python -m pipeline.abenteuer.kronenhoehe [--alle]   # Innenräume: Objekt ragt in die weiße Mauerkrone über einer Nordwand (deckende Bildränder aus deckrahmen.json); Dauertest 0
 python -m pipeline.abenteuer.deckrahmen PRIVAT   # deckende Bildränder je Katalogeintrag nach katalog_korrekturen/deckrahmen.json (braucht Pillow; Grundlage für kronenhoehe, untergrund, proportionen)
-python -m pipeline.abenteuer.waldrand [--alle]   # Außenkarten: Rasen mehr als 10 Felder offen bis an den Bildrand ohne Baum, Hecke, Feld, Wasser; Feld bis an den Rand (Regel 6.3)
+python -m pipeline.abenteuer.waldrand [--alle]   # Außenkarten: Rasen mehr als 10 Felder offen bis an den Bildrand ohne Baum, Hecke, Feld, Wasser; Feld endet 1 bis 2 Felder vor dem Rand statt bis an ihn (Regel 6.3: Felder reichen bis zum Rand)
 python -m pipeline.abenteuer.wiederholung [--alle]   # gleiches Gebäude mehr als 2-mal oder 2-mal in einer Reihe, Kleinteil mehr als 3-mal in Sichtweite (12×8), Blickfänger (Teppich, Rundtisch, Schulstuhl) in mehr als 2 Karten eines Orts
 python -m pipeline.abenteuer.untergrund [--alle] [--messen PRIVAT]   # Katalogfeld „untergrund“ (Fuß auf Gras oder Wasser gezeichnet) gegen den Boden unter dem Fuß; --messen setzt das Feld aus den Bildfarben
 python -m pipeline.abenteuer.zusammenhang [--alle]   # Gleise enden nur am Rand, Prellbock, Bahnhof oder Tunnel; Wege enden direkt an Tür oder Tor (zusammenhang_enden.py)

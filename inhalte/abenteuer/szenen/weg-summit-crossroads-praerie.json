@@ -184,6 +184,5255 @@
   ],
   "objekte": [
     {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 36],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 38],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 40],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 42],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 44],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 46],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 48],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 50],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 52],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 54],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 56],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 2],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 4],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 6],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 8],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 10],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 12],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 14],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 18],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 20],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 22],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 24],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 26],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 28],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 30],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 32],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 34],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 36],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 38],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 40],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 42],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 44],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 46],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 48],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 50],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 52],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 54],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 56],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [18, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [18, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [20, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [20, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [22, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [22, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [24, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [24, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [26, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [26, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [28, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [28, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 134],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 136],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 138],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 140],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 142],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 144],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 146],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 148],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 150],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 152],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 154],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 156],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 158],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 160],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 162],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 164],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 132],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 134],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 136],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 138],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 140],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 142],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 144],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 146],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 148],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 150],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 152],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 154],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 156],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 158],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 160],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 162],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 164],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 102],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 104],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 106],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 108],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 110],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 112],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 114],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 116],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 118],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 120],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 122],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 124],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 126],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 100],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 102],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 104],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 106],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 108],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 110],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 112],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 114],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 116],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 118],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 120],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 122],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 124],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 126],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 134],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 136],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 138],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 140],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 142],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 144],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 146],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 148],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 150],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 152],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 154],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 156],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 158],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 160],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 162],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 164],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 132],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 134],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 136],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 138],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 140],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 142],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 144],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 146],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 148],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 150],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 152],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 154],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 156],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 158],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 160],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 162],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 164],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 4],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 6],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 8],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 10],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 12],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 14],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 16],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 18],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 20],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 22],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 2],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 4],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 6],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 8],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 10],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 12],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 14],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 18],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 20],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 22],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [11, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [11, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 32],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 34],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 36],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 38],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 40],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 42],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 44],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 46],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 48],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 50],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 52],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 54],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 56],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 58],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 60],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 62],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 64],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 66],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 68],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 70],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 72],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 74],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 76],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 78],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 80],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 82],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 84],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 86],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 88],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 30],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 32],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 34],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 36],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 38],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 40],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 42],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 44],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 46],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 48],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 50],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 52],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 54],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 56],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 58],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 60],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 62],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 64],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 66],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 68],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 70],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 72],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 74],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 76],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 78],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 80],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 82],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 84],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 86],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 88],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 4],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 4],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 4],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 4],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 4],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [18, 4],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [20, 4],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [22, 4],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [24, 4],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [26, 4],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 6],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 6],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 6],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 6],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 6],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [18, 6],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [20, 6],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [22, 6],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [24, 6],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [26, 6],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 8],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 8],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 8],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 8],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 8],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [18, 8],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [20, 8],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [22, 8],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [24, 8],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [26, 8],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 10],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 10],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 10],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 10],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 10],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [18, 10],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [20, 10],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [22, 10],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [24, 10],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [26, 10],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 12],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 12],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 12],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 12],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 12],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [18, 12],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [20, 12],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [22, 12],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [24, 12],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [26, 12],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 14],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 14],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 14],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 14],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 14],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [18, 14],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [20, 14],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [22, 14],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [24, 14],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [26, 14],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 16],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 16],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 16],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 16],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 16],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [18, 16],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [20, 16],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [22, 16],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [24, 16],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [26, 16],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 18],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 18],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 18],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 18],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 18],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [18, 18],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [20, 18],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [22, 18],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [24, 18],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [26, 18],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 20],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 20],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 20],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 20],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 20],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [18, 20],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [20, 20],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [22, 20],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [24, 20],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [26, 20],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 22],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 22],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 22],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 22],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 22],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [18, 22],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [20, 22],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [22, 22],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [24, 22],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [26, 22],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [18, 24],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [20, 24],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [22, 24],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [24, 24],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [26, 24],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 32],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 32],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 32],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 34],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 34],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 34],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 36],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 36],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 36],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [13, 36],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [15, 36],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [17, 36],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 36],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 36],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 36],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 36],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 36],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 38],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 38],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 38],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [13, 38],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [15, 38],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [17, 38],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 38],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 38],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 38],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 38],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 38],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 40],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 40],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 40],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [13, 40],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [15, 40],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [17, 40],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 40],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 40],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 40],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 40],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 40],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 42],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 42],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 42],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [13, 42],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [15, 42],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [17, 42],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 42],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 42],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 42],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 42],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 42],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 44],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 44],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 44],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [13, 44],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [15, 44],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [17, 44],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 44],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 44],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 44],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 44],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 44],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 46],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 46],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 46],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [13, 46],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [15, 46],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [17, 46],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 46],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 46],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 46],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 46],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 46],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 48],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 48],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 48],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [13, 48],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [15, 48],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [17, 48],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 48],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 48],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 48],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 48],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 48],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 50],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 50],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 50],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [13, 50],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [15, 50],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [17, 50],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 50],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 50],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 50],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 50],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 50],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 52],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 52],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 52],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [13, 52],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [15, 52],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [17, 52],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 52],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 52],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 52],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 52],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 52],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 54],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 54],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 54],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [13, 54],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [15, 54],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [17, 54],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 54],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 54],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 54],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 54],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 54],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 56],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 56],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 56],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [13, 56],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [15, 56],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [17, 56],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 56],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 56],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 56],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 56],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 56],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 58],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 58],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 58],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 60],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 60],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 60],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 62],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 62],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 62],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 64],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 64],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 64],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 64],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 66],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 66],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 66],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 66],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 68],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 68],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 68],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 68],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 68],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 70],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 70],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 70],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 70],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 70],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 72],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 72],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 72],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 72],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 72],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 74],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 74],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 74],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 74],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 74],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 76],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 76],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 76],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 76],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 76],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 78],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 78],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 78],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 78],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 78],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 80],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 80],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 80],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 80],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 80],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 82],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 82],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 82],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 82],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 82],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 84],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 84],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 84],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 84],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 84],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 86],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 86],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 86],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 86],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 86],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 88],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 88],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 88],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 88],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 88],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 102],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 102],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 102],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 102],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 104],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 104],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 104],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 104],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 106],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 106],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 106],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 106],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 108],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 108],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 108],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 108],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 110],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 110],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 110],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 110],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 112],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 112],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 112],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 112],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 114],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 114],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 114],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 114],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 116],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 116],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 116],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 116],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 118],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 118],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 118],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 118],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 120],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 120],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 120],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 120],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 122],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 122],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 122],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 122],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 124],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 124],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 124],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 124],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 124],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 126],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 126],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 126],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 126],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 126],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 134],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 134],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 134],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 134],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 134],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [11, 134],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 134],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 134],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 134],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 134],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 134],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 136],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 136],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 136],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 136],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 136],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [11, 136],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 136],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 136],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 136],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 136],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 136],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 138],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 138],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 138],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 138],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 138],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [11, 138],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 138],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 138],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 138],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 138],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 138],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 140],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 140],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 140],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 140],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 140],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [11, 140],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 140],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 140],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 140],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 140],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 140],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 142],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 142],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 142],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 142],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 142],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [11, 142],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 142],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 142],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 142],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 142],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 142],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 144],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 144],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 144],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 144],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 144],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [11, 144],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 144],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 144],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 144],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 144],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 144],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 146],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 146],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 146],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 146],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 146],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [11, 146],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 146],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 146],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 146],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 146],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 146],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 148],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 148],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 148],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 148],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 148],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [11, 148],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 148],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 148],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 148],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 148],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 148],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 150],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 150],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 150],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 150],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 150],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [11, 150],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 150],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 150],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 150],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 150],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 150],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 152],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 152],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 152],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 152],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 152],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [11, 152],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 152],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 152],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 152],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 152],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 152],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 154],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 154],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 154],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 154],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 154],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [11, 154],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 154],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 154],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 154],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 154],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 154],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 156],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 156],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 156],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 156],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 156],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [11, 156],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 156],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 156],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 156],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 156],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 156],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 158],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 158],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 158],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 158],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 158],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [11, 158],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 158],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 158],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 158],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 158],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 158],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 160],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 160],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 160],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 160],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 160],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [11, 160],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 160],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 160],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 160],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 160],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 160],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 162],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 162],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 162],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 162],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 162],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [11, 162],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 162],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 162],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 162],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 162],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 162],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 164],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 164],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 164],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 164],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 164],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [11, 164],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [19, 164],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [21, 164],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [23, 164],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [25, 164],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [27, 164],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "halbe Reihe versetzt, deckt die Erdlinie zwischen zwei Weizenreihen; die Reihen selbst sperren"
+    },
+    {
       "moebel": "mf4Bauernhaus",
       "feld": [19, 62]
     },

@@ -205,6 +205,60 @@
   ],
   "objekte": [
     {
+      "moebel": "wr8Acker6x5",
+      "feld": [0, 148],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "wr5Kohl",
+      "feld": [0, 148],
+      "versatz": [7, 14],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "wr5Kohl",
+      "feld": [0, 149],
+      "versatz": [7, 11],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "wr5Kohl",
+      "feld": [0, 150],
+      "versatz": [7, 9],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "wr5Kohl",
+      "feld": [0, 151],
+      "versatz": [7, 6],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "wr8Acker6x5",
+      "feld": [0, 155],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [0, 155],
+      "versatz": [6, 8],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [0, 157],
+      "versatz": [6, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
       "moebel": "cc5Poller",
       "feld": [19, 6]
     },
@@ -1605,67 +1659,82 @@
     },
     {
       "moebel": "wg4LaubbaumB",
-      "feld": [29, 4]
+      "feld": [29, 1],
+      "versatz": [3, 0]
     },
     {
       "moebel": "wg4LaubbaumB",
-      "feld": [30, 16]
+      "feld": [30, 13],
+      "versatz": [3, 0]
     },
     {
       "moebel": "wg4LaubbaumB",
-      "feld": [31, 28]
+      "feld": [31, 26],
+      "versatz": [-6, 0]
     },
     {
       "moebel": "wg4LaubbaumB",
-      "feld": [29, 40]
+      "feld": [29, 38],
+      "versatz": [-6, 0]
     },
     {
       "moebel": "wg4LaubbaumB",
-      "feld": [30, 52]
+      "feld": [30, 53],
+      "versatz": [-3, 0]
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [31, 64]
+      "feld": [31, 66],
+      "versatz": [-3, 0]
     },
     {
       "moebel": "wg4LaubbaumB",
-      "feld": [29, 76]
+      "feld": [29, 74],
+      "versatz": [-6, 0]
     },
     {
       "moebel": "wg4LaubbaumB",
-      "feld": [30, 88]
+      "feld": [30, 90],
+      "versatz": [-6, 0]
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [31, 100]
+      "feld": [31, 98],
+      "versatz": [-3, 0]
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [29, 112]
+      "feld": [29, 113],
+      "versatz": [3, 0]
     },
     {
       "moebel": "wg4LaubbaumB",
-      "feld": [30, 124]
+      "feld": [30, 125],
+      "versatz": [3, 0]
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [31, 136]
+      "feld": [31, 134],
+      "versatz": [6, 0]
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [29, 148]
+      "feld": [29, 145],
+      "versatz": [-6, 0]
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [30, 160]
+      "feld": [30, 157],
+      "versatz": [3, 0]
     },
     {
       "moebel": "wg4LaubbaumB",
-      "feld": [31, 172]
+      "feld": [31, 171],
+      "versatz": [-3, 0]
     },
     {
       "moebel": "wg4Laubbaum",
-      "feld": [29, 184]
+      "feld": [29, 182]
     },
     {
       "moebel": "wg4BuschBreit",
@@ -1673,59 +1742,73 @@
     },
     {
       "moebel": "wg4Busch",
-      "feld": [31, 22]
+      "feld": [31, 23],
+      "versatz": [-3, 0]
     },
     {
       "moebel": "wg4BuschBreit",
-      "feld": [31, 34]
+      "feld": [31, 32],
+      "versatz": [-3, 0]
     },
     {
       "moebel": "wg4BuschBreit",
-      "feld": [31, 46]
+      "feld": [31, 46],
+      "versatz": [6, 0]
     },
     {
       "moebel": "wg4BuschB",
-      "feld": [31, 58]
+      "feld": [31, 60],
+      "versatz": [6, 0]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [31, 70]
+      "feld": [31, 67],
+      "versatz": [-6, 0]
     },
     {
       "moebel": "wg4BuschB",
-      "feld": [31, 82]
+      "feld": [31, 85],
+      "versatz": [-3, 0]
     },
     {
       "moebel": "wg4BuschBreit",
-      "feld": [31, 94]
+      "feld": [31, 93],
+      "versatz": [-3, 0]
     },
     {
       "moebel": "wg4BuschBreit",
-      "feld": [31, 106]
+      "feld": [31, 104],
+      "versatz": [-3, 0]
     },
     {
       "moebel": "wg4BuschB",
-      "feld": [31, 118]
+      "feld": [31, 121],
+      "versatz": [3, 0]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [31, 130]
+      "feld": [31, 129],
+      "versatz": [-6, 0]
     },
     {
       "moebel": "wg4BuschB",
-      "feld": [31, 142]
+      "feld": [31, 144],
+      "versatz": [6, 0]
     },
     {
       "moebel": "wg4BuschB",
-      "feld": [31, 154]
+      "feld": [31, 157],
+      "versatz": [3, 0]
     },
     {
       "moebel": "wg4BuschBreit",
-      "feld": [31, 166]
+      "feld": [31, 168],
+      "versatz": [-3, 0]
     },
     {
       "moebel": "wg4Busch",
-      "feld": [31, 178]
+      "feld": [31, 176],
+      "versatz": [3, 0]
     },
     {
       "moebel": "wg4BlumenWeiss",
@@ -1733,15 +1816,16 @@
     },
     {
       "moebel": "wg4Gras",
-      "feld": [28, 27]
+      "feld": [28, 29]
     },
     {
       "moebel": "wg4GrasB",
-      "feld": [31, 96]
+      "feld": [31, 94]
     },
     {
       "moebel": "wg4GrasB",
-      "feld": [31, 21]
+      "feld": [31, 23],
+      "versatz": [-3, 0]
     },
     {
       "moebel": "wg4BlumeGelb",
@@ -1753,15 +1837,16 @@
     },
     {
       "moebel": "wg4Gras",
-      "feld": [31, 92]
+      "feld": [31, 92],
+      "versatz": [-6, 0]
     },
     {
       "moebel": "wg4GrasB",
-      "feld": [28, 180]
+      "feld": [28, 179]
     },
     {
       "moebel": "wg4GrasB",
-      "feld": [31, 95]
+      "feld": [31, 94]
     },
     {
       "moebel": "wg4BlumeBlau",
@@ -1797,7 +1882,8 @@
     },
     {
       "moebel": "wg4Gras",
-      "feld": [29, 25]
+      "feld": [29, 26],
+      "versatz": [3, 0]
     },
     {
       "moebel": "wg4BlumeBlau",
@@ -1809,7 +1895,8 @@
     },
     {
       "moebel": "wg4Gras",
-      "feld": [30, 166]
+      "feld": [30, 164],
+      "versatz": [-6, 0]
     },
     {
       "moebel": "wg4BlumeBlau",
@@ -1837,7 +1924,7 @@
     },
     {
       "moebel": "wg4GrasB",
-      "feld": [28, 160]
+      "feld": [28, 163]
     },
     {
       "moebel": "wg4BlumeBlau",

@@ -8,6 +8,7 @@ import {
   standStattSitz,
   blockZur,
   festgehaltene,
+  fortgeschickte,
   imBlock,
   nachTagesablauf,
   personenDerFiguren,
@@ -92,6 +93,20 @@ describe("Tagesablauf", () => {
     expect(festgehaltene(FIGUREN, z, new Set(["carla"]), {}).has("carla")).toBe(true);
     expect(festgehaltene(FIGUREN, z, new Set(), { clubabend: true }).has("carla")).toBe(true);
     expect(festgehaltene(FIGUREN, z, new Set(), {}).size).toBe(0);
+  });
+
+  it("fortgeschickt: alle Figuren der Person tragen ein wenn, keines gilt (Big Joe nach Akt 3)", () => {
+    const nurMitWenn = [
+      { kennung: "ironwood.bigJoe", sprite: "figuren/big-joe.png", wenn: "nicht endeAkt3Gesehen" },
+    ];
+    const ablaeufe: Tagesablaeufe = {
+      figuren: { bigJoe: { ort: "ironwood", bloecke: [{ art: "nacht", von: 0, bis: 0 }] } },
+    };
+    const z = personenDerFiguren(nurMitWenn, ablaeufe);
+    expect(fortgeschickte(nurMitWenn, z, { endeAkt3Gesehen: true }).has("bigJoe")).toBe(true);
+    expect(fortgeschickte(nurMitWenn, z, { endeAkt3Gesehen: false }).size).toBe(0);
+    // Carla hat eine Figur ohne wenn: nie fortgeschickt.
+    expect(fortgeschickte(FIGUREN, personenDerFiguren(FIGUREN, ABLAEUFE), {}).size).toBe(0);
   });
 
   it("stellt nach der Uhr auf: abends im Park, nachts unsichtbar, festgehalten am Platz", () => {

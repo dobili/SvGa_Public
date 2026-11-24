@@ -111,6 +111,30 @@ export function festgehaltene(
   return fest;
 }
 
+/**
+ * Personen, die die Geschichte aus diesem Ort fortgeschickt hat: Alle ihre Figuren hier tragen ein
+ * `wenn`, und keines gilt. Die Uhr stellt sie dann nicht hin.
+ * Warum: Big Joe verlässt Ironwood nach Akt 3 (Figur `ironwood.bigJoe` mit „nicht endeAkt3Gesehen
+ * oder …“) und steht an der Crossroads; die Uhr stellte ihn nachts trotzdem in die Kantine
+ * (Stehplatzfotos, 24.11.2026). Ebenso stand Graham Hale vor der Nadel schon nach der Uhr da.
+ * Sonderfall: Eine Person ohne Figur in diesem Ort gilt nicht als fortgeschickt.
+ * Beispiel: Endstand, Ironwood → {"bigJoe"}.
+ */
+export function fortgeschickte(
+  figuren: readonly Ortsfigur[],
+  zuordnung: ReadonlyMap<string, string>,
+  variablen: Readonly<Record<string, unknown>>,
+): Set<string> {
+  const sichtbar = new Map<string, boolean>();
+  for (const f of figuren) {
+    const person = zuordnung.get(f.kennung.slice(f.kennung.indexOf(".") + 1));
+    if (!person) continue;
+    const da = f.wenn === undefined || erfuellt(f.wenn, variablen);
+    sichtbar.set(person, (sichtbar.get(person) ?? false) || da);
+  }
+  return new Set([...sichtbar].filter(([, da]) => !da).map(([person]) => person));
+}
+
 /** Objekt einer Tiled-Objektebene, soweit diese Regel es liest und schreibt. */
 interface Kartenobjekt {
   readonly name?: unknown;
@@ -169,6 +193,8 @@ export interface Aufstellung {
   readonly stunde: number;
   readonly zuordnung: ReadonlyMap<string, string>;
   readonly fest: ReadonlySet<string>;
+  /** Von der Geschichte fortgeschickt (fortgeschickte): Die Uhr stellt sie nicht hin. */
+  readonly fort?: ReadonlySet<string>;
   readonly ablaeufe: Tagesablaeufe;
 }
 
@@ -201,7 +227,7 @@ export function nachTagesablauf<T extends object>(karte: T, a: Aufstellung): T {
   const szenenobjekte = ebenen.flatMap((e) => e.objects ?? []).filter(beweglich);
   const neu: Kartenobjekt[] = [];
   for (const [person, ablauf] of Object.entries(a.ablaeufe.figuren)) {
-    if (a.fest.has(person)) continue;
+    if (a.fest.has(person) || a.fort?.has(person)) continue;
     const block = blockZur(ablauf, a.stunde);
     if (block?.karte !== a.karte || !block.feld) continue;
     const ersatz = figurobjekt(person, block);

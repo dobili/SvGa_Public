@@ -136,11 +136,16 @@ function nachUhr(welt, st, karte, objekte, gilt) {
   if (!u.aufKarte[karte] && !objekte.some(heimisch)) return objekte;
   const ziele = zielobjekte(welt, st, gilt);
   const fest = new Set();
+  // Von der Geschichte fortgeschickt: alle Figuren der Person hier mit `wenn`, keines gilt
+  // (Big Joe nach Akt 3; wie fortgeschickte in regeln/tagesablauf.ts).
+  const sichtbar = new Map();
   for (const f of ort.figuren) {
     const p = u.person[f.kennung];
     const name = f.kennung.slice(f.kennung.indexOf(".") + 1);
     if (p && (ziele.has(name) || (f.wenn && gilt(st, f.wenn)))) fest.add(p);
+    if (p) sichtbar.set(p, sichtbar.get(p) || !f.wenn || gilt(st, f.wenn));
   }
+  const fort = new Set([...sichtbar].filter(([, da]) => !da).map(([p]) => p));
   const beweglich = (o) => {
     const p = o.typ === "figur" && u.person[`${ort.kennung}.${o.name}`];
     // Nur im Heimatort zählt die Uhr; anderswo stellt die Geschichte (Mama in Ironwood).
@@ -152,7 +157,7 @@ function nachUhr(welt, st, karte, objekte, gilt) {
     );
   };
   const neu = [...(u.aufKarte[karte] || [])]
-    .filter((p) => !fest.has(p))
+    .filter((p) => !fest.has(p) && !fort.has(p))
     .filter(
       (p) =>
         u.ablaeufe[p].bloecke.find((b) => imBlock(b, st.stunde))?.karte ===

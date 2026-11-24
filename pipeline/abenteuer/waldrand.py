@@ -2,16 +2,17 @@
 
 Warum: Die Gutachter sahen Außenkarten, deren Rasen über lange Strecken bis an den Bildrand läuft. Am
 Rand hört die Welt dann sichtbar auf, statt hinter Bäumen, Hecken, Feldern oder Wasser zu
-verschwinden (KARTENREGELN 6.3: Ränder schließen mit Wald, Hecke, Feld oder Wasser ab). Ein Acker
-dagegen soll nicht am Rand abgeschnitten werden: Er endet ein bis zwei Felder davor, sonst sieht er
-aus wie aus dem Bild geschnitten.
+verschwinden (KARTENREGELN 6.3: Ränder schließen mit Wald, Hecke, Feld oder Wasser ab). Felder
+reichen bis an den Rand, dann wirken sie größer (KARTENREGELN 6.3; Gutachten Kürbishof K2: „Felder
+reichen nicht bis zum Rand“). Ein Feld, das knapp davor aufhört, wirkt wie ein Beet.
 
 Regeln (nur Außenkarten mit Grasboden):
 - Rasenstrecke: Entlang jeder der vier Kanten zählt eine Stelle als offen, wenn in den äußersten
   ``TIEFE`` Feldern quer zur Kante nur Rasen liegt (Grundboden „.“ oder ein Boden der Art „gras“)
   und kein Baum, Busch, keine Hecke, kein Feld und kein Wasser darauf steht. Mehr als ``HOECHSTENS``
   offene Stellen hintereinander sind ein Befund.
-- Feldrand: Ein Feld (Art ``feldfrucht`` oder Acker-Boden) reicht bis an den Bildrand (Abstand 0).
+- Feldrand: Ein Feld (Art ``feldfrucht`` oder Acker-Boden) endet 1 bis ``FELD_LUECKE`` Felder vor
+  einem Bildrand, statt bis an ihn zu reichen. Weiter innen endende Felder zählen nicht.
 Aufruf: ``python -m pipeline.abenteuer.waldrand [--alle]``. Dauertest mit Obergrenze in
 ``pipeline/tests/test_abenteuer_querschnitt.py`` (Ziel 0). Ausnahmen mit Grund in ``AUSNAHMEN``.
 """
@@ -29,6 +30,7 @@ from pipeline.abenteuer.zusammenhang_enden import _teile, felder_von
 SZENEN = Path(__file__).resolve().parents[2] / "inhalte" / "abenteuer" / "szenen"
 HOECHSTENS = 10  # so viele offene Randfelder hintereinander sind noch in Ordnung
 TIEFE = 2  # so tief vom Rand aus muss ein Abschluss stehen
+FELD_LUECKE = 2  # so knapp vor dem Rand endet ein Feld nicht (es reicht dann bis an den Rand)
 ABSCHLUSS = {"baum", "busch", "hecke", "feldfrucht", "wasser", "pflanze"}
 # (Szenenanfang, Kante) → Grund.
 AUSNAHMEN: dict[tuple[str, str], str] = {}
@@ -88,6 +90,26 @@ def offene_strecken(rasen: set[Feld], bedeckt: set[Feld], breite: int, hoehe: in
     return befunde
 
 
+def feldluecken(feld: set[Feld], breite: int, hoehe: int) -> list[str]:
+    """Kanten, vor denen das Feld 1 bis ``FELD_LUECKE`` Felder zu früh endet.
+
+    Beispiel: Maisfeld bis Spalte 47 auf einer Karte mit 50 Spalten → „endet 2 Felder vor dem Rand
+    Ost“. Ein Feld weit im Inneren (Abstand über ``FELD_LUECKE``) ist kein Befund.
+    """
+    xs, ys = [x for x, _ in feld], [y for _, y in feld]
+    abstaende = {
+        "West": min(xs),
+        "Ost": breite - 1 - max(xs),
+        "Nord": min(ys),
+        "Süd": hoehe - 1 - max(ys),
+    }
+    return [
+        f"Feld endet {d} Felder vor dem Rand {kante} bei {min(feld)} (soll bis an den Rand reichen)"
+        for kante, d in abstaende.items()
+        if 1 <= d <= FELD_LUECKE
+    ]
+
+
 def pruefe_szene(name: str, szene: dict, katalog: dict) -> list[str]:
     """Befunde einer Außenkarte mit Grasboden (andere Karten: keine)."""
     if szene.get("art") != "aussen":
@@ -105,10 +127,7 @@ def pruefe_szene(name: str, szene: dict, katalog: dict) -> list[str]:
             feldstuecke |= felder_von(stueck)
     befunde = offene_strecken(_rasen(szene, zeilen), bedeckt, breite, hoehe)
     for feld in _teile(feldstuecke):
-        if any(x <= 0 or y <= 0 or x >= breite - 1 or y >= hoehe - 1 for x, y in feld):
-            befunde.append(
-                f"Feld reicht bis an den Bildrand bei {min(feld)} (soll 1 bis 2 Felder davor enden)"
-            )
+        befunde += feldluecken(feld, breite, hoehe)
     return [b for b in befunde if not any(name.startswith(s) and k in b for s, k in AUSNAHMEN)]
 
 

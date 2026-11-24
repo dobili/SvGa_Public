@@ -185,6 +185,1517 @@
   "objekte": [
     {
       "moebel": "sx7MaisGruen",
+      "feld": [28, 36],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 38],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 40],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 42],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 44],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 46],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 48],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 50],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 52],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 54],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 56],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 2],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 4],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 6],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 8],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 10],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 12],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 14],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 18],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 20],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 22],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 24],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 26],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 28],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 30],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [29, 32],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 34],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 36],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 38],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 40],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 42],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 44],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 46],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 48],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 50],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 52],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 54],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 56],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [18, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [18, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [20, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [20, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [22, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [22, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [24, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [24, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [26, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [26, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [28, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [28, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 134],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 136],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 138],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 140],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 142],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 144],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 146],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 148],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 150],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 152],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 154],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 156],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 158],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 160],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 162],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 164],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 132],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 134],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 136],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 138],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 140],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 142],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 144],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 146],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 148],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 150],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 152],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 154],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 156],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 158],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 160],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 162],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 164],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 102],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 104],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 106],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 108],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 110],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 112],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 114],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 116],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 118],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 120],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 122],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 124],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 126],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 100],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 102],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 104],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 106],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 108],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 110],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 112],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 114],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 116],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 118],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 120],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 122],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 124],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 126],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 134],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 136],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 138],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 140],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 142],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 144],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 146],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 148],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 150],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 152],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 154],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 156],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 158],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 160],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 162],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 164],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 132],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 134],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 136],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 138],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 140],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 142],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 144],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 146],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 148],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 150],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 152],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 154],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 156],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 158],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 160],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 162],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [28, 164],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 4],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 6],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 8],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 10],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 12],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 14],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 16],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 18],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 20],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 22],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 2],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 4],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 6],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 8],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 10],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 12],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 14],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 18],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 20],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 22],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [1, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [3, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [5, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [7, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [9, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [11, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7Mais",
+      "feld": [11, 0],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 32],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 34],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 36],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 38],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 40],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 42],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 44],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 46],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 48],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 50],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 52],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 54],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 56],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 58],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 60],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 62],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 64],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 66],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 68],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 70],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 72],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 74],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 76],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 78],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 80],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 82],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 84],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 86],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 88],
+      "versatz": [0, -16],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 30],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 32],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 34],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 36],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 38],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 40],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 42],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 44],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 46],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 48],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 50],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 52],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 54],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 56],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 58],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 60],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 62],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 64],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 66],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 68],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 70],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 72],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 74],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 76],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 78],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 80],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 82],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 84],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 86],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
+      "feld": [0, 88],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "sx7MaisGruen",
       "feld": [1, 4],
       "versatz": [0, -16],
       "kollision": false,

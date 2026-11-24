@@ -205,6 +205,60 @@
   ],
   "objekte": [
     {
+      "moebel": "wr8Acker6x5",
+      "feld": [0, 148],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "wr5Kohl",
+      "feld": [0, 148],
+      "versatz": [7, 14],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "wr5Kohl",
+      "feld": [0, 149],
+      "versatz": [7, 11],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "wr5Kohl",
+      "feld": [0, 150],
+      "versatz": [7, 9],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "wr5Kohl",
+      "feld": [0, 151],
+      "versatz": [7, 6],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "wr8Acker6x5",
+      "feld": [0, 155],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [0, 155],
+      "versatz": [6, 8],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
+      "moebel": "wr5Kuerbis",
+      "feld": [0, 157],
+      "versatz": [6, 1],
+      "kollision": false,
+      "begehbar_grund": "Randstreifen des Felds bis an den Bildrand (KARTENREGELN 6.3); dahinter liegt die Randwand"
+    },
+    {
       "moebel": "cc5Poller",
       "feld": [19, 6]
     },

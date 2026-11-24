@@ -3777,8 +3777,8 @@
      "id": 8,
      "name": "paar",
      "type": "statist",
-     "x": 128,
-     "y": 128,
+     "x": 112,
+     "y": 96,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -3787,12 +3787,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "8,8"
+       "value": "7,6"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "8,8"
+       "value": "7,6"
       },
       {
        "name": "tun",
@@ -3808,6 +3808,11 @@
        "name": "sagt",
        "type": "string",
        "value": "statist.sternwarte.felsnase.paar"
+      },
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "links"
       }
      ]
     },

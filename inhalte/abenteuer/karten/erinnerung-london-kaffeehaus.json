@@ -640,12 +640,12 @@
        "value": "tag"
       },
       {
-       "name": "verhalten",
+       "name": "blick",
        "type": "string",
-       "value": "sitzen"
+       "value": "rechts"
       },
       {
-       "name": "blick",
+       "name": "sitzt",
        "type": "string",
        "value": "rechts"
       }
@@ -688,12 +688,12 @@
        "value": "tag"
       },
       {
-       "name": "verhalten",
+       "name": "blick",
        "type": "string",
-       "value": "sitzen"
+       "value": "links"
       },
       {
-       "name": "blick",
+       "name": "sitzt",
        "type": "string",
        "value": "links"
       }
@@ -898,11 +898,6 @@
        "value": "8,10"
       },
       {
-       "name": "verhalten",
-       "type": "string",
-       "value": "sitzen"
-      },
-      {
        "name": "rolle",
        "type": "string",
        "value": "historisch"
@@ -919,6 +914,11 @@
       },
       {
        "name": "blick",
+       "type": "string",
+       "value": "rechts"
+      },
+      {
+       "name": "sitzt",
        "type": "string",
        "value": "rechts"
       }

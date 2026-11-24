@@ -494,7 +494,8 @@
         "bis": "30,32",
         "tun": "sitzt mit Mütze im Sand und flickt ein Netz",
         "wann": "tag",
-        "sagt": "statist.pelikaninsel.dorf.netzflicker"
+        "sagt": "statist.pelikaninsel.dorf.netzflicker",
+        "zustand": "sitzboden"
       }
     },
     {

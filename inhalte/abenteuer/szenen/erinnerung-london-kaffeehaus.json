@@ -160,8 +160,8 @@
         "rolle": "historisch",
         "tun": "sitzt am mittleren Tisch und spielt Schach",
         "wann": "tag",
-        "verhalten": "sitzen",
-        "blick": "rechts"
+        "blick": "rechts",
+        "sitzt": "rechts"
       }
     },
     {
@@ -174,8 +174,8 @@
         "rolle": "historisch",
         "tun": "sitzt am mittleren Tisch und spielt Schach",
         "wann": "tag",
-        "verhalten": "sitzen",
-        "blick": "links"
+        "blick": "links",
+        "sitzt": "links"
       }
     },
     {
@@ -238,11 +238,11 @@
       "eigenschaften": {
         "von": "8,10",
         "bis": "8,10",
-        "verhalten": "sitzen",
         "rolle": "historisch",
         "tun": "sitzt am Ecktisch und grübelt über einer Stellung",
         "wann": "tag",
-        "blick": "rechts"
+        "blick": "rechts",
+        "sitzt": "rechts"
       }
     }
   ],

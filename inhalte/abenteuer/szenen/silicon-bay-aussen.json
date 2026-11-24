@@ -1075,10 +1075,10 @@
     {
       "name": "ellis",
       "typ": "statist",
-      "feld": [26, 37],
+      "feld": [26, 36],
       "eigenschaften": {
-        "von": "16,37",
-        "bis": "40,37",
+        "von": "16,36",
+        "bis": "40,36",
         "tun": "geht als Wachmann seine Runde",
         "wann": "tag"
       }

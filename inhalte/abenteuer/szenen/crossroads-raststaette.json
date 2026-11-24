@@ -325,12 +325,12 @@
     {
       "name": "kellnerin",
       "typ": "statist",
-      "feld": [6, 8],
+      "feld": [6, 7],
       "eigenschaften": {
         "tun": "bringt Kaffee und Pfannkuchen",
         "wann": "tag",
-        "von": "2,8",
-        "bis": "11,8",
+        "von": "2,7",
+        "bis": "11,7",
         "sagt": "statist.crossroads.raststaette.kellnerin"
       }
     },

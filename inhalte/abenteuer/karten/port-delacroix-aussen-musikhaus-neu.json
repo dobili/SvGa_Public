@@ -14259,7 +14259,7 @@
      "name": "sandsackhelfer",
      "type": "statist",
      "x": 304,
-     "y": 96,
+     "y": 80,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -14268,12 +14268,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "13,6"
+       "value": "13,5"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "25,6"
+       "value": "25,5"
       },
       {
        "name": "tun",
@@ -14525,7 +14525,7 @@
      "name": "bootsbauer",
      "type": "statist",
      "x": 1088,
-     "y": 720,
+     "y": 704,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -14534,12 +14534,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "66,45"
+       "value": "66,44"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "72,45"
+       "value": "72,44"
       },
       {
        "name": "tun",

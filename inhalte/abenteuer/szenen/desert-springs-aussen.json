@@ -1001,10 +1001,10 @@
     {
       "name": "kind",
       "typ": "statist",
-      "feld": [28, 30],
+      "feld": [28, 29],
       "eigenschaften": {
-        "von": "28,30",
-        "bis": "34,30",
+        "von": "28,29",
+        "bis": "34,29",
         "tun": "kickt eine Blechdose über den Hof",
         "wann": "tag",
         "sagt": "statist.desertSprings.aussen.kind"

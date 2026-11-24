@@ -792,11 +792,11 @@
       "typ": "statist",
       "feld": [
         30,
-        57
+        58
       ],
       "eigenschaften": {
-        "von": "26,57",
-        "bis": "40,57",
+        "von": "26,58",
+        "bis": "40,58",
         "tun": "geht mit einem Dackel spazieren",
         "wann": "tag",
         "sagt": "statist.capitalArena.innenstadt.hundefrau"
@@ -822,11 +822,11 @@
       "typ": "statist",
       "feld": [
         60,
-        36
+        35
       ],
       "eigenschaften": {
-        "von": "56,36",
-        "bis": "70,36",
+        "von": "56,35",
+        "bis": "70,35",
         "tun": "telefoniert im Gehen",
         "wann": "tag",
         "sagt": "statist.capitalArena.innenstadt.geschaeftsfrau"
@@ -837,11 +837,11 @@
       "typ": "statist",
       "feld": [
         12,
-        15
+        14
       ],
       "eigenschaften": {
-        "von": "4,15",
-        "bis": "20,15",
+        "von": "4,14",
+        "bis": "20,14",
         "tun": "spielt im Gehen auf dem Handy Schach",
         "wann": "tag",
         "sagt": "statist.capitalArena.innenstadt.schueler"
@@ -881,11 +881,11 @@
       "typ": "statist",
       "feld": [
         66,
-        57
+        56
       ],
       "eigenschaften": {
-        "von": "62,57",
-        "bis": "72,57",
+        "von": "62,56",
+        "bis": "72,56",
         "tun": "fotografieren die Hochhäuser",
         "wann": "tag"
       }

@@ -13,14 +13,16 @@ Pfad liegen (links und rechts davon noch frei). ``--beheben`` verschiebt die gan
 Laufrichtung um die kleinste Spanne (höchstens ``VERSCHIEBUNG``), mit der sie überall frei bleibt
 und nirgends mehr mitten auf einem schmalen Pfad liegt. Geht das nicht, bleibt es ein Befund, bis
 die Stelle mit Grund in GEPRUEFT steht.
-Geprüft werden die Szenen ``weg-*.json`` (Wege zwischen den Städten), jede Fassung für sich.
-Dauertest (pipeline/tests): „0 Befunde“.
+Geprüft werden alle Szenen, jede Fassung für sich (zuerst die Wege, seit 24.11.2026 auch die
+Städte). Wo kein Rand frei war (Briefträgerin Riverton, Postbotin Lockport), ist die Strecke kürzer
+und liegt an einer breiten, ruhigeren Stelle. Dauertest (pipeline/tests): „0 Befunde“.
 
-Ablauf (im Hauptordner): python -m pipeline.abenteuer.laufbahn [--beheben] [--muster weg-*.json]
+Ablauf (im Hauptordner): python -m pipeline.abenteuer.laufbahn [--beheben] [--muster MUSTER]
 """
 
 import argparse
 import json
+import re
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -151,29 +153,42 @@ def szenen(muster: str) -> list[Path]:
     return sorted((INHALTE / "szenen").glob(muster))
 
 
-def alle_befunde(muster: str = "weg-*.json") -> list[Befund]:
+def alle_befunde(muster: str = "*.json") -> list[Befund]:
     """Befunde aller passenden Szenen."""
     moebel = lade_moebel()
     return [b for p in szenen(muster) for b in pruefe_szene(p.stem, json.loads(p.read_text("utf-8")), moebel)]
 
 
+def verschiebe_im_text(text: str, name: str, d: Feld) -> str:
+    """Verschiebt von, bis und feld eines Statisten im Dateitext; der Rest der Datei bleibt Zeichen für
+    Zeichen gleich (Szenen sind verschieden formatiert, ein Neuschreiben änderte am Deich 1149 Zeilen).
+    """
+    anfang = text.index(f'"name": "{name}"')
+    ende = text.find('"name": "', anfang + 1)
+    ende = len(text) if ende < 0 else ende
+    teil = text[anfang:ende]
+
+    def punkt(m: re.Match) -> str:
+        return f'"{m.group(1)}": "{int(m.group(2)) + d[0]},{int(m.group(3)) + d[1]}"'
+
+    def feld(m: re.Match) -> str:
+        return f"{m.group(1)}{int(m.group(2)) + d[0]}{m.group(3)}{int(m.group(4)) + d[1]}{m.group(5)}"
+
+    teil = re.sub(r'"(von|bis)": "(-?\d+),(-?\d+)"', punkt, teil)
+    teil = re.sub(r'("feld": \[\s*)(-?\d+)(,\s*)(-?\d+)(\s*\])', feld, teil, count=1)
+    return text[:anfang] + teil + text[ende:]
+
+
 def behebe(befunde: list[Befund]) -> list[str]:
     """Verschiebt jede behebbare Strecke (von, bis, feld). Ausgabe: geänderte Szenen."""
-    from pipeline.abenteuer.editorrueck import als_text
-
     geaendert = []
     for datei in sorted({b.szene for b in befunde if b.verschiebung}):
         pfad = INHALTE / "szenen" / f"{datei}.json"
-        alt = pfad.read_text(encoding="utf-8")
-        szene = json.loads(alt)
+        text = pfad.read_text(encoding="utf-8")
         for b in (b for b in befunde if b.szene == datei and b.verschiebung):
-            dx, dy = b.verschiebung
-            for e in (s for s in szene["belebung"] if s["name"] == b.name):
-                eig = e["eigenschaften"]
-                eig["von"] = f"{b.von[0] + dx},{b.von[1] + dy}"
-                eig["bis"] = f"{b.bis[0] + dx},{b.bis[1] + dy}"
-                e["feld"] = [e["feld"][0] + dx, e["feld"][1] + dy]
-        pfad.write_text(als_text(szene, alt), encoding="utf-8")
+            text = verschiebe_im_text(text, b.name, b.verschiebung)
+        json.loads(text)  # bleibt gültig
+        pfad.write_text(text, encoding="utf-8")
         geaendert.append(datei)
     return geaendert
 
@@ -182,7 +197,7 @@ def main() -> None:
     """Prüft (und behebt); Aufruf im Dateikopf."""
     teiler = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     teiler.add_argument("--beheben", action="store_true")
-    teiler.add_argument("--muster", default="weg-*.json")
+    teiler.add_argument("--muster", default="*.json")
     a = teiler.parse_args()
     befunde = alle_befunde(a.muster)
     for b in befunde:

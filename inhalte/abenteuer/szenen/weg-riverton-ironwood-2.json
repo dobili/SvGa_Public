@@ -1925,5 +1925,6 @@
   "datei": "karten/weg-riverton-ironwood-2.json",
   "ufer": "stein",
   "kante": "klippe",
-  "hochflaeche": "gras"
+  "hochflaeche": "gras",
+  "fels": "stuetzmauer"
 }

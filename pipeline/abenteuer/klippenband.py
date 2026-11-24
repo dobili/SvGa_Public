@@ -54,18 +54,6 @@ OFFEN: dict[tuple[str, str], str] = {
     ("sternwarte-felsnase", "gerade"): "AP8 Sonderorte: Vor- und Rücksprünge alle 3 bis 6 Felder",
     ("summit-city-aussen", "ende"): "AP6 Städte: Band an Rand, Band oder Seitenkante anschließen",
     ("summit-city-aussen", "gerade"): "AP6 Städte: Vor- und Rücksprünge alle 3 bis 6 Felder",
-    ("weg-delacroix-desert-canyonpfad", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
-    ("weg-delacroix-desert-felsbogen", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
-    ("weg-desert-summit-bergstrasse", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
-    ("weg-desert-summit-diner", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
-    ("weg-desert-summit-diner-neon", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
-    ("weg-maple-cedar-zedernpfad", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
-    ("weg-pinewood-ghost-canyonrand", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
-    ("weg-riverton-ironwood-2", "gerade"): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
-    (
-        "weg-riverton-ironwood-2-ohne-tische",
-        "gerade",
-    ): "AP7 Wegkarten: Vor- und Rücksprünge alle 3 bis 6 Felder",
 }
 
 

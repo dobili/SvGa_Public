@@ -31,13 +31,13 @@
     "eeeeeeeeeeee...............................eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee..ggsssssssssssssssssssssssssssssssssEEEEEEEEEEEEEEEEpppppppp",
     "eeeeeeeeeee................................................................................ggssssssssssssssssssssssssssssssssssEEEEEEEEEEEEEEEEEpppppp",
     "#.........................................................gggggggggggggggggggggggggggggggggssssssssssssssssssssssssssssssssssssssssssssssssssssssssss#",
-    "#gggggggggggggggggggggggggggggggggggggggggggggggggggggggggssss###############################################ssssssssssssssssssssssssssssssssssssssss#",
+    "#gggggggggggggggggggggggggggggggggggggggggggggggggggggggggssss##gg###gg####gg###gg###gg###gs#####ss##########ssssssssssssssssssssssssssssssssssssssss#",
+    "####ggg####gg#####gg#####gg#####gg###gg###gg####gg#####ggg##########################################################################ss###ss###########",
     "######################################################################################################################################################",
     "######################################################################################################################################################",
     "######################################################################################################################################################",
-    "######################################################################################################################################################",
-    "##############################################################fffffffffffffffffffffffffffffffffffffffffffffff#########################################",
-    "#fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff~~~~~~~~~~~~~~~~~~~fffffffffffffff~~~~~~~fffffffffffffffffffffffffffffffffff########",
+    "##############################################################ff##fff##ffff##fff##fff##fff##fffff##ffffffffff#####ff#######fff########################",
+    "#fff###ffff##fffff##fffff##fffff##fff##fff##ffff##fffff###ffffffff~~~~~~~~~~~~~~~~~~~fffffffffffffff~~~~~~~fffffffffffffffffffffffff##fff##fff########",
     "#ffffffffffffffffff~~~~~~~~~~~~~~~~~~~~~~ffffffffffffffffffffffff~~~~~~~~~~~~~~~~~~~~~fffffffffffff~~~~~~~~~fffffffffffffffffff~~~~~~~~~ffffff########",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ffff########",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~fffffffffffffffffff~~~~~~~~~~~~~~~fffffff~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~fff########",
@@ -234,10 +234,6 @@
     {
       "moebel": "pw7Kiefer",
       "feld": [51, 6]
-    },
-    {
-      "moebel": "pw7Tanne",
-      "feld": [77, 4]
     },
     {
       "moebel": "wg4Busch",
@@ -570,6 +566,10 @@
     {
       "moebel": "dd6Saguaro",
       "feld": [145, 9]
+    },
+    {
+      "moebel": "pw7Tanne",
+      "feld": [72, 5]
     }
   ],
   "ausloeser": [

@@ -490,7 +490,7 @@
           "von": 16,
           "bis": 21,
           "karte": "cedarCreek.aussen",
-          "feld": [17, 6],
+          "feld": [17, 5],
           "tut": "sitzt"
         },
         {
@@ -498,7 +498,7 @@
           "von": 21,
           "bis": 0,
           "karte": "cedarCreek.aussen",
-          "feld": [17, 6],
+          "feld": [17, 5],
           "tut": "sitzt"
         },
         {
@@ -511,7 +511,7 @@
           "von": 3,
           "bis": 6,
           "karte": "cedarCreek.aussen",
-          "feld": [17, 6],
+          "feld": [17, 5],
           "tut": "sitzt"
         }
       ],

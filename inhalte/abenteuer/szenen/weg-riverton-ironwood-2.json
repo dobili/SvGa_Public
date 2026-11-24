@@ -1838,9 +1838,9 @@
       "typ": "statist",
       "feld": [22, 63],
       "eigenschaften": {
+        "rolle": "unterwegs",
         "tun": "sitzt am Klapptisch und spielt",
-        "wann": "tag",
-        "bild": "statist-20"
+        "wann": "tag"
       }
     },
     {
@@ -1848,9 +1848,9 @@
       "typ": "statist",
       "feld": [19, 64],
       "eigenschaften": {
+        "rolle": "jugend",
         "tun": "sitzt am Klapptisch und spielt",
         "wann": "tag",
-        "bild": "statist-23",
         "blick": "rechts"
       }
     },
@@ -1859,9 +1859,9 @@
       "typ": "statist",
       "feld": [25, 63],
       "eigenschaften": {
+        "rolle": "unterwegs",
         "tun": "sitzt am Klapptisch und spielt",
-        "wann": "tag",
-        "bild": "statist-26"
+        "wann": "tag"
       }
     },
     {
@@ -1871,7 +1871,6 @@
       "eigenschaften": {
         "tun": "sitzt am Klapptisch und spielt",
         "wann": "tag",
-        "bild": "statist-29",
         "blick": "links"
       }
     },
@@ -1880,9 +1879,9 @@
       "typ": "statist",
       "feld": [28, 63],
       "eigenschaften": {
+        "rolle": "unterwegs",
         "tun": "sitzt am Klapptisch und spielt",
-        "wann": "tag",
-        "bild": "statist-32"
+        "wann": "tag"
       }
     },
     {
@@ -1890,9 +1889,9 @@
       "typ": "statist",
       "feld": [25, 64],
       "eigenschaften": {
+        "rolle": "unterwegs",
         "tun": "sitzt am Klapptisch und spielt",
         "wann": "tag",
-        "bild": "statist-35",
         "blick": "links"
       }
     },

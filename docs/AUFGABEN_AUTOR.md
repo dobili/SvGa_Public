@@ -2636,6 +2636,37 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Bild (Ruben, Henrik, Imogen, Marian Shaw, Noor, Mama Bear, Tess Ferris, Wren, Ike) ist das
       Aussehen aus Rolle und Ort vorgeschlagen; ändere es gern.
       **Antwort:** Bilder nach ki-roh/ hochladen; Nummern, die du nicht willst, kurz nennen.
+- [ ] RO53. **Kartenblick: acht Entscheidungen (24.11.2026, umgesetzt oder beauftragt, Widerspruch genügt)**
+      Sieben Gutachter haben alle 128 Karten aus menschlicher Sicht geprüft (rund 1050 Funde, Seite
+      „16_Kartenblick_24-11.html“ im Chat). Diese Punkte entscheidest du; die Empfehlung ist schon
+      in Arbeit:
+      1. Holzdielen: Der Zeichner legt die Bretter selbst versetzt, statt die gekaufte Kachel zu
+         wiederholen, die das Raster zeigt. Dazu ist die Bodenvariation (Flecken, Risse, gestreute
+         Grasbüschel) jetzt überall an; bisher war sie aus, bis du eine Probe siehst. Empfehlung: ja.
+      2. Nebenfiguren: Das Spiel wählt das Bild nach der Rolle (Kellner, Bauer, Fischer, Herr im
+         Zylinder in London …), statt es aus dem Namen zu würfeln; heute trägt jede fünfte den
+         Bauhelm. Empfehlung: ja.
+      3. Wald: dunkler Waldboden und dichtere Baumgruppen auf den fünf Waldkarten statt Bäumen auf
+         Rasen. Empfehlung: ja.
+      4. Gewässer: eigener Ton je Art (Kanal grünlich, Meer tiefer blau, Bergbach hell, heiße Quelle
+         milchig) statt überall dasselbe Türkis. Empfehlung: ja.
+      5. Winter im Süden (Altstadt Silicon Bay, Pelikaninsel, Deich, Glasbrücke): Winter ohne
+         Schnee, mit fahlem Gras und kahlen Laubbäumen; Schnee nur im Norden und in den Bergen.
+         Empfehlung: so.
+      6. Schilder: Orts- und Geschäftsnamen englisch (das Spiel liegt in Amerika), Hinweise des
+         Spiels deutsch. Empfehlung: so, die gemischten Schilder werden danach angeglichen.
+      7. Fahrzeuge sind im gekauften Stil von oben gezeichnet, Häuser schräg von vorn. Empfehlung:
+         so lassen, nur ersetzen, wenn ohnehin neue Bilder kommen.
+      8. Möbel vor der Rückwand dürfen die Wand verdecken (so ist der gekaufte Stil). Empfehlung: so
+         lassen; die acht Dinge, die wirklich in die Mauerkrone ragen, werden versetzt.
+      **Antwort:** „RO53 ok“ oder Nummer mit Wunsch.
+- [ ] RO54. **Kartenblick: neue Bilder (24.11.2026)**
+      Für Dinge, die es in unseren Grafiken nicht gibt, stehen auf der Kartenblick-Seite im Chat
+      13 Bildaufträge mit Prompt zum Kopieren. Am wichtigsten: Wandstücke für Höhen (Grasböschung,
+      roter Canyonfels, Stützmauer, Granit), sechs bis acht historische Nebenfiguren für London 1851,
+      Sitzbilder für Arbeiter, Wanderer, Anzug und Service, Schleusentor für Lockport, Fährschiff.
+      Bis die Bilder da sind, bauen wir mit den vorhandenen Teilen so gut es geht.
+      **Antwort:** Bilder nach ki-roh/ hochladen; Nummern, die du nicht willst, kurz nennen.
 - [ ] RO49. **Kleine Folgen von Uhr und Geräuschen (22.11.2026, umgesetzt, Widerspruch genügt)**
       1. Karten, die bisher „immer Tag“ hatten, werden jetzt nachts auch dunkel.
       2. Innenräume mit Wasserfall (Zimmer, Wohnzimmer) rauschen auf dem leisen Grundpegel.

@@ -1223,6 +1223,11 @@
      "visible": true,
      "properties": [
       {
+       "name": "rolle",
+       "type": "string",
+       "value": "kellner"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "poliert Gläser hinter dem Tresen"

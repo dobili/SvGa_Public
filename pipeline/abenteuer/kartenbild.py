@@ -8,6 +8,7 @@ Aufruf: ``python -m pipeline.abenteuer.kartenbild PRIVAT VORSCHAUORDNER inhalte/
 """
 
 import sys
+from functools import cache
 from pathlib import Path
 
 from PIL import Image, ImageDraw
@@ -17,6 +18,7 @@ from pipeline.abenteuer.belebungsvorschau import teile as belebungsteile
 from pipeline.abenteuer.bodenraster import (
     bodenfeld,
     brueckenzeichen,
+    eckzusaetze,
     randergaenzt,
     randkachel,
     randnachbar,
@@ -35,54 +37,47 @@ from pipeline.abenteuer.kartenbau import (
     platziere,
     raster,
 )
-from pipeline.abenteuer.katalog import katalogbefund, katalogeintraege
 from pipeline.abenteuer.klippe import (
     HOEHE_STANDARD,
     REIHE_RAND,
     grasboden,
     klippenbogen,
     klippenfeld,
-    strassenzeichen,
-    treppenfelder,
     vorhandene_fassung,
 )
+from pipeline.abenteuer.klippenbild import veredle
+from pipeline.abenteuer.moebelbefunde import bildbefunde, mattenbefunde, moebelbild
 from pipeline.abenteuer.moebelliste import lade_moebel
 from pipeline.abenteuer.objektform import formbild, mit_deckkraft
 from pipeline.abenteuer.randspur import randhang, randluecken
+from pipeline.abenteuer.saum import belaguebergaenge
 from pipeline.abenteuer.sitzplatz import sitzmoebel
-from pipeline.abenteuer.strasse import markiere
+from pipeline.abenteuer.strasse import kehrenfelder, markiere
 from pipeline.abenteuer.toenung import schleier
+from pipeline.abenteuer.treppenrand import stirnkanten
+from pipeline.abenteuer.uferart import gezeichnetes_raster, uferbogen
+from pipeline.abenteuer.weichrand import weiche_raender
 from pipeline.abenteuer.winter import ist_winter, winterbefunde, winterlich, winterliche_moebel
 from pipeline.abenteuer.zusammenhang import HOLZ
 from pipeline.abenteuer.zustaende import bildname
 
 KRONE = (246, 246, 248, 255)
 KRONENRAND = (58, 58, 80, 255)
+# Breite des dunklen Rands der Wandkrone in Pixeln.
+KRONENRAND_BREITE = 2
 DUNKEL = (26, 22, 18, 255)
-# Größter erlaubter Spalt zwischen Fußmatte und Tür in Pixeln (KARTENREGELN 10.8).
-MATTE_ABSTAND = 3
-# Deckender Festschatten der Standardbilder von LimeZu (wirkt auf unseren Böden wie ein Schleier).
-GRAUSCHATTEN = (167, 151, 150, 255)
+
+
+@cache
+def _bogen(pfad: Path) -> Image.Image:
+    """Ein Kachelbogen, je Lauf nur einmal geladen (vorher je Kachel neu: Minuten je Karte)."""
+    return Image.open(pfad).convert("RGBA")
 
 
 def kachel(privat: Path, boegen: dict, angabe: dict, feld: list[int]) -> Image.Image:
     """Eine Kachel (16 × 16) aus dem Bogen der Angabe am Feld (Spalte, Zeile)."""
-    bogen = Image.open(privat / boegen[angabe["bogen"]]).convert("RGBA")
+    bogen = _bogen(privat / boegen[angabe["bogen"]])
     return bogen.crop((feld[0] * K, feld[1] * K, (feld[0] + 1) * K, (feld[1] + 1) * K))
-
-
-def moebelbild(privat: Path, quelle: str | dict) -> Image.Image:
-    """Das Bild eines Möbels (Quelle oder ganze Angabe); die umgefärbte Fassung (spiel/schatten/) geht
-    vor, wie im Paketbau. Eine Angabe mit ``ausschnitt`` (bodenkacheln.py) gibt nur diesen Teil."""
-    angabe = quelle if isinstance(quelle, dict) else {"quelle": quelle}
-    umgefaerbt = privat / "spiel" / "schatten" / angabe["quelle"]
-    bild = Image.open(umgefaerbt if umgefaerbt.exists() else privat / angabe["quelle"]).convert("RGBA")
-    return bild.crop(tuple(angabe["ausschnitt"])) if "ausschnitt" in angabe else bild
-
-
-def grauer_schatten(privat: Path, quelle: str) -> bool:
-    """Ob das Möbel ohne umgefärbte Fassung noch den deckenden grauen Schatten von LimeZu trägt."""
-    return GRAUSCHATTEN in set(moebelbild(privat, quelle).get_flattened_data())
 
 
 def wellenbild(art: dict, feld: list[int], x: int, y: int) -> str | None:
@@ -97,6 +92,27 @@ def wellenbild(art: dict, feld: list[int], x: int, y: int) -> str | None:
     if wurf >= wellen["anteil"]:
         return None
     return wellen["bilder"][(x * 13 + y * 7) % len(wellen["bilder"])]
+
+
+def wasserkachel(
+    privat: Path, mat: dict, name: str, zeilen: list[str], feld: tuple[int, int], ueber: frozenset[str]
+) -> tuple[Image.Image, list[int], list[int]]:
+    """Die Kachel eines Wasserfelds aus dem Bogen der Bodenart ``name``, mit allen Innenecken.
+
+    Warum: Eine Kachel zeigt höchstens eine Innenecke; an schrägen Knicken blieb die zweite Ecke
+    ein Wasserquadrat ohne Rand (Kartenblick 24.11.2026, M03). Für jede weitere Ecke kommt das
+    Viertel der passenden Innenecken-Kachel darüber (``bodenraster.eckzusaetze``).
+    Ausgabe: (Bild, Feld im gewöhnlichen Wasserbogen für die Randspur, Feld im eigenen Bogen).
+    Beispiel: Canyonrand (65, 25), Land oben links und unten rechts → beide Ecken tragen Fels.
+    """
+    halb, art = K // 2, mat["boeden"][name]
+    spur, eigen = uferfelder(mat["boeden"], name, zeilen, *feld, ueber)
+    teil = kachel(privat, mat["boegen"], art, eigen).copy()
+    for ecke, (dx, dy) in eckzusaetze(art["rand"], zeilen, *feld, ueber):
+        links, oben = (halb if dx > 0 else 0), (halb if dy > 0 else 0)
+        viertel = (links, oben, links + halb, oben + halb)
+        teil.paste(kachel(privat, mat["boegen"], art, ecke).crop(viertel), viertel)
+    return teil, spur, eigen
 
 
 def flaechen(zeilen: list[str], innen: bool = False) -> dict[tuple[int, int], str]:
@@ -143,7 +159,7 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
     wand = waende[szene.get("wand", "creme")]
     # Draußen ist „#“ eine Hecke (oder ein anderer Boden aus „wandart“), keine Wandkrone.
     wandart = boeden.get(szene["wandart"]) if szene.get("wandart") else None
-    ufer = f"wasser_{szene['ufer']}" if szene.get("ufer") else "wasser"
+    ansicht = gezeichnetes_raster(szene)  # für das Ufer: Randwände zeigen das Feld dahinter
     # Wandstile mit eigener Krone (Fels, Damm) zeichnen ihre Flächen auch draußen neben „wandart“:
     # Der Rand bleibt dann Boden, nur „#“ über einem Boden wird Hang oder Felswand (10.45).
     flaeche = flaechen(zeilen, szene.get("art") == "innen") if not wandart or "krone" in wand else {}
@@ -169,11 +185,11 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
                 bild.alpha_composite(kachel(privat, boegen, klippenart, list(feld)), ort)
                 continue
             if z == WASSER:
-                # Ufer aus Stein (Szene „ufer“: „stein“, KARTENREGELN 10.6): dieselbe Kachelwahl,
-                # gezeichnet aus dem eigenen Bogen; die Randspur rechnet mit LimeZus Wasser.
-                art = boeden[ufer]  # mit „diagonalen“ wählt das Ufer Schrägkacheln (Buchten)
-                feld, eigen = uferfelder(boeden, ufer, zeilen, x, y, ueber)
-                bild.alpha_composite(kachel(privat, boegen, art, eigen), ort)
+                # Das Ufer richtet sich je Feld nach dem Nachbarboden (uferart.py): Kaimauer aus
+                # dem Steinbogen, sonst der Bogen der Szene; die Randspur rechnet mit LimeZus Wasser.
+                art = boeden[ufer := uferbogen(szene, ansicht, x, y)]
+                teil, feld, eigen = wasserkachel(privat, mat, ufer, zeilen, (x, y), ueber)
+                bild.alpha_composite(teil, ort)
                 if gezeichnet is not None:
                     gezeichnet[(x, y)] = ("wasser", feld)
                 if (welle := wellenbild(art, eigen, x, y)) is not None:
@@ -183,6 +199,7 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
                 # Wege bis an den Bildrand reichen (Regel 5.1, 6.3; Hinweis von niedrig-1).
                 # Wasser dahinter behält das Ufer der Szene (bodenraster.randkachel).
                 innenart = sonder.get(zeilen[innen[1]][innen[0]], grund)
+                ufer = uferbogen(szene, ansicht, x, y)
                 artname, bogen, feld, eigen = randkachel(boeden, ufer, (zeilen, roh), innen, innenart, ueber)
                 bild.alpha_composite(kachel(privat, boegen, boeden[bogen], eigen), ort)
                 if gezeichnet is not None:
@@ -210,10 +227,8 @@ def hintergrund(szene: dict, privat: Path, gezeichnet: dict | None = None) -> Im
                 bild.alpha_composite(kachel(privat, boegen, art, feld), ort)
                 if gezeichnet is not None:
                     gezeichnet[(x, y)] = (sonder.get(z, grund), feld)
-    if klippe:
-        for x, y, feld in treppenfelder(zeilen, strassenzeichen(szene)):
-            bild.alpha_composite(kachel(privat, boegen, klippenart, list(feld)), (x * K, y * K))
-    elif not wandart and not wand.get("ohne_rand"):  # „ohne_rand“: dunkle Krone im Stollen
+    # Mit Klippen zeichnet klippenbild.veredle (in ``zeichne``) Wand, Schatten und Treppen fertig.
+    if not klippe and not wandart and not wand.get("ohne_rand"):  # „ohne_rand“: dunkle Krone im Stollen
         _kronenrand(zeichner, zeilen, flaeche)
     return bild
 
@@ -229,125 +244,71 @@ def _kronenrand(zeichner: ImageDraw.ImageDraw, zeilen: list[str], flaeche: dict)
             and (x, y) not in flaeche
         )
 
+    breit = KRONENRAND_BREITE
     for y in range(len(zeilen)):
         for x in range(len(zeilen[0])):
             if not krone(x, y):
                 continue
             x0, y0, x1, y1 = x * K, y * K, x * K + K - 1, y * K + K - 1
-            if not krone(x, y - 1):
-                zeichner.line((x0, y0, x1, y0), fill=KRONENRAND, width=2)
-            if not krone(x, y + 1):
-                zeichner.line((x0, y1 - 1, x1, y1 - 1), fill=KRONENRAND, width=2)
-            if not krone(x - 1, y):
-                zeichner.line((x0, y0, x0, y1), fill=KRONENRAND, width=2)
-            if not krone(x + 1, y):
-                zeichner.line((x1 - 1, y0, x1 - 1, y1), fill=KRONENRAND, width=2)
+            # Rechtecke statt Linien: ``line`` mit Breite 2 legt senkrechte und waagrechte Striche
+            # verschieden ums Pixel, der Rahmen sprang an den oberen Ecken (Kartenblick, M24).
+            seiten = {
+                (0, -1): (x0, y0, x1, y0 + breit - 1),
+                (0, 1): (x0, y1 - breit + 1, x1, y1),
+                (-1, 0): (x0, y0, x0 + breit - 1, y1),
+                (1, 0): (x1 - breit + 1, y0, x1, y1),
+            }
+            for (dx, dy), kasten in seiten.items():
+                if not krone(x + dx, y + dy):
+                    zeichner.rectangle(kasten, fill=KRONENRAND)
+            # Innenecken der Krone: Der Rand läuft um die Ecke weiter (ein Quadrat in Randbreite).
+            for dx, dy in ((1, 1), (-1, 1), (1, -1), (-1, -1)):
+                if krone(x + dx, y) and krone(x, y + dy) and not krone(x + dx, y + dy):
+                    ex, ey = (x1 - breit + 1 if dx > 0 else x0), (y1 - breit + 1 if dy > 0 else y0)
+                    zeichner.rectangle((ex, ey, ex + breit - 1, ey + breit - 1), fill=KRONENRAND)
 
 
-# Ab so vielen hellen, deckenden Pixeln an der linken, rechten oder oberen Bildkante gilt ein Bild als
-# angeschnitten (ein Bauteil eines größeren Möbels); die Unterkante zählt nicht (Schatten am Boden).
-ANSCHNITT = 6
+# Bildpunkte der Vorschau je Kartenpixel (andere Werkzeuge rechnen mit 2: uebergangsbogen.py).
+VORSCHAU_ZOOM = 2
 
 
-def angeschnitten(bild: Image.Image) -> list[str]:
-    """Kanten, an denen das Bild angeschnitten wirkt (deckende, helle Pixel statt dunklem Umriss).
-
-    Warum: Viele Einzelbilder von LimeZu sind Teile größerer Möbel (halber Tisch, Regalstück); allein
-    gesetzt wirken sie abgeschnitten (Rückmeldung des Autors, 9.11.2026)."""
-    rgba = bild.convert("RGBA")
-    breite, hoehe = rgba.size
-    px = rgba.load()
-
-    def hell(x: int, y: int) -> bool:
-        r, g, b, a = px[x, y]
-        return a > 0 and r * 0.3 + g * 0.59 + b * 0.11 > 100
-
-    kanten = {
-        "oben": sum(hell(x, 0) for x in range(breite)),
-        "links": sum(hell(0, y) for y in range(hoehe)),
-        "rechts": sum(hell(breite - 1, y) for y in range(hoehe)),
-    }
-    return [k for k, n in kanten.items() if n >= ANSCHNITT]
+def _gross(teil: Image.Image) -> Image.Image:
+    """Ein Teil der Vorschau, pixelgenau auf ``VORSCHAU_ZOOM`` vergrößert."""
+    return teil.resize((teil.width * VORSCHAU_ZOOM, teil.height * VORSCHAU_ZOOM), Image.NEAREST)
 
 
-def bildbefunde(szene: dict, privat: Path) -> list[str]:
-    """Befunde, die nur mit den Bildern prüfbar sind: angeschnittene Bauteile, unsichere Einträge."""
-    moebel = lade_moebel()
-    katalog = katalogeintraege(privat)
-    befunde = []
-    for eintrag in szene.get("objekte", []):
-        angabe = moebel.get(eintrag["moebel"])
-        if angabe and "ausschnitt" not in angabe and grauer_schatten(privat, angabe["quelle"]):
-            befunde.append(
-                f"{eintrag['moebel']} hat den grauen Festschatten: werkzeuge/schatten.py im privaten "
-                "Repository laufen lassen (oder die Black_Shadow-Fassung nehmen)"
-            )
-        if not angabe or eintrag.get("bauteil_ok") or "ausschnitt" in angabe:
-            continue  # Kacheln aus einem Bogen (bodenkacheln.py) sind gewollt geschnitten
-        # Eigene Bilder (spiel/eigene/, werkzeuge/schilder.py) stehen nicht im Katalog der Pakete.
-        eigen = angabe["quelle"].startswith("spiel/eigene/")
-        befund = None if eigen else katalogbefund(eintrag["moebel"], katalog.get(angabe["quelle"]))
-        if befund:
-            befunde.append(befund)
-        # Eigene Bilder dürfen offene Ränder haben (Brücken enden am Ufer, werkzeuge/bruecken.py).
-        kanten = [] if eigen else angeschnitten(Image.open(privat / angabe["quelle"]))
-        if kanten:
-            befunde.append(f"{eintrag['moebel']} wirkt angeschnitten ({', '.join(kanten)}): Bauteil?")
-    return befunde
-
-
-def mattenbefunde(szene: dict, privat: Path) -> list[str]:
-    """Fußmatten liegen sichtbar an ihrer Tür (KARTENREGELN 10.8): höchstens MATTE_ABSTAND Pixel
-    zwischen den deckenden Pixeln von Matte und Tür, oben oder unten.
-
-    Warum: Die Matten lagen in fünf Räumen eine Handbreit über dem Türbild der Südwand, mit einem
-    Streifen Boden dazwischen (Bildprüfung 9.11.2026); im Raster stand alles richtig."""
-    moebel = lade_moebel()
-    gesetzt, _ = platziere(szene, moebel)
-
-    def sichtbar(st: dict) -> tuple[int, int, int, int]:
-        rand = Image.open(privat / moebel[st["name"]]["quelle"]).getbbox() or (
-            0,
-            0,
-            st["breite"],
-            st["hoehe"],
-        )
-        return (st["x"] + rand[0], st["y"] + rand[1], st["x"] + rand[2], st["y"] + rand[3])
-
-    tueren = [st for st in gesetzt if moebel[st["name"]].get("art") == "tuer"]
-    befunde = []
-    for matte in (st for st in gesetzt if "matte" in st["name"].lower()):
-        m = sichtbar(matte)
-        abstaende = [
-            min(abs(t[1] - m[3]), abs(m[1] - t[3]))
-            for t in map(sichtbar, tueren)
-            if m[0] < t[2] and t[0] < m[2]
-        ]
-        if abstaende and min(abstaende) > MATTE_ABSTAND:
-            befunde.append(
-                f"{matte['name']} liegt {min(abstaende)} px von der Tür entfernt (versatz anpassen)"
-            )
-    return befunde
+def _setze(bild: Image.Image, teil: Image.Image, x: int, y: int) -> None:
+    """Setzt ein Teil ins Bild; was links oder oben übersteht, wird abgeschnitten wie im Spiel
+    (vorher rückte das ganze Teil ins Bild, Kartenblick 24.11.2026, Abschnitt 0)."""
+    links, oben = max(0, -x), max(0, -y)
+    if links < teil.width and oben < teil.height:
+        bild.alpha_composite(teil.crop((links, oben, teil.width, teil.height)), (x + links, y + oben))
 
 
 def vorschau(szene: dict, privat: Path, grund: Image.Image) -> Image.Image:
-    """Hintergrund mit Möbeln (nach Tiefe) und Figuren von vorn, doppelt vergrößert."""
+    """Hintergrund mit Möbeln (nach Tiefe) und Figuren von vorn, doppelt vergrößert.
+
+    Möbel werden wie in der App in einem Schritt aus dem Original auf Maßstab × Zoom skaliert
+    (``objektform.formbild``), nicht erst im Kartenraster und dann verdoppelt (M25)."""
     moebel = lade_moebel()
     gesetzt, _ = platziere(szene, moebel)
-    bild = grund.copy()
-    bilder = [formbild(moebelbild(privat, moebel[s["name"]]), s) for s in gesetzt]
-    teile = [(s["tiefe"], s["x"], s["y"], mit_deckkraft(b, s)) for s, b in zip(gesetzt, bilder, strict=True)]
+    bild = _gross(grund)
+    roh = [moebelbild(privat, moebel[s["name"]]) for s in gesetzt]
+    bilder = [formbild(b, s) for b, s in zip(roh, gesetzt, strict=True)]
+    scharf = [mit_deckkraft(formbild(b, s, VORSCHAU_ZOOM), s) for b, s in zip(roh, gesetzt, strict=True)]
+    teile = [(s["tiefe"], s["x"], s["y"], b) for s, b in zip(gesetzt, scharf, strict=True)]
     sitze = sitzmoebel(gesetzt, moebel, bilder)  # Sitzende rücken auf ihr Möbel (sitzplatz.py)
     if ist_winter(szene):
         # Wie die App (oberwelt/winter.ts): Möbel ohne Wasserregel, sonst würden blaue Autos dunkel.
         teile = [(t, x, y, winterliche_moebel(b)) for t, x, y, b in teile]
     orte = {o["kennung"]: o for o in lade(INHALTE / "orte.json")["orte"]}
     ort = orte.get(szene["karte"].split(".")[0], {"figuren": []})
-    teile += figurenteile(szene, privat, ort["figuren"], sitze, rgba)
-    teile += belebungsteile(szene, privat, rgba, sitze)
+    figuren = figurenteile(szene, privat, ort["figuren"], sitze, rgba)
+    figuren += belebungsteile(szene, privat, rgba, sitze)
+    teile += [(t, x, y, _gross(b)) for t, x, y, b in figuren]
     for _, x, y, teil in sorted(teile, key=lambda t: t[0]):
-        bild.alpha_composite(teil, (max(0, x), max(0, y)))
-    return bild.resize((bild.width * 2, bild.height * 2), Image.NEAREST)
+        _setze(bild, teil, x * VORSCHAU_ZOOM, y * VORSCHAU_ZOOM)
+    return bild
 
 
 def randspur(szene: dict, gezeichnet: dict) -> list[str]:
@@ -369,7 +330,21 @@ def zeichne(szene: dict, privat: Path) -> tuple[Image.Image, Image.Image, dict]:
     grund = hintergrund(szene, privat, gezeichnet)
     mat = lade(INHALTE / "materialien.json")
     grund = variiere(szene, grund, gezeichnet, mat, lade_kachel(privat, mat["boegen"]))
-    markiere(grund, randergaenzt(raster(szene), "wandart" in szene), szene, gezeichnet, mat["boeden"])
+    grund = veredle(szene, grund, privat)  # Felskanten als Gelände (nach der Bodenvariation)
+    ergaenzt = randergaenzt(raster(szene), "wandart" in szene)
+    markiere(grund, ergaenzt, szene, gezeichnet, mat["boeden"])
+    # Zuletzt die weichen Ränder von Wegen und Wasser (weichrand.py): über Variation und Säumen.
+    boeden = mat["boeden"]
+    weiche_raender(
+        grund,
+        szene,
+        gezeichnet,
+        boeden,
+        lambda art: kachel(privat, mat["boegen"], boeden[art], boeden[art]["feld"]),
+        stirnkanten(szene, lade_moebel()),
+    )
+    # Danach, damit die neu gemalten Randfelder ihre Verzahnung mit dem Nachbarbelag behalten.
+    belaguebergaenge(grund, gezeichnet, boeden, kehrenfelder(szene, ergaenzt))
     if ist_winter(szene):
         grund = winterlich(grund)
     return grund, schleier(vorschau(szene, privat, grund), szene.get("toenung")), gezeichnet

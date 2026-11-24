@@ -1282,11 +1282,6 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
-      },
-      {
-       "name": "bild",
-       "type": "string",
-       "value": "statist-02"
       }
      ]
     },
@@ -1320,11 +1315,6 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
-      },
-      {
-       "name": "bild",
-       "type": "string",
-       "value": "statist-05"
       },
       {
        "name": "blick",
@@ -1363,11 +1353,6 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
-      },
-      {
-       "name": "bild",
-       "type": "string",
-       "value": "statist-07"
       },
       {
        "name": "blick",

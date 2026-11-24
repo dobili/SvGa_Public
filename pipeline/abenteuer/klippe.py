@@ -22,10 +22,28 @@ Breite ``#``-Flächen ohne Boden darunter zeigen die obere Fläche (Reihe 43).
 Hohe Wände (Szene ``"klippenhoehe": 5``, Gutachten Canyonrand 11.11.2026: „Eine Schlucht wirkt so wie
 eine Bordsteinkante“): Das Band ist dann so viele Reihen hoch; oben die Kante, unten der Fuß,
 dazwischen wiederholt sich die Felswand. Ohne Angabe bleibt es bei drei Reihen.
+
+Bänder (Kartenblick M02, 24.11.2026): Springt die Wand um eine Reihe vor oder zurück, ist das kein
+Wandende. Randkacheln stehen nur noch, wo das Band wirklich aufhört (``klippenrolle.band_daneben``);
+den Umriss am Versatz zeichnet ``klippenbild``. Gras oder Erde als Deckstreifen gilt für das ganze
+Band (Mehrheit seiner Kantenfelder), statt mitten in der Wand zu wechseln.
 """
 
 from collections.abc import Callable
+from functools import lru_cache
 from pathlib import Path
+
+from pipeline.abenteuer.klippenrolle import (
+    BREITE_RAMPE,
+    HOEHE_STANDARD,
+    RASTER_IM_SPEICHER,
+    WAND,
+    WASSER,
+    band_daneben,
+    bandnummern,
+)
+from pipeline.abenteuer.klippenrolle import ist_wand as _ist_wand
+from pipeline.abenteuer.klippenrolle import rolle as _rolle
 
 # Rot umgefärbte Erdklippe (Bogen „klippeRot“ in materialien.json), gleiche Kachellage.
 ROTE_KLIPPE = "spiel/eigene/klippe_rot.png"
@@ -38,51 +56,7 @@ SPALTEN = {"gras": (8, 9, 10), "erde": (14, 15, 16)}
 REIHE_RAND, REIHE_KANTE, REIHE_WAND, REIHE_FUSS, REIHE_OBEN = 42, 44, 45, 46, 43
 # In den Fels geschlagene Treppe, eine Kachel breit: oben mit Kappe, Mitte, unten mit Grasfuß.
 TREPPE = {"oben": (25, 47), "mitte": (25, 46), "unten": (25, 48)}
-WAND = "#"
-WASSER = "~"
-# Höhe einer Kante in Reihen, wenn die Szene nichts sagt (Kante, Wand, Fuß).
-HOEHE_STANDARD = 3
-# Breiteste Rampe, die als Treppe durch eine Kante gilt (Grube: vier Felder).
-BREITE_RAMPE = 4
-
-
-def _ist_wand(zeilen: list[str], x: int, y: int) -> bool:
-    return 0 <= y < len(zeilen) and 0 <= x < len(zeilen[0]) and zeilen[y][x] == WAND
-
-
-def _rolle(zeilen: list[str], x: int, y: int, hoehe: int = HOEHE_STANDARD) -> str | None:
-    """Welche Reihe der Kante (x, y) ist: „kante“, „wand“, „fuss“ oder None (keine Kante darunter)."""
-    if not _ist_wand(zeilen, x, y):
-        return None
-    # Der linke und rechte Kartenrand setzt das Band daneben fort, statt als flache Erdfläche wie ein
-    # Platzhalter zu stehen (Gutachten Runde 9, Querbefund „orange Kacheln“).
-    breite = len(zeilen[0])
-    if x in (0, breite - 1) and breite > 2:
-        innen = 1 if x == 0 else breite - 2
-        if _ist_wand(zeilen, innen, y):
-            return _rolle_ohne_rand(zeilen, innen, y, hoehe)
-    return _rolle_ohne_rand(zeilen, x, y, hoehe)
-
-
-def _rolle_ohne_rand(zeilen: list[str], x: int, y: int, hoehe: int = HOEHE_STANDARD) -> str | None:
-    """Rolle nach den Feldern darunter (siehe ``_rolle``), ohne die Fortsetzung am Rand.
-
-    Beispiel mit ``hoehe`` 5: das Feld direkt über dem Boden ist „fuss“, die drei darüber „wand“,
-    das fünfte „kante“; ein sechstes Wandfeld darüber gehört nicht mehr zur Kante (None).
-    """
-    for abstand in range(1, hoehe + 1):
-        rolle = "fuss" if abstand == 1 else "kante" if abstand == hoehe else "wand"
-        unten = y + abstand
-        if unten >= len(zeilen):
-            return None
-        if zeilen[unten][x] != WAND:
-            if not all(_ist_wand(zeilen, x, y + i) for i in range(abstand)):
-                return None
-            # Niedrige Stufe (Hang am Ende einer Wand, zwei Reihen hoch): Das oberste Feld trägt
-            # die gewellte Kante, sonst endet der Fels oben wie abgeschnitten (R028).
-            oben_frei = y > 0 and not _ist_wand(zeilen, x, y - 1)
-            return "kante" if 1 < abstand < hoehe and oben_frei else rolle
-    return None
+# Rasterzeichen, Standardhöhe und Rampenbreite: siehe klippenrolle.py.
 
 
 def _variante(zeilen: list[str], x: int, y: int, grasboden: set[str]) -> str:
@@ -126,14 +100,44 @@ def klippenfeld(
         if innen is not None:
             variante = "gras" if innen[0] in SPALTEN["gras"] else "erde"
             return (SPALTEN[variante][1], innen[1])
-    links, mitte, rechts = SPALTEN[_variante(zeilen, x, y, grasboden)]
     if rolle is None:
         return None if _rand_neben_boden(zeilen, x, y) else _flaechenfeld(zeilen, x, y, grasboden)
+    raster = tuple(zeilen)
+    links, mitte, rechts = SPALTEN[bandvariante(raster, x, y, frozenset(grasboden), hoehe)]
     reihe = {"kante": REIHE_KANTE, "wand": REIHE_WAND, "fuss": REIHE_FUSS}[rolle]
-    ende_links = _rolle(zeilen, x - 1, y, hoehe) != rolle or not _ist_wand(zeilen, x - 1, y)
-    ende_rechts = _rolle(zeilen, x + 1, y, hoehe) != rolle or not _ist_wand(zeilen, x + 1, y)
+    # Ende nur, wo das Band aufhört; ein Versatz um eine Reihe ist kein Ende (klippenrolle.py).
+    ende_links = not band_daneben(raster, x, y, -1, hoehe)
+    ende_rechts = not band_daneben(raster, x, y, 1, hoehe)
     spalte = links if ende_links and not ende_rechts else rechts if ende_rechts and not ende_links else mitte
     return (spalte, reihe)
+
+
+@lru_cache(maxsize=RASTER_IM_SPEICHER)
+def _bandvarianten(zeilen: tuple[str, ...], grasboden: frozenset[str], hoehe: int) -> dict[int, str]:
+    """Je Band „gras“ oder „erde“: die Mehrheit seiner Kantenfelder (bei Gleichstand Gras)."""
+    stimmen: dict[int, list[int]] = {}
+    for (x, y), nummer in bandnummern(zeilen, hoehe).items():
+        if _rolle(zeilen, x, y, hoehe) == "kante":
+            gras = _variante(list(zeilen), x, y, set(grasboden)) == "gras"
+            stimmen.setdefault(nummer, [0, 0])[0 if gras else 1] += 1
+    return {nummer: "gras" if gras >= erde else "erde" for nummer, (gras, erde) in stimmen.items()}
+
+
+def bandvariante(
+    zeilen: tuple[str, ...], x: int, y: int, grasboden: frozenset[str], hoehe: int = HOEHE_STANDARD
+) -> str:
+    """Deckstreifen des Bands, zu dem (x, y) gehört: „gras“ oder „erde“.
+
+    Warum: Je Feld gewählt, schaltete der Deckstreifen mitten in der Wand um (Steinbruchgrube:
+    orange Stücke zwischen grünen). Eingaben: Raster als Tupel, Feld mit Rolle, Graszeichen, Höhe.
+    Beispiel: Band unter einer Wiese, die ein vier Felder breiter Schotterplatz unterbricht → überall
+    „gras“. Sonderfall: Feld ohne Band (Hochfläche) → Wahl nach dem Feld selbst.
+    """
+    nummer = bandnummern(zeilen, hoehe).get((x, y))
+    varianten = _bandvarianten(zeilen, grasboden, hoehe)
+    if nummer is None or nummer not in varianten:
+        return _variante(list(zeilen), x, y, set(grasboden))
+    return varianten[nummer]
 
 
 def vorhandene_fassung(
@@ -299,6 +303,27 @@ def grasboden(szene: dict) -> set[str]:
     return zeichen | ({"."} if szene.get("boden") == "gras" else set())
 
 
+# Szene „fels“ → (Wandart, Farbe des Bogens, aus dem Hochfläche, Rand und Grasfuß kommen). Die
+# Arten „boeschung“ und „stuetzmauer“ zeichnet ``klippenarten`` selbst.
+WANDARTEN = {
+    "gras": ("boeschung", "gras"),
+    "boeschung": ("boeschung", "gras"),
+    "stuetzmauer": ("stuetzmauer", "grau"),
+}
+
+
+def klippenart(szene: dict) -> str:
+    """Die Wandart der Szene: „fels“, „boeschung“ (Deich, Damm) oder „stuetzmauer“ (Hafen, Stadt).
+
+    Warum: Ein Deich ist kein Fels (Gutachten Deich: „Schokoladenriegel“). Die Szene nennt die Art
+    mit ``"fels": "boeschung"`` oder ``"fels": "stuetzmauer"``; ``klippenarten`` zeichnet die
+    Kacheln dafür selbst, bis eigene Bilder da sind. Beispiel: ``{"fels": "rot"}`` → „fels“.
+    Sonderfall: Das ältere ``"fels": "gras"`` (Deich, Port Delacroix) meinte schon immer einen
+    Grashang und ist jetzt die Böschung statt grün umgefärbtem Fels.
+    """
+    return WANDARTEN.get(szene.get("fels"), ("fels", None))[0]
+
+
 def klippenbogen(szene: dict, privat: Path) -> str:
     """Bogen der Klippenkacheln: „klippeRot“ für roten Fels (Szene „fels“: „rot“), „klippeGras“ für
     einen Grashang (Szene „fels“: „gras“, Deich), „klippeGrau“ für grauen Fels mit Moos (Szene
@@ -308,11 +333,12 @@ def klippenbogen(szene: dict, privat: Path) -> str:
     ``docs/spiel/auftraege/bildwuensche/klippe_rot.py``) hat die Erdklippe an derselben Kachellage rot
     umgefärbt. Fehlt die Datei noch im privaten Repository, bleibt die braune Klippe.
     """
-    if szene.get("fels") == "rot" and (privat / ROTE_KLIPPE).exists():
+    farbe = WANDARTEN.get(szene.get("fels"), (None, szene.get("fels")))[1]
+    if farbe == "rot" and (privat / ROTE_KLIPPE).exists():
         return "klippeRot"
-    if szene.get("fels") == "gras" and (privat / GRAS_KLIPPE).exists():
+    if farbe == "gras" and (privat / GRAS_KLIPPE).exists():
         return "klippeGras"
-    if szene.get("fels") == "grau" and (privat / GRAUE_KLIPPE).exists():
+    if farbe == "grau" and (privat / GRAUE_KLIPPE).exists():
         return "klippeGrau"
     return "gelaende"
 

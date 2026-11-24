@@ -6,48 +6,8 @@ Rand- oder Eckstück ein Boden an einer Stelle bekommt, ist reine Rasterlogik un
 
 from pipeline.abenteuer.kartenbau import LEER, WAND, WASSER
 
-# Längste Überquerung, die das Wasser darunter weiterlaufen lässt (Brücke, Gleis auf einer Brücke).
-BRUECKE_MAX = 4
-# Böden aus Holz, die über Wasser eine Brücke sind (wie HOLZ in zusammenhang.py).
+# Böden aus Holz (wie HOLZ in zusammenhang.py): Brücken, Stege und Dielen. Zu ihnen hat Wasser kein Ufer.
 HOLZ_BOEDEN = frozenset({"dielen", "holzDunkel", "holzHell"})
-
-
-def ueberbrueckt(
-    zeilen: list[str], x: int, y: int, dx: int, dy: int, bruecken: frozenset[str] = frozenset()
-) -> bool:
-    """Ob vom Wasserfeld (x, y) in Richtung (dx, dy) eine Brücke liegt, hinter der wieder Wasser kommt.
-
-    Warum: Eine Brücke ist im Raster ein begehbarer Boden („h“) quer über dem Bach. Ohne diese Prüfung
-    bekäme das Wasser an jeder Brücke ein Ufer, und der Bach sähe aus wie eine Kette von Teichen
-    (Bildprüfung Cedar Creek, 9.11.2026).
-    Eingaben: Raster, Wasserfeld, Richtung zum Nachbarn, ``bruecken``: Zeichen, die eine Brücke sein
-    dürfen (Holzböden der Szene, siehe ``brueckenzeichen``). Ausgabe: True, wenn nach höchstens
-    BRUECKE_MAX Feldern desselben Brückenzeichens wieder Wasser folgt.
-    Beispiel: Spalte „~hh~“ mit „h“ = Dielen von oben nach unten: Das obere Wasser läuft unter der
-    Brücke weiter.
-    Sonderfälle: Nur Brückenzeichen zählen. Vorher galt jeder Boden außer Gras als Brücke, und
-    Sinter, Erde, Sand oder Pflaster zwischen zwei Wassern nahmen dem Ufer seine Innenecken
-    (Geysirbecken, Riverton, Seeufer; Hinweis des Haupt-Chats, 10.11.2026). Ein Steg, der im Wasser
-    endet, hat kein Wasser dahinter und bekommt deshalb weiter sein Ufer.
-    """
-    hoehe, breite = len(zeilen), len(zeilen[0])
-    nx, ny = x + dx, y + dy
-    if not (0 <= nx < breite and 0 <= ny < hoehe):
-        return False
-    bruecke = zeilen[ny][nx]
-    # Gras ist nie eine Brücke: Sonst verlor ein Bach, der um eine Spalte versetzt weiterläuft,
-    # seine Uferecken (Park, Bildprüfung 9.11.2026). Dasselbe gilt für jeden anderen Nicht-Holzboden.
-    if bruecke not in bruecken:
-        return False
-    for schritt in range(1, BRUECKE_MAX + 1):
-        nx, ny = x + dx * schritt, y + dy * schritt
-        if not (0 <= nx < breite and 0 <= ny < hoehe):
-            return False
-        if zeilen[ny][nx] == WASSER:
-            return True
-        if zeilen[ny][nx] != bruecke:
-            return False
-    return False
 
 
 # Nachbarn, an denen ein Weg oder Belag seinen Grasrand zeigt: Gras („.“), Hecke oder Wand, Wasser,
@@ -89,8 +49,16 @@ def gleicher_boden(
 
     Warum: Der Autor sah Wege ohne Rand am Kartenrand, Grasnähte zwischen Trampelpfad und Gehweg
     und Bäche, die an jeder Brücke endeten (Rückmeldung zu Runde 4, KARTENREGELN 10.1 bis 10.3).
-    Sonderfälle: Außerhalb der Karte läuft alles weiter; Wasser läuft nur in Wasser und unter
-    Brücken weiter; andere Böden laufen in jeden Belag außer Gras, Wand, Wasser und Leere.
+    Eingaben: Raster, Feld, Richtung zum Nachbarn, ``bruecken``: Zeichen der Holzböden der Szene
+    (``brueckenzeichen``). Ausgabe: True, wenn an dieser Seite kein Rand gezeichnet wird.
+    Beispiel: Spalte „~hh~“ mit „h“ = Dielen: Das Wasser läuft unter der Brücke weiter; ein Erdweg
+    „e“ neben „~“ läuft bis ans Wasser, das Ufer zeichnet das Wasser.
+    Sonderfälle: Außerhalb der Karte läuft alles weiter. Wasser läuft in Wasser und unter jedes
+    Holz weiter (Brücke, Steg, Dielen am Ufer): Vorher bekam ein Steg, der im Wasser endet, ein
+    Grasufer mit grüner Kappe (Kartenblick 24.11.2026, M03). Gras, Sand oder Pflaster zwischen zwei
+    Wassern sind nie Brücke. Andere Böden laufen in jeden Belag und ins Wasser weiter, nicht in
+    Gras, Wand und Leere: Am Wasser zeichnet nur das Wasser den Rand (uferart.py), sonst lägen
+    zwei Grasstreifen zwischen Weg und Wasser.
     """
     zeichen = zeilen[y][x]
     nx, ny = x + dx, y + dy
@@ -98,8 +66,8 @@ def gleicher_boden(
         return True
     nachbar = wirksames_zeichen(zeilen, nx, ny)
     if zeichen == WASSER:
-        return nachbar == WASSER or ueberbrueckt(zeilen, x, y, dx, dy, bruecken)
-    return nachbar == zeichen or nachbar not in TRENNT
+        return nachbar == WASSER or nachbar in bruecken
+    return nachbar == zeichen or nachbar == WASSER or nachbar not in TRENNT
 
 
 def bodenfeld(
@@ -139,6 +107,32 @@ def bodenfeld(
         # Fest je Ort (kein echter Zufall), damit das Bild bei jedem Bau gleich bleibt.
         return art["varianten"][(x * 7349 + y * 1931 + x * y * 13) % len(art["varianten"])]
     return art["feld"]
+
+
+def eckzusaetze(
+    rand: list[int], zeilen: list[str], x: int, y: int, bruecken: frozenset[str] = frozenset()
+) -> list[tuple[list[int], tuple[int, int]]]:
+    """Innenecken, die zusätzlich zur Kachel aus ``bodenfeld`` in ihr Viertel gehören.
+
+    Warum: Eine Kachel von LimeZu zeigt höchstens eine Innenecke. Läuft ein Wasserarm schräg weiter
+    (Land oben links und unten rechts), blieb die zweite Ecke ein Wasserquadrat ohne Rand
+    (Kartenblick 24.11.2026, M03; Canyonrand (65, 25)). Der Zeichner legt deshalb für jede
+    Diagonale mit Land, deren beide Seiten daneben frei sind, das Viertel der passenden
+    Innenecken-Kachel darüber.
+    Eingaben: linke obere Ecke des 3×3-Blocks, Raster, Feld, Brückenzeichen. Ausgabe: Liste
+    (Kachel im Bogen, Richtung der Diagonale); das Viertel liegt in dieser Richtung.
+    Beispiel: Wasser ringsum, Land nur bei (−1, −1) und (1, 1) → zwei Einträge.
+    Sonderfall: Liegt an einer der beiden Seiten selbst Land, zeigt die Rand- oder Eckkachel dort
+    schon ihren Rand; dann kein Zusatz.
+    """
+    zusatz = []
+    for (dx, dy), (sx, sy) in INNENECKEN.items():
+        seiten_frei = gleicher_boden(zeilen, x, y, dx, 0, bruecken) and gleicher_boden(
+            zeilen, x, y, 0, dy, bruecken
+        )
+        if seiten_frei and not gleicher_boden(zeilen, x, y, dx, dy, bruecken):
+            zusatz.append(([rand[0] + sx, rand[1] + sy], (dx, dy)))
+    return zusatz
 
 
 def uferfelder(

@@ -1,6 +1,7 @@
 /**
  * Tests für belebung.ts: Lesen aus Tiled, Tageszeit, Satzfolge und Zuordnung der Statistenbilder
- * (Auftrag Runde 7, Dokument 16, Abschnitt 3.1).
+ * (Auftrag Runde 7, Dokument 16, Abschnitt 3.1; Bild nach der Rolle seit 24.11.2026, die Regeln
+ * selbst prüft statistenwahl.test.ts).
  */
 import { describe, expect, it } from "vitest";
 import {
@@ -133,18 +134,52 @@ describe("Satzfolge", () => {
 });
 
 describe("statistenbild", () => {
-  it("nimmt das eigene Bild oder wählt fest aus dem Vorrat", () => {
+  it("nimmt das eigene Bild, sonst das Bild der Rolle, für denselben Namen immer gleich", () => {
     expect(statistenbild({ name: "egal", bild: "statist-07" })).toBe("figuren/statist-07.png");
+    expect(statistenbild({ name: "bauarbeiter", bild: null })).toBe("figuren/statist.arbeiter.png");
     const bild = statistenbild({ name: "passanten", bild: null });
-    expect(bild).toMatch(/^figuren\/statist-(0[1-9]|[1-3]\d|40)\.png$/);
+    expect(bild).toMatch(/^figuren\/[a-zA-Z.]+\.png$/);
     expect(statistenbild({ name: "passanten", bild: null })).toBe(bild);
   });
 
-  it("verteilt verschiedene Namen über den Vorrat", () => {
-    const namen = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"].map((n) => `statist${n}`);
-    expect(new Set(namen.map((name) => statistenbild({ name, bild: null }))).size).toBeGreaterThan(
-      5,
-    );
+  it("liesBelebung wählt das Bild nach der Rolle und meidet dasselbe Bild daneben", () => {
+    const statist = (name: string, x: number, eigenschaften: Record<string, string> = {}) => ({
+      name,
+      type: "statist",
+      x: x * 16,
+      y: 32,
+      properties: Object.entries(eigenschaften).map(([n, value]) => ({ name: n, value })),
+    });
+    const karte = {
+      layers: [
+        {
+          objects: [
+            statist("empfangsdame", 2),
+            statist("rentner", 4, { tun: "sitzt auf der Bank" }),
+            statist("rentner", 6),
+            statist("passanten", 30, { rolle: "historisch", tun: "gehen vorbei" }),
+            statist("angler", 50, { bild: "silas" }),
+            { name: "tauben", type: "tier", x: 0, y: 0 },
+          ],
+        },
+      ],
+    };
+    const gelesen = liesBelebung(karte);
+    expect(gelesen.map((b) => b.bild)).toEqual([
+      "statist.konzern",
+      "statist.rentner",
+      "wanderer",
+      "statist.hist",
+      "silas",
+      null,
+    ]);
+    expect(gelesen.slice(0, 5).map(statistenbild)).toEqual([
+      "figuren/statist.konzern.png",
+      "figuren/statist.rentner.png",
+      "figuren/wanderer.png",
+      "figuren/statist.hist.png",
+      "figuren/silas.png",
+    ]);
   });
 });
 

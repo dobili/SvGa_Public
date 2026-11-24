@@ -731,7 +731,6 @@
         "bis": "105,13",
         "tun": "verkauft Eis neben dem Wagen",
         "wann": "tag",
-        "bild": "statist-05",
         "verhalten": "sitzen",
         "blick": "links"
       }
@@ -745,7 +744,6 @@
         "bis": "115,12",
         "tun": "reicht Tacos unter der Markise heraus",
         "wann": "tag",
-        "bild": "statist-16",
         "verhalten": "sitzen",
         "blick": "links"
       }
@@ -773,7 +771,6 @@
         "bis": "128,14",
         "tun": "sitzt am Klapptisch und grübelt",
         "wann": "tag",
-        "bild": "statist-13",
         "verhalten": "sitzen",
         "blick": "oben"
       }

@@ -1,6 +1,6 @@
 {
-  "erklaerung": "Böden und Wände für den Kartenbauer (pipeline/abenteuer/kartenbau.py). Jede Angabe: Bogen im privaten Repository (Pfad), Spalte und Reihe in 16-Pixel-Kacheln. Wände: obere und untere Kachel der Wandfläche (zwei Reihen hoch, unten mit Sockelleiste). Böden mit „varianten“ wechseln je Kachel zufällig (fest je Ort); mit „rand“ (linke obere Kachel eines 3×3-Blocks) bekommen sie Ränder und Ecken zu anderen Böden. Mit „variation“ (pipeline/abenteuer/bodenvariation.py) bekommen Innenkacheln gewichtete Ersatzkacheln und seltene Überlagerungen (Anteile je Feld: flecken, risse, moos, flicken, farbe, gullys); an ist das je Szene mit „bodenvariation“, sonst gilt „bodenvariation_standard“. „saum“ nennt den Rand gegen Naturboden (saum.py, Regel 10.72). „landstrasse“ ist alter Asphalt ohne Bordstein mit Fahrspuren (strassenart.py, Regel 10.73). „nadelstreu“ (Waldboden unter Nadelbäumen) und „pflasterNass“ (Regen in Port Delacroix) sind Gemini-Bilder (15.11.2026); Saum „fransen“ zeichnet Übergänge in Büscheln mit Kontur wie die Gemini-Bodenübergänge.",
-  "bodenvariation_standard": false,
+  "erklaerung": "Böden und Wände für den Kartenbauer (pipeline/abenteuer/kartenbau.py). Jede Angabe: Bogen im privaten Repository (Pfad), Spalte und Reihe in 16-Pixel-Kacheln. Wände: obere und untere Kachel der Wandfläche (zwei Reihen hoch, unten mit Sockelleiste). Böden mit „varianten“ wechseln je Kachel zufällig (fest je Ort); mit „rand“ (linke obere Kachel eines 3×3-Blocks) bekommen sie Ränder und Ecken zu anderen Böden. Mit „variation“ (pipeline/abenteuer/bodenvariation.py) bekommen Innenkacheln gewichtete Ersatzkacheln und seltene Überlagerungen (Anteile je Feld: flecken, risse, moos, flicken, farbe, gullys) und über die ganze Fläche: „verband“ (Holz als versetzte Bretter, bretterverband.py), „eben“ mit „streu“ (Büschel und Steinchen der Kachel frei gestreut, mittlere Zahl je Feld), „kiesel“ (Anteil Felder mit Steinchen), „koernung“ (Punkte je Feld), „wolken“ (Stärke großer Tonflecken; alle bodenstreuung.py); an ist das je Szene mit „bodenvariation“, sonst gilt „bodenvariation_standard“ (an seit 24.11.2026; die Prüfung bodenflaeche.py verlangt für jeden Boden außer Wasser eine Variation). „saum“ nennt den Rand gegen Naturboden (saum.py, Regel 10.72). „landstrasse“ ist alter Asphalt ohne Bordstein mit Fahrspuren (strassenart.py, Regel 10.73). „nadelstreu“ (Waldboden unter Nadelbäumen) und „pflasterNass“ (Regen in Port Delacroix) sind Gemini-Bilder (15.11.2026); Saum „fransen“ zeichnet Übergänge in Büscheln mit Kontur wie die Gemini-Bodenübergänge.",
+  "bodenvariation_standard": true,
   "boegen": {
     "boden": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Floors_16x16.png",
     "wand": "modern-interiors/1_Interiors/16x16/Room_Builder_subfiles/Room_Builder_Walls_16x16.png",
@@ -35,49 +35,92 @@
     "holzHell": {
       "bogen": "boden",
       "feld": [1, 13],
-      "unter_wand": [1, 12]
+      "unter_wand": [1, 12],
+      "variation": {
+        "verband": {
+          "richtung": "quer",
+          "brett": 4,
+          "kern": [0, 14],
+          "laenge": [40, 88],
+          "fuge": 0.88
+        }
+      }
     },
     "holzDunkel": {
       "bogen": "boden",
       "feld": [13, 27],
-      "unter_wand": [13, 26]
+      "unter_wand": [13, 26],
+      "variation": {
+        "verband": {
+          "richtung": "laengs",
+          "brett": 8,
+          "kern": [0, 14],
+          "laenge": [28, 64]
+        }
+      }
     },
     "dielen": {
       "bogen": "boden",
       "feld": [5, 13],
-      "unter_wand": [5, 12]
+      "unter_wand": [5, 12],
+      "variation": {
+        "verband": {
+          "richtung": "quer",
+          "brett": 4,
+          "kern": [3, 11],
+          "laenge": [24, 56]
+        }
+      }
     },
     "fliesenWeiss": {
       "bogen": "boden",
       "feld": [1, 5],
-      "unter_wand": [1, 4]
+      "unter_wand": [1, 4],
+      "variation": {
+        "farbe": 0.25,
+        "flecken": 0.01,
+        "koernung": 1.2
+      }
     },
     "fliesenGrau": {
       "bogen": "boden",
       "feld": [13, 5],
-      "unter_wand": [13, 4]
+      "unter_wand": [13, 4],
+      "variation": {
+        "farbe": 0.25,
+        "flecken": 0.01,
+        "koernung": 1.2
+      }
     },
     "teppichRot": {
       "bogen": "boden",
       "feld": [5, 9],
-      "unter_wand": [5, 8]
+      "unter_wand": [5, 8],
+      "variation": {
+        "koernung": 2
+      }
     },
     "teppichBlau": {
       "bogen": "boden",
       "feld": [9, 19],
-      "unter_wand": [9, 18]
+      "unter_wand": [9, 18],
+      "variation": {
+        "koernung": 2
+      }
     },
     "stein": {
       "bogen": "boden",
       "feld": [13, 35],
+      "unter_wand": [13, 34],
+      "saum": "randstein",
       "variation": {
         "flecken": 0.025,
         "risse": 0.02,
         "moos": 0.03,
-        "farbe": 0.06
-      },
-      "unter_wand": [13, 34],
-      "saum": "randstein"
+        "farbe": 0.06,
+        "koernung": 2,
+        "wolken": 0.02
+      }
     },
     "gras": {
       "bogen": "gelaende",
@@ -93,11 +136,18 @@
         [3, 6],
         [4, 6],
         [9, 7]
-      ]
+      ],
+      "variation": {
+        "eben": true,
+        "streu": 2.2,
+        "wolken": 0.035,
+        "koernung": 3
+      }
     },
     "pflaster": {
       "bogen": "gelaende",
       "feld": [25, 9],
+      "saum": "randstein",
       "variation": {
         "kacheln": [
           [25, 9, 20],
@@ -109,14 +159,15 @@
         "risse": 0.02,
         "moos": 0.04,
         "flicken": 0.015,
-        "farbe": 0.08,
-        "gullys": 0.008
-      },
-      "saum": "randstein"
+        "gullys": 0.008,
+        "koernung": 1.5,
+        "wolken": 0.02
+      }
     },
     "pflasterWeich": {
       "bogen": "gelaende",
       "feld": [25, 9],
+      "saum": "fransen",
       "variation": {
         "kacheln": [
           [25, 9, 20],
@@ -128,21 +179,31 @@
         "risse": 0.02,
         "moos": 0.04,
         "flicken": 0.015,
-        "farbe": 0.08,
-        "gullys": 0.008
-      },
-      "saum": "fransen"
+        "gullys": 0.008,
+        "koernung": 1.5,
+        "wolken": 0.02
+      }
     },
     "erde": {
       "bogen": "gelaende",
       "feld": [1, 31],
       "rand": [0, 30],
-      "diagonalen": true
+      "diagonalen": true,
+      "variation": {
+        "kiesel": 0.12,
+        "wolken": 0.03,
+        "koernung": 5
+      }
     },
     "sand": {
       "bogen": "gelaende",
       "feld": [9, 31],
-      "saum": "fransen"
+      "saum": "fransen",
+      "variation": {
+        "kiesel": 0.12,
+        "wolken": 0.03,
+        "koernung": 5
+      }
     },
     "wasser": {
       "bogen": "gelaende",
@@ -164,6 +225,7 @@
     "asphalt": {
       "bogen": "stadt",
       "feld": [0, 4],
+      "saum": "bankett",
       "variation": {
         "kacheln": [
           [0, 4, 24],
@@ -190,30 +252,46 @@
         "flecken": 0.06,
         "risse": 0.03,
         "flicken": 0.02,
-        "farbe": 0.06,
-        "gullys": 0.01
-      },
-      "saum": "bankett"
+        "gullys": 0.01,
+        "koernung": 1.5,
+        "wolken": 0.025
+      }
     },
     "sandplatz": {
       "bogen": "gelaende",
       "feld": [9, 31],
       "rand": [8, 30],
-      "diagonalen": true
+      "diagonalen": true,
+      "variation": {
+        "wolken": 0.03,
+        "koernung": 4
+      }
     },
     "asphaltMitte": {
       "bogen": "stadt",
       "feld": [12, 6],
-      "saum": "bankett"
+      "saum": "bankett",
+      "variation": {
+        "koernung": 1.5
+      }
     },
     "asphaltMitteSenkrecht": {
       "bogen": "stadt",
       "feld": [12, 7],
-      "saum": "bankett"
+      "saum": "bankett",
+      "variation": {
+        "koernung": 1.5
+      }
     },
     "hecke": {
       "bogen": "gelaende",
-      "feld": [1, 7]
+      "feld": [1, 7],
+      "variation": {
+        "eben": true,
+        "streu": 3,
+        "wolken": 0.035,
+        "koernung": 3
+      }
     },
     "schotter": {
       "bogen": "fels",
@@ -224,7 +302,13 @@
         [2, 1],
         [3, 1]
       ],
-      "saum": "weich"
+      "saum": "weich",
+      "variation": {
+        "eben": true,
+        "streu": 5,
+        "wolken": 0.035,
+        "koernung": 3
+      }
     },
     "felsboden": {
       "bogen": "fels",
@@ -233,7 +317,13 @@
         [1, 0],
         [1, 1]
       ],
-      "saum": "weich"
+      "saum": "weich",
+      "variation": {
+        "eben": true,
+        "streu": 5,
+        "wolken": 0.035,
+        "koernung": 3
+      }
     },
     "wasser_stein": {
       "bogen": "wasser_stein",
@@ -314,7 +404,13 @@
         [2, 1],
         [3, 1]
       ],
-      "saum": "weich"
+      "saum": "weich",
+      "variation": {
+        "eben": true,
+        "streu": 4,
+        "wolken": 0.035,
+        "koernung": 3
+      }
     },
     "felsbodenRot": {
       "bogen": "felsRot",
@@ -323,7 +419,13 @@
         [1, 0],
         [1, 1]
       ],
-      "saum": "weich"
+      "saum": "weich",
+      "variation": {
+        "eben": true,
+        "streu": 5,
+        "wolken": 0.035,
+        "koernung": 3
+      }
     },
     "wasser_rumpf": {
       "bogen": "wasser_rumpf",
@@ -363,17 +465,30 @@
         [1, 1],
         [2, 1]
       ],
-      "saum": "weich"
+      "saum": "weich",
+      "variation": {
+        "koernung": 2,
+        "wolken": 0.025
+      }
     },
     "platten": {
       "bogen": "stadt",
       "feld": [10, 2],
-      "saum": "randstein"
+      "saum": "randstein",
+      "variation": {
+        "farbe": 0.2,
+        "flecken": 0.02,
+        "koernung": 1.5
+      }
     },
     "strand": {
       "bogen": "strand",
       "feld": [1, 2],
-      "rand": [0, 1]
+      "rand": [0, 1],
+      "variation": {
+        "koernung": 2,
+        "wolken": 0.03
+      }
     },
     "wasser_moor": {
       "bogen": "moor",
@@ -396,7 +511,11 @@
     "hallenboden": {
       "bogen": "boden",
       "feld": [1, 25],
-      "unter_wand": [1, 24]
+      "unter_wand": [1, 24],
+      "variation": {
+        "koernung": 1.5,
+        "wolken": 0.02
+      }
     },
     "wasser_watt": {
       "bogen": "watt",
@@ -406,26 +525,46 @@
     "sumpfboden": {
       "bogen": "sumpfboden",
       "feld": [1, 1],
-      "rand": [0, 0]
+      "rand": [0, 0],
+      "variation": {
+        "koernung": 2,
+        "wolken": 0.04
+      }
     },
     "pisteRot": {
       "bogen": "pisteRot",
       "feld": [1, 1],
       "rand": [0, 0],
-      "diagonalen": true
+      "diagonalen": true,
+      "variation": {
+        "eben": true,
+        "streu": 5,
+        "wolken": 0.035,
+        "koernung": 3
+      }
     },
     "sandRotRand": {
       "bogen": "sandRotRand",
       "feld": [1, 1],
       "rand": [0, 0],
-      "diagonalen": true
+      "diagonalen": true,
+      "variation": {
+        "kiesel": 0.1,
+        "wolken": 0.04,
+        "koernung": 4
+      }
     },
     "erdeRot": {
       "bogen": "wegRot",
       "feld": [1, 1],
       "rand": [0, 0],
       "diagonalen": true,
-      "rand_gegen": ["sandRot", "sandRotRand"]
+      "rand_gegen": ["sandRot", "sandRotRand"],
+      "variation": {
+        "kiesel": 0.1,
+        "wolken": 0.04,
+        "koernung": 4
+      }
     },
     "felsbodenRotDunkel": {
       "bogen": "felsRotDunkel",
@@ -434,11 +573,18 @@
         [1, 0],
         [1, 1]
       ],
-      "saum": "weich"
+      "saum": "weich",
+      "variation": {
+        "eben": true,
+        "streu": 5,
+        "wolken": 0.035,
+        "koernung": 3
+      }
     },
     "landstrasse": {
       "bogen": "stadt",
       "feld": [0, 4],
+      "saum": "bankett",
       "variation": {
         "kacheln": [
           [0, 4, 24],
@@ -465,9 +611,9 @@
         "flecken": 0.1,
         "risse": 0.08,
         "flicken": 0.06,
-        "farbe": 0.06
-      },
-      "saum": "bankett"
+        "koernung": 1.5,
+        "wolken": 0.025
+      }
     },
     "nadelstreu": {
       "bogen": "nadelstreu",
@@ -478,7 +624,10 @@
         [2, 0],
         [3, 0]
       ],
-      "saum": "fransen"
+      "saum": "fransen",
+      "variation": {
+        "koernung": 1.5
+      }
     },
     "pflasterNass": {
       "bogen": "pflasterNass",
@@ -489,7 +638,10 @@
         [0, 1],
         [1, 1]
       ],
-      "saum": "randstein"
+      "saum": "randstein",
+      "variation": {
+        "koernung": 1.5
+      }
     }
   },
   "waende": {

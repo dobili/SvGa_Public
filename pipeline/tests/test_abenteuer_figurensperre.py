@@ -62,3 +62,12 @@ def test_sitzende_bleibt_von_oben_ansprechbar():
     szene = _szene("silicon-bay-aussen")
     befunde = pruefe_szene(szene, lade_moebel(), uebergangsnamen()[szene["karte"]])
     assert not any("dash" in b for b in befunde)
+
+
+def test_sitzende_ueber_niedriger_bank_sperrt_nicht_darueber():
+    """Ward abends in Summit City: Die Bank reicht unter ihre Fußlinie, ihr Bild rückt nach unten,
+    und der Held kommt von oben an sie heran (Ansprechprobe 24.11.2026). Wie begehbar.ts."""
+    szene = {"figuren": [{"name": "ward", "feld": [1, 1], "sitzt": "unten"}]}
+    moebel = {"bank": {"breite": 32, "hoehe": 24, "art": "bank"}}
+    assert sitzkacheln(szene, [{"name": "bank", "x": 8, "y": 24}], moebel) == {}
+    assert sitzkacheln(szene, [{"name": "bank", "x": 8, "y": 8}], moebel) == {(1, 0): "ward"}

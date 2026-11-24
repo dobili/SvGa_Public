@@ -100,9 +100,35 @@ export async function tippePunkt(lauf: Lauf, x: number, y: number): Promise<void
   await lauf.seite.touchscreen.tap(x, y);
 }
 
-/** Tippt einen Knopf aus der Lage an (er lag beim Lesen oben). */
-export async function tippeKnopf(lauf: Lauf, knopf: Knopf): Promise<void> {
+/** Text des Knopfs, der jetzt an einem Punkt oben liegt (wie in lage.ts gelesen), sonst null. */
+async function knopftextAn(seite: Page, x: number, y: number): Promise<string | null> {
+  return seite
+    .evaluate(
+      ([px, py]) => {
+        const e = document.elementFromPoint(px as number, py as number);
+        const k = e?.closest("button, [role=button], select");
+        if (!k) return null;
+        return (k.getAttribute("aria-label") ?? k.textContent ?? "").trim().slice(0, 80);
+      },
+      [x, y],
+    )
+    .catch(() => null);
+}
+
+/**
+ * Tippt einen Knopf aus der Lage an (er lag beim Lesen oben), aber nur, wenn er noch dort liegt.
+ * Warum (schwacher Spieler, Akt 4, 24.11.2026): Zwischen Lesen und Tippen öffnete das Simultan
+ * das nächste Brett; der Tipp auf „Weiter“ der Meldung traf „Aufgeben“ der neuen Partie. Ein
+ * Mensch tippt, was er sieht. Ausgabe: ob getippt wurde.
+ */
+export async function tippeKnopf(lauf: Lauf, knopf: Knopf): Promise<boolean> {
+  const jetzt = await knopftextAn(lauf.seite, knopf.x, knopf.y);
+  if (jetzt !== knopf.text) {
+    lauf.messung.log(`  „${knopf.text}“ liegt nicht mehr dort (jetzt: ${jetzt ?? "nichts"})`);
+    return false;
+  }
   await tippePunkt(lauf, knopf.x, knopf.y);
+  return true;
 }
 
 /**

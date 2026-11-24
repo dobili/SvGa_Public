@@ -13804,6 +13804,11 @@
      "visible": true,
      "properties": [
       {
+       "name": "rolle",
+       "type": "string",
+       "value": "senior"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "Mr. Oakes zählt Vögel im Watt"
@@ -13995,11 +14000,6 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
-      },
-      {
-       "name": "bild",
-       "type": "string",
-       "value": "statist-06"
       },
       {
        "name": "verhalten",

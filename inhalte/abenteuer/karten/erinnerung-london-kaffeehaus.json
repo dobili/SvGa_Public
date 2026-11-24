@@ -625,6 +625,11 @@
        "value": "4,8"
       },
       {
+       "name": "rolle",
+       "type": "string",
+       "value": "historisch"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "sitzt am mittleren Tisch und spielt Schach"
@@ -666,6 +671,11 @@
        "name": "bis",
        "type": "string",
        "value": "7,8"
+      },
+      {
+       "name": "rolle",
+       "type": "string",
+       "value": "historisch"
       },
       {
        "name": "tun",
@@ -711,6 +721,11 @@
        "value": "5,10"
       },
       {
+       "name": "rolle",
+       "type": "string",
+       "value": "historisch"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "schauen zu"
@@ -749,6 +764,11 @@
        "value": "6,7"
       },
       {
+       "name": "rolle",
+       "type": "string",
+       "value": "historisch"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "beugt sich über das Brett"
@@ -780,6 +800,16 @@
        "name": "bis",
        "type": "string",
        "value": "8,8"
+      },
+      {
+       "name": "rolle",
+       "type": "string",
+       "value": "historisch"
+      },
+      {
+       "name": "bild",
+       "type": "string",
+       "value": "zeitungsleser"
       },
       {
        "name": "tun",
@@ -818,6 +848,11 @@
        "name": "bis",
        "type": "string",
        "value": "2,3"
+      },
+      {
+       "name": "rolle",
+       "type": "string",
+       "value": "historisch"
       },
       {
        "name": "tun",
@@ -861,6 +896,11 @@
        "name": "verhalten",
        "type": "string",
        "value": "sitzen"
+      },
+      {
+       "name": "rolle",
+       "type": "string",
+       "value": "historisch"
       },
       {
        "name": "tun",

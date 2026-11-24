@@ -2317,6 +2317,7 @@
       "typ": "statist",
       "feld": [22, 12],
       "eigenschaften": {
+        "rolle": "ranger",
         "tun": "Leif Sorensen erklärt den Kindern die Schnitzeljagd",
         "wann": "tag",
         "blick": "links"

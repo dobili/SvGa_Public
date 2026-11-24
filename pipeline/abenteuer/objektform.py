@@ -229,14 +229,19 @@ def formbefunde(szene: dict) -> list[str]:
     return befunde
 
 
-def formbild(bild: "Bild", eintrag: dict) -> "Bild":
+def formbild(bild: "Bild", eintrag: dict, vergroesserung: int = 1) -> "Bild":
     """Ein Möbelbild in seiner Form (Vorschau in kartenbild.py, Rücklauf des Editors).
 
     Reihenfolge wie in App und Editor: Zuschnitt, Maßstab, Spiegeln, dann Drehung im Uhrzeigersinn.
+    ``vergroesserung``: So viele Bildpunkte der Ausgabe je Kartenpixel. Warum: Die App skaliert das
+    Originalbild erst auf dem Schirm (``setScale`` bei Zoom 3, oberwelt/moebel.ts). Die Vorschau
+    skalierte im Kartenraster und verdoppelte danach; bei Maßstab 1,5 wurde ein Bildpixel
+    abwechselnd 2 oder 4 Punkte breit, die Möbel wirkten verwaschen (Kartenblick 24.11.2026, M25).
+    Mit ``vergroesserung`` 2 rechnet sie wie die App in einem Schritt: Maßstab 1,5 → 3 Punkte.
     Beispiel: Sofa 64 × 32 mit ``drehung`` 90 → Bild 32 × 64; Zaun 64 × 32 mit ``zuschnitt``
-    [26, 0, 32, 0] → Bild 6 × 32.
+    [26, 0, 32, 0] → Bild 6 × 32; Tisch 32 × 32 mit ``massstab`` 1,5 und Vergrößerung 2 → 96 × 96.
     """
-    if not hat_form(eintrag):
+    if not hat_form(eintrag) and vergroesserung == 1:
         return bild
     from PIL import Image  # erst hier: Kartenbau und App-Prüfungen laufen ohne Pillow
 
@@ -245,7 +250,7 @@ def formbild(bild: "Bild", eintrag: dict) -> "Bild":
         breite, hoehe = max(1, bild.width - z[0] - z[2]), max(1, bild.height - z[1] - z[3])
         bild = bild.crop((z[0], z[1], z[0] + breite, z[1] + hoehe))
 
-    massstab = float(eintrag.get("massstab", 1))
+    massstab = float(eintrag.get("massstab", 1)) * vergroesserung
     if massstab != 1:
         groesse = (max(1, round(bild.width * massstab)), max(1, round(bild.height * massstab)))
         bild = bild.resize(groesse, Image.NEAREST)

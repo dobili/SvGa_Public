@@ -14059,11 +14059,6 @@
        "value": "tag"
       },
       {
-       "name": "bild",
-       "type": "string",
-       "value": "statist-05"
-      },
-      {
        "name": "verhalten",
        "type": "string",
        "value": "sitzen"
@@ -14105,11 +14100,6 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
-      },
-      {
-       "name": "bild",
-       "type": "string",
-       "value": "statist-16"
       },
       {
        "name": "verhalten",
@@ -14201,11 +14191,6 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
-      },
-      {
-       "name": "bild",
-       "type": "string",
-       "value": "statist-13"
       },
       {
        "name": "verhalten",

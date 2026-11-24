@@ -164,8 +164,8 @@
       "typ": "statist",
       "feld": [6, 3],
       "eigenschaften": {
-        "tun": "sitzt am Brett gegenüber von Mags",
-        "bild": "statist-24"
+        "rolle": "fahrer",
+        "tun": "sitzt am Brett gegenüber von Mags"
       }
     },
     {
@@ -173,8 +173,7 @@
       "typ": "statist",
       "feld": [10, 4],
       "eigenschaften": {
-        "tun": "sitzt am Brett gegenüber von Ruth Keene",
-        "bild": "statist-33"
+        "tun": "sitzt am Brett gegenüber von Ruth Keene"
       }
     },
     {
@@ -182,8 +181,8 @@
       "typ": "statist",
       "feld": [3, 5],
       "eigenschaften": {
-        "tun": "sitzt am mittleren Brett und spielt",
-        "bild": "statist-19"
+        "rolle": "fahrer",
+        "tun": "sitzt am mittleren Brett und spielt"
       }
     },
     {
@@ -191,8 +190,8 @@
       "typ": "statist",
       "feld": [4, 8],
       "eigenschaften": {
-        "tun": "sitzt am mittleren Brett und spielt",
-        "bild": "statist-36"
+        "rolle": "jugend",
+        "tun": "sitzt am mittleren Brett und spielt"
       }
     }
   ],

@@ -128,6 +128,19 @@ export function sperreMoebel(
 }
 
 /**
+ * Rückt das Bild einer Sitzenden nach unten? Ja, wenn ein niedriges Möbel (bis zwei Kacheln) erst
+ * auf ihrer Fußkachel beginnt und darunter weiterreicht (Parkbank unter Ward); ein Stuhl, der über
+ * der Fußkachel beginnt (Sams Schulstuhl, 117 gegen 128), hebt das Bild (sitzlage in sitzplatz.ts).
+ */
+function rueckeNachUnten(
+  sitz: { readonly y: number; readonly h: number },
+  fussOben: number,
+  kachel: number,
+): boolean {
+  return sitz.h <= 2 * kachel && sitz.y >= fussOben && sitz.y + sitz.h > fussOben + kachel;
+}
+
+/**
  * Die Kacheln über Sitzenden: Eine Figur oder ein Statist mit der Eigenschaft `sitzt` auf einem
  * Sitzmöbel sperrt auch die Kachel über sich.
  *
@@ -137,6 +150,10 @@ export function sperreMoebel(
  * Um wie viel das Bild rückt, hängt vom Bild des Möbels und vom Bogen der Figur ab; beides kennt
  * diese Rechnung nicht. Sie nimmt deshalb den häufigen Fall an (nach oben) und rechnet lieber eine
  * Kachel zu viel als zu wenig; wer am Boden sitzt (Lily auf dem Bordstein), sperrt nichts dazu.
+ * Ausnahme: Beginnt ein niedriges Möbel (bis zwei Kacheln hoch) erst auf der Fußkachel und reicht
+ * darunter weiter, rückt das Bild nach unten (sitzlage in sitzplatz.ts), und die Kachel darüber bleibt frei (Ward abends auf der
+ * Bank unter ihr in Summit City; im Spiel geht der Held auf (41, 37) und spricht sie an,
+ * Ansprechprobe 24.11.2026).
  * Dieselbe Regel in pipeline/abenteuer/figurensperre.py (`sitzkacheln`).
  * Beispiel: Sam sitzt auf (5, 8) auf dem Schulstuhl → auch (5, 7) ist gesperrt.
  */
@@ -158,8 +175,9 @@ export function sitzkacheln(
     // Mitte der Fußkachel, wie findeSitz in sitzplatz.ts.
     const mx = Math.floor((o.x ?? 0) / kachel) * kachel + kachel / 2;
     const my = Math.floor((o.y ?? 0) / kachel) * kachel + kachel / 2;
-    const aufSitz = sitze.some((r) => mx >= r.x && mx < r.x + r.b && my >= r.y && my < r.y + r.h);
-    return aufSitz ? [`${Math.floor(mx / kachel)},${Math.floor(my / kachel) - 1}`] : [];
+    const sitz = sitze.find((r) => mx >= r.x && mx < r.x + r.b && my >= r.y && my < r.y + r.h);
+    if (!sitz || rueckeNachUnten(sitz, my - kachel / 2, kachel)) return [];
+    return [`${Math.floor(mx / kachel)},${Math.floor(my / kachel) - 1}`];
   });
 }
 

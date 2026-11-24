@@ -18,7 +18,9 @@ alle Karten umgebaut sind; nur für Szenen mit ``"kante": "klippe"``.
 import re
 
 from pipeline.abenteuer.kartenbau import K
-from pipeline.abenteuer.klippe import BREITE_RAMPE, HOEHE_STANDARD, WAND, _ist_wand, _rolle
+from pipeline.abenteuer.klippenrolle import BREITE_RAMPE, HOEHE_STANDARD, WAND
+from pipeline.abenteuer.klippenrolle import ist_wand as _ist_wand
+from pipeline.abenteuer.klippenrolle import rolle as _rolle
 
 SCHLEUSE = re.compile(r"schleus", re.I)
 

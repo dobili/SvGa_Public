@@ -10679,6 +10679,11 @@
        "value": "21,9"
       },
       {
+       "name": "rolle",
+       "type": "string",
+       "value": "senior"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "sitzt auf der Bank vor der alten Bude"

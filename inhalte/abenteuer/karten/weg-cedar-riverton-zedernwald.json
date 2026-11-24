@@ -12951,6 +12951,11 @@
      "visible": true,
      "properties": [
       {
+       "name": "rolle",
+       "type": "string",
+       "value": "ranger"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "Leif Sorensen erklärt den Kindern die Schnitzeljagd"

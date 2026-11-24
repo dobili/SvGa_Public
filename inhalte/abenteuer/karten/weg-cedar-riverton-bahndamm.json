@@ -15974,6 +15974,11 @@
      "visible": true,
      "properties": [
       {
+       "name": "bild",
+       "type": "string",
+       "value": "juno"
+      },
+      {
        "name": "tun",
        "type": "string",
        "value": "Juno wartet unten an den Stufen"

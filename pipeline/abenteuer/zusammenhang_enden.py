@@ -7,9 +7,10 @@ zusammenhang.py sonst über 400 Zeilen käme, und laufen noch nicht im Kartenbau
 gibt (Obergrenzen im Dauertest ``pipeline/tests/test_abenteuer_querschnitt.py``, Ziel 0).
 
 Regeln:
-- Ein Gleis endet nicht frei: nur am Kartenrand, an einem Prellbock, an einem Bahnhof oder im Fels
-  (Tunnel: die nächste Kachel in Fahrtrichtung ist Wand). Ein Bahnübergang (Lücke bis
-  ``UEBERGANG`` Kacheln zu einem Gleis in derselben Linie) ist kein Ende.
+- Ein Gleis endet nicht frei: nur am Kartenrand, an einem Prellbock, an einem Bahnhof, auf einer
+  Brücke (Teil der Art ``bruecke`` daneben) oder im Fels (Tunnel: nächste Kachel in Fahrtrichtung
+  Wand). Ein Bahnübergang (Lücke bis ``UEBERGANG`` Kacheln zu einem Gleis in derselben Linie) ist
+  kein Ende.
 - Ein Weg endet mit Abstand 0 an Tür oder Tor: Liegt Weg 1 bis ``NAH`` Felder vor einer Tür (Auslöser
   ``…Tuer``/``…Eingang``) oder einem Zauntor, aber nicht direkt davor, ist das ein Befund.
 Aufruf: ``python -m pipeline.abenteuer.zusammenhang [--alle]``.
@@ -76,7 +77,7 @@ def _nah(ende: list[Feld], menge: set[Feld], weite: int) -> bool:
 
 
 def _gleis_endet_gut(ende, richtung, zeilen, gleis, prellbock, bahnhof) -> bool:
-    """Rand, Prellbock, Bahnhof, Tunnel oder Bahnübergang?"""
+    """Rand, Prellbock, Bahnhof oder Brücke (beide in ``bahnhof``), Tunnel oder Bahnübergang?"""
     hoehe, breite = len(zeilen), len(zeilen[0])
     dx, dy = richtung
     weit = RAND + 1
@@ -102,8 +103,8 @@ def pruefe_gleise(szene: dict, katalog: dict) -> list[str]:
             prellbock |= felder_von(stueck)
         elif katalog[name].get("art") == "gleis":
             gleis |= felder_von(stueck)
-        elif BAHNHOF.search(name):
-            bahnhof |= felder_von(stueck)
+        elif BAHNHOF.search(name) or katalog[name].get("art") == "bruecke":
+            bahnhof |= felder_von(stueck)  # Bahnhof oder Brücke: Das Gleis geht dort weiter
     zeilen, befunde = raster(szene), []
     for teil in _teile(gleis):
         andere = gleis - teil

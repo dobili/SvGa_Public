@@ -1276,6 +1276,50 @@
       "stil": "rustikal",
       "blick": "unten",
       "hinweis": "dieselbe Kasse ohne Zettel (Gemini 15.11.2026)"
+    },
+    "wg4HolzzaunQuer": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_2_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "alt",
+      "stil": "natur",
+      "maske_fein": ["....", "....", "####", "####"],
+      "beschreibung": "Holzzaun mit Pfosten und Riegeln, Mittelstück; passt zum Weidetor wg4Tor (Landstraße, Gutachten L1, 24.11.2026)"
+    },
+    "wg4HolzzaunLinks": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_1_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "alt",
+      "stil": "natur",
+      "maske_fein": ["....", "....", "####", "####"],
+      "beschreibung": "Holzzaun mit Pfosten und Riegeln, linkes Ende mit Pfosten; passt zum Weidetor wg4Tor (Landstraße, Gutachten L1, 24.11.2026)"
+    },
+    "wg4HolzzaunRechts": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_3_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "alt",
+      "stil": "natur",
+      "maske_fein": ["....", "....", "####", "####"],
+      "beschreibung": "Holzzaun mit Pfosten und Riegeln, rechtes Ende mit Pfosten; passt zum Weidetor wg4Tor (Landstraße, Gutachten L1, 24.11.2026)"
+    },
+    "wg4HolzzaunSenkrecht": {
+      "quelle": "modern-farm/Single_Files_16x16/Fences_16x16/Wooden_Fence_Type_4_Brown_4_16x16.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "alt",
+      "stil": "natur",
+      "maske_fein": ["....", "....", ".##.", ".##."],
+      "beschreibung": "Holzzaun mit Pfosten und Riegeln, senkrechter Pfosten; passt zum Weidetor wg4Tor (Landstraße, Gutachten L1, 24.11.2026)"
     }
   }
 }

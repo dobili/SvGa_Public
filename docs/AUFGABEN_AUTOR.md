@@ -416,8 +416,8 @@ Profil › Einstellungen › Fehler melden.
 - [ ] N2697. **Liegebilder für Lucia und Oma Ruth:** Von den Sitz- und Schlafzuständen fehlen nur
       noch zwei (siehe RO51): Lucia und Oma Ruth im Bett. Bis dahin liegen sie mit ihrem Standbild
       gekippt unter der Decke, Kopf auf dem Kissen; bitte nachts in Ironwood ansehen, ob das reicht.
-      Wortlaut für PixelLab (New State): „lying in bed asleep on her back, eyes closed, seen from
-      above, head on a pillow“.
+      Wortlaut für PixelLab (New State): „Sleeping, lying on the side in an invisible bed“ (so hat es bei
+      den anderen Schlafbildern geklappt; steht auch in Mappe 15 als P2).
 - [ ] N2698. **Nachlieferung 23.11. im Spiel:** Die Drohne schwebt, der Saugroboter fährt (eigenes
       Tier, Silicon-Bay-Akademie und Altstadt, etwa 8 × 8 Pixel), der Waschbär läuft auf vier Beinen,
       Owen (deine Lieferung vom Abend, mit Sitzen) und der Bauer sind neu.
@@ -2314,25 +2314,11 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       fehlte, und wieder gekündigt. (h) Das Spiel endet auf dem Dachboden: Der Held bringt dem
       Nachbarskind Lily die erste Frage bei, „Was hängt?“. Empfehlung: alles so übernehmen. Im Roman
       umgesetzt, im Spiel noch nicht; Widerspruch genügt.
-- [ ] RO10. **Neue Figuren und Porträts:** Der Stil steht (Juno-Probe). Arbeitsweise mit
-      Prompt-Vorlage, Größen und Ablauf: `docs/spiel/24_Figuren_und_Portraets.md`. Kurz:
-      PixelLab, Create from Text, Low Top-Down, 32×32, Highly detailed; Kinder mit „short,
-      child height“; Animation Template motion, Skeleton v3, Walking für South, East, North, West;
-      ZIP an den Hauptchat. Danach Porträt in Gemini mit dem Standbild von vorn als Vorlage. Für
-      Juno fehlen noch die Laufbilder North und West. Weitere Figuren erst, wenn Juno im Spiel
-      läuft (mittel-2 baut die Anzeige um). Offen: wann das Abo (24 $ im Monat) nötig wird.
 - [ ] RO15. **Karten als echte Karten mit Motiv:** Der Kartenfächer ist gebaut, und alle 40
       Motive, Rückseite und Ersatzbild von Gemini sind ausgeschnitten und im Spiel (14.11.2026).
       Bitte auf dem Handy ansehen, ob die Motive in der kleinen Karte (etwa 2 cm breit) gut zu
       erkennen sind; sonst werden die Karten größer. Kleinigkeit: Auf „Klares Flüstern“ hat Gemini
       winzige Zugnamen gemalt; bei Bedarf neu malen lassen.
-- [ ] RO16. **Großbilder von Gemini (Datei „3_Gemini_Grossbilder_und_Funde.html“):** Akt 1 und 2
-      (A1 bis A17) sind fertig und im Spiel (14.11.2026). Offen sind A18 bis A38 (Akt 3 und 4) und
-      die Fundbilder.
-- [ ] RO18. **Porträts Akt 1 in Gemini (Datei „5_Gemini_Akt1_Rest.html“):** 1 bis 26 sind
-      zugeschnitten und im Spiel (14.11.2026). Es fehlen: Hector neutral (Nr. 12, Schritt 1; bisher
-      steht sein Lächeln in allen Feldern), Kettering lächelt (Nr. 27, neutral ist schon da) und die
-      Nummern 28 bis 34 (Dunmore, Ivy, Jonah, Owen, Walt, Clover, Oma Miller).
 - [ ] RO19. **Bretter und Figuren in Gemini (Datei „6_Gemini_Bretter_und_Figuren.html“ mit
       „Vorlagen_Bretter.zip“):** Je Ort ein Brett und ein Figurenblatt (oben Weiß, unten Schwarz:
       König, Dame, Turm, Läufer, Springer, Bauer auf grünem Grund). Ablauf je Ort: neuer Chat,
@@ -2344,11 +2330,6 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Chaos-Prüfung). Schon umgesetzt: Im Pinewood Camp bietet Tamsin die mitgeschriebene
       Blitzpartie noch einmal an. Außerdem steht Ambroses Geist nach dem Abschied nicht mehr im
       Zimmer. Widerspruch genügt.
-- [ ] RO22. **Bildwünsche der Nacht (Datei „7_Gemini_Bildwuensche_Nacht.html“):** 19 Bilder, die
-      im Katalog fehlen, je mit Prompt zum Kopieren (Drehbank, Staffelei, Doppeltür aus Holz,
-      achteckiger Pavillon in Riverton, leeres Schwimmbecken mit Kakteen, Motelzeile mit bunten
-      Türen, Rosies türkiser Truck, Seefähre, Fanshop …). Alles freiwillig; die Karten
-      funktionieren ohne. Dazu in PixelLab: Gideon, der Schmied von 1866 (Lederschürze, Schüssel).
 - [ ] RO23. **Entscheidungen der Nacht (schon umgesetzt, Widerspruch genügt):** Späte Läden
       verkaufen vier Lernkarten (Taktikspürnase, Turmregel, Planfinder, Phasenblick), damit sich
       Sparen lohnt und am Ende nicht 625 Münzen übrig sind (jetzt etwa 330). In Ghost Town stehen
@@ -2404,21 +2385,6 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       nicht. (9) Startkarte mit kurzen Sätzen und Downloadgröße; Münzen und Spielstärke werden
       einmal erklärt. (10) Sams Klage wartet auf die erste Lektion, sonst wäre die Nebenquest
       „Sams Dame“ verpasst (Simulation).
-- [ ] RO27. **Zwei Gemini-Bilder neu und zwei Entscheidungen zum Einbau (16.11.2026, umgesetzt,
-      Widerspruch genügt):** (1) **Motelzeile:** Bei Geminis Bild sind die Türen nur ein Viertel so
-      hoch wie die Spielfigur; damit sie passen, müsste die Zeile 56 Kacheln breit sein. Bitte neu:
-      „Pixel-Art, Draufsicht wie ein 16-bit-Rollenspiel, die Front eines einstöckigen Motels in der
-      Wüste, 7 Zimmertüren nebeneinander, bunte Türen, flaches Dach, Gesamtbild 224 × 112 Pixel,
-      jede Tür etwa 24 Pixel hoch und 12 breit, gerade von vorn, transparenter Hintergrund.“
-      (2) **Bergstation:** Geländer, Wolkenmeer und Seilrad sind zugeschnitten. Die Karte ist aber
-      ein reiner Innenraum ohne offene Plattform; Claude baut sie um, sodass die Plattform mit
-      Geländer und Blick aufs Wolkenmeer begehbar wird (Szene 88). (3) **Pool** steht am Starlight
-      Motel am Weg nach Summit City („Pool ohne Wasser“ laut Ortsblatt), nicht in Desert Springs,
-      weil dort kein Platz ist. (4) **Schleuse:** Das letzte der fünf Tore ist offen, der Lastkahn
-      liegt in der Kammer darunter. (5) Der Pavillon in Riverton ist 8 statt 10 Felder breit;
-      sein Dach ragt etwas über Weg und Ufer. (6) Die Treppenlöcher ohne Geländer und die
-      Bodenluke mit Leiter liegen bereit, sind aber nicht gesetzt. (7) Fundbilder B1 und B2
-      fehlen noch (deine Prompts vom 15.11.).
 - [ ] RO28. **Zur Revision: deine 31 Kartennotizen zu Maple Falls und Cedar Creek (16.11.2026,
       umgesetzt, Widerspruch genügt):** Alle eingearbeitet, das Treppenloch und der Wasserfall mit
       deinen Gemini-Bildern. Entscheidungen dabei: (1) Sitzen die Spieler links und rechts, steht die
@@ -2518,20 +2484,6 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       ein alter Bahnhof am Canyonpfad. Auf der Hochebene geht die grüne Wiese jetzt weich in den
       roten Sand über. Im Bayou führt der Quersteg jetzt bis zur Zypresseninsel (vorher waren drei
       Inseln zu Fuß nicht erreichbar).
-- [ ] RO37. **Neue Bildwünsche aus der Nacht (für Gemini und PixelLab, wenn du Zeit hast):**
-      (1) Sitzbilder in PixelLab (Bewegung „Sitting“) für Lily, Owen, Sam, Mrs. Calloway, Abernathy,
-      Carla, Dash, Slick und die Statisten 05, 06, 07, 09, 11, 12, 13, 14, 16 und 18; heute sitzen
-      sie mit dem Standbild. (2) Rettungsboot in Halterungen an der Fähre, 48 × 32 Pixel. (3) Rasthaus
-      mit verschneitem Dach, 128 × 144, gleicher Umriss wie das heutige. (4) Schulturnhalle für die
-      Hochebene, 160 × 144 (heute eine Scheune mit Schild). (5) Glücksrad für den Jahrmarkt, 48 × 64.
-      (6) Größerer Pavillon in Riverton, 176 × 208 (offener Pavillon mit Geländer). (7) Alter Bahnhof aus Backstein
-      als Museum in Ironwood, 160 × 144. (8) Breitere Werkskantine für Ironwood, 352 × 224 (heute eine
-      1,7-fach vergrößerte Halle, die gröber gepixelt wirkt). Alle Bilder von schräg oben wie die
-      übrigen Gebäude; die fertigen Gemini-Aufträge schicke ich dir im Chat.
-      Außerdem (umgesetzt, Widerspruch genügt): Die Schleusentore in Lockport sind jetzt
-      Fußgängerstege mit Geländer und einem breiten „GESPERRT“-Bock statt des flachen Bretts (R133).
-      Deine Rückmeldungssammlung ist gepflegt: 145 von 149 Punkten sind erledigt oder überholt;
-      offen sind nur die Sitzbilder (oben); das Diner in Maple Falls bleibt mit dem Plattenweg wie bestätigt.
 - [ ] RO38. **Dialogprüfung aller Akte (17.11.2026, umgesetzt, Widerspruch genügt):** Vier Chats haben
       alle 71 Dialogdateien darauf geprüft, ob jede Figur im Moment passend spricht (erstes Treffen
       wie mit einem Fremden, kein Wissen vor dem Ereignis, Rückbezüge nur, wenn es passiert ist,
@@ -2648,16 +2600,6 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       (Kartenarbeit). Schon so umgesetzt, Widerspruch genügt.
       **Antwort:** „RO43 ok“ oder „RO43: größer zeichnen“.
 
-- [ ] RO44. **Bildwünsche für Gemini und PixelLab (20.11.2026, abends)**
-      1. Gartentor für den dunklen Eisenzaun in Maple Falls: zwei Kacheln breit (32 × 16 Pixel),
-         Stäbe wie der Zaun, zwei schmale Pfosten außen, einmal geschlossen und einmal offen
-         (Flügel nach innen geklappt). Damit bekommen die vier Pforten wieder ein Tor.
-      2. Wahlweise ein Tor für den hellen Lattenzaun (Weg Riverton–Ironwood), gleiche Maße,
-         geschlossen und offen; bis dahin bleibt dort das Hoftor.
-      3. Porträts für Owen Fisk und Ivy (PixelLab, wie die anderen Porträts): Sie fehlen und
-         bleiben im Abspann bisher leer.
-      **Antwort:** Bilder hochladen oder „RO44: 2 nicht nötig“.
-
 - [ ] RO45. **Mira und Big Joe sitzen jetzt anders als im Roman (21.11.2026)**
       Im Spiel saßen elf Figuren laut Text, standen aber auf der Karte; neun sitzen jetzt dort, wo
       der Text es sagt. Bei zweien passte der Text nicht zur Karte, deshalb ist der Satz im Spiel
@@ -2669,51 +2611,29 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Tisch unter Mira beziehungsweise eine eigens gezeichnete Kiste für Big Joe.
       **Antwort:** „RO45 ok“ oder „RO45: Tisch/Kiste“.
 
-- [ ] RO46. **Alle Figuren im Stil des Coachs neu erstellen (21.11.2026)**
-      Gemessen: Von 37 PixelLab-Figuren sind 32 chibi wie Coach und Held (Kopf etwa die Hälfte der
-      Höhe). Ambrose, der junge Ambrose, Carla (Dutt, Jeansjacke) und Jo (Kapuze) sind realistisch
-      gebaut (Kopf etwa ein Drittel), Victor im Pullover liegt dazwischen. Grund: PixelLab streut
-      bei Wörtern wie „thin“, „slim“ oder „long coat“. Dazu laufen noch 119 Figuren mit den alten
-      LimeZu-Bildern (79 benannte Figuren und 40 Statistenbögen). Der Plan mit Kontaktbogen und
-      fertigen Prompts im Stil des Coachs (Kopfanteil 0,45 bis 0,50) liegt dir als HTML-Seite im
-      Chat vor; ein neues Werkzeug misst jede neue Figur nach.
-      Reihenfolge: 1. Hauptfiguren, die anders aussehen (junger Ambrose, Victor im Pullover);
-      2. Hauptfiguren mit alten Bildern (27, nach Akt); 3. Carla und Jo; 4. Nebenfiguren mit alten
-      Bildern (52); 5. wahlweise die 25 Figuren, die schon nah am Coach sind (mit dem Helden);
-      6. Statisten als 17 Typen (Passanten, Dienst, Stadt, Draußen, Erinnerungen); 7. Ambrose.
-      Aufwand ohne Stufe 5: 101 Bögen, etwa 636 Generierungen; mit Stufe 5: 126 und etwa 793.
-      Je Figur Pflicht: Stehen in 4 Richtungen und Laufen 4 × 6; Sitzen nur für 23 Figuren in den
-      gebrauchten Richtungen (links und rechts spiegelbar). Liegen und den Geist macht die App.
-      Größe: Heute sind Held und Erwachsene fast gleich groß (30 gegen 30 bis 31 Pixel). Damit
-      Erwachsene sichtbar größer sind, Ziel: Erwachsene 30 bis 31, Alte 29 bis 30, Jugendliche
-      und der Held 27 bis 28, Kinder 21 bis 23. Clover (12 Jahre) ist heute wie eine Erwachsene
-      gezeichnet.
-      Empfehlung: so vorgehen, mit Stufe 5, damit Held, Sam, Victor und Juno die neue Größe
-      bekommen; Ambrose ebenfalls chibi wie alle, den Geisterschimmer legt die App darüber.
-      Für die Statisten-Typen passt der Hauptchat die App an, sobald die ersten Bögen kommen.
-      **Antwort:** „RO46 ok“ oder „RO46: ohne Stufe 5“ / „RO46: Ambrose bleibt anders“.
-
 - [ ] RO47. **Kira „kommt vom Bus gerannt“, aber auf der Hochebene steht kein Bus (21.11.2026)**
       Im Spiel verschwindet Kira kurz von ihrem Steintisch und rennt von links heran.
       Empfehlung: so lassen, der Bus ist im Text nur erwähnt. Schon so umgesetzt, Widerspruch
       genügt. Alternative: einen Bus an den Weg zur Schule stellen.
       **Antwort:** „RO47 ok“ oder „RO47: Bus“.
 
-- [ ] RO48. **Tiere in PixelLab (21.11.2026)**
-      Von 406 Tierstellen zeigen 99 ein Ersatztier (Falke als Krähe, Eichhörnchen als Hase,
-      Roadrunner als Huhn) und 61 gar nichts (Eidechse, Ratten, Fledermäuse, Alligator, Frosch …).
-      Empfehlung: die passenden LimeZu-Tiere behalten und 38 Arten in PixelLab neu machen, zuerst
-      die acht mit Rolle in der Geschichte (Eidechse, Falke, Specht, Pelikan, Libelle, Murmeltier,
-      Alligator Bernard, Delfin), zusammen 198 Generierungen. Vierbeiner als „Quadruped“, alles
-      andere als „Custom“, v3. Die Seite mit Skizze, Prompt, Typ und Animationen je Art liegt dir im
-      Chat vor. Die App lädt PixelLab-Tiere, sobald die ersten da sind.
-      **Antwort:** „RO48 ok“ oder „RO48: nur Vorrang 1“.
-
 - [ ] RO50. **Größe des Hundes (23.11.2026)**
       Der Hund ist heute 13 Pixel hoch und reicht einem Erwachsenen etwa bis zum Gürtel. Bis zur
       Hüfte wären es 9 Pixel. Vergleichsfotos im privaten Repository unter tierprobe/fotos/index.html.
       Empfehlung: 13 lassen, ein kleinerer Hund wirkt neben den großköpfigen Figuren wie eine Katze.
       **Antwort:** „RO50 13“ oder „RO50 9“.
+- [ ] RO52. **Mappe 15: alle offenen Bildaufträge (24.11.2026)**
+      Die Mappe „15_Bildauftraege_offen_24-11.html“ (im Chat) ersetzt alle älteren Bildmappen und
+      die Rückfragen RO10, RO16, RO18, RO22, RO27, RO37, RO44, RO46 und RO48 (erledigt durch deine
+      PixelLab-Lieferungen oder in die Mappe übernommen). Je Auftrag: Prompt zum Kopieren, Maße,
+      Ablage in ki-roh/. Nötig: PixelLab 3 (Dime neu, Liegebilder Lucia und Oma Ruth, Gideon als
+      Schmied), Gemini 54 (zuerst die vier Bilder der Einleitung von Akt 1: Fahrt, Haus, Wohnzimmer,
+      Kiste der Whitlocks; dann Victorias Porträt, die Fundbilder des Hauptwegs, Porträts von Zoe,
+      Imani, Benji und ein neues Blatt für Hector). Freiwillig: Finch-Figuren, Bretter je Ort und
+      77 Porträtblätter für Figuren mit altem Sprechbogen. Bei Dime und neun Figuren ohne eigenes
+      Bild (Ruben, Henrik, Imogen, Marian Shaw, Noor, Mama Bear, Tess Ferris, Wren, Ike) ist das
+      Aussehen aus Rolle und Ort vorgeschlagen; ändere es gern.
+      **Antwort:** Bilder nach ki-roh/ hochladen; Nummern, die du nicht willst, kurz nennen.
 - [ ] RO51. **Im Tagesablauf stehen statt sitzen (24.11.2026, umgesetzt, Widerspruch genügt)**
       Für 54 Figuren fehlte ein Sitzbild für ihren Feierabend (Bänke, Diner, Kantine, Saloon,
       U-Bahn). Keines der Gespräche verlangt, dass sie dort sitzen. Damit du nicht 54 Zustände in

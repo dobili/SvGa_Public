@@ -8111,3 +8111,17 @@ geändertes Verhalten; nach jedem Schritt alle Prüfungen (Vitest, Build, Playwr
   „Browser“ brauchte über den Ubuntu-Spiegel bis 6 Minuten und lief einmal in die Grenze von 12
   Minuten. Browser liegen jetzt je Playwright-Version im Cache, die .deb-Dateien der Systempakete
   je Runner-Abbild; fehlt der Cache, lädt das Skript übers Netz mit Wiederholungen.
+
+## 24.11.2026 – Bildaufträge zusammengefasst (Mappe 15)
+
+- RO10 und RO46 (Figuren neu im Stil des Coachs): erledigt durch den PixelLab-Import vom 23.11.;
+  alle Figurenbögen sind PixelLab-Bögen, einzig Dime fehlt (Mappe 15, P1).
+- RO48 (Tiere in PixelLab): erledigt, alle Arten des Tierplans haben Bögen (tierarten.json).
+- RO16, RO22, RO27: alle damals bestellten Bilder liegen im Paket; neu offen sind nur sechs
+  `#bild`-Marken vom 19.11. (Mappe 15).
+- RO18: Porträts 28 bis 34 da, Hectors Blatt (sechs gleiche Felder) in Mappe 15.
+- RO37: Rettungsboot, Glücksrad, Turnhalle, Pavillon da; Sitzbilder durch RO51 überholt;
+  Kantine, Bahnhofsmuseum, Rasthaus im Schnee in Mappe 15.
+- RO44: Porträts Owen und Ivy da; die beiden Tore in Mappe 15.
+- Heldin braucht keinen Bodensitz, Victoria keine Sitz- oder Liegebilder (figurenzustaende).
+

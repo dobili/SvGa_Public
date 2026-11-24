@@ -1,3 +1,20 @@
+Stand: 24.11.2026, Mittag (Haupt-Chat, Schach-Abenteuer): **Nachtrunde fertig, beta f2985f1c.**
+
+- Laufbahnen: Statisten auf schmalen Pfaden an den Rand (laufbahn.py, Dauertest über alle Szenen),
+  Landvermesser am Kanalweg versetzt; Diner-Tür über ein höheres Fassadenbild (privat 7c810644).
+- Fortgeschickte Figuren kommen nicht mehr über die Uhr zurück (fortgeschickte()); Juno folgt der
+  Geschichte (folgt_geschichte); Joggerin wieder Tessa.
+- Kartenwahl quer: Doppeltipp trifft „Zurück“ nicht mehr (useKurzsperre); Mamas Partie in der Kantine
+  und Odettes Flohmarkt mit Rückmeldung statt Neustart (Ankunftsruhe nur bei Übergängen).
+- Eilige und schwache Durchläufe Akt 1 bis 4 ohne weiteren Befund.
+- RO51 (Stehen statt Sitzen) vom Autor abgelehnt: Die Figuren sollen wieder sitzen; Sitzbilder
+  (etwa 54) in Bildauftragsmappe 15 (scratchpad, an den Autor geschickt), Rückfrage RO52.
+
+**Nächster Schritt:** mittel-4 hat drei fertige Commits (a4fb9b6e Rückbau RO51, 69718037
+`figurenzustaende --sitzauftrag`, ff5de63f Ansprechprüfung aller Karten), darf aber erst pushen,
+wenn der Autor es in dessen Chat erlaubt. Danach mischen, Gate, beta. Warten auf Bilder aus Mappe 15
+und Tests N2666 bis N2704. Nichts nach `main`.
+
 Stand: 24.11.2026, 2 Uhr (Haupt-Chat, Schach-Abenteuer): **Nachtrunde Teil 1 auf beta (76e9b9de).**
 
 - Kartenänderungen des Autors vom 20.11. übernommen (Dreiwege, 20 von 24 Szenen ganz, Rest

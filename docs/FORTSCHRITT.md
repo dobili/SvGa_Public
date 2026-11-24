@@ -1,3 +1,21 @@
+Stand: 24.11.2026, abends (Haupt-Chat, Schach-Abenteuer): **Welle 3, Ambrose und mittel-4 auf beta (743f6545).**
+
+- Welle 3 (mittel-2): Jahreszeit je Außenkarte (Süden winter_mild ohne Schnee, auch Port Delacroix;
+  Schnee nur Norden und Berge), Wasserton je Karte; Dauerprüfung jahreszeit.
+- Ambrose als Begleiter: erscheint halb durchsichtig neben dem Helden, 126 Blickpunkte
+  (ambrose_blickpunkte.json, ambrose-blick.ink, Dauerprüfung blickpunkte), Flüstern in Dialogen
+  (#fluestern) und Antwort in Gedanken (#gedanke).
+- mittel-4: Rückbau RO51 (Figuren sitzen abends wieder), Werkzeug figurenzustaende mit
+  Sitzauftrag, Ansprechprobe; Boateng an der Bank [17,5], Ersatzfelder neu erzeugt.
+- Gate n69 grün bis auf die veralteten Ersatzfelder (behoben). Alle Querschnitt-Obergrenzen 0.
+- Mappe 17 für den Autor (scratchpad fuer_autor/17_Mappe_fuer_morgen_25-11.html).
+
+**Nächster Schritt:** Antworten des Autors zu Mappe 17 einarbeiten (RO50, RO52 bis RO55, Tests
+N2666 bis N2705), Bilder aus Mappe 15/16b einbauen. mittel-1 geht die 126 Blickpunkte im Spiel ab
+(Bericht und Patch offen). Offen: Schilder EN/DE nach RO53.6, Lucia und Ngata sitzen (zweite Bank
+auf der Felsnase), etwa 900 mittlere Kartenblick-Funde (neuer Blick nach dem Spielen des Autors).
+Nichts nach `main`.
+
 Stand: 24.11.2026, 17 Uhr (Haupt-Chat, Schach-Abenteuer): **Kartenblick Welle 1 und 2 auf beta.**
 
 - Kartenblick: alle 128 Karten aus menschlicher Sicht begutachtet (7 Gutachter, ~1050 Funde,

@@ -15,7 +15,7 @@
       "portDelacroix.turnhalle@19,13": [19, 12]
     },
     "boateng": {
-      "cedarCreek.aussen@17,6": [17, 7]
+      "cedarCreek.aussen@17,5": [17, 4]
     },
     "celeste": {
       "portDelacroix.aussen@5,14": [5, 15]
@@ -68,14 +68,8 @@
     "henri": {
       "portDelacroix.werkstatt@4,10": [4, 11]
     },
-    "joggerin": {
-      "wegMapleCedar.landstrasse@81,14": [81, 15]
-    },
     "juniper": {
       "wegPinewoodGhost.canyonrand@93,9": [92, 9]
-    },
-    "juno": {
-      "mapleFalls.park@22,24": [22, 25]
     },
     "kade": {
       "capitalArena.innenstadt@30,50": [29, 50],
@@ -94,18 +88,12 @@
     "lou": {
       "portDelacroix.aussen@4,14": [4, 15]
     },
-    "lucia": {
-      "sternwarte.felsnase@2,7": [2, 8]
-    },
     "marcus": {
       "capitalArena.innenstadt@30,51": [30, 49],
       "capitalArena.ubahnhof@3,9": [3, 10]
     },
     "mira": {
       "desertSprings.aussen@20,6": [19, 6]
-    },
-    "ngata": {
-      "sternwarte.felsnase@2,5": [1, 5]
     },
     "odette": {
       "wegGhostCapital.seeufer@108,19": [108, 20]

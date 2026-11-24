@@ -16012,27 +16012,32 @@
      "name": "wds6Ortsschild",
      "type": "moebel",
      "x": 2272,
-     "y": 208,
+     "y": 211,
      "width": 16,
-     "height": 32,
+     "height": 27,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 232
+       "value": 230
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "zuschnitt",
+       "type": "string",
+       "value": "0,0,0,5"
       }
      ]
     },
     {
      "id": 55,
-     "name": "wds6Bank",
+     "name": "ca7BankGarten",
      "type": "moebel",
      "x": 80,
      "y": 304,
@@ -16058,21 +16063,26 @@
      "name": "wds6Wegweiser",
      "type": "moebel",
      "x": 32,
-     "y": 288,
+     "y": 291,
      "width": 16,
-     "height": 32,
+     "height": 27,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 312
+       "value": 310
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "zuschnitt",
+       "type": "string",
+       "value": "0,0,0,5"
       }
      ]
     },

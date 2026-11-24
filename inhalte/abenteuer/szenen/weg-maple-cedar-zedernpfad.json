@@ -10,7 +10,15 @@
     "n": "nadelstreu"
   },
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["natur", "rustikal", "klassisch", "laendlich", "landhaus", "einfach", "modern"],
+  "stil": [
+    "natur",
+    "rustikal",
+    "klassisch",
+    "laendlich",
+    "landhaus",
+    "einfach",
+    "modern"
+  ],
   "raster": [
     "################################################################################################################################################################################################################################################",
     "#nnnnnnnnnn.nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn....nnnnnnnnnnnn...nnnnnnnnnnnnnnnnnnnnnn..nnnnnnnnnnnnnnnnnn.nnnnnnnnnnnn....................................nnnnnnnnnnnn.nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn.nnnnnn.nnnnn..nnnnnnnnn#",
@@ -113,15 +121,15 @@
       "feld": [148, 9]
     },
     {
-      "moebel": "wg9SturmholzFlach",
+      "moebel": "baumstumpf",
       "feld": [85, 15]
     },
     {
-      "moebel": "wg9SturmholzFlach",
+      "moebel": "baumstumpf",
       "feld": [86, 16]
     },
     {
-      "moebel": "wg9SturmholzFlach",
+      "moebel": "baumstumpf",
       "feld": [87, 15]
     },
     {

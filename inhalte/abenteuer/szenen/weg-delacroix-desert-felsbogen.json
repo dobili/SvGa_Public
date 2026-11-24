@@ -52,7 +52,9 @@
     },
     {
       "moebel": "wg5Wegweiser",
-      "feld": [6, 18]
+      "feld": [6, 18],
+      "zuschnitt": [0, 0, 0, 3],
+      "versatz": [0, 3]
     },
     {
       "moebel": "dd6KaktusKlein",
@@ -119,48 +121,65 @@
       "feld": [10, 18]
     },
     {
-      "moebel": "fels",
-      "feld": [105, 13]
+      "moebel": "wdsGeroell",
+      "feld": [105, 13],
+      "massstab": 0.75
     },
     {
-      "moebel": "felsKlein",
-      "feld": [116, 13]
+      "moebel": "wdsGeroell",
+      "feld": [116, 13],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
-      "moebel": "fels",
-      "feld": [127, 13]
+      "moebel": "wdsGeroell",
+      "feld": [127, 13],
+      "massstab": 0.75
     },
     {
-      "moebel": "felsKlein",
-      "feld": [61, 21]
+      "moebel": "wdsGeroell",
+      "feld": [61, 21],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
-      "moebel": "fels",
-      "feld": [72, 21]
+      "moebel": "wdsGeroell",
+      "feld": [72, 21],
+      "massstab": 0.75
     },
     {
-      "moebel": "felsKlein",
-      "feld": [83, 21]
+      "moebel": "wdsGeroell",
+      "feld": [83, 21],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
-      "moebel": "felsKlein",
-      "feld": [25, 7]
+      "moebel": "wdsGeroell",
+      "feld": [25, 7],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
-      "moebel": "fels",
-      "feld": [36, 7]
+      "moebel": "wdsGeroell",
+      "feld": [36, 7],
+      "massstab": 0.75
     },
     {
-      "moebel": "felsKlein",
-      "feld": [47, 7]
+      "moebel": "wdsGeroell",
+      "feld": [47, 7],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
-      "moebel": "fels",
-      "feld": [5, 19]
+      "moebel": "wdsGeroell",
+      "feld": [5, 19],
+      "massstab": 0.75
     },
     {
-      "moebel": "felsKlein",
-      "feld": [16, 19]
+      "moebel": "wdsGeroell",
+      "feld": [16, 19],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
       "moebel": "dd6Geierkreis",
@@ -611,10 +630,12 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "felsKlein",
+      "moebel": "wdsGeroell",
       "feld": [25, 23],
       "vorn": true,
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
       "moebel": "dd6SteinFlach",
@@ -635,22 +656,28 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "felsKlein",
+      "moebel": "wdsGeroell",
       "feld": [99, 7],
       "vorn": true,
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
-      "moebel": "felsKlein",
+      "moebel": "wdsGeroell",
       "feld": [109, 21],
       "vorn": true,
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
-      "moebel": "felsKlein",
+      "moebel": "wdsGeroell",
       "feld": [89, 5],
       "vorn": true,
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
       "moebel": "dd6SteinFlach",
@@ -659,22 +686,27 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "felsKlein",
+      "moebel": "wdsGeroell",
       "feld": [132, 6],
       "vorn": true,
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
-      "moebel": "fels",
+      "moebel": "wdsGeroell",
       "feld": [67, 5],
       "vorn": true,
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "massstab": 0.75
     },
     {
-      "moebel": "felsKlein",
+      "moebel": "wdsGeroell",
       "feld": [123, 21],
       "vorn": true,
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
       "moebel": "dd6Saguaro",
@@ -695,10 +727,12 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "felsKlein",
+      "moebel": "wdsGeroell",
       "feld": [8, 10],
       "vorn": true,
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
       "moebel": "dd6SteinFlach",
@@ -707,10 +741,12 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "felsKlein",
+      "moebel": "wdsGeroell",
       "feld": [113, 7],
       "vorn": true,
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -719,10 +755,12 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "felsKlein",
+      "moebel": "wdsGeroell",
       "feld": [63, 10],
       "vorn": true,
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -737,10 +775,11 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "fels",
+      "moebel": "wdsGeroell",
       "feld": [71, 6],
       "vorn": true,
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -761,16 +800,20 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "felsKlein",
+      "moebel": "wdsGeroell",
       "feld": [59, 7],
       "vorn": true,
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
-      "moebel": "felsKlein",
+      "moebel": "wdsGeroell",
       "feld": [69, 8],
       "vorn": true,
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -779,16 +822,19 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "felsKlein",
+      "moebel": "wdsGeroell",
       "feld": [125, 5],
       "vorn": true,
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
-      "moebel": "fels",
+      "moebel": "wdsGeroell",
       "feld": [105, 7],
       "vorn": true,
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "massstab": 0.75
     },
     {
       "moebel": "dd6SteinFlach",
@@ -797,40 +843,47 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "fels",
+      "moebel": "wdsGeroell",
       "feld": [9, 5],
       "vorn": true,
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "massstab": 0.75
     },
     {
-      "moebel": "felsKlein",
+      "moebel": "wdsGeroell",
       "feld": [117, 7],
       "vorn": true,
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
-      "moebel": "fels",
+      "moebel": "wdsGeroell",
       "feld": [120, 23],
       "vorn": true,
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "massstab": 0.75
     },
     {
-      "moebel": "fels",
+      "moebel": "wdsGeroell",
       "feld": [117, 21],
       "vorn": true,
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "massstab": 0.75
     },
     {
-      "moebel": "fels",
+      "moebel": "wdsGeroell",
       "feld": [132, 22],
       "vorn": true,
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "massstab": 0.75
     },
     {
-      "moebel": "fels",
+      "moebel": "wdsGeroell",
       "feld": [102, 7],
       "vorn": true,
-      "bauteil_ok": true
+      "bauteil_ok": true,
+      "massstab": 0.75
     }
   ],
   "ausloeser": [

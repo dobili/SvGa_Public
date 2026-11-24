@@ -85,7 +85,9 @@
     },
     {
       "moebel": "mf4Wegweiser",
-      "feld": [143, 11]
+      "feld": [143, 11],
+      "zuschnitt": [0, 0, 0, 5],
+      "versatz": [0, 3]
     },
     {
       "moebel": "cp8Finkenzeichen",
@@ -195,7 +197,7 @@
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [81, 1]
+      "feld": [79, 1]
     },
     {
       "moebel": "wg4Busch",
@@ -203,7 +205,7 @@
     },
     {
       "moebel": "pw7TanneHoch",
-      "feld": [84, 5]
+      "feld": [81, 5]
     },
     {
       "moebel": "pw7Kiefer",
@@ -235,7 +237,7 @@
     },
     {
       "moebel": "pw7Tanne",
-      "feld": [87, 1]
+      "feld": [77, 4]
     },
     {
       "moebel": "wg4Busch",
@@ -286,8 +288,10 @@
       "feld": [93, 1]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [97, 1]
+      "moebel": "wdsGeroell",
+      "feld": [97, 1],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
       "moebel": "dd6Saguaro",
@@ -302,8 +306,10 @@
       "feld": [126, 1]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [142, 1]
+      "moebel": "wdsGeroell",
+      "feld": [142, 1],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
       "moebel": "dd6Saguaro",
@@ -314,24 +320,30 @@
       "feld": [96, 6]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [97, 9]
+      "moebel": "wdsGeroell",
+      "feld": [97, 9],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
       "moebel": "dd6KaktusBluehend",
       "feld": [90, 7]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [130, 12]
+      "moebel": "wdsGeroell",
+      "feld": [130, 12],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
       "moebel": "dd6Saguaro",
       "feld": [108, 13]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [125, 16]
+      "moebel": "wdsGeroell",
+      "feld": [125, 16],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
       "moebel": "wg4BlumeGelb",
@@ -370,8 +382,9 @@
       "feld": [87, 6]
     },
     {
-      "moebel": "wg4BlumeGelb",
-      "feld": [87, 8]
+      "moebel": "dd6KaktusKlein",
+      "feld": [87, 8],
+      "versatz": [0, -16]
     },
     {
       "moebel": "wg4BlumeRot",
@@ -430,8 +443,9 @@
       "feld": [79, 7]
     },
     {
-      "moebel": "wg4BlumeGelb",
-      "feld": [87, 10]
+      "moebel": "dd6KaktusKlein",
+      "feld": [87, 10],
+      "versatz": [0, -16]
     },
     {
       "moebel": "wg4BlumeRot",
@@ -498,24 +512,32 @@
       "feld": [84, 10]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [12, 28]
+      "moebel": "wdsGeroell",
+      "feld": [12, 28],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
       "moebel": "dd6KaktusKlein",
       "feld": [30, 28]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [47, 28]
+      "moebel": "wdsGeroell",
+      "feld": [47, 28],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
-      "moebel": "felsKlein",
-      "feld": [85, 28]
+      "moebel": "wdsGeroell",
+      "feld": [85, 28],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
-      "moebel": "felsKlein",
-      "feld": [123, 28]
+      "moebel": "wdsGeroell",
+      "feld": [123, 28],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
       "moebel": "dd6Kaktus",
@@ -530,16 +552,20 @@
       "feld": [123, 6]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [145, 6]
+      "moebel": "wdsGeroell",
+      "feld": [145, 6],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
       "moebel": "dd6KaktusBluehend",
       "feld": [96, 3]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [126, 9]
+      "moebel": "wdsGeroell",
+      "feld": [126, 9],
+      "massstab": 0.75,
+      "spiegeln": true
     },
     {
       "moebel": "dd6Saguaro",

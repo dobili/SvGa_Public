@@ -130,15 +130,19 @@
     },
     {
       "moebel": "wds6Ortsschild",
-      "feld": [142, 13]
+      "feld": [142, 13],
+      "zuschnitt": [0, 0, 0, 5],
+      "versatz": [0, 3]
     },
     {
-      "moebel": "wds6Bank",
+      "moebel": "ca7BankGarten",
       "feld": [5, 19]
     },
     {
       "moebel": "wds6Wegweiser",
-      "feld": [2, 18]
+      "feld": [2, 18],
+      "zuschnitt": [0, 0, 0, 5],
+      "versatz": [0, 3]
     },
     {
       "moebel": "wds6Saguaro",

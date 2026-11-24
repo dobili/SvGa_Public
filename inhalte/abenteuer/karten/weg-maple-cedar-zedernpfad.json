@@ -25270,7 +25270,7 @@
     },
     {
      "id": 33,
-     "name": "wg9SturmholzFlach",
+     "name": "baumstumpf",
      "type": "moebel",
      "x": 1360,
      "y": 240,
@@ -25282,18 +25282,18 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 248
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
     {
      "id": 34,
-     "name": "wg9SturmholzFlach",
+     "name": "baumstumpf",
      "type": "moebel",
      "x": 1376,
      "y": 256,
@@ -25305,18 +25305,18 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 264
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
     {
      "id": 35,
-     "name": "wg9SturmholzFlach",
+     "name": "baumstumpf",
      "type": "moebel",
      "x": 1392,
      "y": 240,
@@ -25328,12 +25328,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 248
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },

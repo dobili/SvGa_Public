@@ -74,8 +74,9 @@
       "feld": [6, 1]
     },
     {
-      "moebel": "fels",
-      "feld": [19, 3]
+      "moebel": "wdsGeroell",
+      "feld": [19, 3],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -90,8 +91,9 @@
       "feld": [35, 4]
     },
     {
-      "moebel": "fels",
-      "feld": [38, 7]
+      "moebel": "wdsGeroell",
+      "feld": [38, 7],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -106,8 +108,9 @@
       "feld": [56, 3]
     },
     {
-      "moebel": "fels",
-      "feld": [64, 1]
+      "moebel": "wdsGeroell",
+      "feld": [64, 1],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -122,8 +125,9 @@
       "feld": [90, 6]
     },
     {
-      "moebel": "fels",
-      "feld": [95, 2]
+      "moebel": "wdsGeroell",
+      "feld": [95, 2],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -134,8 +138,9 @@
       "feld": [109, 3]
     },
     {
-      "moebel": "fels",
-      "feld": [112, 3]
+      "moebel": "wdsGeroell",
+      "feld": [112, 3],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -150,8 +155,9 @@
       "feld": [133, 2]
     },
     {
-      "moebel": "fels",
-      "feld": [137, 3]
+      "moebel": "wdsGeroell",
+      "feld": [137, 3],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -166,8 +172,9 @@
       "feld": [5, 5]
     },
     {
-      "moebel": "fels",
-      "feld": [9, 8]
+      "moebel": "wdsGeroell",
+      "feld": [9, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -182,8 +189,9 @@
       "feld": [23, 8]
     },
     {
-      "moebel": "fels",
-      "feld": [34, 6]
+      "moebel": "wdsGeroell",
+      "feld": [34, 6],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -198,8 +206,9 @@
       "feld": [49, 6]
     },
     {
-      "moebel": "fels",
-      "feld": [51, 8]
+      "moebel": "wdsGeroell",
+      "feld": [51, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -218,8 +227,9 @@
       "feld": [118, 8]
     },
     {
-      "moebel": "fels",
-      "feld": [122, 8]
+      "moebel": "wdsGeroell",
+      "feld": [122, 8],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -234,8 +244,9 @@
       "feld": [140, 6]
     },
     {
-      "moebel": "fels",
-      "feld": [143, 7]
+      "moebel": "wdsGeroell",
+      "feld": [143, 7],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -246,8 +257,9 @@
       "feld": [23, 11]
     },
     {
-      "moebel": "fels",
-      "feld": [30, 10]
+      "moebel": "wdsGeroell",
+      "feld": [30, 10],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -262,12 +274,14 @@
       "feld": [44, 10]
     },
     {
-      "moebel": "fels",
-      "feld": [49, 9]
+      "moebel": "wdsGeroell",
+      "feld": [49, 9],
+      "massstab": 0.75
     },
     {
-      "moebel": "fels",
-      "feld": [126, 9]
+      "moebel": "wdsGeroell",
+      "feld": [126, 9],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -286,8 +300,9 @@
       "feld": [81, 16]
     },
     {
-      "moebel": "fels",
-      "feld": [108, 6]
+      "moebel": "wdsGeroell",
+      "feld": [108, 6],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -314,8 +329,9 @@
       "feld": [56, 18]
     },
     {
-      "moebel": "fels",
-      "feld": [61, 18]
+      "moebel": "wdsGeroell",
+      "feld": [61, 18],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -330,8 +346,9 @@
       "feld": [78, 20]
     },
     {
-      "moebel": "fels",
-      "feld": [87, 19]
+      "moebel": "wdsGeroell",
+      "feld": [87, 19],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -346,8 +363,9 @@
       "feld": [105, 18]
     },
     {
-      "moebel": "fels",
-      "feld": [135, 18]
+      "moebel": "wdsGeroell",
+      "feld": [135, 18],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -362,8 +380,9 @@
       "feld": [146, 19]
     },
     {
-      "moebel": "fels",
-      "feld": [4, 21]
+      "moebel": "wdsGeroell",
+      "feld": [4, 21],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -378,8 +397,9 @@
       "feld": [22, 23]
     },
     {
-      "moebel": "fels",
-      "feld": [29, 23]
+      "moebel": "wdsGeroell",
+      "feld": [29, 23],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -394,8 +414,9 @@
       "feld": [56, 23]
     },
     {
-      "moebel": "fels",
-      "feld": [63, 21]
+      "moebel": "wdsGeroell",
+      "feld": [63, 21],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -410,8 +431,9 @@
       "feld": [81, 21]
     },
     {
-      "moebel": "fels",
-      "feld": [89, 24]
+      "moebel": "wdsGeroell",
+      "feld": [89, 24],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -426,8 +448,9 @@
       "feld": [110, 21]
     },
     {
-      "moebel": "fels",
-      "feld": [112, 21]
+      "moebel": "wdsGeroell",
+      "feld": [112, 21],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -442,8 +465,9 @@
       "feld": [135, 22]
     },
     {
-      "moebel": "fels",
-      "feld": [138, 21]
+      "moebel": "wdsGeroell",
+      "feld": [138, 21],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -458,8 +482,9 @@
       "feld": [23, 27]
     },
     {
-      "moebel": "fels",
-      "feld": [28, 25]
+      "moebel": "wdsGeroell",
+      "feld": [28, 25],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -474,8 +499,9 @@
       "feld": [47, 25]
     },
     {
-      "moebel": "fels",
-      "feld": [52, 26]
+      "moebel": "wdsGeroell",
+      "feld": [52, 26],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -490,8 +516,9 @@
       "feld": [73, 27]
     },
     {
-      "moebel": "fels",
-      "feld": [80, 26]
+      "moebel": "wdsGeroell",
+      "feld": [80, 26],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -506,8 +533,9 @@
       "feld": [128, 26]
     },
     {
-      "moebel": "fels",
-      "feld": [131, 27]
+      "moebel": "wdsGeroell",
+      "feld": [131, 27],
+      "massstab": 0.75
     },
     {
       "moebel": "dd6KaktusBluehend",
@@ -531,7 +559,9 @@
     },
     {
       "moebel": "mf4Wegweiser",
-      "feld": [143, 10]
+      "feld": [143, 10],
+      "zuschnitt": [0, 0, 0, 5],
+      "versatz": [0, 3]
     },
     {
       "moebel": "iwStrommast",
@@ -799,7 +829,15 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt", "verwittert"],
-  "stil": ["natur", "einfach", "laendlich", "klassisch", "industrie", "modern", "rustikal"],
+  "stil": [
+    "natur",
+    "einfach",
+    "laendlich",
+    "klassisch",
+    "industrie",
+    "modern",
+    "rustikal"
+  ],
   "toenung": "sepia",
   "abkuerzung_ok": "offenesGelaende"
 }

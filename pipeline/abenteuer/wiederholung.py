@@ -54,6 +54,7 @@ AUSNAHMEN: dict[tuple[str, str], str] = {
     ("lockport-gasthaus", "ld8Kegelbande"): "Bande der Kegelbahn aus gleichen Stücken (Reihenteil)",
     ("silicon-bay-akademie", "sb8Glaswand"): "Glaswand aus gleichen Stücken (Reihenteil)",
     ("capital-arena-halle", "ca7Brett"): "Turniersaal: gleiche Bretter auf den Tischen sind gewollt",
+    ("weg-riverton-ironwood-1", "iw5Schornstein"): "zwei gleiche Schlote einer Fabrik nebeneinander",
     ("weg-silicon-delacroix-deich", "sd6Sandsack"): "Sandsackwall am Deich aus gleichen Säcken (Reihenteil)",
 }
 

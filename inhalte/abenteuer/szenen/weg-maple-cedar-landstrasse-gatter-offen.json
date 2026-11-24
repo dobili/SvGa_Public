@@ -12,7 +12,15 @@
     "l": "landstrasse"
   },
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["natur", "rustikal", "klassisch", "laendlich", "landhaus", "einfach", "modern"],
+  "stil": [
+    "natur",
+    "rustikal",
+    "klassisch",
+    "laendlich",
+    "landhaus",
+    "einfach",
+    "modern"
+  ],
   "raster": [
     "####################################################ee##################################################################",
     "#...................................................ee.................................................................#",
@@ -30,8 +38,8 @@
     "#..................lllllll..........................ee.................................................................#",
     "#...............lllllllllllll.......................ee.................................................................#",
     "lllllllllllllllllllllllllllllllllllll...............ee...........lllllllllllllllllllllllllllllllllllllllllllllllllllllll",
-    "llllllllllllllll.............lllllllllll............ee........llllllllllllllllllllllllllllllllllllllllllllllllllllllllll",
-    "lllllllllllll...................lllllllllll.........ee.....lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll",
+    "llllllllllllllll.......kk....lllllllllll............ee........llllllllllllllllllllllllllllllllllllllllllllllllllllllllll",
+    "lllllllllllll..........kk.......lllllllllll.........ee.....lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll",
     "#.......................................llllllllllllllllllllll.................................kk......................#",
     "#..........................................llllllllllllllll.............................kkkkkkkkkkk....................#",
     "~~~~~~~~~.....................................llllllllll................................kkkkkkkkkkk...................~~",
@@ -3129,7 +3137,7 @@
       "feld": [45, 17]
     },
     {
-      "moebel": "wg4Aepfel",
+      "moebel": "wg4Aepfel1",
       "feld": [49, 17]
     },
     {
@@ -3557,7 +3565,7 @@
       "feld": [92, 12]
     },
     {
-      "moebel": "wg4Aepfel",
+      "moebel": "wg4Aepfel2",
       "auf": "stand",
       "versatz": [-14, 14]
     },

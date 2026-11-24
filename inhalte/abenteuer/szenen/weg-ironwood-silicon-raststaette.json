@@ -502,7 +502,9 @@
     },
     {
       "moebel": "ws5Wegweiser",
-      "feld": [103, 20]
+      "feld": [103, 20],
+      "zuschnitt": [0, 0, 0, 3],
+      "versatz": [0, 3]
     },
     {
       "moebel": "ws5Huette",
@@ -518,7 +520,9 @@
     },
     {
       "moebel": "ws5Schild",
-      "feld": [8, 15]
+      "feld": [8, 15],
+      "zuschnitt": [0, 0, 0, 3],
+      "versatz": [0, 3]
     },
     {
       "moebel": "ws5Strandgras",
@@ -707,7 +711,9 @@
     },
     {
       "moebel": "wsrTafel",
-      "feld": [131, 13]
+      "feld": [131, 13],
+      "zuschnitt": [0, 0, 0, 8],
+      "versatz": [0, 7]
     },
     {
       "moebel": "wsrPlanke5",

@@ -13145,9 +13145,9 @@
      "name": "wg5Wegweiser",
      "type": "moebel",
      "x": 96,
-     "y": 288,
+     "y": 291,
      "width": 16,
-     "height": 32,
+     "height": 29,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -13160,6 +13160,11 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "zuschnitt",
+       "type": "string",
+       "value": "0,0,0,3"
       }
      ]
     },
@@ -13533,11 +13538,11 @@
     },
     {
      "id": 40,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1680,
      "y": 208,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -13551,16 +13556,26 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
     {
      "id": 41,
-     "name": "felsKlein",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1856,
      "y": 208,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -13574,16 +13589,31 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "spiegeln",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
     {
      "id": 42,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 2032,
      "y": 208,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -13597,16 +13627,26 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
     {
      "id": 43,
-     "name": "felsKlein",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 976,
      "y": 336,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -13620,16 +13660,31 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "spiegeln",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
     {
      "id": 44,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1152,
      "y": 336,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -13643,16 +13698,26 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
     {
      "id": 45,
-     "name": "felsKlein",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1328,
      "y": 336,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -13666,16 +13731,31 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "spiegeln",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
     {
      "id": 46,
-     "name": "felsKlein",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 400,
      "y": 112,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -13689,16 +13769,31 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "spiegeln",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
     {
      "id": 47,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 576,
      "y": 112,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -13712,16 +13807,26 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
     {
      "id": 48,
-     "name": "felsKlein",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 752,
      "y": 112,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -13735,16 +13840,31 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "spiegeln",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
     {
      "id": 49,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 80,
      "y": 304,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -13758,16 +13878,26 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
     {
      "id": 50,
-     "name": "felsKlein",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 256,
      "y": 304,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -13781,6 +13911,21 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "spiegeln",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "#"
       }
      ]
     },
@@ -15820,11 +15965,11 @@
     },
     {
      "id": 139,
-     "name": "felsKlein",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 400,
      "y": 368,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -15838,6 +15983,16 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "spiegeln",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       }
      ]
     },
@@ -15912,11 +16067,11 @@
     },
     {
      "id": 143,
-     "name": "felsKlein",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1584,
      "y": 112,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -15930,16 +16085,26 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "spiegeln",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       }
      ]
     },
     {
      "id": 144,
-     "name": "felsKlein",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1744,
      "y": 336,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -15953,16 +16118,26 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "spiegeln",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       }
      ]
     },
     {
      "id": 145,
-     "name": "felsKlein",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1424,
      "y": 80,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -15976,6 +16151,16 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "spiegeln",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       }
      ]
     },
@@ -16004,11 +16189,11 @@
     },
     {
      "id": 147,
-     "name": "felsKlein",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 2112,
      "y": 96,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16022,16 +16207,26 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "spiegeln",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       }
      ]
     },
     {
      "id": 148,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1072,
      "y": 80,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16045,16 +16240,21 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       }
      ]
     },
     {
      "id": 149,
-     "name": "felsKlein",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1968,
      "y": 336,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16068,6 +16268,16 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "spiegeln",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       }
      ]
     },
@@ -16142,11 +16352,11 @@
     },
     {
      "id": 153,
-     "name": "felsKlein",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 128,
      "y": 160,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16160,6 +16370,16 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "spiegeln",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       }
      ]
     },
@@ -16188,11 +16408,11 @@
     },
     {
      "id": 155,
-     "name": "felsKlein",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1808,
      "y": 112,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16206,6 +16426,16 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "spiegeln",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       }
      ]
     },
@@ -16234,11 +16464,11 @@
     },
     {
      "id": 157,
-     "name": "felsKlein",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1008,
      "y": 160,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16252,6 +16482,16 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "spiegeln",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       }
      ]
     },
@@ -16303,11 +16543,11 @@
     },
     {
      "id": 160,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1136,
      "y": 96,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16321,6 +16561,11 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       }
      ]
     },
@@ -16395,11 +16640,11 @@
     },
     {
      "id": 164,
-     "name": "felsKlein",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 944,
      "y": 112,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16413,16 +16658,26 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "spiegeln",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       }
      ]
     },
     {
      "id": 165,
-     "name": "felsKlein",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1104,
      "y": 128,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16436,6 +16691,16 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "spiegeln",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       }
      ]
     },
@@ -16464,11 +16729,11 @@
     },
     {
      "id": 167,
-     "name": "felsKlein",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 2000,
      "y": 80,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16482,16 +16747,26 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "spiegeln",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       }
      ]
     },
     {
      "id": 168,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1680,
      "y": 112,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16505,6 +16780,11 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       }
      ]
     },
@@ -16533,11 +16813,11 @@
     },
     {
      "id": 170,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 144,
      "y": 80,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16551,16 +16831,21 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       }
      ]
     },
     {
      "id": 171,
-     "name": "felsKlein",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1872,
      "y": 112,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16574,16 +16859,26 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "spiegeln",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       }
      ]
     },
     {
      "id": 172,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1920,
      "y": 368,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16597,16 +16892,21 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       }
      ]
     },
     {
      "id": 173,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1872,
      "y": 336,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16620,16 +16920,21 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       }
      ]
     },
     {
      "id": 174,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 2112,
      "y": 352,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16643,16 +16948,21 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       }
      ]
     },
     {
      "id": 175,
-     "name": "fels",
+     "name": "wdsGeroell",
      "type": "moebel",
      "x": 1632,
      "y": 112,
-     "width": 16,
+     "width": 15,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -16666,6 +16976,11 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
       }
      ]
     }

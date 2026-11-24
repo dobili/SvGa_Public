@@ -9,7 +9,7 @@ im Feld ``untergrund``, worauf der Fuß gezeichnet ist (``gras``, ``wasser``; sp
 Regel (Außenkarten): Unter der unteren Kachelreihe des deckenden Teils (deckrahmen.py) liegt
 mehrheitlich der Boden aus ``untergrund``. Boden je Kachel wie im Kartenbild: Zeichen über ``boeden``,
 „.“ der Grundboden, „#“ am Rand der Boden dahinter, sonst ``wandart``. Teile mit ``auf`` (stehen auf
-einem anderen Teil) zählen nicht.
+einem anderen Teil) zählen nicht, ebenso Teile, deren Fuß ein ``zuschnitt`` unten abschneidet.
 Messen: ``python -m pipeline.abenteuer.untergrund --messen PRIVAT`` setzt ``untergrund`` im Katalog
 aus der Farbe der unteren zwei Bildreihen (mindestens ``ANTEIL`` der Bildpunkte grün oder blau, über
 mindestens ``BREIT`` der Bildbreite); Fehlgriffe stehen mit Grund in ``KEIN_FUSS``.
@@ -32,6 +32,7 @@ from pipeline.abenteuer.moebelliste import ORDNER, lade_moebel
 
 SZENEN = Path(__file__).resolve().parents[2] / "inhalte" / "abenteuer" / "szenen"
 ANTEIL, BREIT = 0.6, 0.5
+FUSS_ABGESCHNITTEN = 3  # so viele Pixel unten weg nehmen den Grasfuß von Schildern und Tafeln
 DECKEND_AB = 40
 DUNKEL, GRAU, WASSER_SATT = 0.22, 0.15, 0.3  # Hellwert und Sättigung (0 bis 1)
 # Arten ohne eigenen Fuß (Boden, Bauwerke, Fahrzeuge, Reihen) werden nicht gemessen.
@@ -86,13 +87,23 @@ def fusskacheln(stueck: dict, angabe: dict, rahmen: tuple) -> list[tuple[int, in
     return [(x, y) for x in range(x0, x1 + 1)]
 
 
+def ohne_fuss(objekt: dict) -> bool:
+    """Steht das Objekt auf einem anderen (``auf``) oder ist sein Fuß weggeschnitten?
+
+    Beispiel: Wegweiser mit ``zuschnitt`` [0, 0, 0, 3] → True (das Gras liegt in den unteren drei
+    Reihen; objektzuschnitt.py, ``versatz`` [0, 3] setzt den Pfosten wieder auf den Boden).
+    """
+    zuschnitt = objekt.get("zuschnitt") or [0, 0, 0, 0]
+    return bool(objekt.get("auf")) or zuschnitt[3] >= FUSS_ABGESCHNITTEN
+
+
 def pruefe_szene(name: str, szene: dict, katalog: dict, rahmen: dict) -> list[str]:
     """Teile mit ``untergrund``, deren Fuß mehrheitlich auf anderem Boden steht (nur außen)."""
     if szene.get("art") != "aussen":
         return []
     zeilen, befunde = raster(szene), []
     gesetzt, _ = platziere(szene, katalog)
-    auf = {o.get("id", f"{o['moebel']}@{i}") for i, o in enumerate(szene.get("objekte", [])) if o.get("auf")}
+    auf = {o.get("id", f"{o['moebel']}@{i}") for i, o in enumerate(szene.get("objekte", [])) if ohne_fuss(o)}
     for s in gesetzt:
         soll = katalog[s["name"]].get("untergrund")
         if not soll or s["id"] in auf or any(name.startswith(a) and s["name"] == m for a, m in AUSNAHMEN):

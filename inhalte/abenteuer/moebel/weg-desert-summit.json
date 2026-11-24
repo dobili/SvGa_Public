@@ -963,6 +963,17 @@
         "########################",
         "########################"
       ]
+    },
+    "wdsGeroell": {
+      "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Rock_Small_16x16.png",
+      "ausschnitt": [7, 10, 27, 32],
+      "breite": 20,
+      "hoehe": 22,
+      "kollision": true,
+      "art": "stein",
+      "zustand": "alt",
+      "stil": "natur",
+      "beschreibung": "Geröllstein ohne Grasfuß für Sand, Erde und Fels (AP7, 24.11.2026); in Szenen mit massstab 0.75 eine Kachel groß"
     }
   }
 }

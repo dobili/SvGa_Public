@@ -15,15 +15,15 @@ from pipeline.abenteuer import zusammenhang_enden as z
 from pipeline.abenteuer.deckrahmen import lade as lade_rahmen
 from pipeline.abenteuer.moebelliste import lade_moebel
 
-# Prüfung → höchstens so viele Befunde (Stand 24.11.2026; Ziel nach Welle 2: 0).
+# Prüfung → höchstens so viele Befunde (Stand 24.11.2026 nach AP7 Wegkarten; Ziel nach Welle 2: 0).
 OBERGRENZE = {
     "kronenhoehe": 0,
-    "zusammenhang_enden": 14,
-    "waldrand": 13,
-    "wiederholung": 60,
-    "untergrund": 239,
+    "zusammenhang_enden": 4,
+    "waldrand": 9,
+    "wiederholung": 51,
+    "untergrund": 64,
     "proportionen_aussen": 2,
-    "proportionen_unscharf": 9,
+    "proportionen_unscharf": 6,
 }
 
 

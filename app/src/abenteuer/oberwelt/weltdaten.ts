@@ -114,13 +114,13 @@ function figurennamen(karte: object): string[] {
  * Beispiel: Objekt „juno“, Sprite „figuren/juno.png“ → { juno: "blob:…" }.
  */
 async function figurenbilderFuer(
-  ort: Ortdaten,
+  spriteVon: (name: string) => string | undefined,
   karte: object,
   rivalin: boolean,
 ): Promise<Record<string, string>> {
   const paare = await Promise.all(
     figurennamen(karte).map(async (name) => {
-      const sprite = figurZu(ort, name)?.sprite;
+      const sprite = spriteVon(name);
       // Rivalin Victoria: ihr Bogen, solange er fehlt Victors (regeln/rivalform.ts).
       const ihrer = sprite ? rivalinbogen(sprite, rivalin) : null;
       const eigene = ihrer ? await figurenbildAdresse(ihrer) : null;
@@ -238,6 +238,7 @@ export async function ladeWelt(
       )
     : ohneVerborgene;
   const erinnerung = fund.ort.art === "erinnerung";
+  const spriteVon = (name: string) => spriteZu(daten.orte, fund.ort, name);
   const standbildindex = await ladeStandbildindex();
   const [stilbild, heldfigur, figurenbilder, moebel, hintergrund, belebungsbilder, geisterbilder] =
     await Promise.all([
@@ -245,7 +246,7 @@ export async function ladeWelt(
         `grafik/stil-${kachelstil(fund.ort, fund.karte.innen, karte)}.png`,
       ),
       heldfigurbogen(erinnerung, gewaehlteFigur),
-      figurenbilderFuer(fund.ort, karte, rivalinGewaehlt(variablen)),
+      figurenbilderFuer(spriteVon, karte, rivalinGewaehlt(variablen)),
       ladeMoebel(karte, fund.ort.kennung),
       paketdateiAlsAdresseOderNull(
         `grafik/karten/${kartenkennung}${fassung.zustand ? `-${fassung.zustand}` : ""}.png`,
@@ -267,7 +268,7 @@ export async function ladeWelt(
     figurenbilder: { ...geisterbilder, ...figurenbilder },
     figurstandbilder: figurstandbilderFuer(
       figurennamen(karte),
-      (n) => figurZu(fund.ort, n)?.sprite,
+      spriteVon,
       standbildindex,
       rivalinGewaehlt(variablen),
     ),
@@ -312,6 +313,24 @@ export function ausloeserFuer(ort: Ortdaten, karte: string, name: string) {
 /** Figur einer Karte zu einem Objektnamen („coachDelgado“ → Figur `ort.coachDelgado`). */
 export function figurZu(ort: Ortdaten, name: string) {
   return ort.figuren.find((f) => f.kennung === `${ort.kennung}.${name}` || f.kennung === name);
+}
+
+/**
+ * Der Bogen einer Figur dieser Karte: aus dem eigenen Ort, sonst von der gleichnamigen Figur eines
+ * anderen Orts. Warum: Der Tagesablauf stellt Personen auch an Orte, in deren `figuren` sie nicht
+ * stehen; die Joggerin (Weg Ironwood–Silicon) läuft abends auf der Landstraße Maple–Cedar und war
+ * dort ein leeres Platzhalterbild (Stehplatzfotos, 24.11.2026).
+ * Beispiel: (alle Orte, wegMapleCedar, "joggerin") → "figuren/joggerin.png".
+ */
+export function spriteZu(
+  orte: readonly Ortdaten[],
+  ort: Ortdaten,
+  name: string,
+): string | undefined {
+  const eigene = figurZu(ort, name)?.sprite;
+  if (eigene) return eigene;
+  return orte.flatMap((o) => o.figuren).find((f) => f.kennung.endsWith(`.${name}`) && f.sprite)
+    ?.sprite;
 }
 
 /** Der Knopftext zu einem Treffer der Karte; null, wenn er nichts auslöst. */

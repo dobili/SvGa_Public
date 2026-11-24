@@ -1631,11 +1631,11 @@
       "typ": "statist",
       "feld": [
         70,
-        7
+        5
       ],
       "eigenschaften": {
-        "von": "63,6",
-        "bis": "79,6",
+        "von": "63,5",
+        "bis": "79,5",
         "tun": "schiebt eine Schubkarre mit Sandsäcken",
         "wann": "tag",
         "sagt": "statist.wegSiliconDelacroix.deich.helfer"

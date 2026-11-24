@@ -11152,8 +11152,8 @@
      "id": 13,
      "name": "kameramann",
      "type": "statist",
-     "x": 1120,
-     "y": 176,
+     "x": 1088,
+     "y": 208,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -11172,12 +11172,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "68,11"
+       "value": "68,13"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "76,12"
+       "value": "76,13"
       },
       {
        "name": "sagt",
@@ -11190,8 +11190,8 @@
      "id": 14,
      "name": "techniker",
      "type": "statist",
-     "x": 1600,
-     "y": 192,
+     "x": 1536,
+     "y": 160,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -11210,12 +11210,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "96,11"
+       "value": "96,10"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "104,12"
+       "value": "104,10"
       },
       {
        "name": "sagt",
@@ -11228,8 +11228,8 @@
      "id": 15,
      "name": "rentnerin",
      "type": "statist",
-     "x": 928,
-     "y": 192,
+     "x": 864,
+     "y": 160,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -11248,12 +11248,12 @@
       {
        "name": "von",
        "type": "string",
-       "value": "54,11"
+       "value": "54,10"
       },
       {
        "name": "bis",
        "type": "string",
-       "value": "62,12"
+       "value": "62,10"
       },
       {
        "name": "sagt",

@@ -371,3 +371,50 @@ body.abenteuer-mit-kulisse {
   margin: 0 0 var(--raster);
   font-size: var(--groesse-klein, 0.9rem);
 }
+
+/* Nur der Held hört den Geist (regeln/begleiter.ts, Wunsch des Autors, 24.11.2026): Geflüsterte
+   Zeilen und Gedanken des Helden stehen kursiv und etwas leiser; neben dem Namen des Geistes steht
+   klein „nur du hörst ihn“. */
+.abenteuer-dialog-text:is([data-ton="fluestern"], [data-ton="gedanke"]) {
+  font-style: italic;
+  opacity: 0.92;
+}
+
+.abenteuer-dialog-fluestern {
+  margin-left: 0.6em;
+  color: var(--creme);
+  font-size: 0.8em;
+  font-style: italic;
+  font-weight: 400;
+  opacity: 0.75;
+}
+
+.abenteuer-dialog-fluestern::before {
+  content: "· ";
+}
+
+.abenteuer-dialog-denkt {
+  font-style: italic;
+}
+
+/* Gedankenwahl (`#gedanke` an der Wahl): kursiv, gestrichelter Rand, davor das Gedankenzeichen. */
+.abenteuer-dialog-wahlen button[data-gedanke="ja"] {
+  border-style: dashed;
+  font-style: italic;
+}
+
+/* Gedankenzeichen: drei wachsende Bläschen, gezeichnet statt geschrieben (die Pixelschrift hat
+   kein solches Zeichen). */
+.abenteuer-dialog-wahlen button[data-gedanke="ja"]::before,
+.abenteuer-dialog-text[data-ton="gedanke"]::before {
+  content: "";
+  display: inline-block;
+  width: 1.2em;
+  height: 0.8em;
+  margin-right: 0.35em;
+  background:
+    radial-gradient(circle at 10% 85%, currentColor 0 0.07em, transparent 0.08em),
+    radial-gradient(circle at 36% 62%, currentColor 0 0.12em, transparent 0.13em),
+    radial-gradient(circle at 74% 36%, currentColor 0 0.21em, transparent 0.22em);
+  opacity: 0.85;
+}

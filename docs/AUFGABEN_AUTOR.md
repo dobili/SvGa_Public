@@ -466,6 +466,13 @@ Profil › Einstellungen › Fehler melden.
       „40 year old street chess hustler, hoodie and cap, lively, talkative“. Hochladen nach ki-roh/,
       dann baue ich ihn ein. Außerdem jetzt behoben: Die Joggerin auf der Landstraße war ebenfalls
       ein Quadrat (sie lud den Bogen nicht), sie ist jetzt richtig zu sehen.
+- [ ] N2705. **Ambrose als Begleiter (24.11.2026):** Geh im Park von Maple Falls zu den Skatern
+      (nach der ersten Lektion auf dem Dachboden). Ambrose erscheint durchsichtig neben dir, sagt
+      etwas, du antwortest in Gedanken (kursiv, Gedankenzeichen), danach ist er wieder weg; an
+      derselben Stelle kommt er nicht noch einmal. Auf 86 Karten gibt es 126 solcher Stellen,
+      höchstens eine alle 30 Sekunden. In Gesprächen mit anderen steht er bei jeder Zeile neben
+      dir, seine Zeilen sind kursiv mit „nur du hörst ihn“. Bitte im Hoch- und Querformat ansehen.
+      **Antwort:** „N2705 ok“ oder was stört.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,
@@ -2671,6 +2678,12 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Riefen, ohne Kontur, Durchgang 3 Kacheln, 160 × 144. Bis die Bilder da sind, bauen wir mit
       vorhandenen Teilen.
       **Antwort:** Bilder nach ki-roh/ hochladen; Nummern, die du nicht willst, kurz nennen.
+- [ ] RO55. **Ambrose als Begleiter: wie oft (24.11.2026, umgesetzt, Widerspruch genügt)**
+      Umgesetzt nach deinem Wunsch: Er erscheint neben dir, wenn er spricht, und an 126 Stellen
+      beim ersten Vorbeigehen. Annahmen: höchstens ein Blickpunkt alle 30 Sekunden, nicht beim
+      Betreten einer Karte, nicht während er fort ist (Tiefpunkt bis Versöhnung, nach dem
+      Abschied). Empfehlung: so lassen und nach deinem Durchspielen nachjustieren.
+      **Antwort:** „RO55 ok“ oder z. B. „RO55 seltener“ / „häufiger“.
 - [ ] RO49. **Kleine Folgen von Uhr und Geräuschen (22.11.2026, umgesetzt, Widerspruch genügt)**
       1. Karten, die bisher „immer Tag“ hatten, werden jetzt nachts auch dunkel.
       2. Innenräume mit Wasserfall (Zimmer, Wohnzimmer) rauschen auf dem leisen Grundpegel.

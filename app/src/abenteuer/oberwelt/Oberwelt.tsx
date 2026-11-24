@@ -9,7 +9,8 @@
  * - usePartiestart.ts: Deckwahl, Partiestart, Rückweg, Kipppunkt und Wiedereinstieg (R14, R15);
  * - useAufgabenrunde.ts: Aufgabenrunden (R30 bis R32), Gedächtnisstellung und Simultan;
  * - useDialogende.ts: Dialoge öffnen und ausführen, was sie angestoßen haben;
- * - useAusloeser.ts: Auslöser und Aktionsknopf (Übergang, Figur, Gegenstand, Statist in der Blase).
+ * - useAusloeser.ts: Auslöser und Aktionsknopf (Übergang, Figur, Gegenstand, Statist in der Blase);
+ * - useBlickpunkte.ts: Ambroses Satz zu einer Stelle, an der der Held vorbeikommt (regeln/blickpunkte.ts).
  * Abhängigkeiten: Hooks oben, Steuerkreuz.tsx, Tagebuch.tsx, weltdaten.ts, dialog/Dialog.tsx.
  */
 import { useEffect, useRef, useState } from "react";
@@ -42,6 +43,7 @@ import type { Richtung } from "./szene";
 import { Tagebuch } from "./Tagebuch";
 import { useAufgabenrunde } from "./useAufgabenrunde";
 import { useAusloeser } from "./useAusloeser";
+import { useBlickpunkte } from "./useBlickpunkte";
 import { useBuehne } from "./useBuehne";
 import { useDialogende } from "./useDialogende";
 import { begegnungVon, LUPE, usePartiestart } from "./usePartiestart";
@@ -73,7 +75,6 @@ export function Oberwelt() {
   const k = useOberweltkern();
   const buehne = useBuehne(k);
   const { dienste, stand, standRef, welt, spiel, meldung, meldungsbild, setzeMeldung } = k;
-  const { schreibe, wechsleKarte } = k;
   const partie = usePartiestart(k);
   const { deckwahl, ergebnis } = partie;
   const runden = useAufgabenrunde(k, partie);
@@ -82,14 +83,12 @@ export function Oberwelt() {
   const { dialog, oeffneDialog, vorfuehrung, offenerLaden, abspann } = dialoge;
   // Rückmeldung nach dem Ergebnis: der Dialog, der die Folge gestartet hat (nachergebnis.ts).
   const rueck = nachErgebnis(k, oeffneDialog);
-  const toenung = k.toenung;
   const ortDesHelden = welt?.ort.kennung ?? null;
   const rahmen = useRef<HTMLDivElement>(null);
   const kachelanzeige = useRef<HTMLSpanElement>(null);
   const [tagebuch, setzeTagebuch] = useState(false);
   const [reisen, setzeReisen] = useState(false);
-  // Auslöser, Aktionsknopf und Sprechblase der Statisten (useAusloeser.ts).
-  const ausl = useAusloeser(k, dialoge);
+  const ausl = useAusloeser(k, dialoge); // Auslöser, Aktionsknopf, Sprechblase der Statisten
   const { treffer, sprechblase } = ausl;
 
   const fehler = useWeltladen(k, {
@@ -138,6 +137,8 @@ export function Oberwelt() {
     aktionSichtbar: welt !== null && aktionFuer(welt, treffer) !== null,
     draussen: welt !== null && !welt.innen,
   });
+  const ungestoert = weltFrei && !warten.offen && hinweis.aktiv === null;
+  useBlickpunkte(k, ungestoert && treffer === null, oeffneDialog);
 
   const beiRichtung = (richtung: Richtung, gedrueckt: boolean) => {
     if (gedrueckt) hinweis.benutzt("steuerkreuz");
@@ -151,12 +152,12 @@ export function Oberwelt() {
   return (
     <div
       className={
-        welt?.erinnerung || toenung === "sepia"
+        welt?.erinnerung || k.toenung === "sepia"
           ? "abenteuer-welt abenteuer-welt-erinnerung"
           : "abenteuer-welt"
       }
       data-testid="abenteuer-welt"
-      data-toenung={toenung ?? "keine"}
+      data-toenung={k.toenung ?? "keine"}
       data-fassung={welt?.zustand ?? "grund"}
     >
       <div ref={rahmen} style={{ width: "100%", height: "100%" }} />
@@ -267,7 +268,7 @@ export function Oberwelt() {
           sorten={welt.daten.karten}
           beiKauf={(ware) => {
             const sorten = welt.daten.karten as unknown as readonly Kartensorte[];
-            schreibe(kaufe(standRef.current ?? stand, ware, sorten, new Date()));
+            k.schreibe(kaufe(standRef.current ?? stand, ware, sorten, new Date()));
           }}
           beiSchliessen={dialoge.schliesseLaden}
         />
@@ -293,7 +294,7 @@ export function Oberwelt() {
           ziele={reiseziele(welt.daten.orte, stand.besuchteOrte, welt.ort.kennung)}
           beiWahl={(karte) => {
             setzeReisen(false);
-            wechsleKarte(karte, "start");
+            k.wechsleKarte(karte, "start");
           }}
           beiSchliessen={() => setzeReisen(false)}
         />
@@ -303,7 +304,7 @@ export function Oberwelt() {
           stand={stand}
           daten={welt.daten}
           beiSchliessen={() => setzeTagebuch(false)}
-          beiZielpfeil={(kennung) => schreibe(schalteVerfolgung(stand, kennung))}
+          beiZielpfeil={(kennung) => k.schreibe(schalteVerfolgung(stand, kennung))}
           // Position sichern wie vor einer Partie, dann die alte Partie in der Hülle zeigen.
           beiPartie={(id) => {
             const mitPosition = { ...stand, position: k.position(stand) };

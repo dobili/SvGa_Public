@@ -11,7 +11,13 @@
  * wie es ist; das Brett ist das erste `.brett` der Spielhülle.
  */
 import { useLayoutEffect, type RefObject } from "react";
-import { brettfreieLage, sperrflaeche, type Anker } from "./blasenlage";
+import {
+  brettfreieLage,
+  knopfflaeche,
+  sperrflaeche,
+  type Anker,
+  type Blasenstil,
+} from "./blasenlage";
 
 const BRETT = ".abenteuer-huelle .brett";
 /** Hauptknöpfe der Hülle, die eine Blase freilassen muss („Weiter“ nach einer Antwort). */
@@ -26,9 +32,20 @@ function setze(blase: HTMLElement, anker: Anker): void {
     .filter((k) => !blase.contains(k))
     .map((k) => k.getBoundingClientRect())
     .filter((r) => r.bottom > 0 && r.top < window.innerHeight);
-  const flaeche = sperrflaeche(brett.getBoundingClientRect(), knoepfe);
-  const lage = brettfreieLage(blase.getBoundingClientRect(), flaeche, window.innerHeight, anker);
+  const brettflaeche = brett.getBoundingClientRect();
+  const flaeche = sperrflaeche(brettflaeche, knoepfe);
+  wende(blase, brettfreieLage(blase.getBoundingClientRect(), flaeche, window.innerHeight, anker));
+  // Querformat: Knöpfe neben dem Brett in der Spalte der Blase (knopfflaeche in blasenlage.ts).
+  const daneben = knopfflaeche(brettflaeche, blase.getBoundingClientRect(), knoepfe);
+  if (daneben) {
+    wende(blase, brettfreieLage(blase.getBoundingClientRect(), daneben, window.innerHeight, anker));
+  }
+}
+
+/** Setzt eine berechnete Lage (null: die Lage bleibt). */
+function wende(blase: HTMLElement, lage: Blasenstil | null): void {
   if (!lage) return;
+  const s = blase.style;
   s.top = lage.top === undefined ? "auto" : `${lage.top}px`;
   s.bottom = lage.bottom === undefined ? "auto" : `${lage.bottom}px`;
   if (lage.maxHeight !== undefined) {

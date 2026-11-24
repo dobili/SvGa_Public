@@ -2,7 +2,7 @@
  * Tests für blasenlage.ts: Die Sprechblase berührt das Brett nie (Wunsch des Autors, 19.11.2026).
  */
 import { describe, expect, it } from "vitest";
-import { BLASENABSTAND, brettfreieLage, sperrflaeche } from "./blasenlage";
+import { BLASENABSTAND, brettfreieLage, knopfflaeche, sperrflaeche } from "./blasenlage";
 
 const FENSTER = 667;
 // Hochformat wie iPhone SE: Brett von 150 bis 525, volle Breite.
@@ -67,5 +67,27 @@ describe("sperrflaeche (Spieler-Durchlauf Akt 4, 24.11.2026)", () => {
     const rechts = { top: 200, bottom: 240, left: 400, right: 600 };
     const leer = { top: 0, bottom: 0, left: 0, right: 0 };
     expect(sperrflaeche(BRETT, [rechts, leer])).toEqual(BRETT);
+  });
+});
+
+describe("Knöpfe neben dem Brett (Querformat)", () => {
+  // Quer wie ein Handy (834 × 390): Brett links, Blase und Knöpfe in der rechten Spalte.
+  const QUER_HOEHE = 390;
+  const BRETT_QUER = { top: 10, bottom: 380, left: 10, right: 380 };
+  const UNTEN = { top: 300, bottom: 370, left: 400, right: 820 };
+  const WEITER = { top: 320, bottom: 360, left: 410, right: 810 };
+
+  it("die untere Blase weicht „Weiter“ in ihrer Spalte aus (Ward, Hütte)", () => {
+    const flaeche = knopfflaeche(BRETT_QUER, UNTEN, [WEITER]);
+    expect(flaeche).toEqual(WEITER);
+    const lage = flaeche && brettfreieLage(UNTEN, flaeche, QUER_HOEHE, "unten");
+    // Unter dem Knopf ist kein Platz für 70 Punkte, also darüber.
+    expect(lage).toEqual({ bottom: QUER_HOEHE - WEITER.top + BLASENABSTAND });
+  });
+
+  it("Knöpfe unter dem Brett oder außerhalb der Spalte zählen nicht", () => {
+    const unterBrett = { top: 382, bottom: 389, left: 20, right: 370 };
+    const linksDaneben = { top: 320, bottom: 360, left: 0, right: 5 };
+    expect(knopfflaeche(BRETT_QUER, UNTEN, [unterBrett, linksDaneben])).toBeNull();
   });
 });

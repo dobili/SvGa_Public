@@ -120,3 +120,8 @@ def test_formbild_dreht_spiegelt_und_skaliert():
     assert gedreht.getpixel((1, 0)) == (255, 0, 0, 255)  # oben links → oben rechts
     assert formbild(bild, {"spiegeln": True}).getpixel((3, 0)) == (255, 0, 0, 255)
     assert formbild(bild, {"massstab": 2}).size == (8, 4)
+    # Vorschau wie die App (M25): Maßstab und Vergrößerung in einem Schritt, 1,5 × 2 = 3 Punkte je Pixel.
+    scharf = formbild(bild, {"massstab": 1.5}, 2)
+    assert scharf.size == (12, 6)
+    assert [scharf.getpixel((x, 0))[3] for x in range(4)] == [255, 255, 255, 0]
+    assert formbild(bild, {}, 2).size == (8, 4)

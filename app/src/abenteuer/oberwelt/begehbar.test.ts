@@ -101,6 +101,27 @@ describe("Sitzende sperren die Kachel über sich (Angleichung an die Szene, 18.1
     expect(sitzkacheln(karte("figur", true), { stuhl: STUHL }, KACHEL)).toEqual(["1,1"]);
   });
 
+  it("rückt das Bild nach unten (Bank unter der Fußlinie), bleibt die Kachel darüber frei", () => {
+    // Ward abends in Summit City: Bank 32 × 16 auf der Kachel unter ihr (Ansprechprobe 24.11.2026).
+    const BANK: Sperrangabe = { breite: 32, hoehe: 24, kollision: false, art: "bank" };
+    const objects = [
+      { name: "bank", type: "moebel", x: 8, y: 24 },
+      {
+        name: "ward",
+        type: "figur",
+        x: 16,
+        y: 16,
+        properties: [{ name: "sitzt", value: "unten" }],
+      },
+    ];
+    const k: Tiledkarte = { width: 3, height: 3, layers: [{ type: "objectgroup", objects }] };
+    expect(sitzkacheln(k, { bank: BANK }, KACHEL)).toEqual([]);
+    // Dieselbe Bank auf ihrer Kachel (Unterkante auf der Fußlinie): Das Bild rückt nach oben.
+    const oben = objects.map((o) => (o.name === "bank" ? { ...o, y: 8 } : o));
+    const k2: Tiledkarte = { ...k, layers: [{ type: "objectgroup", objects: oben }] };
+    expect(sitzkacheln(k2, { bank: BANK }, KACHEL)).toEqual(["1,0"]);
+  });
+
   it("ein sitzender Statist auch, selbst ohne `von` und `bis`", () => {
     expect(frei(karte("statist", true), 1, 1)).toBe(false);
   });

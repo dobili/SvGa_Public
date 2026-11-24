@@ -8,13 +8,14 @@
  * S > 0,2, L > 0,35) → halb zum Grau; Wasser (0,45 ≤ H ≤ 0,6) → kühler, nur mit `wasser` (bei
  * Möbeln aus, sonst würden blaue Autos dunkel).
  *
- * Bäume und Büsche bekommen Schneekappen statt ganz weißer Kronen (faerbeMoebelDaten, Regel 10.67).
+ * Bäume und Büsche bekommen Schneekappen statt ganz weißer Kronen (faerbeMoebelDaten, Regel 10.67),
+ * Herbstbäume auf ihr rotes und gelbes Laub; Häuser Schnee auf dem Dach (dachschnee, RO53.5).
+ * Winter ohne Schnee (kahle Bäume, fahles Gras) steht in jahreszeitfarben.ts und kahlbaum.ts.
  *
- * Rolle im Gesamtbild: Reine Logik plus das Umfärben einer Phaser-Textur über eine Leinwand; die
- * Szene (szene.ts) ruft `faerbeWinterlich` vor dem Aufstellen der Möbel. Winter erkennt sie an der
- * Karteneigenschaft `jahreszeit` (kartenbau schreibt sie aus der Szene).
+ * Rolle im Gesamtbild: reine Logik auf RGBA-Bilddaten; jahreszeitfarben.ts wählt je Möbel die Regel
+ * und färbt die Phaser-Texturen um.
  */
-import type Phaser from "phaser";
+import { istHerbstbaum, istWarm } from "./kahlbaum";
 
 type Farbe = readonly [number, number, number];
 
@@ -50,6 +51,13 @@ export function hls(r: number, g: number, b: number): readonly [number, number, 
   return [(((h / SECHSTEL) % 1) + 1) % 1, l, s];
 }
 
+/** Schnee mit der Helligkeit der Farbe (Schatten im Schnee bleiben sichtbar). */
+function schneeton(r: number, g: number, b: number): Farbe {
+  const v = SCHNEE_GRUND + SCHNEE_ANTEIL * hls(r, g, b)[1];
+  const [fr, fg, fb] = SCHNEE_FARBE.map(([f, d]) => Math.min(VOLL, Math.round(f * v + d)));
+  return [fr ?? r, fg ?? g, fb ?? b];
+}
+
 /**
  * Die Winterfarbe (Regel im Dateikopf); andere Farben bleiben.
  * Beispiel: Gras (106, 170, 72) → Schnee (222, 221, 219); Erde (150, 110, 70) → (130, 110, 90).
@@ -57,9 +65,7 @@ export function hls(r: number, g: number, b: number): readonly [number, number, 
 export function winterfarbe(r: number, g: number, b: number, wasser = true): Farbe {
   const [h, l, s] = hls(r, g, b);
   if (h > GRUEN[0] && h < GRUEN[1] && s > GRUEN_SAETTIGUNG) {
-    const v = SCHNEE_GRUND + SCHNEE_ANTEIL * l;
-    const [fr, fg, fb] = SCHNEE_FARBE.map(([f, d]) => Math.min(VOLL, Math.round(f * v + d)));
-    return [fr ?? r, fg ?? g, fb ?? b];
+    return schneeton(r, g, b);
   }
   if (h >= BRAUN[0] && h <= BRAUN[1] && s > BRAUN_SAETTIGUNG && l > BRAUN_HELLIGKEIT) {
     const grau = (r + g + b) / 3;
@@ -83,10 +89,16 @@ const RAND_HELLIGKEIT = 0.22;
 const LAUB_GRAU = 0.45;
 const LAUB_DUNKEL = 0.85;
 
-/** Ob eine Farbe Laub ist (Regel für Grün) und ob sie ein dunkler Rand ist. */
-function laub(r: number, g: number, b: number): { readonly laub: boolean; readonly rand: boolean } {
+/** Ob eine Farbe Laub ist (Grün, bei Herbstbäumen auch Rot, Orange, Gelb) und ob sie dunkler Rand ist. */
+export function laub(
+  r: number,
+  g: number,
+  b: number,
+  herbst = false,
+): { readonly laub: boolean; readonly rand: boolean } {
   const [h, l, s] = hls(r, g, b);
-  const ist = h > GRUEN[0] && h < GRUEN[1] && s > GRUEN_SAETTIGUNG;
+  const ist =
+    (h > GRUEN[0] && h < GRUEN[1] && s > GRUEN_SAETTIGUNG) || (herbst && istWarm([r, g, b]));
   return { laub: ist, rand: ist && l < RAND_HELLIGKEIT };
 }
 
@@ -98,8 +110,11 @@ export function winterlaub(r: number, g: number, b: number): Farbe {
 }
 
 /** Ob das Pixel an Stelle i deckend und Laub ist. */
-function istLaub(daten: Uint8ClampedArray, i: number): boolean {
-  return (daten[i + 3] ?? 0) > 0 && laub(daten[i] ?? 0, daten[i + 1] ?? 0, daten[i + 2] ?? 0).laub;
+function istLaub(daten: Uint8ClampedArray, i: number, herbst: boolean): boolean {
+  return (
+    (daten[i + 3] ?? 0) > 0 &&
+    laub(daten[i] ?? 0, daten[i + 1] ?? 0, daten[i + 2] ?? 0, herbst).laub
+  );
 }
 
 /** Eine Laubstrecke einer Spalte von `oben` bis vor `ende` färben (Kappe, dann Wintergrün). */
@@ -109,83 +124,95 @@ function faerbeStrecke(
   oben: number,
   ende: number,
   kappe: number,
+  herbst: boolean,
 ): void {
   for (let y = oben; y < ende; y++) {
     const i = index(y);
     const [r, g, b] = [daten[i] ?? 0, daten[i + 1] ?? 0, daten[i + 2] ?? 0];
-    if (laub(r, g, b).rand) continue;
+    if (laub(r, g, b, herbst).rand) continue;
     [daten[i], daten[i + 1], daten[i + 2]] =
-      y - oben < kappe ? winterfarbe(r, g, b) : winterlaub(r, g, b);
+      y - oben < kappe ? schneeton(r, g, b) : winterlaub(r, g, b);
   }
 }
 
 /**
  * Möbel im Winter, an Ort und Stelle: je Spalte bekommt die oberste Laubstrecke oben eine
  * Schneekappe (35 %, mindestens 2 Pixel), darunter und tiefer Wintergrün; dunkle Ränder bleiben;
- * alles andere wie `winterfarbe` ohne Wasser. Beispiel: 10 hellgrüne Pixel → 4 Schnee, 6 Wintergrün.
+ * alles andere wie `winterfarbe` ohne Wasser. Herbstbäume tragen die Kappe auf ihrem warmen Laub.
+ * Beispiel: 10 hellgrüne Pixel → 4 Schnee, 6 Wintergrün.
  */
 export function faerbeMoebelDaten(daten: Uint8ClampedArray, breite: number, hoehe: number): void {
+  const herbst = istHerbstbaum(daten);
   for (let x = 0; x < breite; x++) {
     const index = (y: number) => (y * breite + x) * KANAELE;
     let erste = true;
     for (let y = 0; y < hoehe;) {
       const i = index(y);
-      if (!istLaub(daten, i)) {
+      if (!istLaub(daten, i, herbst)) {
         const neu = winterfarbe(daten[i] ?? 0, daten[i + 1] ?? 0, daten[i + 2] ?? 0, false);
         if ((daten[i + 3] ?? 0) > 0) [daten[i], daten[i + 1], daten[i + 2]] = neu;
         y++;
         continue;
       }
       let ende = y;
-      while (ende < hoehe && istLaub(daten, index(ende))) ende++;
+      while (ende < hoehe && istLaub(daten, index(ende), herbst)) ende++;
       const kappe = erste ? Math.max(KAPPE_MINDESTENS, Math.ceil((ende - y) * KAPPE_ANTEIL)) : 0;
-      faerbeStrecke(daten, index, y, ende, kappe);
+      faerbeStrecke(daten, index, y, ende, kappe, herbst);
       erste = false;
       y = ende;
     }
   }
 }
 
-/** Ob eine Tiled-Karte im Winter spielt (Eigenschaft `jahreszeit`: „winter“). */
-export function istWinter(karte: object): boolean {
-  const eigenschaften = (karte as { properties?: readonly { name?: string; value?: unknown }[] })
-    .properties;
-  return (eigenschaften ?? []).some((e) => e.name === "jahreszeit" && e.value === "winter");
+// Häuser im Schnee: je Spalte von oben (nach höchstens zwei dunklen Umrisspixeln) Schnee bis zur
+// nächsten dunklen Linie (Traufe, Dachkante), höchstens 60 % der Bildhöhe. Wie dachschnee in winter.py.
+const DACH_ANTEIL = 0.6;
+const DACH_UMRISS = 2;
+const DACH_DUNKEL = 0.25;
+
+/** Helligkeit des Pixels an Stelle i (Kanalindex). */
+function helligkeit(d: Uint8ClampedArray, i: number): number {
+  return hls(d[i] ?? 0, d[i + 1] ?? 0, d[i + 2] ?? 0)[1];
 }
 
-/** Ein Ausschnitt einer Textur: x, y, Breite, Höhe in Pixeln. */
-type Ausschnitt = readonly [number, number, number, number];
-
 /**
- * Ersetzt geladene Texturen durch umgefärbte Leinwände (gleicher Schlüssel; ohne Möbelwasser).
- * Eingabe: je Schlüssel die Ausschnitte, die je für sich gefärbt werden (die Möbel auf einem
- * Möbelbogen, damit jedes seine eigene Schneekappe bekommt); eine leere Liste heißt: das ganze
- * Bild ist ein Möbel. Die Rahmen der Textur gehen dabei verloren; die Szene legt sie danach neu an
- * (moebel.ts, richteMoebelrahmenEin).
+ * Schnee auf dem Dach, an Ort und Stelle; der Rest wie `winterfarbe` ohne Wasser. Beispiel: Spalte
+ * aus Umriss, 5 roten Ziegeln, dunkler Traufe, Wand → Umriss, 5 Schnee, Traufe, Wand.
  */
-export function faerbeWinterlich(
-  szene: Phaser.Scene,
-  ausschnitte: ReadonlyMap<string, readonly Ausschnitt[]>,
-): void {
-  for (const [s, teile] of ausschnitte) {
-    if (!szene.textures.exists(s)) continue;
-    const quelle = szene.textures.get(s).getSourceImage() as CanvasImageSource & {
-      width: number;
-      height: number;
-    };
-    const leinwand = document.createElement("canvas");
-    leinwand.width = quelle.width;
-    leinwand.height = quelle.height;
-    const malen = leinwand.getContext("2d");
-    if (!malen) continue;
-    malen.drawImage(quelle, 0, 0);
-    const ganz: Ausschnitt = [0, 0, leinwand.width, leinwand.height];
-    for (const [x, y, breite, hoehe] of teile.length > 0 ? teile : [ganz]) {
-      const bild = malen.getImageData(x, y, breite, hoehe);
-      faerbeMoebelDaten(bild.data, breite, hoehe);
-      malen.putImageData(bild, x, y);
+export function dachschnee(daten: Uint8ClampedArray, breite: number, hoehe: number): void {
+  const alt = Uint8ClampedArray.from(daten);
+  for (let i = 0; i < daten.length; i += KANAELE) {
+    if ((alt[i + 3] ?? 0) === 0) continue;
+    [daten[i], daten[i + 1], daten[i + 2]] = winterfarbe(
+      alt[i] ?? 0,
+      alt[i + 1] ?? 0,
+      alt[i + 2] ?? 0,
+      false,
+    );
+  }
+  const grenze = Math.max(DACH_UMRISS, Math.floor(hoehe * DACH_ANTEIL));
+  for (let x = 0; x < breite; x++) {
+    const index = (y: number) => (y * breite + x) * KANAELE;
+    let y = 0;
+    while (y < hoehe && (alt[index(y) + 3] ?? 0) === 0) y++;
+    const ende = Math.min(hoehe, y + grenze);
+    for (
+      let umriss = 0;
+      y < ende && umriss < DACH_UMRISS && helligkeit(alt, index(y)) < DACH_DUNKEL;
+      umriss++
+    )
+      y++;
+    for (
+      ;
+      y < ende && (alt[index(y) + 3] ?? 0) > 0 && helligkeit(alt, index(y)) >= DACH_DUNKEL;
+      y++
+    ) {
+      const i = index(y);
+      [daten[i], daten[i + 1], daten[i + 2]] = schneeton(
+        alt[i] ?? 0,
+        alt[i + 1] ?? 0,
+        alt[i + 2] ?? 0,
+      );
     }
-    szene.textures.remove(s);
-    szene.textures.addCanvas(s, leinwand);
   }
 }

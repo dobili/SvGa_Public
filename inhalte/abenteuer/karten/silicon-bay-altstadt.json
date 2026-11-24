@@ -16964,6 +16964,11 @@
    "value": "siliconBay.altstadt"
   },
   {
+   "name": "jahreszeit",
+   "type": "string",
+   "value": "winter_mild"
+  },
+  {
    "name": "geraeuschquellen",
    "type": "string",
    "value": "[{\"art\":\"musik\",\"felder\":[[31,45,1,1]]}]"

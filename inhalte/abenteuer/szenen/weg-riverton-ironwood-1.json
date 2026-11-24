@@ -2569,5 +2569,6 @@
   ],
   "datei": "karten/weg-riverton-ironwood-1.json",
   "ufer": "stein",
-  "markierung": ["s"]
+  "markierung": ["s"],
+  "wasserton": "kanal"
 }

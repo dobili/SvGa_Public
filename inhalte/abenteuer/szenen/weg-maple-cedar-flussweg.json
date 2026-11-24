@@ -14,7 +14,15 @@
   },
   "bruecken": ["h"],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["natur", "rustikal", "klassisch", "laendlich", "landhaus", "einfach", "modern"],
+  "stil": [
+    "natur",
+    "rustikal",
+    "klassisch",
+    "laendlich",
+    "landhaus",
+    "einfach",
+    "modern"
+  ],
   "raster": [
     "########################################################################################################################",
     "#......................................................................................................................#",
@@ -1420,5 +1428,6 @@
     }
   ],
   "markierung": ["s"],
-  "abkuerzung_ok": "offenesGelaende"
+  "abkuerzung_ok": "offenesGelaende",
+  "wasserton": "bach"
 }

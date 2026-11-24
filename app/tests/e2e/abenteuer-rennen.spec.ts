@@ -36,13 +36,15 @@ async function laufe(seite: Page, position: object, rennen: boolean): Promise<nu
   if (!box) throw new Error("Taste ohne Lage");
   const x = box.x + box.width / 2;
   const y = box.y + box.height / 2;
-  const start = await kachelX(seite);
   await seite.mouse.move(x, y);
   await seite.mouse.down();
   if (rennen) {
     await seite.mouse.move(x + WEIT_DRAUSSEN_PX, y, { steps: 4 });
     await expect(kreuz).toHaveAttribute("data-gangart", "rennen");
   }
+  // Gezählt wird erst ab hier: Das Hinausziehen und Warten auf die Gangart dauerte auf langsamen
+  // Läufern so lange, dass der Held innen „rennend“ zwei Kacheln weiter kam (Actions, 24.11.2026).
+  const start = await kachelX(seite);
   await seite.waitForTimeout(DAUER_MS);
   await seite.mouse.up();
   await expect(kreuz).toHaveAttribute("data-gangart", "gehen");

@@ -1453,5 +1453,6 @@
   ],
   "zustand": ["neu", "gebraucht", "alt"],
   "stil": ["einfach", "modern", "rustikal", "klassisch", "natur", "laendlich"],
-  "datei": "karten/weg-silicon-delacroix-faehre.json"
+  "datei": "karten/weg-silicon-delacroix-faehre.json",
+  "wasserton": "meer"
 }

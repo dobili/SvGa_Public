@@ -1838,7 +1838,17 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["industrie", "klassisch", "einfach", "modern", "natur", "laendlich", "rustikal", "landhaus"],
+  "stil": [
+    "industrie",
+    "klassisch",
+    "einfach",
+    "modern",
+    "natur",
+    "laendlich",
+    "rustikal",
+    "landhaus"
+  ],
   "ufer": "stein",
-  "markierung": ["s"]
+  "markierung": ["s"],
+  "wasserton": "kanal"
 }

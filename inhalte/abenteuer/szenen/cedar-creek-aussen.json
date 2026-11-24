@@ -1168,5 +1168,6 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "markierung": ["s"]
+  "markierung": ["s"],
+  "wasserton": "bach"
 }

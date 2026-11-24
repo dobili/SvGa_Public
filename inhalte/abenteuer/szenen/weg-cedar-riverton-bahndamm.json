@@ -2807,5 +2807,6 @@
   ],
   "hang_bis_rand": true,
   "kante": "klippe",
-  "fels": "boeschung"
+  "fels": "boeschung",
+  "wasserton": "bach"
 }

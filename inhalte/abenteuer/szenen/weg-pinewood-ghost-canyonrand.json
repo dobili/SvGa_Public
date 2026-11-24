@@ -731,5 +731,6 @@
   "kante": "klippe",
   "fels": "rot",
   "klippenhoehe": 5,
-  "abkuerzung_ok": "offenesGelaende"
+  "abkuerzung_ok": "offenesGelaende",
+  "wasserton": "canyon"
 }

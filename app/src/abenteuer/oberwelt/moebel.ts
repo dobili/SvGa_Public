@@ -18,6 +18,7 @@
  * Abhängigkeiten: Phaser, paket/paketlader.ts.
  */
 import { moebeltiefe } from "./zeichentiefe";
+import { sorte, type Texturteil } from "./jahreszeitfarben";
 import type Phaser from "phaser";
 import { liesPaketJson, paketdateiAlsAdresse } from "../paket/paketlader";
 import { feinsperrenAus, feinsperrRechtecke, moebelRechtecke, type Rechteck } from "./feinsperren";
@@ -200,14 +201,19 @@ export function richteMoebelrahmenEin(szene: Phaser.Scene, moebel: readonly Moeb
   }
 }
 
-/** Die Rahmen je Texturschlüssel (für das Umfärben im Winter, winter.ts). */
-export function rahmenJeTextur(
+/**
+ * Die Möbel je Texturschlüssel mit Rahmen und Sorte (für das Umfärben nach der Jahreszeit,
+ * jahreszeitfarben.ts); jedes Bild nur einmal. Ohne Bogen ist der Rahmen null (ganzes Bild).
+ */
+export function teileJeTextur(
   moebel: readonly Moebel[],
-): ReadonlyMap<string, readonly (readonly [number, number, number, number])[]> {
-  const karte = new Map<string, (readonly [number, number, number, number])[]>();
+): ReadonlyMap<string, readonly Texturteil[]> {
+  const karte = new Map<string, Texturteil[]>();
   for (const m of moebel) {
     const liste = karte.get(m.schluessel) ?? [];
-    if (m.rahmen && !liste.includes(m.rahmen)) liste.push(m.rahmen);
+    const rahmen = m.rahmen ?? null;
+    if (!liste.some((t) => t.rahmen === rahmen))
+      liste.push({ rahmen, sorte: sorte(m.name, m.angabe.art) });
     karte.set(m.schluessel, liste);
   }
   return karte;

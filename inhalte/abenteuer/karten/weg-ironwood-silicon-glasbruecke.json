@@ -16312,6 +16312,11 @@
    "name": "kennung",
    "type": "string",
    "value": "wegIronwoodSilicon.glasbruecke"
+  },
+  {
+   "name": "jahreszeit",
+   "type": "string",
+   "value": "winter_mild"
   }
  ]
 }

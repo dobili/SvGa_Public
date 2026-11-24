@@ -1,9 +1,9 @@
 /**
  * Tests für winter.ts: dieselben Farben wie pipeline/abenteuer/winter.py (Fälle aus Python
- * erzeugt), Umfärben von Bilddaten und Erkennen einer Winterkarte.
+ * erzeugt) und Umfärben von Bilddaten (Jahreszeit der Karte: jahreszeitfarben.test.ts).
  */
 import { describe, expect, it } from "vitest";
-import { faerbeMoebelDaten, istWinter, winterfarbe } from "./winter";
+import { faerbeMoebelDaten, winterfarbe } from "./winter";
 
 /** r, g, b → Winterfarbe mit Wasser, dann ohne Wasser (Werte aus winter.py). */
 const AUS_PYTHON: readonly (readonly number[])[] = [
@@ -142,16 +142,10 @@ const KAPPEN = {
   ],
 } as const;
 
-describe("faerbeMoebelDaten und istWinter", () => {
+describe("faerbeMoebelDaten", () => {
   it("Schneekappen wie die Pipeline: oben Schnee, darunter Wintergrün, Rand und Wasser bleiben", () => {
     const daten = new Uint8ClampedArray(KAPPEN.ein.flat());
     faerbeMoebelDaten(daten, KAPPEN.breite, KAPPEN.hoehe);
     expect([...daten]).toEqual(KAPPEN.aus.flat());
-  });
-
-  it("erkennt die Eigenschaft jahreszeit", () => {
-    expect(istWinter({ properties: [{ name: "jahreszeit", value: "winter" }] })).toBe(true);
-    expect(istWinter({ properties: [{ name: "toenung", value: "nebel" }] })).toBe(false);
-    expect(istWinter({})).toBe(false);
   });
 });

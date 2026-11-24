@@ -1107,5 +1107,7 @@
   ],
   "datei": "karten/weg-silicon-delacroix-deich.json",
   "kante": "klippe",
-  "fels": "gras"
+  "fels": "gras",
+  "jahreszeit": "winter_mild",
+  "wasserton": "meer"
 }

@@ -1396,5 +1396,6 @@
       }
     }
   ],
-  "jahreszeit": "winter"
+  "jahreszeit": "winter_mild",
+  "wasserton": "meer"
 }

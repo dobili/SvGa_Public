@@ -113,7 +113,7 @@ function starteSpiel(
     // Teilchen der Karte aus orte.json (T8); Winterkarten haben Schnee.
     teilchen: istTeilchenart(eintrag?.teilchen) ? eintrag.teilchen : null,
     laterne: stand.gegenstaende.includes(LATERNE),
-    winter: w.winter,
+    jahreszeit: w.jahreszeit,
     kachelsatz: KACHELSATZ,
     start,
     // Übergänge dieser Karte: Sie wechseln erst beim Gehen in den Durchgang (R060).

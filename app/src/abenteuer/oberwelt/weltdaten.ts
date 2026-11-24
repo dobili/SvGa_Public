@@ -31,7 +31,7 @@ import type { Standbildindex } from "./figurzustand";
 import { figurstandbilderFuer, ladeStandbildindex } from "./standbildindex";
 import { geisterDerKarte } from "../regeln/geist";
 import { kartenfassung } from "./kartenfassung";
-import { istWinter } from "./winter";
+import { jahreszeitDer, type Jahreszeit } from "./jahreszeitfarben";
 import { ladeMoebel, type Moebel } from "./moebel";
 import { tierartVon } from "./tiere";
 import type { Ausloesertreffer } from "./szene";
@@ -73,8 +73,8 @@ export interface Weltdaten {
   readonly hintergrund: string | null;
   /** Zweite Fassung der Karte (zustand_der_karte), sonst null. */
   readonly zustand: string | null;
-  /** Winterkarte (Eigenschaft `jahreszeit`, winter.ts): Schnee und umgefärbte Möbel. */
-  readonly winter: boolean;
+  /** Jahreszeit der Karte (Eigenschaft `jahreszeit`, jahreszeitfarben.ts): umgefärbte Möbel. */
+  readonly jahreszeit: Jahreszeit | null;
   /** Bögen der Statisten und Tiere dieser Karte, Pfad im Paket → Adresse (nur vorhandene). */
   readonly belebungsbilder: Readonly<Record<string, string>>;
 }
@@ -283,7 +283,7 @@ export async function ladeWelt(
     hintergrund,
     belebungsbilder,
     zustand: fassung.zustand,
-    winter: istWinter(karte),
+    jahreszeit: jahreszeitDer(karte),
   };
 }
 

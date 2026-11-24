@@ -1926,5 +1926,6 @@
   "ufer": "stein",
   "kante": "klippe",
   "hochflaeche": "gras",
-  "fels": "stuetzmauer"
+  "fels": "stuetzmauer",
+  "wasserton": "kanal"
 }

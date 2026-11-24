@@ -20155,7 +20155,7 @@
   {
    "name": "jahreszeit",
    "type": "string",
-   "value": "winter"
+   "value": "winter_mild"
   }
  ]
 }

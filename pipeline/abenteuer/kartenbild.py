@@ -56,8 +56,10 @@ from pipeline.abenteuer.strasse import kehrenfelder, markiere
 from pipeline.abenteuer.toenung import schleier
 from pipeline.abenteuer.treppenrand import stirnkanten
 from pipeline.abenteuer.uferart import gezeichnetes_raster, uferbogen
+from pipeline.abenteuer.wasserton import befunde as wasserbefunde
+from pipeline.abenteuer.wasserton import toene_wasser
 from pipeline.abenteuer.weichrand import weiche_raender
-from pipeline.abenteuer.winter import ist_winter, winterbefunde, winterlich, winterliche_moebel
+from pipeline.abenteuer.winter import jahreszeit, winterbefunde, winterlich, winterliche_moebel
 from pipeline.abenteuer.zusammenhang import HOLZ
 from pipeline.abenteuer.zustaende import bildname
 
@@ -298,9 +300,12 @@ def vorschau(szene: dict, privat: Path, grund: Image.Image) -> Image.Image:
     scharf = [mit_deckkraft(formbild(b, s, VORSCHAU_ZOOM), s) for b, s in zip(roh, gesetzt, strict=True)]
     teile = [(s["tiefe"], s["x"], s["y"], b) for s, b in zip(gesetzt, scharf, strict=True)]
     sitze = sitzmoebel(gesetzt, moebel, bilder)  # Sitzende rücken auf ihr Möbel (sitzplatz.py)
-    if ist_winter(szene):
-        # Wie die App (oberwelt/winter.ts): Möbel ohne Wasserregel, sonst würden blaue Autos dunkel.
-        teile = [(t, x, y, winterliche_moebel(b)) for t, x, y, b in teile]
+    if jahreszeit(szene):
+        # Wie die App (oberwelt/winter.ts): je Sorte (Laubbaum, Nadelbaum, Busch, Haus) und Jahreszeit.
+        teile = [
+            (t, x, y, winterliche_moebel(b, s["name"], moebel[s["name"]].get("art"), szene))
+            for (t, x, y, b), s in zip(teile, gesetzt, strict=True)
+        ]
     orte = {o["kennung"]: o for o in lade(INHALTE / "orte.json")["orte"]}
     ort = orte.get(szene["karte"].split(".")[0], {"figuren": []})
     figuren = figurenteile(szene, privat, ort["figuren"], sitze, rgba)
@@ -345,8 +350,9 @@ def zeichne(szene: dict, privat: Path) -> tuple[Image.Image, Image.Image, dict]:
     )
     # Danach, damit die neu gemalten Randfelder ihre Verzahnung mit dem Nachbarbelag behalten.
     belaguebergaenge(grund, gezeichnet, boeden, kehrenfelder(szene, ergaenzt))
-    if ist_winter(szene):
-        grund = winterlich(grund)
+    grund = toene_wasser(grund, szene, gezeichnet)  # Ton je Gewässerart (wasserton.py, RO53.4)
+    if jahreszeit(szene):
+        grund = winterlich(grund, szene)
     return grund, schleier(vorschau(szene, privat, grund), szene.get("toenung")), gezeichnet
 
 
@@ -365,7 +371,7 @@ def main() -> None:
         if not spielbild and not szene.get("variante"):
             befunde.append(f"{szene['datei']} ist weder Grundkarte noch Zustand in orte.json: nur Vorschau")
         befunde += mattenbefunde(szene, privat)
-        befunde += winterbefunde(szene)
+        befunde += winterbefunde(szene) + wasserbefunde(szene)
         print(f"{name}: Hintergrund und Vorschau gezeichnet")
         for b in befunde:
             print(f"  - {b}")

@@ -746,8 +746,17 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["rustikal", "klassisch", "natur", "einfach", "laendlich", "landhaus", "modern"],
+  "stil": [
+    "rustikal",
+    "klassisch",
+    "natur",
+    "einfach",
+    "laendlich",
+    "landhaus",
+    "modern"
+  ],
   "ufer": "stein",
   "datei": "karten/lockport-aussen-boot-an-land.json",
-  "zustand_der_karte": "taueErledigt"
+  "zustand_der_karte": "taueErledigt",
+  "wasserton": "kanal"
 }

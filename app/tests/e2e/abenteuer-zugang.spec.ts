@@ -327,10 +327,14 @@ for (const farbschema of FARBSCHEMATA) {
           await page.keyboard.press("Enter");
         await page.waitForTimeout(150);
       }
+      // „Los“ und „Zurück“ sind kurz nach dem Öffnen gesperrt und blass (useKurzsperre.ts); axe
+      // misst den bedienbaren Zustand.
+      await expect(page.getByTestId("abenteuer-deck-los")).toBeEnabled();
       expect(await schwereVerstoesse(page)).toEqual([]);
       await page.getByTestId("abenteuer-deck-los").click();
       await page.getByTestId("abenteuer-erzaehlung-weiter").click({ timeout: 30000 });
       await expect(page.getByTestId("partie")).toBeVisible();
+      await expect(page.getByTestId("abenteuer-partie-aufgeben")).toBeEnabled();
       // Sprechblasen neben dem Brett sind Statusmeldungen (role="status"); axe prüft die Hülle mit.
       expect(await schwereVerstoesse(page)).toEqual([]);
       // Umwandlungsauswahl in der echten Spielhülle (Foto des Autors: vier leere Knöpfe im Dunkeln).

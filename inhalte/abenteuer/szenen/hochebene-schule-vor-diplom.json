@@ -2,7 +2,7 @@
   "karte": "hochebene.schule",
   "datei": "karten/hochebene-schule-vor-diplom.json",
   "art": "aussen",
-  "beschreibung": "Zustand: Bevor Annek Schach gelernt hat, ist der Diplomtag noch nicht vorbereitet: Auf dem Schulhof stehen weder Tribüne noch Steintische, nur das Plakat „Diplomtag – bald!“ kündigt ihn an. Sonst wie die gewöhnliche Karte: Die Schule der Hochebene: ein gewöhnliches Schulhaus von heute mit rotem Walmdach, davor der gepflasterte Schulhof mit Spielgeräten, Steintischen, Tribüne und Fahnenmast, am Eingang das Schwarze Brett. Rechts auf eigenem Pflaster das Basketballfeld, mit dem Hof durch einen Weg verbunden; links die Turnhalle, eine Halle mit gewölbtem Blechdach und Schild, mit Weg zum Hof. An der Straße mit Mittellinie die Haltebucht quer am Hof, darin der gelbe Schulbus mit der Front zur Straße und der Haltestelle, daneben die Werkstatt von Joss Vell, ein Wellblechschuppen mit Rolltor, Zufahrt, Werkbank und Reifen. Der Schotterweg von den Felstürmen kommt am Ostrand an; dort greift der rote Sand der Hochebene mit ausgefranster Grenze in die Wiese (Kakteen und Steine), damit der Boden an der Kartengrenze nicht hart wechselt. Wiese ringsum, eine Hecke schließt das Gelände, offen nur an Straße und Weg.",
+  "beschreibung": "Zustand: Bevor Annek Schach gelernt hat, ist der Diplomtag noch nicht vorbereitet: Auf dem Schulhof stehen weder Tribüne noch Steintische, nur das Plakat „Diplomtag – bald!“ kündigt ihn an. Sonst wie die gewöhnliche Karte: Die Schule der Hochebene: ein gewöhnliches Schulhaus von heute mit rotem Walmdach, davor der gepflasterte Schulhof mit Spielgeräten auf einer Raseninsel, Steintischen und Tribüne, der Fahnenmast steht neben dem Schotterweg, am Eingang das Schwarze Brett. Rechts auf eigenem Pflaster das Basketballfeld, mit dem Hof durch einen Weg verbunden; links die Turnhalle, eine Halle mit gewölbtem Blechdach und Schild, mit Weg zum Hof. An der Straße mit Mittellinie die Haltebucht quer am Hof, darin der gelbe Schulbus mit der Front zur Straße und der Haltestelle, daneben die Werkstatt von Joss Vell, ein Wellblechschuppen mit Rolltor, Zufahrt, Werkbank und Reifen. Der Schotterweg von den Felstürmen kommt am Ostrand an; dort greift der rote Sand der Hochebene mit ausgefranster Grenze in die Wiese (Kakteen und Steine), damit der Boden an der Kartengrenze nicht hart wechselt. Wiese ringsum, eine Hecke schließt das Gelände, offen nur an Straße und Weg.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -43,10 +43,10 @@
     "#..........pp...............................pp....kk..ggRRR#",
     "#..........ppppppppppppppppppppppppppppppppppp....kk...ggRR#",
     "#..........pppppppppppppppppppppppppppppppppppbbb.kk....gRR#",
-    "#.............ppppppppppppppppppppppppppppppppbbb.kk....gRR#",
-    "#.............ppppppppppppppppppppppppppppppppbbb.kk....gRR#",
-    "#.............ppppppppppppppppppppppppppppppppbbb.kk...ggRR#",
-    "#..aaaa.......ppppppppppppppppppppppppppppppppbbb.kk..ggRRR#",
+    "#........................pppppppppppppppppppppbbb.kk....gRR#",
+    "#........................pppppppppppppppppppppbbb.kk....gRR#",
+    "#........................pppppppppppppppppppppbbb.kk...ggRR#",
+    "#..aaaa..................pppppppppppppppppppppbbb.kk..ggRRR#",
     "#..aaaa.......ppppppppppppppppppppppppppppppppbbb.kk..ggRRR#",
     "#..aaaa.......ppppppppppppppppppppppppppppppppbbb.kk...gggR#",
     "#..aaaa.....................pppppppppp........bbb.kk.....gR#",
@@ -134,11 +134,11 @@
     },
     {
       "moebel": "wds6Kegelbaum",
-      "feld": [53, 25]
+      "feld": [52, 27]
     },
     {
       "moebel": "wds6Pinie",
-      "feld": [45, 20]
+      "feld": [47, 20]
     },
     {
       "moebel": "wds6Pinie",
@@ -173,28 +173,20 @@
       "feld": [10, 2]
     },
     {
-      "moebel": "cc3Busch",
-      "feld": [52, 22]
-    },
-    {
       "moebel": "wds6KaktusKlein",
       "feld": [56, 22]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [57, 26]
+      "moebel": "wds6SteinRot",
+      "feld": [55, 26]
     },
     {
       "moebel": "wds6KaktusKlein",
       "feld": [56, 29]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [55, 31]
-    },
-    {
       "moebel": "sc8Fahnenmast",
-      "feld": [49, 21],
+      "feld": [52, 17],
       "id": "ereignis34"
     },
     {

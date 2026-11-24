@@ -6,6 +6,7 @@
   "beschreibung": "Der alte Steinbruch Hargrove & Söhne hinter Ironwood (Runde 8), ein kühler Morgen. Die Karte zeigt die Grube von oben in drei Höhen: oben die Wiese an der Bruchkante, darunter die Abbaustufe aus Felsboden, ganz unten die Sohle aus Schotter. Die Kanten verlaufen unregelmäßig, am Fuß liegt Geröll; Rampen führen schräg hinunter, oben im Osten, auf der Stufe zurück nach Westen und dort zur Sohle. Die Zufahrt kommt am Westrand zwischen zwei Pollern mit Schild herein, die Bude hat ihre Tür zur Zufahrt, Aussichtspunkt mit Eisengeländer und Bank blicken in die Tiefe, Birken stehen an der Kante. Auf der Stufe liegen gesägte Blöcke in losen Gruppen, wie die Arbeit sie liegen ließ, dazu Bauholz, Schotterhaufen, Abraum und Pfützen. Auf der Sohle liegt ein natürliches Wasserloch mit Schilf und Seerosen; neben dem Wasserloch liegen Steinpaletten, Bohlen, ein Karren und Schotterhaufen, im Südosten Bauholz und Werkzeug; die gepflasterte Rampe im Westen ist die alte Fahrrampe der Laster. Der Stollenmund sitzt in der unteren Felskante; die Feldbahn läuft von dort mit zwei Loren nach Süden bis zum Prellbock am Verladeplatz, wo der alte gelbe Raupenbagger steht. Bretterhütte für Werkzeug im Westen, Graffiti an der Felswand im Nordosten.",
   "wand": "fels",
   "kante": "klippe",
+  "fels": "grau",
   "boden": "gras",
   "boeden": {
     "r": "gras",
@@ -23,15 +24,15 @@
     "#....................................................................#",
     "#....................................................................#",
     "#....................................................................#",
-    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.........#",
-    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.........#",
-    "#..................ppppppp...............................eee.........#",
-    "#..................ppppppp...............................eeeee.......#",
-    "######......##########...........#########......##########eeee.......#",
-    "########################......##########################eeee##########",
-    "########################################################eeee##########",
-    "#fffff######ffffffffff###########fffffffff######ffffffeeeeff##########",
-    "#fffffffffffffffffffffff######ffffffffffffffffffffffffeeeefffffffffff#",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee........#",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee........#",
+    "#..................ppppppp...............................eeee........#",
+    "#..................ppppppp...............................eeee........#",
+    "######......##########...........#########......#########eeee#########",
+    "########################......###########################eeee#########",
+    "#########################################################eeee#########",
+    "#fffff######ffffffffff###########fffffffff######fffffffffeeeeffffffff#",
+    "#fffffffffffffffffffffff######fffffffffffffffffffffffffffeeeeffffffff#",
     "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
     "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
     "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
@@ -40,12 +41,12 @@
     "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
     "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
     "#ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff#",
-    "#######ppppffffffffffffffffffffffffffff#fffff#######fffffffffffffffff#",
-    "#######pppp##ff##########fffff#########################fffff##########",
+    "#ffffffffppppffffffffffffffffffffffffffffffff#######fffffffffffffffff#",
+    "#########pppp############fffff#########################fffff##########",
     "#########pppp#########################################################",
-    "###kkkkkkpppp##########################k#####kkkkkkkkkkk##############",
-    "###kkkkkkkkppppkkkkkkkkkk#####kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
-    "###kkkkkkkkppppkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
+    "#########pppp################################kkkkkkkkkkk##############",
+    "###kkkkkkppppkkkkkkkkkkkk#####kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
+    "###kkkkkkppppkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
     "###kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
     "###kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
     "###kkkkkkkkkkkkkkkkkkkkkk~~~~~~~~kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk###",
@@ -180,10 +181,6 @@
     {
       "moebel": "wg4BlumenWeiss",
       "feld": [36, 5]
-    },
-    {
-      "moebel": "wg4Gras",
-      "feld": [50, 2]
     },
     {
       "moebel": "wg4BlumeGelb",
@@ -512,10 +509,6 @@
       "feld": [16, 17]
     },
     {
-      "moebel": "st8Granitquader",
-      "feld": [18, 17]
-    },
-    {
       "moebel": "st8GranitquaderStapel",
       "feld": [17, 19]
     },
@@ -530,10 +523,6 @@
     {
       "moebel": "st8Granitquader",
       "feld": [28, 21]
-    },
-    {
-      "moebel": "st8Granitquader",
-      "feld": [27, 19]
     },
     {
       "moebel": "st8GranitquaderStapel",
@@ -568,11 +557,11 @@
       "feld": [31, 20]
     },
     {
-      "moebel": "st5Schotterhaufen",
+      "moebel": "wdsGeroell",
       "feld": [20, 22]
     },
     {
-      "moebel": "st5Schotterhaufen",
+      "moebel": "wdsGeroell",
       "feld": [33, 22]
     },
     {
@@ -592,11 +581,11 @@
       "feld": [10, 35]
     },
     {
-      "moebel": "st5Schotterhaufen",
+      "moebel": "wdsGeroell",
       "feld": [12, 41]
     },
     {
-      "moebel": "st5Schotterhaufen",
+      "moebel": "wdsGeroell",
       "feld": [8, 42]
     },
     {
@@ -636,11 +625,11 @@
       "feld": [12, 36]
     },
     {
-      "moebel": "st5Schotterhaufen",
+      "moebel": "wdsGeroell",
       "feld": [39, 43]
     },
     {
-      "moebel": "st5Schotterhaufen",
+      "moebel": "wdsGeroell",
       "feld": [44, 47]
     },
     {
@@ -674,6 +663,123 @@
     {
       "moebel": "st14StolleneingangFels",
       "feld": [52, 24]
+    },
+    {
+      "moebel": "st8FeldbahnLaengs",
+      "feld": [54, 27]
+    },
+    {
+      "moebel": "st5BirkeKlein",
+      "feld": [0, 28],
+      "vorn": true
+    },
+    {
+      "moebel": "st5BirkeKlein",
+      "feld": [0, 37],
+      "vorn": true
+    },
+    {
+      "moebel": "st5BirkeKlein",
+      "feld": [0, 45],
+      "vorn": true
+    },
+    {
+      "moebel": "st5BirkeKlein",
+      "feld": [67, 26],
+      "vorn": true
+    },
+    {
+      "moebel": "st5BirkeKlein",
+      "feld": [67, 35],
+      "vorn": true
+    },
+    {
+      "moebel": "st5BirkeKlein",
+      "feld": [67, 44],
+      "vorn": true
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [0, 33],
+      "vorn": true
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [1, 42],
+      "vorn": true
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [68, 31],
+      "vorn": true
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [67, 40],
+      "vorn": true
+    },
+    {
+      "moebel": "wg4Busch",
+      "feld": [68, 47],
+      "vorn": true
+    },
+    {
+      "moebel": "scFelsMittel",
+      "feld": [3, 33]
+    },
+    {
+      "moebel": "wdsGeroell",
+      "feld": [3, 40]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [3, 46]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [65, 31]
+    },
+    {
+      "moebel": "wdsGeroell",
+      "feld": [66, 37]
+    },
+    {
+      "moebel": "scFelsMittel",
+      "feld": [65, 46]
+    },
+    {
+      "moebel": "wdsGeroell",
+      "feld": [66, 43]
+    },
+    {
+      "moebel": "wdsGeroell",
+      "feld": [21, 22],
+      "versatz": [6, 2]
+    },
+    {
+      "moebel": "wdsGeroell",
+      "feld": [34, 22],
+      "versatz": [6, 2]
+    },
+    {
+      "moebel": "wdsGeroell",
+      "feld": [13, 41],
+      "versatz": [6, 2]
+    },
+    {
+      "moebel": "wdsGeroell",
+      "feld": [9, 42],
+      "versatz": [6, 2]
+    },
+    {
+      "moebel": "wdsGeroell",
+      "feld": [40, 43],
+      "versatz": [6, 2]
+    },
+    {
+      "moebel": "wdsGeroell",
+      "feld": [45, 47],
+      "versatz": [6, 2]
     }
   ],
   "ausloeser": [

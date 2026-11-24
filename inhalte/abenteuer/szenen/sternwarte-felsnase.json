@@ -2,43 +2,44 @@
   "karte": "sternwarte.felsnase",
   "datei": "karten/sternwarte-felsnase.json",
   "art": "aussen",
-  "beschreibung": "Die Felsnase der Sternwarte (N5), 40 × 30 Kacheln, roter Fels mit Felskanten, Nacht als Tönung der Szene. Vom Canyonboden am Südrand steigt der Pfad aus Felsboden in zwei Kehren über Treppen in den Felsstufen auf die mittlere Stufe und weiter aufs Plateau; dort vor der höheren Felswand die weiße Sternwarte mit rostigem Kuppelspalt und Schild, Tür nach Süden, eine Bank an der Westkante mit Blick nach Westen hinunter in den Canyon, ein alter Antennenmast, Säulenkakteen auf allen Stufen.",
+  "beschreibung": "Die Felsnase der Sternwarte (N5), 40 × 30 Kacheln, roter Fels mit Felskanten, Nacht als Tönung der Szene. Das Plateau springt als Nase vor: Im Westen fällt es mit einer Seitenkante ab, die mittlere Stufe läuft unter der Nase herum; im Osten endet die mittlere Stufe ebenso über dem Canyonboden. Die Felskanten springen vor und zurück. Vom Canyonboden am Südrand steigt ein schmaler Pfad aus Felsboden in zwei Kehren über Treppen auf die mittlere Stufe und weiter aufs Plateau; dort vor der höheren Felswand die weiße Sternwarte mit rostigem Kuppelspalt und Schild, Tür nach Süden, eine Bank an der Westkante mit Blick nach Westen hinunter in den Canyon, ein alter Antennenmast, Säulenkakteen auf allen Stufen.",
   "wand": "felsRot",
   "boden": "sandRot",
   "boeden": {
-    "w": "sand"
+    "w": "felsbodenRot",
+    "s": "sand"
   },
   "raster": [
     "########################################",
     "########################################",
     "########################################",
-    "#......................................#",
-    "#......................................#",
-    "#......................................#",
-    "#......................................#",
-    "#......................................#",
-    "#......................................#",
+    "#....#..######..........#######........#",
+    "#....#.................................#",
+    "#....#.................................#",
+    "#....#.................................#",
+    "#....#.................................#",
+    "#....#.................................#",
+    "#....#.............ww..................#",
+    "#....#.............ww..................#",
+    "#....#...wwwwwwwwwwww..................#",
+    "#....#...wwwwwwwwwwww..................#",
+    "#....####ww###.....#######.......#######",
+    "#....####ww#############################",
+    "#....####ww#############################",
+    "#........ww...#####.......#######.#....#",
+    "#........ww.......................#....#",
+    "#........ww.......................#....#",
+    "#........wwwwwwwwwwwwwwwwwwww.....#....#",
+    "#........wwwwwwwwwwwwwwwwwwww.....#....#",
+    "####......###.....#########ww######....#",
+    "###########################ww######....#",
+    "###########################ww######....#",
+    "#...######...#####.wwwwwwwwww..........#",
+    "#..................wwwwwwwwww..........#",
     "#..................ww..................#",
-    "#.......wwwwwwwwwwwww..................#",
-    "#.......wwwwwwwwwwwww..................#",
-    "#.......wwwwwwwwwwwww..................#",
-    "########www###################......####",
-    "########www#############################",
-    "########www#############################",
-    "#.......www...................######...#",
-    "#.......www............................#",
-    "#.......wwwwwwwwwwwwwwwwwwwwww.........#",
-    "#.......wwwwwwwwwwwwwwwwwwwwww.........#",
-    "#.......wwwwwwwwwwwwwwwwwwwwww.........#",
-    "###########################www##########",
-    "###########################www##########",
-    "###########################www##########",
-    "#..................wwwwwwwwwww.........#",
-    "#..................wwwwwwwwwww.........#",
     "#..................ww..................#",
-    "#..................ww..................#",
-    "#..................ww..................#",
-    "###################ww###################"
+    "#..................ss..................#",
+    "###################ss###################"
   ],
   "objekte": [
     {
@@ -48,7 +49,7 @@
     },
     {
       "moebel": "mf9BankLinks",
-      "feld": [2, 5],
+      "feld": [7, 5],
       "id": "bankWest"
     },
     {
@@ -57,7 +58,7 @@
     },
     {
       "moebel": "dd6Saguaro",
-      "feld": [6, 3]
+      "feld": [2, 7]
     },
     {
       "moebel": "dd6KaktusKlein",
@@ -77,7 +78,7 @@
     },
     {
       "moebel": "dd6KaktusBluehend",
-      "feld": [4, 10]
+      "feld": [2, 12]
     },
     {
       "moebel": "dd6Saguaro",
@@ -89,7 +90,7 @@
     },
     {
       "moebel": "dd6KaktusBluehend",
-      "feld": [14, 16]
+      "feld": [21, 16]
     },
     {
       "moebel": "dd6Saguaro",
@@ -104,19 +105,11 @@
       "feld": [12, 25]
     },
     {
-      "moebel": "felsKlein",
-      "feld": [23, 17]
+      "moebel": "dd6SteinFlach",
+      "feld": [32, 27]
     },
     {
-      "moebel": "fels",
-      "feld": [2, 24]
-    },
-    {
-      "moebel": "felsKlein",
-      "feld": [34, 27]
-    },
-    {
-      "moebel": "felsKlein",
+      "moebel": "dd6SteinFlach",
       "feld": [24, 6]
     }
   ],
@@ -142,7 +135,7 @@
     },
     {
       "name": "bank",
-      "feld": [3, 6]
+      "feld": [8, 6]
     },
     {
       "name": "antennenmast",
@@ -166,10 +159,10 @@
     {
       "name": "paar",
       "typ": "statist",
-      "feld": [3, 8],
+      "feld": [8, 8],
       "eigenschaften": {
-        "von": "3,8",
-        "bis": "3,8",
+        "von": "8,8",
+        "bis": "8,8",
         "tun": "sitzt in Decken auf der Bank",
         "wann": "abend",
         "sagt": "statist.sternwarte.felsnase.paar"

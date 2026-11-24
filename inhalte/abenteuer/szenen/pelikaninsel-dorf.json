@@ -2,14 +2,15 @@
   "karte": "pelikaninsel.dorf",
   "datei": "karten/pelikaninsel-dorf.json",
   "art": "aussen",
-  "beschreibung": "Winter auf der Pelikaninsel: nass und grau, kalter Wind von See, kein Schnee (RO21). Im Norden der Anleger mit einem Querkopf, an dem die Inselfähre längsseits liegt, an zwei Pollern festgemacht. Im Westen das Leuchtfeuer auf einer grünen Landzunge zwischen Felsen. Der Dorfplatz, eine nasse Wiese, mit zwei Netztrocknern, Kisten und Fässern am Anleger; Ruderboote liegen im Wasser. Fünf Pfahlhäuser im Osten auf Stegen, Pelikane auf den Pfählen. Im Süden ein breites Watt mit Muscheln und Seesternen, ein Fischerboot mit Fischer am Strand.",
+  "beschreibung": "Winter auf der Pelikaninsel: nass und grau, kalter Wind von See, kein Schnee (RO21). Im Norden der Anleger mit einem Querkopf, an dem die Inselfähre längsseits liegt, an zwei Pollern festgemacht. Im Westen das Leuchtfeuer auf einer grünen Landzunge zwischen Felsen. Trampelpfade führen vom Anleger zu den Stegen, zum Leuchtfeuer und hinunter ins Watt. Der Dorfplatz, eine nasse Wiese, mit zwei Netztrocknern, Kisten und Fässern am Anleger; Ruderboote liegen im Wasser. Fünf Pfahlhäuser im Osten auf Stegen, Pelikane auf den Pfählen. Im Süden ein breites Watt mit Muscheln und Seesternen, ein Fischerboot mit Fischer am Strand.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
     "g": "gras",
     "k": "felsboden",
     "b": "holzDunkel",
-    "w": "schotter"
+    "w": "schotter",
+    "e": "erde"
   },
   "zustand": ["neu", "gebraucht", "alt"],
   "stil": [
@@ -34,30 +35,30 @@
     "~~~~~~~~~~~~~~~~~~~~~~~bb~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~bb~~~~~~~~~~~~~~~~~~~~~~~~~",
     "~~~~~~~~~~~~~~~~~~~~~~~bb~~~~~~~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~~~~~.............bb......~~~~~~~~~~~~~~~~~~~",
-    "~~~~~~.................bb........~~~~~~~~~~~~~~~~~",
-    "~~................................~~~~~~~~~~~~~~~~",
-    "~~................................~~~~~~~~~~~~~~~~",
-    "~~................................~~~~~~~~~~~~~~~~",
-    "~~................................~~~~~~~~~~~~~~~~",
-    "~.................................~~~~~~~~~~~~~~~~",
-    "~.................................~~~~~~~~~~~~~~~~",
-    "~.................................~~~~~~~~~~~~~~~~",
-    "~.................................bbbbbbbbbbbbbbb~",
-    "~~................................bbbbbbbbbbbbbbb~",
-    "~~................................bbbbbbbbbbbbbbb~",
-    "~~~...............................~~~~~~~~~~~~bb~~",
-    "~~~...............................~~~~~~~~~~~~bb~~",
-    "~~................................~~~~~~~~~~~~bb~~",
-    "~~................................~~~~~~~~~~~~bb~~",
-    "~~................................~~~~~~~~~~~~bb~~",
-    "~~~...............................~~~~~~~~~~~~bb~~",
-    "~~~...............................bbbbbbbbbbbbbb~~",
-    "~~~...............................bbbbbbbbbbbbbb~~",
-    "~~................................bbbbbbbbbbbbbb~~",
-    "~~~~..............................wwwwwwwwwwww~~~~",
-    "~~~~wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww~~~~",
-    "~~~~wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww~~~~",
+    "~~~~~~~~~~.............ee......~~~~~~~~~~~~~~~~~~~",
+    "~~~~~~.................ee........~~~~~~~~~~~~~~~~~",
+    "~~.....................ee.........~~~~~~~~~~~~~~~~",
+    "~~.....................ee.........~~~~~~~~~~~~~~~~",
+    "~~.....................ee.........~~~~~~~~~~~~~~~~",
+    "~~.....................ee.........~~~~~~~~~~~~~~~~",
+    "~......................ee.........~~~~~~~~~~~~~~~~",
+    "~......................ee.........~~~~~~~~~~~~~~~~",
+    "~......................ee.........~~~~~~~~~~~~~~~~",
+    "~......................eeeeeeeeeeebbbbbbbbbbbbbbb~",
+    "~~.....................eeeeeeeeeeebbbbbbbbbbbbbbb~",
+    "~~.....ee..............ee.........bbbbbbbbbbbbbbb~",
+    "~~~....ee..............ee.........~~~~~~~~~~~~bb~~",
+    "~~~....ee..............ee.........~~~~~~~~~~~~bb~~",
+    "~~.....ee..............ee.........~~~~~~~~~~~~bb~~",
+    "~~.....eeeeeeeeeeeeeeeeee.........~~~~~~~~~~~~bb~~",
+    "~~.....eeeeeeeeeeeeeeeeee.........~~~~~~~~~~~~bb~~",
+    "~~~....................ee.........~~~~~~~~~~~~bb~~",
+    "~~~....................ee.........bbbbbbbbbbbbbb~~",
+    "~~~....................ee.........bbbbbbbbbbbbbb~~",
+    "~~......www...........wwww..wwwwwwbbbbbbbbbbbbbb~~",
+    "~~~~..wwwwwww......wwwwwwwwwwwwwwwwwwwwwwwwwww~~~~",
+    "~~~~wwwwwwwww.....wwwwwwwwwwwwwwwwwwwwwwwwwwww~~~~",
+    "~~~~wwwwwwwwww...wwwwwwwwwwwwwwwwwwwwwwwwwwwww~~~~",
     "~~~~wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww~~~~",
     "~~~~wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww~~~~",
     "~~~~~wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww~~~~~",
@@ -187,16 +188,8 @@
       "feld": [19, 24]
     },
     {
-      "moebel": "n4Fass",
-      "feld": [30, 15]
-    },
-    {
       "moebel": "n4Kisten",
       "feld": [17, 23]
-    },
-    {
-      "moebel": "n4Fass",
-      "feld": [29, 15]
     },
     {
       "moebel": "pk9BootWasser",
@@ -223,16 +216,8 @@
       "feld": [29, 42]
     },
     {
-      "moebel": "n4MuschelWeiss",
-      "feld": [12, 42]
-    },
-    {
       "moebel": "n4MuschelGold",
       "feld": [30, 38]
-    },
-    {
-      "moebel": "n4SeesternLila",
-      "feld": [41, 41]
     },
     {
       "moebel": "n4SeesternLila",
@@ -240,55 +225,23 @@
     },
     {
       "moebel": "n4MuschelWeiss",
-      "feld": [23, 19]
-    },
-    {
-      "moebel": "n4MuschelBraun",
-      "feld": [14, 34]
-    },
-    {
-      "moebel": "n4MuschelWeiss",
-      "feld": [44, 42]
-    },
-    {
-      "moebel": "n4MuschelWeiss",
       "feld": [11, 35]
-    },
-    {
-      "moebel": "n4SeesternGelb",
-      "feld": [36, 42]
     },
     {
       "moebel": "n4MuschelGold",
       "feld": [10, 41]
     },
     {
-      "moebel": "n4MuschelWeiss",
-      "feld": [19, 34]
-    },
-    {
       "moebel": "n4SeesternLila",
       "feld": [11, 36]
-    },
-    {
-      "moebel": "n4SeesternLila",
-      "feld": [14, 38]
     },
     {
       "moebel": "n4MuschelWeiss",
       "feld": [23, 37]
     },
     {
-      "moebel": "n4MuschelGold",
-      "feld": [26, 41]
-    },
-    {
       "moebel": "n4SeesternGelb",
       "feld": [25, 39]
-    },
-    {
-      "moebel": "n4SeesternGelb",
-      "feld": [28, 36]
     },
     {
       "moebel": "n4MuschelRosa",
@@ -301,47 +254,23 @@
     },
     {
       "moebel": "n4MuschelGold",
-      "feld": [32, 41]
-    },
-    {
-      "moebel": "n4MuschelGold",
       "feld": [9, 34]
-    },
-    {
-      "moebel": "n4MuschelGold",
-      "feld": [5, 39]
     },
     {
       "moebel": "n4MuschelWeiss",
       "feld": [4, 37]
     },
     {
-      "moebel": "n4SeesternGelb",
-      "feld": [24, 42]
-    },
-    {
       "moebel": "n4MuschelWeiss",
       "feld": [35, 38]
-    },
-    {
-      "moebel": "n4MuschelGold",
-      "feld": [4, 34]
     },
     {
       "moebel": "n4MuschelRosa",
       "feld": [7, 42]
     },
     {
-      "moebel": "n4MuschelBraun",
-      "feld": [31, 40]
-    },
-    {
       "moebel": "n4MuschelWeiss",
       "feld": [29, 38]
-    },
-    {
-      "moebel": "n4MuschelWeiss",
-      "feld": [16, 39]
     },
     {
       "moebel": "n4MuschelBraun",
@@ -349,39 +278,15 @@
     },
     {
       "moebel": "n4SeesternGelb",
-      "feld": [35, 41]
-    },
-    {
-      "moebel": "n4SeesternGelb",
       "feld": [12, 36]
-    },
-    {
-      "moebel": "n4SeesternGelb",
-      "feld": [9, 38]
-    },
-    {
-      "moebel": "n4MuschelBraun",
-      "feld": [37, 42]
-    },
-    {
-      "moebel": "n4SeesternGelb",
-      "feld": [10, 34]
     },
     {
       "moebel": "n4SeesternGelb",
       "feld": [7, 37]
     },
     {
-      "moebel": "n4MuschelWeiss",
-      "feld": [30, 39]
-    },
-    {
       "moebel": "n4SeesternGelb",
       "feld": [42, 36]
-    },
-    {
-      "moebel": "n4SeesternGelb",
-      "feld": [33, 40]
     },
     {
       "moebel": "n4MuschelBraun",
@@ -389,95 +294,39 @@
     },
     {
       "moebel": "n4SeesternLila",
-      "feld": [8, 37]
-    },
-    {
-      "moebel": "n4SeesternLila",
       "feld": [4, 35]
-    },
-    {
-      "moebel": "n4MuschelRosa",
-      "feld": [10, 42]
     },
     {
       "moebel": "n4MuschelGold",
       "feld": [34, 37]
     },
     {
-      "moebel": "n4SeesternGelb",
-      "feld": [12, 40]
-    },
-    {
-      "moebel": "n4MuschelWeiss",
-      "feld": [32, 29]
-    },
-    {
-      "moebel": "n4MuschelRosa",
-      "feld": [23, 34]
-    },
-    {
       "moebel": "n4MuschelGold",
       "feld": [19, 42]
-    },
-    {
-      "moebel": "n4MuschelGold",
-      "feld": [18, 37]
     },
     {
       "moebel": "n4SeesternLila",
       "feld": [6, 36]
     },
     {
-      "moebel": "n4MuschelRosa",
-      "feld": [17, 36]
-    },
-    {
-      "moebel": "n4MuschelBraun",
-      "feld": [29, 35]
-    },
-    {
-      "moebel": "n4SeesternGelb",
-      "feld": [35, 40]
-    },
-    {
       "moebel": "n4MuschelBraun",
       "feld": [15, 41]
-    },
-    {
-      "moebel": "n4MuschelGold",
-      "feld": [8, 34]
     },
     {
       "moebel": "n4MuschelWeiss",
       "feld": [40, 40]
     },
     {
-      "moebel": "n4MuschelWeiss",
-      "feld": [28, 40]
-    },
-    {
       "moebel": "n4MuschelBraun",
       "feld": [15, 37]
-    },
-    {
-      "moebel": "n4MuschelBraun",
-      "feld": [38, 41]
     },
     {
       "moebel": "n4SeesternGelb",
       "feld": [33, 42]
     },
     {
-      "moebel": "n4SeesternLila",
-      "feld": [32, 36]
-    },
-    {
       "moebel": "n4MuschelBraun",
       "feld": [34, 36]
-    },
-    {
-      "moebel": "n4SeesternLila",
-      "feld": [12, 37]
     },
     {
       "moebel": "n4MuschelGold",
@@ -485,23 +334,11 @@
     },
     {
       "moebel": "n4SeesternLila",
-      "feld": [43, 36]
-    },
-    {
-      "moebel": "n4SeesternLila",
       "feld": [30, 37]
-    },
-    {
-      "moebel": "n4MuschelWeiss",
-      "feld": [29, 34]
     },
     {
       "moebel": "n4SeesternLila",
       "feld": [12, 41]
-    },
-    {
-      "moebel": "n4MuschelWeiss",
-      "feld": [6, 32]
     },
     {
       "moebel": "sc8Finkenzeichen",

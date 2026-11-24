@@ -40,7 +40,7 @@
     },
     {
       "moebel": "n5Sternkarte",
-      "feld": [4, 1],
+      "feld": [6, 1],
       "an_wand": true,
       "id": "sternkarte"
     },
@@ -93,12 +93,12 @@
     },
     {
       "moebel": "ds6KisteBriefe",
-      "feld": [11, 9],
-      "massstab": 0.5
+      "feld": [10, 9],
+      "massstab": 0.75
     },
     {
       "moebel": "n9Kuppelspalt",
-      "feld": [7, 1],
+      "feld": [4, 1],
       "an_wand": true,
       "id": "kuppelspalt"
     }

@@ -151,14 +151,22 @@ def pruefe_innen(szene: dict, moebel: dict, privat: Path) -> list[str]:
     return befunde
 
 
+def ohne_tuer(name: str) -> bool:
+    """Im Bild geprüft und ohne Tür (Wasserturm, Kiosk mit Theke, Hauswand ohne Eingang, 24.11.2026)."""
+    eintrag = tuerangaben().get(name, {})
+    return eintrag.get("herkunft") == "nicht messbar" and "im Bild geprüft" in eintrag.get("grund", "")
+
+
 def offen(szene: dict, moebel: dict) -> set[str]:
-    """Gebäudebilder einer Außenkarte ohne gemessene Tür."""
+    """Gebäudebilder einer Außenkarte ohne gemessene Tür, die noch niemand im Bild angesehen hat."""
     if szene.get("art") != "aussen":
         return set()
     return {
-        Path(moebel[e["moebel"]]["quelle"]).name
+        name
         for e in szene.get("objekte", [])
-        if moebel.get(e["moebel"], {}).get("art") in GEBAEUDE and not tuer_von(moebel[e["moebel"]])
+        if moebel.get(e["moebel"], {}).get("art") in GEBAEUDE
+        and not tuer_von(moebel[e["moebel"]])
+        and not ohne_tuer(name := Path(moebel[e["moebel"]]["quelle"]).name)
     }
 
 

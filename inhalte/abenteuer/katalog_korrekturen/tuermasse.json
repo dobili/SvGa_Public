@@ -21,8 +21,9 @@
     "herkunft": "von Hand"
   },
   "spiel/eigene/fassade_diner.png": {
-    "rahmen": [16, 121, 45, 138],
-    "herkunft": "von Hand"
+    "rahmen": [16, 117, 45, 138],
+    "herkunft": "von Hand",
+    "grund": "Markise 4 Pixel höher, Ladenzeile von 17 auf 21 Pixel gestreckt (Regel 10.92, 24.11.2026)"
   },
   "spiel/eigene/fassade_waschsalon.png": {
     "rahmen": [15, 121, 46, 138],
@@ -538,39 +539,39 @@
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Example_Small_Stage_Structure.png": {
     "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "grund": "keine Tür im Bild (Bühnengerüst), im Bild geprüft 24.11.2026"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Victorian_House_5_16x16.png": {
     "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "grund": "keine Tür im Bild (nur Fenster, das hohe Bogenfenster endet über dem Sockel), im Bild geprüft 24.11.2026"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Victorian_House_7_16x16.png": {
     "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "grund": "keine Tür im Bild (nur Fenster), im Bild geprüft 24.11.2026"
   },
   "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Chicken_Coop_16x16.png": {
     "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "grund": "keine Tür im Bild (nur eine Klappe für die Hühner), im Bild geprüft 24.11.2026"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tent_4.png": {
     "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "grund": "keine Tür im Bild (Zelt von oben), im Bild geprüft 24.11.2026"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Kiosk_Coffee_Cup.png": {
     "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "grund": "keine Tür im Bild (Verkaufsfenster mit Theke), im Bild geprüft 24.11.2026"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Kiosk_Infopoint_1.png": {
     "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "grund": "keine Tür im Bild (Schalter mit Theke), im Bild geprüft 24.11.2026"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Water_Tower_1.png": {
     "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "grund": "keine Tür im Bild (Wasserturm), im Bild geprüft 24.11.2026"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Water_Tower_2.png": {
     "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "grund": "keine Tür im Bild (Wasserturm mit Leiter), im Bild geprüft 24.11.2026"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Blue_Brown_Wood_Storage.png": {
     "rahmen": [15, 43, 33, 64],
@@ -582,7 +583,7 @@
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Pergola_Structure.png": {
     "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "grund": "keine Tür im Bild (Pergola), im Bild geprüft 24.11.2026"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Red_Brown_Wood_Storage.png": {
     "rahmen": [14, 43, 34, 64],
@@ -590,43 +591,43 @@
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_8.png": {
     "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "grund": "keine Tür im Bild (Hauswand ohne Eingang (Seiten- oder Rückansicht)), im Bild geprüft 24.11.2026"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_9.png": {
     "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "grund": "keine Tür im Bild (Hauswand ohne Eingang), im Bild geprüft 24.11.2026"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_9_Example.png": {
     "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "grund": "keine Tür im Bild (Hauswand ohne Eingang), im Bild geprüft 24.11.2026"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_Example.png": {
     "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "grund": "keine Tür im Bild (Hauswand ohne Eingang, davor eine Bank), im Bild geprüft 24.11.2026"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Gas_Station_2.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "rahmen": [47, 76, 67, 110],
+    "herkunft": "von Hand"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Gas_Station_Petrol_Pump_1.png": {
     "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "grund": "keine Tür im Bild (Zapfsäulen unter dem Dach), im Bild geprüft 24.11.2026"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Tree_House_House_1.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "rahmen": [29, 41, 49, 64],
+    "herkunft": "von Hand"
   },
   "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Building_Skeleton_1.png": {
     "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "grund": "keine Tür im Bild (Rohbau, offenes Gerüst), im Bild geprüft 24.11.2026"
   },
   "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Silos_1_16x16.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "rahmen": [16, 192, 33, 220],
+    "herkunft": "von Hand"
   },
   "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Stable_Example_Outside_16x16.png": {
     "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "grund": "keine Tür im Bild (offene Ställe ohne Tür), im Bild geprüft 24.11.2026"
   },
   "spiel/eigene/altstadt_campus_bimbum.png": {
     "rahmen": [72, 111, 103, 143],
@@ -650,15 +651,15 @@
   },
   "spiel/eigene/campkiosk.png": {
     "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "grund": "keine Tür im Bild (Verkaufstheke), im Bild geprüft 24.11.2026"
   },
   "spiel/eigene/fabrikschornstein.png": {
     "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "grund": "keine Tür im Bild (Schornstein), im Bild geprüft 24.11.2026"
   },
   "spiel/eigene/faehre_deckhaus_gemini.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "rahmen": [45, 76, 68, 112],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/faehrhaus_see.png": {
     "rahmen": [31, 72, 50, 96],
@@ -694,11 +695,11 @@
   },
   "spiel/eigene/kaffeebecher_klein.png": {
     "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "grund": "keine Tür im Bild (Verkaufsfenster mit Theke), im Bild geprüft 24.11.2026"
   },
   "spiel/eigene/leuchtfeuer.png": {
-    "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "rahmen": [17, 63, 34, 88],
+    "herkunft": "von Hand"
   },
   "spiel/eigene/london_buchladen_hell.png": {
     "rahmen": [65, 160, 84, 192],
@@ -738,7 +739,7 @@
   },
   "spiel/eigene/silo_kurz.png": {
     "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "grund": "keine Tür im Bild (Silo mit Leiter), im Bild geprüft 24.11.2026"
   },
   "spiel/eigene/stellwerk_ziegel.png": {
     "herkunft": "nicht messbar",
@@ -746,7 +747,7 @@
   },
   "spiel/eigene/tunnelportal_west_4.png": {
     "herkunft": "nicht messbar",
-    "grund": "keine Türangabe (Katalog „tuer“ oder Grundriss)"
+    "grund": "keine Tür im Bild (Tunnelportal, breiter als jede Figur), im Bild geprüft 24.11.2026"
   },
   "spiel/eigene/speisewagen.png": {
     "rahmen": [71, 33, 89, 54],

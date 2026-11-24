@@ -36,7 +36,25 @@ def test_herkunft_und_bericht():
     assert all("grund" in e for e in angaben.values() if e["herkunft"] in ("verworfen", "nicht messbar"))
     assert not any(n for n, e in angaben.items() if e["herkunft"] == "verworfen" and n in tuermasse())
     text = bericht(MOEBEL)
-    assert "## Türen kleiner als die Figur" in text and "mf4Diner" in text
+    assert "## Türen kleiner als die Figur" in text
+    # Diner Maple Falls: Ladenzeile im Bild auf 21 Pixel gestreckt (24.11.2026), groß genug.
+    _, o, _, u = tuermasse()["fassade_diner.png"]
+    assert u - o >= FIGUR_HOEHE
+
+
+def test_keine_zu_kleine_oder_ungepruefte_tuer_draussen():
+    # Dauertest Regel 10.92 außen: jede Tür so groß wie die Figur, jedes Gebäudebild gemessen oder im
+    # Bild als „ohne Tür“ geprüft (Kiosk mit Theke, Wasserturm, Hauswand ohne Eingang).
+    import json
+
+    from pipeline.abenteuer.tuergroesse import INHALTE, offen
+
+    befunde, ungeprueft = [], set()
+    for pfad in sorted((INHALTE / "szenen").glob("*.json")):
+        szene = json.loads(pfad.read_text(encoding="utf-8"))
+        befunde += [f"{pfad.name}: {b}" for b in pruefe_szene(szene, MOEBEL)]
+        ungeprueft |= offen(szene, MOEBEL)
+    assert befunde == [] and ungeprueft == set()
 
 
 def test_innentueren_in_figurgroesse(tmp_path):

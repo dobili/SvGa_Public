@@ -535,6 +535,23 @@ Profil › Einstellungen › Fehler melden.
       mehr auf dem Schoß. Fällt dir noch ein Haus auf, hinter dem der Held falsch verschwindet,
       nenne Karte und Stelle.
       **Antwort:** „N2714 ok“ oder was auffällt.
+- [ ] N2715. **Alle Schachvarianten spielbar (25.11.2026):** Am schnellsten am Varianten-Tisch
+      in der Raststätte von Crossroads: Ambrose bietet dort Schach960, Drei-Schach, Atomschach,
+      König der Hügel, Königsrennen, Räuberschach, Nebelschach und Entenschach an; Tandem spielst
+      du dort mit Ambrose gegen Slick. Je eine Partie bis zum Ende spielen und auf die Regel achten:
+      Drei-Schach endet nach dem dritten Schach, im Atomschach explodiert jeder Schlag mit den
+      Nachbarfeldern, bei König der Hügel gewinnt der König auf d4, e4, d5 oder e5, im Königsrennen
+      gewinnt, wer zuerst die achte Reihe erreicht (Schach geben ist verboten), im Räuberschach
+      muss man schlagen und gewinnt, wer alles verliert, im Nebel siehst du nur, was deine Figuren
+      erreichen, im Entenschach setzt du nach jedem Zug die Ente auf ein freies Feld, im Tandem
+      kannst du geschlagene Figuren deines Partners einsetzen. Dazu an ihren Orten, mit eigener
+      Stimmung und einem Geschenk danach: Drei-Schach bei Juniper (Weg Pinewood–Ghost Town,
+      Kreidefels), Atomschach bei Bell (Prärie), König der Hügel bei Abe (Weg Ghost Town–Capital),
+      Königsrennen bei Earl (Weg Wüste–Summit), Räuberschach bei Ezra und Tandem am Lagerfeuer
+      (Pinewood Camp), Nebelschach bei Theron (Bayou), Entenschach bei Ray im Sturmkeller (Prärie,
+      Entenfeld), Falke und Bison bei Kira (Hochebene), Drache bei Sol am Drachenbrunnen (Summit
+      City, abends). Besprechen kann Ambrose diese Partien nicht, nur die klassischen.
+      **Antwort:** „N2715 ok“ oder Variante und was nicht stimmt.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

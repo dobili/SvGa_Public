@@ -64,6 +64,10 @@ VAR einladungGesehen = false
 VAR revancheMapleFalls = false
 // Aus capital-arena-aussen.ink: Nach dem Abschied spricht Ambrose nicht mehr. Hier nur gelesen.
 VAR abschiedGesehen = false
+// Partiebesprechung (Wunsch des Autors, 25.11.2026; docs/spiel/auftraege/partiebesprechung_25-11.md):
+// Nach dem ersten Clubkampf kündigt Ambrose an, dass man jede Partie im Tagebuch mit ihm
+// durchgehen kann. Die Hülle zeigt „Besprechen“ erst danach (regeln/besprechung.ts).
+VAR besprechungAngekuendigt = false
 
 // ---------------------------------------------------------------- Coach Delgado
 
@@ -198,6 +202,7 @@ Noch einmal? Ich habe Zeit, und Kekse. #sprecher:coachDelgado #stimmung:laechelt
 {not abschiedGesehen:
     Der Coach hat recht mit der Eröffnung. Danach hast du aufgehört zu zählen. #sprecher:ambrose #stimmung:nachdenklich
     Erst zählen, dann noch einmal. #sprecher:ambrose #stimmung:nachdenklich
+    -> besprechung_ankuendigen ->
 }
 * [„Noch einmal.“]
     -> coach_partie
@@ -256,6 +261,18 @@ Es war keine schöne Partie. #sprecher:ambrose #stimmung:nachdenklich
 - Das Laternenlicht fällt durch das Fenster auf das Brett. Man sieht fast durch ihn hindurch. #sprecher:erzaehler #pause
 Nein. #sprecher:ambrose #stimmung:still #pause:3
 Nein. Das ist das Merkwürdige. #sprecher:ambrose #stimmung:still #musik:karte
+-> besprechung_ankuendigen ->
+->->
+
+// Partiebesprechung (25.11.2026): einmal nach dem ersten Clubkampf, nach Sieg (Heimweg, nach „Zu
+// meiner Zeit hätte man so etwas nicht aufgeschrieben.“) oder Niederlage (beim Coach). Danach
+// steht im Tagebuch bei jeder Partie „Besprechen“.
+=== besprechung_ankuendigen ===
+{besprechungAngekuendigt: ->->}
+~ besprechungAngekuendigt = true
+Eines noch. {heimwegNadelGesehen:Aufgeschrieben wird sie trotzdem, in deinem Tagebuch.|Auch diese Partie steht in deinem Tagebuch.} #sprecher:ambrose #stimmung:nachdenklich
+Bei den Partien steht jetzt „Besprechen“. Dann gehen wir sie zusammen durch, Zug für Zug, du und ich. #sprecher:ambrose #stimmung:laechelt
+Ich sage dir, wo es gut war und wo nicht. Mehr nicht, fürs Erste. #sprecher:ambrose #stimmung:nachdenklich
 ->->
 
 // ---------------------------------------------------------------- Sam

@@ -305,11 +305,12 @@ export function Oberwelt() {
           daten={welt.daten}
           beiSchliessen={() => setzeTagebuch(false)}
           beiZielpfeil={(kennung) => k.schreibe(schalteVerfolgung(stand, kennung))}
-          // Position sichern wie vor einer Partie, dann die alte Partie in der Hülle zeigen.
-          beiPartie={(id) => {
+          // Position sichern wie vor einer Partie, dann die alte Partie zeigen oder besprechen.
+          beiPartie={(id, besprechen) => {
             const mitPosition = { ...stand, position: k.position(stand) };
             k.merke(mitPosition);
-            void dienste.schreibeStand(mitPosition).then(() => dienste.zeigeBeendetePartie(id));
+            const zeige = besprechen ? dienste.zeigeBesprechung : dienste.zeigeBeendetePartie;
+            void dienste.schreibeStand(mitPosition).then(() => zeige(id));
           }}
         />
       )}

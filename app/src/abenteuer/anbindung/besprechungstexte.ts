@@ -1,0 +1,151 @@
+/**
+ * Die Sätze der Partiebesprechung: je Moment ein bis drei kurze Sätze in Ambroses Stimme oder, ohne
+ * ihn, als Notiz des Helden; dazu Auftakt und Schluss.
+ *
+ * Rolle im Gesamtbild: anbindung/Besprechung.tsx zeigt sie in der Sprechblase über dem Brett. Die
+ * Texte stehen in inhalte/abenteuer/texte/de.json (Entwurf docs/spiel/auftraege/
+ * partiebesprechung_25-11.md, Abschnitt 6):
+ * - `besprechung.<stimme>.<stufe>.<kategorie>.<n>` (Stufe 1 knapp, ab 2 mit dem besseren Zug),
+ * - `besprechung.<stimme>.begriff.<begriff>.<gegen|fuer>.<n>` ab Stufe 2, nur bekannte Begriffe,
+ * - `besprechung.<stimme>.folge.<n>` ab Stufe 3 (die ersten Züge der besseren Fortsetzung),
+ * - `besprechung.<stimme>.auftakt|schluss.<ausgang>|ruhig|rechnet.<n>`.
+ * Ohne Ambrose (`allein`) gibt es keine Stufen in den Schlüsseln, nur in der Auswahl.
+ * Gezogen wird mit zieheAus (anbindung/tischtexte.ts): ohne Wiederholung in einer Besprechung, mit
+ * festem Zufall je Partie, damit zwei Partien verschieden klingen.
+ * Abhängigkeiten: anbindung/tischtexte.ts, regeln/besprechung.ts, regeln/besprechungsmomente.ts,
+ * anbindung/besprechungsmotiv.ts (Typ), texte/texte.ts.
+ */
+import type { Ausgang } from "../schnittstelle/partie";
+import type { Begriff, Besprechungsstimme, Besprechungsstufe } from "../regeln/besprechung";
+import type { Besprechungsmoment } from "../regeln/besprechungsmomente";
+import { tSpiel } from "../texte/texte";
+import type { Momentmotiv } from "./besprechungsmotiv";
+import { zieheAus } from "./tischtexte";
+
+/** Wer spricht, wie viel, mit welchen Wörtern, für welche Partie. */
+export interface Besprechungskontext {
+  readonly stimme: Besprechungsstimme;
+  readonly stufe: Besprechungsstufe;
+  readonly begriffe: ReadonlySet<Begriff>;
+  readonly partiekennung: string;
+}
+
+/** Was ein Moment an Einzelheiten mitbringt (Züge schon als Text in der Sprache des Spiels). */
+export interface Momentangaben {
+  readonly moment: Besprechungsmoment;
+  /** Der gespielte Zug mit Nummer („12. Sf3“). */
+  readonly zug: string;
+  /** Der bessere Zug ohne Nummer („Lc4“), null ohne Engine-Zug oder wenn er gespielt wurde. */
+  readonly besser: string | null;
+  readonly motiv: Momentmotiv | null;
+  /** Die ersten Züge der besseren Fortsetzung („Sxe5 Dh5“), null ohne. */
+  readonly folge: string | null;
+  /** Name der Eröffnung beim Theoriemoment, null ohne. */
+  readonly eroeffnung: string | null;
+}
+
+/** Kategorien, deren Satz (ab Stufe 2, allein immer) den besseren Zug nennt. */
+const MIT_BESSEREM: ReadonlySet<string> = new Set([
+  "fehler",
+  "patzer",
+  "verpasst",
+  "ungenau",
+  "gegnerfehler",
+]);
+/** Kategorien, bei denen ab Stufe 3 die Folge dazukommt. */
+const MIT_FOLGE: ReadonlySet<string> = new Set(["fehler", "patzer", "verpasst", "gegnerfehler"]);
+
+/** Die Vorsilbe der Stimme: Ambrose spricht, sonst die Notizen des Helden. */
+function vorsilbe(stimme: Besprechungsstimme): string {
+  return stimme === "ambrose" ? "besprechung.ambrose" : "besprechung.allein";
+}
+
+/** Zieht Zeilen ohne Wiederholung: zählt je Gruppe mit. */
+class Ziehung {
+  private readonly nutzung = new Map<string, number>();
+  constructor(private readonly kennung: string) {}
+
+  /** Eine Zeile der Gruppe (übersetzt, mit Werten) oder null, wenn die Gruppe leer ist. */
+  zeile(gruppe: string, werte: Readonly<Record<string, string>> = {}): string | null {
+    const n = this.nutzung.get(gruppe) ?? 0;
+    this.nutzung.set(gruppe, n + 1);
+    const schluessel = zieheAus([gruppe], n, this.kennung);
+    return schluessel ? tSpiel(schluessel, werte) : null;
+  }
+}
+
+/**
+ * Gruppe des Kategoriesatzes: Ambrose nach Stufe (1 knapp, ab 2 mit dem besseren Zug), ohne ihn
+ * ohne Stufe; Theorie mit Namen, wenn es einen gibt. Fehlt der bessere Zug (die Engine kennt
+ * keinen), gilt der knappe Satz: Ambrose den von Stufe 1, allein `knapp`.
+ */
+function kategoriegruppe(k: Besprechungskontext, a: Momentangaben): string {
+  const kategorie = a.moment.kategorie;
+  const mitName = kategorie === "theorie" && a.eroeffnung ? ".name" : "";
+  const ohneBesser = a.besser === null && MIT_BESSEREM.has(kategorie);
+  if (k.stimme !== "ambrose") {
+    return `${vorsilbe(k.stimme)}${ohneBesser ? ".knapp" : ""}.${kategorie}${mitName}`;
+  }
+  const stufe = k.stufe === 1 || ohneBesser ? 1 : 2;
+  return `${vorsilbe(k.stimme)}.${stufe}.${kategorie}${mitName}`;
+}
+
+/** Der Satz zum Begriff, ab Stufe 2 und nur, wenn der Held den Begriff kennt. */
+function begriffssatz(k: Besprechungskontext, a: Momentangaben, z: Ziehung): string | null {
+  const motiv = a.motiv;
+  if (!motiv || k.stufe < 2 || !k.begriffe.has(motiv.begriff)) return null;
+  return z.zeile(`${vorsilbe(k.stimme)}.begriff.${motiv.begriff}.${motiv.richtung}`);
+}
+
+/** Der Satz zur Folge, ab Stufe 3 bei Fehlern und Chancen. */
+function folgesatz(k: Besprechungskontext, a: Momentangaben, z: Ziehung): string | null {
+  if (k.stufe < 3 || !a.folge || !MIT_FOLGE.has(a.moment.kategorie)) return null;
+  return z.zeile(`${vorsilbe(k.stimme)}.folge`, { folge: a.folge });
+}
+
+/**
+ * Die Sätze aller Momente, in der Reihenfolge der Momente.
+ * Beispiel: Stufe 1, Fehler bei „7. Lc4“ mit besserem Zug „d4“ → „Hier ist dir ein Fehler passiert.“
+ * (Stufe 1 nennt den besseren Zug nicht); Stufe 2 mit bekannter Gabel → „Hier wäre d4 besser
+ * gewesen. Danach hatte dein Gegner eine Gabel.“
+ */
+export function momentsaetze(k: Besprechungskontext, angaben: readonly Momentangaben[]): string[] {
+  const z = new Ziehung(k.partiekennung);
+  return angaben.map((a) => {
+    const werte = {
+      zug: a.zug,
+      besser: a.besser ?? "",
+      eroeffnung: a.eroeffnung ?? "",
+    };
+    const teile = [
+      z.zeile(kategoriegruppe(k, a), werte),
+      begriffssatz(k, a, z),
+      folgesatz(k, a, z),
+    ];
+    return teile.filter((t): t is string => t !== null).join(" ");
+  });
+}
+
+/** Der erste Satz der Besprechung; nach dem Abschied ein eigener. */
+export function auftaktsatz(k: Besprechungskontext): string {
+  const gruppe =
+    k.stimme === "abschied" ? "besprechung.abschied.auftakt" : `${vorsilbe(k.stimme)}.auftakt`;
+  return new Ziehung(k.partiekennung).zeile(gruppe) ?? "";
+}
+
+/** Der letzte Satz nach dem Ausgang; ohne Momente der Satz für eine ruhige Partie davor. */
+export function schlusssatz(
+  k: Besprechungskontext,
+  ausgang: Ausgang,
+  ohneMomente: boolean,
+): string {
+  const z = new Ziehung(k.partiekennung);
+  const ruhig = ohneMomente ? z.zeile(`${vorsilbe(k.stimme)}.ruhig`) : null;
+  const schluss = z.zeile(`${vorsilbe(k.stimme)}.schluss.${ausgang}`);
+  return [ruhig, schluss].filter((t): t is string => t !== null).join(" ");
+}
+
+/** Der Satz, solange die Rechenmaschine die Partie durchsieht. */
+export function rechnetsatz(k: Besprechungskontext): string {
+  return new Ziehung(k.partiekennung).zeile(`${vorsilbe(k.stimme)}.rechnet`) ?? "";
+}

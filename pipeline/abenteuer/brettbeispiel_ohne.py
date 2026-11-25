@@ -37,6 +37,7 @@ OHNE: dict[tuple[str, str], str] = {
     ("goldmine.ink", "lore"): VERGLEICH + " (Turm hinter der Lore)",
     ("hochebene.ink", "kira_alltag"): ZUFALL,
     ("hochebene.ink", "kira_regel"): VARIANTE + " (Falke und Bison)",
+    ("summit-city-aussen.ink", "drachenfest_angebot"): VARIANTE + " (Drache; die Partie folgt gleich)",
     ("ironwood-kantine.ink", "big_joe_alltag"): ZUFALL,
     ("ironwood-kantine.ink", "big_joe_clubkampf"): NEBENBEI + " (Zuruf im Clubkampf)",
     ("ironwood-kantine.ink", "big_joe_nach_sieg"): NEBENBEI + " (Rückblick)",

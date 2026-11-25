@@ -2031,6 +2031,29 @@
           "wert": "angreifer"
         }
       ]
+    },
+    {
+      "kennung": "hochebene.kira",
+      "name": "figur.kira.name",
+      "rolle": "story",
+      "portraet": "portraets/kira.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -100
+      },
+      "gewichte": {
+        "ungenau": 1.2
+      },
+      "stil": "angreifer",
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "angreifer"
+        }
+      ]
     }
   ]
 }

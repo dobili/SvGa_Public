@@ -7,8 +7,8 @@
  *   eingesetzt wie im S-Chess (Entscheidung des Hauptchats 26.11.2026: die Grundstellung bleibt
  *   vertraut, jeder spielt einmal mit dem Drachen). Eigener Abschnitt der variants.ini.
  * FEN-Buchstaben: H/h Falke, E/e Bison, D/d Drache. Die Tasche steht in eckigen Klammern hinter der
- * Stellung („[HEhe]“). Bis gezeichnete Figuren da sind, zeigt das Brett des Abenteuers einen
- * Buchstaben im Kreis (abenteuer/brett/pixelfiguren.ts).
+ * Stellung („[HEhe]“). Das Brett des Abenteuers zeichnet sie als Pixelfiguren nach den
+ * Gemini-Figuren des Autors (abenteuer/brett/pixelfiguren.ts).
  * Abhängigkeiten: spiel/varianten/variante.ts, spiel/varianten/maerchenregeln.ts.
  */
 import { ladeMaerchenregeln, maerchenRegeln, meldeMaerchenabschnittAn } from "./maerchenregeln";

@@ -6,7 +6,10 @@ Autors: Wer spricht oder im Text vorkommt, ist anwesend. Die offenen Funde dürf
 (OBERGRENZE senken, sobald Stellen behoben sind); Akt 1 ist vollständig angesehen.
 """
 
-from pipeline.abenteuer.anwesenheit import SCHAUPLATZ, funde, offene
+import re
+from pathlib import Path
+
+from pipeline.abenteuer.anwesenheit import BEGLEITUNG, SCHAUPLATZ, funde, offene
 from pipeline.abenteuer.anwesenheit_geprueft import GEMELDET, GEPRUEFT
 
 # Offene Funde (ohne Grund in GEPRUEFT); darf nur sinken. Stand 25.11.2026 nach Akt 1.
@@ -37,3 +40,23 @@ def test_muster():
     assert SCHAUPLATZ.search("Das Diner an der Hauptstraße ist lang und schmal.")
     assert SCHAUPLATZ.search("Im Diner riecht es nach Kaffee.")
     assert not SCHAUPLATZ.search("Vor dem Diner parkt ein Pick-up.")
+
+
+def test_begleiter_werden_in_ink_gesetzt():
+    """Jeder Begleiter der Prüfung wird in Ink gesetzt (`~ begleiter = "juno"`), sonst ist er veraltet."""
+    ordner = Path(__file__).resolve().parents[2] / "inhalte" / "abenteuer" / "dialoge" / "de"
+    gesetzt = {
+        m.group(1)
+        for datei in ordner.glob("*.ink")
+        for m in re.finditer(r'~\s*begleiter\s*=\s*"(\w+)"', datei.read_text(encoding="utf-8"))
+    }
+    assert set(BEGLEITUNG) <= gesetzt
+
+
+def test_tagebuch_ohne_begleiter_ist_ein_fund(monkeypatch):
+    """Ohne Juno als Begleiterin wäre „Mit Juno zu Fuß nach Cedar Creek gehen“ ein Fund."""
+    from pipeline.abenteuer import anwesenheit
+
+    monkeypatch.setattr(anwesenheit, "BEGLEITUNG", {})
+    stellen = {f.stelle for f in anwesenheit.tagebuchfunde(anwesenheit.lade_welt())}
+    assert "quest.besserWerden.schritt5" in stellen

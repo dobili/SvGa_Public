@@ -14,8 +14,8 @@ Namen einer abwesenden Figur, Schauplatz im Text passt nicht zur Karte.
 
 - Erster Lauf: 234 Funde. Nach Statisten, die eine Figur zeigen (Juno am Bahndamm, Mama im Clubraum,
   Silas als Angler, Odette am Flohmarkt), und Tessa als „Joggerin“: 199.
-- Nach den Behebungen in Akt 1: 165 Funde, davon 5 geprüft (passt, mit Grund), 13 gemeldet (Juno
-  als Mitreisende), 147 offen in Akt 2 bis 4.
+- Nach den Behebungen in Akt 1 und Juno als Begleiterin: 151 Funde, davon 3 geprüft (passt, mit
+  Grund), 1 gemeldet (Juno auf dem Weg nach Riverton), 147 offen in Akt 2 bis 4.
 
 ## Behoben in Akt 1
 
@@ -40,64 +40,78 @@ Namen einer abwesenden Figur, Schauplatz im Text passt nicht zur Karte.
 - Epilog: begann auch am Brett im Zimmer und erzählte dort Dachboden und Lily. Jetzt geht der Held
   hinauf; Lily steht an der Treppe des Dachbodens und geht zum Schaukelstuhl.
 
-## Vorschlag, wartet auf Entscheidung: Mitreisende
+## Begleiter auf Wegen (Teil C, umgesetzt)
 
-Juno reist ab Akt 1 mit dem Helden (zu Fuß nach Cedar Creek und Riverton, später überall), Mama auf
-der Reise in Akt 3 und 4. Beide sprechen unterwegs, stehen aber auf keiner Wegkarte: 61 der 165 Funde betreffen Juno,
-18 Mama, zusammen fast die Hälfte. Einzeln gesetzte Figuren stünden fern vom
-Auslöser des Gesprächs. Empfehlung: Mitreisende als eigene Rolle der Oberwelt. Sie folgt dem Helden
-sichtbar ein Feld hinter ihm, solange eine Bedingung je Reiseabschnitt gilt (Daten in orte.json oder
-einer eigenen Datei, Darstellung wie der Begleiter Ambrose in oberwelt/begleiterschicht.ts, aber
-deckend und immer sichtbar). Danach zählt die Prüfung sie auf diesen Karten als anwesend.
+Befund des Autors: Laut Tagebuch geht der Held mit Juno zu Fuß nach Cedar Creek, aber Juno wartete
+nur im Text am Ortsschild, und am Obststand legte sie einen Dollar in die Dose, ohne da zu sein.
+
+- Mechanismus: Dialogvariable `begleiter` (Kurznamen wie in `#sprecher`, mehrere mit Komma), im
+  Spielstand gemerkt (app/src/abenteuer/regeln/gefolge.ts). Wer begleitet, folgt dem Helden ein
+  Feld hinter ihm auf seiner Spur, ohne Kollision (oberwelt/gefolgeschicht.ts), kommt beim
+  Kartenwechsel mit und erscheint neben ihm. An seinem Platz auf der Karte steht er solange nicht
+  (oberwelt/gefolgedaten.ts). Ändert ein Gespräch die Begleiter, stellt sich die Karte neu auf.
+  Ohne eigenen Bogen im Paket zeigt er die Platzhalterfigur.
+- Juno in Akt 1: Sie steht nach dem Aufbruch am Ortsschild im Park (mapleFalls.junoLandstrasse).
+  Wer sie anspricht oder die Landstraße betritt, nimmt sie mit; sie geht über Landstraße und
+  Flussweg bis Cedar Creek und bleibt dort beim Helden, bis der Bus nach Hause fährt.
+- Prüfung: Begleiter zählen als anwesend (BEGLEITUNG in anwesenheit.py, mit Dauertest, dass Ink sie
+  setzt). Neu ist die Prüfung „tagebuch“: Ein Questschritt erzählt „Mit Juno … gehen“, aber die
+  Figur ist nirgends Begleiter. Einziger Treffer war „Mit Juno zu Fuß nach Cedar Creek gehen“, jetzt
+  erfüllt.
+- Offen (Vorschlag je Stelle unten): die übrigen Reiseabschnitte mit Juno (ab Akt 2 nach Riverton,
+  Ironwood, Silicon Bay und weiter) und Mama auf der Reise in Akt 3 und 4. Dafür genügt jeweils
+  `~ begleiter = "juno"` beim Aufbruch und `~ begleiter = ""` bei der Ankunft, dazu ein Eintrag in
+  BEGLEITUNG.
 
 ## Offen in Akt 2 bis 4, mit Vorschlag je Stelle
 
 Geordnet nach Akt, Hauptweg vor Nebenweg, dann nach Zahl der Zeilen. Häufig sind Ankünfte am
-Übergang (wie Cedar Creek: beim Betreten der Zielkarte spielen) und Mitreisende.
+Übergang (wie Cedar Creek: beim Betreten der Zielkarte spielen) und Reiseabschnitte, auf denen Juno
+oder Mama als Begleiter fehlen.
 
 
 ## Akt 2
 
 - sprecher · juno · riverton-aussen.ankunft auf riverton.aussen (Hauptweg, 20×): „Hier bin ich geboren. Also fast.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · slick · riverton-wohnwagen.slick_abschied auf riverton.wohnwagen (Hauptweg, 7×): „Der Alte hat die gebaut. Jedes Jahr einen.“
   Vorschlag: Figur mit Bedingung auf die Karte setzen (Szene, orte.json) oder als gehörte Stimme erzählen
 - sprecher · juno · riverton-wohnwagen.turnier_nachricht auf riverton.wohnwagen (Hauptweg, 3×): „Coach Delgado hat geschrieben. Freundschaftsturnier in Ironwood, beim Stahlwerker-Club.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · victor · silicon-bay-aussen.ankunft_zu_fuss auf wegIronwoodSilicon.glasbruecke (Hauptweg, 3×): „Die stören die Sensoren.“
   Vorschlag: Ankunft beim Betreten der Zielkarte spielen (Eingang der Karte), nicht am Übergang
 - genannt · bigJoe · ironwood-aussen.kauf auf ironwood.aussen (Hauptweg, 2×): „Big Joe kommt heraus. Er trägt einen Karton vor dem Bauch, oben schauen die Pokale heraus “
   Vorschlag: Figur mit Bedingung auf die Karte setzen oder den Satz so fassen, dass sie woanders ist
 - genannt · mutter · ironwood-aussen.kauf auf ironwood.aussen (Hauptweg, 2×): „Mama geht über den Platz, an dem schwarzen Wagen vorbei, und nimmt Big Joe den Karton ab. “
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - genannt · juno · ironwood-aussen.einladung auf ironwood.aussen (Hauptweg, 1×): „Juno kommt die Brücke herauf, das Tagebuch unter der Jacke.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - genannt · juno · riverton-wohnwagen.turnier_nachricht auf riverton.wohnwagen (Hauptweg, 1×): „Juno sieht auf ihr Telefon. Das Licht vom Bildschirm macht ihr Gesicht blau.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - ort · Wohnwagen · riverton-pavillon.slick_alltag auf riverton.pavillon (Hauptweg, 1×): „Der Wohnwagen ist offen. Komm rein, wenn du magst.“
   Vorschlag: Szene ins Wohnwagen verlegen (reise und Eingang dort) oder die Ortsangabe anpassen
 - sprecher · juno · ironwood-aussen.einladung auf ironwood.aussen (Hauptweg, 1×): „Was hat {rv_er} gewollt?“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · juno · ironwood-kantine.big_joe_erkennt auf ironwood.kantine (Hauptweg, 1×): „Was tut ihm leid?“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · juno · silicon-bay-aussen.ankunft_zu_fuss auf wegIronwoodSilicon.glasbruecke (Hauptweg, 1×): „Ein Lieferroboter. Der bringt Essen.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · albescu · riverton-schuppen.fahrrad auf riverton.schuppen (Nebenweg, 8×): „Meins. Er hat es mir zur Hochzeit gebaut.“
   Vorschlag: Figur mit Bedingung auf die Karte setzen (Szene, orte.json) oder als gehörte Stimme erzählen
 - sprecher · juno · ironwood-aussen.bus_silicon_bay_abfahrt auf ironwood.aussen (Nebenweg, 8×): „Ich hab gewartet. Wie heißt er?“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · mutter · ironwood-aussen.bus_silicon_bay_abfahrt auf ironwood.aussen (Nebenweg, 5×): „Ich hab Nachtschicht. Die ganze Woche.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · juno · ironwood-aussen.ankunft_zu_fuss auf wegRivertonIronwood.bruecke (Nebenweg, 4×): „Die können hier zählen.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · juno · weg-riverton-ironwood.jh auf wegRivertonIronwood.bruecke (Nebenweg, 4×): „Hier ist was eingeschlagen! In die Dinger, die runden.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - genannt · juno · ironwood-kantine.mama_nach_partie auf ironwood.kantine (Nebenweg, 3×): „Juno klebt das Foto ins Tagebuch.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · juno · ironwood-kantine.mama_nach_partie auf ironwood.kantine (Nebenweg, 3×): „Mit Glitzer. Diesmal ja.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · mutter · ironwood-aussen.ankunft_zu_fuss auf wegRivertonIronwood.bruecke (Nebenweg, 3×): „Nein.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · victor · silicon-bay-aussen.ankunft_rundgang auf wegIronwoodSilicon.glasbruecke (Nebenweg, 3×): „Gekühlt mit Meerwasser.“
   Vorschlag: Ankunft beim Betreten der Zielkarte spielen (Eingang der Karte), nicht am Übergang
 - genannt · omaRuth · ironwood-kantine.mama auf ironwood.kantine (Nebenweg, 2×): „Oma Ruth in der Elm Street weiß, wann der nächste Bus nach Hause fährt.“
@@ -107,25 +121,25 @@ Geordnet nach Akt, Hauptweg vor Nebenweg, dann nach Zahl der Zeilen. Häufig sin
 - sprecher · joggerin · weg-ironwood-silicon.joggerin_erstes_treffen auf wegIronwoodSilicon.glasbruecke (Nebenweg, 2×): „Schach? Klar.“
   Vorschlag: Figur mit Bedingung auf die Karte setzen (Szene, orte.json) oder als gehörte Stimme erzählen
 - sprecher · juno · riverton-aussen.nova auf riverton.aussen (Nebenweg, 2×): „Nova Sinclair. Landesmeisterin.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · juno · riverton-bahnhofshalle.harlan_erstes_treffen auf riverton.bahnhofshalle (Nebenweg, 2×): „Gegen den hab ich mal gespielt, bei meiner Cousine. Eine Stunde für zwölf Züge.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · juno · silicon-bay-aussen.ankunft_rundgang auf wegIronwoodSilicon.glasbruecke (Nebenweg, 2×): „Wohnst du hier?“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - genannt · juno · ironwood-aussen.bus_silicon_bay_abfahrt auf ironwood.aussen (Nebenweg, 1×): „Juno drückt dir eine kleine Holzkiste mit Stickern in die Hand. Auf dem Deckel in rosa Buc“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - genannt · juno · riverton-aussen.albescu_erstes_treffen auf riverton.aussen (Nebenweg, 1×): „Juno fragt nach dem Weg zu einem Laden, den sie gar nicht sucht. Die Frau stützt sich auf “
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - genannt · juno · riverton-bahnhofshalle.uhr auf riverton.bahnhofshalle (Nebenweg, 1×): „Juno schläft auf der Bank ein, den Kopf auf dem Tagebuch.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - genannt · juno · riverton-bahnhofshalle.uhr_wieder auf riverton.bahnhofshalle (Nebenweg, 1×): „Juno schläft noch auf der Bank. Die Uhr tickt laut in der leeren Halle.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - genannt · juno · riverton-schuppen.fahrrad auf riverton.schuppen (Nebenweg, 1×): „Juno schreibt ins Tagebuch: „Fahrrad. Grün. Mit Schmetterling.““
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - genannt · juno · weg-ironwood-silicon.glasbruecke auf wegIronwoodSilicon.raststaette (Nebenweg, 1×): „Juno geht auf Zehenspitzen und hält sich an dir fest.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - genannt · mutter · ironwood-aussen.bus_silicon_bay_abfahrt auf ironwood.aussen (Nebenweg, 1×): „Mama zieht dich an sich, kurz und fest. Seit Ironwood tut sie das öfter.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - genannt · slick · riverton-aussen.wohnwagen_zu auf riverton.aussen (Nebenweg, 1×): „Slick ist noch drüben im Pavillon. Dort triffst du ihn eher als hier.“
   Vorschlag: Figur mit Bedingung auf die Karte setzen oder den Satz so fassen, dass sie woanders ist
 - genannt · tamsin · riverton-aussen.eli auf riverton.aussen (Nebenweg, 1×): „Tamsin hat sie hingestellt.“
@@ -149,19 +163,19 @@ Geordnet nach Akt, Hauptweg vor Nebenweg, dann nach Zahl der Zeilen. Häufig sin
 - sprecher · joggerin · weg-ironwood-silicon.joggerin_nach_remis auf wegIronwoodSilicon.glasbruecke (Nebenweg, 1×): „Remis. Gleicher Puls, gleiche Zeit, noch eine Runde?“
   Vorschlag: Figur mit Bedingung auf die Karte setzen (Szene, orte.json) oder als gehörte Stimme erzählen
 - sprecher · juno · ironwood-aussen.kreidebrett auf ironwood.aussen (Nebenweg, 1×): „Die h-Linie ist breiter als die a-Linie. Aber es sind acht.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · juno · riverton-aussen.kanalweg auf riverton.aussen (Nebenweg, 1×): „Erst nach Hause. Der Zettel vom Coach wartet auf deine Mama.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · juno · riverton-bahnhofshalle.london_nachgespraech auf riverton.bahnhofshalle (Nebenweg, 1×): „Du bist so still. Ist was?“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · juno · weg-ironwood-silicon.fund_anstecker auf wegIronwoodSilicon.raststaette (Nebenweg, 1×): „Gratis. Natürlich.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · juno · weg-ironwood-silicon.fund_ohrstoepsel auf wegIronwoodSilicon.glasbruecke (Nebenweg, 1×): „Hat jemand verloren.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · juno · weg-ironwood-silicon.glasbruecke auf wegIronwoodSilicon.raststaette (Nebenweg, 1×): „Woher weißt du, dass das trägt?“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · juno · weg-riverton-ironwood.zeitnot_trick auf wegRivertonIronwood.bruecke (Nebenweg, 1×): „Wer baut so etwas?“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · ruben · ironwood-aussen.anleger auf ironwood.aussen (Nebenweg, 1×): „Die Fahrt kostet 5 Münzen.“
   Vorschlag: Figur mit Bedingung auf die Karte setzen (Szene, orte.json) oder als gehörte Stimme erzählen
 - sprecher · ruben · riverton-aussen.anleger_schild auf riverton.aussen (Nebenweg, 1×): „Die Fahrt kostet 5 Münzen.“
@@ -172,29 +186,29 @@ Geordnet nach Akt, Hauptweg vor Nebenweg, dann nach Zahl der Zeilen. Häufig sin
 - sprecher · mira · weg-delacroix-desert.mira_stein auf wegDelacroixDesert.canyonpfad (Hauptweg, 5×): „Wer bist du?“
   Vorschlag: Figur mit Bedingung auf die Karte setzen (Szene, orte.json) oder als gehörte Stimme erzählen
 - sprecher · juno · desert-springs-aussen.abend_motel auf desertSprings.aussen (Hauptweg, 4×): „Sieben! Ich hab's nachgezählt.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · mutter · desert-springs-aussen.bahnhof_ende auf desertSprings.aussen (Hauptweg, 4×): „Port Delacroix lässt grüßen. Am Musikhaus decken sie das Dach, und Miss Odile sagt, das Sc“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · mutter · summit-city-aussen.ankunft_summit auf wegDesertSummit.bergstrasse (Hauptweg, 2×): „Murmeltiere. Die warnen sich.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - genannt · mutter · desert-springs-aussen.bahnhof_ende auf desertSprings.aussen (Hauptweg, 1×): „Mama ist da. Sonnenbrand auf der Nase, das blaue Heft unter dem Arm.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - ort · Musikhaus · desert-springs-aussen.bahnhof_ende auf desertSprings.aussen (Hauptweg, 1×): „Port Delacroix lässt grüßen. Am Musikhaus decken sie das Dach, und Miss Odile sagt, das Sc“
   Vorschlag: Szene ins Musikhaus verlegen (reise und Eingang dort) oder die Ortsangabe anpassen
 - sprecher · juno · summit-city-aussen.ankunft_summit auf wegDesertSummit.bergstrasse (Hauptweg, 1×): „Das ist von meinem Foto! Da hast du Ketchup am Kinn!“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · nova · silicon-bay-serverraum.schummelgeraete_nova auf siliconBay.serverraum (Nebenweg, 11×): „Es steht in meinem Vertrag. Nicht so.“
   Vorschlag: Figur mit Bedingung auf die Karte setzen (Szene, orte.json) oder als gehörte Stimme erzählen
 - sprecher · mutter · port-delacroix-turnhalle.vorwurf_ende auf portDelacroix.musikhaus (Nebenweg, 6×): „Ich weiß, wie sich das anfühlt. Wenn eine ganze Halle dich ansieht.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · mutter · port-delacroix-turnhalle.vorwurf_ende auf portDelacroix.turnhalle (Nebenweg, 6×): „Ich weiß, wie sich das anfühlt. Wenn eine ganze Halle dich ansieht.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - genannt · remy · port-delacroix-aussen.bretter_vollstaendig auf portDelacroix.aussen (Nebenweg, 4×): „Remy stimmt am anderen Ende seine Trompete. Er sieht auf den Karren.“
   Vorschlag: Figur mit Bedingung auf die Karte setzen oder den Satz so fassen, dass sie woanders ist
 - ort · Turnhalle · port-delacroix-aussen.bretter_vollstaendig auf portDelacroix.aussen (Nebenweg, 4×): „In der Turnhalle sortiert Miss Odile, was du gebracht hast. Was nicht zusammenpasst, legt “
   Vorschlag: Szene ins Turnhalle verlegen (reise und Eingang dort) oder die Ortsangabe anpassen
 - sprecher · juno · silicon-bay-aussen.hotel_morgen auf siliconBay.aussen (Nebenweg, 4×): „Pass auf ihn auf.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · mamaBear · weg-desert-summit.funkschach_ende auf wegDesertSummit.diner (Nebenweg, 4×): „Gut gespielt, {held} Junior. Ab heute ist das dein Funkname.“
   Vorschlag: Figur mit Bedingung auf die Karte setzen (Szene, orte.json) oder als gehörte Stimme erzählen
 - sprecher · victor · silicon-bay-lobby.vitrine_victor auf siliconBay.lobby (Nebenweg, 3×): „Mein … der Vater vom Vater vom Großvater meines Vaters. Er hat Brücken gebaut.“
@@ -208,9 +222,9 @@ Geordnet nach Akt, Hauptweg vor Nebenweg, dann nach Zahl der Zeilen. Häufig sin
 - sprecher · ferris · weg-delacroix-desert.seilschaft_nochmal auf wegDelacroixDesert.felsbogen (Nebenweg, 2×): „Noch einmal? Schau oben genau hin, dann ruf sie ihr zu.“
   Vorschlag: Figur mit Bedingung auf die Karte setzen (Szene, orte.json) oder als gehörte Stimme erzählen
 - sprecher · mutter · desert-springs-aussen.highway auf desertSprings.aussen (Nebenweg, 2×): „Dot leiht uns ihr Auto. Drei Wochen Urlaub, und wir sehen mehr als vom Zug aus.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · mutter · port-delacroix-aussen.ankunft_zu_fuss auf wegSiliconDelacroix.deich (Nebenweg, 2×): „Ich geh zum Notzelt, da brauchen sie Hände. Das Turnier ist in der Turnhalle.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · nova · silicon-bay-serverraum.schummelgeraete auf siliconBay.serverraum (Nebenweg, 2×): „Bitte.“
   Vorschlag: Figur mit Bedingung auf die Karte setzen (Szene, orte.json) oder als gehörte Stimme erzählen
 - sprecher · victor · silicon-bay-lobby.vitrine_erstmals auf siliconBay.lobby (Nebenweg, 2×): „Hale. Ingenieure seit 1850. Von der Brücke zum Algorithmus.“
@@ -218,9 +232,9 @@ Geordnet nach Akt, Hauptweg vor Nebenweg, dann nach Zahl der Zeilen. Häufig sin
 - sprecher · wren · weg-delacroix-desert.seilschaft_ende auf wegDelacroixDesert.felsbogen (Nebenweg, 2×): „Du hast die Stellung im Kopf behalten. Hier, der Karabiner gehört dir.“
   Vorschlag: Figur mit Bedingung auf die Karte setzen (Szene, orte.json) oder als gehörte Stimme erzählen
 - genannt · juno · desert-springs-aussen.highway auf desertSprings.aussen (Nebenweg, 1×): „Juno hat dir eine Seite im Tagebuch geschenkt, leer, mit einem Rahmen aus Glitzer: Für das“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - genannt · mutter · weg-silicon-delacroix.bug auf wegSiliconDelacroix.faehre (Nebenweg, 1×): „Mama steht viel an der Reling. Ihr beide spielt auf Junos Reisebrett, das bei jedem Wellen“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - genannt · nova · silicon-bay-serverraum.schummelgeraete auf siliconBay.serverraum (Nebenweg, 1×): „Nova steht in der Tür, ohne Kamera, in einem Pullover, der ihr zu groß ist.“
   Vorschlag: Figur mit Bedingung auf die Karte setzen oder den Satz so fassen, dass sie woanders ist
 - genannt · tobias · weg-delacroix-desert.ereignis_seilschaft auf wegDelacroixDesert.felsbogen (Nebenweg, 1×): „Wren winkt von unten, Tess von weit oben. Das Seil ist straff.“
@@ -240,7 +254,7 @@ Geordnet nach Akt, Hauptweg vor Nebenweg, dann nach Zahl der Zeilen. Häufig sin
 - sprecher · ferris · weg-delacroix-desert.seilschaft_start auf wegDelacroixDesert.felsbogen (Nebenweg, 1×): „Ich zeige dir oben die Stellung. Merk sie dir und ruf sie Wren zu!“
   Vorschlag: Figur mit Bedingung auf die Karte setzen (Szene, orte.json) oder als gehörte Stimme erzählen
 - sprecher · juno · silicon-bay-lobby.victor_falsch auf siliconBay.aussen (Nebenweg, 1×): „Vielleicht ist sie im Turnier besser. Manche sind das.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · kira · hochebene.diplom_ende auf hochebene.schule (Nebenweg, 1×): „Eins hab ich extra gemalt. Für den Prüfer.“
   Vorschlag: Figur mit Bedingung auf die Karte setzen (Szene, orte.json) oder als gehörte Stimme erzählen
 - sprecher · kira · hochebene.diplom_nochmal auf hochebene.schule (Nebenweg, 1×): „Die Kinder warten. Sie spielen so lange Falke und Bison.“
@@ -259,15 +273,15 @@ Geordnet nach Akt, Hauptweg vor Nebenweg, dann nach Zahl der Zeilen. Häufig sin
 - sprecher · sam · pinewood-camp-aussen.lagerfeuer_abend auf pinewoodCamp.aussen (Hauptweg, 5×): „Die Chefin ist zurück!“
   Vorschlag: Figur mit Bedingung auf die Karte setzen (Szene, orte.json) oder als gehörte Stimme erzählen
 - sprecher · juno · capital-arena-aussen.arena_ankunft auf capitalArena.aussen (Hauptweg, 4×): „Sechzehn Punkte für Silber, zweiundzwanzig für Gold. Du hast … {ligapunkte()}.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · juno · ghost-town-aussen.nacht_ambrose auf ghostTown.aussen (Hauptweg, 4×): „Glitzer ist für alles, was man nicht vergessen will. Das ist die Regel.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - genannt · sam · pinewood-camp-aussen.lagerfeuer_abend auf pinewoodCamp.aussen (Hauptweg, 2×): „Sam stellt eine Dame mitten in die feindliche Stellung, aus der Hand.“
   Vorschlag: Figur mit Bedingung auf die Karte setzen oder den Satz so fassen, dass sie woanders ist
 - ort · Saloon · ghost-town-aussen.nacht_ambrose auf ghostTown.aussen (Hauptweg, 2×): „Im Saloon kocht Mr. Pruitt Bohnen. Juno und {rivale} streiten, ob man eine ganze Partie in“
   Vorschlag: Szene ins Saloon verlegen (reise und Eingang dort) oder die Ortsangabe anpassen
 - sprecher · juno · pinewood-camp-aussen.ankunft_camp auf wegCrossroadsPinewood.riesenbaeume (Hauptweg, 2×): „Die kennen sich alle seit einer Woche. Mae hat allen die Sterne erklärt.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · victor · summit-city-huette.victor_krise auf summitCity.huette (Hauptweg, 2×): „Es hat gesagt, plus zwei Komma eins. Die ganze Zeit.“
   Vorschlag: Figur mit Bedingung auf die Karte setzen (Szene, orte.json) oder als gehörte Stimme erzählen
 - genannt · dex · pinewood-camp-aussen.ankunft_camp auf wegCrossroadsPinewood.riesenbaeume (Hauptweg, 1×): „Dex hat etwas gebaut, das Marshmallows von selbst dreht. Es funktioniert fast.“
@@ -281,11 +295,11 @@ Geordnet nach Akt, Hauptweg vor Nebenweg, dann nach Zahl der Zeilen. Häufig sin
 - ort · Clubraum · pinewood-camp-aussen.lagerfeuer_abend auf pinewoodCamp.aussen (Hauptweg, 1×): „Die erste. Im Clubraum.“
   Vorschlag: Szene ins Clubraum verlegen (reise und Eingang dort) oder die Ortsangabe anpassen
 - sprecher · juno · crossroads-aussen.ankunft_crossroads auf wegSummitCrossroads.praerie (Hauptweg, 1×): „Mae hat geschrieben: Sie und Dex sind im Pinewood Camp, den Fernwanderweg hoch in den Wald“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · juno · ghost-town-aussen.grab_erstes auf ghostTown.aussen (Hauptweg, 1×): „Ist er hier? Ist das seiner?“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · mutter · crossroads-aussen.ankunft_crossroads auf wegSummitCrossroads.praerie (Hauptweg, 1×): „Alle Wege führen zur Capital Arena. Und alle machen hier Pause.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · pruitt · ghost-town-saloon.victor_nach_fernpartie auf ghostTown.aussen (Hauptweg, 1×): „Bleibt über Nacht. Wenn es dunkel ist, stehen über Ghost Town mehr Sterne als Häuser.“
   Vorschlag: Figur mit Bedingung auf die Karte setzen (Szene, orte.json) oder als gehörte Stimme erzählen
 - sprecher · victor · capital-arena-ubahnhof.mo_victor auf capitalArena.ubahnhof (Nebenweg, 6×): „Sag es keinem. Hier unten weiß niemand, wer mein Vater ist.“
@@ -307,23 +321,23 @@ Geordnet nach Akt, Hauptweg vor Nebenweg, dann nach Zahl der Zeilen. Häufig sin
 - sprecher · ezra · weg-crossroads-pinewood.lebendschach_angebot auf wegCrossroadsPinewood.riesenbaeume (Nebenweg, 2×): „Die Kinder ziehen erst, wenn sie den Zug laut hören. Und wer geschlagen werden soll, prote“
   Vorschlag: Figur mit Bedingung auf die Karte setzen (Szene, orte.json) oder als gehörte Stimme erzählen
 - sprecher · juno · capital-arena-aussen.ankunft_zu_fuss auf wegGhostCapital.leuchtturm (Nebenweg, 2×): „Das kommt ins Tagebuch. Ich hab zwei dabei.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · juno · crossroads-aussen.coach auf crossroads.aussen (Nebenweg, 2×): „Carla spielt Brett drei. Sie hat gesagt, nur dieses eine Mal.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · juno · crossroads-raststaette.fund_postkarte auf crossroads.raststaette (Nebenweg, 2×): „Wir waren überall! Die kommt ins Tagebuch.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · juno · summit-city-huette.ward_nadel auf summitCity.huette (Nebenweg, 2×): „Acht! Acht!“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · tamsin · crossroads-aussen.slick auf crossroads.aussen (Nebenweg, 2×): „Hast du den Springer?“
   Vorschlag: Figur mit Bedingung auf die Karte setzen (Szene, orte.json) oder als gehörte Stimme erzählen
 - genannt · bigJoe · capital-arena-aussen.ankunft_zu_fuss auf wegGhostCapital.leuchtturm (Nebenweg, 1×): „Big Joe braucht allein zwei Stufen. Dr. Lin ohne Kittel.“
   Vorschlag: Ankunft beim Betreten der Zielkarte spielen (Eingang der Karte), nicht am Übergang
 - genannt · juno · weg-summit-crossroads.bisons auf wegSummitCrossroads.geysirbecken (Nebenweg, 1×): „Juno malt einen Bison ins Tagebuch, mit Glitzer.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - genannt · mutter · pinewood-camp-aussen.es_ist_still auf wegCrossroadsPinewood.riesenbaeume (Nebenweg, 1×): „Mama geht ein wenig schneller.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - genannt · mutter · summit-city-huette.ward_laurie auf summitCity.huette (Nebenweg, 1×): „Mama sagt nichts. Sie setzt sich und steckt die Hände in die Ärmel, und ihre Augen glänzen“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - genannt · pruitt · goldmine.eingang auf ghostTown.aussen (Nebenweg, 1×): „Mr. Pruitt hat die Bretter vom Stolleneingang genommen. Die Laterne wirft einen Kreis auf “
   Vorschlag: Figur mit Bedingung auf die Karte setzen oder den Satz so fassen, dass sie woanders ist
 - genannt · slick · capital-arena-aussen.ankunft_zu_fuss auf wegGhostCapital.leuchtturm (Nebenweg, 1×): „Slick auf dem Geländer, mit drei Kindern.“
@@ -345,16 +359,16 @@ Geordnet nach Akt, Hauptweg vor Nebenweg, dann nach Zahl der Zeilen. Häufig sin
 - sprecher · greifarm · weg-pinewood-ghost.greifarm_ende auf wegPinewoodGhost.tankstelle (Nebenweg, 1×): „„Danke für die Partie.““
   Vorschlag: Figur mit Bedingung auf die Karte setzen (Szene, orte.json) oder als gehörte Stimme erzählen
 - sprecher · juno · ghost-town-aussen.ankunft_zu_fuss auf wegPinewoodGhost.staubstrasse (Nebenweg, 1×): „Guck mal. Es sieht aus wie ein altes Foto.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · juno · summit-city-aussen.weg_crossroads auf summitCity.aussen (Nebenweg, 1×): „Die Seite für die achte Nadel ist voll. Jetzt fehlt nur noch die Meisterschaft.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · juno · weg-crossroads-pinewood.greta_erstes_treffen auf wegCrossroadsPinewood.huetten (Nebenweg, 1×): „Wo ist das Brett?“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · mutter · capital-arena-aussen.ankunft_zu_fuss auf wegGhostCapital.leuchtturm (Nebenweg, 1×): „Sie sind alle gekommen.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · mutter · summit-city-aussen.weg_crossroads auf summitCity.aussen (Nebenweg, 1×): „Bis zur Capital Arena sind es noch ein paar Tage. Über die Geysire, dann nach Crossroads.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · mutter · summit-city-huette.ward_laurie auf summitCity.huette (Nebenweg, 1×): „Mrs. Ward.“
-  Vorschlag: Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)
+  Vorschlag: Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)
 - sprecher · pruitt · ghost-town-saloon.victor_aufstellen auf ghostTown.aussen (Nebenweg, 1×): „Ich hab hier dreißig Jahre nach Gold gesucht. Ich glaub, ich hab die ganze Zeit auf was an“
   Vorschlag: Figur mit Bedingung auf die Karte setzen (Szene, orte.json) oder als gehörte Stimme erzählen

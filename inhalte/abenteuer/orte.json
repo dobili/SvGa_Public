@@ -197,6 +197,13 @@
           "dialog": "maple-falls-aussen.lily"
         },
         {
+          "kennung": "mapleFalls.junoLandstrasse",
+          "name": "figur.juno.name",
+          "sprite": "figuren/juno.png",
+          "dialog": "maple-falls-park.landstrasse",
+          "wenn": "aufbruchGesehen und nicht ankunftCedarCreekGesehen"
+        },
+        {
           "kennung": "mapleFalls.lilyDachboden",
           "name": "figur.lily.name",
           "sprite": "figuren/lily.png",

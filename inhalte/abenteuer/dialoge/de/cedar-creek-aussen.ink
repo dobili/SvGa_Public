@@ -19,6 +19,8 @@ EXTERNAL setzeZustand(gegner, faktor, grund)
 EXTERNAL reise(karte, ausloeser)
 EXTERNAL gibFund(kennung)
 
+// Wer mit {held} geht (regeln/gefolge.ts); die Heimfahrt im Bus beendet Junos Begleitung.
+VAR begleiter = ""
 VAR rivalin = false
 VAR rivale = "Victor"
 VAR rv_er = "er"
@@ -228,6 +230,8 @@ Ein Kind mit einem Radiergummi als Dame. #sprecher:ambrose #stimmung:lacht
 -> ende_akt1_bus
 
 === ende_akt1_bus ===
+// Juno fährt mit im Bus; zu Hause steht sie wieder an ihren Plätzen (regeln/gefolge.ts).
+~ begleiter = ""
 Hinter euch hupt der Bus. Mr. Kettering fährt, wie er seit einunddreißig Jahren fährt. #sprecher:erzaehler #klang:bus_hupe
 Die Witwe. – Der Hühnerstall. – Achtung, der lange Otis. #sprecher:kettering #stimmung:laechelt #musik:busfahrt #geraeusch:bus_innen
 Sam schläft nach der dritten Kurve ein, den Kopf auf dem Schachkoffer. #sprecher:erzaehler

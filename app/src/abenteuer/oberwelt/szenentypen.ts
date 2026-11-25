@@ -53,6 +53,8 @@ export interface Szenendaten {
   readonly heldfigur?: string | null;
   /** Bögen der Figuren dieser Karte im Format von LimeZu, nach Objektname. */
   readonly figurenbilder?: Readonly<Record<string, string>>;
+  /** Begleiter, die dem Helden folgen (regeln/gefolge.ts); ihr Bogen steht in figurenbilder. */
+  readonly begleiter?: readonly string[];
   /** Figuren mit geist: true (geistfigur.ts, regeln/geist.ts), nach Objektname. */
   /** Weitere Standbilder je Figur der Karte (Objektname → Index, figurzustand.ts, Editor 1.9). */
   readonly figurstandbilder?: Readonly<Record<string, Standbildindex>>;

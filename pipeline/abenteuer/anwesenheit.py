@@ -13,7 +13,7 @@ Baut auf figurenort.py (Kartenbelegung, Ortswörter), sprecherort.py (Haltung) u
 einer Karte) auf jeder Karte, auf der er beginnt, mit allen Zeilen, die Ink von dort erreicht. Die
 Anwesenden einer Karte sind alle Figuren, die auf ihr in irgendeiner Fassung stehen (großzügig: eine
 Figur, die nur zu anderer Zeit dort steht, zählt mit; das fängt die groben Fälle ohne Fehlalarme).
-Drei Prüfungen:
+Vier Prüfungen:
 
 1. **sprecher:** Eine Zeile mit ``#sprecher:X``, aber X steht nicht auf der Karte. Ausgenommen sind
    Erzähler, Held und Ambrose (er begleitet den Helden als Geist) und Zeilen in Erinnerungen
@@ -22,6 +22,8 @@ Drei Prüfungen:
    „Coach Delgado schaltet ihn aus“) und erzählt sie damit als da, aber sie steht nicht auf der Karte.
 3. **ort:** Eine Zeile nennt einen Innenort als Schauplatz („Im Diner“, „Das Diner an der
    Hauptstraße …“), der nicht zur Karte passt (Ortswörter aus figurenort.py).
+4. **tagebuch:** Ein Questschritt erzählt, dass eine Figur mit {held} unterwegs ist („Mit Juno zu Fuß
+   nach Cedar Creek gehen“), aber sie ist nirgends Begleiter (BEGLEITUNG, regeln/gefolge.ts).
 
 Jeder Fund ist behoben, steht mit Grund in ``anwesenheit_geprueft.GEPRUEFT`` (passt) oder mit
 Vorschlag in ``GEMELDET`` (wartet auf eine Entscheidung, etwa Juno als Mitreisende). Die offenen Funde
@@ -60,6 +62,12 @@ STATIST_ALS_FIGUR: dict[tuple[str | None, str], str] = {
 }
 # Sprecher, die eine Figur unter anderem Namen ist (Tessa heißt, bis sie sich vorstellt, „Joggerin“).
 SPRECHER_ALS_FIGUR = {"joggerin": "tessa"}
+# Begleiter (app/src/abenteuer/regeln/gefolge.ts): Wer mit {held} geht, ist auf den Karten dieser
+# Orte anwesend. Gesetzt in Ink (`~ begleiter = "juno"`); test_abenteuer_anwesenheit.py prüft, dass
+# jeder Eintrag in Ink gesetzt wird. Juno: vom Ortsschild in Maple Falls bis zur Busfahrt zurück.
+BEGLEITUNG: dict[str, frozenset[str]] = {
+    "juno": frozenset({"wegMapleCedar", "cedarCreek"}),
+}
 # Mindestlänge eines Nachnamens, der allein als Name gilt („Delgado“, nicht „Joe“ aus „Big Joe“).
 NACHNAME_MIN = 4
 
@@ -197,7 +205,9 @@ def lade_welt(daten: Path = DATEN) -> Welt:
 
 def _zeilenfunde(welt: Welt, text: str, marken: str, karte: str) -> list[tuple[str, str]]:
     """Die Funde einer Zeile als (Prüfung, Figur oder Ortswort)."""
-    hier = welt.anwesend.get(karte, set())
+    ort = karte.split(".")[0]
+    mit = {name for name, orte in BEGLEITUNG.items() if ort in orte}
+    hier = welt.anwesend.get(karte, set()) | mit
     funde = []
     sprecher = SPRECHER.search(marken)
     wer = sprecher.group(1) if sprecher else "erzaehler"
@@ -243,6 +253,34 @@ def _einstiegsfunde(welt: Welt, dialog: str, karte: str, ort: str, daten: Path) 
     return funde
 
 
+# Tagebuch: „Mit Juno zu Fuß nach Cedar Creek gehen“ erzählt eine Begleitung unterwegs.
+UNTERWEGS_MIT = re.compile(
+    r"\b[Mm]it ([A-ZÄÖÜ][\wäöüß.]*(?: [A-ZÄÖÜ][\wäöüß]+)?)\b[^.:]*\b(gehen|fahren|reisen|laufen|wandern)\b"
+)
+
+
+def tagebuchfunde(welt: Welt, daten: Path = DATEN) -> list[Fund]:
+    """Prüfung 4: Ein Questschritt erzählt im Tagebuch, dass eine Figur mit {held} unterwegs ist,
+    aber sie ist nirgends Begleiter (BEGLEITUNG; app/src/abenteuer/regeln/gefolge.ts).
+
+    Beispiel (vor dem 25.11.2026): quest.besserWerden.schritt5 „Mit Juno zu Fuß nach Cedar Creek
+    gehen“, Juno stand nur am Ortsschild im Text → Fund.
+    """
+    texte = json.loads((daten / "texte" / "de.json").read_text(encoding="utf-8"))
+    quests = json.loads((daten / "quests.json").read_text(encoding="utf-8"))["quests"]
+    ergebnis = []
+    for quest in quests:
+        for schritt in quest["schritte"]:
+            treffer = UNTERWEGS_MIT.search(texte.get(schritt["text"], ""))
+            figuren = welt.namen.get(treffer.group(1), set()) if treffer else set()
+            if figuren and not figuren & set(BEGLEITUNG):
+                fund = Fund(
+                    "tagebuch", sorted(figuren)[0], schritt["text"], quest["ort"], texte[schritt["text"]]
+                )
+                ergebnis.append(Fund(**{**fund.__dict__, "akt": welt.akt.get(quest["ort"], 0)}))
+    return ergebnis
+
+
 def funde(daten: Path = DATEN) -> list[Fund]:
     """Alle Funde, je Schlüssel einmal (mit Zahl der Zeilen), geordnet für den Bericht."""
     welt = lade_welt(daten)
@@ -253,6 +291,8 @@ def funde(daten: Path = DATEN) -> list[Fund]:
                 bekannt.zahl += 1
             else:
                 einmal[fund.schluessel] = fund
+    for fund in tagebuchfunde(welt, daten):
+        einmal.setdefault(fund.schluessel, fund)
     return sorted(einmal.values(), key=lambda f: (f.akt, not f.haupt, -f.zahl, f.schluessel))
 
 
@@ -263,12 +303,12 @@ MITREISENDE = frozenset({"juno", "mutter"})
 def vorschlag(fund: Fund) -> str:
     """Abhilfe je Fund für den Bericht (die Entscheidung bleibt beim Menschen).
 
-    Beispiel: Juno spricht auf einem Weg → „Mitreisende“; eine Ankunft am Übergang → Eingang der
+    Beispiel: Juno spricht auf einem Weg → Begleiter setzen; eine Ankunft am Übergang → Eingang der
     Zielkarte (wie Cedar Creek am 25.11.2026); ein fremder Ort → die Szene dorthin verlegen.
     """
     knoten = fund.stelle.split(".")[-1]
     if fund.wer in MITREISENDE and fund.pruefung != "ort":
-        return "Mitreisende: folgt dem Helden sichtbar (Vorschlag in anwesenheit_geprueft.py)"
+        return "Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)"
     if "ankunft" in knoten:
         return "Ankunft beim Betreten der Zielkarte spielen (Eingang der Karte), nicht am Übergang"
     if fund.pruefung == "ort":

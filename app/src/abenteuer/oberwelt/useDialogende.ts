@@ -14,6 +14,7 @@ import { useRef, useState } from "react";
 import type { Dialogvariablen, Wirkungen } from "../dialog/geschichte";
 import { stillesEnde } from "../dialog/stillesende";
 import { erfuellt } from "../regeln/bedingung";
+import { begleiterGeaendert } from "../regeln/gefolge";
 import { variablenAusBesitz, variablenNachDialog } from "../regeln/dialogvariablen";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { tSpiel } from "../texte/texte";
@@ -197,6 +198,9 @@ export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden):
     k.schreibe(neu);
     const reise = nimm(m.reise, null);
     if (reise) k.wechsleKarte(reise.karte, reise.ausloeser);
+    // Neuer Begleiter (regeln/gefolge.ts): Die Karte stellt sich neu auf, er folgt ab jetzt.
+    else if (begleiterGeaendert(k.weltRef.current?.begleiter ?? [], neu.dialogvariablen))
+      k.stelleNeuAuf();
     if (nimm(m.abspann, false)) setzeAbspann(true);
     if (nimm(m.fensterbank, false)) setzeFensterbank(true);
     const seite = nimm(m.tagebuchseite, null);

@@ -26,6 +26,8 @@ VAR joGetroffen = false
 VAR ausgangMapleFallsSkaterJo = ""
 VAR aufbruchGesehen = false
 VAR ankunftCedarCreekGesehen = false
+// Wer mit {held} geht (regeln/gefolge.ts): Juno ab dem Ortsschild bis nach Cedar Creek.
+VAR begleiter = ""
 VAR patelGetroffen = false
 VAR hatLimo = false
 VAR limoGefragt = false
@@ -291,8 +293,16 @@ Sie lacht, kurz und rau, und wirft dir die leere Flasche zu. #sprecher:erzaehler
     Hier beginnt die Landstraße nach Cedar Creek. Für heute bleibst du lieber in der Stadt. #sprecher:erzaehler
 - ankunftCedarCreekGesehen:
     Die Landstraße nach Cedar Creek. Du kennst den Weg schon. #sprecher:erzaehler
+// Begleiter auf Wegen (Wunsch des Autors, 25.11.2026): Juno steht am Ortsschild
+// (mapleFalls.junoLandstrasse) und geht von hier an mit, eine Kachel hinter {held}, bis Cedar
+// Creek. Vorher wartete sie nur im Text, und am Obststand legte sie einen Dollar in die Dose,
+// ohne da zu sein.
+- begleiter == "juno":
+    Juno geht neben dir her, den Rucksack auf dem Rücken. Zwei Stunden, am Fluss entlang. #sprecher:erzaehler
 - else:
-    Juno wartet am Ortsschild. Zwei Stunden, am Fluss entlang. #sprecher:erzaehler
+    Juno wartet am Ortsschild, den Rucksack schon auf dem Rücken. #sprecher:erzaehler
+    Da bist du ja! Zwei Stunden, am Fluss entlang. Ich hab Kekse dabei. #sprecher:juno #stimmung:froh
+    ~ begleiter = "juno"
 }
 -> END
 

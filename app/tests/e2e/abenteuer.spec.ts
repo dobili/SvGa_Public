@@ -316,6 +316,7 @@ test("Einstieg: Einleitung vor dem Haus, mit Mama hinein, Auftrag für den Dachb
   // Danach Rivale Victor oder Rivalin Victoria (22.11.2026); vorgewählt ist Victor.
   await expect(page.getByTestId("abenteuer-rivale-victor")).toHaveAttribute("aria-pressed", "true");
   await page.getByTestId("abenteuer-rivale-victoria").click();
+  await expect(page.getByTestId("abenteuer-wahlfest")).toContainText("ganze Spiel");
   await page.getByTestId("abenteuer-spielen").click();
   await expect(page.getByTestId("abenteuer-welt")).toBeVisible();
   const dialog = page.getByTestId("abenteuer-dialog");
@@ -336,17 +337,12 @@ test("Einstieg: Einleitung vor dem Haus, mit Mama hinein, Auftrag für den Dachb
   await expect(page.getByTestId("abenteuer-menue").getByTestId("abenteuer-name")).toHaveValue(
     "Kim",
   );
-  // Die gewählte Figur steht im Spielmenü und lässt sich dort wechseln.
+  // Figur und Rivale stehen im Spielmenü nur zur Ansicht (Wunsch des Autors, 24.11.2026): Die Wahl
+  // beim Start gilt für das ganze Spiel.
   const menue = page.getByTestId("abenteuer-menue");
-  await expect(menue.getByTestId("abenteuer-figur-heldin-0")).toHaveAttribute(
-    "aria-pressed",
-    "true",
-  );
-  await menue.getByTestId("abenteuer-figur-held-0").click();
-  await expect(menue.getByTestId("abenteuer-figur-held-0")).toHaveAttribute("aria-pressed", "true");
-  await expect(menue.getByTestId("abenteuer-rivale-victoria")).toHaveAttribute(
-    "aria-pressed",
-    "true",
-  );
+  await expect(menue.getByTestId("abenteuer-wahlanzeige")).toContainText("Heldin");
+  await expect(menue.getByTestId("abenteuer-wahlanzeige")).toContainText("Rivalin Victoria");
+  await expect(menue.getByTestId("abenteuer-heldwahl")).toHaveCount(0);
+  await expect(menue.getByTestId("abenteuer-rivalwahl")).toHaveCount(0);
   await expect(page.getByTestId("abenteuer-welt")).toBeVisible();
 });

@@ -162,6 +162,7 @@
   "deck.ohne": "Ohne Karten spielen",
   "deck.los": "Mit {anzahl} Karten spielen",
   "deck.losEine": "Mit einer Karte spielen",
+  "deck.erklaerungLeer": "Tippe eine Karte an, dann steht hier, was sie kann.",
   "deck.vorgabeHinweis": "Vorgabe: Der Gegner beginnt mit weniger Material.",
   "ergebnis.nadel.gold": "Goldnadel für {club}!",
   "ergebnis.nadel.silber": "Silbernadel für {club}.",

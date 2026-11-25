@@ -335,6 +335,22 @@
   opacity: 0.45;
 }
 
+/* Deckwahl (Handy hoch, 24.11.2026): Im rollenden Inhalt schrumpfte der Fächer, sobald darunter
+   Erklärungen standen, bis die Karten nur noch ein Streifen waren. Er behält seine Höhe, und nur
+   die Erklärung der zuletzt angetippten Karte steht in einem Kasten darunter. */
+.abenteuer-menue-inhalt > .abenteuer-faecher {
+  flex: 0 0 auto;
+}
+
+.abenteuer-karte-erklaerung {
+  flex-shrink: 0;
+  margin: 0;
+  padding: calc(var(--raster) / 2) var(--raster);
+  border-left: 3px solid var(--gold);
+  background: rgb(22 37 61 / 8%);
+  text-align: left;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .abenteuer-spielkarte,
   .abenteuer-kartenblick-grund {

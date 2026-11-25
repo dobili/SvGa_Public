@@ -724,6 +724,30 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "rustikal"
+    },
+    "ld18Kurbelwinde": {
+      "quelle": "spiel/eigene/schleuse_kurbel.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "maske_fein": ["........", "........", "........", "........", "..#####.", "..#####.", "..#####.", "..#####."],
+      "beschreibung": "Kurbelwinde eines Schleusentors: eiserner Rahmen, Seiltrommel, Kurbel (Gemini k2, 26.11.2026)"
+    },
+    "ld18Steigleiter": {
+      "quelle": "spiel/eigene/schleuse_leiter.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Kaimauer ins Wasser; oben liegt sie flach auf der Kante",
+      "beschreibung": "Eiserne Steigleiter, die über die Kaikante in den Kanal hängt (Gemini k2, 26.11.2026; Mauer dahinter ausgeschnitten)"
     }
   }
 }

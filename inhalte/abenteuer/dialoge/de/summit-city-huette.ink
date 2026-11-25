@@ -532,7 +532,7 @@ Es hält. Mit einem stillen Königszug – dieser alte Seilbahnschaffner. #sprec
 === haraldsen_reihe ===
 {not haraldsenGetroffen:
     ~ haraldsenGetroffen = true
-    Ein alter Mann in Seilbahnuniform sitzt am Kamin und poliert eine Turmfigur. #sprecher:erzaehler
+    {angesprochen:Ein alter Mann in Seilbahnuniform kommt vom Kamin herüber, eine halb polierte Turmfigur in der Hand.|Ein alter Mann in Seilbahnuniform sitzt am Kamin und poliert eine Turmfigur.} #sprecher:erzaehler
     Haraldsen. Ich fahre die Seilbahn, seit sie gebaut wurde. #sprecher:haraldsen #stimmung:laechelt
     Und ich spiele Turmendspiele, seit ich denken kann. #sprecher:haraldsen #stimmung:laechelt
 }

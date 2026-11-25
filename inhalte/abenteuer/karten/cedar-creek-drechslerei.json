@@ -634,12 +634,19 @@
      "id": 4,
      "name": "dunmore",
      "type": "figur",
-     "x": 32,
-     "y": 96,
+     "x": 144,
+     "y": 144,
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "oben"
+      }
+     ]
     },
     {
      "id": 5,

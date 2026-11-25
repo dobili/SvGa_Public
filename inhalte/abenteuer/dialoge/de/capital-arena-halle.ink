@@ -19,6 +19,8 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibFund(kennung)
 EXTERNAL oeffneLaden(laden)
 
+// Die Figur hat den Helden angesprochen, nicht umgekehrt (App: regeln/ansprechen.ts, 25.11.2026).
+VAR angesprochen = false
 VAR finaleTischGesehen = false
 VAR novaHandGesehen = false
 VAR rivalin = false
@@ -244,7 +246,7 @@ Das ist im Turnier am schwersten. Sich erinnern, wenn alle laut sind. #sprecher:
 
 === vorrunde_geschafft ===
 ~ vorrundeGeschafft = true
-Die Turnierleiterin schreibt deinen Namen an die Tafel, ganz oben. #sprecher:erzaehler
+{angesprochen:Die Turnierleiterin kommt zu dir. Hinter ihr steht dein Name an der Tafel, ganz oben.|Die Turnierleiterin schreibt deinen Namen an die Tafel, ganz oben.} #sprecher:erzaehler
 {punktetext()} von 4 Punkten. Du stehst im Halbfinale. Gratuliere. #sprecher:turnierleiterin #stimmung:laechelt
 Du stehst auf. Deine Beine sind aus Watte. #sprecher:erzaehler
 Halbfinale. Gegen einen, der Kade Sterling heißt. #sprecher:juno #stimmung:nachdenklich

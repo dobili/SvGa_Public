@@ -21,6 +21,8 @@ EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibFund(kennung)
 EXTERNAL gibKarte(kennung)
 
+// Die Figur hat den Helden angesprochen, nicht umgekehrt (App: regeln/ansprechen.ts, 25.11.2026).
+VAR angesprochen = false
 VAR miraClubkampfEingeleitet = false
 VAR sturmMomentGesehen = false
 VAR held = "Du"
@@ -382,7 +384,7 @@ Du weißt, wem du es schickst. #sprecher:erzaehler
 }
 
 === dot_vorher ===
-Eine alte Dame mit Lockenwicklern schreibt an einem Brief und sieht kurz auf. #sprecher:erzaehler
+{angesprochen:Eine alte Dame mit Lockenwicklern legt einen halb geschriebenen Brief weg und kommt zu dir.|Eine alte Dame mit Lockenwicklern schreibt an einem Brief und sieht kurz auf.} #sprecher:erzaehler
 Schach gibt's in der Garage, Liebes. Aber erst, wenn Mira aus dem Canyon zurück ist. #sprecher:dot #stimmung:laechelt
 -> END
 === dot_warten ===

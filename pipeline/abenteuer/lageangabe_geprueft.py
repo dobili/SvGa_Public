@@ -49,6 +49,7 @@ GEPRUEFT: dict[str, str] = {
     "tuer:schiffskoch:weg-silicon-delacroix.ruiz_erstes_treffen": (
         "„Mama lehnt in der Tür“ spielt bei der Ankunft in Port Delacroix, nicht auf der Fähre."
     ),
+    "bild:haraldsen:summit-city-huette.haraldsen_reihe": KLEIN + " (Turmfigur, Fassung „angesprochen“)",
     "sitzt:turnierleiterin:capital-arena-halle.runde3_vorher": (
         "„Sie sitzt schon da“ meint Nova (eigener Eintrag), nicht die Turnierleiterin."
     ),

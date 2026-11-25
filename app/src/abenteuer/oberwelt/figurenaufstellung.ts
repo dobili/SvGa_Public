@@ -15,6 +15,7 @@ import { rueckeAnsKopfende } from "./liegelage";
 import { kippwinkel, liegebild } from "./sitzrichtung";
 import { deckeZu, kopfseiteUnter } from "./vordergrund";
 import { zeigeAlsGeist } from "./geistfigur";
+import { BLICK } from "./zuwendungsschicht";
 import {
   blickDesSitzes,
   BODENSITZ,
@@ -68,6 +69,7 @@ export function stelleFigurenAuf(
       eigenes ? (weiteres ?? standbild(richtung)) : platzhalterUnten,
     ) as Phaser.Physics.Arcade.Sprite;
     figur.setName(a.name);
+    figur.setData(BLICK, richtung); // für das Ansprechen (ansprechschicht.ts)
     // Lauf- und Rennanimation für geführte Wege (fuehrungsschicht.ts, `#gehe`).
     if (eigenes) erzeugeLaufanimationen(szene, `figur:${a.name}`);
     if (eigenes) stelleAufKachel(figur, kachel);

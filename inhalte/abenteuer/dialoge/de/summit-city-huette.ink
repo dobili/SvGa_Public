@@ -70,6 +70,8 @@ VAR revancheSummitCity = false
 // Karte unter dem Helden (die App setzt sie, regeln/dialogvariablen.ts): Ward sitzt abends und
 // nachts auf der Parkbank in Summit City (Tagesablauf), tagsüber im Sessel in der Hütte.
 VAR hierKarte = ""
+// Die Figur hat den Helden angesprochen, nicht umgekehrt (App: regeln/ansprechen.ts, 25.11.2026).
+VAR angesprochen = false
 
 // ---------------------------------------------------------------- Eingang
 
@@ -432,7 +434,7 @@ Schneller als ich. Fast. #sprecher:kit #stimmung:lacht
 === kit_reihe ===
 {not kitGetroffen:
     ~ kitGetroffen = true
-    Am Clubtisch sitzt ein Mädchen in Wanderschuhen und zählt Felder mit dem Finger. #sprecher:erzaehler
+    {angesprochen:Vom Clubtisch kommt ein Mädchen in Wanderschuhen auf dich zu, die Finger noch beim Zählen der Felder.|Am Clubtisch sitzt ein Mädchen in Wanderschuhen und zählt Felder mit dem Finger.} #sprecher:erzaehler
     Kit. Ward sagt, ich soll dir die Bauern zeigen. #sprecher:kit #stimmung:laechelt
     Sie sagt nie bitte. #sprecher:kit #stimmung:laechelt
 }

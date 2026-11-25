@@ -60,6 +60,8 @@ VAR hatKarteFaktorenwaage = false
 VAR abschiedGesehen = false
 // Läuft eine Revanche um eine bessere Nadel? Dann reagiert big_joe_nach_revanche auf den Ausgang.
 VAR revancheIronwood = false
+// Die Figur hat den Helden angesprochen, nicht umgekehrt (App: regeln/ansprechen.ts, 25.11.2026).
+VAR angesprochen = false
 
 // ---------------------------------------------------------------- Big Joe
 
@@ -98,7 +100,7 @@ VAR revancheIronwood = false
 // der Frage setzt alles aus (Klangplan S35), danach kommt die Musik der Karte zurück.
 ~ bigJoeGetroffen = true
 ~ elmStreetBekannt = true
-Am Ende des Raums, unter dem Pokalregal, sitzt ein Mann wie aus demselben Stück wie der Ofen. Vor ihm ein Schachbrett aus Stahl. #sprecher:erzaehler
+{angesprochen:Vom Pokalregal kommt ein Mann herüber wie aus demselben Stück wie der Ofen. Er stellt ein Schachbrett aus Stahl vor dir ab.|Am Ende des Raums, unter dem Pokalregal, sitzt ein Mann wie aus demselben Stück wie der Ofen. Vor ihm ein Schachbrett aus Stahl.} #sprecher:erzaehler
 Er setzt eine Figur hin, als wäre sie aus Glas. #sprecher:erzaehler
 Eine Fesselung ist wie ein Kranhaken, Priya. Was dranhängt, kann nicht weg. #sprecher:bigJoe #stimmung:laechelt #brett:fesselung
 Ein Spieß ist eine Fesselung von hinten. Statik. #sprecher:priya #stimmung:nachdenklich #brett:turmspiess.1

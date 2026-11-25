@@ -44,6 +44,8 @@ VAR abschiedGesehen = false
 // Feld „eingang“ der Karte mapleFalls.aussen), solange das Brett noch nicht berührt ist.
 VAR einleitungGesehen = false
 VAR brettBeruehrt = false
+// Die Figur hat den Helden angesprochen, nicht umgekehrt (App: regeln/ansprechen.ts, 25.11.2026).
+VAR angesprochen = false
 
 === juno ===
 // Alte Spielstände (vor der Schultür, 17.11.2026): Wer schon im Club ist, kennt Juno von dort; das
@@ -68,7 +70,7 @@ Morgen! Ich erklär dir morgen alles! #sprecher:juno #stimmung:froh
 // Szene 5 nach dem Roman, Kapitel 5, und der Dialogprüfung (VM27 bis VM29). Stimmung: fremd,
 // dann überrumpelt. Juno redet schnell; das Brett steckt im Rucksack.
 ~ junoGetroffen = true
-An der Bushaltestelle steht ein Mädchen mit zwei Zöpfen und einem Heft, das ein Gummiband zusammenhält. Ihr ganzes Gesicht geht auf. #sprecher:erzaehler
+{angesprochen:Ein Mädchen mit zwei Zöpfen kommt von der Bushaltestelle auf dich zu, unter dem Arm ein Heft, das ein Gummiband zusammenhält. Ihr ganzes Gesicht geht auf.|An der Bushaltestelle steht ein Mädchen mit zwei Zöpfen und einem Heft, das ein Gummiband zusammenhält. Ihr ganzes Gesicht geht auf.} #sprecher:erzaehler
 Du bist das Kind aus dem Whitlock-Haus! #sprecher:juno #stimmung:froh
 Juno Martínez. Zwei Häuser weiter, das gelbe. #sprecher:juno #stimmung:laechelt
 Alle reden über euch. #sprecher:juno #stimmung:laechelt

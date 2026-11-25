@@ -271,4 +271,10 @@ export interface Abenteuerstand {
    * erster Morgen, 6 Uhr.
    */
   readonly spieluhr?: number;
+  /**
+   * Hauptfiguren, die den Helden schon angesprochen haben (Wunsch des Autors, 25.11.2026,
+   * regeln/ansprechen.ts): je Questschritt und Figur ein Schlüssel „quest#schritt:figur“, damit
+   * jede höchstens einmal je Schritt auf ihn zugeht. Fehlt in älteren Ständen.
+   */
+  readonly ansprachen?: readonly string[];
 }

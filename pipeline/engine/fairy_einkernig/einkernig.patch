@@ -1,0 +1,218 @@
+diff --git a/src/emscripten/Makefile b/src/emscripten/Makefile
+index 548be1a..378c4c6 100644
+--- a/src/emscripten/Makefile
++++ b/src/emscripten/Makefile
+@@ -13,15 +13,22 @@ assertion = no
+ 
+ VPATH := $(VPATH):emscripten
+ EM_CXXFLAGS +=
++# Einkernig (einkernig=yes): ohne pthreads und PROXY_TO_PTHREAD, Suche synchron im Worker,
++# keine SharedArrayBuffer und keine COOP/COEP-Kopfzeilen nötig (Schach von Grund auf, 26.11.2026).
++einkernig ?= no
++ifeq ($(einkernig),yes)
++	EM_CXXFLAGS += -DSINGLE_THREAD
++	EM_LDFLAGS += --pre-js emscripten/preamble-einkernig.js
++else
++	EM_LDFLAGS += -s USE_PTHREADS=1 -s PROXY_TO_PTHREAD=1 --pre-js emscripten/preamble.js
++endif
++
+ EM_LDFLAGS += \
+-	--pre-js emscripten/preamble.js \
+ 	-s MODULARIZE=1 -s EXPORT_NAME="Stockfish" -s ENVIRONMENT=web,worker,node \
+ 	-s STRICT=1 \
+ 	-s ASYNCIFY=1 -s 'ASYNCIFY_IMPORTS=["emscripten_utils_getline_impl"]' \
+-	-s USE_PTHREADS=1 \
+-	-s PROXY_TO_PTHREAD=1 \
+ 	-s ALLOW_MEMORY_GROWTH=1 -s INITIAL_MEMORY=$$((1 << 27)) -s MAXIMUM_MEMORY=$$((1 << 31)) \
+-	-s FILESYSTEM=1 -s EXTRA_EXPORTED_RUNTIME_METHODS=["FS"] \
++	-s FILESYSTEM=1 -s EXPORTED_RUNTIME_METHODS=["FS"] \
+ 	-s ALLOW_UNIMPLEMENTED_SYSCALLS
+ 
+ ifeq ($(minify_js),yes)
+@@ -76,5 +83,10 @@ emscripten_copy_files:
+ 
+ emscripten_build: build emscripten_copy_files
+ 
++emscripten_einkernig_copy:
++	cp -f ../AUTHORS ../Copying.txt stockfish.js stockfish.wasm emscripten/public
++
++emscripten_einkernig: build emscripten_einkernig_copy
++
+ emscripten_clean: clean
+ 	@rm -f $(EM_ARTIFACTS)
+diff --git a/src/emscripten/preamble-einkernig.js b/src/emscripten/preamble-einkernig.js
+new file mode 100644
+index 0000000..18b6059
+--- /dev/null
++++ b/src/emscripten/preamble-einkernig.js
+@@ -0,0 +1,69 @@
++//
++// Einkernig (einkernig=yes): Es gibt keine Worker-Threads. Befehle gehen direkt in die
++// Warteschlange, aus der der UCI-Loop (ASYNCIFY) liest. Die Suche läuft synchron; während sie
++// rechnet, kommen neue Befehle erst danach an (deshalb nie „go infinite“ senden).
++//
++//
++// Simple queue with async get (assume single consumer)
++//
++class Queue {
++  constructor() {
++    this.getter = null;
++    this.list = [];
++  }
++  async get() {
++    if (this.list.length > 0) {
++      return this.list.shift();
++    }
++    return await new Promise((resolve) => (this.getter = resolve));
++  }
++  put(x) {
++    if (this.getter) {
++      this.getter(x);
++      this.getter = null;
++      return;
++    }
++    this.list.push(x);
++  }
++}
++
++//
++// TODO: This is used only by main worker
++//
++Module["queue"] = new Queue();
++
++Module["onCustomMessage"] = (data) => {
++  Module["queue"].put(data);
++};
++
++//
++// API
++//
++
++// Align to the same API as niklasf's stockfish
++Module["postMessage"] = (data) => Module["queue"].put(data);
++
++const listeners = [];
++
++Module["addMessageListener"] = (listener) => {
++  listeners.push(listener);
++};
++
++Module["removeMessageListener"] = (listener) => {
++  const i = listeners.indexOf(listener);
++  if (i >= 0) {
++    listeners.splice(i, 1);
++  }
++};
++
++Module["print"] = Module["printErr"] = (data) => {
++  if (listeners.length === 0) {
++    console.log(data);
++    return;
++  }
++  for (let listener of listeners) {
++    listener(data);
++  }
++};
++
++Module["terminate"] = () => {};
+diff --git a/src/thread.cpp b/src/thread.cpp
+index fc78957..1e5e236 100644
+--- a/src/thread.cpp
++++ b/src/thread.cpp
+@@ -38,7 +38,11 @@ ThreadPool Threads; // Global object
+ 
+ Thread::Thread(size_t n) : idx(n), stdThread(&Thread::idle_loop, this) {
+ 
++#ifdef SINGLE_THREAD
++  searching = false; // kein Thread, der sich schlafen legt
++#else
+   wait_for_search_finished();
++#endif
+ }
+ 
+ 
+@@ -49,9 +53,11 @@ Thread::~Thread() {
+ 
+   assert(!searching);
+ 
++#ifndef SINGLE_THREAD
+   exit = true;
+   start_searching();
+   stdThread.join();
++#endif
+ }
+ 
+ 
+@@ -80,9 +86,16 @@ void Thread::clear() {
+ 
+ void Thread::start_searching() {
+ 
++#ifdef SINGLE_THREAD
++  // Einkernig: die Suche hier und jetzt ausführen; danach ist sie fertig.
++  searching = true;
++  search();
++  searching = false;
++#else
+   std::lock_guard<std::mutex> lk(mutex);
+   searching = true;
+   cv.notify_one(); // Wake up the thread in idle_loop()
++#endif
+ }
+ 
+ 
+@@ -91,8 +104,10 @@ void Thread::start_searching() {
+ 
+ void Thread::wait_for_search_finished() {
+ 
++#ifndef SINGLE_THREAD
+   std::unique_lock<std::mutex> lk(mutex);
+   cv.wait(lk, [&]{ return !searching; });
++#endif
+ }
+ 
+ 
+diff --git a/src/thread_win32_osx.h b/src/thread_win32_osx.h
+index e2adc76..a05fe46 100644
+--- a/src/thread_win32_osx.h
++++ b/src/thread_win32_osx.h
+@@ -27,7 +27,23 @@
+ /// The implementation calls pthread_create() with the stack size parameter
+ /// equal to the linux 8MB default, on platforms that support it.
+ 
+-#if defined(__APPLE__) || defined(__MINGW32__) || defined(__MINGW64__) || defined(USE_PTHREADS)
++#if defined(SINGLE_THREAD)
++
++// Einkerniger Build (WebAssembly ohne SharedArrayBuffer): Es wird nie ein Thread gestartet; die
++// Suche läuft synchron im Aufrufer (thread.cpp, Thread::start_searching).
++namespace Stockfish {
++
++class NativeThread {
++public:
++  NativeThread() = default;
++  template<class T> explicit NativeThread(void(T::*)(), T*) {}
++  void join() {}
++  void detach() {}
++};
++
++} // namespace Stockfish
++
++#elif defined(__APPLE__) || defined(__MINGW32__) || defined(__MINGW64__) || defined(USE_PTHREADS)
+ 
+ #include <pthread.h>
+ 
+diff --git a/src/ucioption.cpp b/src/ucioption.cpp
+index f387674..4d6c4e3 100644
+--- a/src/ucioption.cpp
++++ b/src/ucioption.cpp
+@@ -186,7 +186,11 @@ void init(OptionsMap& o) {
+   constexpr int MaxHashMB = Is64Bit ? 33554432 : 2048;
+ 
+   o["Debug Log File"]        << Option("", on_logger);
++#ifdef SINGLE_THREAD
++  o["Threads"]               << Option(1, 1, 1, on_threads);
++#else
+   o["Threads"]               << Option(1, 1, 512, on_threads);
++#endif
+   o["Hash"]                  << Option(16, 1, MaxHashMB, on_hash_size);
+   o["Clear Hash"]            << Option(on_clear_hash);
+   o["Ponder"]                << Option(false);

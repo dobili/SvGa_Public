@@ -3107,12 +3107,12 @@
       "hinweis": "wasser_strand, Rand W"
     },
     "bkWasserWatt": {
-      "quelle": "spiel/eigene/wasser_watt.png",
+      "quelle": "spiel/eigene/wasser_watt_textur.png",
       "ausschnitt": [
-        16,
-        16,
-        32,
-        32
+        80,
+        0,
+        96,
+        16
       ],
       "breite": 16,
       "hoehe": 16,
@@ -3122,7 +3122,7 @@
       "hinweis": "Bodenkachel wasser_watt"
     },
     "bkWasserWattRandN": {
-      "quelle": "spiel/eigene/wasser_watt.png",
+      "quelle": "spiel/eigene/wasser_watt_textur.png",
       "ausschnitt": [
         16,
         0,
@@ -3137,7 +3137,7 @@
       "hinweis": "wasser_watt, Rand N"
     },
     "bkWasserWattRandNO": {
-      "quelle": "spiel/eigene/wasser_watt.png",
+      "quelle": "spiel/eigene/wasser_watt_textur.png",
       "ausschnitt": [
         32,
         0,
@@ -3152,7 +3152,7 @@
       "hinweis": "wasser_watt, Rand NO"
     },
     "bkWasserWattRandNW": {
-      "quelle": "spiel/eigene/wasser_watt.png",
+      "quelle": "spiel/eigene/wasser_watt_textur.png",
       "ausschnitt": [
         0,
         0,
@@ -3167,7 +3167,7 @@
       "hinweis": "wasser_watt, Rand NW"
     },
     "bkWasserWattRandO": {
-      "quelle": "spiel/eigene/wasser_watt.png",
+      "quelle": "spiel/eigene/wasser_watt_textur.png",
       "ausschnitt": [
         32,
         16,
@@ -3182,7 +3182,7 @@
       "hinweis": "wasser_watt, Rand O"
     },
     "bkWasserWattRandS": {
-      "quelle": "spiel/eigene/wasser_watt.png",
+      "quelle": "spiel/eigene/wasser_watt_textur.png",
       "ausschnitt": [
         16,
         32,
@@ -3197,7 +3197,7 @@
       "hinweis": "wasser_watt, Rand S"
     },
     "bkWasserWattRandSO": {
-      "quelle": "spiel/eigene/wasser_watt.png",
+      "quelle": "spiel/eigene/wasser_watt_textur.png",
       "ausschnitt": [
         32,
         32,
@@ -3212,7 +3212,7 @@
       "hinweis": "wasser_watt, Rand SO"
     },
     "bkWasserWattRandSW": {
-      "quelle": "spiel/eigene/wasser_watt.png",
+      "quelle": "spiel/eigene/wasser_watt_textur.png",
       "ausschnitt": [
         0,
         32,
@@ -3227,7 +3227,7 @@
       "hinweis": "wasser_watt, Rand SW"
     },
     "bkWasserWattRandW": {
-      "quelle": "spiel/eigene/wasser_watt.png",
+      "quelle": "spiel/eigene/wasser_watt_textur.png",
       "ausschnitt": [
         0,
         16,

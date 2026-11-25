@@ -163,3 +163,12 @@ def test_textur_legt_das_stueck_nach_dem_ort_lueckenlos():
     assert bodenfeld(art, zeilen, 0, 0) == [2, 5]
     assert bodenfeld(art, zeilen, 3, 1) == [2, 6]
     assert bodenfeld(art, zeilen, 2, 2) == [4, 5]
+
+
+def test_boden_mit_raendern_nimmt_innen_die_textur():
+    """Regel: Kartenblick K8, Watt mit Rändern zum Gras und nahtloser Textur innen."""
+    art = {"feld": [5, 0], "textur": [6, 6], "rand": [0, 0]}
+    zeilen = ["ggggg", "gwwwg", "gwwwg", "gwwwg", "ggggg"]
+    assert bodenfeld(art, zeilen, 2, 2) == [7, 2]
+    ohne_textur = {"feld": [1, 1], "rand": [0, 0]}
+    assert bodenfeld(ohne_textur, zeilen, 2, 2) == [1, 1]

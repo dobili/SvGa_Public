@@ -97,6 +97,8 @@ def bodenfeld(
             versatz, weiter = SCHRAEGEN[(spalte, reihe)]
             if any(gleich(dx, dy) for dx, dy in weiter):
                 return [art["rand"][0] + versatz[0], art["rand"][1] + versatz[1]]
+        if (spalte, reihe) == (1, 1) and "textur" in art:
+            return texturfeld(art, x, y)  # Innenfeld eines Bodens mit Rändern (Watt)
         return [art["rand"][0] + spalte, art["rand"][1] + reihe]
     if "unter_wand" in art and y > 0 and zeilen[y - 1][x] == WAND:
         # Böden des Room Builders: Die erste Reihe eines Blocks trägt den Schatten der Wand. Nur

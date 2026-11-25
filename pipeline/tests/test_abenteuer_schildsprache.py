@@ -8,7 +8,9 @@ from pathlib import Path
 
 import pytest
 
-from pipeline.abenteuer import schildsprache as S
+pytest.importorskip("PIL")  # schildbild.py zeichnet mit Pillow; in Actions ohne Pillow übersprungen
+
+from pipeline.abenteuer import schildsprache as S  # noqa: E402
 
 PRIVAT = Path(
     os.environ.get("SVGA_PRIVAT") or Path(__file__).resolve().parents[2].parent / "schach-abenteuer-inhalte"

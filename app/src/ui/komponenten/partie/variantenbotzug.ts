@@ -4,20 +4,21 @@
  *
  * Warum eigen: Die gewöhnliche Zugwahl (ui/komponenten/partie/botzug.ts mit Stufen, Fehlerarten,
  * Maia und Eröffnungsbuch) kennt nur Schach. Varianten spielen über Fairy-Stockfish
- * (spiel/varianten/variantenengine.ts); solange dessen Zusatzpaket fehlt, spielt ein vorläufiger
- * Gegner: Er nimmt einen Zug, der sofort gewinnt, meidet Züge, nach denen der Leser sofort gewinnt,
+ * (spiel/varianten/variantenengine.ts, engine/fairyEngine.ts); fehlt die Engine (Test ohne
+ * Worker) oder versagt sie, spielt ein vorläufiger Gegner: Er nimmt einen Zug, der sofort gewinnt, meidet Züge, nach denen der Leser sofort gewinnt,
  * und wählt sonst zufällig. So lassen sich Orte, Dialoge und Ergebnisse schon testen.
  * Stärke über Fairy-Stockfish: Skill Level und Tiefe aus der Elo-Schätzung der Stufe; für die
  * Begegnungen der Wege (A − 100, wie beim Schach960) wird das nach dem Bau gemessen.
  * Abhängigkeiten: spiel/varianten/, spiel/botzeit.ts, ui/komponenten/partie/botzug.ts (Speicher).
  */
+import { fairyEngine } from "../../../engine/fairyEngine";
 import { stufe, type Stufennummer } from "../../../engine/stufen";
 import { mitUhrverzug } from "../../../spiel/ablauf";
 import { zieheBotMitUhr } from "../../../spiel/botzeit";
 import { aktuelleFen, type Partiezug } from "../../../spiel/partie";
 import { varianteVon } from "../../../spiel/varianten/alle";
 import type { Variantendefinition } from "../../../spiel/varianten/variante";
-import { variantenengine } from "../../../spiel/varianten/variantenengine";
+import { meldeVariantenengineAn, variantenengine } from "../../../spiel/varianten/variantenengine";
 import { uciZuSan } from "../../../spiel/zuege";
 import { animationsverzugMs } from "../../brett/useZuganimation";
 import { aendereNeueste, neueste } from "./botzug";
@@ -34,6 +35,9 @@ const TIEFE_MITTEL = 5;
 const TIEFE_STARK = 9;
 const ELO_MITTEL = 1100;
 const ELO_STARK = 1600;
+
+// Fairy-Stockfish meldet sich hier an; der Worker startet erst beim ersten Zug des Bots.
+if (typeof Worker !== "undefined") meldeVariantenengineAn(fairyEngine);
 
 /** Braucht die Partie den Variantenbot (Variante mit Fairy-Stockfish)? */
 export function brauchtVariantenbot(variante: string | undefined): boolean {
@@ -77,18 +81,24 @@ export function vorlaeufigerZug(
 /** Der Zug: über die Variantenengine, wenn sie da ist, sonst vom vorläufigen Gegner. */
 async function waehleZug(v: Variantendefinition, fen: string, elo: number): Promise<string | null> {
   const engine = variantenengine();
-  if (!engine) {
-    await new Promise((fertig) => setTimeout(fertig, BEDENKZEIT_VORLAEUFIG_MS));
-    return vorlaeufigerZug(v, fen, Math.random);
+  if (engine) {
+    try {
+      const kandidaten = await engine.analysiere({
+        fen,
+        engine: v.engine,
+        ms: RECHENZEIT_MS,
+        kandidaten: 1,
+        staerke: variantenstaerke(elo),
+      });
+      const zug = kandidaten[0]?.zug;
+      // Nur einen Zug nehmen, den auch die Regelschicht kennt (Schreibweise wie chessops).
+      if (zug && v.regeln.ziehe(fen, zug)) return zug;
+    } catch (fehler) {
+      console.warn("Variantenengine versagt, vorläufiger Gegner zieht", fehler);
+    }
   }
-  const kandidaten = await engine.analysiere({
-    fen,
-    engine: v.engine,
-    ms: RECHENZEIT_MS,
-    kandidaten: 1,
-    staerke: variantenstaerke(elo),
-  });
-  return kandidaten[0]?.zug ?? vorlaeufigerZug(v, fen, Math.random);
+  await new Promise((fertig) => setTimeout(fertig, BEDENKZEIT_VORLAEUFIG_MS));
+  return vorlaeufigerZug(v, fen, Math.random);
 }
 
 /**

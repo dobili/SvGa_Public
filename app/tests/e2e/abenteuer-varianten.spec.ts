@@ -127,3 +127,52 @@ for (const fall of FAELLE) {
     expect(await klickeDurch(page)).toContain(fall.danach);
   });
 }
+
+/** Startet den Worker der Variantenengine, meldet Atomschach an und gibt ihren besten Zug. */
+function rechneAtomzug(): Promise<string> {
+  return new Promise<string>((fertig, fehler) => {
+    const worker = new Worker("/engine-varianten/fairy-stockfish-einkernig.js");
+    const uhr = setTimeout(() => fehler(new Error("keine Antwort")), 20000);
+    worker.onerror = (e) => fehler(new Error(e.message));
+    worker.onmessage = (e: MessageEvent<string>) => {
+      const zeile = String(e.data);
+      if (zeile === "uciok") {
+        worker.postMessage("setoption name UCI_Variant value atomic");
+        worker.postMessage(
+          "position fen rnb1kbnr/pppp1ppp/4p3/4N3/7q/8/PPPPPPPP/RNBQKB1R w KQkq - 2 3",
+        );
+        worker.postMessage("go movetime 300");
+      }
+      if (zeile.startsWith("bestmove")) {
+        clearTimeout(uhr);
+        fertig(zeile.split(" ")[1] ?? "");
+      }
+    };
+    worker.postMessage("uci");
+  });
+}
+
+// Die echte Variantenengine im Browser: e5f7 oder e5d7 schlägt und sprengt den schwarzen König mit.
+test("Fairy-Stockfish rechnet im Browser einen Zug im Atomschach", async ({ page }) => {
+  await page.goto("/app/");
+  expect(["e5f7", "e5d7"]).toContain(await page.evaluate(rechneAtomzug));
+});
+
+// Offline: Nach einem Abruf (wie beim Laden des Abenteuer-Pakets) liefert der Service Worker die
+// Engine aus seinem Speicher (sw/variantenengine.ts).
+test("Fairy-Stockfish läuft nach dem ersten Abruf auch ohne Netz", async ({ page, context }) => {
+  test.slow();
+  // Erst nach dem Neuladen steuert der Service Worker die Seite (auch den Abruf des Workers).
+  await page.goto("/app/");
+  await page.evaluate(() => navigator.serviceWorker.ready);
+  await page.reload();
+  expect(await page.evaluate(() => navigator.serviceWorker.controller !== null)).toBe(true);
+  await page.evaluate(async () => {
+    for (const datei of ["fairy-stockfish-einkernig.js", "fairy-stockfish-einkernig.wasm"]) {
+      await (await fetch(`/engine-varianten/${datei}`)).arrayBuffer();
+    }
+  });
+  await context.setOffline(true);
+  expect(["e5f7", "e5d7"]).toContain(await page.evaluate(rechneAtomzug));
+  await context.setOffline(false);
+});

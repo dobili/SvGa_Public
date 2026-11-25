@@ -11,6 +11,7 @@
  * - useDialogende.ts: Dialoge öffnen und ausführen, was sie angestoßen haben;
  * - useAusloeser.ts: Auslöser und Aktionsknopf (Übergang, Figur, Gegenstand, Statist in der Blase);
  * - useBlickpunkte.ts: Ambroses Satz zu einer Stelle, an der der Held vorbeikommt (regeln/blickpunkte.ts).
+ * - useAnsprechen.ts: Die Hauptfigur des laufenden Schritts geht auf den Helden zu und spricht ihn an.
  * Abhängigkeiten: Hooks oben, Steuerkreuz.tsx, Tagebuch.tsx, weltdaten.ts, dialog/Dialog.tsx.
  */
 import { useEffect, useRef, useState } from "react";
@@ -43,6 +44,7 @@ import type { Richtung } from "./szene";
 import { Tagebuch } from "./Tagebuch";
 import { useAufgabenrunde } from "./useAufgabenrunde";
 import { useAusloeser } from "./useAusloeser";
+import { useAnsprechen } from "./useAnsprechen";
 import { useBlickpunkte } from "./useBlickpunkte";
 import { useBuehne } from "./useBuehne";
 import { useDialogende } from "./useDialogende";
@@ -139,6 +141,7 @@ export function Oberwelt() {
   });
   const ungestoert = weltFrei && !warten.offen && hinweis.aktiv === null;
   useBlickpunkte(k, ungestoert, treffer !== null, oeffneDialog);
+  useAnsprechen(k, ungestoert, ausl.sprichFigurAn); // Hauptfiguren sprechen an (useAnsprechen.ts)
 
   const beiRichtung = (richtung: Richtung, gedrueckt: boolean) => {
     if (gedrueckt) hinweis.benutzt("steuerkreuz");

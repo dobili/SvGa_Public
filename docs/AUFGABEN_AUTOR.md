@@ -491,6 +491,15 @@ Profil › Einstellungen › Fehler melden.
       auch die Folge. Fehlt Ambrose (Tiefpunkt, nach dem Abschied), erscheinen die Sätze als Notiz.
       Hoch und quer.
       **Antwort:** „N2708 ok“ oder was stört.
+- [ ] N2713. **Hauptfiguren sprechen dich an (25.11.2026):** Nach der ersten Nacht auf dem
+      Dachboden zur Bushaltestelle in der Straße von Maple Falls gehen und auf der Straße an Juno
+      vorbeilaufen, ohne sie anzutippen. Erwartet: Der Held bleibt stehen, über Juno erscheint kurz
+      ein „!“, sie kommt zu ihm, beide schauen sich an, und ihr Gespräch beginnt von selbst („Ein
+      Mädchen mit zwei Zöpfen kommt von der Bushaltestelle auf dich zu …“). Danach im selben
+      Abschnitt der Geschichte noch einmal vorbeigehen: Sie spricht nicht noch einmal an. Statisten
+      und Figuren aus Nebenaufgaben sprechen nie von selbst an. Fühlt es sich zu aufdringlich oder
+      zu selten an? Hoch und quer.
+      **Antwort:** „N2713 ok“ oder was stört.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

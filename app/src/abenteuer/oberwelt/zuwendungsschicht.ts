@@ -23,6 +23,8 @@ export const GRUNDBILD = "grundbild";
 export const GEFUEHRT = "gefuehrt";
 /** Datenschlüssel am Sprite: Die Figur sitzt (figurensitz.ts). */
 export const SITZT = "sitzt";
+/** Datenschlüssel am Sprite einer Figur: wohin sie schaut (figurenaufstellung.ts, ansprechschicht.ts). */
+export const BLICK = "blick";
 /** Verzug, bis sich die Figuren nach dem Gespräch zurückdrehen (ms). */
 const ZURUECK_MS = 1000;
 

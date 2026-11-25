@@ -10,6 +10,7 @@
  */
 import { useRef, useState } from "react";
 import { ambroseSprichtJetzt } from "../regeln/abwesenheit";
+import { ANGESPROCHEN } from "../regeln/ansprechen";
 import { tSpiel } from "../texte/texte";
 import { szeneAus, type Oberweltkern } from "./kern";
 import type { SprechblasenInhalt } from "./Sprechblase";
@@ -28,6 +29,8 @@ export interface Ausloeser {
   readonly beiTreffer: (t: Ausloesertreffer | null) => void;
   /** Der Aktionsknopf: Dialog des Auslösers oder der Figur öffnen, Statisten sprechen lassen. */
   readonly beiAktion: () => void;
+  /** Dialog einer Figur öffnen; `vonDerFigur`: Sie hat den Helden angesprochen (useAnsprechen.ts). */
+  readonly sprichFigurAn: (name: string, vonDerFigur: boolean) => void;
 }
 
 /**
@@ -67,6 +70,25 @@ export function useAusloeser(
     k.melde({ art: "ort", karte: aktuell.position.karte, ausloeser: t.name }, w);
   };
 
+  /**
+   * Öffnet den Dialog einer Figur der Karte, wie der Aktionsknopf es tut; auch für das Ansprechen
+   * durch die Figur (useAnsprechen.ts), damit es keinen zweiten Weg in den Dialog gibt. Die
+   * Dialogvariable `angesprochen` sagt Ink, wer angefangen hat (regeln/ansprechen.ts).
+   */
+  const sprichFigurAn = (name: string, vonDerFigur: boolean) => {
+    const welt = k.weltRef.current;
+    const stand = k.standRef.current;
+    const figur = welt ? figurZu(welt.ort, name) : undefined;
+    if (!figur) return;
+    if (stand && stand.dialogvariablen[ANGESPROCHEN] !== vonDerFigur) {
+      k.schreibe({
+        ...stand,
+        dialogvariablen: { ...stand.dialogvariablen, [ANGESPROCHEN]: vonDerFigur },
+      });
+    }
+    dialoge.oeffneDialog(figur.dialog);
+  };
+
   const beiAktion = () => {
     const welt = k.welt;
     const stand = k.stand;
@@ -82,11 +104,10 @@ export function useAusloeser(
       return;
     }
     if (treffer.typ === "figur") {
-      const figur = figurZu(welt.ort, treffer.name);
       // Die Angesprochene dreht sich zum Helden (Wunsch des Autors, 22.11.2026).
       const zugang = szeneAus(k.spiel)?.fuehrungszugang();
-      if (figur && zugang) wendeZu(zugang, treffer.name);
-      if (figur) dialoge.oeffneDialog(figur.dialog);
+      if (zugang) wendeZu(zugang, treffer.name);
+      sprichFigurAn(treffer.name, false);
       return;
     }
     const a = ausloeserFuer(welt.ort, welt.kennung, treffer.name);
@@ -100,5 +121,6 @@ export function useAusloeser(
     schliesseSprechblase: () => setzeSprechblase(null),
     beiTreffer,
     beiAktion,
+    sprichFigurAn,
   };
 }

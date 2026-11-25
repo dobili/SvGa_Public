@@ -129,9 +129,20 @@ export function zielangaben(stand: Abenteuerstand, daten: Spieldaten): Zielangab
     return angabe ? [angabe] : [];
   });
   if (laufend.length > 0) return angaben;
-  const luecke = wasJetzt(stand.dialogvariablen);
-  const ziel = luecke ? LUECKENZIELE[luecke] : undefined;
+  const ziel = lueckenziel(stand.dialogvariablen)?.angabe;
   return ziel ? [ziel] : [];
+}
+
+/**
+ * Das Ziel zwischen zwei Quests (wasjetzt.ts) mit seinem Textschlüssel, oder null.
+ * Beispiel: erste Nacht vorbei, Juno noch nicht getroffen → „tagebuch.wasJetzt.juno“, Juno draußen.
+ */
+export function lueckenziel(
+  variablen: Readonly<Record<string, number | string | boolean>>,
+): { readonly luecke: string; readonly angabe: Zielangabe } | null {
+  const luecke = wasJetzt(variablen);
+  const angabe = luecke ? LUECKENZIELE[luecke] : undefined;
+  return luecke && angabe ? { luecke, angabe } : null;
 }
 
 /**

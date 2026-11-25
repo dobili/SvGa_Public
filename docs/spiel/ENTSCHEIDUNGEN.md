@@ -1400,3 +1400,29 @@ Browserprüfung der Sperren S16 und S17 mit echt gespielten kurzen Partien (Fabl
   - RO50: Größe des Hundes (23.11.2026)
   - RO53: Kartenblick: acht Entscheidungen (24.11.2026, umgesetzt oder beauftragt, Widerspruch genügt)
   - RO55: Ambrose als Begleiter: wie oft (24.11.2026, umgesetzt, Widerspruch genügt)
+
+### Hauptfiguren sprechen den Helden an (Wunsch des Autors, 25.11.2026, umgesetzt, Widerspruch genügt)
+
+- Warum: Draußen lief man an der Figur vorbei, die die Geschichte gerade braucht, oder sprach jede
+  Figur an, bis man die richtige fand. Jetzt geht die Figur des laufenden Hauptquestschritts auf
+  den Helden zu und spricht ihn an, wenn er vor ihr vorbeigeht.
+- Wer: nur die Zielfigur des laufenden Schritts einer Hauptquest, wie der Zielpfeil sie findet
+  (mit `umwege`), unabhängig davon, welche Quest im Tagebuch verfolgt wird. Zwischen zwei
+  Hauptquests das Ziel aus „Was jetzt?“ (Juno an der Bushaltestelle, der Coach im Clubraum). Nie
+  Nebenquests, Statisten oder Dinge. Abschaltbar je Schritt mit `ansprechen: false` und
+  `ansprechenGrund` in quests.json.
+- Wann: Der Held betritt ein Feld 1 bis 3 Felder vor der Figur in ihrer Blickrichtung, höchstens 1
+  seitlich daneben, mit freier Sicht (Sperrkarte) und einem Weg zu Fuß. Höchstens einmal je
+  Questschritt und Figur (Spielstand `ansprachen`). Nicht in den ersten 2 Sekunden nach einem
+  Kartenwechsel, nicht bei offenem Dialog, Fenster, Menü, Meldung oder Warten, nicht in
+  Erinnerungen, nicht, wenn der Held rennt und schon direkt vor ihr ist.
+- Wie: Die Steuerung hält an, ein „!“ steht kurz über der Figur, sie geht über einen geführten Weg
+  auf ein Nachbarfeld des Helden (bis 6 Schritte, sonst dreht sie sich nur), beide schauen sich
+  an, und es beginnt derselbe Dialog wie beim Ansprechen mit dem Aktionsknopf. Danach bleibt sie
+  dort, bis die Karte neu geladen wird; ihr Aktionsfeld rückt mit. Sitzende stehen nicht auf.
+- Ink: Die Variable `angesprochen` ist wahr, wenn die Figur angefangen hat. Vier erste Zeilen
+  haben eine zweite Fassung dafür (Juno an der Bushaltestelle, Big Joe in der Kantine, Nova in der
+  Akademie, Kit in der Hütte); Sam bleibt, weil er sitzt.
+- Prüfungen: `pipeline.abenteuer.ansprechziel` (Zielfigur steht auf ihrer Karte und ist
+  erreichbar, Dauertest „0 Befunde“) und `pipeline.abenteuer.ansprechzeile` (erste Zeilen, die das
+  Ansprechen durch den Helden voraussetzen, Dauertest „0 offen“).

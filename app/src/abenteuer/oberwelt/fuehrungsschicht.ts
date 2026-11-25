@@ -19,6 +19,7 @@
 import Phaser from "phaser";
 import { laufname, rennname, standbild, stelleAufKachel } from "./figurbilder";
 import { rahmenzahl } from "./figurensitz";
+import type { Ausloeser } from "./ausloeserebene";
 import type { Moebel } from "./moebel";
 import { rueckeAnsKopfende } from "./liegelage";
 import { kippwinkel, kopfseiteDesBetts, liegebild, LIEGT, type Kopfseite } from "./sitzrichtung";
@@ -56,7 +57,11 @@ export interface Fuehrungszugang {
   readonly kachel: number;
   /** Begehbar für Figuren (Wände und Möbel, sperrkarte.ts). */
   readonly frei: (x: number, y: number) => boolean;
-  readonly ausloeser: readonly { readonly name: string; readonly x: number; readonly y: number }[];
+  /**
+   * Die Auslöser der Szene, dieselbe Liste wie in szene.ts. Veränderlich nur für eine Figur, die
+   * auf den Helden zugegangen ist (ansprechschicht.ts): Ihr Auslöser rückt mit ihr.
+   */
+  readonly ausloeser: Ausloeser[];
   /** Möbel der Karte (das Bett unter einer Liegenden gibt die Kopfseite vor). */
   readonly moebel: readonly Moebel[];
   readonly setzeFuehrung: (f: Heldfuehrung | null) => void;
@@ -136,7 +141,7 @@ function ziele(
 }
 
 /** Begehbar für diesen Weg: frei und nicht unter einer anderen Figur (oder dem Helden). */
-function freiFuer(
+export function freiFuer(
   z: Fuehrungszugang,
   wer: Phaser.GameObjects.Sprite,
 ): (x: number, y: number) => boolean {

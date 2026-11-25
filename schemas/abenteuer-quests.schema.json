@@ -173,6 +173,7 @@
       "type": "object",
       "additionalProperties": false,
       "required": ["text", "ereignis"],
+      "dependentRequired": { "ansprechen": ["ansprechenGrund"] },
       "properties": {
         "text": {
           "description": "Was im Clubtagebuch als nächster Schritt steht (Textschlüssel)",
@@ -184,6 +185,15 @@
           "items": { "$ref": "#/$defs/wirkung" }
         },
         "ziel": { "$ref": "#/$defs/zielort" },
+        "ansprechen": {
+          "description": "Spricht die Zielfigur dieses Hauptquestschritts den Helden an, wenn er vor ihr vorbeigeht (Wunsch des Autors, 25.11.2026, app/src/abenteuer/regeln/ansprechen.ts)? Fehlt: ja. false schaltet es für diesen Schritt ab; dann braucht es ansprechenGrund.",
+          "type": "boolean"
+        },
+        "ansprechenGrund": {
+          "description": "Warum die Zielfigur in diesem Schritt nicht von sich aus anspricht (Pflicht bei ansprechen: false).",
+          "type": "string",
+          "minLength": 1
+        },
         "umwege": {
           "description": "Umwege des Zielhinweises (20.11.2026): Solange eine Bedingung gilt (Dialogvariablen, regeln/bedingung.ts), zeigt der Pfeil auf ihr Ziel statt auf das des Schritts. Beispiel: Der Clubkampf gegen Mira wartet auf den Brief von Mr. Okoro; solange er nicht gelesen ist, zeigt der Pfeil auf Mr. Okoro. Der erste passende Umweg gilt. Prüfwerkzeug: pipeline/abenteuer/pfeilziel.cjs.",
           "type": "array",

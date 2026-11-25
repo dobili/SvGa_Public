@@ -148,6 +148,10 @@ export function abenteuerstandAus(roh: unknown): Abenteuerstand | null {
       ? { spieluhr: roh.spieluhr }
       : {}),
     ...(typeof roh.zuletztGespielt === "string" ? { zuletztGespielt: roh.zuletztGespielt } : {}),
+    // Wer den Helden schon angesprochen hat (regeln/ansprechen.ts); fehlt in älteren Ständen.
+    ...(Array.isArray(roh.ansprachen)
+      ? { ansprachen: roh.ansprachen.filter((k): k is string => typeof k === "string") }
+      : {}),
   };
 }
 

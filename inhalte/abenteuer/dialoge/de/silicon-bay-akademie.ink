@@ -63,6 +63,8 @@ VAR tabletNachtGesehen = false
 VAR revancheSiliconBay = false
 // Aus capital-arena-aussen.ink: Nach dem Abschied spricht Ambrose nicht mehr. Hier nur gelesen.
 VAR abschiedGesehen = false
+// Die Figur hat den Helden angesprochen, nicht umgekehrt (App: regeln/ansprechen.ts, 25.11.2026).
+VAR angesprochen = false
 
 // ---------------------------------------------------------------- Dr. Lin
 
@@ -296,8 +298,8 @@ Die Rohdaten liegen unten im Serverraum. Da schließt keiner ab, hier wird ja al
 
 === nova_erstes_treffen ===
 ~ novaGetroffen = true
-Neben dem Ringlicht hockt Nova Sinclair, die Knie angezogen. Vor ihr eine Kamera auf dem Stativ, das rote Licht ist aus. #sprecher:erzaehler
-Als sie merkt, dass du sie ansiehst, lächelt sie. Das Lächeln vom Podium in Riverton. #sprecher:erzaehler
+{angesprochen:Vom Ringlicht her kommt Nova Sinclair auf dich zu. Hinter ihr eine Kamera auf dem Stativ, das rote Licht ist aus.|Neben dem Ringlicht hockt Nova Sinclair, die Knie angezogen. Vor ihr eine Kamera auf dem Stativ, das rote Licht ist aus.} #sprecher:erzaehler
+{angesprochen:Sie bleibt vor dir stehen und lächelt.|Als sie merkt, dass du sie ansiehst, lächelt sie.} Das Lächeln vom Podium in Riverton. #sprecher:erzaehler
 Es geht an und wieder aus. #sprecher:erzaehler #pause
 -> END
 

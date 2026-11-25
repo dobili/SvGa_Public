@@ -2702,6 +2702,22 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       Betreten einer Karte, nicht während er fort ist (Tiefpunkt bis Versöhnung, nach dem
       Abschied). Empfehlung: so lassen und nach deinem Durchspielen nachjustieren.
       **Antwort:** „RO55 ok“ oder z. B. „RO55 seltener“ / „häufiger“.
+- [ ] RO56. **Bilder für die Märchenfiguren und die Variantenorte (26.11.2026)**
+      Falke und Bison (Hochebene) und der Drache (Drachenfest in Summit City) sind spielbar mit
+      Platzhaltern: ein Buchstabe im Kreis (F, B, D) in den Farben des Bretts. Schöner wären eigene
+      Figuren. Bitte bei Gemini zeichnen lassen und nach ki-roh/ hochladen; Prompt zum Kopieren:
+      „Pixel-art chess pieces, 6 pieces on a plain green (#00FF00) background, arranged in two rows:
+      top row white pieces, bottom row black pieces, each in its own 128x128 square, same style as
+      classic Staunton chess pieces in 16-bit pixel art with a dark outline. Pieces: 1) a hawk with
+      folded wings on a round chess base, 2) a bison seen from the side on a round chess base,
+      head lowered, 3) a small dragon with raised wings on a round chess base. White pieces in
+      light ivory wood, black pieces in dark brown wood. No text, no shadows on the background.“
+      Für die Karten (je ein kleines Bild, Draufsicht wie die anderen Bretter im Spiel, grüner
+      Grund): „top-down pixel-art small chessboard on a table, 16-bit, one dragon chess piece in
+      the middle among normal pieces, 24x18 pixels“; „pixel-art chalk tally marks on a red rock,
+      three white strokes, 16x16“; „pixel-art yellow rubber duck standing on a chessboard square,
+      top-down, 16x16“. Bis die Bilder da sind, stehen gewöhnliche Bretter.
+      **Antwort:** Bilder hochladen oder „RO56 Platzhalter genügen“.
 - [ ] RO49. **Kleine Folgen von Uhr und Geräuschen (22.11.2026, umgesetzt, Widerspruch genügt)**
       1. Karten, die bisher „immer Tag“ hatten, werden jetzt nachts auch dunkel.
       2. Innenräume mit Wasserfall (Zimmer, Wohnzimmer) rauschen auf dem leisen Grundpegel.

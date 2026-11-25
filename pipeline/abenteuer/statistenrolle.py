@@ -146,7 +146,9 @@ def befunde_der_szene(name: str, szene: dict) -> list[str]:
         befunde += _rollenbefunde(a, bild)
         kenn = W.kennbild(bild)
         if szene.get("karte", "").startswith(ERINNERUNG) and kenn in W.TYPEN and kenn not in historisch:
-            befunde.append(f"{a.name}: {kenn} auf einer Erinnerungskarte; rolle „london“ oder „{HISTORISCH}“ setzen")
+            befunde.append(
+                f"{a.name}: {kenn} auf einer Erinnerungskarte; rolle „london“ oder „{HISTORISCH}“ setzen"
+            )
     return befunde + _nachbarbefunde(name, angaben, bilder)
 
 

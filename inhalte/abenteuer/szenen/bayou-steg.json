@@ -468,7 +468,7 @@
       "feld": [29, 27],
       "eigenschaften": {
         "von": "26,28",
-        "bis": "32,34",
+        "bis": "26,34",
         "verhalten": "schwimmen"
       }
     },
@@ -508,7 +508,7 @@
       "feld": [10, 30],
       "eigenschaften": {
         "von": "4,32",
-        "bis": "14,31",
+        "bis": "14,32",
         "verhalten": "schwimmen"
       }
     }

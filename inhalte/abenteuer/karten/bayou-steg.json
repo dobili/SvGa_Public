@@ -5578,7 +5578,7 @@
       {
        "name": "bis",
        "type": "string",
-       "value": "32,34"
+       "value": "26,34"
       },
       {
        "name": "verhalten",
@@ -5690,7 +5690,7 @@
       {
        "name": "bis",
        "type": "string",
-       "value": "14,31"
+       "value": "14,32"
       },
       {
        "name": "verhalten",

@@ -13892,7 +13892,7 @@
      "name": "enten",
      "type": "tier",
      "x": 640,
-     "y": 64,
+     "y": 48,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -13901,7 +13901,7 @@
       {
        "name": "von",
        "type": "string",
-       "value": "34,4"
+       "value": "34,3"
       },
       {
        "name": "bis",

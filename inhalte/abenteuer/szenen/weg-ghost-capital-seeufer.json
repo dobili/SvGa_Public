@@ -675,9 +675,9 @@
     {
       "name": "enten",
       "typ": "tier",
-      "feld": [40, 4],
+      "feld": [40, 3],
       "eigenschaften": {
-        "von": "34,4",
+        "von": "34,3",
         "bis": "46,3",
         "verhalten": "schwimmen"
       }

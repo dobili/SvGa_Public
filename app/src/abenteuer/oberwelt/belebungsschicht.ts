@@ -42,9 +42,8 @@ import {
   gangfaktor,
   mitSchwimmbildern,
   scharGroesse,
-  scharversatz,
+  scharplatz,
   schwimmUrsprungY,
-  schwimmversatz,
   standbasis,
   tierAnsicht,
   tierartVon,
@@ -111,12 +110,6 @@ function tierbogen(art: string): string {
 }
 function tierpfad(art: string): string {
   return `tiere/${art}.png`;
-}
-
-/** Verschiebt den Laufweg eines Eintrags (für die Tiere einer Schar). */
-function verschoben(v: Belebung, d: Feld): Belebung {
-  const plus = (f: Feld) => ({ x: f.x + d.x, y: f.y + d.y });
-  return { ...v, feld: plus(v.feld), von: plus(v.von), bis: plus(v.bis) };
 }
 
 /** Lädt die Bögen der Belebung (in preload der Szene). */
@@ -241,12 +234,12 @@ export class Belebungsschicht {
       sprite.setScale(massstabFuer(art, tier.massstab));
       // Große Tiere (Ziege, Kuh) brauchen in der Schar mehr als eine Kachel Abstand.
       const weite = Math.ceil(sprite.displayWidth / this.kachel);
-      const d = v.verhalten === "schwimmen" ? schwimmversatz(v.von, v.bis, i, 1) : scharversatz(i);
       // Das erste Tier einer Schar hält den Helden auf (belebungsbewegung.ts, haeltAuf); die
       // übrigen stehen locker darum und bleiben durchlässig, damit eine Schar keinen Weg zustellt.
       const sperre = i === 0 && haeltAuf(v) ? this.neueSperre() : null;
       const ruht = i === 0 ? this.ruheplatz(v) : null;
-      this.fuegeHinzu(verschoben(v, { x: d.x * weite, y: d.y * weite }), sprite, bogen, sperre, {
+      // Schwimmer bleiben auf ihrem Weg im Wasser (tiere.ts, scharplatz).
+      this.fuegeHinzu(scharplatz(v, i, weite), sprite, bogen, sperre, {
         tier,
         ...(ruht ? { tiefe: ruht.tiefe } : {}),
       });

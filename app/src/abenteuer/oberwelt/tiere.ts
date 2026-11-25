@@ -8,7 +8,7 @@
  * („Bis dahin steht ein naher Ersatz“) und Auftrag Runde 7 („Eine Schar wird als drei bis fünf
  * Tiere gezeichnet“).
  */
-import { streuwert } from "./belebung";
+import { streuwert, type Belebung, type Feld } from "./belebung";
 import tierarten from "./tierarten.json";
 
 /** Rahmengröße eines Tierbogens in Pixeln. */
@@ -200,17 +200,29 @@ export function schwimmUrsprungY(bild: Tierbild): number {
   return (bild.schwimmMitte ?? bild.hoehe / 2) / bild.hoehe;
 }
 
+/** Die Felder eines Laufwegs: erst waagerecht, dann senkrecht (wie belebungsbewegung.ts, geheZu). */
+export function laufwegfelder(von: Feld, bis: Feld): Feld[] {
+  const felder: Feld[] = [];
+  for (let x = von.x; x !== bis.x; x += Math.sign(bis.x - von.x)) felder.push({ x, y: von.y });
+  for (let y = von.y; y !== bis.y; y += Math.sign(bis.y - von.y)) felder.push({ x: bis.x, y });
+  return [...felder, bis];
+}
+
 /**
- * Versatz des i-ten Schwimmers einer Schar: in einer Reihe entlang des Schwimmwegs (von → bis),
- * damit keiner ans Ufer gerät (Kanal von Norden nach Süden: untereinander).
- * Beispiel: von (22, 30), bis (22, 44), i = 2, Abstand 2 → (0, 4).
+ * Das i-te Tier einer Schar mit seinem Laufweg (Abstand `weite` Kacheln). An Land steht es um das
+ * Feld des Objekts (scharversatz). Ein Schwimmer bleibt auf dem Weg, den der Autor ins Wasser gelegt
+ * hat: Er beginnt i · weite Felder weiter auf diesem Weg, höchstens an dessen Ende, und schwimmt bis
+ * zum Ende (Befund des Autors, 25.11.2026 abends: Bis dahin rückte der ganze Weg mit, und von fünf
+ * Enten im Teich des Parks schwammen zwei über die Wiese).
+ * Beispiel: Enten von (24, 27) bis (27, 27), i = 4, weite 1 → von (27, 27), bis (27, 27).
  */
-export function schwimmversatz(
-  von: { readonly x: number; readonly y: number },
-  bis: { readonly x: number; readonly y: number },
-  i: number,
-  abstand: number,
-): { readonly x: number; readonly y: number } {
-  const senkrecht = Math.abs(bis.y - von.y) >= Math.abs(bis.x - von.x);
-  return senkrecht ? { x: 0, y: i * abstand } : { x: i * abstand, y: 0 };
+export function scharplatz(v: Belebung, i: number, weite: number): Belebung {
+  if (v.verhalten === "schwimmen") {
+    const weg = laufwegfelder(v.von, v.bis);
+    const start = weg[Math.min(i * weite, weg.length - 1)] ?? v.von;
+    return { ...v, feld: start, von: start };
+  }
+  const d = scharversatz(i);
+  const plus = (f: Feld) => ({ x: f.x + d.x * weite, y: f.y + d.y * weite });
+  return { ...v, feld: plus(v.feld), von: plus(v.von), bis: plus(v.bis) };
 }

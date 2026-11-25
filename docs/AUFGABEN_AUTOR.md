@@ -473,6 +473,24 @@ Profil › Einstellungen › Fehler melden.
       höchstens eine alle 30 Sekunden. In Gesprächen mit anderen steht er bei jeder Zeile neben
       dir, seine Zeilen sind kursiv mit „nur du hörst ihn“. Bitte im Hoch- und Querformat ansehen.
       **Antwort:** „N2705 ok“ oder was stört.
+- [ ] N2706. **Kartenwahl vor der Partie (25.11.2026):** Wähle vor einer Partie zwei oder drei
+      Karten. Die Kartenreihe bleibt in voller Höhe sichtbar, darunter steht nur die Erklärung der
+      zuletzt angetippten Karte; der Knopf „Mit N Karten spielen“ bleibt erreichbar. Hoch und quer.
+      **Antwort:** „N2706 ok“ oder was stört.
+- [ ] N2707. **Geschlecht nur beim Start (25.11.2026):** Beim Neubeginn wählst du mit dem Namen
+      Held oder Heldin und Rivale oder Rivalin; ein Satz sagt, dass die Wahl für das ganze Spiel
+      gilt. Im Spielmenü steht die Wahl nur noch zur Ansicht, den Namen kannst du dort weiter ändern.
+      Schon umgesetzt; wenn du doch eine kleine Einstiegssequenz Schritt für Schritt möchtest,
+      genügt ein Satz.
+      **Antwort:** „N2707 ok“ oder was stört.
+- [ ] N2708. **Partiebesprechung mit Ambrose (25.11.2026):** Spiele den ersten Clubkampf gegen den
+      Coach. Danach kündigt Ambrose an, dass ihr die Partie im Tagebuch besprechen könnt. Im
+      Tagebuch bei der Partie „Besprechen“ antippen: Brett mit Zugmarken, Ambrose darüber, ⏮ und ⏭
+      springen zu den wichtigen Stellen. Am Anfang sagt er nur, wo ein Fehler oder ein guter Zug
+      war; ab Ende Akt 1 nennt er den besseren Zug und Begriffe, die du schon kennst; ab Ende Akt 3
+      auch die Folge. Fehlt Ambrose (Tiefpunkt, nach dem Abschied), erscheinen die Sätze als Notiz.
+      Hoch und quer.
+      **Antwort:** „N2708 ok“ oder was stört.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

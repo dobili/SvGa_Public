@@ -91,7 +91,8 @@
       "kennung": "foto2001",
       "ort": "ironwood",
       "name": "fund.foto2001.name",
-      "text": "fund.foto2001.text"
+      "text": "fund.foto2001.text",
+      "bild": "bilder/fund-foto2001.webp"
     },
     {
       "kennung": "umschlag",
@@ -298,7 +299,8 @@
       "kennung": "problemheft",
       "ort": "wegMapleCedar",
       "name": "fund.problemheft.name",
-      "text": "fund.problemheft.text"
+      "text": "fund.problemheft.text",
+      "bild": "bilder/fund-problemheft.webp"
     },
     {
       "kennung": "seite00",
@@ -464,13 +466,15 @@
       "kennung": "kuerbisschleife",
       "ort": "kuerbishof",
       "name": "fund.kuerbisschleife.name",
-      "text": "fund.kuerbisschleife.text"
+      "text": "fund.kuerbisschleife.text",
+      "bild": "bilder/fund-kuerbisschleife.webp"
     },
     {
       "kennung": "finchBauerH",
       "ort": "pelikaninsel",
       "name": "fund.finchBauerH.name",
-      "text": "fund.finchBauerH.text"
+      "text": "fund.finchBauerH.text",
+      "bild": "bilder/fund-finch-bauer-h.webp"
     },
     {
       "kennung": "treibholzTurm",
@@ -488,7 +492,8 @@
       "kennung": "finchBauerF",
       "ort": "steinbruch",
       "name": "fund.finchBauerF.name",
-      "text": "fund.finchBauerF.text"
+      "text": "fund.finchBauerF.text",
+      "bild": "bilder/fund-finch-bauer-f.webp"
     },
     {
       "kennung": "logbuch1866",
@@ -514,32 +519,37 @@
       "kennung": "kreide2",
       "ort": "wegIronwoodSilicon",
       "name": "fund.kreide2.name",
-      "text": "fund.kreide2.text"
+      "text": "fund.kreide2.text",
+      "bild": "bilder/fund-kreide2.webp"
     },
     {
       "kennung": "finchBauerB",
       "ort": "wegIronwoodSilicon",
       "name": "fund.finchBauerB.name",
-      "text": "fund.finchBauerB.text"
+      "text": "fund.finchBauerB.text",
+      "bild": "bilder/fund-finch-bauer-b.webp"
     },
     {
       "kennung": "seite04",
       "ort": "wegIronwoodSilicon",
       "name": "fund.seite04.name",
       "text": "fund.seite04.text",
-      "muenzen": 5
+      "muenzen": 5,
+      "bild": "bilder/fund-seite04.webp"
     },
     {
       "kennung": "spurPM2",
       "ort": "wegIronwoodSilicon",
       "name": "fund.spurPM2.name",
-      "text": "fund.spurPM2.text"
+      "text": "fund.spurPM2.text",
+      "bild": "bilder/fund-spur-p-m2.webp"
     },
     {
       "kennung": "fotoLive",
       "ort": "wegIronwoodSilicon",
       "name": "fund.fotoLive.name",
-      "text": "fund.fotoLive.text"
+      "text": "fund.fotoLive.text",
+      "bild": "bilder/fund-foto-live.webp"
     },
     {
       "kennung": "spurPM5",
@@ -722,31 +732,36 @@
       "kennung": "konservendose",
       "ort": "wegRivertonIronwood",
       "name": "fund.konservendose.name",
-      "text": "fund.konservendose.text"
+      "text": "fund.konservendose.text",
+      "bild": "bilder/fund-konservendose.webp"
     },
     {
       "kennung": "finchLaeuferA",
       "ort": "wegRivertonIronwood",
       "name": "fund.finchLaeuferA.name",
-      "text": "fund.finchLaeuferA.text"
+      "text": "fund.finchLaeuferA.text",
+      "bild": "bilder/fund-finch-laeufer-a.webp"
     },
     {
       "kennung": "seite07",
       "ort": "wegRivertonIronwood",
       "name": "fund.seite07.name",
-      "text": "fund.seite07.text"
+      "text": "fund.seite07.text",
+      "bild": "bilder/fund-seite07.webp"
     },
     {
       "kennung": "spurPM1",
       "ort": "wegRivertonIronwood",
       "name": "fund.spurPM1.name",
-      "text": "fund.spurPM1.text"
+      "text": "fund.spurPM1.text",
+      "bild": "bilder/fund-spur-p-m1.webp"
     },
     {
       "kennung": "kreide1",
       "ort": "wegRivertonIronwood",
       "name": "fund.kreide1.name",
-      "text": "fund.kreide1.text"
+      "text": "fund.kreide1.text",
+      "bild": "bilder/fund-kreide1.webp"
     }
   ]
 }

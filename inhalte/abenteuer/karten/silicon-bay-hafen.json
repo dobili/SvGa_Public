@@ -9037,19 +9037,19 @@
     },
     {
      "id": 58,
-     "name": "sb8Faehre",
+     "name": "sb18FaehreGemini",
      "type": "moebel",
-     "x": 16,
-     "y": 496,
-     "width": 288,
-     "height": 96,
+     "x": 32,
+     "y": 480,
+     "width": 224,
+     "height": 144,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 584
+       "value": 616
       },
       {
        "name": "kollision",

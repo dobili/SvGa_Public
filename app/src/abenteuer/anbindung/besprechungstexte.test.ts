@@ -34,6 +34,8 @@ function angabe(kategorie: Momentkategorie, index = 8): Momentangaben {
     eroeffnung: null,
     ursache: null,
     material: null,
+    lage: null,
+    opfer: null,
   };
 }
 
@@ -186,5 +188,24 @@ describe("Ursache und Material (Abschnitt 11, Punkte 1 und 2)", () => {
     expect(texteDer("besprechung.ambrose.material.mattGewinn").some((t) => zwei.includes(t))).toBe(
       true,
     );
+  });
+});
+
+describe("Lage und Opfer (Abschnitt 11, Punkte 3 und 4)", () => {
+  const mitLage: Momentangaben = {
+    ...angabe("fehler"),
+    motiv: null,
+    lage: { lage: "gut", phase: "endspiel" },
+  };
+
+  it("nennt die Lage mit der Phase ab Stufe 2, höchstens an jedem zweiten Moment", () => {
+    expect(momentsaetze(kontext(1), [mitLage])[0]).not.toContain("im Endspiel");
+    const saetze = momentsaetze(kontext(2), [mitLage, mitLage, mitLage]);
+    expect(saetze.map((s) => s.includes("im Endspiel"))).toEqual([true, false, true]);
+  });
+
+  it("nennt beim brillanten Zug die geopferte Figur, auf jeder Stufe", () => {
+    const opfer: Momentangaben = { ...angabe("brillant"), motiv: null, opfer: "rook" };
+    expect(momentsaetze(kontext(1), [opfer])[0]).toContain("den Turm");
   });
 });

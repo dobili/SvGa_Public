@@ -20,6 +20,7 @@ import type { Partieeintrag } from "../../speicher/partien";
 import { zugtext } from "../../ui/komponenten/auswertung/sprung";
 import type { Besprechungsmoment } from "../regeln/besprechungsmomente";
 import { momentmotiv, type Motivgrundlage } from "./besprechungsmotiv";
+import { lageVor, opferVon } from "./besprechungslage";
 import { materialVon, ursacheVon } from "./besprechungsursache";
 import type { Momentangaben } from "./besprechungstexte";
 
@@ -70,6 +71,7 @@ export function motivgrundlage(
     beste: eintrag.beste,
     varianten: eintrag.varianten,
     verluste,
+    werte: eintrag.werte,
   };
 }
 
@@ -113,6 +115,8 @@ export function momentangaben(
     eroeffnung: moment.kategorie === "theorie" ? eroeffnungsname(quellen, g, i) : null,
     ursache: ursacheVon(g, moment, zug),
     material: materialVon(g, moment),
+    lage: lageVor(g, moment),
+    opfer: opferVon(g, moment),
   };
 }
 

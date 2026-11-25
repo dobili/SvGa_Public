@@ -260,6 +260,13 @@ Umsetzung in Teilen (je eigener Patch):
   Begriff), Material beim eigenen Fehler auf jeder Stufe, bei einer Chance ab Stufe 2. Texte
   `besprechung.figur.<rolle>.<form>`, `besprechung.<stimme>.ursache.*`, `….material.*`.
 - C2 Phase und Lage, Lob mit Opfer und Motiv (`anbindung/besprechungslage.ts`), etwa 80 Texte.
+  Umgesetzt (26.11.2026): `anbindung/besprechungslage.ts`. Lage vor einem Fehler oder Patzer aus
+  dem gespeicherten Wert (Sicht des Helden): ab 2 Bauern „gut“ oder „schlecht“, bis 0,6
+  „ausgeglichen“, dazwischen kein Satz; mit der Phase der App (`lageVon`) als „in der Eröffnung“,
+  „im Mittelspiel“, „im Endspiel“; ab Stufe 2, höchstens an jedem zweiten Moment. Opfer eines
+  brillanten oder starken Zuges über `opferwert` (wie die Zugklasse „brillant“), genannt wird die
+  gezogene Figur, sonst die wertvollste verlorene; auf jeder Stufe. Das Motiv der Folge nennt wie
+  bisher der Satz zum Begriff („für“). Texte `besprechung.phase.*`, `….lage.*`, `….opfer.*`.
 - C3 Rückbezüge und Anekdoten (`anbindung/besprechungsbezug.ts`, Lehrer aus runden.json),
   etwa 60 Texte.
 - C4 Messlauf: 40 Besprechungen aus gespeicherten Partien (phasenpartien.json, Partien des

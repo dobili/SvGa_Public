@@ -86,6 +86,7 @@ npm run pruefen        # Typen, Stil, Komponententests (Vitest, auch mit echter 
 npm run test:e2e       # Playwright (Chromium und WebKit)
 npm run build          # Auslieferung nach app/dist/
 WEGSPERRE=S17 WEGSPERRE_E=1200 npx vitest run --config vitest.messung.config.ts src/abenteuer/wegsperren.messung.ts   # Messlauf Wegsperre (S15 bis S17) oder jeder kurzen Begegnung (WEGSPERRE=summitCity.sol) gegen einen Bot in Lesestärke 800, 1200 oder 1600; Ergebnis nach buch/arbeit/wegsperren/ (nie zwei Läufe zugleich)
+BESPRECHUNG_HTML=DATEI npx vitest run --config vitest.messung.config.ts src/abenteuer/besprechung.messung.ts   # Messlauf Partiebesprechung: 40 Besprechungen echter Partien (Stockfish, Stufen 1 bis 3, alle Stimmen) nach buch/arbeit/besprechung/, mit BESPRECHUNG_HTML eine Seite mit Brett und Satz je Moment (nur lokal)
 
 # Pipeline (im Hauptordner)
 python -m pipeline.bauen --buch buch/a1 --ziel app/public/daten/de/a1   # alle Kapitel, Glossar, PGN-Entwürfe, Bericht

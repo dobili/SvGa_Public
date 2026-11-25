@@ -21,7 +21,7 @@ import { zugtext } from "../../ui/komponenten/auswertung/sprung";
 import type { Besprechungsmoment } from "../regeln/besprechungsmomente";
 import { momentmotiv, type Motivgrundlage } from "./besprechungsmotiv";
 import { lageVor, opferVon } from "./besprechungslage";
-import { materialVon, ursacheVon } from "./besprechungsursache";
+import { materialVon, ursachePasst, ursacheVon } from "./besprechungsursache";
 import type { Momentangaben } from "./besprechungstexte";
 
 /** So viele Halbzüge der besseren Fortsetzung nennt Ambrose ab Stufe 3. */
@@ -106,6 +106,8 @@ export function momentangaben(
   const folgeStelle = FOLGE_DES_GEGNERS.has(moment.kategorie) ? i + 1 : stelle;
   const folge = widerlegungAus(eintrag.beste[folgeStelle], eintrag.varianten[folgeStelle]);
   const zug = zugtext(eintrag.partie, i);
+  const ursache = ursacheVon(g, moment, zug);
+  const material = materialVon(g, moment);
   return {
     moment,
     zug,
@@ -113,8 +115,8 @@ export function momentangaben(
     motiv: momentmotiv(g, moment),
     folge: folgetext(g.fens[folgeStelle] ?? "", folge, FOLGE_HALBZUEGE),
     eroeffnung: moment.kategorie === "theorie" ? eroeffnungsname(quellen, g, i) : null,
-    ursache: ursacheVon(g, moment, zug),
-    material: materialVon(g, moment),
+    ursache: ursachePasst(ursache, material) ? ursache : null,
+    material,
     lage: lageVor(g, moment),
     opfer: opferVon(g, moment),
   };

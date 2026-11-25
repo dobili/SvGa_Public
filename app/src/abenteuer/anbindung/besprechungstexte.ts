@@ -137,9 +137,10 @@ function materialsatz(k: Besprechungskontext, a: Momentangaben, z: Ziehung): str
   const m = a.material;
   if (!m || (m.richtung === "gewinn" && k.stufe < 2)) return null;
   const basis = `${vorsilbe(k.stimme)}.material`;
+  const art = m.antwort ? "Antwort" : "";
   if (m.art === "matt")
-    return z.zeile(`${basis}.${m.richtung === "verlust" ? "mattVerlust" : "mattGewinn"}`);
-  return z.zeile(`${basis}.${m.richtung}`, { figur: figurwort(m.rolle, "den") });
+    return z.zeile(`${basis}.${m.richtung === "verlust" ? "mattVerlust" : `mattGewinn${art}`}`);
+  return z.zeile(`${basis}.${m.richtung}${art}`, { figur: figurwort(m.rolle, "den") });
 }
 
 /**

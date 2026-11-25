@@ -65,3 +65,14 @@ describe("fruehereFehler", () => {
     expect(fruehereFehler([damals], heute).get("haengt")?.gleicherGegner).toBe(true);
   });
 });
+
+describe("Lehrer: nur Menschen", () => {
+  it("nennt weder die Rätseltafel noch Ambrose", () => {
+    const runden = [
+      { kennung: "wegMapleCedar.tafelRunde", themen: ["haengend"], steller: "wegMapleCedar.tafel" },
+      { kennung: "riverton.ambroseRunde", themen: ["doppelangriff"], steller: "riverton.ambrose" },
+    ];
+    const alle = Object.fromEntries(runden.map((r) => [versuchtVariable(r.kennung), true]));
+    expect(lehrerJeBegriff(alle, runden).size).toBe(0);
+  });
+});

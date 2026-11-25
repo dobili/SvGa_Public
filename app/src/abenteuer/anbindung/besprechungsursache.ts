@@ -19,6 +19,7 @@ import { makeSquare } from "chessops/util";
 import type { Fehlerbefund } from "../../engine/fehlerart";
 import { sprache } from "../../i18n/sprache";
 import { sanInSprache } from "../../schach/notation";
+import { FIGURENWERT } from "../../schach/stellung";
 import { regelstellung, sanZuUci } from "../../spiel/zuege";
 import type { Begriff } from "../regeln/besprechung";
 import type { Besprechungsmoment } from "../regeln/besprechungsmomente";
@@ -32,6 +33,8 @@ export interface Ursache {
   readonly werte: Readonly<Record<string, string>>;
   /** Kennt der Held diesen Begriff, nimmt der Satz das Fachwort (Gruppe mit `.wort`). */
   readonly begriff: Begriff | null;
+  /** Die bedrohte oder hängende Figur, wenn die Ursache eine nennt (Abgleich mit dem Material). */
+  readonly rolle?: Role;
 }
 
 /** Wortformen einer Figur in den Spieltexten (besprechung.figur.<rolle>.<form>). */
@@ -83,6 +86,7 @@ function haengtUrsache(befund: Fehlerbefund, nachher: string): Ursache | null {
     gruppe: "haengt",
     werte: { figur: figurwort(rolle, "dein"), feld: makeSquare(feld) },
     begriff: "haengend",
+    rolle,
   };
 }
 
@@ -95,7 +99,7 @@ function drohungUrsache(befund: Fehlerbefund): Ursache | null {
     return { gruppe: "drohungMatt", werte: { drohung: zug }, begriff: "matt" };
   const ziel = figurwort(drohung.zug.geschlagen, "deinen");
   const werte = { drohung: zug, ziel, feld: makeSquare(drohung.zug.nach) };
-  return { gruppe: "drohung", werte, begriff: "haengend" };
+  return { gruppe: "drohung", werte, begriff: "haengend", rolle: drohung.zug.geschlagen };
 }
 
 /**
@@ -166,6 +170,19 @@ export function ursacheVon(
 }
 
 /**
+ * Passen Ursache und Material zusammen? Nennt die Ursache eine Figur (hängt, bedroht) und kostet
+ * der Fehler eine andere, schwerere, war die genannte Ursache nicht der Grund (Messlauf
+ * 26.11.2026: „exd4 gedroht gegen den Bauern“, verloren ging aber der Turm durch eine Gabel). Dann
+ * entfällt der Satz zur Ursache; der zum Material bleibt.
+ * Beispiel: Ursache „haengt“ Läufer, Material Läufer → passt; Ursache Bauer, Material Turm → nicht.
+ */
+export function ursachePasst(ursache: Ursache | null, material: Materialfolge | null): boolean {
+  if (!ursache?.rolle || material?.art !== "figur" || material.richtung !== "verlust") return true;
+  if (material.rolle === "zweiBauern") return ursache.rolle === "pawn";
+  return FIGURENWERT[material.rolle] <= FIGURENWERT[ursache.rolle];
+}
+
+/**
  * Was der Fehler kostet oder die Chance gebracht hätte, als Figur (besprechungsmaterial.ts).
  * Fehler: der gespielte Zug und die Widerlegung danach, aus Sicht des Helden „verlust“. Verpasste
  * Chance: die beste Folge an dieser Stelle; Fehler des Gegners: die beste Antwort danach, beide
@@ -185,5 +202,7 @@ export function materialVon(g: Motivgrundlage, moment: Besprechungsmoment): Mate
   const stelle = moment.kategorie === "gegnerfehler" ? i + 1 : i;
   const held =
     moment.kategorie === "gegnerfehler" ? (seite === "white" ? "black" : "white") : seite;
-  return materialfolge(g.fens[stelle] ?? "", besteFolge(g, stelle), held, "gewinn");
+  const folge = materialfolge(g.fens[stelle] ?? "", besteFolge(g, stelle), held, "gewinn");
+  // Beim Fehler des Gegners hat der Held die Antwort oft gespielt: Satz ohne „hättest“ (antwort).
+  return folge && moment.kategorie === "gegnerfehler" ? { ...folge, antwort: true } : folge;
 }

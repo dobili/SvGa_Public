@@ -133,10 +133,33 @@ export function fehlerbefundAn(g: Motivgrundlage, index: number): Fehlerbefund |
   return fehlerbefundIn(lage, uci, widerlegung, g.verluste[index] ?? 0, g.beste[index]);
 }
 
+/**
+ * Motive in der Antwort des Gegners, deren Satz („Danach hatte dein Gegner eine Gabel“) ohne die
+ * Lage der Figuren stimmt. Bei Fesselung, Spieß und Abzug sagt das Motiv der Antwort nicht, wessen
+ * Figur gefesselt ist (Messlauf 26.11.2026); dann kein Satz zum Begriff.
+ */
+const EINDEUTIGE_MOTIVE: ReadonlySet<Motiv> = new Set<Motiv>([
+  "gabel",
+  "doppelangriff",
+  "umwandlung",
+]);
+
+/**
+ * Gehört bei einer gefährlichen Linie die vordere Figur dem Helden? Sonst passt „gegen dich“ nicht
+ * (Messlauf 26.11.2026: „eine deiner Figuren gefesselt“, gefesselt war aber eine gegnerische).
+ * Bei einem Motiv der Antwort nur die eindeutigen. Ohne Taktik → true.
+ */
+function linieDesHelden(befund: Fehlerbefund, fen: string): boolean {
+  const taktik = befund.taktik;
+  if (taktik?.art === "motiv") return EINDEUTIGE_MOTIVE.has(taktik.motiv);
+  if (taktik?.art !== "linie") return true;
+  return taktik.linie.vorn.figur.color === (fen.split(" ")[1] === "b" ? "black" : "white");
+}
+
 /** Der Fehler eines Zuges des Helden als Begriff. */
 function fehlermotiv(g: Motivgrundlage, index: number): Momentmotiv | null {
   const befund = fehlerbefundAn(g, index);
-  if (!befund) return null;
+  if (!befund || !linieDesHelden(befund, g.fens[index] ?? "")) return null;
   if (befund.art === "schlagVerpasst") return { begriff: "haengend", richtung: "fuer" };
   const begriff = fehlerbegriff(befund);
   return begriff ? { begriff, richtung: "gegen" } : null;

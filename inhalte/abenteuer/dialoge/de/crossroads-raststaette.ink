@@ -10,7 +10,8 @@
 // Varianten: Gebaut sind Blindschach (Begegnung wegCrossroadsPinewood.blindschach, gelernt
 // bei Greta an Weg 9) und Schach960 (Begegnung crossroads.schach960 gegen Ambrose, gelernt bei
 // Mabel im Musikhaus von Port Delacroix), seit 26.11.2026 die Regelvarianten (crossroads.dreischach,
-// .atomschach, .koenigDerHuegel, .koenigsrennen, .raeuberschach). Die übrigen sind Kulisse (VARIANTE-FEHLT).
+// .atomschach, .koenigDerHuegel, .koenigsrennen, .raeuberschach), dazu Nebel-, Enten-, Tandemschach,
+// Falke und Bison (crossroads.falkeUndBison) und der Drache (crossroads.drache).
 // Variablen: variante<Name>Gelernt setzen die Dialoge der Wege und von Summit City;
 // novaBitteGehoert, novaHilfeZugesagt und die übrigen setzt diese Datei. novaBitteGehoert und
 // novaHilfeZugesagt sind für die Dialoge der Capital Arena gedacht (Szene 103).
@@ -64,6 +65,8 @@ VAR ausgangCrossroadsRaeuberschach = ""
 VAR ausgangCrossroadsNebelschach = ""
 VAR ausgangCrossroadsEntenschach = ""
 VAR ausgangCrossroadsTandem = ""
+VAR ausgangCrossroadsFalkeUndBison = ""
+VAR ausgangCrossroadsDrache = ""
 // Eingang der Raststätte (19.11.2026): beim ersten Betreten statt beim ersten Gespräch mit Darlene.
 VAR raststaetteBetreten = false
 
@@ -240,7 +243,8 @@ Was du schon kennst: #sprecher:erzaehler
 // Der Tisch ist Kulisse: Die Sätze zeigen, was dort gespielt wird, ohne ein Versprechen an den
 // Spieler („Kommt bald“). Spielbar gegen Ambrose: Blindschach, Schach960 und seit 26.11.2026 die
 // Regelvarianten Drei-Schach, Atomschach, König der Hügel, Königsrennen und Räuberschach, dazu
-// Nebel- und Entenschach gegen Ambrose und Tandem mit Ambrose als Partner gegen Slick (mittel-4).
+// Nebel- und Entenschach gegen Ambrose und Tandem mit Ambrose als Partner gegen Slick (mittel-4),
+// dazu Falke und Bison (von Kira) und Schach mit dem Drachen (vom Drachenfest) gegen Ambrose.
 // Nach dem Abschied (abschiedGesehen) spielt Ambrose nicht mehr mit: Beide Partien entfallen.
 // Schach960 bleibt bei Mabel im Musikhaus spielbar.
 + {varianteBlindschachGelernt and not abschiedGesehen} [Blindschach gegen Ambrose]
@@ -288,6 +292,16 @@ Was du schon kennst: #sprecher:erzaehler
     ~ tischPartie = "entenschach"
     ~ beginnePartie("crossroads.entenschach")
     -> END
++ {varianteFalkeUndBisonGelernt and not abschiedGesehen} [Falke und Bison gegen Ambrose]
+    Kiras Spiel. Der Falke springt, der Bison läuft wie ein Turm. Mal sehen, wer seine zuerst einsetzt. #sprecher:ambrose #stimmung:laechelt
+    ~ tischPartie = "falkeUndBison"
+    ~ beginnePartie("crossroads.falkeUndBison")
+    -> END
++ {varianteDracheGelernt and not abschiedGesehen} [Schach mit dem Drachen gegen Ambrose]
+    Der Glasdrache. Hol ihn nicht zu früh, sagt Sol. Ich sage: Hol ihn überhaupt, sonst holt ihn der andere. #sprecher:ambrose #stimmung:lacht
+    ~ tischPartie = "drache"
+    ~ beginnePartie("crossroads.drache")
+    -> END
 + {varianteTandemGelernt and not abschiedGesehen} [Tandem mit Ambrose gegen Slick]
     Ich bin dein Partner. Gib mir einen Springer, und ich gebe dir die Welt. #sprecher:ambrose #stimmung:lacht
     ~ tischPartie = "tandem"
@@ -312,6 +326,8 @@ Was du schon kennst: #sprecher:erzaehler
 - tischPartie == "nebelschach": ~ ausgang = ausgangCrossroadsNebelschach
 - tischPartie == "entenschach": ~ ausgang = ausgangCrossroadsEntenschach
 - tischPartie == "tandem": ~ ausgang = ausgangCrossroadsTandem
+- tischPartie == "falkeUndBison": ~ ausgang = ausgangCrossroadsFalkeUndBison
+- tischPartie == "drache": ~ ausgang = ausgangCrossroadsDrache
 }
 ~ temp tandem = tischPartie == "tandem"
 ~ tischPartie = ""

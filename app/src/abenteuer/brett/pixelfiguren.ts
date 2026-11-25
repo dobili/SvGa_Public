@@ -8,6 +8,8 @@
  * (Fläche, Umriss, Schatten je Feld nach Mehrheit) und von Hand nachgebessert: symmetrisch
  * gemacht, Kreuz, Krone, Zinnen und Kerbe des Läufers freigestellt, der Bauer runder.
  * Weiß und Schwarz teilen dieselbe Zeichnung; die Farben kommen je Material aus materialien.ts.
+ * Märchenfiguren (Auftrag 26.11.2026) tragen ihre FEN-Zeichen wie in Fairy-Stockfish: H Falke
+ * (Hawk), E Bison (Elephant), D Drache; bis gezeichnete Bilder da sind, ein Buchstabe im Kreis.
  * Abhängigkeiten: keine.
  *
  * Zeichen im Raster: „.“ leer, „1“ Umriss, „2“ Körper, „3“ Schatten (Sockel, Bänder).
@@ -145,6 +147,69 @@ export const PIXELRASTER: Readonly<Record<string, readonly string[]>> = {
     "...111111111111...",
     "...133333333331...",
     "...111111111111...",
+    "..................",
+  ],
+  // Falke (Läufer + Springer, Variante Falke und Bison, L9): Platzhalter F im Kreis
+  H: [
+    "..................",
+    ".......1111.......",
+    ".....11222211.....",
+    "....1222222221....",
+    "...122211111221...",
+    "..12222122222221..",
+    "..12222122222221..",
+    "..12222111122221..",
+    "..12222122222221..",
+    "..12222122222221..",
+    "..12222122222221..",
+    "..12222222222221..",
+    "...122222222221...",
+    "....1333333331....",
+    ".....11333311.....",
+    ".......1111.......",
+    "..................",
+    "..................",
+  ],
+  // Bison (Turm + Springer, Variante Falke und Bison, L9): Platzhalter B im Kreis
+  E: [
+    "..................",
+    ".......1111.......",
+    ".....11222211.....",
+    "....1222222221....",
+    "...122211112221...",
+    "..12222122212221..",
+    "..12222122212221..",
+    "..12222111122221..",
+    "..12222122212221..",
+    "..12222122212221..",
+    "..12222111122221..",
+    "..12222222222221..",
+    "...122222222221...",
+    "....1333333331....",
+    ".....11333311.....",
+    ".......1111.......",
+    "..................",
+    "..................",
+  ],
+  // Drache (Dame + Springer, Drachenfest, L10): Platzhalter D im Kreis
+  D: [
+    "..................",
+    ".......1111.......",
+    ".....11222211.....",
+    "....1222222221....",
+    "...122211112221...",
+    "..12222122212221..",
+    "..12222122212221..",
+    "..12222122212221..",
+    "..12222122212221..",
+    "..12222122212221..",
+    "..12222111122221..",
+    "..12222222222221..",
+    "...122222222221...",
+    "....1333333331....",
+    ".....11333311.....",
+    ".......1111.......",
+    "..................",
     "..................",
   ],
 };

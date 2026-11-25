@@ -92,8 +92,8 @@ describe("Stilwahl", () => {
 });
 
 describe("Pixelfiguren", () => {
-  it("haben sechs Figuren mit 18 Zeilen zu 18 Zeichen", () => {
-    expect(Object.keys(PIXELRASTER).sort()).toEqual(["B", "K", "N", "P", "Q", "R"]);
+  it("haben sechs Figuren und drei Märchenfiguren mit 18 Zeilen zu 18 Zeichen", () => {
+    expect(Object.keys(PIXELRASTER).sort()).toEqual(["B", "D", "E", "H", "K", "N", "P", "Q", "R"]);
     for (const raster of Object.values(PIXELRASTER)) {
       expect(raster).toHaveLength(RASTERGROESSE);
       for (const zeile of raster) expect(zeile).toMatch(/^[.123]{18}$/);

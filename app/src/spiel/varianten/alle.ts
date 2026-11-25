@@ -5,5 +5,6 @@
  * Abhängigkeiten: die Variantenmodule (jedes meldet sich beim Laden an).
  */
 import "./standardvarianten";
+import "./maerchenfiguren";
 
 export { alleVarianten, varianteVon } from "./variante";

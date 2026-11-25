@@ -567,6 +567,22 @@
     {
       "moebel": "wds6PinieB",
       "feld": [75, 53]
+    },
+    {
+      "moebel": "ca8KlapptischBrett",
+      "feld": [28, 31]
+    },
+    {
+      "moebel": "gc10Hocker",
+      "feld": [28, 33]
+    },
+    {
+      "moebel": "ca8KlapptischBrett",
+      "feld": [40, 31]
+    },
+    {
+      "moebel": "gc10Hocker",
+      "feld": [40, 33]
     }
   ],
   "ausloeser": [
@@ -862,6 +878,34 @@
         "von": "11,26",
         "bis": "11,26",
         "verhalten": "schlafen"
+      }
+    },
+    {
+      "name": "drachenspielerin",
+      "typ": "statist",
+      "feld": [28, 33],
+      "eigenschaften": {
+        "von": "28,33",
+        "bis": "28,33",
+        "tun": "übt am Klapptisch eine Partie mit dem Drachen",
+        "wann": "tag",
+        "blick": "oben",
+        "sitzt": "oben",
+        "sagt": "statist.summitCity.aussen.drachenspielerin"
+      }
+    },
+    {
+      "name": "drachenspieler",
+      "typ": "statist",
+      "feld": [40, 33],
+      "eigenschaften": {
+        "von": "40,33",
+        "bis": "40,33",
+        "tun": "probt am Klapptisch für das Drachenfest",
+        "wann": "tag",
+        "blick": "oben",
+        "sitzt": "oben",
+        "sagt": "statist.summitCity.aussen.drachenspieler"
       }
     }
   ],

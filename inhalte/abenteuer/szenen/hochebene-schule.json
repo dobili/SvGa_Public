@@ -559,7 +559,8 @@
         "von": "36,28",
         "bis": "36,28",
         "tun": "hat Pausenaufsicht",
-        "wann": "tag"
+        "wann": "tag",
+        "sagt": "statist.hochebene.schule.lehrerin"
       }
     },
     {
@@ -669,6 +670,32 @@
         "von": "54,10",
         "bis": "48,10",
         "verhalten": "flitzen"
+      }
+    },
+    {
+      "name": "schuelerin",
+      "typ": "statist",
+      "feld": [26, 27],
+      "eigenschaften": {
+        "von": "26,27",
+        "bis": "26,27",
+        "tun": "spielt am Steintisch Falke und Bison",
+        "wann": "tag",
+        "blick": "oben",
+        "sagt": "statist.hochebene.schule.schuelerin"
+      }
+    },
+    {
+      "name": "schueler",
+      "typ": "statist",
+      "feld": [26, 24],
+      "eigenschaften": {
+        "von": "26,24",
+        "bis": "26,24",
+        "tun": "denkt am Steintisch über seinen nächsten Zug nach",
+        "wann": "tag",
+        "blick": "unten",
+        "sagt": "statist.hochebene.schule.schueler"
       }
     }
   ],

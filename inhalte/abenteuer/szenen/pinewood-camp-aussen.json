@@ -718,7 +718,8 @@
         "bis": "24,18",
         "tun": "spielt Gitarre am Feuer",
         "wann": "abend",
-        "blick": "unten"
+        "blick": "unten",
+        "sagt": "statist.pinewoodCamp.aussen.gitarrist"
       }
     },
     {
@@ -790,6 +791,32 @@
         "bis": "42,31",
         "tun": "trägt ein Paddel zum Steg",
         "wann": "tag"
+      }
+    },
+    {
+      "name": "raeuberkind",
+      "typ": "statist",
+      "feld": [26, 30],
+      "eigenschaften": {
+        "von": "26,30",
+        "bis": "26,30",
+        "tun": "spielt am Picknicktisch Räuberschach",
+        "wann": "tag",
+        "blick": "oben",
+        "sagt": "statist.pinewoodCamp.aussen.raeuberkind"
+      }
+    },
+    {
+      "name": "raeuberkindB",
+      "typ": "statist",
+      "feld": [26, 27],
+      "eigenschaften": {
+        "von": "26,27",
+        "bis": "26,27",
+        "tun": "verschenkt am Picknicktisch eine Dame",
+        "wann": "tag",
+        "blick": "unten",
+        "sagt": "statist.pinewoodCamp.aussen.raeuberkindB"
       }
     }
   ],

@@ -1223,6 +1223,26 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "hinweis": "Spiegelbild von treppeNachRechts: steigt nach links an, Antritt rechts, Absatz links; Pfostenköpfe mit Licht von links oben. Gebaut mit pipeline/abenteuer/seitentreppe.py (17.11.2026); noch in keiner Karte"
+    },
+    "kt10KlapptischTablet": {
+      "quelle": "spiel/eigene/klapptisch_tablet.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "##....##"
+      ],
+      "hinweis": "Klapptisch des Testteams von Perfect Move (Zoe, Benji, Imani) an den Wegsperren Zedernwald, Raststätte und Diner: Schachbrett, Tablet mit Hülle und Wasserflasche (Gemini B32/G10, 25.11.2026, RO39)"
     }
   }
 }

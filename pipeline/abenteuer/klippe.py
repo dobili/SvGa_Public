@@ -47,6 +47,9 @@ from pipeline.abenteuer.klippenrolle import rolle as _rolle
 
 # Rot umgefärbte Erdklippe (Bogen „klippeRot“ in materialien.json), gleiche Kachellage.
 ROTE_KLIPPE = "spiel/eigene/klippe_rot.png"
+# Eigene rote Canyonwand (Gemini, Kartenblick Paket A, 26.11.2026; Bogen „klippeCanyon“): Lage wie
+# ``klippe_rot.png``, Wandkacheln aus ``werkzeuge/gemini_canyonwand_2611.py`` im privaten Paket.
+CANYON_KLIPPE = "spiel/eigene/klippe_canyon.png"
 # Grün umgefärbte Erdklippe für Deiche (Bogen „klippeGras“, Bildwunsch klippe_gras.py, mittel-1).
 GRAS_KLIPPE = "spiel/eigene/klippe_gras.png"
 # Graue Felswand mit Moos für Wasserfälle (Bogen „klippeGrau“, Bildwunsch klippe_grau.py, 16.11.2026).
@@ -325,7 +328,8 @@ def klippenart(szene: dict) -> str:
 
 
 def klippenbogen(szene: dict, privat: Path) -> str:
-    """Bogen der Klippenkacheln: „klippeRot“ für roten Fels (Szene „fels“: „rot“), „klippeGras“ für
+    """Bogen der Klippenkacheln: „klippeCanyon“ für die gezeichnete Canyonwand (Szene „fels“:
+    „canyon“, sonst wie „rot“), „klippeRot“ für roten Fels (Szene „fels“: „rot“), „klippeGras“ für
     einen Grashang (Szene „fels“: „gras“, Deich), „klippeGrau“ für grauen Fels mit Moos (Szene
     „fels“: „grau“, Wasserfall im Stadtpark), sonst „gelaende“.
 
@@ -334,6 +338,9 @@ def klippenbogen(szene: dict, privat: Path) -> str:
     umgefärbt. Fehlt die Datei noch im privaten Repository, bleibt die braune Klippe.
     """
     farbe = WANDARTEN.get(szene.get("fels"), (None, szene.get("fels")))[1]
+    if farbe == "canyon" and (privat / CANYON_KLIPPE).exists():
+        return "klippeCanyon"
+    farbe = "rot" if farbe == "canyon" else farbe  # ohne eigenes Bild bleibt die rote Klippe
     if farbe == "rot" and (privat / ROTE_KLIPPE).exists():
         return "klippeRot"
     if farbe == "gras" and (privat / GRAS_KLIPPE).exists():

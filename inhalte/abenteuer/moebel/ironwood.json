@@ -1491,6 +1491,30 @@
       "stil": "industrie",
       "tuer": [[7, 10], [8, 10]],
       "beschreibung": "Werkskantine Ironwood: Holzhalle mit rostigem Blechdach (Bild wie wr5Fabrikhalle), gedacht für massstab 1.7 (Grundriss dann 22 × 8,5, passend zum Innenraum 34 × 16, Regel 10.75); tuer nennt die Felder vor den Stufen im ungeskalierten Bild, die Prüfung rechnet den Maßstab ein"
+    },
+    "iw18KantineBreit": {
+      "quelle": "spiel/eigene/kantine_breit.png",
+      "breite": 352,
+      "hoehe": 272,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "industrie",
+      "tuer": [[10, 17], [11, 17]],
+      "beschreibung": "Werkskantine Ironwood (Gemini B30/G8, 25.11.2026): lange, niedrige Backsteinhalle mit flachem Blechdach, zwei Schornsteinen und Lüftungskasten, sechs hohen Werksfenstern und einer gläsernen Doppeltür genau in der Mitte unter einem Vordach; ersetzt die 1,7-fach vergrößerte Holzhalle iw17Kantinenhalle (RO37 Nr. 8) in derselben Fläche (22 × 17 Kacheln, Innenraum 34 × 16, Regel 10.75)"
+    },
+    "iw18BahnhofMuseum": {
+      "quelle": "spiel/eigene/bahnhof_museum.png",
+      "breite": 160,
+      "hoehe": 144,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "tuer": [[4, 9], [5, 9]],
+      "beschreibung": "Alter Bahnhof aus dunklem Backstein mit Uhrgiebel, heute Heimatmuseum von Ironwood (Gemini B31/G9, 25.11.2026): Schieferdach, Rundbogenfenster, hölzerne Doppeltür mit Rundbogen in der Mitte, zwei alte Laternen und eine schmale Bank an der Front; ersetzt in Ironwood den Bahnhof mit Veranda (ds6BahnhofAlt, bleibt in Desert Springs)"
     }
   }
 }

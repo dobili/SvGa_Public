@@ -591,6 +591,18 @@
       "zustand": "gebraucht",
       "stil": "klassisch"
     },
+    "sb18LeuchtturmRotWeiss": {
+      "quelle": "spiel/eigene/leuchtturm_silicon.png",
+      "breite": 96,
+      "hoehe": 192,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "tuer": [[3, 12]],
+      "beschreibung": "Rot-weißer Leuchtturm auf Bruchsteinsockel mit Laterne, Umgang und kleiner Tür (Gemini, Kartenblick Paket A, 26.11.2026); ersetzt im Hafen von Silicon Bay den vergrößerten Paketturm sb5Leuchtturm (Maßstab 1,19 wirkte grob)"
+    },
     "sb5Schiffsbar": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Ship_Bar.png",
       "breite": 112,

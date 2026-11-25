@@ -8,6 +8,7 @@
  * Abhängigkeiten: speicher/partien.ts (Typ), anbindung/partieergebnis.ts, anbindung/huellentexte.ts.
  */
 import type { Spielstand } from "../../speicher/partien";
+import { besprechbarePartie } from "../regeln/besprechung";
 import type { Ausgang } from "../schnittstelle/partie";
 import { gegnerName } from "./huellentexte";
 import { ausgangAus } from "./partieergebnis";
@@ -23,6 +24,8 @@ export interface Partiezeile {
   readonly ausgang: Ausgang;
   /** Ganze Züge, wie man sie am Brett zählt. */
   readonly zuege: number;
+  /** Nach normalen Regeln gespielt (regeln/besprechung.ts, besprechbarePartie)? */
+  readonly besprechbar: boolean;
 }
 
 /**
@@ -46,5 +49,6 @@ export function meinePartien(
       gegner: gegnerName(p),
       ausgang: ausgangAus(p),
       zuege: Math.ceil(p.zuege.length / 2),
+      besprechbar: besprechbarePartie(p.einstellung),
     }));
 }

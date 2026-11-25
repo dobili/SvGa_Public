@@ -25,7 +25,7 @@ function eintrag(id: string, teile: Partial<Partie> & { abenteuer?: boolean }): 
 describe("meinePartien", () => {
   it("zeigt Gegner, Ausgang und ganze Züge", () => {
     expect(meinePartien({ partien: [eintrag("a", {})] })).toEqual([
-      { id: "a", gegner: "Skater Jo", ausgang: "sieg", zuege: 24 },
+      { id: "a", gegner: "Skater Jo", ausgang: "sieg", zuege: 24, besprechbar: true },
     ]);
   });
 
@@ -37,5 +37,14 @@ describe("meinePartien", () => {
   it("behält die Reihenfolge der App (neueste zuerst) und kürzt auf die Höchstzahl", () => {
     const partien = ["c", "b", "a"].map((id) => eintrag(id, {}));
     expect(meinePartien({ partien }, 2).map((z) => z.id)).toEqual(["c", "b"]);
+  });
+
+  it("bespricht keine Partie mit eigenen Regeln (Schach960), wohl aber Blindschach", () => {
+    const mit = (variante: string) =>
+      eintrag(variante, {
+        einstellung: { abenteuer: { kennung: variante, variante } },
+      } as unknown as Partial<Partie>);
+    const zeilen = meinePartien({ partien: [mit("schach960"), mit("blind")] });
+    expect(zeilen.map((z) => z.besprechbar)).toEqual([false, true]);
   });
 });

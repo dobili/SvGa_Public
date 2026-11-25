@@ -261,7 +261,8 @@ function Turnierheft({ stand, daten }: { stand: Abenteuerstand; daten: Spieldate
 
 /**
  * Die beendeten Partien des Abenteuers, neueste zuerst, je mit „Ansehen“ und, sobald Ambrose sie
- * angekündigt hat (regeln/besprechung.ts), „Besprechen“ (Partiebesprechung, 25.11.2026).
+ * angekündigt hat (regeln/besprechung.ts), „Besprechen“ (Partiebesprechung, 25.11.2026); nicht
+ * bei Partien mit eigenen Regeln wie Schach960 (besprechbarePartie, 26.11.2026).
  */
 function MeinePartien({
   beiPartie,
@@ -290,7 +291,7 @@ function MeinePartien({
                 {tSpiel("tagebuch.partieZuege", { anzahl: z.zuege })}
               </span>
               <span className="abenteuer-partienknoepfe">
-                {besprechbar && (
+                {besprechbar && z.besprechbar && (
                   <button
                     type="button"
                     className="knopf-zweit"

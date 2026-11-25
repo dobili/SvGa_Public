@@ -93,11 +93,13 @@ function schreibeImBrowser(daten: { stand: object; eintrag: object }): Promise<b
 }
 
 /** Startet das Abenteuer mit Stand und Partie und öffnet das Tagebuch. */
-async function oeffneTagebuch(seite: Page, stand: object): Promise<void> {
+async function oeffneTagebuch(
+  seite: Page,
+  stand: object,
+  eintrag: object = EINTRAG,
+): Promise<void> {
   await starteImBrowser(seite, { weitermachen: true });
-  await expect
-    .poll(() => seite.evaluate(schreibeImBrowser, { stand, eintrag: EINTRAG }))
-    .toBe(true);
+  await expect.poll(() => seite.evaluate(schreibeImBrowser, { stand, eintrag })).toBe(true);
   await seite.reload();
   await seite.goto("/app/#abenteuer");
   const laden = seite.getByTestId("abenteuer-start").getByTestId("abenteuer-laden");
@@ -196,4 +198,18 @@ test("im Tiefpunkt bespricht der Held allein", async ({ page }) => {
   const blase = page.getByTestId("abenteuer-besprechung-blase");
   await expect(blase).toHaveAttribute("data-erscheinung", "notiz", { timeout: 20000 });
   await expect(blase).toContainText(/Ambrose ist nicht da|Niemand flüstert/);
+});
+
+test("Schach960 wird nicht besprochen, „Ansehen“ bleibt", async ({ page }) => {
+  test.slow();
+  // Wunsch des Autors (26.11.2026): Partien mit eigenen Regeln bespricht Ambrose nicht.
+  const einstellung = {
+    ...EINTRAG.partie.einstellung,
+    abenteuer: { kennung: "mapleFalls.clubkampf", variante: "schach960" },
+  };
+  const eintrag = { ...EINTRAG, partie: { ...EINTRAG.partie, einstellung } };
+  await oeffneTagebuch(page, STAND, eintrag);
+  const liste = page.getByTestId("abenteuer-meine-partien");
+  await expect(liste.getByRole("button", { name: "Ansehen" })).toBeVisible();
+  await expect(page.getByTestId("abenteuer-partie-besprechen")).toHaveCount(0);
 });

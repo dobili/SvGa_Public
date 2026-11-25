@@ -10,6 +10,7 @@
  * Abhängigkeiten: chessops, spiel/zuege.ts, spiel/ergebnis.ts, spiel/uhr.ts, engine/fehlerart.ts.
  */
 import type { Probeherkunft } from "./probepartie";
+import type { Variantenkennung } from "./varianten/variante";
 import type { Stilmix, Stilname } from "../engine/stile";
 import type { Color } from "chessops/types";
 import type { BlinderFleck } from "../engine/blindeFlecken";
@@ -131,10 +132,11 @@ export interface Partieeinstellung {
      */
     readonly staerkeWechsel?: readonly number[];
     /**
-     * Schachvariante eines Nebenschauplatzes (Akt 4, docs/spiel/10, V1): „blind“ blendet die
-     * Figuren auf dem Brett aus (Rahmenklasse in app/App.tsx); die Regeln bleiben die normalen.
+     * Schachvariante eines Nebenschauplatzes (Akt 4, docs/spiel/10): Kennung einer angemeldeten
+     * Variante (spiel/varianten/variante.ts). „blind“ blendet die Figuren aus (Rahmenklasse in
+     * app/App.tsx); Regelvarianten bringen eigene Regeln und Engine mit.
      */
-    readonly variante?: "blind" | "schach960" | "gehoer";
+    readonly variante?: Variantenkennung;
     /** Kandidatenwahl für den ersten Zug des Gegners (spiel/vorgabezug.ts, Stream auf Weg 4). */
     readonly kandidaten?: readonly string[];
     /** Buch und Bruch (spiel/vorgabezug.ts, Z-1 auf Weg 10): Linie, danach schwache Stufe. */

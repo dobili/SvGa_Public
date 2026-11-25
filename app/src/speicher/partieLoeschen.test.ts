@@ -1,6 +1,7 @@
 /**
  * Tests zum Löschen von Partien und zum Porträt eigener Gegner: Nur ungewertete Partien
- * lassen sich löschen; ein Porträt kommt nur aus der Liste zur Wahl durch die Rohdaten.
+ * lassen sich löschen; ein Porträt kommt nur aus der Liste zur Wahl durch die Rohdaten; eine
+ * abgelegte Partie mit gleichen Zügen behält beim Ablegen ihre Auswertung.
  */
 import { describe, expect, it } from "vitest";
 import { gibAuf, neuePartie, type Partie } from "../spiel/partie";
@@ -53,5 +54,19 @@ describe("Porträt eigener Gegner", () => {
   it("verwirft Unbekanntes und alte Gegner ohne Porträt", () => {
     expect(eigenerGegnerAus({ ...roh, portraet: "lotta" })?.portraet).toBeUndefined();
     expect(eigenerGegnerAus(roh)?.portraet).toBeUndefined();
+  });
+});
+
+describe("Partie noch einmal ablegen", () => {
+  it("behält die Auswertung bei gleichen Zügen (Nachwort der Spielhülle nach dem Nachlauf)", () => {
+    const p = partie("n", false);
+    const abgelegt = legeAb(LEERER_SPIELSTAND, p);
+    const ausgewertet = {
+      ...abgelegt,
+      partien: abgelegt.partien.map((e) => ({ ...e, werte: [0.2], beste: ["e2e4"] })),
+    };
+    const nochmal = legeAb(ausgewertet, { ...p, ruecknahmen: 0 });
+    expect(nochmal.partien[0]?.werte).toEqual([0.2]);
+    expect(nochmal.partien[0]?.beste).toEqual(["e2e4"]);
   });
 });

@@ -27,7 +27,14 @@ import { existsSync } from "node:fs";
 import { readdir, readFile } from "node:fs/promises";
 import { join } from "node:path";
 import sharp from "sharp";
-import { FUSSZEILE, imRahmen, RAHMEN, untersteZeile, verschoben } from "./figurenbogen.mjs";
+import {
+  fusszeileFuer,
+  imRahmen,
+  RAHMEN,
+  untersteZeile,
+  verschoben,
+  zeilenVon,
+} from "./figurenbogen.mjs";
 
 const KANAELE = 4;
 /** Der Kopf: die oberen zwei Fünftel der Figur (Chibi-Maß, Kopf etwa halbe Körperhöhe). */
@@ -44,16 +51,19 @@ export const ZUSTAENDE = [
 const SITZRICHTUNGEN = ["east", "north", "west", "south"];
 const LIEGERICHTUNGEN = ["west", "east"];
 
-/** Ein PNG als rohe RGBA-Pixel in einem 32er-Rahmen (kleinere Bilder unten mittig). */
-async function rahmenAus(pfad) {
+/**
+ * Ein PNG als rohe RGBA-Pixel in einem Rahmen 32 × `zeilen` (kleinere Bilder unten mittig; ein
+ * Zustand auf 32 × 48 bei einer hohen Figur, figurenbogen.mjs).
+ */
+async function rahmenAus(pfad, zeilen) {
   const { data, info } = await sharp(pfad)
     .ensureAlpha()
     .raw()
     .toBuffer({ resolveWithObject: true });
-  return imRahmen(data, info.width, info.height);
+  return imRahmen(data, info.width, Math.min(info.height, zeilen), zeilen);
 }
 
-/** Deckend an (x, y) eines 32er-Rahmens? */
+/** Deckend an (x, y) eines Rahmens (Breite 32)? */
 function deckend(rahmen, x, y) {
   return rahmen[(y * RAHMEN + x) * KANAELE + KANAELE - 1] > 0;
 }
@@ -64,7 +74,7 @@ function deckend(rahmen, x, y) {
  */
 export function kopfbreite(rahmen) {
   const zeilen = [];
-  for (let y = 0; y < RAHMEN; y++) {
+  for (let y = 0; y < zeilenVon(rahmen); y++) {
     const xs = [...Array(RAHMEN).keys()].filter((x) => deckend(rahmen, x, y));
     if (xs.length > 0) zeilen.push(xs.at(-1) - xs[0] + 1);
   }
@@ -106,32 +116,36 @@ export async function zustandsordner(figur, zustand) {
   return ausHauptexport(figur, zustand);
 }
 
-/** Verkleinert einen 32er-Rahmen um `massstab` (nächster Nachbar), wieder in einen 32er-Rahmen. */
+/** Verkleinert einen Rahmen um `massstab` (nächster Nachbar), wieder in einen gleich großen Rahmen. */
 async function verkleinert(rahmen, massstab) {
   if (massstab >= 1) return rahmen;
+  const zeilen = zeilenVon(rahmen);
   const seite = Math.max(1, Math.round(RAHMEN * massstab));
-  const klein = await sharp(rahmen, { raw: { width: RAHMEN, height: RAHMEN, channels: KANAELE } })
-    .resize(seite, seite, { kernel: "nearest" })
+  const hoch = Math.max(1, Math.round(zeilen * massstab));
+  const klein = await sharp(rahmen, { raw: { width: RAHMEN, height: zeilen, channels: KANAELE } })
+    .resize(seite, hoch, { kernel: "nearest" })
     .raw()
     .toBuffer();
   // Waagrecht mittig, senkrecht mittig; die Lage im Rahmen richtet danach `ausgerichtet`.
-  const aus = Buffer.alloc(RAHMEN * RAHMEN * KANAELE);
+  const aus = Buffer.alloc(RAHMEN * zeilen * KANAELE);
   const rand = Math.floor((RAHMEN - seite) / 2);
-  for (let y = 0; y < seite; y++) {
+  const oben = Math.floor((zeilen - hoch) / 2);
+  for (let y = 0; y < hoch; y++) {
     const q = y * seite * KANAELE;
-    klein.copy(aus, ((rand + y) * RAHMEN + rand) * KANAELE, q, q + seite * KANAELE);
+    klein.copy(aus, ((oben + y) * RAHMEN + rand) * KANAELE, q, q + seite * KANAELE);
   }
   return aus;
 }
 
-/** Sitzbilder unten auf FUSSZEILE, Liegebilder senkrecht mittig. */
+/** Sitzbilder unten auf der Fußzeile, Liegebilder senkrecht mittig. */
 function ausgerichtet(rahmen, liegt) {
   const unten = untersteZeile(rahmen);
+  const zeilen = zeilenVon(rahmen);
   if (unten < 0) return rahmen;
-  if (!liegt) return verschoben(rahmen, FUSSZEILE - unten);
+  if (!liegt) return verschoben(rahmen, fusszeileFuer(zeilen) - unten);
   let oben = 0;
-  while (oben < RAHMEN && ![...Array(RAHMEN).keys()].some((x) => deckend(rahmen, x, oben))) oben++;
-  return verschoben(rahmen, Math.floor((RAHMEN - 1 - unten - oben) / 2));
+  while (oben < zeilen && ![...Array(RAHMEN).keys()].some((x) => deckend(rahmen, x, oben))) oben++;
+  return verschoben(rahmen, Math.floor((zeilen - 1 - unten - oben) / 2));
 }
 
 /**
@@ -143,9 +157,11 @@ function ausgerichtet(rahmen, liegt) {
 export async function zustandsrahmen(figur, zustand, standSued, spiegeln) {
   const ordner = await zustandsordner(figur, zustand);
   if (!ordner) return null;
+  // Höhe der Rahmen wie die Standbilder der Figur (32, bei hohen Figuren etwa 48).
+  const zeilen = standSued ? zeilenVon(standSued) : RAHMEN;
   const lies = async (r) => {
     const pfad = join(ordner, "rotations", `${r}.png`);
-    return existsSync(pfad) ? rahmenAus(pfad) : null;
+    return existsSync(pfad) ? rahmenAus(pfad, zeilen) : null;
   };
   const sued = await lies("south");
   const soll = standSued ? kopfbreite(standSued) : 0;

@@ -30,8 +30,10 @@ from pipeline.abenteuer.statistenwahl import Angabe, bilder_der_szene, waehle
 K = 16
 VORN = 3  # Reihenfolge der Standbilder: rechts, oben, links, unten
 SITZ_RAHMEN = ("rechts", "oben", "links", "unten")
-# Zeile der Füße im 32er-Rahmen (app/skripte/figurenbogen.mjs, FUSSZEILE).
+# Zeile der Füße im 32er-Rahmen (app/skripte/figurenbogen.mjs, FUSSZEILE); in hohen Rahmen
+# (32 × 48, Schiffskoch, 25.11.2026) ebenso FUSSRAND Zeilen über dem unteren Rand.
 FUSSZEILE = 30
+FUSSRAND = 2
 # Richtungen der PixelLab-Exporte in derselben Ordnung.
 PIXELLAB = ("east", "north", "west", "south")
 SITZ_HUB = 6  # sitzende Statisten stehen so viel höher (oberwelt/sitzrichtung.ts)
@@ -111,19 +113,22 @@ PIXELLAB_MASSSTAB = 2 / 3
 
 
 def _auf_fusszeile(bild: Image.Image) -> Image.Image | None:
-    """PixelLab-Bild mit den Füßen auf FUSSZEILE, auf PIXELLAB_MASSSTAB verkleinert; leer → None."""
+    """PixelLab-Bild mit den Füßen auf der Fußzeile (32 × 32: FUSSZEILE; höhere Bilder FUSSRAND
+    über dem Rand), auf PIXELLAB_MASSSTAB verkleinert; leer → None."""
     umriss = bild.getbbox()
     if not umriss:
         return None
-    # Füße auf FUSSZEILE wie im Paketbau (Kinder stehen im Export oft höher).
+    fusszeile = bild.height - FUSSRAND
+    # Füße auf der Fußzeile wie im Paketbau (Kinder stehen im Export oft höher).
     gesetzt = Image.new("RGBA", bild.size)
-    gesetzt.paste(bild, (0, FUSSZEILE + 1 - umriss[3]))
+    gesetzt.paste(bild, (0, fusszeile + 1 - umriss[3]))
     # Wie die App (oberwelt/weltmassstab.ts, GROSS_MASSSTAB): PixelLab-Figuren mit 2/3, Füße bleiben.
     seite = round(bild.width * PIXELLAB_MASSSTAB)
-    klein = gesetzt.resize((seite, seite), Image.Resampling.BOX)
+    hoch = round(bild.height * PIXELLAB_MASSSTAB)
+    klein = gesetzt.resize((seite, hoch), Image.Resampling.BOX)
     verkleinert = Image.new("RGBA", bild.size)
-    fuss = round((FUSSZEILE + 1) * PIXELLAB_MASSSTAB)
-    verkleinert.paste(klein, ((bild.width - seite) // 2, FUSSZEILE + 1 - fuss))
+    fuss = round((fusszeile + 1) * PIXELLAB_MASSSTAB)
+    verkleinert.paste(klein, ((bild.width - seite) // 2, fusszeile + 1 - fuss))
     return verkleinert
 
 

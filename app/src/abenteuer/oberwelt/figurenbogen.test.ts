@@ -2,7 +2,8 @@
  * Tests für skripte/figurenbogen.mjs mit einem erzeugten PixelLab-Export für ein jüngeres Kind
  * (Leinwand 24 × 24, Laufbilder 36 × 36; Wunsch des Haupt-Chats, 13.11.2026, Doc 24): Standbilder
  * und Laufbilder landen mittig im 32er-Rahmen, die Füße auf FUSSZEILE (Zeile 30). Dazu ein Kind auf
- * 32er-Leinwand, dessen Füße zu hoch stehen (Prüfung im Spiel, 13.11.2026).
+ * 32er-Leinwand, dessen Füße zu hoch stehen (Prüfung im Spiel, 13.11.2026), und eine Figur auf
+ * hoher Leinwand 32 × 48 (Schiffskoch, Auftrag des Haupt-Chats, 25.11.2026).
  */
 import { mkdtempSync, mkdirSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
@@ -11,11 +12,16 @@ import sharp from "sharp";
 import { describe, expect, it } from "vitest";
 import {
   baueFigurenbogen,
+  baueFigurenbogenMitStandbildern,
   FUSSZEILE,
+  fusszeileFuer,
   imRahmen,
+  leinwandmasse,
   RAHMEN,
+  rahmenhoehe,
   untersteZeile,
   verschoben,
+  zeilenVon,
 } from "../../../skripte/figurenbogen.mjs";
 
 const LEINWAND = 24;
@@ -116,5 +122,69 @@ describe("Figurenbogen mit kleiner Leinwand", () => {
   it("lässt ein 32er-Bild unverändert", () => {
     const pixel = Buffer.alloc(RAHMEN * RAHMEN * 4, 7);
     expect(imRahmen(pixel, RAHMEN, RAHMEN).equals(pixel)).toBe(true);
+  });
+});
+
+/** Ein Bild breite × hoehe mit roten Pixeln von Zeile `oben` bis zur Fußzeile `unten` (Mitte). */
+function hochbild(breite: number, hoehe: number, oben: number, unten: number): Promise<Buffer> {
+  const pixel = Buffer.alloc(breite * hoehe * 4);
+  for (let y = oben; y <= unten; y++) pixel.set(ROT, (y * breite + breite / 2) * 4);
+  return sharp(pixel, { raw: { width: breite, height: hoehe, channels: 4 } })
+    .png()
+    .toBuffer();
+}
+
+/** Höhe der hohen Leinwand (Schiffskoch, 25.11.2026) und Rand der Laufbilder je Seite. */
+const HOCH = 48;
+const LAUFRAND = 8;
+
+describe("Figurenbogen mit hoher Leinwand (32 × 48)", () => {
+  it("baut Rahmen von 32 × 48: Füße auf Zeile 46, die Mütze oben bleibt ganz", async () => {
+    const ordner = mkdtempSync(join(tmpdir(), "figur48-"));
+    const size = { width: RAHMEN, height: HOCH };
+    writeFileSync(
+      join(ordner, "metadata.json"),
+      JSON.stringify({ states: [{ character: { size } }] }),
+    );
+    mkdirSync(join(ordner, "rotations"));
+    for (const r of RICHTUNGEN) {
+      // Die Figur reicht von Zeile 1 (Mützenspitze) bis Zeile 44 (Füße, zu hoch exportiert).
+      writeFileSync(join(ordner, "rotations", `${r}.png`), await hochbild(RAHMEN, HOCH, 1, 44));
+      const lauf = join(ordner, "animations", "Walking", r);
+      mkdirSync(lauf, { recursive: true });
+      const breit = RAHMEN + 2 * LAUFRAND;
+      const hoch = HOCH + 2 * LAUFRAND;
+      for (let i = 0; i < LAUFBILDER; i++) {
+        const b = await hochbild(breit, hoch, LAUFRAND + 1, LAUFRAND + 44);
+        writeFileSync(join(lauf, `frame_00${i}.png`), b);
+      }
+    }
+    const ergebnis = await baueFigurenbogenMitStandbildern(ordner);
+    expect(ergebnis?.rahmenhoehe).toBe(HOCH);
+    const { data, info } = await sharp(ergebnis?.bild ?? Buffer.alloc(0))
+      .raw()
+      .toBuffer({ resolveWithObject: true });
+    expect([info.width, info.height]).toEqual([SPALTEN * RAHMEN, 2 * HOCH]);
+    const mitte = RAHMEN / 2;
+    const fuss = HOCH - 2;
+    // Standbild Süd (Spalte 3): Füße auf Zeile 46, Mütze zwei Zeilen tiefer auf Zeile 3.
+    expect(pixelBei(data, info.width, 3 * RAHMEN + mitte, fuss)).toEqual(ROT);
+    expect(pixelBei(data, info.width, 3 * RAHMEN + mitte, fuss + 1)[3]).toBe(0);
+    expect(pixelBei(data, info.width, 3 * RAHMEN + mitte, 3)).toEqual(ROT);
+    // Erstes Laufbild (Reihe 2 ab Zeile 48) ebenso.
+    expect(pixelBei(data, info.width, mitte, HOCH + fuss)).toEqual(ROT);
+    expect(pixelBei(data, info.width, mitte, HOCH + 3)).toEqual(ROT);
+  });
+
+  it("liest Breite und Höhe der Leinwand; 32er-Figuren bleiben 32 hoch", async () => {
+    const ordner = mkdtempSync(join(tmpdir(), "leinwand-"));
+    writeFileSync(
+      join(ordner, "metadata.json"),
+      JSON.stringify({ states: [{ character: { size: { width: 24, height: 24 } } }] }),
+    );
+    expect(await leinwandmasse(ordner)).toEqual({ breite: 24, hoehe: RAHMEN });
+    expect(await rahmenhoehe(ordner)).toBe(RAHMEN);
+    expect(zeilenVon(Buffer.alloc(RAHMEN * HOCH * 4))).toBe(HOCH);
+    expect(fusszeileFuer(HOCH)).toBe(46);
   });
 });

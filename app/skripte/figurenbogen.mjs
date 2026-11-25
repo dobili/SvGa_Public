@@ -36,6 +36,13 @@
  *   Gehbildern bei höherer Bildrate (figurbilder.ts, rennname).
  * - Weitere Standbilder (Karteneditor 1.9, 23.11.2026): ab Rahmen 144 je vier Rahmen,
  *   Anfang und Ordnung im Index figuren32/standbilder.json (figurstandbilder.mjs).
+ * - Hohe Leinwand (Auftrag des Haupt-Chats, 25.11.2026): Ist die Leinwand höher als breit
+ *   (metadata.json, size.height, etwa 32 × 48 beim Schiffskoch, dessen Mütze auf 32 × 32 oben
+ *   abgeschnitten war), haben alle Rahmen der Figur diese Höhe; die Breite bleibt 32, die Füße
+ *   stehen auf der Zeile hoehe − 2, der Kopf ragt nach oben. Die App erfährt die Höhe aus dem
+ *   Index figuren32/rahmenhoehen.json (rahmenhoehe unten). Jeder Rahmen ist ein Puffer von
+ *   32 × hoehe Pixeln; die Höhe ergibt sich aus seiner Länge (zeilenVon), deshalb brauchen die
+ *   Hilfen sie nur dort als Eingabe, wo ein Rahmen neu entsteht.
  * Abhängigkeiten: sharp, figurenzustaende.mjs, figurstandbilder.mjs.
  */
 import { existsSync } from "node:fs";
@@ -49,11 +56,25 @@ export const RAHMEN = 32;
 const SPALTEN = 24;
 const LAUFBILDER = 6;
 const KANAELE = 4;
-/** Schattenfarbe des Exports und ab welcher Zeile (im 32er-Rahmen) sie als Schatten gilt. */
+/** Schattenfarbe des Exports und wie viele Zeilen über dem unteren Rand sie als Schatten gilt. */
 const SCHATTEN = [0x4f, 0x4f, 0x4e];
-const SCHATTEN_AB_ZEILE = 24;
+const SCHATTEN_ZEILEN = 8;
+/** Abstand der Füße vom unteren Rand eines Rahmens. */
+const FUSSRAND = 2;
 /** Zeile, auf der die Füße der Standbilder stehen (wie bei LimeZu und kartenbild.py). */
-export const FUSSZEILE = 30;
+export const FUSSZEILE = RAHMEN - FUSSRAND;
+/** Höchste Rahmenhöhe (PixelLab bietet höchstens 32 × 64 für schlanke Figuren). */
+const HOECHSTENS = 64;
+
+/** Zeilen eines Rahmens (Breite immer RAHMEN). Beispiel: 32 × 48 → 48. */
+export function zeilenVon(rahmen) {
+  return rahmen.length / (RAHMEN * KANAELE);
+}
+
+/** Fußzeile eines Rahmens dieser Höhe. Beispiel: 48 → 46. */
+export function fusszeileFuer(hoehe) {
+  return hoehe - FUSSRAND;
+}
 
 /** Richtungen in der Ordnung von LimeZu, mit dem Namen bei PixelLab und dem Spiegelpartner. */
 const RICHTUNGEN = [
@@ -72,9 +93,10 @@ async function roh(pfad) {
   return { pixel: data, breite: info.width, hoehe: info.height };
 }
 
-/** Macht die Schattenpixel unter den Füßen eines 32er-Rahmens durchsichtig (verändert ihn). */
+/** Macht die Schattenpixel unter den Füßen eines Rahmens durchsichtig (verändert ihn). */
 export function ohneSchatten(rahmen) {
-  for (let y = SCHATTEN_AB_ZEILE; y < RAHMEN; y++) {
+  const zeilen = zeilenVon(rahmen);
+  for (let y = zeilen - SCHATTEN_ZEILEN; y < zeilen; y++) {
     for (let x = 0; x < RAHMEN; x++) {
       const p = (y * RAHMEN + x) * KANAELE;
       if (SCHATTEN.every((wert, k) => rahmen[p + k] === wert)) rahmen.fill(0, p, p + KANAELE);
@@ -84,13 +106,14 @@ export function ohneSchatten(rahmen) {
 }
 
 /**
- * Setzt ein Bild unten bündig und waagrecht mittig in einen 32er-Rahmen, ohne Schatten.
- * Beispiel: 24 × 24 → 4 Pixel Rand links und rechts, 8 oben, Füße auf der untersten Zeile.
+ * Setzt ein Bild unten bündig und waagrecht mittig in einen Rahmen 32 × `zeilen`, ohne Schatten.
+ * Beispiel: 24 × 24 → 4 Pixel Rand links und rechts, 8 oben, Füße auf der untersten Zeile;
+ * 32 × 32 in einen 48er-Rahmen → 16 Zeilen frei darüber.
  */
-export function imRahmen(pixel, breite, hoehe) {
-  const aus = Buffer.alloc(RAHMEN * RAHMEN * KANAELE);
+export function imRahmen(pixel, breite, hoehe, zeilen = RAHMEN) {
+  const aus = Buffer.alloc(RAHMEN * zeilen * KANAELE);
   const links = Math.floor((RAHMEN - breite) / 2);
-  const oben = RAHMEN - hoehe;
+  const oben = zeilen - hoehe;
   for (let y = 0; y < hoehe; y++) {
     const q = y * breite * KANAELE;
     pixel.copy(aus, ((oben + y) * RAHMEN + links) * KANAELE, q, q + breite * KANAELE);
@@ -99,37 +122,48 @@ export function imRahmen(pixel, breite, hoehe) {
 }
 
 /**
- * Schneidet die Leinwand (Standard 32) mittig aus einem Laufbild und setzt sie in einen
- * 32er-Rahmen. Beispiel: 48er-Laufbild, Leinwand 32 → Mitte mit 8 Pixel Rand; 36er-Laufbild,
- * Leinwand 24 → Mitte mit 6 Pixel Rand, dann aufgefüllt wie imRahmen.
+ * Schneidet die Leinwand (Standard 32 × 32) mittig aus einem Laufbild und setzt sie in einen
+ * Rahmen 32 × `zeilen`. Beispiel: 48er-Laufbild, Leinwand 32 → Mitte mit 8 Pixel Rand;
+ * 36er-Laufbild, Leinwand 24 → Mitte mit 6 Pixel Rand, dann aufgefüllt wie imRahmen; 48 × 64,
+ * Leinwand 32 × 48 → Mitte mit 8 Pixel Rand je Seite.
  */
-export function laufrahmen(bild, leinwand = RAHMEN) {
+export function laufrahmen(bild, leinwand = RAHMEN, zeilen = RAHMEN) {
+  const hoch = Math.min(zeilen, bild.hoehe);
   const rand = Math.floor((bild.breite - leinwand) / 2);
-  const oben = Math.floor((bild.hoehe - leinwand) / 2);
-  const mitte = Buffer.alloc(leinwand * leinwand * KANAELE);
-  for (let y = 0; y < leinwand; y++) {
+  const oben = Math.floor((bild.hoehe - (zeilen > RAHMEN ? hoch : leinwand)) / 2);
+  const lh = zeilen > RAHMEN ? hoch : leinwand;
+  const mitte = Buffer.alloc(leinwand * lh * KANAELE);
+  for (let y = 0; y < lh; y++) {
     const q = ((y + oben) * bild.breite + rand) * KANAELE;
     bild.pixel.copy(mitte, y * leinwand * KANAELE, q, q + leinwand * KANAELE);
   }
-  return imRahmen(mitte, leinwand, leinwand);
+  return imRahmen(mitte, leinwand, lh, zeilen);
 }
 
 /**
- * Die Leinwand der Figur aus metadata.json; ohne Angabe die eines Standbilds, sonst 32.
- * Größer als 32 wird nicht angenommen (dann gilt 32 wie bisher).
+ * Breite und Rahmenhöhe der Leinwand aus metadata.json (size.width, size.height); ohne Angabe
+ * die Breite des Südbilds (`ersatz`) und Höhe 32. Die Breite höchstens 32; die Höhe 32, außer die
+ * Leinwand ist höher als breit (dann ihre Höhe, höchstens HOECHSTENS).
+ * Beispiel: Schiffskoch 32 × 48 → { breite: 32, hoehe: 48 }; Kind 24 × 24 → { 24, 32 }.
  */
-async function leinwandVon(ordner, ersatz) {
+export async function leinwandmasse(ordner, ersatz) {
   const pfad = join(ordner, "metadata.json");
-  if (!existsSync(pfad)) return Math.min(ersatz ?? RAHMEN, RAHMEN);
-  const daten = JSON.parse(await readFile(pfad, "utf8"));
+  const daten = existsSync(pfad) ? JSON.parse(await readFile(pfad, "utf8")) : {};
   const zustaende = Array.isArray(daten.states) ? daten.states : [daten];
-  const groesse = zustaende.map((z) => z?.character?.size?.width).find((w) => w > 0);
-  return Math.min(groesse ?? ersatz ?? RAHMEN, RAHMEN);
+  const groesse = zustaende.map((z) => z?.character?.size).find((g) => g?.width > 0);
+  const breite = Math.min(groesse?.width ?? ersatz ?? RAHMEN, RAHMEN);
+  const hoch = groesse?.height > groesse?.width ? groesse.height : RAHMEN;
+  return { breite, hoehe: Math.min(Math.max(hoch, RAHMEN), HOECHSTENS) };
+}
+
+/** Die Rahmenhöhe einer Figur aus ihrem Ordner (32, beim Schiffskoch 48). */
+export async function rahmenhoehe(ordner) {
+  return (await leinwandmasse(ordner)).hoehe;
 }
 
 /** Die unterste Zeile mit einem deckenden Pixel, oder -1 bei einem leeren Rahmen. */
 export function untersteZeile(rahmen) {
-  for (let y = RAHMEN - 1; y >= 0; y--) {
+  for (let y = zeilenVon(rahmen) - 1; y >= 0; y--) {
     for (let x = 0; x < RAHMEN; x++) {
       if (rahmen[(y * RAHMEN + x) * KANAELE + KANAELE - 1] > 0) return y;
     }
@@ -137,27 +171,30 @@ export function untersteZeile(rahmen) {
   return -1;
 }
 
-/** Verschiebt einen 32er-Rahmen um dy Zeilen (positiv nach unten); was hinausfällt, entfällt. */
+/** Verschiebt einen Rahmen um dy Zeilen (positiv nach unten); was hinausfällt, entfällt. */
 export function verschoben(rahmen, dy) {
   if (dy === 0) return rahmen;
   const aus = Buffer.alloc(rahmen.length);
   const zeile = RAHMEN * KANAELE;
-  for (let y = 0; y < RAHMEN; y++) {
+  const zeilen = zeilenVon(rahmen);
+  for (let y = 0; y < zeilen; y++) {
     const ziel = y + dy;
-    if (ziel >= 0 && ziel < RAHMEN) rahmen.copy(aus, ziel * zeile, y * zeile, (y + 1) * zeile);
+    if (ziel >= 0 && ziel < zeilen) rahmen.copy(aus, ziel * zeile, y * zeile, (y + 1) * zeile);
   }
   return aus;
 }
 
 /**
- * Setzt alle Rahmen einer Figur so, dass die Füße der Standbilder auf FUSSZEILE stehen.
- * Beispiel: Kind mit Füßen auf Zeile 26 → alle Rahmen 4 Zeilen tiefer.
+ * Setzt alle Rahmen einer Figur so, dass die Füße der Standbilder auf der Fußzeile stehen
+ * (FUSSZEILE, bei hohen Rahmen hoehe − 2). Beispiel: Kind mit Füßen auf Zeile 26 → alle Rahmen
+ * 4 Zeilen tiefer.
  */
 export function aufFusszeile(richtungen) {
   const fuesse = richtungen.map((r) => (r.still ? untersteZeile(r.still) : -1));
   const tiefste = Math.max(...fuesse);
   if (tiefste < 0) return richtungen;
-  const dy = FUSSZEILE - tiefste;
+  const still = richtungen.find((r) => r.still)?.still;
+  const dy = fusszeileFuer(zeilenVon(still)) - tiefste;
   const schiebe = (rahmen) => (rahmen ? verschoben(rahmen, dy) : rahmen);
   return richtungen.map((r) => ({
     still: schiebe(r.still),
@@ -168,15 +205,21 @@ export function aufFusszeile(richtungen) {
 }
 
 /**
- * Dreht einen 32er-Rahmen um eine Vierteldrehung, im Uhrzeigersinn (Kopf nach rechts) oder
- * dagegen (Kopf nach links): Ersatz für ein fehlendes Liegebild vor einer Rennreihe.
+ * Dreht einen Rahmen um eine Vierteldrehung, im Uhrzeigersinn (Kopf nach rechts) oder dagegen
+ * (Kopf nach links): Ersatz für ein fehlendes Liegebild vor einer Rennreihe. Bei hohen Rahmen
+ * (32 × 48) wird das gedrehte Bild (48 breit) in die Mitte des Rahmens gesetzt und seitlich auf 32
+ * Pixel beschnitten; die Figur liegt dann etwas gekürzt, nur als Ersatz.
  */
 export function gedreht(rahmen, imUhrzeigersinn) {
+  const zeilen = zeilenVon(rahmen);
   const aus = Buffer.alloc(rahmen.length);
-  for (let y = 0; y < RAHMEN; y++) {
+  const dx = Math.floor((zeilen - RAHMEN) / 2);
+  const dy = Math.floor((zeilen - RAHMEN) / 2);
+  for (let y = 0; y < zeilen; y++) {
     for (let x = 0; x < RAHMEN; x++) {
-      const zx = imUhrzeigersinn ? RAHMEN - 1 - y : y;
-      const zy = imUhrzeigersinn ? x : RAHMEN - 1 - x;
+      const zx = (imUhrzeigersinn ? zeilen - 1 - y : y) - dx;
+      const zy = (imUhrzeigersinn ? x : RAHMEN - 1 - x) + dy;
+      if (zx < 0 || zx >= RAHMEN) continue;
       rahmen.copy(
         aus,
         (zy * RAHMEN + zx) * KANAELE,
@@ -188,10 +231,10 @@ export function gedreht(rahmen, imUhrzeigersinn) {
   return aus;
 }
 
-/** Spiegelt einen 32er-Rahmen waagerecht. */
+/** Spiegelt einen Rahmen waagerecht. */
 export function gespiegelt(rahmen) {
   const aus = Buffer.alloc(rahmen.length);
-  for (let y = 0; y < RAHMEN; y++) {
+  for (let y = 0; y < zeilenVon(rahmen); y++) {
     for (let x = 0; x < RAHMEN; x++) {
       const q = (y * RAHMEN + x) * KANAELE;
       const z = (y * RAHMEN + (RAHMEN - 1 - x)) * KANAELE;
@@ -214,47 +257,50 @@ const ERSATZHUB = 6;
 const SUED = 3;
 
 /** Die Lauf- oder Rennbilder einer Richtung (bis zu sechs, Ordner nach `ordnernamen`), oder null. */
-async function laufbilder(ordner, richtung, leinwand, ordnernamen = LAUFORDNER) {
+async function laufbilder(ordner, richtung, masse, ordnernamen = LAUFORDNER) {
   const pfad = ordnernamen.map((n) => join(ordner, "animations", n, richtung)).find(existsSync);
   if (!pfad) return null;
   const namen = (await readdir(pfad)).filter((n) => n.endsWith(".png")).sort();
   if (namen.length === 0) return null;
   return Promise.all(
-    namen.slice(0, LAUFBILDER).map(async (n) => laufrahmen(await roh(join(pfad, n)), leinwand)),
+    namen
+      .slice(0, LAUFBILDER)
+      .map(async (n) => laufrahmen(await roh(join(pfad, n)), masse.breite, masse.hoehe)),
   );
 }
 
-/** Das erste Sitzbild einer Richtung als 32er-Rahmen, oder null. */
-async function sitzbild(ordner, richtung, leinwand) {
+/** Das erste Sitzbild einer Richtung als Rahmen der Figur, oder null. */
+async function sitzbild(ordner, richtung, masse) {
   const pfad = join(ordner, "animations", SITZORDNER, richtung);
   if (!existsSync(pfad)) return null;
   const erstes = (await readdir(pfad)).filter((n) => n.endsWith(".png")).sort()[0];
-  return erstes ? laufrahmen(await roh(join(pfad, erstes)), leinwand) : null;
+  return erstes ? laufrahmen(await roh(join(pfad, erstes)), masse.breite, masse.hoehe) : null;
 }
 
 /**
- * Das Standbild einer Richtung als 32er-Rahmen aus `<ordner>/rotations/<richtung>.png`, oder null
- * (auch für weitere Standbilder, figurstandbilder.mjs).
+ * Das Standbild einer Richtung als Rahmen aus `<ordner>/rotations/<richtung>.png`, oder null
+ * (auch für weitere Standbilder, figurstandbilder.mjs). `masse`: Breite und Höhe der Leinwand.
  */
-export async function standbildAus(ordner, richtung, leinwand = RAHMEN) {
-  return standbild(ordner, richtung, leinwand);
+export async function standbildAus(ordner, richtung, masse = { breite: RAHMEN, hoehe: RAHMEN }) {
+  return standbild(ordner, richtung, masse);
 }
 
-/** Das Standbild einer Richtung als 32er-Rahmen, oder null. */
-async function standbild(ordner, richtung, leinwand) {
+/** Das Standbild einer Richtung als Rahmen der Figur, oder null. */
+async function standbild(ordner, richtung, masse) {
   const pfad = join(ordner, "rotations", `${richtung}.png`);
   if (!existsSync(pfad)) return null;
   const bild = await roh(pfad);
-  if (bild.breite <= RAHMEN && bild.hoehe <= RAHMEN) {
-    return imRahmen(bild.pixel, bild.breite, bild.hoehe);
+  if (bild.breite <= RAHMEN && bild.hoehe <= masse.hoehe) {
+    return imRahmen(bild.pixel, bild.breite, bild.hoehe, masse.hoehe);
   }
-  return laufrahmen(bild, leinwand);
+  return laufrahmen(bild, masse.breite, masse.hoehe);
 }
 
-/** Legt einen Rahmen an Spalte und Zeile in den Bogen. */
+/** Legt einen Rahmen an Spalte und Zeile in den Bogen (Rahmenhöhe aus dem Rahmen). */
 function lege(bogen, rahmen, spalte, zeile) {
-  for (let y = 0; y < RAHMEN; y++) {
-    const z = ((zeile * RAHMEN + y) * SPALTEN * RAHMEN + spalte * RAHMEN) * KANAELE;
+  const hoehe = zeilenVon(rahmen);
+  for (let y = 0; y < hoehe; y++) {
+    const z = ((zeile * hoehe + y) * SPALTEN * RAHMEN + spalte * RAHMEN) * KANAELE;
     rahmen.copy(bogen, z, y * RAHMEN * KANAELE, (y + 1) * RAHMEN * KANAELE);
   }
 }
@@ -262,14 +308,14 @@ function lege(bogen, rahmen, spalte, zeile) {
 /** Standbild und Laufbilder je Richtung, mit Spiegelung und Rückfall wie im Dateikopf. */
 async function sammle(ordner) {
   const sued = join(ordner, "rotations", "south.png");
-  const leinwand = await leinwandVon(ordner, existsSync(sued) ? (await roh(sued)).breite : null);
+  const masse = await leinwandmasse(ordner, existsSync(sued) ? (await roh(sued)).breite : null);
   const roheDaten = {};
   for (const { name } of RICHTUNGEN) {
     roheDaten[name] = {
-      still: await standbild(ordner, name, leinwand),
-      lauf: await laufbilder(ordner, name, leinwand),
-      sitz: await sitzbild(ordner, name, leinwand),
-      renn: await laufbilder(ordner, name, leinwand, RENNORDNER),
+      still: await standbild(ordner, name, masse),
+      lauf: await laufbilder(ordner, name, masse),
+      sitz: await sitzbild(ordner, name, masse),
+      renn: await laufbilder(ordner, name, masse, RENNORDNER),
     };
   }
   const mitSitz = RICHTUNGEN.some(({ name }) => roheDaten[name].sitz);
@@ -335,13 +381,14 @@ export async function baueFigurenbogen(ordner) {
 export async function baueFigurenbogenMitStandbildern(ordner) {
   const richtungen = aufFusszeile(await sammle(ordner));
   if (richtungen.every((r) => !r.still)) return null;
-  const leer = Buffer.alloc(RAHMEN * RAHMEN * KANAELE);
-  const weitere = await weitereStandbilder(ordner);
+  const hoehe = zeilenVon(richtungen.find((r) => r.still).still);
+  const leer = Buffer.alloc(RAHMEN * hoehe * KANAELE);
+  const weitere = await weitereStandbilder(ordner, { breite: RAHMEN, hoehe });
   const zusatz = await zustandsreihen(ordner, richtungen, weitere.kennungen.length > 0);
   const beginnReihe = SITZREIHE + zusatz.length;
   const standbildrahmen = weitere.rahmen.flat();
   const reihen = beginnReihe + Math.ceil(standbildrahmen.length / SPALTEN);
-  const bogen = Buffer.alloc(SPALTEN * RAHMEN * reihen * RAHMEN * KANAELE);
+  const bogen = Buffer.alloc(SPALTEN * RAHMEN * reihen * hoehe * KANAELE);
   richtungen.forEach((r, i) => {
     lege(bogen, r.still ?? leer, i, 0);
     (r.lauf ?? []).forEach((rahmen, j) => {
@@ -356,12 +403,12 @@ export async function baueFigurenbogenMitStandbildern(ordner) {
     lege(bogen, rahmen, i % SPALTEN, beginnReihe + Math.floor(i / SPALTEN)),
   );
   const bild = await sharp(bogen, {
-    raw: { width: SPALTEN * RAHMEN, height: reihen * RAHMEN, channels: KANAELE },
+    raw: { width: SPALTEN * RAHMEN, height: reihen * hoehe, channels: KANAELE },
   })
     .png()
     .toBuffer();
   const standbilder = weitere.kennungen.length
     ? { beginn: beginnReihe * SPALTEN, kennungen: weitere.kennungen }
     : null;
-  return { bild, standbilder };
+  return { bild, standbilder, rahmenhoehe: hoehe };
 }

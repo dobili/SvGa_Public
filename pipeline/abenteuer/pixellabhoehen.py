@@ -9,7 +9,12 @@ nebeneinander stimmen, bekommt jede Figur einen Faktor, mit dem die App sie zeic
 höchstens × 1,1 vergrößern; der Fuß bleibt auf der Fußzeile (die App skaliert um den Fußpunkt).
 
 Gemessen wird das Standbild Süd (figuren-neu/<name>/rotations/south.png) ohne den Bodenschatten
-des Exports (Farbe #4f4f4e unter den Füßen, wie figurenbogen.mjs). Die Altersgruppe kommt aus dem
+des Exports (Farbe #4f4f4e in den unteren acht Zeilen, wie figurenbogen.mjs).
+
+Hohe Leinwand (32 × 48, Wunsch des Autors, 25.11.2026): Der Schiffskoch wurde neu auf 32 × 48
+erzeugt, weil seine Mütze auf 32 × 32 abgeschnitten war. Kopf und Körper sind so hoch wie bei den
+anderen, nur die Mütze ragt höher; er bekommt keinen Faktor (pixellabtabelle.OHNE_FAKTOR, mit
+Grund), denn die gemessene Höhe enthielte die Mütze. Die Altersgruppe kommt aus dem
 Prompt der Zuordnung (Alter in Jahren oder in Jahrzehnten), sonst aus pixellabtabelle.ALTER_VON_HAND,
 sonst „erwachsen“.
 
@@ -33,7 +38,8 @@ HOECHSTENS = 1.1
 SCHWELLE = 0.02
 STELLEN = 3
 SCHATTEN = (0x4F, 0x4F, 0x4E)
-SCHATTEN_AB_ZEILE = 24
+# Der Bodenschatten liegt in den unteren acht Zeilen des Bilds (bei 32 × 32 ab Zeile 24).
+SCHATTEN_ZEILEN = 8
 KIND_BIS = 12
 JUGEND_BIS = 17
 ALT_AB = 65
@@ -83,11 +89,12 @@ def sichtbare_hoehe(pfad: Path) -> int:
     bild = Image.open(pfad).convert("RGBA")
     breite, hoehe = bild.size
     pixel = bild.load()
+    schatten_ab = hoehe - SCHATTEN_ZEILEN
     zeilen = [
         y
         for y in range(hoehe)
         if any(
-            pixel[x, y][3] > 0 and not (y >= SCHATTEN_AB_ZEILE and pixel[x, y][:3] == SCHATTEN)
+            pixel[x, y][3] > 0 and not (y >= schatten_ab and pixel[x, y][:3] == SCHATTEN)
             for x in range(breite)
         )
     ]
@@ -125,9 +132,9 @@ def messe(privat: Path) -> list[dict]:
         hoehe = sichtbare_hoehe(sued)
         # Ohne Export (owen, statist.bauer: alter Ordner) kein Faktor: Alter und Zeichnung unbekannt.
         gruppe = altersgruppe(quelle, texte[quelle]) if quelle in texte else "ohne Export"
-        zeilen.append(
-            {"name": ordner.name, "gruppe": gruppe, "hoehe": hoehe, "faktor": hoehenfaktor(hoehe, gruppe)}
-        )
+        # Ausnahmen mit Grund (der Schiffskoch: die Mütze zählt nicht zur Körperhöhe).
+        faktor = None if quelle in T.OHNE_FAKTOR else hoehenfaktor(hoehe, gruppe)
+        zeilen.append({"name": ordner.name, "gruppe": gruppe, "hoehe": hoehe, "faktor": faktor})
     return zeilen
 
 

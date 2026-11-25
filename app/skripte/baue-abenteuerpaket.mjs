@@ -21,7 +21,7 @@ import {
   platzhalterKacheln,
   platzhalterRechteck,
 } from "./platzhaltergrafik.mjs";
-import { baueFigurenbogenMitStandbildern } from "./figurenbogen.mjs";
+import { baueFigurenbogenMitStandbildern, RAHMEN } from "./figurenbogen.mjs";
 import { brettbilderDateien } from "./brettbilder-paket.mjs";
 import { alsWebp, webpPfad, wirdWebp } from "./paketbilder.mjs";
 import { alsGrossbild, HOCHGELADEN } from "./grossbilder.mjs";
@@ -87,12 +87,15 @@ async function kopiereOberflaeche() {
  * Figuren aus PixelLab (privates Repository, figuren-neu/<name>/): je Ordner ein Bogen
  * figuren32/<name>.png mit Rahmen 32 × 32 (skripte/figurenbogen.mjs). Der Name ist der des alten
  * Bogens (figuren/<name>.png); die App nimmt den neuen, wo es ihn gibt (oberwelt/figurbogen.ts).
+ * Bögen mit höheren Rahmen (32 × 48, Schiffskoch, 25.11.2026) stehen im Index
+ * figuren32/rahmenhoehen.json (Name → Höhe), den die App beim Laden liest.
  */
 async function baueFigurenboegen() {
   const quelle = join(PRIVAT, "figuren-neu");
   if (!existsSync(quelle)) return;
   // Weitere Standbilder je Figur (Karteneditor 1.9): Anfang und Kennungen im Bogen.
   const standbilder = {};
+  const rahmenhoehen = {};
   for (const name of (await readdir(quelle, { withFileTypes: true }))
     .filter((e) => e.isDirectory())
     .map((e) => e.name)
@@ -101,8 +104,10 @@ async function baueFigurenboegen() {
     if (!bogen) continue;
     await schreibe(`figuren32/${name}.png`, bogen.bild, "grafik");
     if (bogen.standbilder) standbilder[name] = bogen.standbilder;
+    if (bogen.rahmenhoehe !== RAHMEN) rahmenhoehen[name] = bogen.rahmenhoehe;
   }
   await schreibe("figuren32/standbilder.json", Buffer.from(JSON.stringify(standbilder)), "daten");
+  await schreibe("figuren32/rahmenhoehen.json", Buffer.from(JSON.stringify(rahmenhoehen)), "daten");
 }
 
 /** Letzter Akt des Abenteuers (Ton je Akt in akt2 … akt4). */

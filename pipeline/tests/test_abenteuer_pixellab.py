@@ -124,3 +124,56 @@ def test_verdeckung_seitlich_nur_unter_der_sitzflaeche():
     assert V.sitzgrenze(deckend, sichtbar, "unten", "stuhl") is None
     assert V.sitzgrenze([2] * 21, sichtbar, "links", "stuhl") == round(1 + 21 * V.VORGABE_SEITE)
     assert V.sitzgrenze(deckend, sichtbar, "links", "stuhl", {"ab": 1}) is None
+
+
+def _png_kopf(breite: int, hoehe: int) -> bytes:
+    """Nur der Kopf eines PNG (Kennung und IHDR): genug für bildgroesse."""
+    return I.PNG_KENNUNG + b"\x00\x00\x00\rIHDR" + breite.to_bytes(4, "big") + hoehe.to_bytes(4, "big")
+
+
+def test_hohe_leinwand_aus_dem_png_kopf_und_neueste_zuordnung(tmp_path):
+    """Schiffskoch auf 32 × 48 (25.11.2026): metadata.json nennt die Höhe, die neue Zuordnung gilt."""
+    _export(tmp_path)
+    assert I.bildgroesse(_png_kopf(32, 48)) == (32, 48)
+    assert I.bildgroesse(PNG) is None
+    # Quadratische Leinwand bleibt 32 × 32 wie bisher (nur der Koch ist eine Ausnahme).
+    archiv = tmp_path / "ki-roh" / "koch.zip"
+    with zipfile.ZipFile(archiv, "w") as z:
+        for r in I.RICHTUNGEN:
+            z.writestr(f"k/Idle/rotations/{r}.png", _png_kopf(32, 48))
+    neu = {
+        "gruppen": [
+            {
+                "name": "abe",
+                "zip": "ki-roh/koch.zip",
+                "zustaende": [{"name": "Idle", "ordner": "k/Idle", "prompt": "old man about 70"}],
+            }
+        ]
+    }
+    (tmp_path / "ki-roh" / "zuordnung_25-11.json").write_text(json.dumps(neu), encoding="utf-8")
+    assert [p.name for p in I.zuordnungsdateien(tmp_path)] == ["zuordnung_25-11.json", "zuordnung_23-11.json"]
+    gruppe = I.lade_gruppen(tmp_path)[0]
+    assert gruppe.zip == "ki-roh/koch.zip"
+    I.schreibe_figur(tmp_path, gruppe)
+    meta = json.loads((tmp_path / I.ZIEL / "abe" / "metadata.json").read_text())
+    assert meta["states"][0]["character"]["size"] == {"width": 32, "height": 48}
+
+
+def test_sichtbare_hoehe_hohe_leinwand_und_koch_ohne_faktor(tmp_path):
+    """32 × 48: Schatten in den unteren acht Zeilen; der Schiffskoch bekommt keinen Faktor (Mütze)."""
+    bild_modul = pytest.importorskip("PIL.Image")
+    bild = bild_modul.new("RGBA", (32, 48), (0, 0, 0, 0))
+    for y in range(8, 46):
+        bild.putpixel((16, y), (200, 100, 50, 255))
+    for x in range(10, 22):
+        bild.putpixel((x, 46), (*H.SCHATTEN, 255))
+    ordner = tmp_path / H.FIGUREN / "schiffskoch" / "rotations"
+    ordner.mkdir(parents=True)
+    bild.save(ordner / "south.png")
+    assert H.sichtbare_hoehe(ordner / "south.png") == 38
+    zuordnung = {"gruppen": [{"name": "schiffskoch", "zustaende": [{"prompt": "cook about 50"}]}]}
+    (tmp_path / H.ZUORDNUNG).parent.mkdir(parents=True)
+    (tmp_path / H.ZUORDNUNG).write_text(json.dumps(zuordnung), encoding="utf-8")
+    assert "schiffskoch" in T.OHNE_FAKTOR
+    zeile = H.messe(tmp_path)[0]
+    assert (zeile["hoehe"], zeile["faktor"]) == (38, None)

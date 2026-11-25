@@ -18,6 +18,12 @@ Entscheidungen:
   (pixellabtabelle.statistentyp), damit Szenen und Belebung ohne Änderung die neuen Bilder zeigen.
 - Ein vorhandener Ordner einer exportierten Figur wird ersetzt; Figuren ohne Export (etwa owen,
   statist.bauer) bleiben unberührt, so behalten sie ihren alten Bogen.
+- Leinwand (Auftrag des Haupt-Chats, 25.11.2026): Nur eine hohe Leinwand (Südbild im Zip höher
+  als breit, aus dem PNG-Kopf) kommt so in metadata.json, etwa 32 × 48 beim neu erzeugten
+  Schiffskoch, dessen Mütze auf 32 × 32 abgeschnitten war; figurenbogen.mjs baut daraus Rahmen
+  dieser Höhe. Alle anderen Figuren behalten 32 × 32 wie bisher (eine Ausnahme nur für den Koch).
+- Mehrere Zuordnungen (ki-roh/zuordnung_*.json, etwa _23-11 und _25-11): die neueste zuerst; eine
+  Figur, die eine neuere Datei nennt, kommt aus deren Export.
 
 Ablauf (im Hauptordner, PRIVAT ist das private Repository):
     python -m pipeline.abenteuer.pixellabimport PRIVAT            # alle Menschen
@@ -37,6 +43,7 @@ from pathlib import Path
 from pipeline.abenteuer import pixellabtabelle as T
 
 ZUORDNUNG = Path("ki-roh") / "zuordnung_23-11.json"
+ZUORDNUNGEN = "zuordnung_*.json"
 ZIEL = Path("spiel") / "figuren-neu"
 BERICHT = Path("buch") / "arbeit" / "pixellab" / "import.md"
 RICHTUNGEN = ("south", "north", "east", "west")
@@ -64,9 +71,28 @@ class Gruppe:
     zustaende: tuple[Zustand, ...]
 
 
+def zuordnungsdateien(privat: Path) -> list[Path]:
+    """Die Zuordnungen in ki-roh, die neueste zuerst (Name „zuordnung_TT-MM.json“, nach Monat, Tag).
+
+    Beispiel: _25-11 vor _23-11. Ohne Treffer die feste Datei ZUORDNUNG.
+    """
+
+    def datum(pfad: Path) -> tuple[int, int]:
+        treffer = re.search(r"(\d{2})-(\d{2})", pfad.stem)
+        return (int(treffer.group(2)), int(treffer.group(1))) if treffer else (0, 0)
+
+    dateien = sorted((privat / ZUORDNUNG.parent).glob(ZUORDNUNGEN), key=datum, reverse=True)
+    return dateien or [privat / ZUORDNUNG]
+
+
 def lade_gruppen(privat: Path) -> list[Gruppe]:
-    """Die Menschen aus der Zuordnung, je Name einmal, dazu die Zweitfiguren (ZWEITFIGUR)."""
-    daten = json.loads((privat / ZUORDNUNG).read_text(encoding="utf-8"))["gruppen"]
+    """Die Menschen aus den Zuordnungen, je Name einmal (die neueste Datei zuerst), dazu die
+    Zweitfiguren (ZWEITFIGUR)."""
+    daten = [
+        g
+        for pfad in zuordnungsdateien(privat)
+        for g in json.loads(pfad.read_text(encoding="utf-8"))["gruppen"]
+    ]
     gruppen: dict[str, Gruppe] = {}
     for g in daten:
         if g["name"].startswith(TIERE) or g["name"] in gruppen:
@@ -169,10 +195,37 @@ def _weitere_standbilder(archiv: zipfile.ZipFile, gruppe: Gruppe, stand: Zustand
     (ziel / "standbilder.json").write_text(daten, encoding="utf-8")
 
 
-def _metadaten(gruppe: Gruppe, stand: Zustand, ziel: Path) -> None:
+PNG_KENNUNG = b"\x89PNG\r\n\x1a\n"
+# Breite und Höhe stehen im IHDR-Block direkt nach Kennung, Länge und Typ (Bytes 16 bis 24).
+PNG_MASSE = slice(16, 24)
+
+
+def bildgroesse(daten: bytes) -> tuple[int, int] | None:
+    """Breite und Höhe eines PNG aus seinem Kopf, ohne Bildbibliothek; None, wenn es keins ist.
+
+    Beispiel: Standbild des Schiffskochs → (32, 48).
+    """
+    if not daten.startswith(PNG_KENNUNG) or len(daten) < PNG_MASSE.stop:
+        return None
+    kopf = daten[PNG_MASSE]
+    return int.from_bytes(kopf[:4], "big"), int.from_bytes(kopf[4:], "big")
+
+
+def leinwand(archiv: zipfile.ZipFile, zustand: Zustand) -> tuple[int, int]:
+    """Leinwand für metadata.json: die Größe des Südbilds, wenn es höher als breit ist (hohe
+    Leinwand, Schiffskoch 32 × 48), sonst 32 × 32 wie bisher."""
+    pfad = f"{zustand.ordner}/rotations/south.png"
+    groesse = bildgroesse(archiv.read(pfad)) if pfad in archiv.NameToInfo else None
+    if groesse and groesse[1] > groesse[0]:
+        return groesse
+    return (GROESSE, GROESSE)
+
+
+def _metadaten(gruppe: Gruppe, stand: Zustand, ziel: Path, masse: tuple[int, int]) -> None:
     """metadata.json wie im Einzelexport (Leinwand für figurenbogen.mjs) mit der Herkunft."""
+    breite, hoehe = masse
     daten = {
-        "states": [{"name": stand.name, "character": {"size": {"width": GROESSE, "height": GROESSE}}}],
+        "states": [{"name": stand.name, "character": {"size": {"width": breite, "height": hoehe}}}],
         "quelle": {"zip": gruppe.zip, "zustaende": [z.name for z in gruppe.zustaende]},
     }
     (ziel / "metadata.json").write_text(json.dumps(daten, ensure_ascii=False, indent=2) + "\n", "utf-8")
@@ -187,6 +240,7 @@ def schreibe_figur(privat: Path, gruppe: Gruppe) -> dict:
     stand, grund = standzustand(gruppe)
     with zipfile.ZipFile(privat / gruppe.zip) as archiv:
         bilder = _rotationen(archiv, stand, ziel)
+        masse = leinwand(archiv, stand)
         animationen = {}
         for name in (LAUFEN, RENNEN):
             quelle = mit_animation(gruppe, name)
@@ -198,7 +252,7 @@ def schreibe_figur(privat: Path, gruppe: Gruppe) -> dict:
             ordner = zustandsordner(z.name)
             if ordner and ordner not in zustaende:
                 zustaende[ordner] = _rotationen(archiv, z, ziel / "zustaende" / ordner)
-    _metadaten(gruppe, stand, ziel)
+    _metadaten(gruppe, stand, ziel, masse)
     return {
         "stand": stand.name,
         "grund": grund,

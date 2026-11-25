@@ -5,8 +5,10 @@ import {
   figurenbildAdresse,
   grosspfad,
   hoehenfaktor,
+  GROSS_HOEHE,
   hoehenfaktorDerAdresse,
   istGrossbogen,
+  rahmenhoeheDerAdresse,
 } from "./figurbogen";
 
 describe("Figurenbogen", () => {
@@ -32,6 +34,17 @@ describe("Figurenbogen", () => {
     expect(hoehenfaktorDerAdresse(neu ?? "")).toBe(faktor);
     expect(hoehenfaktorDerAdresse(alt ?? "")).toBe(1);
     expect(hoehenfaktor("gibt-es-nicht")).toBe(1);
+  });
+
+  it("merkt hohe Rahmen aus dem Index des Pakets (Schiffskoch 32 × 48), sonst 32", async () => {
+    const vorhanden = new Set(["figuren32/schiffskoch.png", "figuren32/juno.png"]);
+    const lies = (p: string) => Promise.resolve(vorhanden.has(p) ? `blob:hoch/${p}` : null);
+    const index = () => Promise.resolve({ schiffskoch: 48 });
+    const koch = await figurenbildAdresse("figuren/schiffskoch.png", lies, index);
+    const juno = await figurenbildAdresse("figuren/juno.png", lies, index);
+    expect(rahmenhoeheDerAdresse(koch ?? "")).toBe(48);
+    expect(rahmenhoeheDerAdresse(juno ?? "")).toBe(GROSS_HOEHE);
+    expect(rahmenhoeheDerAdresse("blob:unbekannt")).toBe(GROSS_HOEHE);
   });
 
   it("hält die Höhenfaktoren im erlaubten Bereich (nur verkleinern, höchstens × 1,1)", () => {

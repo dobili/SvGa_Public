@@ -1425,3 +1425,25 @@ in `pipeline/tests/test_abenteuer_proportionen.py`. Zu große Möbel bekommen ei
 Platzierung, unten mittig ausgerichtet (`versatz`), und was `auf` ihnen liegt, denselben Maßstab
 (Spieltische mit Brett und Uhr den größten Maßstab im Band, damit beides Platz hat). Gebäude und
 Türen bleiben. Bildhöhen neuer Katalogeinträge: `--messen PRIVAT`.
+
+### 10.94 Neue Bilder fügen sich an (Autor, 26.11.2026)
+
+Anlass: Die ersten Gemini-Bilder mit den neuen Prompts (Grasböschung, Schleuse, Sand, Acker) passen
+für sich, bringen aber eigene Mauern, eigenes Wasser und eigene Erde mit. Regel: Jedes neue Bild,
+das an anderes anschließt (Boden, Wand, Ufer, Mauer, Kante, Teil eines größeren Bauwerks), wird
+vor dem Einbau an seine Nachbarn angepasst; freistehende Gebäude und Gegenstände brauchen nur
+Maßstab und Sicht.
+
+1. **Farben angleichen:** Wasser, Erde, Gras, Stein und Holz eines neuen Bildes werden auf die
+   Palette der Karte umgefärbt, in der es steht (Wasser wie die Wasserkacheln der Karte, Erde wie
+   die LimeZu-Erde, Gras wie der Rasen daneben). Kein neues Bild bringt einen eigenen Ton für einen
+   Stoff mit, den die Karte schon hat.
+2. **Übergänge schließen:** Wo ein neues Teil an vorhandene Teile stößt (Schleusenmauer an die
+   Kanalmauer, Böschung an den Weg, Acker an den Rasen), entsteht ein Übergang: zuerst aus dem
+   neuen Bild selbst (Kacheln herausschneiden, die die vorhandene Mauer fortsetzen), sonst aus
+   dem vorhandenen Satz (dessen Mauer bis an das neue Teil führen), erst danach mit einem eigenen
+   Prompt für das fehlende Stück. Böden bekommen ihren weichen Rand vom Bodenwerkzeug.
+3. **Auf der Karte ansehen:** Nach dem Einbau ein Foto der Karte (Hintergrund und Vorschau aus
+   `kartenbild`) neben dem Zustand vorher; fällt das neue Teil aus der Umgebung heraus (Farbe,
+   Kontur, Pixelgröße, Kanten), wird nachgebessert, bevor es gemeldet wird. Das Foto gehört zur
+   Meldung des Helfers.

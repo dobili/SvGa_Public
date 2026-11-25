@@ -19,6 +19,8 @@ import type { Ausgang } from "../schnittstelle/partie";
 import type { Begriff, Besprechungsstimme, Besprechungsstufe } from "../regeln/besprechung";
 import type { Besprechungsmoment } from "../regeln/besprechungsmomente";
 import { tSpiel } from "../texte/texte";
+import type { Role } from "chessops/types";
+import type { Lagebefund } from "./besprechungslage";
 import type { Materialfolge } from "./besprechungsmaterial";
 import type { Momentmotiv } from "./besprechungsmotiv";
 import { figurwort, type Ursache } from "./besprechungsursache";
@@ -48,6 +50,10 @@ export interface Momentangaben {
   readonly ursache: Ursache | null;
   /** Was der Fehler kostet oder die Chance bringt, als Figur oder Matt, null ohne. */
   readonly material: Materialfolge | null;
+  /** Phase und Lage vor einem Fehler des Helden (besprechungslage.ts), null ohne sichere Lage. */
+  readonly lage: Lagebefund | null;
+  /** Die Figur, die ein brillanter oder starker Zug hergibt, null ohne Opfer. */
+  readonly opfer: Role | null;
 }
 
 /** Kategorien, deren Satz (ab Stufe 2, allein immer) den besseren Zug nennt. */
@@ -128,6 +134,28 @@ function materialsatz(k: Besprechungskontext, a: Momentangaben, z: Ziehung): str
   return z.zeile(`${basis}.${m.richtung}`, { figur: figurwort(m.rolle, "den") });
 }
 
+/**
+ * Der Satz zur Lage vor dem Fehler ab Stufe 2 (Abschnitt 11, Punkt 3), mit der Phase
+ * („im Endspiel“). Höchstens jeder zweite Moment bekommt ihn (`frei`), sonst klingt es nach Liste.
+ */
+function lagesatz(
+  k: Besprechungskontext,
+  a: Momentangaben,
+  z: Ziehung,
+  frei: boolean,
+): string | null {
+  const l = a.lage;
+  if (!l || !frei || k.stufe < 2) return null;
+  const phase = tSpiel(`besprechung.phase.${l.phase}`);
+  return z.zeile(`${vorsilbe(k.stimme)}.lage.${l.lage}`, { phase });
+}
+
+/** Der Satz zum Opfer eines brillanten oder starken Zuges, auf jeder Stufe (Abschnitt 11, Punkt 4). */
+function opfersatz(k: Besprechungskontext, a: Momentangaben, z: Ziehung): string | null {
+  if (!a.opfer) return null;
+  return z.zeile(`${vorsilbe(k.stimme)}.opfer`, { figur: figurwort(a.opfer, "den") });
+}
+
 /** Der Satz zur Folge, ab Stufe 3 bei Fehlern und Chancen. */
 function folgesatz(k: Besprechungskontext, a: Momentangaben, z: Ziehung): string | null {
   if (k.stufe < 3 || !a.folge || !MIT_FOLGE.has(a.moment.kategorie)) return null;
@@ -142,7 +170,10 @@ function folgesatz(k: Besprechungskontext, a: Momentangaben, z: Ziehung): string
  */
 export function momentsaetze(k: Besprechungskontext, angaben: readonly Momentangaben[]): string[] {
   const z = new Ziehung(k.partiekennung);
+  let lageZuvor = false;
   return angaben.map((a) => {
+    const lage = lagesatz(k, a, z, !lageZuvor);
+    lageZuvor = lage !== null;
     const werte = {
       zug: a.zug,
       besser: a.besser ?? "",
@@ -151,6 +182,8 @@ export function momentsaetze(k: Besprechungskontext, angaben: readonly Momentang
     const ursache = ursachesatz(k, a, z);
     const teile = [
       z.zeile(kategoriegruppe(k, a), werte),
+      lage,
+      opfersatz(k, a, z),
       ursache ?? begriffssatz(k, a, z),
       materialsatz(k, a, z),
       folgesatz(k, a, z),

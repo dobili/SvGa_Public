@@ -32,6 +32,8 @@ export interface Motivgrundlage {
   readonly beste: readonly string[];
   readonly varianten: readonly (readonly string[])[];
   readonly verluste: readonly number[];
+  /** Wert je Stellung aus Sicht von Weiß (Bauern), für die Lage vor dem Zug; fehlt in Tests. */
+  readonly werte?: readonly number[];
 }
 
 /** Motive aus Kapitel 7 und ihr Begriff (Gabel und Doppelangriff sind für Kinder dasselbe Wort). */

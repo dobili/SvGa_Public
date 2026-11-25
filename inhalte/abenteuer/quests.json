@@ -4159,6 +4159,68 @@
       ]
     },
     {
+      "kennung": "hochebene.falkeUndBisonPartie",
+      "titel": "quest.falkeUndBisonPartie.titel",
+      "typ": "begegnung",
+      "ort": "hochebene",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "hochebene.kira_angebot"
+      },
+      "schritte": [
+        {
+          "text": "quest.falkeUndBisonPartie.schritt1",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "hochebene.falkeUndBison",
+            "ausgang": ["sieg", "remis"]
+          },
+          "ziel": {
+            "karte": "hochebene.felsentuerme",
+            "objekt": "kira"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "summitCity.drachenfest",
+      "titel": "quest.drachenfest.titel",
+      "typ": "begegnung",
+      "ort": "summitCity",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "summit-city-aussen.drachenfest_angebot"
+      },
+      "schritte": [
+        {
+          "text": "quest.drachenfest.schritt1",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "summitCity.drachenfest",
+            "ausgang": ["sieg", "remis"]
+          },
+          "ziel": {
+            "karte": "summitCity.aussen",
+            "objekt": "drachenbrunnen"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
       "kennung": "pinewoodCamp.tandem",
       "titel": "quest.tandem.titel",
       "typ": "begegnung",

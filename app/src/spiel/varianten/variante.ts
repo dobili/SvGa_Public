@@ -90,6 +90,12 @@ export interface Brettzusatz {
   readonly schlagwirkung?: "explosion";
   /** Figuren ausblenden (Blindschach); Nebel deckt Felder ab, die der Leser nicht sieht. */
   readonly sicht?: "alles" | "keine_figuren" | ((fen: string) => readonly string[]);
+  /**
+   * Bilder eigener Figuren: Buchstabe der FEN (groß = Weiß, klein = Schwarz) → Pfad im
+   * Abenteuer-Paket, etwa { D: "figuren/varianten/drache-weiss.svg", d: "…-schwarz.svg" }.
+   * Fehlt ein Buchstabe, zeigt das Brett die gewöhnliche Figur gleichen Buchstabens.
+   */
+  readonly figurenbilder?: Readonly<Record<string, string>>;
 }
 
 /** Eine Variante mit allem, was die App über sie wissen muss. */
@@ -103,6 +109,12 @@ export interface Variantendefinition {
   /** Startstellung: fest oder ausgelost (Schach960, Königsrennen); fehlt: Grundstellung. */
   readonly startstellung?: (zufall: () => number) => string;
   readonly brett?: Brettzusatz;
+  /**
+   * „eigene_partie“: Die Spielhülle zeigt statt ihres Bretts die Komponente, die sich unter dieser
+   * Kennung angemeldet hat (abenteuer/anbindung/variantenpartien.ts), etwa Tandem mit zwei Brettern.
+   * Fehlt: Die Hülle spielt die Variante selbst über `regeln` und `engine`.
+   */
+  readonly ablauf?: "eigene_partie";
 }
 
 const VARIANTEN = new Map<Variantenkennung, Variantendefinition>();

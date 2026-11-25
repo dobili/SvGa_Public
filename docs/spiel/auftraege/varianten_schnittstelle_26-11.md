@@ -7,14 +7,16 @@ Engineanbindung nicht. Wer dort etwas braucht, meldet es an mittel-3.
 
 ## Dateien
 
-| Datei                                          | Inhalt                                                                                                                             |
-| ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `app/src/spiel/varianten/variante.ts`          | Typen und Anmeldung: `Variantendefinition`, `registriereVariante`, `varianteVon`, `alleVarianten`                                  |
-| `app/src/spiel/varianten/regelschicht.ts`      | `chessopsRegeln(rules, kennung)`: Regeln, Züge, Ende für alles, was chessops kennt                                                 |
-| `app/src/spiel/varianten/standardvarianten.ts` | die acht mitgebrachten Varianten (blind, gehoer, schach960, dreischach, atomschach, koenigDerHuegel, koenigsrennen, raeuberschach) |
-| `app/src/spiel/varianten/alle.ts`              | meldet alle Varianten an; neue Variante = eine Zeile `import "./drache";`                                                          |
-| `app/src/spiel/varianten/enginebefehle.ts`     | `enginevorbereitung(angabe)`: Dateien und UCI-Befehle vor der Partie                                                               |
-| `app/src/spiel/varianten/varianten.test.ts`    | Tests                                                                                                                              |
+| Datei                                             | Inhalt                                                                                                                             |
+| ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `app/src/spiel/varianten/variante.ts`             | Typen und Anmeldung: `Variantendefinition`, `registriereVariante`, `varianteVon`, `alleVarianten`                                  |
+| `app/src/spiel/varianten/regelschicht.ts`         | `chessopsRegeln(rules, kennung)`: Regeln, Züge, Ende für alles, was chessops kennt                                                 |
+| `app/src/spiel/varianten/standardvarianten.ts`    | die acht mitgebrachten Varianten (blind, gehoer, schach960, dreischach, atomschach, koenigDerHuegel, koenigsrennen, raeuberschach) |
+| `app/src/spiel/varianten/alle.ts`                 | meldet alle Varianten an; neue Variante = eine Zeile `import "./drache";`                                                          |
+| `app/src/spiel/varianten/variantenengine.ts`      | Engine für Bots und Märchenfiguren: Kandidaten mit Wert, legale Züge                                                               |
+| `app/src/abenteuer/anbindung/variantenpartien.ts` | eigene Partiekomponenten (Tandem, Ente, Nebel) in der Hülle                                                                        |
+| `app/src/spiel/varianten/enginebefehle.ts`        | `enginevorbereitung(angabe)`: Dateien und UCI-Befehle vor der Partie                                                               |
+| `app/src/spiel/varianten/varianten.test.ts`       | Tests                                                                                                                              |
 
 `variante` in `schnittstelle/partie.ts` (Partieauftrag) und `spiel/partie.ts` (Einstellung der
 Partie) ist jetzt `Variantenkennung` (eine Zeichenkette), keine feste Liste mehr. Wer eine
@@ -92,11 +94,68 @@ nach der Gegnerstärke der Begegnung; Varianten geben dafür nichts an.
   als Explosion über den Feldern, die leer wurden, `sicht` für Blind und Nebel.
 - Keine Partiebesprechung für Varianten außer blind und gehoer (macht mittel-1).
 
+## Engine für Bots und Märchenfiguren (Wünsche von mittel-2 und mittel-4)
+
+`app/src/spiel/varianten/variantenengine.ts` beschreibt, was die Variantenengine (Fairy-Stockfish,
+einkernig, Zusatzpaket) anbietet. Die Umsetzung kommt mit dem Engine-Teilpatch und meldet sich mit
+`meldeVariantenengineAn` an; bis dahin gibt `variantenengine()` null zurück.
+
+```ts
+analysiere({ fen, engine, ms, kandidaten, staerke? }) // → [{ zug: "e2e4", wert: { cp: 35 } }, …]
+legaleZuege(fen, engine) // → ["e2e4", …] über „go perft 1“
+```
+
+- `engine` ist die `Engineangabe` der Variante (UCI_Variant und gegebenenfalls `ini`). Die Engine
+  bereitet sich bei jedem Wechsel der Variante selbst vor (`enginevorbereitung`).
+- `wert` gilt aus Sicht der Seite am Zug: Hundertstel Bauern oder `{ matt: n }`.
+- Zugschreibweise wie Fairy-Stockfish: Ente `e2e4,e4d5` (Zug, dann Entenfeld), Einsetzen `P@e4`,
+  Taschen in der FEN `[Qn]`. Die Ente gibt es in Fairy-Stockfish seit 2023; der einkernige Build
+  nimmt einen Stand danach.
+- Stärke: `skill` (Skill Level 0 bis 20) und/oder `tiefe`. Wie stark ein Gegner der Begegnung ist,
+  rechnet die Hülle aus der Gegnerstärke; eigene Bots dürfen `analysiere` mit mehreren Kandidaten
+  rufen und selbst wählen.
+
+## Märchenfiguren: Regeln, Anmeldung bei der Engine, Bilder (mittel-2)
+
+1. **Engine:** In der `Engineangabe` steht `uciVariante` (eigener Name, etwa `drache` oder
+   `falkeUndBison`) und `ini` mit dem Abschnitt im Format von variants.ini, etwa
+   `[falkeUndBison:seirawan]` mit den Figuren oder `[drache:chess]` mit
+   `customPiece1 = d:QN`. Die Anbindung legt den Abschnitt als `/varianten.ini` ab und setzt
+   `VariantPath` und `UCI_Variant` (siehe oben). Mehrere eigene Varianten stehen je in ihrem
+   Abschnitt; die Anbindung schreibt die Datei vor jeder Partie neu.
+2. **Regeln (Zuglegalität):** chessops kennt keine Märchenfiguren. Zwei Wege:
+   - ffish (npm `ffish`, GPL 3, ein Kern, synchron nach dem Laden): `legalMoves()`, `push(uci)`,
+     `isGameOver()`, `result()` mit derselben variants.ini (`loadVariantConfig`). Damit wird die
+     `Regelschicht` synchron wie bei chessops. Empfohlen.
+   - `variantenengine().legaleZuege(…)`: asynchron, nur wenn ffish nicht reicht.
+3. **Bilder:** `brett.figurenbilder` in der Definition, je FEN-Buchstabe ein Pfad im
+   Abenteuer-Paket (`figuren/varianten/…`), groß für Weiß, klein für Schwarz. Das Brett der Hülle
+   zeichnet für diese Buchstaben das Bild statt der gewöhnlichen Figur. Bitte die Buchstaben melden
+   (etwa Drache `D`/`d`, Falke `H`/`h`, Bison `E`/`e` wie bei Seirawan).
+
+## Eigene Partie in der Hülle (mittel-4: Nebel, Ente, Tandem)
+
+Für Varianten mit eigenem Ablauf steht in der Definition `ablauf: "eigene_partie"`, und die
+Komponente meldet sich in `app/src/abenteuer/anbindung/variantenpartien.ts` an:
+
+```ts
+registriereVariantenpartie("tandem", Tandempartie);
+// Tandempartie({ auftrag, staerke, eigeneFarbe, beiEnde }) → beiEnde({ ausgang, halbzuege, zuege? })
+```
+
+Die Hülle zeigt die Komponente an Stelle ihres Bretts und übernimmt Rahmen, Porträt, den
+Dialogknoten danach, Ergebnis und Belohnung wie bei Schach960. Brett und Bot gehören der
+Komponente. Dieselbe Form passt für Märchenfiguren, wenn mittel-2 das eigene Brett lieber selbst
+baut. Ohne eigenes Brett reichen `regeln`, `engine` und `figurenbilder`, und die Hülle spielt die
+Variante wie Drei-Schach.
+
+Neue Kennungen in `schemas/abenteuer-begegnungen.schema.json`: `drache`, `falkeUndBison`, `nebel`,
+`ente`, `tandem`.
+
 ## Sonderformen
 
-Ente, Nebel und Tandem verändern den Ablauf (zwei Teilzüge, verdeckte Felder, zwei Bretter). Nebel
-passt in `brett.sicht`. Die Ente ist bei Fairy-Stockfish eine eigene Variante (`duck`): Der Zug in
-UCI enthält dort das Entenfeld, `regeln.ziehe` nimmt ihn so. Für Tandem (zwei Bretter, Steine
-wandern in die Tasche des Partners) braucht die Hülle einen eigenen Ablauf. Bitte als Wunsch an
-mittel-3 schreiben, was genau gebraucht wird: Ich lege dafür einen Haken in die Definition
-(`ablauf`), statt dass zwei Chats in der Hülle bauen.
+- Nebel: eigene Sicht über `brett.sicht` (Funktion: sichtbare Felder) und Königsfang als Ende in
+  `regeln.ende`; als eigene Partie, wenn die Sicht mehr braucht. Bot über die gewöhnliche Engine.
+- Ente: Fairy-Variante `duck`, Zug „Zug,Entenfeld“; zweiter Teilzug in der eigenen Partie.
+- Tandem: zwei Bretter, Einsetzen, Partnerbot in der eigenen Partie (Einzelheiten von mittel-4
+  über den Hauptchat).

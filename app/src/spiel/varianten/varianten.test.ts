@@ -143,3 +143,20 @@ describe("Engine-Befehle", () => {
     ).toEqual(["setoption name UCI_Chess960 value true"]);
   });
 });
+
+describe("Einhängepunkte für andere Varianten", () => {
+  it("Variantenengine erst nach dem Anmelden, eigene Partie je Kennung einmal", async () => {
+    const { variantenengine, meldeVariantenengineAn } = await import("./variantenengine");
+    const { registriereVariantenpartie, variantenpartie } =
+      await import("../../abenteuer/anbindung/variantenpartien");
+    expect(variantenengine()).toBeNull();
+    const probe = { analysiere: async () => [], legaleZuege: async () => [] };
+    meldeVariantenengineAn(probe);
+    expect(variantenengine()).toBe(probe);
+    const Leer = () => null;
+    registriereVariantenpartie("probeTandem", Leer);
+    expect(variantenpartie("probeTandem")).toBe(Leer);
+    expect(() => registriereVariantenpartie("probeTandem", Leer)).toThrow(/schon angemeldet/);
+    expect(variantenpartie("drache")).toBeUndefined();
+  });
+});

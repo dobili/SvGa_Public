@@ -41,7 +41,7 @@ export type Begriff =
  * Themen der Aufgabenrunden (runden.json, Feld `themen`) und der Begriff, den die Runde lehrt.
  * Regel: Kapitel 7 (Motive) und 1 (hängende Figuren); Themen ohne Eintrag lehren keinen Begriff.
  */
-const BEGRIFF_JE_THEMA: Readonly<Record<string, Begriff>> = {
+export const BEGRIFF_JE_THEMA: Readonly<Record<string, Begriff>> = {
   haengend: "haengend",
   matt1: "matt",
   matt2: "matt",
@@ -69,6 +69,8 @@ const STUFE_DREI = "endeAkt3Gesehen";
 export interface Rundenthemen {
   readonly kennung: string;
   readonly themen: readonly string[];
+  /** Wer die Runde stellt („mapleFalls.sam“), für den Rückbezug auf den Lehrer; fehlt in Tests. */
+  readonly steller?: string;
 }
 
 /** Ist die Besprechung offen? Erst nach Ambroses Ankündigung (erster Clubkampf in Maple Falls). */
@@ -87,7 +89,7 @@ export function besprechungsstufe(variablen: Variablen): Besprechungsstufe {
 }
 
 /** Die Variable, die eine versuchte Runde in der Langform setzt („riverton.reiheTamsin“ → …). */
-function versuchtVariable(runde: string): string {
+export function versuchtVariable(runde: string): string {
   const [ort] = runde.split(".");
   const name = Object.keys(variablenNachRunde(runde, false)).find(
     (n) => ort !== undefined && n.startsWith(ort),

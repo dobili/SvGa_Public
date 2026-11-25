@@ -269,6 +269,15 @@ Umsetzung in Teilen (je eigener Patch):
   bisher der Satz zum Begriff („für“). Texte `besprechung.phase.*`, `….lage.*`, `….opfer.*`.
 - C3 Rückbezüge und Anekdoten (`anbindung/besprechungsbezug.ts`, Lehrer aus runden.json),
   etwa 60 Texte.
+  Umgesetzt (26.11.2026): `anbindung/besprechungsbezug.ts`. Lehrer je Begriff aus der ersten
+  versuchten Runde mit passendem Thema (Feld `steller` in runden.json, Name aus `figur.<name>.name`;
+  ohne Namen kein Bezug). Frühere Fehler aus den letzten fünf früheren, ausgewerteten, besprechbaren
+  Partien, ohne neues Feld im Speicher: Die Ursachen ihrer eigenen Fehler und Patzer werden aus den
+  gespeicherten Werten neu bestimmt (wie in C1). Ab Stufe 2 höchstens zwei Rückbezüge je
+  Besprechung, die frühere Partie vor dem Lehrer; mit demselben Gegner ein eigener Satz. Eine
+  Anekdote je Besprechung, nur von Ambrose, ab Stufe 2 und nur zu einem Begriff, den der Held
+  kennt; nichts zu Reise, Tod oder Josiah Hale (Story-Bibel 2.2). Texte `….bezug.*`,
+  `besprechung.ambrose.anekdote.<begriff>.*`.
 - C4 Messlauf: 40 Besprechungen aus gespeicherten Partien (phasenpartien.json, Partien des
   Spieler-Durchlaufs) mit Stufen 1 bis 3 und allen drei Stimmen nach `buch/arbeit/besprechung/`
   (Text und HTML, nur lokal), Stichprobe von 100 Sätzen von Hand gegen das Brett geprüft,

@@ -37,6 +37,7 @@ VAR varianteRaeuberschachGelernt = false
 VAR varianteTandemGelernt = false
 VAR varianteSchach960Gelernt = false
 VAR varianteFalkeUndBisonGelernt = false
+VAR varianteNebelschachGelernt = false
 // Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
 // (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
 VAR abschiedGesehen = false
@@ -60,6 +61,9 @@ VAR ausgangCrossroadsAtomschach = ""
 VAR ausgangCrossroadsKoenigDerHuegel = ""
 VAR ausgangCrossroadsKoenigsrennen = ""
 VAR ausgangCrossroadsRaeuberschach = ""
+VAR ausgangCrossroadsNebelschach = ""
+VAR ausgangCrossroadsEntenschach = ""
+VAR ausgangCrossroadsTandem = ""
 // Eingang der Raststätte (19.11.2026): beim ersten Betreten statt beim ersten Gespräch mit Darlene.
 VAR raststaetteBetreten = false
 
@@ -192,7 +196,7 @@ Ich glaub, ich geh hin. #sprecher:theo #stimmung:laechelt
 {tischPartie != "": -> tisch_nach_partie}
 An einem langen Tisch liegen Bretter in allen Größen, Kisten mit seltsamen Figuren, eine Holzente, ein Drache aus Glas. #sprecher:erzaehler
 Ein Schild: „Varianten-Tisch. Alles erlaubt, nur kein normales Schach.“ #sprecher:erzaehler
-{not (varianteDreischachGelernt or varianteKoenigDerHuegelGelernt or varianteKoenigsrennenGelernt or varianteDracheGelernt or varianteAtomschachGelernt or varianteEntenschachGelernt or varianteBlindschachGelernt or varianteRaeuberschachGelernt or varianteTandemGelernt or varianteFalkeUndBisonGelernt or varianteSchach960Gelernt):
+{not (varianteDreischachGelernt or varianteKoenigDerHuegelGelernt or varianteKoenigsrennenGelernt or varianteDracheGelernt or varianteAtomschachGelernt or varianteEntenschachGelernt or varianteBlindschachGelernt or varianteRaeuberschachGelernt or varianteTandemGelernt or varianteFalkeUndBisonGelernt or varianteSchach960Gelernt or varianteNebelschachGelernt):
     Du kennst noch keine der Varianten. Unterwegs spielen die Leute sie, an jedem Weg eine andere. #sprecher:darlene #stimmung:neutral
     -> END
 }
@@ -224,6 +228,9 @@ Was du schon kennst: #sprecher:erzaehler
 {varianteFalkeUndBisonGelernt:
     Falke und Bison, von Kira auf der Hochebene. Die zwei Figuren liegen obenauf in der Kiste. #sprecher:erzaehler
 }
+{varianteNebelschachGelernt:
+    Nebelschach, von Theron im Bayou. Über einem Brett liegt ein grauer Schleier, und zwei Spieler raten. #sprecher:erzaehler
+}
 {varianteBlindschachGelernt:
     Blindschach, von Greta an der Hütte. Eine Frau sagt ihre Züge an und sieht dabei an die Decke. #sprecher:erzaehler
 }
@@ -232,7 +239,8 @@ Was du schon kennst: #sprecher:erzaehler
 }
 // Der Tisch ist Kulisse: Die Sätze zeigen, was dort gespielt wird, ohne ein Versprechen an den
 // Spieler („Kommt bald“). Spielbar gegen Ambrose: Blindschach, Schach960 und seit 26.11.2026 die
-// Regelvarianten Drei-Schach, Atomschach, König der Hügel, Königsrennen und Räuberschach.
+// Regelvarianten Drei-Schach, Atomschach, König der Hügel, Königsrennen und Räuberschach, dazu
+// Nebel- und Entenschach gegen Ambrose und Tandem mit Ambrose als Partner gegen Slick (mittel-4).
 // Nach dem Abschied (abschiedGesehen) spielt Ambrose nicht mehr mit: Beide Partien entfallen.
 // Schach960 bleibt bei Mabel im Musikhaus spielbar.
 + {varianteBlindschachGelernt and not abschiedGesehen} [Blindschach gegen Ambrose]
@@ -270,6 +278,21 @@ Was du schon kennst: #sprecher:erzaehler
     ~ tischPartie = "raeuberschach"
     ~ beginnePartie("crossroads.raeuberschach")
     -> END
++ {varianteNebelschachGelernt and not abschiedGesehen} [Nebelschach gegen Ambrose]
+    Ich habe mein halbes Leben im Nebel gespielt, {held}. Das hier ist wenigstens ehrlich. #sprecher:ambrose #stimmung:lacht
+    ~ tischPartie = "nebelschach"
+    ~ beginnePartie("crossroads.nebelschach")
+    -> END
++ {varianteEntenschachGelernt and not abschiedGesehen} [Entenschach gegen Ambrose]
+    Eine Ente. Auf meinem Brett. Nun gut, ich habe schon Seltsameres verloren. #sprecher:ambrose #stimmung:lacht
+    ~ tischPartie = "entenschach"
+    ~ beginnePartie("crossroads.entenschach")
+    -> END
++ {varianteTandemGelernt and not abschiedGesehen} [Tandem mit Ambrose gegen Slick]
+    Ich bin dein Partner. Gib mir einen Springer, und ich gebe dir die Welt. #sprecher:ambrose #stimmung:lacht
+    ~ tischPartie = "tandem"
+    ~ beginnePartie("crossroads.tandem")
+    -> END
 + [Nur schauen]
     -> END
 
@@ -286,10 +309,24 @@ Was du schon kennst: #sprecher:erzaehler
 - tischPartie == "koenigDerHuegel": ~ ausgang = ausgangCrossroadsKoenigDerHuegel
 - tischPartie == "koenigsrennen": ~ ausgang = ausgangCrossroadsKoenigsrennen
 - tischPartie == "raeuberschach": ~ ausgang = ausgangCrossroadsRaeuberschach
+- tischPartie == "nebelschach": ~ ausgang = ausgangCrossroadsNebelschach
+- tischPartie == "entenschach": ~ ausgang = ausgangCrossroadsEntenschach
+- tischPartie == "tandem": ~ ausgang = ausgangCrossroadsTandem
 }
+~ temp tandem = tischPartie == "tandem"
 ~ tischPartie = ""
 {abschiedGesehen:
     Die Bretter auf dem Tisch stehen wieder still. #sprecher:erzaehler
+    -> END
+}
+// Im Tandem spielt Ambrose mit dem Helden gegen Slick: kein „du hast mich geschlagen“.
+{tandem:
+    {ausgang:
+    - "sieg": Gewonnen, wir zwei! Du hast mir genau den Springer geschickt, den ich brauchte. #sprecher:ambrose #stimmung:froh
+    - "remis": Unentschieden. Slick wird behaupten, er hätte gewonnen. Lass ihn. #sprecher:ambrose #stimmung:laechelt
+    - else: Verloren, und das geht auf mich. Ich habe zu lange über meinem Brett gebrütet. #sprecher:ambrose #stimmung:nachdenklich
+    }
+    Der Tisch steht noch da, wenn du wieder magst. #sprecher:ambrose #stimmung:laechelt
     -> END
 }
 {regelvariante:

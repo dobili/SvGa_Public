@@ -1351,3 +1351,52 @@ Browserprüfung der Sperren S16 und S17 mit echt gespielten kurzen Partien (Fabl
   Datei für Datei (kein CC BY-NC), PixelLab-Abo mit kommerziellen Rechten, GPL-Pflichten
   (Quelltext öffentlich, Lizenzseite, eigene Lizenzbedingungen im App Store wegen Stockfish und
   Fairy-Stockfish). Technik: Android als Capacitor- oder TWA-Paket, iOS mit Capacitor.
+
+### Antworten zu Mappe 17 (Entscheidung des Autors, 26.11.2026)
+
+- Alle offenen Rückfragen bestätigt („ok“), auch die schon umgesetzten mit „Widerspruch genügt“.
+  Damit gelten die dort beschriebenen Entscheidungen; die Punkte sind aus
+  `docs/AUFGABEN_AUTOR.md` gelöscht.
+- RO41 (Opus statt AAC): Der Autor hat das neueste iOS (ab 17.4 spielt Safari Opus). Empfehlung
+  umsetzen: Musik und Geräusche auf Opus umstellen, nach einer kurzen Hörprobe AAC gegen Opus;
+  bis dahin bleibt AAC. Auf älteren Geräten der Testleser bliebe Opus stumm, deshalb vorher
+  einen Rückfall auf AAC prüfen.
+- RO52 und RO54 (Bildaufträge Mappe 15 und 16b): ok; die Bilder erzeugt der Autor noch, die
+  Punkte bleiben bis dahin offen.
+- DB4 (Mailversand) und Q2-1 bleiben offen.
+- Bestätigt (Wortlaut der Punkte in `docs/AUFGABEN_AUTOR.md` vor dem Commit dieses Eintrags):
+  - DB2: Turnstile vorerst nicht eintragen: Empfehlung: Den Turnstile-Secret-Key noch nicht
+  - DB3: Aufbewahrung: Meldungen löscht der Worker spätestens zwölf Monate nach Eingang
+  - RO1: Roman zu Akt 1 lesen (Schach-Abenteuer): Die Geschichte von Akt 1 steht jetzt als
+  - RO2: Erzählform: Der Roman ist in der Ich-Form geschrieben, damit Name und Geschlecht
+  - RO3: Zu Fuß nach Cedar Creek: Im Roman gehen der Held und Juno am Freitag zu Fuß am
+  - RO4: Eigenes Zimmer für den Helden: Die neue Nachtszene (der Geist fragt nach der
+  - RO5: Mehr Geschichte je Akt: Bisher war in Akt 1 nur etwa ein Fünftel der Spielzeit
+  - RO6: Mamas Partie in Ironwood: Im Roman zu Akt 2 entsteht in Mamas Partie noch einmal
+  - RO7: Roman zu Akt 2 lesen: 13 Kapitel (17 bis 29), rund 13 500 Wörter, in
+  - RO8: Roman zu Akt 3 und 4 lesen: Der Roman ist für alle vier Akte fertig (66 Kapitel,
+  - RO9: Entscheidungen, die der Roman getroffen hat: (a) Juno weiß ab Akt 3 vom Geist,
+  - RO15: Karten als echte Karten mit Motiv: Der Kartenfächer ist gebaut, und alle 40
+  - RO19: Bretter und Figuren in Gemini (Datei „6_Gemini_Bretter_und_Figuren.html“ mit
+  - RO20: Nebenquest „Zuschauen“ in Riverton nicht mehr verpassbar: Wer Tamsins Angebot hört,
+  - RO23: Entscheidungen der Nacht (schon umgesetzt, Widerspruch genügt): Späte Läden
+  - RO24: Vor der Veröffentlichung (Recherche vom 15.11.2026, Rechtliches bitte fachlich
+  - RO25: Zur Revision: Entscheidungen vom 15.11.2026 (alle umgesetzt, Widerspruch genügt)
+  - RO26: Zur Revision: Einstieg für Kinder (Spieltest als 11-jähriges Kind, 15.11.2026, alles
+  - RO28: Zur Revision: deine 31 Kartennotizen zu Maple Falls und Cedar Creek (16.11.2026,
+  - RO29: Zur Revision: dieselben Regeln in allen Orten, Bergstation mit Plattform (16.11.2026,
+  - RO30: Zur Revision: Musik lädt später, Geräusche als Text (16.11.2026, umgesetzt,
+  - RO31: Zur Revision: Laufhilfe des Helden (16.11.2026, umgesetzt, Widerspruch genügt)
+  - RO34: Kartendurchsicht Akt 2 bis 4 (16.11.2026 nachts, Widerspruch genügt): Ein Helfer hat
+  - RO35: Nachtrunde 16./17.11. mit den Nebenchats (umgesetzt, Widerspruch genügt)
+  - RO38: Dialogprüfung aller Akte (17.11.2026, umgesetzt, Widerspruch genügt): Vier Chats haben
+  - RO39: Wegsperren und kurze Partien (17.11.2026 nachts, umgesetzt, Widerspruch genügt)
+  - RO40: Zielhinweis bei fünf Schritten der Hauptgeschichte (19.11.2026, umgesetzt,
+  - RO42: Spiel für Leser sichtbar machen? (20.11.2026, erst beim Schritt nach main)
+  - RO43: Vier Innentüren kleiner als die größere Figur (20.11.2026)
+  - RO45: Mira und Big Joe sitzen jetzt anders als im Roman (21.11.2026)
+  - RO47: Kira „kommt vom Bus gerannt“, aber auf der Hochebene steht kein Bus (21.11.2026)
+  - RO49: Kleine Folgen von Uhr und Geräuschen (22.11.2026, umgesetzt, Widerspruch genügt)
+  - RO50: Größe des Hundes (23.11.2026)
+  - RO53: Kartenblick: acht Entscheidungen (24.11.2026, umgesetzt oder beauftragt, Widerspruch genügt)
+  - RO55: Ambrose als Begleiter: wie oft (24.11.2026, umgesetzt, Widerspruch genügt)

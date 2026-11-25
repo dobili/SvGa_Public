@@ -133,18 +133,28 @@ export function mitLaufender(stand: Spielstand, partie: Partie | null): Spielsta
   return { ...stand, laufend: partie };
 }
 
+/** Hat die Partie dieselben Züge wie die abgelegte? Dann gilt deren Auswertung weiter. */
+function gleicheZuege(a: Partie, b: Partie): boolean {
+  return a.zuege.length === b.zuege.length && a.zuege.every((z, i) => z.san === b.zuege[i]?.san);
+}
+
 /**
  * Legt eine beendete Partie ab: vorne in die Liste, die laufende Partie wird frei.
  *
- * Sonderfall: Liegt die Partie schon in der Liste (gleiche Kennung), wird sie ersetzt.
+ * Sonderfall: Liegt die Partie schon in der Liste (gleiche Kennung), wird sie ersetzt. Hat sie
+ * dieselben Züge, bleibt ihre Auswertung (seit 26.11.2026: Die Spielhülle des Abenteuers schreibt
+ * eine beendete Partie noch einmal, etwa mit dem Nachwort, nachdem der Nachlauf der Auswertung
+ * schon gespeichert hat; vorher gingen die Werte dabei verloren).
  */
 export function legeAb(stand: Spielstand, partie: Partie): Spielstand {
+  const alt = stand.partien.find((e) => e.partie.id === partie.id);
   const andere = stand.partien.filter((e) => e.partie.id !== partie.id);
   const laufend = stand.laufend?.id === partie.id ? null : stand.laufend;
-  const partien = [{ partie, werte: [], beste: [], abstaende: [], varianten: [] }, ...andere].slice(
-    0,
-    MAX_PARTIEN,
-  );
+  const neu =
+    alt && gleicheZuege(alt.partie, partie)
+      ? { ...alt, partie }
+      : { partie, werte: [], beste: [], abstaende: [], varianten: [] };
+  const partien = [neu, ...andere].slice(0, MAX_PARTIEN);
   return { ...stand, laufend, partien, besiegt: mitBesiegtem(stand.besiegt, partie) };
 }
 

@@ -118,6 +118,26 @@ export function bekannteBegriffe(
   return bekannt;
 }
 
+/** Varianten mit den normalen Regeln: nur die Darstellung ist anders (Blindschach, nach Gehör). */
+const BESPRECHBARE_VARIANTEN: ReadonlySet<string> = new Set(["blind", "gehoer"]);
+
+/** Was die Regel von der Einstellung einer Partie braucht. */
+export interface Varianteneinstellung {
+  readonly abenteuer?: { readonly variante?: string };
+}
+
+/**
+ * Lässt sich die Partie besprechen (und im Hintergrund auswerten)? Wunsch des Autors
+ * (26.11.2026): nur Partien nach den normalen Regeln. Ohne Variante oder mit „blind“ und „gehoer“
+ * ja; „schach960“ nein (Theorie und Fehlerarten passen nicht, und Ambrose lernt 960 selbst erst).
+ * Jede andere, auch künftige Variante bleibt draußen, bis sie hier ausdrücklich steht.
+ * Beispiel: { abenteuer: { kennung: "…", variante: "schach960" } } → false; ohne variante → true.
+ */
+export function besprechbarePartie(einstellung: Varianteneinstellung): boolean {
+  const variante = einstellung.abenteuer?.variante;
+  return variante === undefined || BESPRECHBARE_VARIANTEN.has(variante);
+}
+
 /** Wer bespricht: Ambrose, oder der Held allein (Tiefpunkt) oder allein nach dem Abschied. */
 export type Besprechungsstimme = "ambrose" | "allein" | "abschied";
 

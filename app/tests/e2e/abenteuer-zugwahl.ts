@@ -31,6 +31,8 @@ export interface Partiestand {
   readonly ende: string | null;
   /** Sieger des Endes, wenn es einen gibt. */
   readonly sieger: string | null;
+  /** Bewertete Stellungen im Partieeintrag (0, solange die Partie läuft oder nichts gespeichert ist). */
+  readonly ausgewertet: number;
 }
 
 /** Ein bewerteter Zug: UCI-Schreibweise und Wert in Bauern aus Sicht dessen, der zieht. */
@@ -76,12 +78,14 @@ export function liesPartieImBrowser(): Promise<Partiestand | null> {
           zuege: { san: string }[];
           einstellung: { startFen: string; abenteuer?: { kennung: string } };
         };
-        const d = r.result as { spiel?: { laufend?: P; partien?: { partie: P }[] } } | undefined;
-        const alle = [
-          ...(d?.spiel?.laufend ? [d.spiel.laufend] : []),
-          ...(d?.spiel?.partien ?? []).map((e) => e.partie),
+        type E = { partie: P; werte?: unknown[] };
+        const d = r.result as { spiel?: { laufend?: P; partien?: E[] } } | undefined;
+        const alle: E[] = [
+          ...(d?.spiel?.laufend ? [{ partie: d.spiel.laufend }] : []),
+          ...(d?.spiel?.partien ?? []),
         ];
-        const p = alle.find((e) => e.einstellung.abenteuer);
+        const e = alle.find((x) => x.partie.einstellung.abenteuer);
+        const p = e?.partie;
         db.close();
         fertig(
           p
@@ -91,6 +95,7 @@ export function liesPartieImBrowser(): Promise<Partiestand | null> {
                 zuege: p.zuege.map((z) => z.san),
                 ende: p.ende?.art ?? null,
                 sieger: p.ende?.sieger ?? null,
+                ausgewertet: e?.werte?.length ?? 0,
               }
             : null,
         );

@@ -4,8 +4,9 @@
  *
  * Rolle im Gesamtbild: Zusatzansicht „abenteuer-partie“ (Vollbild); der Wert ist die Id der Partie
  * in der App. Die Logik bleibt die der App: `usePartie` spielt die Züge des Gegners, führt die
- * Uhr und speichert jeden Zug; die beendete Partie steht wie jede andere in der Partienliste und
- * wird dort beim Öffnen ausgewertet. Hier fehlen mit Absicht Kopfzeile, Zugliste, Werkzeuge,
+ * Uhr und speichert jeden Zug; die beendete Partie steht wie jede andere in der Partienliste. Die
+ * Auswertung rechnet schon während des Spiels und nach dem Ende im Nachlauf weiter
+ * (useHintergrundauswertung.ts), damit die Besprechung sofort bereit ist. Hier fehlen mit Absicht Kopfzeile, Zugliste, Werkzeuge,
  * Auswertung, „Neue Partie“ und „Teilen“ (Wunsch des Autors, 10.11.2026). Nach dem Ende führt
  * „Weiter“ in die Oberwelt; dort liest das Spiel das Ergebnis und zeigt seine Ergebniskarte.
  * Abhängigkeiten: ui/komponenten/partie/usePartie.ts (Logik), Brettbereich, useLeserzug,
@@ -46,6 +47,7 @@ import { Zeithinweis } from "./Zeithinweis";
 import { useBegegnung } from "./useBegegnung";
 import { useSchutzengel } from "./useSchutzengel";
 import { useStaerkewechsel } from "./useStaerkewechsel";
+import { useHintergrundauswertung } from "./useHintergrundauswertung";
 import { useKurzform } from "./useKurzform";
 import { useZugerraten } from "./useZugerraten";
 import { useKurzsperre } from "./useKurzsperre";
@@ -205,6 +207,8 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
   const raten = useZugerraten(engel.steuerung, partie);
   // Kurze Partieformen (R13 bis R13b): nach den vereinbarten Zügen entscheidet die Bewertung.
   const kurz = useKurzform(partie);
+  // Auswertung schon während des Spiels, Rest im Nachlauf (Besprechung sofort bereit, 26.11.2026).
+  useHintergrundauswertung(partie);
   const bedienung = useLeserzug(raten.steuerung, s.fen, false);
   // Nachspielen der beendeten Partie: Zahl der gezeigten Halbzüge; null = Schlussstellung.
   const [stelle, setzeStelle] = useState<number | null>(null);

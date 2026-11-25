@@ -12426,5 +12426,35 @@
       "aufgang": null
     },
     "nur_pfad": true
+  },
+  "spiel/eigene/musikhaus_ruine.png": {
+    "grundriss": {
+      "form": "rechteck",
+      "breite": 10,
+      "tiefe": 6,
+      "geschosse": 1,
+      "tueren": [{"von": 7, "bis": 8}],
+      "fenster": {
+        "EG": [{"von": 3, "bis": 3}, {"von": 4, "bis": 5}, {"von": 9, "bis": 10}, {"von": 11, "bis": 11}]
+      },
+      "hinweis": "Musikhaus Port Delacroix als Ruine (Gemini K6): Schindeldach über sechs Reihen, Front mit vernagelten Fenstern, schiefe Tür mittig; Haus etwa 10 Kacheln breit, mittig auf dem 13 Kacheln breiten Bild",
+      "aufgang": null
+    },
+    "nur_pfad": true
+  },
+  "spiel/eigene/musikhaus_neu.png": {
+    "grundriss": {
+      "form": "rechteck",
+      "breite": 10,
+      "tiefe": 6,
+      "geschosse": 1,
+      "tueren": [{"von": 7, "bis": 8}],
+      "fenster": {
+        "EG": [{"von": 3, "bis": 3}, {"von": 4, "bis": 5}, {"von": 9, "bis": 10}, {"von": 11, "bis": 11}]
+      },
+      "hinweis": "Musikhaus Port Delacroix wiederaufgebaut (Gemini K6): Schindeldach über sechs Reihen, Holzfront mit Veranda, Doppeltür mittig; Haus etwa 10 Kacheln breit, mittig auf dem 13 Kacheln breiten Bild",
+      "aufgang": null
+    },
+    "nur_pfad": true
   }
 }

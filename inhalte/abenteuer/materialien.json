@@ -21,6 +21,7 @@
     "klippeRot": "spiel/eigene/klippe_rot.png",
     "klippeCanyon": "spiel/eigene/klippe_canyon.png",
     "klippeBoeschung": "spiel/eigene/klippe_boeschung.png",
+    "klippeGranit": "spiel/eigene/klippe_granit.png",
     "sandSee": "spiel/eigene/sand_see.png",
     "ackerGemini": "spiel/eigene/acker_gemini.png",
     "klippeGras": "spiel/eigene/klippe_gras.png",
@@ -29,6 +30,7 @@
     "see": "spiel/eigene/wasser_see.png",
     "strand": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_16x16.png",
     "watt": "spiel/eigene/wasser_watt.png",
+    "wattTextur": "spiel/eigene/wasser_watt_textur.png",
     "sumpfboden": "spiel/eigene/sumpfboden.png",
     "pisteRot": "spiel/eigene/piste_rot.png",
     "rosentapete": "spiel/eigene/rosentapete.png",
@@ -542,8 +544,9 @@
       }
     },
     "wasser_watt": {
-      "bogen": "watt",
-      "feld": [1, 1],
+      "bogen": "wattTextur",
+      "feld": [5, 0],
+      "textur": [6, 6],
       "rand": [0, 0]
     },
     "sumpfboden": {

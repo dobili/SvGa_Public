@@ -2491,6 +2491,20 @@
       "begehbar": true,
       "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
+    "sb18FaehreGemini": {
+      "quelle": "spiel/eigene/faehre_gemini.png",
+      "lauf": "waagrecht",
+      "breite": 224,
+      "hoehe": 144,
+      "kollision": false,
+      "art": "fahrzeug",
+      "zustand": "gebraucht",
+      "stil": "maritim",
+      "blick": "keine",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand",
+      "beschreibung": "Liegende Fähre von oben, Bug rechts: Stahlrumpf mit Reling, weißer Aufbau mit Brücke und rotem Schornstein auf dem Achterdeck (Gemini K3 Rumpf und K4 Aufbau, 26.11.2026, zusammengesetzt); ersetzt hafen_faehre in Silicon Bay; die Pelikaninsel hat die kleinere pk18FaehreKlein"
+    },
     "sb8Faehrhaeuschen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/15_Police_Station_Singles_16x16/ME_Singles_Police_Station_16x16_Police_Station_Roof_Cabin_1.png",
       "breite": 64,

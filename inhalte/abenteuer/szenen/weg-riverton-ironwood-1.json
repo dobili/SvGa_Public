@@ -323,8 +323,16 @@
       "feld": [16, 8]
     },
     {
-      "moebel": "wr5Fabrikhalle",
-      "feld": [1, 7]
+      "moebel": "wr18WerkhalleKanal",
+      "feld": [4, 10]
+    },
+    {
+      "moebel": "iw5Schornstein",
+      "feld": [3, 0]
+    },
+    {
+      "moebel": "iw5Schornstein",
+      "feld": [10, 0]
     },
     {
       "moebel": "wr14ZaunSenkrecht",
@@ -2013,14 +2021,6 @@
     {
       "moebel": "wg4BlumeGelb",
       "feld": [9, 183]
-    },
-    {
-      "moebel": "iw5Schornstein",
-      "feld": [3, 0]
-    },
-    {
-      "moebel": "iw5Schornstein",
-      "feld": [10, 0]
     },
     {
       "moebel": "wr14Kutter",

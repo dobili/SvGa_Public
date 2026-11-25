@@ -593,19 +593,9 @@
       "feld": [27, 32]
     },
     {
-      "moebel": "pd6Musikhaus",
+      "moebel": "pd18MusikhausRuine",
       "feld": [39, 31],
       "id": "mh"
-    },
-    {
-      "moebel": "pd6PlaneDach",
-      "auf": "mh",
-      "versatz": [-40, -50]
-    },
-    {
-      "moebel": "pd6PlaneDachKlein",
-      "auf": "mh",
-      "versatz": [60, -40]
     },
     {
       "moebel": "pd6Kiste",
@@ -1025,11 +1015,11 @@
     },
     {
       "name": "musikhausTuer",
-      "feld": [46, 41]
+      "feld": [45, 41]
     },
     {
       "name": "musikhausTuer",
-      "feld": [47, 41]
+      "feld": [46, 41]
     },
     {
       "name": "wuestenzug",

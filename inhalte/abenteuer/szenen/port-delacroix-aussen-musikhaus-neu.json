@@ -593,7 +593,7 @@
       "feld": [27, 32]
     },
     {
-      "moebel": "pd6Musikhaus",
+      "moebel": "pd18MusikhausNeu",
       "feld": [39, 31],
       "id": "mh"
     },
@@ -891,7 +891,7 @@
     {
       "auf": "mh",
       "moebel": "pd6SchildMusikhaus",
-      "versatz": [-30, 8]
+      "versatz": [0, -12]
     },
     {
       "moebel": "pdPfuetze1",
@@ -970,11 +970,11 @@
     },
     {
       "name": "musikhausTuer",
-      "feld": [46, 41]
+      "feld": [45, 41]
     },
     {
       "name": "musikhausTuer",
-      "feld": [47, 41]
+      "feld": [46, 41]
     },
     {
       "name": "wuestenzug",

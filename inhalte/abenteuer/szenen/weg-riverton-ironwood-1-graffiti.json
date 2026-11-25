@@ -324,8 +324,16 @@
       "feld": [16, 8]
     },
     {
-      "moebel": "wr5Fabrikhalle",
-      "feld": [1, 7]
+      "moebel": "wr18WerkhalleKanal",
+      "feld": [4, 10]
+    },
+    {
+      "moebel": "iw5Schornstein",
+      "feld": [3, 0]
+    },
+    {
+      "moebel": "iw5Schornstein",
+      "feld": [10, 0]
     },
     {
       "moebel": "wr14ZaunSenkrecht",
@@ -2029,14 +2037,6 @@
       "moebel": "wr8GraffitiTurm",
       "feld": [13, 31],
       "vorn": true
-    },
-    {
-      "moebel": "iw5Schornstein",
-      "feld": [3, 0]
-    },
-    {
-      "moebel": "iw5Schornstein",
-      "feld": [10, 0]
     },
     {
       "moebel": "wr14Kutter",

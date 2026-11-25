@@ -470,6 +470,20 @@
         "#.#......#.#"
       ]
     },
+    "pk18FaehreKlein": {
+      "quelle": "spiel/eigene/faehre_gemini_klein.png",
+      "lauf": "waagrecht",
+      "breite": 176,
+      "hoehe": 112,
+      "kollision": false,
+      "art": "fahrzeug",
+      "zustand": "gebraucht",
+      "stil": "maritim",
+      "blick": "keine",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand",
+      "beschreibung": "Die Fähre von sb18FaehreGemini in drei Vierteln der Größe (aus denselben Gemini-Bildern K3/K4 gelesen): Über dem Steg der Pelikaninsel liegen nur 7 Reihen Wasser"
+    },
     "pk9Faehre": {
       "quelle": "spiel/eigene/hafen_faehre.png",
       "lauf": "waagrecht",

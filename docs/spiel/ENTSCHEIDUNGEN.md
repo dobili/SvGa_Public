@@ -17,7 +17,11 @@ die Entscheidungsseite (Claude-Artefakt „Schach-Abenteuer Entscheidungen“) o
   Speicherformat); Varianten in eigener Komponente zählen ihre Züge aus dem Ende und sind nicht
   nachspielbar.
 - **Dunkelmodus:** Eingaben und Auswahlknöpfe im Spiel mit festen Farben (`color-scheme: light`).
-- **Knöpfe 📖 und ☰:** ein Raster weiter vom Rand und Steuerkreuz, tiefer, aus der iPhone-Ecke.
+- **Knöpfe 📖 und ☰:** ein Raster weiter vom Rand und Steuerkreuz, tiefer, aus der iPhone-Ecke. Im
+  Dialog oben auf einer Höhe: Alles in der Welt (Münzen, Tagebuchreihe, Meldungen, Ortsschild)
+  rechnet oben ohne den sicheren Rand, weil die Welt schon darunter beginnt; vorher zählte er
+  doppelt. Prüfung: `tests/e2e/abenteuer-leistenknoepfe.spec.ts` (gleiche Höhe, Fuge, hoch und
+  quer, Welt und Dialog).
 - **Runde ◀ ▶:** creme mit Goldrand und Navy-Schrift.
 - **Freie Revanche:** Straßengegner mit fester Stellung (Abbildung oder FEN, auch Endspiele)
   spielen nach dem ersten Sieg eine ganze Partie aus der Grundstellung (`regeln/freiestart.ts`).

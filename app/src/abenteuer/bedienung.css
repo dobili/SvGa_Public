@@ -199,7 +199,11 @@
 .bildschirm-abenteuer .abenteuer-welt:has(.abenteuer-dialog) .abenteuer-leiste {
   /* Über Meldungen (z-index 3) wie der Menüknopf: Das Tagebuch bleibt auch im Dialog erreichbar. */
   z-index: 4;
-  top: calc(env(safe-area-inset-top) + var(--raster));
+  /* Nur ein Raster: Die Welt beginnt schon unter dem sicheren Rand (.bildschirm-abenteuer hat ihn
+     als Innenabstand); der Menüknopf liegt außerhalb der Welt bei sicherer Rand + Raster. Mit dem
+     Rand hier zählte er doppelt, und 📖 saß am iPhone eine Notch-Höhe tiefer als ☰ (Befund des
+     Autors, 25.11.2026: versetzt statt nebeneinander). */
+  top: var(--raster);
   bottom: auto;
   left: auto;
   right: calc(var(--raster) * 2 + var(--leistenknopf) + var(--spiel-pixel) * 2);
@@ -223,12 +227,16 @@
   right: calc(var(--raster) * 2 + var(--leistenknopf) + var(--spiel-pixel) * 2);
 }
 
+/* Alles in der Welt (Münzen, Tagebuchreihe, Meldungen, Ortsschild) rechnet oben ohne den sicheren
+   Rand: Die Welt beginnt schon darunter (.bildschirm-abenteuer, padding-top). Vorher zählte er
+   doppelt, und am iPhone lagen 📖 und die Münzen eine Notch-Höhe tiefer als ☰ (25.11.2026). */
+
 /* ---------- Meldungen als schmale Leiste oben (Fotos 14.11.2026) ----------
    „Neu im Tagebuch …“ war quer eine halbe Bildschirmhöhe groß und lag zugleich mit dem Dialog
    da. Jetzt: eine Zeile mit kleinem „Weiter“ rechts daneben; Antippen des Textes schließt auch
    (Oberwelt.tsx). Hoch liegt die Leiste unter der Zeile mit Münzen, Menü und Tagebuch. */
 .bildschirm-abenteuer .abenteuer-ergebnis.abenteuer-meldung {
-  top: calc(env(safe-area-inset-top) + var(--raster) * 2.5 + var(--leistenknopf));
+  top: calc(var(--raster) * 2.5 + var(--leistenknopf));
   left: var(--raster);
   right: var(--raster);
   bottom: auto;
@@ -267,7 +275,7 @@
 /* Quer und breit genug: oben in der Mitte, zwischen Tagebuch links und Münzen und Menü rechts. */
 @media (orientation: landscape) and (max-height: 600px) and (min-width: 760px) {
   .bildschirm-abenteuer .abenteuer-ergebnis.abenteuer-meldung {
-    top: calc(env(safe-area-inset-top) + var(--raster));
+    top: var(--raster);
     left: 50%;
     right: auto;
     width: min(34rem, calc(100vw - 2 * 15rem));
@@ -304,8 +312,7 @@
 .bildschirm-abenteuer
   .abenteuer-welt:not(:has(.abenteuer-dialog))
   .abenteuer-ergebnis.abenteuer-meldung:has(> .abenteuer-fundbild) {
-  inset: calc(env(safe-area-inset-top) + var(--raster))
-    calc(env(safe-area-inset-right) + var(--raster))
+  inset: var(--raster) calc(env(safe-area-inset-right) + var(--raster))
     calc(var(--leiste-unten) + var(--leistenknopf) + var(--raster))
     calc(env(safe-area-inset-left) + var(--raster));
   z-index: 6;
@@ -386,7 +393,7 @@
 .abenteuer-ortsschild {
   position: absolute;
   z-index: 2;
-  top: calc(env(safe-area-inset-top) + var(--raster) * 2.5 + var(--leistenknopf));
+  top: calc(var(--raster) * 2.5 + var(--leistenknopf));
   left: 50%;
   max-width: calc(100% - var(--raster) * 4);
   margin: 0;

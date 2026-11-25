@@ -581,7 +581,9 @@ Profil › Einstellungen › Fehler melden.
 - [ ] N2720. **Knöpfe Tagebuch und Menü (25.11.2026):** Im Hochformat und im Querformat stehen
       📖 und ☰ weiter vom Rand und vom Steuerkreuz weg, etwas tiefer, und nicht mehr in der runden
       Ecke des iPhones. Beide lassen sich mit dem Daumen treffen, ohne das Steuerkreuz zu
-      berühren.
+      berühren. Im Gespräch stehen 📖 und ☰ oben rechts nebeneinander auf einer Höhe, die Münzen
+      in derselben Zeile links daneben (vorher saß 📖 am iPhone eine Notch-Höhe tiefer und weiter
+      links). Auch Meldungen und das Ortsschild rücken oben näher an den Rand.
       **Antwort:** „N2720 ok“ oder Format und was stört.
 - [ ] N2721. **Runde Pfeilknöpfe (25.11.2026):** In einer Vorführung oder Zeigefolge (etwa ein
       Brettbeispiel im Dialog) sind die runden ◀ ▶ hell (creme mit goldenem Rand und dunkler

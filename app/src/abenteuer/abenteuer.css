@@ -617,7 +617,8 @@ body:has(:is(.bildschirm-abenteuer, .abenteuer-huelle)) .update-hinweis {
 /* Münzen oben rechts (docs/spiel/08, G6; nur zum Lesen, deshalb oben, docs/spiel/30). */
 .abenteuer-muenzen {
   position: absolute;
-  top: calc(env(safe-area-inset-top) + var(--raster));
+  /* Ohne sicheren Rand: Die Münzen stehen in der Welt, die schon darunter beginnt (bedienung.css). */
+  top: var(--raster);
   right: calc(var(--raster) * 7);
   z-index: 3;
   display: flex;

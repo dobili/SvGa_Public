@@ -735,6 +735,18 @@
       "verbund": "lastkahnLaengs",
       "ende": "sued",
       "hinweis": "Lastkahn längs, Heck mit Steuerhaus nach Süden (Gemini 15.11.2026)"
+    },
+    "wr18WerkhalleKanal": {
+      "quelle": "spiel/eigene/werkhalle_kanal.png",
+      "breite": 128,
+      "hoehe": 112,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "industrie",
+      "tuer": [[3, 7], [4, 7]],
+      "beschreibung": "Werkhalle aus Backstein am Kanal mit Sheddach (vier Oberlichter), zwei Schornsteinen, Sprossenfenstern und eisernem Doppeltor (Gemini K5, 26.11.2026); ersetzt die vergrößerte Blechhütte wr5Fabrikhalle, nicht begehbar"
     }
   }
 }

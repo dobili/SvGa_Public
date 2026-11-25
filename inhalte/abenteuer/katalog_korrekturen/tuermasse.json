@@ -20,6 +20,10 @@
     "rahmen": [88, 95, 120, 129],
     "herkunft": "gemessen"
   },
+  "spiel/eigene/werkhalle_kanal.png": {
+    "rahmen": [46, 86, 82, 112],
+    "herkunft": "von Hand"
+  },
   "spiel/eigene/villa_whitlock.png": {
     "rahmen": [31, 151, 49, 170],
     "herkunft": "von Hand"

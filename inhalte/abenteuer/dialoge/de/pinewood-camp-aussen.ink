@@ -304,7 +304,7 @@ Die Kringel gewinnen. Immer. #sprecher:ezra #stimmung:lacht
 
 === hollis_erstes_treffen ===
 ~ hollisGetroffen = true
-Unter einem der Riesenbäume sitzt eine Rangerin, ein Fernglas um den Hals. Das Brett steht auf einer Wurzel. #sprecher:erzaehler
+Unter einem der Riesenbäume steht eine Rangerin, ein Fernglas um den Hals. Das Brett steht auf einer Wurzel. #sprecher:erzaehler
 Über euch arbeitet ein Specht. #sprecher:erzaehler
 Hollis. Ich spiele nur draußen. #sprecher:hollis #stimmung:laechelt
 Drinnen kann ich nicht denken. #sprecher:hollis #stimmung:laechelt

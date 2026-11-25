@@ -256,7 +256,7 @@ Remis. Für einen Sieg hat die Pause keinem von uns gereicht. #sprecher:gus #sti
     -> edna_laden
 }
 ~ ednaGetroffen = true
-Hinter einem Verkaufsfenster voller Schrauben, Laternen und Fahrradketten sitzt eine alte Dame mit Lesebrille. #sprecher:erzaehler
+Hinter einem Verkaufsfenster voller Schrauben, Laternen und Fahrradketten steht eine alte Dame mit Lesebrille. #sprecher:erzaehler
 Edna. Eisenwaren. #sprecher:edna #stimmung:stolz
 Was du hier kaufst, hält. #sprecher:edna #stimmung:stolz
 {

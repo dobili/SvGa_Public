@@ -370,7 +370,7 @@ Gehalten, aber nicht ausgebaut. Remis, noch mal? #sprecher:rosa #stimmung:laeche
 // der Riss ist eine gemessene Stille von drei Sekunden (#pause:3). Victor durchgehend kalt; die
 // Porträtfassung „Riss“ für genau eine Zeile gibt es noch nicht (bis dahin muede). Klang: Stillen
 // S18 und S19 (21_Klangplan.md), Victors Thema beim Gehen.
-An der Haltestelle sitzt jemand. Gerade, die Füße nebeneinander, das Tablet auf den Knien. #sprecher:erzaehler #musik:aus
+An der Haltestelle steht jemand. Gerade, die Füße nebeneinander, das Tablet in beiden Händen. #sprecher:erzaehler #musik:aus
 Das Plakat hängt über {rv_ihm}. #sprecher:erzaehler
 {rv_Er} zieht. Das Programm antwortet sofort. #sprecher:erzaehler #klang:tablet
 Ein leises Klicken, wie ein Fingernagel auf Glas. #sprecher:erzaehler

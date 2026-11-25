@@ -1,3 +1,20 @@
+Stand: 25.11.2026, abends (Haupt-Chat, Schach-Abenteuer): **Kartenwahl, Geschlecht, Partiebesprechung, Schilder auf beta (b3c258ac).**
+
+- Kartenwahl: nur die Erklärung der zuletzt angetippten Karte, Fächer bleibt sichtbar (N2706).
+- Held/Heldin und Rivale/Rivalin nur noch auf dem Startbildschirm, im Menü nur Anzeige (N2707).
+- Partiebesprechung mit Ambrose im Tagebuch („Besprechen“), drei Stufen nach der Geschichte,
+  Ankündigung nach der ersten Clubpartie (docs/spiel/auftraege/partiebesprechung_25-11.md, N2708).
+  Offen: Analyse im Hintergrund, bessere Fortsetzung auf dem Brett vorspielen, englische Texte,
+  Lesefassung und Simulation kennen die Besprechung nicht.
+- Schilder nach RO53.6 (Namen englisch, Hinweise deutsch), Dauerprüfung schildsprache; privat
+  52 Bilder neu, alle Hintergründe neu gezeichnet. Fehlen noch: Dialogbilder ortsschild_211,
+  schild_camp, schild_werkstor, schild_darlene.
+- Blickprobe: alle 126 Blickpunkte lösen aus (hoch und quer), Begleiterfelder und Haltepause
+  korrigiert; Lucia und Ngata sitzen auf der zweiten Bank der Felsnase. Gate n70 grün.
+
+**Nächster Schritt:** Antworten des Autors zu Mappe 17 und Tests N2666 bis N2708 einarbeiten,
+Bilder aus Mappe 15/16b einbauen, offene Punkte der Besprechung. Nichts nach `main`.
+
 Stand: 24.11.2026, abends (Haupt-Chat, Schach-Abenteuer): **Welle 3, Ambrose und mittel-4 auf beta (743f6545).**
 
 - Welle 3 (mittel-2): Jahreszeit je Außenkarte (Süden winter_mild ohne Schnee, auch Port Delacroix;

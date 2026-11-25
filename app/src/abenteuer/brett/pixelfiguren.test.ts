@@ -1,6 +1,6 @@
 /**
- * Tests der Pixelfiguren: die Platzhalter der Märchenfiguren (Auftrag des
- * Hauptchats, 26.11.2026: Falke, Bison, Drache als Buchstabe im Kreis, bis Bilder da sind).
+ * Tests der Pixelfiguren: die Märchenfiguren (Auftrag des Hauptchats, 26.11.2026: Falke, Bison,
+ * Drache, gezeichnet nach den Gemini-Figuren des Autors).
  */
 import { describe, expect, it } from "vitest";
 import { figurenraster } from "./pixelfiguren";

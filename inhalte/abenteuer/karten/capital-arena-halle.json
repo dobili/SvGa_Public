@@ -1962,11 +1962,18 @@
      "name": "victor",
      "type": "figur",
      "x": 256,
-     "y": 96,
+     "y": 64,
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "links"
+      }
+     ]
     },
     {
      "id": 10,
@@ -1983,12 +1990,19 @@
      "id": 11,
      "name": "nova",
      "type": "figur",
-     "x": 176,
-     "y": 176,
+     "x": 160,
+     "y": 160,
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "links"
+      }
+     ]
     },
     {
      "id": 12,
@@ -2027,12 +2041,19 @@
      "id": 15,
      "name": "kade",
      "type": "figur",
-     "x": 176,
+     "x": 192,
      "y": 256,
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "rechts"
+      }
+     ]
     },
     {
      "id": 16,

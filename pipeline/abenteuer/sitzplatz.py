@@ -51,6 +51,26 @@ def sichtbarer_umriss(bild) -> tuple[int, int, int, int] | None:
     return None if rand is None else (rand[0], rand[1], rand[2] - rand[0], rand[3] - rand[1])
 
 
+# Sitzfläche ohne Lehne und Armlehnen (wie sitzplatz.ts, Befund 25.11.2026 abends, Park Maple Falls).
+LEHNENANTEIL = 0.3
+ARMLEHNE_OBEN, ARMLEHNE_UNTEN, FUSS_UEBER_KANTE = 1.5 * K, 0.375 * K, 0.25 * K
+RINGSUM = ("rechts", "oben", "links", "unten")  # gegen den Uhrzeigersinn
+VIERTEL = 90
+
+
+def blick_in_lage(blick: str | None, stueck: dict) -> str | None:
+    """Blick des Möbels, wie es liegt: gespiegelt tauschen links und rechts, dann dreht die Drehung.
+
+    Beispiel: ``links`` mit ``spiegeln`` → ``rechts`` (Seitenbank im Park, Jo); wie sitzplatz.ts.
+    """
+    if blick not in RINGSUM:
+        return None
+    if stueck.get("spiegeln") and blick in ("links", "rechts"):
+        blick = "rechts" if blick == "links" else "links"
+    schritte = round(stueck.get("drehung", 0) / VIERTEL)
+    return RINGSUM[(RINGSUM.index(blick) - schritte) % len(RINGSUM)]
+
+
 def sitzmoebel(gesetzt: list[dict], katalog: dict, bilder: list) -> list[dict]:
     """Die Sitzmöbel einer Karte mit ganzem Rechteck, sichtbarem Teil, Tiefe und Blick.
 
@@ -73,6 +93,7 @@ def sitzmoebel(gesetzt: list[dict], katalog: dict, bilder: list) -> list[dict]:
                 "hoehe": bild.height,
                 "tiefe": stueck["tiefe"],
                 "einzeln": _art(stueck["name"], angabe.get("art")) in EINZELSITZE,
+                **({"blick": blick} if (blick := blick_in_lage(angabe.get("blick"), stueck)) else {}),
                 "sichtbar": None if innen is None else (x + innen[0], y + innen[1], innen[2], innen[3]),
             }
         )
@@ -106,8 +127,17 @@ def sitzlage(sitz: dict, feld: tuple[int, int]) -> tuple[int, int, float]:
     sx, sy, sb, sh = sitz["sichtbar"] or (sitz["x"], sitz["y"], sitz["breite"], sitz["hoehe"])
     mitte, fuss = feld[0] * K + K / 2, (feld[1] + 1) * K
     einzeln = sitz["breite"] <= K or sitz.get("einzeln", False)
-    waagerecht = sx + sb / 2 - mitte if einzeln else _rasterrest(sitz["x"])
-    senkrecht = sy + sh - fuss if sitz["hoehe"] <= 2 * K else _rasterrest(sitz["y"])
+    blick = sitz.get("blick")
+    # Bänke von der Seite: ohne die Lehne hinter dem Rücken; Stühle und Sessel bleiben mittig.
+    lehne = sb * LEHNENANTEIL if blick in ("links", "rechts") and not sitz.get("einzeln") else 0
+    links = sx + (lehne if blick == "rechts" else 0)
+    waagerecht = links + (sb - lehne) / 2 - mitte if einzeln else _rasterrest(sitz["x"])
+    if sitz["hoehe"] <= 2 * K:
+        vorn = blick == "unten" and not sitz.get("einzeln")
+        senkrecht = sy + sh - (FUSS_UEBER_KANTE if vorn else 0) - fuss
+    else:
+        roh = fuss + _rasterrest(sitz["y"])
+        senkrecht = max(sy + ARMLEHNE_OBEN, min(sy + sh - ARMLEHNE_UNTEN, roh)) - fuss
     return _begrenzt(waagerecht), _begrenzt(senkrecht), sitz["tiefe"] + SITZ_TIEFENABSTAND
 
 

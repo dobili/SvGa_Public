@@ -5,7 +5,7 @@ import {
   mitSchwimmbildern,
   scharGroesse,
   schwimmUrsprungY,
-  schwimmversatz,
+  scharplatz,
   standbasis,
   tierAnsicht,
   tierartVon,
@@ -78,10 +78,36 @@ describe("tierAnsicht", () => {
   });
 });
 
-describe("schwimmversatz", () => {
-  it("reiht Schwimmer entlang des Wegs auf, nicht seitlich ans Ufer", () => {
-    expect(schwimmversatz({ x: 22, y: 30 }, { x: 22, y: 44 }, 2, 2)).toEqual({ x: 0, y: 4 });
-    expect(schwimmversatz({ x: 5, y: 41 }, { x: 15, y: 41 }, 1, 2)).toEqual({ x: 2, y: 0 });
+describe("scharplatz", () => {
+  const ente = (von: { x: number; y: number }, bis: { x: number; y: number }) => ({
+    name: "enten",
+    typ: "tier" as const,
+    feld: von,
+    von,
+    bis,
+    wann: "immer" as const,
+    sagt: null,
+    zeigt: null,
+    bild: null,
+    verhalten: "schwimmen" as const,
+    sitzt: null,
+  });
+
+  it("Schwimmer bleiben auf ihrem Weg im Wasser, auch die letzten einer großen Schar", () => {
+    // Teich im Park von Maple Falls: Weg von (24, 27) bis (27, 27), fünf Enten (Befund 25.11.2026).
+    const v = ente({ x: 24, y: 27 }, { x: 27, y: 27 });
+    for (let i = 0; i < 5; i++) {
+      const p = scharplatz(v, i, 1);
+      expect(p.von.x).toBeGreaterThanOrEqual(24);
+      expect(p.von.x).toBeLessThanOrEqual(27);
+      expect(p.bis).toEqual({ x: 27, y: 27 });
+    }
+    expect(scharplatz(v, 2, 1).von).toEqual({ x: 26, y: 27 });
+  });
+
+  it("an Land um das Feld des Objekts, mit Abstand", () => {
+    const v = { ...ente({ x: 5, y: 5 }, { x: 9, y: 5 }), verhalten: "ausweichen" as const };
+    expect(scharplatz(v, 1, 2).von).toEqual({ x: 7, y: 5 });
   });
 });
 

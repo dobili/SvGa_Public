@@ -14,6 +14,7 @@ from pipeline.abenteuer.bodenvariation import (  # noqa: E402
     GULLY_ABSTAND,
     K,
     aktiv,
+    am_rand,
     innenkachel,
     variiere,
     zufall,
@@ -80,6 +81,41 @@ def test_gullys_mit_abstand():
     for i, (ax, ay) in enumerate(gitter):
         for bx, by in gitter[i + 1 :]:
             assert abs(ax - bx) + abs(ay - by) >= GULLY_ABSTAND
+
+
+def test_gullys_nur_am_rand_des_belags():
+    # Befund 25.11.2026 abends: Gullys lagen unter der Mittellinie; sie gehören an den Bordstein.
+    grund, gezeichnet = _bild()
+    bild = variiere({"karte": "a.b", "bodenvariation": True}, grund, gezeichnet, MATERIALIEN, _kachel)
+    gitter = [
+        (x, y)
+        for x in range(12)
+        for y in range(12)
+        if bild.getpixel((x * K + 6, y * K + 7)) == (52, 50, 54, 255)
+    ]
+    assert gitter
+    assert all(x in (0, 11) or y in (0, 11) for x, y in gitter)
+    assert am_rand({(0, 0): ("a", [0, 0]), (1, 0): ("b", [0, 0])}, 0, 0)
+    mitte = {(x, y): ("a", [0, 0]) for x in range(3) for y in range(3)}
+    assert not am_rand(mitte, 1, 1)
+
+
+def test_kein_gully_auf_der_mittellinie():
+    # Fahrbahn drei Felder breit (Reihen 1 bis 3) zwischen Gras; die gelbe Mittellinie (strasse.py)
+    # läuft durch die mittlere Reihe. Selbst mit Anteil 1 liegt dort kein Gully, nur an den Rändern.
+    breite = 40
+    grund = Image.new("RGBA", (breite * K, 5 * K), GRAU)
+    gezeichnet = {(x, y): ("pflaster", [0, 0]) for x in range(breite) for y in range(1, 4)}
+    gezeichnet |= {(x, y): ("gras", [0, 0]) for x in range(breite) for y in (0, 4)}
+    bild = variiere({"karte": "a.b", "bodenvariation": True}, grund, gezeichnet, MATERIALIEN, _kachel)
+    gully = [
+        (x, y)
+        for x in range(breite)
+        for y in range(1, 4)
+        if bild.getpixel((x * K + 6, y * K + 7)) == (52, 50, 54, 255)
+    ]
+    assert gully
+    assert all(y in (1, 3) for _, y in gully)
 
 
 # --- Variation über die ganze Fläche (Kartenblick M01, 24.11.2026) ---

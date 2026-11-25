@@ -2,7 +2,15 @@
 import { describe, expect, it } from "vitest";
 import type { Belebung, Tierverhalten } from "./belebung";
 import { neueBewegung, schritt, type Bewegung, type Umgebung } from "./belebungsbewegung";
-import { DRAENGEN_S, festeFelder, Tierweg, tierVor, verscheuchziel } from "./tierweg";
+import {
+  DRAENGEN_S,
+  festeFelder,
+  landeplatz,
+  sperreAus,
+  Tierweg,
+  tierVor,
+  verscheuchziel,
+} from "./tierweg";
 
 const SCHRITT_S = 0.05;
 
@@ -105,9 +113,31 @@ describe("Tiere im Weg", () => {
     expect(darsteller[0]?.b.verscheucht).toBe(true);
   });
 
-  it("Flieger und Schwimmer zählen nicht als Tier vor dem Helden", () => {
+  it("eine sitzende Taube zählt als Tier vor dem Helden, eine fliegende und Schwimmer nicht", () => {
     const taube = { v: tier("fliegen", { x: 4, y: 24 }), b: neueBewegung({ x: 4, y: 24 }) };
+    expect(tierVor({ x: 4, y: 23 }, "unten", [taube])).toBe(taube);
+    taube.b.ziel = { x: 9, y: 24 };
     expect(tierVor({ x: 4, y: 23 }, "unten", [taube])).toBeNull();
+    expect(sperreAus(taube.v, taube.b)).toBe(true);
+    const ente = { v: tier("schwimmen", { x: 4, y: 24 }), b: neueBewegung({ x: 4, y: 24 }) };
+    expect(tierVor({ x: 4, y: 23 }, "unten", [ente])).toBeNull();
+  });
+
+  it("Tauben landen nicht auf Juno: Ziel auf einem Menschen → nächstes freies Feld", () => {
+    const juno = (x: number, y: number) => x === 54 && y === 24;
+    expect(landeplatz({ x: 54, y: 24 }, true, juno, () => true)).not.toEqual({ x: 54, y: 24 });
+    const v = tier("fliegen", { x: 50, y: 24 }, { x: 54, y: 24 });
+    const darsteller = [{ v, b: neueBewegung(v.feld) }];
+    const statistin = {
+      v: { ...tier("sitzen"), typ: "statist" as const },
+      b: neueBewegung({ x: 54, y: 24 }),
+    };
+    const weg = new Tierweg(() => [...darsteller, statistin]);
+    const u: Umgebung = { held: { x: 1, y: 1 }, frei: () => true, zufall: () => 0 };
+    weg.belegt(u.held);
+    (darsteller[0] as { b: Bewegung }).b.ziel = { x: 54, y: 24 };
+    weg.nachBild(u, SCHRITT_S);
+    expect(darsteller[0]?.b.ziel).not.toEqual({ x: 54, y: 24 });
   });
 
   it("Sitz- und Liegestellen und Figuren sind belegt, Tische nicht", () => {

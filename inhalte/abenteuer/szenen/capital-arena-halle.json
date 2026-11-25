@@ -328,7 +328,8 @@
   "figuren": [
     {
       "name": "victor",
-      "feld": [16, 6]
+      "feld": [16, 4],
+      "sitzt": "links"
     },
     {
       "name": "turnierleiterin",
@@ -336,7 +337,8 @@
     },
     {
       "name": "nova",
-      "feld": [11, 11]
+      "feld": [10, 10],
+      "sitzt": "links"
     },
     {
       "name": "bea",
@@ -352,7 +354,8 @@
     },
     {
       "name": "kade",
-      "feld": [11, 16]
+      "feld": [12, 16],
+      "sitzt": "rechts"
     },
     {
       "name": "lin",

@@ -25,6 +25,7 @@
  * Abhängigkeiten: moebel.ts (Typen), zeichentiefe.ts.
  */
 import type { Moebel } from "./moebel";
+import type { Moebelform } from "./moebelform";
 import { blickrichtung } from "./sitzrichtung";
 import type { Richtung } from "./szene";
 import { moebelschluessel } from "./vordergrund";
@@ -35,6 +36,43 @@ export const SITZARTEN: readonly string[] = ["stuhl", "bank", "sessel", "sofa", 
 
 /** So weit liegt eine Sitzende in der Tiefe über ihrem Möbel: weniger als ein Pixel. */
 export const SITZ_TIEFENABSTAND = 0.5;
+
+/**
+ * Sitzfläche ohne Lehne und Armlehnen (Befund des Autors, 25.11.2026 abends, Park Maple Falls):
+ * - Seitlich gesehene Bank (Blick links oder rechts, keine Einzelsitze wie Stuhl und Sessel): Die
+ *   Lehne nimmt diesen Anteil der sichtbaren Breite auf der Seite hinter dem Rücken ein; die Figur
+ *   sitzt auf der Mitte des Rests.
+ * - Hohe Sitzmöbel (mehr als zwei Kacheln, die senkrechte Bank): Die Füße bleiben mindestens
+ *   ARMLEHNE_OBEN unter der Oberkante und ARMLEHNE_UNTEN über der Unterkante des sichtbaren Bildes,
+ *   sonst saß Coach Delgado halb auf der oberen Armlehne.
+ * - Von vorn gesehene Bank: Die Füße hängen FUSS_UEBER_KANTE über der sichtbaren Unterkante, die
+ *   Hüfte liegt auf der Sitzfläche (Abernathy an der Schachbank stand sonst davor).
+ */
+const LEHNENANTEIL = 0.3;
+const ARMLEHNE_OBEN_KACHELN = 1.5;
+const ARMLEHNE_UNTEN_KACHELN = 0.375;
+const FUSS_UEBER_KANTE_KACHELN = 0.25;
+/** Blickrichtungen gegen den Uhrzeigersinn (wie REIHENFOLGE in sitzrichtung.ts). */
+const RINGSUM: readonly Richtung[] = ["rechts", "oben", "links", "unten"];
+const VIERTELDREHUNG = 90;
+
+/**
+ * Blick eines Sitzmöbels, wie es auf der Karte liegt: gespiegelt tauschen links und rechts, dann
+ * dreht die Drehung (im Uhrzeigersinn, wie Phaser) den Blick mit.
+ * Warum: Die gespiegelte Seitenbank im Park (22, 22) hat ihre Lehne links; Jo schaute nach dem
+ * Katalogblick „links“ in die Lehne. Beispiel: links, gespiegelt → rechts; rechts, 90° → unten.
+ */
+export function blickInLage(
+  blick: Richtung,
+  form?: Pick<Moebelform, "spiegeln" | "drehung">,
+): Richtung {
+  const gespiegelt = form?.spiegeln && (blick === "links" || blick === "rechts");
+  const richtung = gespiegelt ? (blick === "links" ? "rechts" : "links") : blick;
+  const schritte = Math.round((form?.drehung ?? 0) / VIERTELDREHUNG);
+  const index = RINGSUM.indexOf(richtung);
+  const anzahl = RINGSUM.length;
+  return RINGSUM[(((index - schritte) % anzahl) + anzahl) % anzahl] ?? richtung;
+}
 
 /** Grad im halben Kreis (Umrechnung der Drehung ins Bogenmaß). */
 const HALBKREIS_GRAD = 180;
@@ -113,7 +151,8 @@ export function sitzmoebelAus(
     .filter((m) => istSitzmoebel(m.name, m.angabe.art))
     .map((m) => {
       const sichtbar = sichtbarVon(m);
-      const blick = blickrichtung(m.angabe.blick);
+      const katalogblick = blickrichtung(m.angabe.blick);
+      const blick = katalogblick ? blickInLage(katalogblick, m.form) : null;
       return {
         name: m.name,
         einzeln: EINZELSITZE.includes(artVon(m.name, m.angabe.art) ?? ""),
@@ -232,11 +271,37 @@ export function sitzlage(
   const mitte = feld.x * kachel + kachel / 2;
   const fuss = (feld.y + 1) * kachel;
   const einzeln = sitz.breite <= kachel || sitz.einzeln === true;
-  const waagerecht = einzeln ? s.x + s.breite / 2 - mitte : rasterrest(sitz.x, kachel);
-  const senkrecht = sitz.hoehe <= 2 * kachel ? s.y + s.hoehe - fuss : rasterrest(sitz.y, kachel);
+  // Bänke von der Seite: ohne Lehne; Stühle und Sessel (einzeln) bleiben auf der sichtbaren Mitte.
+  const lehnenblick = sitz.einzeln === true ? undefined : sitz.blick;
+  const waagerecht = einzeln ? sitzmitte(s, lehnenblick) - mitte : rasterrest(sitz.x, kachel);
+  const senkrecht = sitzhoehe(sitz, s, fuss, kachel) - fuss;
   const tiefe = sitz.tiefe + SITZ_TIEFENABSTAND;
   const lage = { dx: begrenzt(waagerecht, kachel), dy: begrenzt(senkrecht, kachel), tiefe };
   return sitz.schluessel ? { ...lage, moebel: sitz.schluessel } : lage;
+}
+
+/** Waagerechte Mitte der Sitzfläche: seitlich gesehen ohne die Lehne hinter dem Rücken. */
+function sitzmitte(s: Umriss, blick: Richtung | undefined): number {
+  const lehne = blick === "links" || blick === "rechts" ? s.breite * LEHNENANTEIL : 0;
+  const links = blick === "rechts" ? s.x + lehne : s.x;
+  return links + (s.breite - lehne) / 2;
+}
+
+/**
+ * Wo die Füße einer Sitzenden stehen (Kartenpixel). Bis zwei Kacheln hoch an der sichtbaren
+ * Unterkante, von vorn gesehen etwas darüber; höher (senkrechte Bank) der Feinschub gegen das
+ * Raster, aber zwischen den Armlehnen. Beispiel: Seitenbank (240, 352) 16 × 48, Coach auf (15, 22):
+ * Füße 368 → 376.
+ */
+function sitzhoehe(sitz: Sitzmoebel, s: Umriss, fuss: number, kachel: number): number {
+  if (sitz.hoehe <= 2 * kachel) {
+    const vorn = sitz.blick === "unten" && sitz.einzeln !== true;
+    return s.y + s.hoehe - (vorn ? kachel * FUSS_UEBER_KANTE_KACHELN : 0);
+  }
+  const roh = fuss + rasterrest(sitz.y, kachel);
+  const oben = s.y + kachel * ARMLEHNE_OBEN_KACHELN;
+  const unten = s.y + s.hoehe - kachel * ARMLEHNE_UNTEN_KACHELN;
+  return Math.max(oben, Math.min(unten, roh));
 }
 
 /**

@@ -452,12 +452,13 @@
     },
     {
       "name": "lin",
-      "feld": [20, 13]
+      "feld": [20, 16],
+      "sitzt": "oben"
     },
     {
       "name": "nova",
-      "feld": [2, 6],
-      "blick": "oben"
+      "feld": [3, 6],
+      "sitzt": "oben"
     }
   ],
   "belebung": [

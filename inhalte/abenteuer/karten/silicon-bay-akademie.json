@@ -1551,17 +1551,24 @@
      "name": "lin",
      "type": "figur",
      "x": 320,
-     "y": 208,
+     "y": 256,
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "oben"
+      }
+     ]
     },
     {
      "id": 8,
      "name": "nova",
      "type": "figur",
-     "x": 32,
+     "x": 48,
      "y": 96,
      "width": 16,
      "height": 16,
@@ -1569,7 +1576,7 @@
      "visible": true,
      "properties": [
       {
-       "name": "blick",
+       "name": "sitzt",
        "type": "string",
        "value": "oben"
       }

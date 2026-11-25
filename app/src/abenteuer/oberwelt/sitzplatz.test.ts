@@ -7,6 +7,7 @@ import { describe, expect, it } from "vitest";
 import type { Moebel } from "./moebel";
 import {
   blickDesSitzes,
+  blickInLage,
   BODENSITZ,
   findeSitz,
   istSitzmoebel,
@@ -243,5 +244,54 @@ describe("sitzsperre: was eine Sitzende sperrt", () => {
     // Der Körper des Helden ist 12 Pixel hoch; über der Sperre bleiben in der Kopfkachel 7.
     const frei = K - (-sitzsperre(6, -9, K).y - K / 2);
     expect(frei).toBeLessThan(K - 4);
+  });
+});
+
+describe("Bänke im Park von Maple Falls (Befund 25.11.2026 abends)", () => {
+  // Seitenbank 16 × 48 bei (240, 352), Lehne rechts, Blick links (mf6BankSeiteLinks).
+  const seitenbank: Sitzmoebel = {
+    name: "mf6BankSeiteLinks",
+    x: 240,
+    y: 352,
+    breite: 16,
+    hoehe: 48,
+    tiefe: 392,
+    blick: "links",
+    sichtbar: { x: 240, y: 352, breite: 16, hoehe: 48 },
+  };
+
+  it("gespiegelt und gedreht dreht der Blick mit (Jo schaute in die Lehne)", () => {
+    expect(blickInLage("links", { spiegeln: true, drehung: 0 })).toBe("rechts");
+    expect(blickInLage("links", { spiegeln: false, drehung: 0 })).toBe("links");
+    expect(blickInLage("rechts", { spiegeln: false, drehung: 90 })).toBe("unten");
+    expect(blickInLage("unten", { spiegeln: true, drehung: 0 })).toBe("unten");
+  });
+
+  it("seitlich sitzt man vor der Lehne, nicht auf ihr", () => {
+    // Sichtbare Mitte 248; ohne die Lehne rechts (30 %) liegt die Sitzmitte bei 245,6, links 250,4.
+    expect(sitzlage(seitenbank, { x: 15, y: 23 }, K).dx).toBe(-2);
+    expect(sitzlage({ ...seitenbank, blick: "rechts" }, { x: 15, y: 23 }, K).dx).toBe(2);
+  });
+
+  it("oben und unten nicht auf der Armlehne (Coach auf dem oberen Ende)", () => {
+    // Füße 368 → mindestens 352 + 24 = 376; unten höchstens 400 − 6 = 394.
+    expect(sitzlage(seitenbank, { x: 15, y: 22 }, K).dy).toBe(8);
+    expect(sitzlage(seitenbank, { x: 15, y: 24 }, K).dy).toBe(-6);
+    expect(sitzlage(seitenbank, { x: 15, y: 23 }, K).dy).toBe(0);
+  });
+
+  it("von vorn sitzt man auf der Bank, nicht davor (Abernathy an der Schachbank)", () => {
+    const schachbank: Sitzmoebel = {
+      name: "mfBank",
+      x: 52,
+      y: 184,
+      breite: 24,
+      hoehe: 24,
+      tiefe: 200,
+      blick: "unten",
+      sichtbar: { x: 52, y: 184, breite: 24, hoehe: 24 },
+    };
+    // Füße 208 an der Unterkante → 4 Pixel darüber.
+    expect(sitzlage(schachbank, { x: 3, y: 12 }, K).dy).toBe(-4);
   });
 });

@@ -13,7 +13,8 @@ import { describe, expect, it } from "vitest";
 import { begehbar, sperrkacheln, type Sperrangabe, type Tiledkarte } from "./begehbar";
 import { liesBelebung, type Feld } from "./belebung";
 import { geformtAusObjekt } from "./moebelform";
-import { amBoden, festeFelder, verscheuchziel } from "./tierweg";
+import { scharGroesse, scharversatz } from "./tiere";
+import { amBoden, festeFelder, landeplatz, verscheuchziel } from "./tierweg";
 
 const KACHEL = 16;
 const INHALTE = new URL("../../../../inhalte/abenteuer/", import.meta.url);
@@ -113,5 +114,30 @@ describe("Tiere im Weg über alle Karten", () => {
     }
     expect(befunde).toEqual([]);
     expect(eingeklemmt.length, eingeklemmt.join("\n")).toBeLessThanOrEqual(EINGEKLEMMT_HOECHSTENS);
+  });
+});
+
+describe("Vögel über alle Karten (25.11.2026 abends: Taube auf Juno)", () => {
+  it("jeder Landeplatz einer Schar auf Mensch oder Sitz hat ein freies Feld daneben", () => {
+    const befunde: string[] = [];
+    for (const datei of readdirSync(new URL("karten/", INHALTE))) {
+      if (!datei.endsWith(".json")) continue;
+      const karte = JSON.parse(
+        readFileSync(new URL(`karten/${datei}`, INHALTE), "utf8"),
+      ) as Tiledkarte;
+      const besetzt = feste(karte);
+      const mensch = (x: number, y: number) => besetzt.has(`${x},${y}`);
+      for (const v of liesBelebung(karte).filter((b) => b.verhalten === "fliegen")) {
+        for (let i = 0; i < scharGroesse(v.name); i++) {
+          const versatz = scharversatz(i);
+          for (const ende of [v.von, v.bis]) {
+            const feld = { x: ende.x + versatz.x, y: ende.y + versatz.y };
+            if (mensch(feld.x, feld.y) && !landeplatz(feld, true, mensch, () => true))
+              befunde.push(`${datei}: ${v.name} ohne Landeplatz bei (${feld.x}, ${feld.y})`);
+          }
+        }
+      }
+    }
+    expect(befunde).toEqual([]);
   });
 });

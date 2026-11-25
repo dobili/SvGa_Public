@@ -898,7 +898,7 @@
      "id": 7,
      "name": "nova",
      "type": "figur",
-     "x": 304,
+     "x": 288,
      "y": 128,
      "width": 16,
      "height": 16,
@@ -906,9 +906,9 @@
      "visible": true,
      "properties": [
       {
-       "name": "blick",
+       "name": "sitzt",
        "type": "string",
-       "value": "oben"
+       "value": "unten"
       }
      ]
     },

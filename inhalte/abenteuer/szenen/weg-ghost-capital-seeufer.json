@@ -600,7 +600,8 @@
   "figuren": [
     {
       "name": "wanderer",
-      "feld": [124, 15]
+      "feld": [125, 14],
+      "sitzt": "unten"
     }
   ],
   "belebung": [
@@ -675,9 +676,9 @@
     {
       "name": "enten",
       "typ": "tier",
-      "feld": [40, 4],
+      "feld": [40, 3],
       "eigenschaften": {
-        "von": "34,4",
+        "von": "34,3",
         "bis": "46,3",
         "verhalten": "schwimmen"
       }

@@ -166,8 +166,26 @@ def innenkachel(art: dict, feld: list[int]) -> bool:
     return list(feld) == list(art["feld"]) or list(feld) in [list(k) for k in art.get("varianten", [])]
 
 
+def am_rand(gezeichnet: dict, x: int, y: int) -> bool:
+    """Liegt das Feld am Rand seines Belags (ein Nachbar mit anderem Belag oder kein Nachbar)?
+
+    Warum: Gullys gehören an die Bordsteinkante, nicht mitten auf die Fahrbahn (Befund des Autors,
+    25.11.2026 abends: In Maple Falls lagen sie unter der gelben Mittellinie, die strasse.py danach
+    darüberzeichnet). Mittellinien laufen durch Innenfelder oder auf der Grenze zweier Felder; ein
+    Gully in der Mitte eines Randfelds liegt mindestens eine halbe Kachel daneben.
+    Beispiel: Fahrbahn drei Felder breit, Gully nur in der ersten oder dritten Spur.
+    """
+    belag = gezeichnet.get((x, y), (None,))[0]
+    return any(
+        gezeichnet.get(n, (None,))[0] != belag for n in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1))
+    )
+
+
 def _kachelweise(szene: dict, bild: Image.Image, gezeichnet: dict, boeden: dict, kachel_aus) -> set:
-    """Ersatzkacheln und Überlagerungen je Innenkachel (auf ``bild``); Ausgabe: Felder mit Gully."""
+    """Ersatzkacheln und Überlagerungen je Innenkachel (auf ``bild``); Ausgabe: Felder mit Gully.
+
+    Gullys nur am Rand ihres Belags (``am_rand``), mit GULLY_ABSTAND zueinander.
+    """
     gullys: list[tuple[int, int]] = []
     for (x, y), (name, feld) in sorted(gezeichnet.items(), key=lambda e: (e[0][1], e[0][0])):
         art = boeden.get(name, {})
@@ -181,7 +199,7 @@ def _kachelweise(szene: dict, bild: Image.Image, gezeichnet: dict, boeden: dict,
             else bild.crop((x * K, y * K, (x + 1) * K, (y + 1) * K))
         )
         frei = all(abs(x - gx) + abs(y - gy) >= GULLY_ABSTAND for gx, gy in gullys)
-        gully = frei and r.random() < v.get("gullys", 0)
+        gully = frei and r.random() < v.get("gullys", 0) and am_rand(gezeichnet, x, y)
         if gully:
             gullys.append((x, y))
         bild.paste(_variiere_feld(teil.copy(), v, r, gully), (x * K, y * K))

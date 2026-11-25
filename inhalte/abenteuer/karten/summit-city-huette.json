@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 36,
+ "nextobjectid": 37,
  "layers": [
   {
    "id": 1,
@@ -697,23 +697,37 @@
      "id": 8,
      "name": "kit",
      "type": "figur",
-     "x": 48,
-     "y": 96,
+     "x": 80,
+     "y": 128,
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "links"
+      }
+     ]
     },
     {
      "id": 9,
      "name": "haraldsen",
      "type": "figur",
-     "x": 208,
+     "x": 96,
      "y": 96,
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "rechts"
+      }
+     ]
     },
     {
      "id": 10,
@@ -1355,6 +1369,29 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      }
+     ]
+    },
+    {
+     "id": 36,
+     "name": "mf2StuhlR",
+     "type": "moebel",
+     "x": 80,
+     "y": 112,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 136
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

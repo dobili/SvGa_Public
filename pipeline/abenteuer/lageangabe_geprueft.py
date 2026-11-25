@@ -15,7 +15,6 @@ Außerhalb von Akt 1 sind fünf Sätze an die Karte angepasst (Pepe, Edna, Old P
 """
 
 KLEIN = "Kleiner Gegenstand in der Hand, im Figurenbild nicht darstellbar und nicht nötig."
-STUHL = "Karte: Figur auf den Stuhl daneben setzen (Szene `sitzt`); Sitzbilder sind seit 25.11. da."
 
 GEPRUEFT: dict[str, str] = {
     # Akt 1
@@ -68,21 +67,6 @@ GEMELDET: dict[str, str] = {
         "Bildwunsch oder Text: Ezra hat im Bild eine Gitarre, keine Pfeife und kein Klemmbrett."
     ),
     # Sitzen mit Stuhl in der Nähe: Karte (Sitzplatz und Sitzrichtung, mit mittel-3 abstimmen).
-    "sitzt:victor:capital-arena-halle.finale_angebot": STUHL + " (ca7StuhlLinks am Finaltisch)",
-    "sitzt:kade:capital-arena-halle.kade": STUHL + " (ca7Stuhl am Tisch bei Nova)",
-    "sitzt:nova:capital-arena-halle.runde3_vorher": STUHL + " (Tisch eins)",
-    "sitzt:nova:crossroads-raststaette.nova_bitte": STUHL + " (cr7Hocker in der Ecke)",
-    "sitzt:mira:desert-springs-garage.mira_clubkampf": STUHL + " (Reifenstapel dsReifen)",
-    "sitzt:mira:desert-springs-garage.mira_erinnerung": STUHL + " (Reifenstapel dsReifen)",
-    "sitzt:tamsin:riverton-pavillon.tamsin_eli": STUHL + " (Kisten am Tisch)",
-    "sitzt:lin:silicon-bay-akademie.lin_nach_sieg": STUHL + " (sb8StuhlRuecken am Brett)",
-    "sitzt:nova:silicon-bay-akademie.nova_erstes_treffen": STUHL
-    + " (Fassung ohne Ansprechen: sitzt am Ringlicht)",
-    "sitzt:haraldsen:summit-city-huette.haraldsen_reihe": STUHL + " (Ohrensessel am Kamin)",
-    "sitzt:kit:summit-city-huette.kit_reihe": STUHL + " (mf2StuhlL am Clubtisch)",
-    "sitzt:wanderer:weg-ghost-capital.wanderer_erstes": STUHL + " (Hocker; Text sagt Bank: Bank oder Text)",
-    "sitzt:wanderer:weg-ghost-capital.wanderer_seiten": STUHL + " (wie wanderer_erstes)",
-    # Sitzen ohne Möbel: Stufen, Geländer, Parkbank in der Hütte (Karte oder Text, Entscheidung offen).
     "sitzt:wanderer:capital-arena-aussen.wanderer": (
         "Sitzt laut Text auf den Stufen, keine Stufen nah: am Boden sitzen lassen oder Text „steht“."
     ),

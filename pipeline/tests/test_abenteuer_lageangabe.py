@@ -9,7 +9,8 @@ from pipeline.abenteuer.lageangabe import PRUEFUNGEN, kandidaten
 from pipeline.abenteuer.lageangabe_geprueft import GEMELDET, GEPRUEFT
 
 # Gemeldete Fälle (Bildwünsche, Sitzplätze für die Karte), Stand 26.11.2026. Nur senken.
-OBERGRENZE_GEMELDET = 23
+# 25.11.2026 abends: 13 Sitzplätze behoben (mittel-3, Figuren auf Stuhl, Hocker, Sessel gesetzt).
+OBERGRENZE_GEMELDET = 10
 
 
 def test_jeder_kandidat_ist_angesehen():

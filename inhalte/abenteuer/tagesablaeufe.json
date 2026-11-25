@@ -1663,8 +1663,8 @@
           "von": 0,
           "bis": 0,
           "karte": "summitCity.huette",
-          "feld": [13, 6],
-          "tut": "steht"
+          "feld": [6, 6],
+          "tut": "sitzt"
         }
       ]
     },
@@ -1999,16 +1999,16 @@
           "von": 6,
           "bis": 10,
           "karte": "capitalArena.halle",
-          "feld": [11, 16],
-          "tut": "steht"
+          "feld": [12, 16],
+          "tut": "sitzt"
         },
         {
           "art": "arbeit",
           "von": 10,
           "bis": 18,
           "karte": "capitalArena.halle",
-          "feld": [11, 16],
-          "tut": "steht"
+          "feld": [12, 16],
+          "tut": "sitzt"
         },
         {
           "art": "freizeit",
@@ -2160,16 +2160,16 @@
           "von": 6,
           "bis": 9,
           "karte": "summitCity.huette",
-          "feld": [3, 6],
-          "tut": "steht"
+          "feld": [5, 8],
+          "tut": "sitzt"
         },
         {
           "art": "arbeit",
           "von": 9,
           "bis": 17,
           "karte": "summitCity.huette",
-          "feld": [3, 6],
-          "tut": "steht"
+          "feld": [5, 8],
+          "tut": "sitzt"
         },
         {
           "art": "freizeit",
@@ -2254,16 +2254,16 @@
           "von": 6,
           "bis": 10,
           "karte": "siliconBay.akademie",
-          "feld": [20, 13],
-          "tut": "steht"
+          "feld": [20, 16],
+          "tut": "sitzt"
         },
         {
           "art": "arbeit",
           "von": 10,
           "bis": 18,
           "karte": "siliconBay.akademie",
-          "feld": [20, 13],
-          "tut": "steht"
+          "feld": [20, 16],
+          "tut": "sitzt"
         },
         {
           "art": "freizeit",
@@ -2482,7 +2482,7 @@
           "bis": 16,
           "karte": "desertSprings.garage",
           "feld": [10, 7],
-          "tut": "steht"
+          "tut": "sitzt am Boden"
         },
         {
           "art": "freizeit",
@@ -3707,7 +3707,7 @@
           "bis": 16,
           "karte": "riverton.pavillon",
           "feld": [9, 19],
-          "tut": "steht"
+          "tut": "sitzt am Boden"
         },
         {
           "art": "freizeit",

@@ -13672,12 +13672,19 @@
      "id": 10,
      "name": "wanderer",
      "type": "figur",
-     "x": 1984,
-     "y": 240,
+     "x": 2000,
+     "y": 224,
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "sitzt",
+       "type": "string",
+       "value": "unten"
+      }
+     ]
     },
     {
      "id": 11,

@@ -322,8 +322,8 @@
     },
     {
       "name": "nova",
-      "feld": [19, 8],
-      "blick": "oben"
+      "feld": [18, 8],
+      "sitzt": "unten"
     },
     {
       "name": "theo",
@@ -382,7 +382,14 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["klassisch", "modern", "rustikal", "einfach", "laendlich", "industrie"],
+  "stil": [
+    "klassisch",
+    "modern",
+    "rustikal",
+    "einfach",
+    "laendlich",
+    "industrie"
+  ],
   "datei": "karten/crossroads-raststaette.json",
   "boeden": {
     "f": "fliesenWeiss"

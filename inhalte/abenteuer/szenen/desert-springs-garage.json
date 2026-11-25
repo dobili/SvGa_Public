@@ -159,7 +159,7 @@
     {
       "name": "mira",
       "feld": [10, 7],
-      "blick": "oben"
+      "sitzt": "unten"
     },
     {
       "name": "dot",
@@ -167,7 +167,15 @@
     }
   ],
   "zustand": ["gebraucht", "alt", "neu"],
-  "stil": ["industrie", "einfach", "klassisch", "modern", "rustikal", "laendlich", "schule"],
+  "stil": [
+    "industrie",
+    "einfach",
+    "klassisch",
+    "modern",
+    "rustikal",
+    "laendlich",
+    "schule"
+  ],
   "sperren": [
     [2, 9],
     [3, 9]

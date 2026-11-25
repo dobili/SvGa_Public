@@ -135,6 +135,11 @@
       "feld": [4, 1],
       "an_wand": true,
       "versatz": [0, 6]
+    },
+    {
+      "moebel": "mf2StuhlR",
+      "feld": [5, 7],
+      "zu": "t1"
     }
   ],
   "ausloeser": [
@@ -175,11 +180,13 @@
     },
     {
       "name": "kit",
-      "feld": [3, 6]
+      "feld": [5, 8],
+      "sitzt": "links"
     },
     {
       "name": "haraldsen",
-      "feld": [13, 6]
+      "feld": [6, 6],
+      "sitzt": "rechts"
     }
   ],
   "belebung": [

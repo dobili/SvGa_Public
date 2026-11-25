@@ -600,7 +600,8 @@
   "figuren": [
     {
       "name": "wanderer",
-      "feld": [124, 15]
+      "feld": [125, 14],
+      "sitzt": "unten"
     }
   ],
   "belebung": [

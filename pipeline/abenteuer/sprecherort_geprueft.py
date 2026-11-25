@@ -20,9 +20,6 @@ GEPRUEFT: dict[str, str] = {
     "kommt:hector:maple-falls-diner.hector_c": (
         "Ein Gast kommt herein, nicht Hector; Hector dreht sich nur um (Name im selben Satz)."
     ),
-    "sitzt:haraldsen:summit-city-huette.ward_laurie": (
-        "Victor sitzt am Kamin, im Pullover von Mr. Haraldsen; Haraldsen ist nur als Besitzer genannt."
-    ),
     "liegen:held:maple-falls-wohnzimmer.erster_abend": (
         "Vorausblick am Ende des Abends; die Nacht selbst spielt seit dem 20.11.2026 im Zimmer, im "
         "Bett (maple-falls-dachboden.erste_nacht, #stelle)."

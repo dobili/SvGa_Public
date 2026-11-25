@@ -12,7 +12,10 @@
  * 3. der Sprechbogen aus Modern UI (`portraets/<name>.png`, animiert);
  * 4. das Ersatzbild (`portraets/<name>.svg`), erst der Fassung, dann der Grundfassung.
  * Fehlt alles, bleibt nur der Name stehen.
- * Abhängigkeiten: paket/paketlader.ts, dialog/portraetpfad.ts, dialog/portraetblatt.ts.
+ * Die Merklisten gelten bis zur nächsten Änderung am Paket (paket/paketmerker.ts): Danach sind die
+ * alten Bildadressen freigegeben, und ein offenes Porträt sucht neu (Befund 25.11.2026).
+ * Abhängigkeiten: paket/paketlader.ts, paket/paketmerker.ts, dialog/portraetpfad.ts,
+ * dialog/portraetblatt.ts.
  */
 import { useEffect, useState } from "react";
 import {
@@ -20,6 +23,7 @@ import {
   paketdateiAlsAdresse,
   paketdateiAlsAdresseOderNull,
 } from "../paket/paketlader";
+import { paketmerkliste, usePaketstand } from "../paket/paketmerker";
 import { blattfeld, blattpfad, type Blattaufbau } from "./portraetblatt";
 import { grossePortraets, portraetpfad } from "./portraetpfad";
 import { rivalinJetzt, rivalinsprecher } from "../regeln/rivalform";
@@ -34,8 +38,10 @@ const GROSS_PX = 96;
 const KLEIN_PX = 48;
 
 /** Einmal geladene Bilder je Schlüssel (null: fehlt), damit nicht jede Zeile neu lädt. */
-const geladen = new Map<string, Promise<Bild | null>>();
-let blattaufbau: Promise<Blattaufbau | null> | null = null;
+const geladen = paketmerkliste<Promise<Bild | null>>();
+/** Der Aufbau der Blätter, einmal je Paket (einziger Schlüssel AUFBAU). */
+const blattaufbau = paketmerkliste<Promise<Blattaufbau | null>>();
+const AUFBAU = "daten/portraetblatt.json";
 
 function einmal(schluessel: string, laden: () => Promise<Bild | null>): Promise<Bild | null> {
   let bild = geladen.get(schluessel);
@@ -48,8 +54,12 @@ function einmal(schluessel: string, laden: () => Promise<Bild | null>): Promise<
 
 /** Der Aufbau der Blätter aus dem Paket; ohne ihn gibt es keine Blätter (erwarteter Rückfall). */
 function aufbau(): Promise<Blattaufbau | null> {
-  blattaufbau ??= liesPaketJson<Blattaufbau>("daten/portraetblatt.json").catch(() => null);
-  return blattaufbau;
+  let a = blattaufbau.get(AUFBAU);
+  if (!a) {
+    a = liesPaketJson<Blattaufbau>(AUFBAU).catch(() => null);
+    blattaufbau.set(AUFBAU, a);
+  }
+  return a;
 }
 
 /** 1. Großes Einzelbild der Fassung. */
@@ -125,7 +135,8 @@ export function Portraet({
   // Rivalin Victoria: nur ihr eigenes Porträt; fehlt es, bleibt nur ihr Name stehen
   // (regeln/rivalform.ts). Victors Gesicht neben „Victoria“ wäre falsch.
   const gesucht = rivalinsprecher(sprecher, rivalinJetzt()) ?? sprecher;
-  const schluessel = `${gesucht}:${stimmung ?? ""}`;
+  const paketstand = usePaketstand();
+  const schluessel = `${gesucht}:${stimmung ?? ""}:${paketstand}`;
   const [bild, setzeBild] = useState<{ schluessel: string; bild: Bild | null } | null>(null);
   useEffect(() => {
     let aktiv = true;
@@ -136,7 +147,12 @@ export function Portraet({
       aktiv = false;
     };
   }, [gesucht, stimmung, schluessel]);
-  if (!bild || bild.schluessel !== schluessel || !bild.bild) return null;
+  // Solange die neue Stimmung derselben Figur lädt, bleibt ihr bisheriges Bild stehen (sonst
+  // blinkte der Kopf bei jedem Stimmungswechsel kurz leer).
+  const passt =
+    bild?.schluessel === schluessel ||
+    (bild?.schluessel.startsWith(`${gesucht}:`) && bild.schluessel.endsWith(`:${paketstand}`));
+  if (!bild || !passt || !bild.bild) return null;
   const b = bild.bild;
   if (b.art === "blatt") return <Blattbild bild={b} stimmung={stimmung} />;
   if (b.art === "bogen") {

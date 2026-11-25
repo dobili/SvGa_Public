@@ -187,6 +187,17 @@
       "maske": [".......", ".......", ".......", "#######", "#######"],
       "zustand": "verwittert",
       "stil": "industrie"
+    },
+    "pg14Kreidefels": {
+      "quelle": "spiel/eigene/kreidefels.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "natur",
+      "hinweis": "Fels in der Farbe der Canyonwand mit drei Kreidestrichen: Schachzähler der Kletterer (Drei-Schach, M3 26.11.)",
+      "maske_fein": ["........", "........", "........", "........", ".######.", ".######.", ".######.", "..####.."]
     }
   }
 }

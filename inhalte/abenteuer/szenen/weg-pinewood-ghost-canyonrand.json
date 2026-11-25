@@ -576,6 +576,10 @@
       "feld": [55, 16]
     },
     {
+      "moebel": "pg14Kreidefels",
+      "feld": [57, 15]
+    },
+    {
       "moebel": "scFelsKlein",
       "feld": [52, 15],
       "id": "spielfels"

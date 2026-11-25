@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 147,
+ "nextobjectid": 148,
  "layers": [
   {
    "id": 1,
@@ -17105,6 +17105,29 @@
     },
     {
      "id": 145,
+     "name": "pg14Kreidefels",
+     "type": "moebel",
+     "x": 912,
+     "y": 240,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 264
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 146,
      "name": "scFelsKlein",
      "type": "moebel",
      "x": 832,
@@ -17127,7 +17150,7 @@
      ]
     },
     {
-     "id": 146,
+     "id": 147,
      "name": "mf3BrettKleinFiguren",
      "type": "moebel",
      "x": 842,

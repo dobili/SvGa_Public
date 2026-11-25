@@ -5641,6 +5641,10 @@
       "feld": [20, 94]
     },
     {
+      "moebel": "sx10Entenfeld",
+      "feld": [25, 96]
+    },
+    {
       "moebel": "fz11TraktorVorn",
       "feld": [18, 76],
       "bauteil_ok": true

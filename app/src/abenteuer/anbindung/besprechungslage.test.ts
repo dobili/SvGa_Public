@@ -3,7 +3,8 @@
  * Opfer mit der hergegebenen Figur.
  */
 import { describe, expect, it } from "vitest";
-import { lageVor, opferVon } from "./besprechungslage";
+import { regelstellung } from "../../spiel/zuege";
+import { gesprochenePhase, lageVor, opferVon } from "./besprechungslage";
 import type { Motivgrundlage } from "./besprechungsmotiv";
 
 /** Weiß am Zug; 1. Lxh7+ gibt den Läufer für den Bauern h7 (Kxh7 oder Sxh7). */
@@ -47,5 +48,18 @@ describe("opferVon", () => {
     expect(
       opferVon(grundlage(LAEUFEROPFER, "Bxh7+", 0), { index: 0, kategorie: "fehler" }),
     ).toBeNull();
+  });
+});
+
+describe("gesprochenePhase", () => {
+  it("nennt Dame und Läufer gegen Turm Endspiel, ein volles Brett Mittelspiel", () => {
+    const wenig = regelstellung("3r1k2/8/3p3p/2pQ4/2P3B1/8/1P6/7K w - - 0 29");
+    const voll = regelstellung(
+      "r1bq1rk1/1pp2pp1/p1np1n1p/2b1p3/2B1P3/P1NP1N1P/1PP2PP1/R1BQ1RK1 w - - 0 9",
+    );
+    if (!wenig || !voll) throw new Error("Stellung");
+    expect(gesprochenePhase("mittelspiel", wenig.board)).toBe("endspiel");
+    expect(gesprochenePhase("mittelspiel", voll.board)).toBe("mittelspiel");
+    expect(gesprochenePhase("eroeffnung", voll.board)).toBe("eroeffnung");
   });
 });

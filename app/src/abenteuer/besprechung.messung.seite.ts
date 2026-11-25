@@ -21,6 +21,8 @@ export interface Protokollmoment {
   readonly zug: string;
   readonly beste: string;
   readonly folge: readonly string[];
+  /** Hauptvariante vor dem Zug (der bessere Weg), für die Prüfung der Motive „für“. */
+  readonly folgeVor: readonly string[];
   readonly wert: number;
   readonly satz: string;
 }

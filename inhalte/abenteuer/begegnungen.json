@@ -1722,6 +1722,48 @@
       "kartenErlaubt": false,
       "zaehltFuerApp": false,
       "variante": "drache"
+    },
+    {
+      "kennung": "crossroads.nebelschach",
+      "gegner": "mapleFalls.ambrose",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false,
+      "variante": "nebel"
+    },
+    {
+      "kennung": "crossroads.entenschach",
+      "gegner": "mapleFalls.ambrose",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false,
+      "variante": "ente"
+    },
+    {
+      "kennung": "crossroads.tandem",
+      "gegner": "riverton.slick",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false,
+      "variante": "tandem"
     }
   ]
 }

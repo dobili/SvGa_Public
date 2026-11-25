@@ -11,7 +11,7 @@ import { createHash } from "node:crypto";
 import { existsSync } from "node:fs";
 import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import { createRequire } from "node:module";
-import { basename, dirname, extname, join, resolve } from "node:path";
+import { basename, dirname, extname, join, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { kompakteKarte, ladbareKarten } from "./abenteuerpaket-auswahl.mjs";
 import { schreibeMoebel } from "./abenteuerpaket-moebel.mjs";
@@ -25,6 +25,7 @@ import { baueFigurenbogenMitStandbildern } from "./figurenbogen.mjs";
 import { brettbilderDateien } from "./brettbilder-paket.mjs";
 import { alsWebp, webpPfad, wirdWebp } from "./paketbilder.mjs";
 import { alsGrossbild, HOCHGELADEN } from "./grossbilder.mjs";
+import { liesOpusvermerk, opusname, passendeOpusfassung } from "./opusfassungen.mjs";
 
 const require = createRequire(import.meta.url);
 const { Compiler } = require("inkjs/compiler/Compiler");
@@ -109,12 +110,13 @@ const LETZTER_AKT = 4;
 
 /**
  * Musik und Geräusche aus dem privaten Repository (Ordner musik/ und klang/, Atmosphäre T1 und T2,
- * docs/spiel/23_Technik_Atmosphaere.md): m4a und ogg, je in ihrer Paketgruppe. Ohne Ordner nichts;
- * das Spiel bleibt dann still (abenteuer/ton/tonspieler.ts).
+ * docs/spiel/23_Technik_Atmosphaere.md): m4a und ogg, je in ihrer Paketgruppe, dazu je m4a die
+ * passende Opus-Fassung (webm, RO41, skripte/opusfassungen.mjs). Ohne Ordner nichts; das Spiel
+ * bleibt dann still (abenteuer/ton/tonspieler.ts). Ausgabe: Zahl der m4a ohne passende Opus-Fassung.
  */
-async function kopiereTon(ordner) {
+async function kopiereTon(ordner, vermerk) {
   const quelle = join(PRIVAT, ordner);
-  if (!existsSync(quelle)) return;
+  if (!existsSync(quelle)) return 0;
   // Akt 1 liegt direkt im Ordner, Akt 2 bis 4 in Unterordnern akt2 … akt4. Ton gehört nicht zum
   // Grundpaket: Das Spiel startet ohne ihn; Akt 1 lädt gleich danach im Hintergrund, spätere
   // Akte beim Betreten (Entscheidung des Autors, 13.11.2026; Messung „zugang“, 15.11.2026: 25 MB
@@ -130,12 +132,19 @@ async function kopiereTon(ordner) {
   for (const name of (await readdir(quelle)).filter((d) => d.endsWith(".json")).sort()) {
     await schreibe(`${ordner}/${name}`, await readFile(join(quelle, name)), ordner);
   }
+  let ohneOpus = 0;
   for (const { pfad, akt } of quellen) {
     const namen = (await readdir(pfad)).filter((d) => /\.(m4a|ogg)$/.test(d));
     for (const name of namen.sort()) {
-      await schreibe(`${ordner}/${name}`, await readFile(join(pfad, name)), ordner, 1, akt);
+      const bytes = await readFile(join(pfad, name));
+      await schreibe(`${ordner}/${name}`, bytes, ordner, 1, akt);
+      const schluessel = relative(PRIVAT, join(pfad, name)).split(sep).join("/");
+      const opus = await passendeOpusfassung(vermerk, pfad, schluessel, name, bytes);
+      if (opus) await schreibe(`${ordner}/${opusname(name)}`, opus, ordner, 1, akt);
+      else if (name.endsWith(".m4a")) ohneOpus++;
     }
   }
+  return ohneOpus;
 }
 
 /**
@@ -319,8 +328,15 @@ async function main() {
   for (const { pfad, quelle, gruppe } of await brettbilderDateien(PRIVAT)) {
     await schreibe(pfad, await readFile(quelle), gruppe);
   }
-  await kopiereTon("musik");
-  await kopiereTon("klang");
+  const opusvermerk = await liesOpusvermerk(PRIVAT);
+  const ohneOpus =
+    (await kopiereTon("musik", opusvermerk)) + (await kopiereTon("klang", opusvermerk));
+  if (ohneOpus > 0) {
+    console.warn(
+      `Abenteuerpaket: ${ohneOpus} Tondateien ohne passende Opus-Fassung (dort spielt AAC); ` +
+        "python -m pipeline.abenteuer.ton.opusfassung PRIVAT baut sie.",
+    );
+  }
   await kopiereBilder();
   await kopierePrivatordner("grafik/karten", (name) => ladbar.hintergruende.has(name));
   // Möbel: je Ort ein Bogen mit den Möbeln seiner Karten (skripte/abenteuerpaket-moebel.mjs).

@@ -91,8 +91,9 @@ test("Ortsthema in Spuren: gemeinsamer Start, Ausdünnen nach drei Schleifen, wi
       }),
     }),
   );
-  await page.route(/musik\/maple-falls\.(grund|melodie|zusatz)\.m4a$/, (r) => {
-    const spur = /\.(grund|melodie|zusatz)\.m4a$/.exec(
+  // Mit privatem Paket liest Chromium die Opus-Fassung (.webm, paket/tonfassung.ts), sonst m4a.
+  await page.route(/musik\/maple-falls\.(grund|melodie|zusatz)\.(m4a|webm)$/, (r) => {
+    const spur = /\.(grund|melodie|zusatz)\.(m4a|webm)$/.exec(
       r.request().url(),
     )?.[1] as keyof typeof TOENE;
     return r.fulfill({ contentType: "audio/wav", body: wav(TOENE[spur]) });

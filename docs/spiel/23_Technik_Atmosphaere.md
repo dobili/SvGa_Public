@@ -62,6 +62,38 @@ Karten und Kartenzeichner bleiben unberührt; alles hier ist Technik in der App 
 - **Dateien:** `ton/tonplan.ts` (rein: was soll laufen), `ton/tonspieler.ts` (Web Audio, Gain je
   Spur, Überblenden, Puffer aus dem Paket), `ton/tonstand.ts` (Einstellungen),
   Anbindung in Oberwelt und Dialog, Einstellungszeilen, Schema `abenteuer-orte`.
+- **Zwei Fassungen: Opus und AAC (RO41, 26.11.2026).**
+  - Neben jeder `.m4a` liegt im privaten Repository eine Opus-Fassung `.webm` (WebM, weil Safari
+    Opus darin ab iOS 17.4 über `decodeAudioData` dekodiert; Ogg/Opus erst ab iOS 18.4).
+    - Bau: `python -m pipeline.abenteuer.ton.opusfassung PRIVAT` (fehlende und veraltete,
+      `--pruefen` meldet nur). `musikbau` schreibt sie gleich aus der WAV.
+    - Bitraten (begrenzt variabel): Musik 64k Stereo, 48k Mono; Geräusche 48k Stereo, 32k Mono;
+      nie über der Quelle.
+    - Der Vermerk `spiel/opusquellen.json` hält je Datei die Prüfsumme des AAC fest, aus dem oder
+      neben dem sie entstand.
+  - Der Paketbau (`skripte/opusfassungen.mjs`) nimmt eine `.webm` nur mit passendem Vermerk mit.
+    Er kodiert nicht selbst: Der Bau bei Cloudflare hat kein ffmpeg. Fehlt eine Fassung, meldet
+    er es, und das Gerät spielt dort AAC.
+  - Die App (`paket/tonfassung.ts`) prüft einmal je Sitzung: Kennt `canPlayType` den Typ, und
+    dekodiert eine 526 Bytes kleine Opus-Probe? Nur dann Opus. Sonst, ohne Web Audio oder nach 2 s
+    ohne Antwort AAC.
+    - Aufrufer nennen weiter den m4a-Namen; der Paketlader liest die passende Fassung.
+    - Beim Nachladen lässt er die andere aus. Beide liegen auf dem Server, das Gerät hält nur eine.
+  - Größe (Stand 26.11.2026, 550 Dateien; die frühere Angabe „111 MB“ war vor den Spuren):
+
+    | | AAC | Opus | Ersparnis |
+    | --- | ---: | ---: | ---: |
+    | Musik | 161,0 MB | 126,7 MB | 21 % |
+    | Geräusche | 27,5 MB | 19,8 MB | 28 % |
+    | zusammen | 188,6 MB | 146,6 MB | 22 % |
+
+  - Die Opus-Fassungen kommen heute alle aus dem AAC, also mit einem zweiten verlustbehafteten
+    Schritt. Ein `musikbau` ersetzt die der Musik durch Fassungen aus der WAV. Lautheit und
+    Schleifennaht sind gemessen gleich (`ton.lautheit`, Maple Falls und Weg).
+  - Mit Musik 48k statt 64k wären es etwa 37 % weniger. Das entscheidet die Hörprobe des Autors
+    (`codecprobe.py`).
+  - Ein Gerät, das später Opus lernt (neues iOS), lädt den Ton einmal neu. Die AAC-Fassung bleibt
+    bis zur nächsten Paketversion im Cache.
 
 ### T7 Großansicht eines Bildes (klein)
 

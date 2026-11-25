@@ -570,6 +570,19 @@
     {
       "moebel": "pw7Tanne",
       "feld": [72, 5]
+    },
+    {
+      "moebel": "ds8Kreidebeutel",
+      "feld": [55, 16]
+    },
+    {
+      "moebel": "scFelsKlein",
+      "feld": [52, 15],
+      "id": "spielfels"
+    },
+    {
+      "moebel": "mf3BrettKleinFiguren",
+      "auf": "spielfels"
     }
   ],
   "ausloeser": [
@@ -660,7 +673,8 @@
         "von": "104,14",
         "bis": "104,14",
         "tun": "fotografiert den Canyon",
-        "wann": "tag"
+        "wann": "tag",
+        "sagt": "statist.wegPinewoodGhost.canyonrand.fotograf"
       }
     },
     {
@@ -721,6 +735,34 @@
         "von": "8,6",
         "bis": "8,6",
         "verhalten": "sitzen"
+      }
+    },
+    {
+      "name": "kletterin",
+      "typ": "statist",
+      "feld": [51, 15],
+      "eigenschaften": {
+        "von": "51,15",
+        "bis": "51,15",
+        "tun": "spielt Drei-Schach am Klapptisch und ruft bei jedem Schach in den Canyon",
+        "wann": "tag",
+        "blick": "rechts",
+        "sagt": "statist.wegPinewoodGhost.canyonrand.kletterin",
+        "rolle": "unterwegs"
+      }
+    },
+    {
+      "name": "kletterpartner",
+      "typ": "statist",
+      "feld": [54, 15],
+      "eigenschaften": {
+        "von": "54,15",
+        "bis": "54,15",
+        "tun": "zählt mit Kreide die Schachs am Fels",
+        "wann": "tag",
+        "blick": "links",
+        "sagt": "statist.wegPinewoodGhost.canyonrand.kletterpartner",
+        "rolle": "unterwegs"
       }
     }
   ],

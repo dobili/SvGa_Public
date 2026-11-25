@@ -473,7 +473,8 @@
         "von": "68,20",
         "bis": "68,20",
         "tun": "lehnt am Führerhaus",
-        "wann": "tag"
+        "wann": "tag",
+        "sagt": "statist.wegDesertSummit.diner.trucker"
       }
     },
     {
@@ -541,7 +542,8 @@
         "von": "38,14",
         "bis": "38,14",
         "tun": "füllt Wasser in einen Kühler",
-        "wann": "tag"
+        "wann": "tag",
+        "sagt": "statist.wegDesertSummit.diner.tankwart"
       }
     },
     {

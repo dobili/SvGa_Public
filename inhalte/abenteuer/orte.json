@@ -3685,6 +3685,7 @@
       "karten": [
         {
           "kennung": "wegDesertSummit.diner",
+          "geraeusch": "klang/wueste.m4a",
           "datei": "karten/weg-desert-summit-diner.json",
           "name": "ort.wegDesertSummit.diner",
           "innen": false,
@@ -3905,6 +3906,7 @@
       "karten": [
         {
           "kennung": "hochebene.felsentuerme",
+          "geraeusch": "klang/hochebene_wind.m4a",
           "datei": "karten/hochebene-felsentuerme.json",
           "name": "ort.hochebene.felsentuerme",
           "innen": false,
@@ -4042,6 +4044,7 @@
       "karten": [
         {
           "kennung": "summitCity.aussen",
+          "geraeusch": "klang/summit.m4a",
           "datei": "karten/summit-city-aussen.json",
           "name": "ort.summitCity.aussen",
           "innen": false,
@@ -4301,12 +4304,14 @@
       "karten": [
         {
           "kennung": "wegSummitCrossroads.geysirbecken",
+          "geraeusch": "klang/geysire.m4a",
           "datei": "karten/weg-summit-crossroads-geysirbecken.json",
           "name": "ort.wegSummitCrossroads.geysirbecken",
           "innen": false
         },
         {
           "kennung": "wegSummitCrossroads.praerie",
+          "geraeusch": "klang/praerie.m4a",
           "datei": "karten/weg-summit-crossroads-praerie.json",
           "name": "ort.wegSummitCrossroads.praerie",
           "innen": false
@@ -4655,6 +4660,7 @@
       "karten": [
         {
           "kennung": "wegCrossroadsPinewood.huetten",
+          "geraeusch": "klang/wald_still.m4a",
           "datei": "karten/weg-crossroads-pinewood-huetten.json",
           "name": "ort.wegCrossroadsPinewood.huetten",
           "innen": false,
@@ -4766,6 +4772,7 @@
       "karten": [
         {
           "kennung": "pinewoodCamp.aussen",
+          "geraeusch": "klang/camp.m4a",
           "datei": "karten/pinewood-camp-aussen.json",
           "name": "ort.pinewoodCamp.aussen",
           "innen": false,
@@ -4867,6 +4874,7 @@
       "karten": [
         {
           "kennung": "wegPinewoodGhost.canyonrand",
+          "geraeusch": "klang/canyon.m4a",
           "datei": "karten/weg-pinewood-ghost-canyonrand.json",
           "name": "ort.wegPinewoodGhost.canyonrand",
           "innen": false,
@@ -5236,6 +5244,7 @@
       "karten": [
         {
           "kennung": "wegGhostCapital.seeufer",
+          "geraeusch": "klang/see_hell.m4a",
           "datei": "karten/weg-ghost-capital-seeufer.json",
           "name": "ort.wegGhostCapital.seeufer",
           "innen": false,
@@ -5243,6 +5252,7 @@
         },
         {
           "kennung": "wegGhostCapital.leuchtturm",
+          "geraeusch": "klang/see_hell.m4a",
           "datei": "karten/weg-ghost-capital-leuchtturm.json",
           "name": "ort.wegGhostCapital.leuchtturm",
           "innen": false,
@@ -5627,6 +5637,7 @@
       "karten": [
         {
           "kennung": "bayou.steg",
+          "geraeusch": "klang/grillen.m4a",
           "datei": "karten/bayou-steg.json",
           "name": "ort.bayou.steg",
           "innen": false

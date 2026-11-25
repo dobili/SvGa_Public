@@ -757,7 +757,8 @@
         "wann": "tag",
         "bild": "statist-11",
         "blick": "oben",
-        "sitzt": "oben"
+        "sitzt": "oben",
+        "sagt": "statist.wegGhostCapital.seeufer.schachspielerin"
       }
     },
     {
@@ -770,7 +771,8 @@
         "tun": "sitzt am Klapptisch und grübelt",
         "wann": "tag",
         "blick": "oben",
-        "sitzt": "oben"
+        "sitzt": "oben",
+        "sagt": "statist.wegGhostCapital.seeufer.schachspieler"
       }
     }
   ],

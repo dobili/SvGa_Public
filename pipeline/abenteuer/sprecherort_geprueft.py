@@ -13,6 +13,13 @@ sitzen in den Szenen (Stuhl, Sessel, Klapphocker oder am Boden); zwei Sätze pas
 """
 
 GEPRUEFT: dict[str, str] = {
+    "kommt:turnierleiterin:capital-arena-halle.vorrunde_geschafft": (
+        "Fassung {angesprochen}: Die Figur ist schon von selbst auf den Helden zugegangen "
+        "(regeln/ansprechen.ts); ein #gehe wäre doppelt."
+    ),
+    "kommt:slick:riverton-pavillon.tamsin_erstes_treffen": (
+        "Fassung {angesprochen}: Tamsin kommt zu dir (ansprechen.ts); Slick zieht nur hinter ihr."
+    ),
     "kommt:juno:capital-arena-aussen.abschied_ende": (
         "Juno steht nach dem Abschied nicht mehr vor der Arena (wenn: nicht abschiedGesehen); sie "
         "kommt nur in der Erzählung dazu, die Szene endet mit der Reise nach Hause."

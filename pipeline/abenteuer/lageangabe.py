@@ -15,8 +15,8 @@ gilt als erfüllt, wenn ein Platz passt: Wann die Szene spielt, legt der Text ni
 Prüfungen (``PRUEFUNGEN``):
 - **weg:** „versperrt“, „mitten auf dem Weg“, „steht auf der Straße“: Das Feld ist eine Weg- oder
   Straßenkachel (Buchstabe aus ``boeden`` der Szene, kein Gras, kein Wasser).
-- **tuer, tresen, fenster, bank, brunnen, zaun:** Ein passendes Möbel (Kennung oder Bildquelle) oder
-  ein Auslöser (Tür) liegt höchstens ``NAH`` Felder entfernt.
+- **tuer, tresen, fenster, bank, brunnen, zaun, drechselbank:** Ein passendes Möbel (Kennung oder
+  Bildquelle) oder ein Auslöser (Tür) liegt höchstens ``NAH`` Felder entfernt.
 - **sitzt, liegt:** Die Figur sitzt in der Szene (``sitzt``) oder im Tagesablauf (``tut``).
 - **bild:** Die Figur hält etwas „in der Hand“ oder „unter dem Arm“. Das Werkzeug kann das Bild nicht
   sehen; jeder Fall wird einmal angesehen (Bild zeigt es, Text allgemein genug, Bildwunsch).
@@ -75,6 +75,7 @@ PRUEFUNGEN: dict[str, tuple[re.Pattern, re.Pattern | None]] = {
         re.compile(r"\b(?:lehnt|steht|wartet) (?:am|an einem) (?:Zaun|Gatter)\b"),
         re.compile(r"Zaun|Gatter|Fence", re.I),
     ),
+    "drechselbank": (re.compile(r"\b(?:auf|an) der Drechselbank\b"), re.compile(r"Drehbank|Drechsel", re.I)),
     "sitzt": (re.compile(r"\b(?:sitzt|hockt)\b"), None),
     "liegt": (
         re.compile(

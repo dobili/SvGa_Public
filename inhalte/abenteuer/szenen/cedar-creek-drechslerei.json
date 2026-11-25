@@ -171,7 +171,8 @@
   "figuren": [
     {
       "name": "dunmore",
-      "feld": [2, 6]
+      "feld": [9, 9],
+      "blick": "oben"
     }
   ],
   "belebung": [],

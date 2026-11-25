@@ -19,6 +19,8 @@
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 
+// Die Figur hat den Helden angesprochen, nicht umgekehrt (App: regeln/ansprechen.ts, 25.11.2026).
+VAR angesprochen = false
 VAR slickNiederlageGesehen = false
 VAR odumMomentGesehen = false
 VAR held = "Du"
@@ -248,7 +250,7 @@ Mein Wohnwagen steht gleich daneben. #sprecher:slick #stimmung:laechelt
 
 === tamsin_erstes_treffen ===
 ~ tamsinGetroffen = true
-Ein Mädchen mit Schachuhr unter dem Arm zählt laut rückwärts, während Slick zieht. #sprecher:erzaehler
+{angesprochen:Ein Mädchen mit Schachuhr unter dem Arm kommt zu dir und zählt dabei laut weiter rückwärts. Hinter ihr zieht Slick.|Ein Mädchen mit Schachuhr unter dem Arm zählt laut rückwärts, während Slick zieht.} #sprecher:erzaehler
 Fünf, vier, drei, zwei – Gabel! Siehst du? #sprecher:tamsin #stimmung:froh #brett:damengabel
 Nicht nachdenken. Gucken – ich bin Tamsin. #sprecher:tamsin #stimmung:laechelt
 -> tamsin_reihe
@@ -333,7 +335,7 @@ Der Tisch redet auch nicht. Vielleicht deshalb. #sprecher:tamsin #stimmung:nachd
 
 === ray_erstes_treffen ===
 ~ rayGetroffen = true
-Ein älterer Herr mit Busfahrermütze stellt geduldig die Figuren auf. #sprecher:erzaehler
+{angesprochen:Ein älterer Herr mit Busfahrermütze kommt zu dir, zwei Figuren noch in der Hand.|Ein älterer Herr mit Busfahrermütze stellt geduldig die Figuren auf.} #sprecher:erzaehler
 Ray. Dreißig Jahre Bus gefahren, sechzig Jahre hier gespielt, beides mit Fahrplan. #sprecher:ray #stimmung:laechelt
 {reiheTamsinBestanden: -> ray_reihe}
 -> ray_erst_tamsin

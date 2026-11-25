@@ -1115,16 +1115,18 @@
           "von": 6,
           "bis": 8,
           "karte": "cedarCreek.drechslerei",
-          "feld": [2, 6],
-          "tut": "steht"
+          "feld": [9, 9],
+          "tut": "steht",
+          "blick": "oben"
         },
         {
           "art": "arbeit",
           "von": 8,
           "bis": 16,
           "karte": "cedarCreek.drechslerei",
-          "feld": [2, 6],
-          "tut": "steht"
+          "feld": [9, 9],
+          "tut": "steht",
+          "blick": "oben"
         },
         {
           "art": "freizeit",

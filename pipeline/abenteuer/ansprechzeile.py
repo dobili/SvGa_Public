@@ -43,6 +43,19 @@ PLATZ = re.compile(
     r"^\s*(An der|Am|Auf der|Auf dem|Vor der|Vor dem|Hinter der|Hinter dem|Neben der|Neben dem|Unter dem)"
     r"\b[^.]{0,60}\b(steht|sitzt|wartet|lehnt|hockt|kniet|liegt)\b"
 )
+# Die Figur arbeitet an ihrem Platz oder steht dort (Befund des Autors 25.11.2026, Drechslerei: „Ein
+# Mann mit Schürze dreht ein Stück Ahorn auf der Drechselbank“, aber er kam auf den Helden zu).
+# Lage- und Handlungsangaben wie in pipeline/abenteuer/lageangabe.py, nur im dritten Satzglied.
+TAETIG = re.compile(
+    r"\b(Ein|Eine|Der|Die|Dort|Drinnen|Daneben)\b[^.„]{0,60}\b(dreht|arbeitet|hobelt|schleift|poliert|"
+    r"knotet|liest|schreibt|sortiert|fegt|putzt|repariert|schraubt|zählt|malt|feilt|sägt|räumt|stimmt|"
+    r"spielt|stellt [^.]{0,30} auf|beugt sich über|ist über [^.]{0,30} gebeugt)\b"
+)
+LAGE = re.compile(
+    r"\b(steht|sitzt|wartet|lehnt|hockt|kniet) (hinter|an|am|auf|in|vor) (der|dem|einem|einer)? ?"
+    r"(Tresen|Theke|Kasse|Tür|Fenster|Bank|Werkbank|Drechselbank|Brett|Tisch|Zaun|Brunnen|Weg|Straße)\b"
+    r"|\bversperrt\b"
+)
 FRAGE = re.compile(
     r"^\s*(\w+:\s*)?„?\s*(Ja\?|Hm\?|Kann ich (dir|euch) helfen|Was (kann ich für dich tun|gibt'?s|gibt es|"
     r"willst du|führt dich)|Du schon wieder|Ach,? du bist(?:'s| es)|Suchst du (was|etwas|jemand))",
@@ -54,6 +67,8 @@ GEPRUEFT: dict[str, str] = {
     "maple-falls-clubraum:sam_vor_dem_coach:Am Fenster sitzt ein Junge": "Sam sitzt in jeder Fassung des "
     "Clubraums (sitzt: rechts); Sitzende stehen zum Ansprechen nicht auf (ansprechschicht.ts), die "
     "Zeile stimmt also auch, wenn er den Helden anspricht.",
+    "riverton-pavillon:slick_nach_sieg:Eine bessere Nadel": "„Die Treppe zählt genauso“ heißt: Sie "
+    "gilt so viel wie der Pavillon; keine Tätigkeit an einem Platz.",
 }
 
 
@@ -77,7 +92,13 @@ class Stelle:
 
 def verdaechtig(text: str) -> bool:
     """Setzt die Zeile voraus, dass der Held hingegangen ist oder die Figur noch am Platz steht?"""
-    return bool(ANSPRECHEN.search(text) or PLATZ.search(text) or FRAGE.search(text))
+    return bool(
+        ANSPRECHEN.search(text)
+        or PLATZ.search(text)
+        or FRAGE.search(text)
+        or TAETIG.search(text)
+        or LAGE.search(text)
+    )
 
 
 def ist_text(text: str) -> bool:

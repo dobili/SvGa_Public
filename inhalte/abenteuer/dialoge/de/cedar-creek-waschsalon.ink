@@ -35,7 +35,7 @@ VAR abschiedGesehen = false
 // Dauergeräusch und Radio kommen von der Karte (waschmaschine, 21_Klangplan.md B1).
 ~ boatengGetroffen = true
 {okaforGetroffen: Mrs. Okafor hat dich mit einem Sack Tischdecken herübergeschickt. #sprecher:erzaehler}
-Maschinen brummen, warme Luft, es riecht nach Seife. Hinter dem Tresen ein alter Mann mit sehr großen, ruhigen Händen. #sprecher:erzaehler #klang:waschmaschine
+Maschinen brummen, warme Luft, es riecht nach Seife. Am Ladentisch neben dem Automaten steht ein alter Mann mit sehr großen, ruhigen Händen, einen Korb voll bunter Wäsche im Arm. #sprecher:erzaehler #klang:waschmaschine
 Die Stellung da steht seit Montag. #sprecher:boateng #stimmung:nachdenklich
 Die Maschine schleudert, du denkst. Beides braucht zwölf Minuten. #sprecher:boateng #stimmung:laechelt
 Auf dem Trockner dort klebt jede Woche eine neue Stellung. Wer sie löst, wäscht einmal umsonst. #sprecher:boateng #stimmung:laechelt

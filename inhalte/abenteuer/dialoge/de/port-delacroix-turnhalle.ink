@@ -28,6 +28,8 @@ EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibKarte(kennung)
 
+// Die Figur hat den Helden angesprochen, nicht umgekehrt (App: regeln/ansprechen.ts, 25.11.2026).
+VAR angesprochen = false
 VAR odileClubkampfEingeleitet = false
 VAR batisteGetroffen = false
 VAR leimAuftrag = false
@@ -358,7 +360,7 @@ Du hast in jeder Stellung einen gefunden. Einen Plan, meine ich. #sprecher:lou #
 
 === lou_warten ===
 {not louGetroffen:
-    Ein Mädchen sortiert Muscheln in eine Eierschachtel, eine Sorte pro Fach. #sprecher:erzaehler
+    {angesprochen:Ein Mädchen kommt zu dir, eine Eierschachtel voller Muscheln in den Händen, eine Sorte pro Fach.|Ein Mädchen sortiert Muscheln in eine Eierschachtel, eine Sorte pro Fach.} #sprecher:erzaehler
 }
 ~ louGetroffen = true
 {brettersammelnBegonnen:Lou. Erst Remy, dann ich.|Lou. Erst Miss Odile, dann Remy, dann ich.} #sprecher:lou #stimmung:neutral
@@ -368,7 +370,7 @@ So ist die Reihenfolge. Remy hat sie erfunden. #sprecher:lou #stimmung:laechelt
 === lou_reihe ===
 {not louGetroffen:
     ~ louGetroffen = true
-    Ein Mädchen sortiert Muscheln in eine Eierschachtel, eine Sorte pro Fach. #sprecher:erzaehler
+    {angesprochen:Ein Mädchen kommt zu dir, eine Eierschachtel voller Muscheln in den Händen, eine Sorte pro Fach.|Ein Mädchen sortiert Muscheln in eine Eierschachtel, eine Sorte pro Fach.} #sprecher:erzaehler
     Lou. Ich sammle Muscheln und Pläne. #sprecher:lou #stimmung:laechelt
 }
 Ich hab einen Plan. Er ist noch nicht fertig, aber er ist gut. #sprecher:lou #stimmung:laechelt

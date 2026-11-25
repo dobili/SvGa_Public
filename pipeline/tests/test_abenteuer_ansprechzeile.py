@@ -18,6 +18,10 @@ def test_verdaechtige_zeilen():
     assert verdaechtig("An der Bushaltestelle steht ein Mädchen mit zwei Zöpfen.")
     assert verdaechtig("Du gehst zu ihr hin und tippst sie an.")
     assert verdaechtig("Ja? Kann ich dir helfen?")
+    # Tätigkeit oder Lage am Platz (Befund Drechslerei, 25.11.2026)
+    assert verdaechtig("Ein Mann mit Schürze dreht ein Stück Ahorn auf der Drechselbank.")
+    assert verdaechtig("Ein Mädchen sortiert Muscheln in eine Eierschachtel.")
+    assert verdaechtig("Ein Mädchen mit Skateboard versperrt halb den Weg.")
     assert not verdaechtig("Du bist das Kind aus dem Whitlock-Haus!")
 
 

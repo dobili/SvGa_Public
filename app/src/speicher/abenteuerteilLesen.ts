@@ -6,14 +6,15 @@
  * Kandidatenwahl, „Buch und Bruch“ und die Variante „gehoer“: Die Spielhülle zeigte keinen Kopf,
  * und zwei Partieformen griffen nicht mehr (Befund beim Fotografieren der Hülle, 14.11.2026).
  * Ausgelagert, weil partienLesen.ts die Grenze von 400 Zeilen erreicht hat.
+ * Seit den Regelvarianten (26.11.2026) ist die Variante eine offene Liste von Kennungen.
  * Abhängigkeiten: spiel/partie.ts (Typ), engine/stufen.ts (Typ der Stufennummer).
  */
 import type { Stufennummer } from "../engine/stufen";
 import type { Partieeinstellung } from "../spiel/partie";
+import { varianteVon } from "../spiel/varianten/alle";
 
 type Abenteuerteil = NonNullable<Partieeinstellung["abenteuer"]>;
 
-const VARIANTEN = ["blind", "schach960", "gehoer"] as const;
 const STUFE_MIN = 1;
 const STUFE_MAX = 10;
 
@@ -54,8 +55,8 @@ function buchbruchAus(roh: unknown): Abenteuerteil["buchbruch"] | undefined {
 /** Form und Bild der Partie: Variante, Kandidaten, Buch und Bruch, Kulisse, Porträt. */
 function formteil(roh: Record<string, unknown>): Partial<Abenteuerteil> {
   const teil: { -readonly [K in keyof Abenteuerteil]?: Abenteuerteil[K] } = {};
-  const variante = VARIANTEN.find((v) => v === roh.variante);
-  if (variante) teil.variante = variante;
+  // Offene Liste (spiel/varianten/alle.ts): jede angemeldete Variante, Unbekanntes fällt weg.
+  if (typeof roh.variante === "string" && varianteVon(roh.variante)) teil.variante = roh.variante;
   const kandidaten = textliste(roh.kandidaten);
   if (kandidaten) teil.kandidaten = kandidaten;
   const buchbruch = buchbruchAus(roh.buchbruch);

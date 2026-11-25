@@ -13,6 +13,7 @@
 import type { Stufennummer } from "../../engine/stufen";
 import { farbeAus } from "../anbindung/partiestart";
 import { startFen960, zufallsnummer960 } from "../../schach/chess960";
+import { varianteVon } from "../../spiel/varianten/alle";
 import type { Begegnungsdaten, Gegnerdaten, Spieldaten } from "../daten/laden";
 import { motivanzahl, schwierigkeitAus, schwierigkeitDesVersuchs } from "../regeln/aufgaben";
 import { POST_GAME_AUFSCHLAG, gerechneteStaerke } from "../regeln/gegnerstaerke";
@@ -104,11 +105,19 @@ function zustandAus(stand: Abenteuerstand, gegner: string, rolle: Gegnerrolle): 
 
 /**
  * Startstellung einer Begegnung; Schach960 lost die Grundreihe aus (oder nimmt `startnummer`).
- * Regel: docs/spiel/10, V1 (Grundreihe gemischt, Läufer auf verschiedenen Farben).
+ * Regel: docs/spiel/10, V1 (Grundreihe gemischt, Läufer auf verschiedenen Farben). Andere
+ * Varianten mit eigener Startstellung (Königsrennen, Drei-Schach mit Zähler, Räuberschach ohne
+ * Rochade; spiel/varianten/) nehmen sie, wenn die Begegnung die Grundstellung nennt.
  */
 export function startstellungDer(b: Begegnungsdaten): Begegnungsdaten["startstellung"] {
-  if (b.variante !== "schach960") return b.startstellung;
-  return { art: "fen", fen: startFen960(b.startnummer ?? zufallsnummer960()) };
+  if (b.variante === "schach960") {
+    return { art: "fen", fen: startFen960(b.startnummer ?? zufallsnummer960()) };
+  }
+  const eigene = varianteVon(b.variante)?.startstellung;
+  if (eigene && b.startstellung.art === "grundstellung") {
+    return { art: "fen", fen: eigene(Math.random) };
+  }
+  return b.startstellung;
 }
 
 /** Baut den Partieauftrag einer Begegnung; null, wenn die Spieldaten sie nicht kennen. */

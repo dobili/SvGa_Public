@@ -8,7 +8,7 @@
  * Buchbezug: Kapitel 0, „Wie endet eine Partie?“ (Matt, Patt, Remis).
  */
 import type { Color } from "chessops/types";
-import { regelstellung } from "./zuege";
+import { regelstellung, regelstellungFuer } from "./zuege";
 
 export type Partieende =
   | { readonly art: "matt"; readonly sieger: Color }
@@ -28,7 +28,14 @@ export type Partieende =
    */
   | { readonly art: "ziel"; readonly sieger: Color }
   /** Kurze Partieform: Nach den Zügen stand es so, dass keiner das Ziel erreicht hat. */
-  | { readonly art: "zielRemis" };
+  | { readonly art: "zielRemis" }
+  /**
+   * Ende nach den Regeln einer Variante (spiel/varianten/): dreimal Schach, König explodiert, auf
+   * dem Hügel, an der Ziellinie, alles verloren (Räuberschach). `grund` ist der Spieltext.
+   */
+  | { readonly art: "variante"; readonly sieger: Color; readonly grund: string }
+  /** Remis nach den Regeln einer Variante (etwa beide Könige zugleich an der Ziellinie). */
+  | { readonly art: "varianteRemis"; readonly grund: string };
 
 /** 50 Züge je Seite ohne Bauernzug und ohne Schlag = 100 Halbzüge. */
 const FUENFZIG_ZUEGE_HALBZUEGE = 100;
@@ -50,10 +57,22 @@ function stellungsschluessel(fen: string): string {
  * Beispiel: Stellung nach 1. f3 e5 2. g4 Dh4# → { art: „matt“, sieger: „black“ }.
  * Sonderfall: Eine unlesbare Stellung beendet nichts (null).
  */
-export function partieendeNach(stellungen: readonly string[]): Partieende | null {
+export function partieendeNach(
+  stellungen: readonly string[],
+  variante?: string,
+): Partieende | null {
   const fen = stellungen[stellungen.length - 1];
-  const pos = fen ? regelstellung(fen) : null;
+  const pos = fen ? regelstellungFuer(fen, variante) : null;
   if (!fen || !pos) return null;
+  // Varianten mit eigenen Regeln (Drei-Schach, Atom, Hügel, Rennen, Räuber): Ihr Ende geht vor.
+  if (pos.rules !== "chess" && variante) {
+    const ausgang = pos.outcome();
+    if (pos.isVariantEnd() || (pos.rules === "antichess" && ausgang)) {
+      const grund = `variante.${variante}.ende`;
+      const sieger = ausgang?.winner;
+      return sieger ? { art: "variante", sieger, grund } : { art: "varianteRemis", grund };
+    }
+  }
   if (pos.isCheckmate()) {
     return { art: "matt", sieger: pos.turn === "white" ? "black" : "white" };
   }

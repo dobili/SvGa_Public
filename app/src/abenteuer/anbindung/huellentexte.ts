@@ -49,6 +49,8 @@ export function statustext(
  */
 export function endgrund(partie: Partie, gegner: string): string | null {
   const ende = partie.ende;
+  // Varianten sagen ihr Ende selbst („Dreimal Schach!“, „Der König steht auf dem Hügel.“).
+  if (ende?.art === "variante" || ende?.art === "varianteRemis") return tSpiel(ende.grund);
   if (!ende || !("sieger" in ende)) return null;
   const wer = ende.sieger === partie.einstellung.eigeneFarbe ? "du" : "gegner";
   return tSpiel(`huelle.ende.${ende.art}.${wer}`, { gegner });

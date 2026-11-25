@@ -7,12 +7,14 @@
  * Abhängigkeiten: chessops, schach/notation.ts.
  * Buchbezug: Kapitel 5, „Skelett-Röntgen“ (Figuren ausblenden, Bauernstruktur sehen).
  */
-import { Chess, normalizeMove } from "chessops/chess";
+import { Chess, normalizeMove, type Position } from "chessops/chess";
 import { makeFen, parseFen } from "chessops/fen";
 import { makeSanAndPlay, parseSan } from "chessops/san";
 import type { NormalMove, Role } from "chessops/types";
 import { makeSquare, parseSquare } from "chessops/util";
 import { brauchtChess960Stellung } from "./chess960";
+import { stellungMit } from "../spiel/varianten/regelschicht";
+import { varianteVon } from "../spiel/varianten/alle";
 import { sanInSprache } from "./notation";
 
 /** Die eigenen Züge hinter der Buchstellung und wie viele davon gerade gezeigt werden. */
@@ -27,7 +29,13 @@ export const KEINE_EIGENEN: EigeneZuege = { zuege: [], stelle: 0 };
 /** Figuren, in die ein Bauer umwandeln kann, in der Reihenfolge der Auswahl. */
 export const UMWANDLUNGEN: readonly Role[] = ["queen", "rook", "bishop", "knight"];
 
-function stellung(fen: string): Chess | null {
+/**
+ * Die Stellung zur FEN; mit `variante` nach deren Regeln (spiel/varianten/: Atomschach,
+ * Königsrennen …), damit das Brett nur Züge anbietet, die die Variante erlaubt.
+ */
+function stellung(fen: string, variante?: string): Position | null {
+  const regeln = varianteVon(variante)?.regeln.chessops;
+  if (regeln && regeln !== "chess") return stellungMit(regeln, fen);
   const setup = parseFen(fen);
   if (setup.isErr) return null;
   const ergebnis = Chess.fromSetup(setup.value);
@@ -44,7 +52,7 @@ const KOENIG_LANG = 2;
  * Regel: Kapitel 0, Rochade (der König zieht zwei Felder zum Turm). Der Leser tippt wie bei
  * Chess.com das Feld, auf dem der König landet (g1, c1, g8, c8), nicht den Turm (Wunsch des Autors).
  */
-function rochadeziel(pos: Chess, von: number, ziel: number): number {
+function rochadeziel(pos: Position, von: number, ziel: number): number {
   const figur = pos.board.get(von);
   const turm = pos.board.get(ziel);
   const eigenerTurm = turm?.role === "rook" && turm.color === figur?.color;
@@ -60,8 +68,8 @@ function rochadeziel(pos: Chess, von: number, ziel: number): number {
  * denen er nach der Rochade steht (g1, c1), nicht die Türme. Sonderfälle: Figur der falschen
  * Farbe, leeres Feld oder Stellung ohne Regeln (Lehrbild ohne König) → leere Liste.
  */
-export function legaleZiele(fen: string, von: string): string[] {
-  const pos = stellung(fen);
+export function legaleZiele(fen: string, von: string, variante?: string): string[] {
+  const pos = stellung(fen, variante);
   const feld = parseSquare(von);
   if (!pos || feld === undefined) return [];
   // Schach960 (Abenteuer): Der König zieht zur Rochade auf den eigenen Turm, weil das Zielfeld
@@ -78,8 +86,8 @@ export function legaleZiele(fen: string, von: string): string[] {
  * Beispiel: Grundstellung → die acht Bauern und beide Springer. Sonderfall: Stellung ohne Regeln
  * (Lehrbild ohne König) → leere Liste.
  */
-export function ziehbareFelder(fen: string): string[] {
-  const pos = stellung(fen);
+export function ziehbareFelder(fen: string, variante?: string): string[] {
+  const pos = stellung(fen, variante);
   if (!pos) return [];
   return [...pos.allDests()]
     .filter(([, ziele]) => ziele.nonEmpty())
@@ -98,8 +106,8 @@ export type Zugsperre = "schach" | "gefesselt" | "blockiert";
  * eine Figur, die ziehen kann. Beispiel: Abb. 1.26 nach einem Schach auf e1: Sf3 hat keinen Zug →
  * „schach“; in der Grundstellung Lc1 → „blockiert“.
  */
-export function zugsperre(fen: string, feld: string): Zugsperre | null {
-  const pos = stellung(fen);
+export function zugsperre(fen: string, feld: string, variante?: string): Zugsperre | null {
+  const pos = stellung(fen, variante);
   const platz = parseSquare(feld);
   if (!pos || platz === undefined) return null;
   const figur = pos.board.get(platz);
@@ -122,8 +130,14 @@ export type Zugversuch =
  * Ausgabe: Zug in Kurznotation (englisch, wie in den Daten) und neue Stellung.
  * Beispiel: Abb. 1.26, „f1“ → „d3“ → { san: „Bd3“ } (6. Ld3 wie im Buch).
  */
-export function spieleZug(fen: string, von: string, nach: string, umwandlung?: Role): Zugversuch {
-  const pos = stellung(fen);
+export function spieleZug(
+  fen: string,
+  von: string,
+  nach: string,
+  umwandlung?: Role,
+  variante?: string,
+): Zugversuch {
+  const pos = stellung(fen, variante);
   const a = parseSquare(von);
   const b = parseSquare(nach);
   if (!pos || a === undefined || b === undefined) return { art: "ungueltig" };

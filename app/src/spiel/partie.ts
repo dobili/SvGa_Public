@@ -226,11 +226,17 @@ export function ladbar(fen: string): boolean {
   return pos !== null && !pos.isEnd();
 }
 
-/** Alle Stellungen der Partie, von der Startstellung bis zur aktuellen. */
+/** Die Variante der Partie (Abenteuer, spiel/varianten/), sonst undefined. */
+export function varianteDer(partie: Partie): string | undefined {
+  return partie.einstellung.abenteuer?.variante;
+}
+
+/** Alle Stellungen der Partie, von der Startstellung bis zur aktuellen (Regeln der Variante). */
 export function stellungen(partie: Partie): string[] {
   const liste = [partie.einstellung.startFen];
+  const variante = varianteDer(partie);
   for (const zug of partie.zuege) {
-    const naechste = fenNach(liste[liste.length - 1] ?? "", zug.san);
+    const naechste = fenNach(liste[liste.length - 1] ?? "", zug.san, variante);
     if (!naechste) break;
     liste.push(naechste);
   }
@@ -266,9 +272,10 @@ export function leserAmZug(partie: Partie): boolean {
 export function ziehe(partie: Partie, zug: Partiezug): Partie | null {
   if (partie.ende) return null;
   const vorher = stellungen(partie);
-  const danach = fenNach(vorher[vorher.length - 1] ?? "", zug.san);
+  const variante = varianteDer(partie);
+  const danach = fenNach(vorher[vorher.length - 1] ?? "", zug.san, variante);
   if (!danach) return null;
-  const ende = partieendeNach([...vorher, danach]);
+  const ende = partieendeNach([...vorher, danach], variante);
   return { ...partie, zuege: [...partie.zuege, zug], ende };
 }
 

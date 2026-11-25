@@ -63,7 +63,7 @@ export interface Brettbedienung {
  * schaltet er auf „Zählen“ um (wie bisher bei der Engine).
  */
 export function useBrettbedienung(
-  stand: Pick<Nachspielstand, "fen" | "spiele">,
+  stand: Pick<Nachspielstand, "fen" | "spiele"> & { readonly variante?: string },
   wahl: Werkzeugwahl | null,
   setzeWahl: (wahl: Werkzeugwahl) => void,
 ): Brettbedienung {
@@ -80,10 +80,10 @@ export function useBrettbedienung(
   const hier = (gemerkt: Gemerkt | null) => (gemerkt?.fen === stand.fen ? gemerkt.feld : null);
   const zaehlfeld = wahl === "zaehlen" ? hier(gezaehlt) : null;
   const figur = wahl === "ziehen" ? hier(gewaehlt) : null;
-  const ziele = figur ? legaleZiele(stand.fen, figur) : [];
+  const ziele = figur ? legaleZiele(stand.fen, figur, stand.variante) : [];
   const greifbar = useMemo(
-    () => (wahl === "ziehen" ? ziehbareFelder(stand.fen) : []),
-    [wahl, stand.fen],
+    () => (wahl === "ziehen" ? ziehbareFelder(stand.fen, stand.variante) : []),
+    [wahl, stand.fen, stand.variante],
   );
 
   /** Spielt den Zug von ``von`` nach ``nach``; bei einem Bauern auf der letzten Reihe folgt die Wahl. */
@@ -98,9 +98,9 @@ export function useBrettbedienung(
       spiele(figur, feld);
       return;
     }
-    const eigeneFigur = legaleZiele(stand.fen, feld).length > 0;
+    const eigeneFigur = legaleZiele(stand.fen, feld, stand.variante).length > 0;
     setzeGewaehlt(eigeneFigur && feld !== figur ? { fen: stand.fen, feld } : null);
-    const grund = eigeneFigur ? null : zugsperre(stand.fen, feld);
+    const grund = eigeneFigur ? null : zugsperre(stand.fen, feld, stand.variante);
     if (grund) {
       setzeGesperrt({ fen: stand.fen, feld, grund });
       if (ton === "an") spieleKlang("warnung");
@@ -140,7 +140,7 @@ export function useBrettbedienung(
             felder: greifbar,
             beginne: (feld) => setzeGewaehlt({ fen: stand.fen, feld }),
             lege: (von, nach) => {
-              if (legaleZiele(stand.fen, von).includes(nach)) spiele(von, nach);
+              if (legaleZiele(stand.fen, von, stand.variante).includes(nach)) spiele(von, nach);
             },
           }
         : null,

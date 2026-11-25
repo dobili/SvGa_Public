@@ -50,6 +50,7 @@ import { useStaerkewechsel } from "./useStaerkewechsel";
 import { useHintergrundauswertung } from "./useHintergrundauswertung";
 import { useKurzform } from "./useKurzform";
 import { useZugerraten } from "./useZugerraten";
+import { variantenmarken, variantenzaehler } from "./variantenbrett";
 import { useKurzsperre } from "./useKurzsperre";
 import { Testleiste } from "./Testleiste";
 
@@ -220,6 +221,11 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
     if (gezeigt === 0) return null;
     return zugFelder(stellungen(partie)[gezeigt - 1] ?? "", partie.zuege[gezeigt - 1]?.san ?? "");
   }, [partie, gezeigt]);
+  // Varianten (spiel/varianten/): Hügel, Ziellinie, Explosion im Atomschach, Schachzähler.
+  const variante = partie.einstellung.abenteuer?.variante;
+  const vorher = gezeigt > 0 ? (stellungen(partie)[gezeigt - 1] ?? null) : null;
+  const variantenMarken = variantenmarken(variante, fen, vorher, letzter?.von ?? null);
+  const zaehler = variantenzaehler(variante, fen);
   if (!stellung.ok) return <p className="fehlertext">{stellung.fehler}</p>;
   // Steht die Wertung einer kurzen Form an, ist das Brett zu: kein Zug über die Abmachung hinaus.
   const wertet = kurz?.gesperrt ?? false;
@@ -249,10 +255,15 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
       {raten.zeile && (
         <BrettfreieZeile testid="abenteuer-zugerraten">{tSpiel(raten.zeile)}</BrettfreieZeile>
       )}
+      {zaehler && (
+        <BrettfreieZeile testid="abenteuer-variantenzaehler">
+          {tSpiel(zaehler.text, zaehler.werte)}
+        </BrettfreieZeile>
+      )}
       <div className="abenteuer-partie-brett">
         <Brettbereich
           stellung={stellung.wert}
-          markierungen={hinweis.fen === s.fen ? hinweis.marken : []}
+          markierungen={[...variantenMarken, ...(hinweis.fen === s.fen ? hinweis.marken : [])]}
           letzterZug={letzter}
           bedienung={
             amZug ? bedienung : { ...bedienung, ziele: [], beiFeld: () => undefined, ziehen: null }

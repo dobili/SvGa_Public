@@ -103,7 +103,23 @@ Abstände und Hauptvarianten mit `mitWerten` in denselben Eintrag (Felder `werte
 - Fertige Auswertungen liegen im Speicher; eine zweite Besprechung derselben Partie rechnet nichts.
 - Die Motive rechnet die Besprechung nur für die gewählten Momente (höchstens 8 Stellungen, ohne
   Engine, Millisekunden).
-- Offen (siehe unten): schon während der Partie im Hintergrund vorrechnen, wie die App es tut.
+- Seit 26.11.2026 rechnet die Auswertung schon während der Partie (Wunsch des Autors: „Besprechen“
+  im Tagebuch sofort bereit): `abenteuer/anbindung/useHintergrundauswertung.ts` in jeder Partie der
+  Spielhülle (`PartieHuelle.tsx`), dieselbe Regel wie in der App (`auswertungImHintergrund`): ab
+  4 Kernen durchgehend, auf knappen Geräten nur, solange der Spieler am Zug ist, damit der Bot,
+  Maia, Schutzengel und Zugerraten ihren Kern für sich haben und die Zugzeit nicht länger wird
+  (Bot, Schutzengel und Zugerraten rechnen auf der Engine des Spiels, die Auswertung auf ihrem
+  eigenen Worker; Kurzform und Kipppunkt teilen sich den Worker, die Auswertung wartet, solange er
+  beschäftigt ist).
+- Nach dem Ende rechnet der Nachlauf (`ui/komponenten/auswertung/nachlauf.ts`) die letzten
+  Stellungen zu Ende, auch wenn der Spieler schon in der Oberwelt ist, und speichert mit `mitWerten`
+  in den Partieeintrag. Beginnt eine neue Partie, hält er an; den Rest rechnet dann die Besprechung
+  beim Öffnen. Speichern nur einmal je Partie (kein doppeltes `nachAuswertung`, wenn Nachlauf und
+  Besprechung zugleich fertig werden).
+- Nur Partien nach den normalen Regeln (Wunsch des Autors, 26.11.2026; `besprechbarePartie` in
+  `regeln/besprechung.ts`): ohne Variante oder mit „blind“ und „gehoer“ (nur die Darstellung ist
+  anders). Schach960 und jede künftige Variante mit anderen Regeln oder Figuren werden weder im
+  Hintergrund ausgewertet noch besprochen; im Tagebuch fehlt dort „Besprechen“, „Ansehen“ bleibt.
 
 ## 6. Texte
 
@@ -160,11 +176,87 @@ Umgesetzt:
   Motive; Playwright `tests/e2e/abenteuer-besprechung.spec.ts` (Aufruf aus dem Tagebuch hoch und quer,
   ohne Ankündigung kein Knopf, im Tiefpunkt allein).
 
+## 10. Plan B: „Soll ich es dir zeigen?“ (26.11.2026)
+
+- Wo: an Fehlern, Patzern, verpassten Chancen, Fehlern des Gegners, ungenauen Zügen ab Stufe 2,
+  ab Stufe 2 auch an brillanten Zügen (dort die Folge des gespielten Zuges, „wie es weitergegangen
+  wäre“). Unter dem Satz in der Blase ein Knopf: mit Ambrose „Zeig es mir.“ (dazu sein Angebot als
+  letzter Satz der Blase, `besprechung.ambrose.angebot.<n>`), ohne ihn „Besseren Weg zeigen“.
+- Welche Folge: die Hauptvariante der Engine aus dem Eintrag (`beste` und `varianten`) an der
+  Stelle des besseren Zuges (vor dem Zug; beim Fehler des Gegners nach seinem Zug, Antwort des
+  Helden). Kein Rechnen mit der Engine.
+- Länge je Stufe (`regeln/zeigefolge.ts`, rein): Stufe 1 nur der bessere Zug; Stufe 2 der Zug und
+  die Antwort, bis 4 Halbzüge, wenn darin ein Schlag den Materialgewinn auflöst oder Matt fällt
+  (endet die Folge dort); Stufe 3 bis 6 Halbzüge, bei Matt oder Schlag bis dahin gekürzt. Nie über
+  das Ende der gespeicherten Variante hinaus; kein Halbzug, der nicht legal ist.
+- Ablauf: Das Brett spielt die Folge ab (ein Halbzug je 0,9 Sekunden, letzter Zug hervorgehoben,
+  Pfeil des nächsten Zuges), die Blase zeigt den Zug als Text, darunter „Zurück zur Partie“. Ohne
+  Bewegung (Einstellung „Bewegung verringern“) sofort die Schlussstellung mit der ganzen Folge
+  als Text. Bedienung der Partie ist so lange gesperrt.
+- Dateien: `regeln/zeigefolge.ts` (Länge, Abbruch), `anbindung/besprechungsfolge.ts` (Stellungen
+  und Texte der Folge aus dem Eintrag), `anbindung/Zeigefolge.tsx` (Abspielen), Besprechung.tsx
+  bindet ein; Texte `besprechung.zeigen*`. Tests: Vitest für Länge je Stufe und Abbruch, Playwright
+  in `abenteuer-besprechung.spec.ts` (Knopf, Abspielen bis zum Ende, zurück).
+- Aufwand: etwa eine halbe Sitzung.
+
+## 11. Plan C: tiefere, persönlichere Sätze (regelbasiert, offline)
+
+Grundsatz: Ein Satz entsteht nur, wenn der Befund ihn sicher trägt; sonst bleibt der bisherige
+Satz der Kategorie. Kein Satz nennt Bauerneinheiten oder Zahlen der Rechenmaschine.
+
+1. **Ursache des Fehlers** aus `fehlerbefundIn` (18 Fehlerarten) mit den Einzelheiten:
+   - `figurHaengen`: Figur und Feld („Dein Läufer auf c4 stand danach ohne Schutz.“),
+   - `drohungIgnoriert`: die Drohung als Zug und Ziel („Dein Gegner drohte Dxf7, und du hast nichts
+     dagegen getan.“), bei Matt „drohte Matt“,
+   - `taktikUebersehen`: Gabel mit Figur und Feld der Gabel, Linie (Fesselung, Spieß, Abzug) mit
+     der Figur, die getroffen wird, Motiv der Antwort,
+   - Schlagreflex, falscher Abtausch, Bauernraub, verfrühte Dame, König in der Mitte,
+     Tempoverlust, Königsschild, Bauernvorstoß, König passiv, Patt, Bauer eingestellt, Schlag
+     verpasst, Bauern- und Königszug ohne Not: je eine Satzgruppe mit den Feldern des Zuges.
+   - Die Arten ohne Begriff des Helden (Stufe, Lektionen) sagen die Sache ohne Fachwort.
+2. **Verlorenes Material als Figur**: aus der Widerlegung (höchstens 6 Halbzüge) die Bilanz der
+   geschlagenen Figuren; genannt wird die größte verlorene Figur („Das kostet dich den Springer.“,
+   „… die Dame.“), bei Matt das Matt. Nur, wenn die Bilanz nach der Folge ruhig ist (kein Schlag
+   im letzten Halbzug offen); sonst kein Materialsatz.
+3. **Phase und Lage vor dem Zug**: Phase aus `schach/phase.ts` (Eröffnung, Mittelspiel,
+   Endspiel) und Lage aus dem Wert vor dem Zug (aus Sicht des Helden: klar besser, ausgeglichen,
+   schlechter; Schwellen wie die Zugklassen der App). Beispiel: „Du standest gut, und gerade im
+   Endspiel wiegt so ein Zug schwer.“ Nur ein Lagesatz je zwei Momente.
+4. **Warum brillant oder stark**: Opfer aus `engine/opfer.ts` (welche Figur hergegeben wird) und
+   das Motiv der Folge (`erkenneMotive`, Mattbild): „Du gibst den Turm her, und danach steht der
+   König im Matt.“ Ohne Opfer und ohne Motiv der knappe Lobsatz.
+5. **Rückbezüge** (höchstens einer je Moment, zwei je Besprechung):
+   - Lektion und Lehrer: Begriff des Moments → die Runde aus runden.json, die ihn lehrt (Feld
+     `steller`, Ort), nur wenn sie gespielt ist (`…Versucht`): „Wie Sam es dir im Club gezeigt
+     hat: erst schauen, was hängt.“
+   - Gegner: Name aus der Partie, bei Wiederholung derselben Paarung („Gegen Coach Delgado ist dir
+     das schon einmal passiert.“).
+   - Frühere Partien: dieselbe Fehlerart in einer der letzten fünf ausgewerteten Partien des
+     Helden (nur aus den gespeicherten Werten, ohne neue Rechnung; Befund je Partie einmal in den
+     Eintrag gelegt, Feld `fehlerarten`, Speicherformat der Beta darf sich ändern).
+6. **Eine Anekdote je Besprechung** höchstens, aus Ambroses Zeit (Kaffeehaus, Dampfer, Josiah Hale
+   nicht vor dem Stand der Geschichte, der das erlaubt), je Begriff zwei bis drei; nur mit Ambrose,
+   nicht allein und nicht nach dem Abschied.
+7. **Stimme** nach Story-Bibel 5.3: gebaute Sätze, ein altes Wort je Zeile, Bilder aus seiner
+   Zeit, nie Zahlen. Allein als Notiz des Helden, nüchtern.
+
+Umsetzung in Teilen (je eigener Patch):
+
+- C1 Ursache mit Figur und Feld, Material als Figur (`anbindung/besprechungsursache.ts`,
+  Texte `besprechung.<stimme>.ursache.<art>.<n>` und `….material.<figur>.<n>`), etwa 180 Texte.
+- C2 Phase und Lage, Lob mit Opfer und Motiv (`anbindung/besprechungslage.ts`), etwa 80 Texte.
+- C3 Rückbezüge und Anekdoten (`anbindung/besprechungsbezug.ts`, Lehrer aus runden.json),
+  etwa 60 Texte.
+- C4 Messlauf: 40 Besprechungen aus gespeicherten Partien (phasenpartien.json, Partien des
+  Spieler-Durchlaufs) mit Stufen 1 bis 3 und allen drei Stimmen nach `buch/arbeit/besprechung/`
+  (Text und HTML, nur lokal), Stichprobe von 100 Sätzen von Hand gegen das Brett geprüft,
+  Fehlerquote im Bericht; Sprache, heldneutral und rivalneutral mit 0 Befunden.
+- Aufwand: C1 eine Sitzung, C2 eine halbe, C3 eine halbe bis eine, C4 eine halbe; zusammen etwa
+  drei Sitzungen.
+
 ## Offen
 
-- Auswertung schon während der Partie im Hintergrund (wie Partie.tsx mit `auswertungImHintergrund`):
-  nicht eingebaut, weil die Spielhülle neben dem Bot auch Maia, Schutzengel und Zugerraten rechnet;
-  erst auf echten Handys messen.
-- Ambrose zeigt auf Wunsch die bessere Fortsetzung Zug für Zug auf dem Brett (Variante abspielen).
+- Auswertung während der Partie (seit 26.11.2026, Abschnitt 5): Zugzeit des Bots auf echten
+  knappen Handys messen (2 Kerne: Auswertung nur, solange der Spieler am Zug ist).
 - Englische Texte (`texte/en.json`) für die Besprechung.
 - Lesefassung und Gesamtsimulation kennen die Besprechung nicht (sie ist kein Questschritt).

@@ -6,6 +6,7 @@ import { describe, expect, it } from "vitest";
 import {
   bekannteBegriffe,
   besprechungOffen,
+  besprechbarePartie,
   besprechungsstimme,
   besprechungsstufe,
 } from "./besprechung";
@@ -65,5 +66,16 @@ describe("Partiebesprechung: wer spricht", () => {
     expect(besprechungsstimme({ abschiedGesehen: true, versoehnungGesehen: true })).toBe(
       "abschied",
     );
+  });
+});
+
+describe("Partiebesprechung: welche Partien", () => {
+  it("nur normale Regeln: ohne Variante, blind, nach Gehör; nicht Schach960 und Unbekanntes", () => {
+    expect(besprechbarePartie({})).toBe(true);
+    expect(besprechbarePartie({ abenteuer: {} })).toBe(true);
+    expect(besprechbarePartie({ abenteuer: { variante: "blind" } })).toBe(true);
+    expect(besprechbarePartie({ abenteuer: { variante: "gehoer" } })).toBe(true);
+    expect(besprechbarePartie({ abenteuer: { variante: "schach960" } })).toBe(false);
+    expect(besprechbarePartie({ abenteuer: { variante: "atomschach" } })).toBe(false);
   });
 });

@@ -62,6 +62,12 @@ const VERLUSTWERT = -12;
 const NOTAUSGANG = 3;
 /** So lange dürfen Gegnerzug und Wertung der Engine im Browser dauern. */
 const ENGINE_FRIST = 45_000;
+/**
+ * So lange darf der Nachlauf der Auswertung nach der Partie dauern (ms). Der Spieler des Tests
+ * zieht sofort, darum rechnet während der Partie kaum etwas vor; nach dem Ende braucht jede der
+ * bis zu 31 Stellungen bis zu vier Sekunden (useAuswertung.ts, RECHENZEIT_MS).
+ */
+const NACHLAUF_FRIST = 150_000;
 /** Pause auf dem Übergangsfeld, bevor der Schritt in den Durchgang wieder zählt (RUHEBILDER). */
 const RUHE_MS = 800;
 
@@ -251,6 +257,14 @@ for (const fall of FAELLE) {
       const gespraech = await klickeDurch(page, "„Nicht jetzt.“");
       expect(await kachel(page)).toBe(uebergangskachel(sperre));
       await foto(page, `${bild}_2_truppe`);
+      // Auswertung während der Partie und im Nachlauf (Wunsch des Autors, 26.11.2026): Nach der
+      // Rückkehr in die Oberwelt rechnet der Nachlauf weiter, bis der Eintrag einen Wert je
+      // Stellung hat; „Besprechen“ im Tagebuch rechnet dann nicht mehr.
+      await expect
+        .poll(async () => (await page.evaluate(liesPartieImBrowser))?.ausgewertet, {
+          timeout: NACHLAUF_FRIST,
+        })
+        .toBe(ende.zuege.length + 1);
 
       const schild = page.getByTestId("abenteuer-ortsschild");
       const fehlversuch = istFehlversuch(sperre, ausgang);

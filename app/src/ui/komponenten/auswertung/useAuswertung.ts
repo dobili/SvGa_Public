@@ -188,11 +188,18 @@ export async function ergebnisFuer(
   }
 }
 
-/** Schreibt die fertige Auswertung in den Speicher und räumt den Zwischenspeicher. */
+/**
+ * Schreibt die fertige Auswertung in den Speicher und räumt den Zwischenspeicher.
+ * Sonderfall: Hat der Eintrag schon Werte (eine zweite Rechnung derselben Partie war schneller, etwa
+ * der Nachlauf des Abenteuers neben der offenen Besprechung, nachlauf.ts), bleibt alles, wie es ist;
+ * so zählen die Wirkungen nach der Auswertung (Rekorde) nur einmal.
+ */
 function speichere(id: string, werte: readonly Stellungswert[]): void {
-  void aendere((d) =>
+  void aendere((d) => {
+    const eintrag = d.spiel.partien.find((e) => e.partie.id === id);
+    if (eintrag && eintrag.werte.length > 0) return d;
     // Gamifizierung: Wirkungen nach der Auswertung (Rekorde aus Werten und Zugklassen).
-    nachAuswertung(
+    return nachAuswertung(
       {
         ...d,
         spiel: mitWerten(
@@ -206,9 +213,46 @@ function speichere(id: string, werte: readonly Stellungswert[]): void {
       },
       id,
       new Date(),
-    ),
-  );
+    );
+  });
   zwischenspeicher.delete(id);
+}
+
+/** Wie eine Rechnung über alle Stellungen einer Partie läuft (Hook und Nachlauf). */
+export interface Rechenlauf {
+  /** Nach dem Ende: kürzere Rechenzeit, Nachprüfung und Speichern am Schluss. */
+  readonly nachher: boolean;
+  /** Soll die Rechnung noch laufen? */
+  readonly laeuft: () => boolean;
+  /** Fortschritt nach dem Ende (erledigt von gesamt). */
+  readonly beiFortschritt?: (erledigt: number, gesamt: number) => void;
+}
+
+/**
+ * Bewertet alle Stellungen einer Partie der Reihe nach (aus dem Zwischenspeicher, wenn schon
+ * gerechnet) und speichert nach dem Ende das Ergebnis. Ausgabe: true, wenn alle Stellungen fertig
+ * und (nach dem Ende) gespeichert sind; false, wenn die Rechnung vorher aufhören sollte.
+ * Beispiel: 20 Halbzüge, 18 schon im Zwischenspeicher → nach dem Ende drei neue Stellungen, dann
+ * Nachprüfung und Speichern.
+ */
+export async function werteAus(partie: Partie, lauf: Rechenlauf): Promise<boolean> {
+  const id = partie.id;
+  const alle = stellungen(partie);
+  const werte: (Stellungswert | undefined)[] = alle.map(() => undefined);
+  const rechenzeit = lauf.nachher ? RECHENZEIT_MS : RECHENZEIT_IM_SPIEL_MS;
+  for (let i = 0; i < alle.length; i += 1) {
+    if (!lauf.laeuft()) return false;
+    lauf.beiFortschritt?.(i, alle.length);
+    const ergebnis = await ergebnisFuer(id, alle[i] ?? "", lauf.laeuft, rechenzeit);
+    if (!ergebnis) return false;
+    werte[i] = ergebnis;
+  }
+  if (!lauf.nachher) return true;
+  if (!(await nachpruefen(werte, lauf.laeuft))) return false;
+  const fertig = werte.flatMap((w) => (w ? [w] : []));
+  if (!lauf.laeuft() || fertig.length !== alle.length) return false;
+  speichere(id, fertig);
+  return true;
 }
 
 /**
@@ -231,22 +275,13 @@ export function useAuswertung(
   useEffect(() => {
     if (!aktivieren) return;
     let aktiv = true;
-    const alle = stellungen(partie);
-    const werte: (Stellungswert | undefined)[] = alle.map(() => undefined);
-    const weiter = async () => {
-      for (let i = 0; i < alle.length; i += 1) {
-        if (!aktiv) return;
-        if (nachher) setzeStand({ art: "laeuft", erledigt: i, gesamt: alle.length });
-        const rechenzeit = nachher ? RECHENZEIT_MS : RECHENZEIT_IM_SPIEL_MS;
-        const ergebnis = await ergebnisFuer(id, alle[i] ?? "", () => aktiv, rechenzeit);
-        if (!ergebnis) return;
-        werte[i] = ergebnis;
-      }
-      if (nachher && !(await nachpruefen(werte, () => aktiv))) return;
-      const fertig = werte.flatMap((w) => (w ? [w] : []));
-      if (aktiv && nachher && fertig.length === alle.length) speichere(id, fertig);
-    };
-    weiter().catch((grund: unknown) => {
+    werteAus(partie, {
+      nachher,
+      laeuft: () => aktiv,
+      beiFortschritt: nachher
+        ? (erledigt, gesamt) => setzeStand({ art: "laeuft", erledigt, gesamt })
+        : undefined,
+    }).catch((grund: unknown) => {
       if (!aktiv) return;
       console.error("Auswertung fehlgeschlagen:", grund);
       setzeStand({

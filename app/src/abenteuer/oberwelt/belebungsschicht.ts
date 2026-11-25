@@ -16,6 +16,7 @@ import { setzeSitzend } from "./figurensitz";
 import { erzeugeSchwimmanimationen, schwimmname } from "./schwimmbilder";
 import { sitzlageAuf, sitzsperre, type Sitzlage, type Sitzmoebel } from "./sitzplatz";
 import { legeSitzausschnitt } from "./vordergrund";
+import { Tierweg } from "./tierweg";
 import Phaser from "phaser";
 import { passtZurStunde, statistenbild, type Belebung, type Feld } from "./belebung";
 import {
@@ -149,6 +150,7 @@ export const BELEBUNG_EREIGNIS = "belebung";
 
 export class Belebungsschicht {
   private readonly darsteller: Darsteller[] = [];
+  readonly tierweg = new Tierweg(() => this.darsteller); // Tiere im Weg, Verscheuchen (tierweg.ts)
 
   /**
    * Stellt alle Statisten (zur Stunde passend) und Tiere auf. `platzhalter` ist der Schlüssel des
@@ -317,7 +319,9 @@ export class Belebungsschicht {
     const dt = Math.min(deltaMs / MS_JE_S, LAENGSTER_SCHRITT);
     const sicht = this.szene.cameras.main.worldView;
     const k = this.kachel;
-    const umgebung: Umgebung = { held, frei, zufall: Math.random, ...blick };
+    const belegt = this.tierweg.belegt(held); // Tiere meiden Menschen, Tiere, Sitze (tierweg.ts)
+    const tierfrei = (x: number, y: number) => frei(x, y) && !belegt(x, y);
+    const umgebung: Umgebung = { held, frei: tierfrei, belegt, zufall: Math.random, ...blick };
     for (const d of this.darsteller) {
       const px = d.b.x * k;
       const py = d.b.y * k;
@@ -332,6 +336,7 @@ export class Belebungsschicht {
       this.zeige(d);
       this.schalteSperre(d, held);
     }
+    this.tierweg.nachBild(umgebung, dt);
   }
 
   /** Lage, Tiefe und Bild eines Darstellers nach seinem Zustand. */
@@ -382,7 +387,7 @@ export class Belebungsschicht {
     if (!sperre || !(koerper instanceof Phaser.Physics.Arcade.StaticBody)) return;
     const x = Math.round(d.b.x);
     const y = Math.round(d.b.y);
-    const an = sperreAn(held, x, y, d.flaeche);
+    const an = sperreAn(held, x, y, d.flaeche) && !d.b.durchlass; // eingeklemmt: durch
     const mx = x * this.kachel + this.kachel / 2;
     const my = y * this.kachel + this.kachel / 2;
     if (an && (sperre.x !== mx || sperre.y !== my || !koerper.enable)) {

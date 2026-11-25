@@ -51,6 +51,14 @@
   right: var(--daumen-rand);
 }
 
+/* Zweite Wahl (Verscheuchen neben einem Gespräch, useVerscheuchen.ts): über dem Aktionsknopf. */
+.abenteuer-aktion.abenteuer-aktion-zweite {
+  bottom: calc(
+    var(--kreuz-unten) + (var(--kreuz-hoehe) - var(--aktion-groesse)) / 2 + var(--aktion-groesse) +
+      var(--raster)
+  );
+}
+
 /* Die Reihe unter dem Steuerkreuz; am äußeren Ende steht der Menüknopf, das Tagebuch gleich
    daneben (row-reverse: das erste Kind, das Tagebuch, liegt dem Menü am nächsten). */
 .abenteuer-leiste {

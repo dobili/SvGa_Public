@@ -63,6 +63,7 @@
   "nadel.gold": "Goldnadel",
   "nadel.silber": "Silbernadel",
   "nadel.bronze": "Bronzenadel",
+  "oberwelt.verscheuchen": "Verscheuchen",
   "oberwelt.zurueckZurStadt": "Zurück nach {ort}",
   "oberwelt.deckWaehlen": "Karten für die Partie wählen ({anzahl} von {max})",
   "paket.laden": "Spiel herunterladen (etwa {mb} MB)",

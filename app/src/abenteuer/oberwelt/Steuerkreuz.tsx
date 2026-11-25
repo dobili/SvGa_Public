@@ -49,6 +49,7 @@ export function Steuerkreuz({
   beiGangart,
   aktion,
   beiAktion,
+  zweiteAktion = null,
 }: {
   readonly beiRichtung: (richtung: Richtung, gedrueckt: boolean) => void;
   /** Rennen an oder aus (Finger weit draußen); fehlt der Rückruf, gibt es kein Rennen. */
@@ -56,6 +57,8 @@ export function Steuerkreuz({
   /** Text des Aktionsknopfs oder null, wenn gerade nichts zu tun ist. */
   readonly aktion: string | null;
   readonly beiAktion: () => void;
+  /** Zweite Wahl neben dem Aktionsknopf (Tier vor dem Helden: „Verscheuchen“, useVerscheuchen.ts). */
+  readonly zweiteAktion?: { readonly text: string; readonly tu: () => void } | null;
 }) {
   const finger = useRef<number | null>(null);
   const [aktiv, setzeAktiv] = useState<Richtung | null>(null);
@@ -146,6 +149,16 @@ export function Steuerkreuz({
       >
         {aktion ?? ""}
       </button>
+      {zweiteAktion && (
+        <button
+          type="button"
+          className="abenteuer-aktion abenteuer-aktion-zweite"
+          onClick={zweiteAktion.tu}
+          data-testid="abenteuer-aktion-zweite"
+        >
+          {zweiteAktion.text}
+        </button>
+      )}
     </>
   );
 }

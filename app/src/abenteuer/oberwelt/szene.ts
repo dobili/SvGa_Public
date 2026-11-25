@@ -34,6 +34,7 @@ import {
   stelleAufKachel,
   BILD_JE_RICHTUNG,
 } from "./figurbilder";
+import { festeFelder } from "./tierweg";
 import { setzeHeldtiefe, tiefenmoebelAus, type Tiefenmoebel } from "./heldtiefe";
 import { ladeMoebelbilder, richteMoebelrahmenEin, stelleMoebelAuf, teileJeTextur } from "./moebel";
 import { stelleFigurenAuf } from "./figurenaufstellung";
@@ -85,7 +86,7 @@ export class Oberweltszene extends Phaser.Scene {
   gangart = new Gangartsteuerung(false); // Rennen draußen (gangart.ts), Oberwelt setzt das Kreuz
   /** Statisten und Tiere der Karte (aus der Objektebene) und ihre Schicht nach create(). */
   private belebung: Belebung[] = [];
-  private belebungsschicht: Belebungsschicht | null = null;
+  belebungsschicht: Belebungsschicht | null = null; // öffentlich: Verscheuchen (useVerscheuchen.ts)
   private toenungsschicht: Toenungsschicht | null = null;
   /** Ist eine Kachel für Tiere begehbar (sperrkarte.ts)? Vor create() ist nichts frei. */
   private frei: (x: number, y: number) => boolean = () => false;
@@ -189,6 +190,7 @@ export class Oberweltszene extends Phaser.Scene {
     const schicht = new Belebungsschicht(this, this.belebung, KACHEL, stunde, "figur", sitze);
     this.physics.add.collider(held, schicht.sperren());
     this.belebungsschicht = schicht;
+    schicht.tierweg.setzeFeste(festeFelder(liste, this.ausloeser, KACHEL)); // Sitze, Betten, Figuren
     this.toenungsschicht = new Toenungsschicht(this, KACHEL);
     this.setzeToenung(this.daten.toenung ?? null);
     zeigeTeilchen(this, mitSchnee(this.daten.jahreszeit, this.daten.teilchen), true);

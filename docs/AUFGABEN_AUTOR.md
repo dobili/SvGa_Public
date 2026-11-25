@@ -576,6 +576,76 @@ Profil › Einstellungen › Fehler melden.
       Abernathy sitzt tagsüber auf der Schachbank. 5. Capital Arena, Raststätte, Akademie, Hütte,
       Seeufer: Victor, Nova, Kade, Lin, Haraldsen, Kit und der Wanderer sitzen, wo der Text es sagt.
       **Antwort:** „N2718 ok“ oder was auffällt.
+- [ ] N2719. **Gefahrenradar (25.11.2026):** In einer Partie mit Karten die Karte „Gefahrenradar“
+      ausspielen. Rot umrandet sind jetzt nur noch eigene Figuren, die der Gegner sofort mit
+      Gewinn schlagen kann (angegriffen und nicht ausreichend gedeckt, gezählt wie in Kapitel 1),
+      dazu der König, wenn Matt droht. In den Feldern steht kein „W1“ mehr. Ein ungedeckter Turm
+      auf h1, den nichts angreift, bleibt ohne Markierung. Unter dem Brett sagt eine Zeile, was Rot
+      bedeutet, oder dass gerade nichts in Gefahr ist.
+      **Antwort:** „N2719 ok“ oder Stellung und was falsch markiert ist.
+- [ ] N2720. **Kiosk (25.11.2026):** Bei Mr. Patel etwas kaufen. Unter den Münzen steht danach
+      „Gekauft: … Im Rucksack: 1.“, und die Münzzahl blinkt kurz auf. Jede Ware nennt, wie viele
+      Stück du schon hast. Eine Karte, die man aufbraucht (etwa ein Joker), kauft das erste Tippen
+      nicht noch einmal, wenn du sie schon hast: Der Knopf fragt „Noch eine … ? Zum Kaufen noch
+      einmal tippen.“ Erst das zweite Tippen kauft. Dauerhafte Karten und Dinge (Limo, Gegenstände)
+      gibt es weiter nur einmal.
+      **Antwort:** „N2720 ok“ oder was auffällt.
+- [ ] N2721. **Tagebuch, Meine Partien (25.11.2026):** Ein neues Spiel beginnen und eine Partie
+      spielen. Im Tagebuch unter „Meine Partien“ stehen nur noch die Partien dieses Spiels, nicht
+      die aus einem früheren Durchlauf. „Gegen Ambrose: gewonnen · 0 Züge“ kam von der Testhilfe
+      „Gewinnen“, die die Partie ohne einen Zug beendet: Solche Partien zeigen jetzt kein
+      „Ansehen“ mehr (es gäbe nichts nachzuspielen). Eine Partie in einer Variante (Ente, Nebel,
+      Tandem) zeigt ihre echte Zugzahl statt „0 Züge“, ebenfalls ohne „Ansehen“. „Besprechen“ erscheint wie bisher erst, nachdem der Coach die
+      Besprechung nach dem ersten Clubkampf angekündigt hat.
+      **Antwort:** „N2721 ok“ oder was auffällt.
+- [ ] N2722. **Namensfeld und Eingaben im Dunkelmodus (25.11.2026):** Das Handy auf dunkle
+      Darstellung stellen und ein neues Spiel beginnen. Das Namensfeld ist weiß mit dunkler
+      Schrift und gut lesbar, ebenso jedes andere Eingabefeld im Spiel. Die Auswahlknöpfe (etwa
+      Held oder Heldin) sind cremefarben mit goldenem Rand, der gewählte hebt sich ab.
+      **Antwort:** „N2722 ok“ oder Bildschirm und was schlecht lesbar ist.
+- [ ] N2723. **Knöpfe Tagebuch und Menü (25.11.2026):** Im Hochformat und im Querformat stehen
+      📖 und ☰ weiter vom Rand und vom Steuerkreuz weg, etwas tiefer, und nicht mehr in der runden
+      Ecke des iPhones. Beide lassen sich mit dem Daumen treffen, ohne das Steuerkreuz zu
+      berühren. Im Gespräch stehen 📖 und ☰ oben rechts nebeneinander auf einer Höhe, die Münzen
+      in derselben Zeile links daneben (vorher saß 📖 am iPhone eine Notch-Höhe tiefer und weiter
+      links). Auch Meldungen und das Ortsschild rücken oben näher an den Rand.
+      **Antwort:** „N2723 ok“ oder Format und was stört.
+- [ ] N2724. **Runde Pfeilknöpfe (25.11.2026):** In einer Vorführung oder Zeigefolge (etwa ein
+      Brettbeispiel im Dialog) sind die runden ◀ ▶ hell (creme mit goldenem Rand und dunkler
+      Schrift) und gut zu sehen, auch auf dunklem Grund.
+      **Antwort:** „N2724 ok“ oder wo ein runder Knopf schlecht zu sehen ist.
+- [ ] N2725. **Jo spielt nach dem ersten Sieg von vorn (25.11.2026):** Gegen Jo im Park
+      gewinnen, dann „Noch eine.“ Jo sagt jetzt „Aber diesmal von vorn, mit allen Figuren“, stellt
+      neu auf, und die Partie beginnt aus der Grundstellung als ganze Partie. Dasselbe gilt für
+      alle Straßengegner mit fester Stellung (Rosa, Nia, Schaffner, Harlan, Dash, Schiffskoch,
+      Batiste, Buck, Sol, Mags, Kreidenacht): nach dem ersten Sieg die Grundstellung. Gleich
+      bleiben die Story-Partien (Victor, Fernpartien, 1858, Meisterproblem, Testteams,
+      Simultan), der Stream (die Zuschauer wählen den Zug) und Gegner, deren Stellung ohnehin
+      jedes Mal wechselt (Gus, Joggerin, Hollis, Dime).
+      **Antwort:** „N2725 ok“ oder Gegner und was nicht passt.
+- [ ] N2726. **Warten und Schlafen mit Zeitraffer (25.11.2026):** Im Menü „Warten …“ bis Nacht
+      wählen, an einer Bank „Ausruhen“ und im eigenen Bett „Schlafen“. Gut zwei Sekunden lang zieht
+      die Sonne über einen Bogen über dem Horizont, der Himmel wird golden, rot, dann dunkel, der
+      Mond geht auf, Sterne erscheinen, und die Zeiger der Uhr laufen zur Zielzeit (Uhrzeit
+      darunter). Beim Schlafen steht „Du schläfst …“, und es wird Morgen. Zum Ende blendet es aus,
+      und die Karte steht schon im neuen Licht. Ein Tippen überspringt.
+      **Antwort:** „N2726 ok“ oder was zu schnell, zu langsam oder unschön ist.
+- [ ] N2727. **Das Brett steht still (25.11.2026):** Eine Partie mit Uhr und Karten spielen,
+      im Hoch- und im Querformat, am besten eine Begegnung mit erzähltem Einstieg (etwa Jo im
+      Park). Das Brett bleibt an seiner Stelle, wenn der Einstieg nach dem ersten Zug
+      verschwindet, Sprechblasen kommen, du eine Karte spielst, „… überlegt“ erscheint und am
+      Ende „Weiter“ statt der Knöpfe dasteht. Hoch steht oben die Uhr des Gegners, darunter das
+      Brett, und nur der Bereich darunter (eigene Uhr, Karten, Knöpfe) lässt sich rollen. Quer
+      steht die Uhr des Gegners rechts oben neben seinem Namen.
+      **Antwort:** „N2727 ok“ oder wann das Brett noch springt.
+- [ ] N2728. **Fenster mit Weiter-Knopf (25.11.2026):** Einen Fund mit Bild aufheben (etwa auf
+      dem Weg von Maple Falls nach Cedar Creek). Das Fenster füllt jetzt fast den ganzen
+      Bildschirm, das Bild ist ganz zu sehen, darunter Text und ein goldener „Weiter“-Knopf, ohne
+      Rollen, hoch und quer. Steuerkreuz und Aktionsknopf ruhen, solange es offen ist; Tagebuch und
+      Menü bleiben unten frei. Auch Ergebnis, Belohnung, Tagebuchseite, Vorführung und
+      Gedächtnisstellung zeigen ihren Knopf immer: Ist der Text lang, rollt nur der Text, der Knopf
+      bleibt unten stehen.
+      **Antwort:** „N2728 ok“ oder Fenster und was nicht passt.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

@@ -4,6 +4,49 @@ Jede Entscheidung zum Spiel steht hier, damit spätere Sitzungen (auch mit Opus)
 können. Neueste Einträge oben. Offene Fragen stehen unten in „Offen“; der Autor antwortet über
 die Entscheidungsseite (Claude-Artefakt „Schach-Abenteuer Entscheidungen“) oder im Chat.
 
+## 25.11.2026 – Befunde des Autors am Abend: Radar, Kiosk, Tagebuch, Farben, Knöpfe, Jo, Zeitraffer
+
+- **Gefahrenradar:** zeigt nur, was der Gegner sofort mit Gewinn schlagen kann (Kapitel 1,
+  Zählen von Angreifern und Verteidigern, `schach/drohungen.ts`), dazu drohendes Matt; keine
+  Kennung „W1“ mehr im Feld (`anbindung/gefahrenradar.ts`).
+- **Kiosk:** Anzahl im Rucksack je Ware, sichtbare Kaufbestätigung, Münzen blinken. Dauerhafte
+  Karten und Gegenstände nur einmal; eine Verbrauchskarte, die man schon hat, erst nach einem
+  zweiten Tippen (`regeln/muenzen.ts`, `brauchtRueckfrage`). Grund: Verbrauchskarten mehrfach zu
+  besitzen ist sinnvoll, ein versehentlicher Doppelkauf nicht.
+- **Meine Partien:** nur Partien ab `Abenteuerstand.begonnen` (dieser Durchlauf, ohne neues
+  Speicherformat); „Ansehen“ nur für Partien mit Zügen („0 Züge“ kam von der Testhilfe
+  „Gewinnen“); Varianten in eigener Komponente zählen ihre Züge aus dem Ende.
+- **Dunkelmodus:** Eingaben und Auswahlknöpfe im Spiel mit festen Farben (`color-scheme: light`).
+- **Knöpfe 📖 und ☰:** ein Raster weiter vom Rand und Steuerkreuz, tiefer, aus der iPhone-Ecke. Im
+  Dialog oben auf einer Höhe: Alles in der Welt (Münzen, Tagebuchreihe, Meldungen, Ortsschild)
+  rechnet oben ohne den sicheren Rand, weil die Welt schon darunter beginnt; vorher zählte er
+  doppelt. Prüfung: `tests/e2e/abenteuer-leistenknoepfe.spec.ts` (gleiche Höhe, Fuge, hoch und
+  quer, Welt und Dialog).
+- **Runde ◀ ▶:** creme mit Goldrand und Navy-Schrift.
+- **Freie Revanche:** Straßengegner mit fester Stellung (Abbildung oder FEN, auch Endspiele)
+  spielen nach dem ersten Sieg eine ganze Partie aus der Grundstellung (`regeln/freiestart.ts`).
+  Bleiben: Story-, Club- und Clubchef-Gegner (die Stellung ist Teil der Geschichte), der Stream
+  (Zuschauer wählen den Zug) und das Simultanbrett 5 (einmalige Vorstellung), dazu „vorrat“ und
+  „eroeffnung“, die ohnehin jedes Mal wechseln. Jo sagt es im Dialog.
+- **Brett steht still:** Die Partiehülle ist so hoch wie der Bildschirm und rollt nie als Ganzes
+  (`overflow: clip`). Hoch: Kopf, dann ein Block aus Uhr des Gegners und Brett an fester Stelle,
+  darunter die Spalte, die für sich rollt. Quer: Brett links, Uhr des Gegners rechts oben. Ursache
+  war hoch das Rollen der ganzen Seite (verschwand Inhalt unter dem Brett, sprang es um bis zu
+  800 px), quer ein Rollen der Hülle durch Fokus (18 px); dazu hoch der Kopf, der beim Wechsel
+  der Stimmung kurz ohne Porträt 52 px niedriger war (jetzt feste Mindesthöhe), und quer die
+  Zeile „Dein König steht im Schach …“ unter dem mittig stehenden Brett, die es um ihre halbe
+  Höhe anhob (jetzt rechts über der Spalte). Prüfung:
+  `tests/e2e/abenteuer-brettruhe.spec.ts` misst die Lage in jedem Bild, Toleranz 1 px.
+- **Fenster mit Pflichtknopf:** Fund mit Bild ohne Dialog fast bildschirmfüllend (Bild
+  `contain`, „Weiter“ als goldener Knopf darunter, endet über Tagebuch und Menü); alle
+  `.abenteuer-ergebnis` enden über dieser Reihe, ihr letzter Knopf klebt unten (sticky), nur der
+  Text rollt; Steuerkreuz und Aktionsknopf ruhen hinter solchen Fenstern und dem Laden. Prüfung:
+  `tests/e2e/abenteuer-knopffenster.spec.ts` (390 × 844, iPhone 15 und Pixel 7 quer).
+- **Zeitraffer:** Warten und Schlafen zeigen 2,6 Sekunden Sonne oder Mond auf dem Horizontbogen,
+  Himmelsfarben aus dem Farbsystem (Dokument 30), Sterne, Uhrzeiger zur Zielzeit; Tippen
+  überspringt, reduzierte Bewegung zeigt gleich die Zielzeit (`oberwelt/Zeitraffer.tsx`,
+  `regeln/zeitraffer.ts`).
+
 ## 24.11.2026 – Bodenvariation für alle Böden an: Kein Boden zeigt mehr das Kachelraster
 
 - **Anlass:** Kartenblick (alle 128 Karten aus menschlicher Sicht, Muster M01, Rang 1): Dielen als

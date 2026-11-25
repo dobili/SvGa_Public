@@ -211,18 +211,14 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   }
   await expect(dialog).toHaveCount(0);
 
-  // „Meine Partien“ im Tagebuch: die Partie steht in der Liste, „Ansehen“ zeigt sie in der Hülle,
-  // „Weiter“ führt zurück in die Welt (ohne neue Ergebniskarte).
+  // „Meine Partien“ im Tagebuch: die Partie steht in der Liste. „Gewinnen“ der Testhilfe beendet
+  // sie ohne einen Zug; dann gibt es nichts nachzuspielen und kein „Ansehen“ (Befund des Autors,
+  // 25.11.2026: „Gegen Ambrose: gewonnen · 0 Züge“ mit leerem Nachspielen). Das Nachspielen einer
+  // Partie mit Zügen prüft abenteuer-besprechung.spec.ts („Ansehen“ bleibt).
   await page.getByTestId("abenteuer-tagebuchknopf").click();
   const liste = page.getByTestId("abenteuer-meine-partien");
   await expect(liste).toContainText("Gegen Ambrose: gewonnen");
-  await liste.getByRole("button", { name: "Ansehen" }).click();
-  await expect(page.getByTestId("partie")).toBeVisible({ timeout: 20000 });
-  await expect(page.getByTestId("abenteuer-huelle-kopf")).toContainText("Ambrose");
-  await expect(page.getByTestId("abenteuer-test-sieg")).toHaveCount(0);
-  await page.getByTestId("partie-zurueck-zur-stadt").click();
-  await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 30000 });
-  await expect(page.getByTestId("abenteuer-ergebnis")).toHaveCount(0);
+  await expect(liste.getByRole("button", { name: "Ansehen" })).toHaveCount(0);
 });
 
 test("Übergang von vorn: vom Dachboden über die Luke ins Zimmer des Helden", async ({ page }) => {

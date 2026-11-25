@@ -3,9 +3,11 @@
  * Morgen, Mittag, Abend oder Nacht; in der Welt an einer Bank „Ausruhen“ (dieselbe Wahl) und am
  * eigenen Bett „Schlafen bis morgen“. Geht nur in freier Oberwelt.
  *
- * Ablauf: kurze Abblende mit Uhrsymbol, die Uhr springt auf die nächste solche Zeit (nie zurück,
- * regeln/spieluhr.ts), dann wird die Karte neu aufgestellt (kern.stelleNeuAuf): Statisten und
- * Tönung nach der neuen Zeit, der Held bleibt, wo er steht.
+ * Ablauf: Die Uhr springt auf die nächste solche Zeit (nie zurück, regeln/spieluhr.ts), dazu
+ * läuft der Zeitraffer (oberwelt/Zeitraffer.tsx, seit 25.11.2026 statt der stehenden Abblende
+ * mit Uhrsymbol): Sonne oder Mond über dem Horizont, Uhrzeiger zur Zielzeit, Tippen überspringt.
+ * Mitten darin wird die Karte neu aufgestellt (kern.stelleNeuAuf): Statisten und Tönung nach der
+ * neuen Zeit, der Held bleibt, wo er steht.
  * Rolle im Gesamtbild: Teil von oberwelt/Oberwelt.tsx; das Menü erreicht es über wartewunsch.ts.
  * Abhängigkeiten: kern.ts, ruheplatz.ts, wartewunsch.ts, regeln/spieluhr.ts, texte/texte.ts.
  */
@@ -16,10 +18,9 @@ import { szeneAus, type Oberweltkern } from "./kern";
 import { ruheplatz, type Ruhe } from "./ruheplatz";
 import { KACHEL } from "./szene";
 import { Warteauswahl } from "./Warteauswahl";
+import { Zeitraffer } from "./Zeitraffer";
 import { meldeWartelage, type Warteziel } from "./wartewunsch";
 
-/** Dauer der Abblende in Millisekunden (Uhrsymbol, dann Neuaufbau). */
-const ABBLENDE_MS = 1200;
 /** So oft fragt der Ruheplatz nach der Lage des Helden. */
 const RUHE_TAKT_MS = 400;
 
@@ -38,31 +39,35 @@ export interface Warten {
  * Beispiel: Menü „bis Nacht“ um 14 Uhr → Abblende, Uhr 22 Uhr, Karte mit Nachtstatisten.
  */
 export function useWarten(k: Oberweltkern, frei: boolean): Warten {
-  const [abblende, setzeAbblende] = useState(false);
+  // Laufender Zeitraffer: Spielminuten vorher und nachher, Schlafen oder Warten.
+  const [raffer, setzeRaffer] = useState<{
+    von: number;
+    nach: number;
+    schlafen: boolean;
+  } | null>(null);
+  const abblende = raffer !== null;
   const [auswahl, setzeAuswahl] = useState(false);
   const [ruheart, setzeRuheart] = useState<Ruhe | null>(null);
   const kRef = useRef(k);
   useEffect(() => {
     kRef.current = k;
   });
-  const warteBis = (ziel: Warteziel) => {
+  // Gespeichert wird sofort; der Zeitraffer stellt die Karte erst neu auf, wenn das Schreiben fertig ist.
+  const geschrieben = useRef<Promise<void>>(Promise.resolve());
+  const warteBis = (ziel: Warteziel, schlafen = false) => {
     const kern = kRef.current;
     const stand = kern.standRef.current;
     if (!stand) return;
     setzeAuswahl(false);
-    setzeAbblende(true);
-    const neu = {
-      ...stand,
-      position: kern.position(stand),
-      spieluhr: naechsteStunde(spielminuteJetzt(stand), ZIELE[ziel] ?? 0),
-    };
+    const von = spielminuteJetzt(stand);
+    const nach = naechsteStunde(von, ZIELE[ziel] ?? 0);
+    const neu = { ...stand, position: kern.position(stand), spieluhr: nach };
     kern.merke(neu);
-    window.setTimeout(() => {
-      void kern.dienste.schreibeStand(neu).then(() => {
-        kern.stelleNeuAuf();
-        setzeAbblende(false);
-      });
-    }, ABBLENDE_MS / 2);
+    geschrieben.current = kern.dienste.schreibeStand(neu);
+    setzeRaffer({ von, nach, schlafen });
+  };
+  const stelleNeuAuf = () => {
+    void geschrieben.current.then(() => kRef.current.stelleNeuAuf());
   };
   const stand = k.stand;
   const moeglich = frei && !abblende && !auswahl;
@@ -90,21 +95,20 @@ export function useWarten(k: Oberweltkern, frei: boolean): Warten {
     ruheart && moeglich
       ? {
           text: tSpiel(`oberwelt.aktion.${ruheart}`),
-          tu: () => (ruheart === "schlafen" ? warteBis("morgen") : setzeAuswahl(true)),
+          tu: () => (ruheart === "schlafen" ? warteBis("morgen", true) : setzeAuswahl(true)),
         }
       : null;
   const element = (
     <>
       {auswahl && <Warteauswahl beiZiel={warteBis} beiAbbruch={() => setzeAuswahl(false)} />}
-      {abblende && (
-        <div
-          className="abenteuer-warteblende"
-          data-testid="abenteuer-warteblende"
-          aria-live="polite"
-        >
-          <span aria-hidden="true">🕰️</span>
-          <p>{tSpiel("warten.laeuft")}</p>
-        </div>
+      {raffer && (
+        <Zeitraffer
+          von={raffer.von}
+          nach={raffer.nach}
+          schlafen={raffer.schlafen}
+          beiNeuaufbau={stelleNeuAuf}
+          beiEnde={() => setzeRaffer(null)}
+        />
       )}
     </>
   );

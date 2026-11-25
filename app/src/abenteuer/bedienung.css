@@ -24,8 +24,13 @@
   /* Symbolknöpfe: 44 px, über der Mindestgröße von 40 px zum Tippen; die Reihe liegt ganz unten,
      das Kreuz darüber. */
   --leistenknopf: 44px;
-  --leiste-unten: var(--daumen-unten);
-  --kreuz-unten: calc(var(--daumen-unten) + var(--leistenknopf) + var(--raster));
+  /* Reihe mit Tagebuch und Menü (Befund des Autors am iPhone, 25.11.2026: zu dicht unter den
+     Pfeiltasten): etwas tiefer als bisher, aber über dem Strich der Home-Leiste, mit gut 30 px
+     Luft zum Kreuz; seitlich weiter eingerückt, damit die äußeren Knöpfe nicht in die Rundung
+     der Bildschirmecke geraten. */
+  --leiste-unten: calc(env(safe-area-inset-bottom) + var(--raster));
+  --leiste-seite: calc(var(--daumen-rand) + var(--raster));
+  --kreuz-unten: calc(var(--daumen-unten) + var(--leistenknopf) + var(--raster) * 3);
   /* Freier Rand über dem Kreuz: Dort liegen Hinweise, wenn der Held oben steht (steuerhinweis.css). */
   --ueber-kreuz: calc(var(--kreuz-unten) + var(--kreuz-hoehe) + var(--raster));
 }
@@ -64,8 +69,8 @@
 .abenteuer-leiste {
   position: absolute;
   z-index: 3;
-  left: var(--daumen-rand);
-  right: calc(var(--daumen-rand) + var(--leistenknopf) + var(--raster) * 1.5);
+  left: var(--leiste-seite);
+  right: calc(var(--leiste-seite) + var(--leistenknopf) + var(--raster) * 1.5);
   bottom: var(--leiste-unten);
   display: flex;
   flex-direction: row-reverse;
@@ -75,8 +80,8 @@
 }
 
 [data-steuerkreuz="links"] .abenteuer-leiste {
-  left: calc(var(--daumen-rand) + var(--leistenknopf) + var(--raster) * 1.5);
-  right: var(--daumen-rand);
+  left: calc(var(--leiste-seite) + var(--leistenknopf) + var(--raster) * 1.5);
+  right: var(--leiste-seite);
   flex-direction: row;
 }
 
@@ -106,13 +111,13 @@
 /* In der Welt (ohne offenen Dialog) liegt der Menüknopf am äußeren Ende der Reihe. */
 .bildschirm-abenteuer:has(> .abenteuer-welt):not(:has(.abenteuer-dialog)) > .abenteuer-menueknopf {
   top: auto;
-  right: var(--daumen-rand);
+  right: var(--leiste-seite);
   bottom: var(--leiste-unten);
 }
 
 [data-steuerkreuz="links"]:has(> .abenteuer-welt):not(:has(.abenteuer-dialog))
   > .abenteuer-menueknopf {
-  left: var(--daumen-rand);
+  left: var(--leiste-seite);
   right: auto;
 }
 
@@ -167,14 +172,14 @@
 
   /* Die Reihe unter dem Kreuz links: Menü am Rand, daneben Tagebuch, Übungspartie, Reisen. */
   .bildschirm-abenteuer .abenteuer-leiste {
-    left: calc(var(--daumen-links) + var(--leistenknopf) + var(--raster) * 1.5);
+    left: calc(var(--daumen-links) + var(--raster) + var(--leistenknopf) + var(--raster) * 1.5);
     right: auto;
     flex-direction: row;
   }
 
   .bildschirm-abenteuer:has(> .abenteuer-welt):not(:has(.abenteuer-dialog))
     > .abenteuer-menueknopf {
-    left: var(--daumen-links);
+    left: calc(var(--daumen-links) + var(--raster));
     right: auto;
   }
 
@@ -194,7 +199,11 @@
 .bildschirm-abenteuer .abenteuer-welt:has(.abenteuer-dialog) .abenteuer-leiste {
   /* Über Meldungen (z-index 3) wie der Menüknopf: Das Tagebuch bleibt auch im Dialog erreichbar. */
   z-index: 4;
-  top: calc(env(safe-area-inset-top) + var(--raster));
+  /* Nur ein Raster: Die Welt beginnt schon unter dem sicheren Rand (.bildschirm-abenteuer hat ihn
+     als Innenabstand); der Menüknopf liegt außerhalb der Welt bei sicherer Rand + Raster. Mit dem
+     Rand hier zählte er doppelt, und 📖 saß am iPhone eine Notch-Höhe tiefer als ☰ (Befund des
+     Autors, 25.11.2026: versetzt statt nebeneinander). */
+  top: var(--raster);
   bottom: auto;
   left: auto;
   right: calc(var(--raster) * 2 + var(--leistenknopf) + var(--spiel-pixel) * 2);
@@ -218,12 +227,16 @@
   right: calc(var(--raster) * 2 + var(--leistenknopf) + var(--spiel-pixel) * 2);
 }
 
+/* Alles in der Welt (Münzen, Tagebuchreihe, Meldungen, Ortsschild) rechnet oben ohne den sicheren
+   Rand: Die Welt beginnt schon darunter (.bildschirm-abenteuer, padding-top). Vorher zählte er
+   doppelt, und am iPhone lagen 📖 und die Münzen eine Notch-Höhe tiefer als ☰ (25.11.2026). */
+
 /* ---------- Meldungen als schmale Leiste oben (Fotos 14.11.2026) ----------
    „Neu im Tagebuch …“ war quer eine halbe Bildschirmhöhe groß und lag zugleich mit dem Dialog
    da. Jetzt: eine Zeile mit kleinem „Weiter“ rechts daneben; Antippen des Textes schließt auch
    (Oberwelt.tsx). Hoch liegt die Leiste unter der Zeile mit Münzen, Menü und Tagebuch. */
 .bildschirm-abenteuer .abenteuer-ergebnis.abenteuer-meldung {
-  top: calc(env(safe-area-inset-top) + var(--raster) * 2.5 + var(--leistenknopf));
+  top: calc(var(--raster) * 2.5 + var(--leistenknopf));
   left: var(--raster);
   right: var(--raster);
   bottom: auto;
@@ -262,7 +275,7 @@
 /* Quer und breit genug: oben in der Mitte, zwischen Tagebuch links und Münzen und Menü rechts. */
 @media (orientation: landscape) and (max-height: 600px) and (min-width: 760px) {
   .bildschirm-abenteuer .abenteuer-ergebnis.abenteuer-meldung {
-    top: calc(env(safe-area-inset-top) + var(--raster));
+    top: var(--raster);
     left: 50%;
     right: auto;
     width: min(34rem, calc(100vw - 2 * 15rem));
@@ -290,14 +303,78 @@
   }
 }
 
-/* Ein Fund mit Bild (funde.json `bild`) bleibt ohne Dialog eine Karte mit großem Bild; während
-   eines Dialogs ist auch er nur die Leiste. */
-.bildschirm-abenteuer:not(:has(.abenteuer-dialog)) .abenteuer-meldung:has(> .abenteuer-fundbild) {
+/* Ein Fund mit Bild (funde.json `bild`) ist ohne Dialog ein Fenster fast so groß wie der
+   Bildschirm: das Bild ganz (contain), darunter Text und „Weiter“, immer sichtbar, ohne Rollen,
+   hoch und quer (Wunsch des Autors, 25.11.2026: Das Fenster war ein Drittel hoch, das Bild unten
+   abgeschnitten, „Weiter“ nicht zu sehen). Unten endet es über Tagebuch- und Menüknopf. Während
+   eines Dialogs bleibt er die Leiste.
+   Die Auswahl ist so lang, damit sie die Lagen der Leiste oben (Held oben, quer) übertrifft. */
+.bildschirm-abenteuer
+  .abenteuer-welt:not(:has(.abenteuer-dialog))
+  .abenteuer-ergebnis.abenteuer-meldung:has(> .abenteuer-fundbild) {
+  inset: var(--raster) calc(env(safe-area-inset-right) + var(--raster))
+    calc(var(--leiste-unten) + var(--leistenknopf) + var(--raster))
+    calc(env(safe-area-inset-left) + var(--raster));
+  z-index: 6;
   flex-direction: column;
+  justify-content: center;
+  width: auto;
+  max-height: none;
+  overflow: hidden;
+  transform: none;
 }
 
-.bildschirm-abenteuer:not(:has(.abenteuer-dialog)) .abenteuer-meldung > .abenteuer-fundbild {
-  max-height: 40vh;
+.bildschirm-abenteuer
+  .abenteuer-welt:not(:has(.abenteuer-dialog))
+  .abenteuer-meldung
+  > .abenteuer-fundbild {
+  flex: 1 1 0;
+  width: 100%;
+  min-height: 0;
+  max-height: none;
+  object-fit: contain;
+}
+
+.bildschirm-abenteuer
+  .abenteuer-welt:not(:has(.abenteuer-dialog))
+  .abenteuer-meldung:has(> .abenteuer-fundbild)
+  > p {
+  flex: none;
+}
+
+/* „Weiter“ im großen Fundfenster als richtiger Knopf, nicht als kleine Zeile der Leiste. */
+.bildschirm-abenteuer
+  .abenteuer-welt:not(:has(.abenteuer-dialog))
+  .abenteuer-meldung:has(> .abenteuer-fundbild)
+  > .knopf-zweit {
+  align-self: center;
+  min-height: 48px;
+  padding: 0 calc(var(--raster) * 4);
+  border: var(--spiel-pixel) solid var(--spiel-gold-tief);
+  background: var(--spiel-gold);
+  color: var(--spiel-navy);
+}
+
+/* Fenster mit Pflichtknopf enden über der Reihe von Tagebuch und Menü unten: Der Menüknopf lag
+   sonst auf der unteren Ecke des Fensters. */
+.bildschirm-abenteuer .abenteuer-ergebnis:not(.abenteuer-meldung) {
+  max-height: calc(
+    100dvh - var(--raster) * 4 - var(--leiste-unten) - var(--leistenknopf) - var(--raster)
+  );
+}
+
+/* Hinter Fenstern mit Pflichtknopf ruhen Steuerkreuz und Aktionsknopf: Sie lagen neben dem
+   kleinen Fundfenster („Ansehen“) und verdeckten den unteren Rand der Fenster. (:has darf kein
+   :has enthalten; deshalb steht das Fundbild selbst in der Liste.) */
+.abenteuer-welt:has(
+    :is(
+      .abenteuer-ergebnis:not(.abenteuer-meldung, .lade, .fehlertext),
+      .abenteuer-meldung > .abenteuer-fundbild,
+      .abenteuer-menue
+    )
+  )
+  :is(.abenteuer-steuerkreuz, .abenteuer-aktion) {
+  visibility: hidden;
 }
 
 /* Quer im Gespräch mit Textspalte (querformat.css): Die Reihe steht links neben dem Menü, das
@@ -319,7 +396,7 @@
 .abenteuer-ortsschild {
   position: absolute;
   z-index: 2;
-  top: calc(env(safe-area-inset-top) + var(--raster) * 2.5 + var(--leistenknopf));
+  top: calc(var(--raster) * 2.5 + var(--leistenknopf));
   left: 50%;
   max-width: calc(100% - var(--raster) * 4);
   margin: 0;

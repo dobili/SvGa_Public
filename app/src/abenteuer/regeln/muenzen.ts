@@ -44,6 +44,31 @@ export function kaufhindernis(
   return stand.muenzen < ware.preis ? "zuTeuer" : null;
 }
 
+/**
+ * Wie viele Stück einer Ware der Held schon hat (Befund des Autors, 25.11.2026: Im Laden sah man
+ * nicht, was im Rucksack ist, und kaufte eine Karte mehrmals). Karte: Anzahl im Besitz;
+ * Gegenstand: 1 oder 0. Beispiel: zwei Zweite Chancen → 2.
+ */
+export function imRucksack(stand: Abenteuerstand, ware: Ware): number {
+  if (ware.art === "gegenstand") return stand.gegenstaende.includes(ware.kennung) ? 1 : 0;
+  return stand.karten.find((k) => k.kennung === ware.kennung)?.anzahl ?? 0;
+}
+
+/**
+ * Braucht der Kauf eine Rückfrage? Ja bei einer Verbrauchskarte, die schon im Rucksack ist: Sie
+ * darf mehrfach im Besitz sein (je Partie verbraucht), aber ein zweiter Kauf geschieht nur mit
+ * einem zweiten Tippen. Dauerhafte Karten und Gegenstände gibt es ohnehin nur einmal
+ * (kaufhindernis „schonDa“). Beispiel: eine Zweite Chance im Rucksack → true; keine → false.
+ */
+export function brauchtRueckfrage(
+  stand: Abenteuerstand,
+  ware: Ware,
+  sorten: readonly Kartensorte[],
+): boolean {
+  if (ware.art !== "karte" || imRucksack(stand, ware) === 0) return false;
+  return sorten.find((s) => s.kennung === ware.kennung)?.art === "verbrauch";
+}
+
 /** Der Stand nach dem Kauf; nicht kaufbar → unverändert (derselbe Stand). */
 export function kaufe(
   stand: Abenteuerstand,

@@ -154,6 +154,19 @@
   font-weight: 600;
 }
 
+/* Runde Knöpfe der App (.chip) im Spiel, etwa ◀ ▶ der Vorführung unter „Sxf6+ Doppelschach …“
+   (Befund des Autors, 25.11.2026: dunkelblaue Pfeile auf dunkelblauem Grund, im Dunkelmodus des
+   Telefons kaum zu sehen). Feste Farben wie die Pixelknöpfe: Navy auf Creme mit goldenem Rand,
+   Kontrast über 12:1; die Form bleibt rund. Gedrückte Chips (aria-pressed) setzen ihre Farben
+   in den eigenen Regeln (besprechung.css) weiter selbst. */
+:is(.bildschirm-abenteuer, .abenteuer-huelle) .chip:not([aria-pressed="true"]) {
+  color-scheme: light;
+  border-color: var(--spiel-gold-tief);
+  background: var(--spiel-creme);
+  color: var(--spiel-navy);
+  font-weight: 700;
+}
+
 /* Münzen sind kein Knopf: gleicher Rahmen, ohne Kante. */
 .abenteuer-muenzen {
   --knopf-kante: transparent;

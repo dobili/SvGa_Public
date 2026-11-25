@@ -2,7 +2,7 @@
 import { describe, expect, it } from "vitest";
 import karten from "../../../../inhalte/abenteuer/karten.json";
 import type { Kartensorte } from "../schnittstelle/karten";
-import { bezahle, kaufe, kaufhindernis } from "./muenzen";
+import { bezahle, brauchtRueckfrage, imRucksack, kaufe, kaufhindernis } from "./muenzen";
 import { leererAbenteuerstand } from "./spielstand";
 
 const SORTEN = karten.karten as unknown as readonly Kartensorte[];
@@ -30,6 +30,27 @@ describe("Läden", () => {
     const reich = kaufe({ ...STAND, muenzen: 200 }, rad, SORTEN, JETZT);
     expect(reich.gegenstaende).toEqual(["fahrrad"]);
     expect(kaufhindernis(reich, rad, SORTEN)).toBe("schonDa");
+  });
+});
+
+describe("Rucksack und Rückfrage im Laden (Befund des Autors, 25.11.2026)", () => {
+  const chance = { art: "karte" as const, kennung: "zweiteChance", preis: 20 };
+  const radar = { art: "karte" as const, kennung: "gefahrenradar", preis: 35 };
+
+  it("zählt, wie viele Stück einer Ware im Rucksack sind", () => {
+    expect(imRucksack(STAND, chance)).toBe(0);
+    const eine = kaufe(STAND, chance, SORTEN, JETZT);
+    expect(imRucksack(eine, chance)).toBe(1);
+    expect(imRucksack(kaufe(eine, chance, SORTEN, JETZT), chance)).toBe(2);
+    const rad = { art: "gegenstand" as const, kennung: "fahrrad", preis: 1 };
+    expect(imRucksack(kaufe(STAND, rad, SORTEN, JETZT), rad)).toBe(1);
+  });
+
+  it("fragt nur bei einer Verbrauchskarte nach, die schon im Rucksack ist", () => {
+    expect(brauchtRueckfrage(STAND, chance, SORTEN)).toBe(false);
+    expect(brauchtRueckfrage(kaufe(STAND, chance, SORTEN, JETZT), chance, SORTEN)).toBe(true);
+    // Dauerhafte Karten gibt es ohnehin nur einmal (kaufhindernis „schonDa“).
+    expect(brauchtRueckfrage(kaufe(STAND, radar, SORTEN, JETZT), radar, SORTEN)).toBe(false);
   });
 });
 

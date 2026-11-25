@@ -335,7 +335,10 @@
   object-fit: contain;
 }
 
-.bildschirm-abenteuer .abenteuer-welt:not(:has(.abenteuer-dialog)) .abenteuer-meldung > p {
+.bildschirm-abenteuer
+  .abenteuer-welt:not(:has(.abenteuer-dialog))
+  .abenteuer-meldung:has(> .abenteuer-fundbild)
+  > p {
   flex: none;
 }
 

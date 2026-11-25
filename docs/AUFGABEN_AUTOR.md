@@ -611,7 +611,7 @@ Profil › Einstellungen › Fehler melden.
       verschwindet, Sprechblasen kommen, du eine Karte spielst, „… überlegt“ erscheint und am
       Ende „Weiter“ statt der Knöpfe dasteht. Hoch steht oben die Uhr des Gegners, darunter das
       Brett, und nur der Bereich darunter (eigene Uhr, Karten, Knöpfe) lässt sich rollen. Quer
-      steht die Uhr des Gegners rechts oben unter dem Namen.
+      steht die Uhr des Gegners rechts oben neben seinem Namen.
       **Antwort:** „N2724 ok“ oder wann das Brett noch springt.
 - [ ] N2725. **Fenster mit Weiter-Knopf (25.11.2026):** Einen Fund mit Bild aufheben (etwa auf
       dem Weg von Maple Falls nach Cedar Creek). Das Fenster füllt jetzt fast den ganzen

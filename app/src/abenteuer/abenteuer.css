@@ -369,8 +369,9 @@ body:has(:is(.bildschirm-abenteuer, .abenteuer-huelle)) .update-hinweis {
 /* Der Knopf zum Weitermachen am Ende eines Fensters bleibt immer sichtbar (Wunsch des Autors,
    25.11.2026): Ist der Inhalt höher als der Bildschirm, rollt nur der Inhalt, der Knopf klebt
    unten am Fensterrand. Gilt für Ergebnis, Belohnung, Tagebuchseite, Vorführung,
-   Gedächtnisstellung und Fundliste; der Hintergrund deckt den Text dahinter. */
-.abenteuer-ergebnis > :is(button, .knopfreihe):last-child {
+   Gedächtnisstellung und Fundliste; der Hintergrund deckt den Text dahinter. Nicht in der
+   schmalen Meldung: Dort steht „Weiter“ neben dem Text, das Band deckte ihn zu. */
+.abenteuer-ergebnis:not(.abenteuer-meldung) > :is(button, .knopfreihe):last-child {
   position: sticky;
   bottom: calc(var(--raster) * -2);
   z-index: 1;

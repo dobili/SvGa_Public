@@ -24,7 +24,7 @@
    wie der Bildschirm und rollt nie als Ganzes: Kopf, dann der Block mit Uhr des Gegners und Brett
    an fester Stelle, darunter die Spalte, die für sich rollt. Was dort erscheint oder verschwindet,
    ändert nur die Spalte. Sprechblasen und Momente liegen ohnehin fest über allem (huelle.css). */
-.abenteuer-huelle-partie:not(.abenteuer-huelle-besprechung) {
+.abenteuer-huelle-partie {
   height: 100dvh;
   min-height: 0;
   overflow: clip;
@@ -33,7 +33,7 @@
 /* Der Kopf ist immer so hoch wie mit großem Porträt (96 px, dialog/Portraet.tsx, GROSS_PX): Beim
    Wechsel der Stimmung lädt das Porträt neu und fehlt kurz, der Kopf wurde 52 px niedriger und
    das Brett rückte nach oben (Messung Pixel 7 hoch, 25.11.2026). */
-.abenteuer-huelle-partie:not(.abenteuer-huelle-besprechung) > .abenteuer-huelle-kopf {
+.abenteuer-huelle-partie > .abenteuer-huelle-kopf {
   --portraet-gross: 96px;
 
   flex: none;
@@ -44,7 +44,7 @@
 /* Nur wenn Brett und Mindesthöhe der Spalte nicht passen (sehr kleine Schirme, zwei Bretter im
    Tandem), rollt der Inhalt; die Rinne für den Rollbalken ist fest, damit das Brett nicht
    schmaler wird, sobald er erscheint. */
-.abenteuer-huelle-partie:not(.abenteuer-huelle-besprechung) > .abenteuer-huelle-inhalt {
+.abenteuer-huelle-partie > .abenteuer-huelle-inhalt {
   flex: 1 1 auto;
   min-height: 0;
   overflow-y: auto;
@@ -53,14 +53,14 @@
   padding-bottom: var(--raster);
 }
 
-.abenteuer-huelle-partie:not(.abenteuer-huelle-besprechung) .abenteuer-partie-brett {
+.abenteuer-huelle-partie .abenteuer-partie-brett {
   display: flex;
   flex: none;
   flex-direction: column;
   gap: var(--raster);
 }
 
-.abenteuer-huelle-partie:not(.abenteuer-huelle-besprechung) .abenteuer-partie-seite {
+.abenteuer-huelle-partie .abenteuer-partie-seite {
   display: flex;
   flex: 1 1 0;
   flex-direction: column;
@@ -70,6 +70,28 @@
   overscroll-behavior: contain;
   /* Unten Platz für die untere Sprechblase (wie vorher am Inhalt, huelle.css). */
   padding-bottom: calc(var(--raster) * 9);
+}
+
+/* Die Besprechung behält hoch den Fluss der Grundform: Ihre Blase steht über dem Brett
+   (besprechung.css, order). Gleiche Gewichtung wie die Regeln oben, später: Sie gewinnt hier, die
+   Regeln für quer stehen noch später und gewinnen dort. (Ein :not() in den Regeln oben hätte sie
+   schwerer gemacht als die für quer; dann griffen hoch-Regeln auch quer.) */
+.abenteuer-huelle-besprechung {
+  height: auto;
+  overflow: visible;
+}
+
+.abenteuer-huelle-besprechung > .abenteuer-huelle-inhalt {
+  flex: initial;
+  min-height: auto;
+  overflow: visible;
+  scrollbar-gutter: auto;
+  padding-bottom: calc(var(--raster) * 9);
+}
+
+.abenteuer-huelle-besprechung .abenteuer-partie-brett,
+.abenteuer-huelle-besprechung .abenteuer-partie-seite {
+  display: contents;
 }
 
 /* ---------- Querformat ---------- */
@@ -87,7 +109,7 @@
 
     display: grid;
     grid-template-columns: var(--brettmass) minmax(0, 1fr);
-    grid-template-rows: auto auto auto minmax(0, 1fr);
+    grid-template-rows: auto auto minmax(0, 1fr);
     column-gap: calc(var(--raster) * 2);
     height: 100dvh;
     min-height: 0;
@@ -131,7 +153,7 @@
     align-self: center;
   }
 
-  /* Der Block mit Uhr: das Brett links, die Uhr oben rechts unter dem Kopf. */
+  /* Der Block mit Uhr: das Brett links, die Uhr oben rechts im Kopf. */
   .abenteuer-huelle .abenteuer-partie-brett-uhr {
     display: contents;
   }
@@ -145,7 +167,7 @@
 
   .abenteuer-partie-brett-uhr > .brettbereich > * {
     grid-column: 2;
-    grid-row: 3;
+    grid-row: 2;
   }
 
   .abenteuer-partie-brett-uhr > .brettbereich > :first-child {
@@ -167,9 +189,15 @@
     justify-self: center;
   }
 
+  /* Die Uhr des Gegners steht quer rechts im Kopf neben seinem Namen, nicht über der Spalte:
+     So beginnt die Spalte so hoch wie vorher, und der erzählte Einstieg passt ganz hinein
+     (Wegsperre S15, iPhone 15 quer). */
   .abenteuer-partie-brett-uhr > .abenteuer-huelle-uhr-gegner {
     grid-column: 2;
-    grid-row: 2;
+    grid-row: 1;
+    align-self: center;
+    justify-self: end;
+    gap: var(--raster);
     margin-bottom: var(--raster);
   }
 
@@ -178,7 +206,7 @@
     flex-direction: column;
     gap: var(--raster);
     grid-column: 2;
-    grid-row: 4;
+    grid-row: 3;
     min-height: 0;
     overflow-y: auto;
     padding: var(--raster) var(--spiel-pixel) calc(var(--raster) * 9);

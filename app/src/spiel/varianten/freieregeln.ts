@@ -24,6 +24,43 @@ export function freieRegeln(variante: string | undefined): Regelschicht | null {
   return v && v.regeln.chessops === null ? v.regeln : null;
 }
 
+/** So viele Stellungen merkt sich der Zugspeicher je Regelschicht (älteste fallen heraus). */
+const ZUGSPEICHER_STELLUNGEN = 2000;
+
+/** Ein legaler Zug mit UCI und Stellung danach. */
+interface Gemerkterzug {
+  readonly uci: string;
+  readonly fen: string;
+}
+
+/**
+ * Alle legalen Züge einer Stellung nach Kurznotation, einmal gerechnet und gemerkt. Warum: Die
+ * Partie speichert Kurznotation und rechnet ihre Stellungen bei jedem Zeichnen nach (stellungen in
+ * spiel/partie.ts); über ffish kostet jede Stellung sonst rund 60 ms (alle Züge ausprobieren).
+ */
+const ZUGSPEICHER = new WeakMap<Regelschicht, Map<string, ReadonlyMap<string, Gemerkterzug>>>();
+
+function zuegeNachSan(regeln: Regelschicht, fen: string): ReadonlyMap<string, Gemerkterzug> {
+  let speicher = ZUGSPEICHER.get(regeln);
+  if (!speicher) {
+    speicher = new Map();
+    ZUGSPEICHER.set(regeln, speicher);
+  }
+  const gemerkt = speicher.get(fen);
+  if (gemerkt) return gemerkt;
+  const zuege = new Map<string, Gemerkterzug>();
+  for (const uci of regeln.legaleZuege(fen)) {
+    const zug = regeln.ziehe(fen, uci);
+    if (zug && !zuege.has(zug.san)) zuege.set(zug.san, { uci, fen: zug.fen });
+  }
+  if (speicher.size >= ZUGSPEICHER_STELLUNGEN) {
+    const aeltester = speicher.keys().next().value;
+    if (aeltester !== undefined) speicher.delete(aeltester);
+  }
+  speicher.set(fen, zuege);
+  return zuege;
+}
+
 /** Kurznotation eines Zugs in UCI; null, wenn er nicht legal ist. */
 export function freiUciZuSan(regeln: Regelschicht, fen: string, uci: string): string | null {
   return regeln.ziehe(fen, uci)?.san ?? null;
@@ -31,13 +68,12 @@ export function freiUciZuSan(regeln: Regelschicht, fen: string, uci: string): st
 
 /** UCI zu einem Zug in Kurznotation: der legale Zug, dessen Kurznotation passt. */
 export function freiSanZuUci(regeln: Regelschicht, fen: string, san: string): string | null {
-  return regeln.legaleZuege(fen).find((uci) => regeln.ziehe(fen, uci)?.san === san) ?? null;
+  return zuegeNachSan(regeln, fen).get(san)?.uci ?? null;
 }
 
 /** Stellung nach einem Zug in Kurznotation; null, wenn er nicht passt. */
 export function freiFenNach(regeln: Regelschicht, fen: string, san: string): string | null {
-  const uci = freiSanZuUci(regeln, fen, san);
-  return uci ? (regeln.ziehe(fen, uci)?.fen ?? null) : null;
+  return zuegeNachSan(regeln, fen).get(san)?.fen ?? null;
 }
 
 /** Ende nach den Regeln: Sieger als Farbe von chessops (für Partieende), null ohne Ende. */

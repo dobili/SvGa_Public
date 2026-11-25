@@ -12,8 +12,9 @@
 // Figuren: Kira Vell (13, Schülerin, am Steintisch bei den Felstürmen), Annek Vell (Lehrerin) und
 // Joss Vell (Mechaniker) an der Schule. Quest hochebene.falkeUndBison: Kira erklärt das Spiel,
 // {held} bringt Annek Schach bei, Kira schenkt den Falken aus Holz (Fund falkeAusHolz).
-// Variante: „Falke und Bison“ ist noch nicht gebaut (VARIANTE-FEHLT); Kira zeigt eine kurze
-// Partie und vertröstet auf das nächste Mal.
+// Variante: „Falke und Bison“ (spiel/varianten/maerchenfiguren.ts, Fairy-Stockfish „seirawan“).
+// Beim ersten Treffen zeigt Kira eine kurze Partie und muss zum Bus; danach spielt sie eine richtige
+// Partie (Begegnung hochebene.falkeUndBison, Ergebnis in kira_danach).
 // Einstiege wie in orte.json: zurueck, kira, annek, joss, steintisch, werkstatt, aushang.
 // Variablen: alle setzt diese Datei; den Fund merkt sie sich selbst (falkeGeschenkt).
 
@@ -22,12 +23,15 @@
 // als verschnittenes Werkstück.
 
 EXTERNAL gibFund(kennung)
+EXTERNAL beginnePartie(begegnung)
 
 VAR held = "Du"
 VAR kiraGetroffen = false
 VAR annekGetroffen = false
 VAR annekSchachGelernt = false
 VAR jossGetroffen = false
+// Setzt die Hülle nach der Partie gegen Kira (R42).
+VAR ausgangHochebeneFalkeUndBison = ""
 VAR falkeGeschenkt = false
 VAR varianteFalkeUndBisonGelernt = false
 // Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
@@ -72,7 +76,6 @@ Das passiert allen beim ersten Mal. Mein Cousin hat ein Jahr gebraucht. #spreche
     Ich habe gelernt, dass man Spiele nicht erklärt. Man lernt sie. #sprecher:ambrose #stimmung:froh
     Spiel noch eine. #sprecher:ambrose #stimmung:froh
 }
-// VARIANTE-FEHLT: Falke und Bison (L9). Bis es gebaut ist, nur die Regel, die Vorführung und eine Vertröstung.
 Der Bus! Eine richtige Partie, wenn du wiederkommst. #sprecher:kira #stimmung:ueberrascht
 Und frag meine Tante in der Schule, die will Schach lernen. Sagt sie seit zehn Jahren. #sprecher:kira #stimmung:ueberrascht
 -> END
@@ -89,11 +92,36 @@ Aber er zieht trotzdem. #sprecher:kira #stimmung:laechelt
 
 === kira_alltag ===
 {~Mein Cousin sagt, Schach ist Falke und Bison für Leute ohne Fantasie. Ich sag, es ist Falke und Bison mit weniger Figuren.|Ich will Basketball-Trainerin werden oder Ingenieurin. Oder beides.|Wenn du wiederkommst, spielen wir richtig, mit Uhr. Ich hab eine.} #sprecher:kira #stimmung:laechelt
++ [„Spielen wir eine richtige Partie.“]
+    Mit Uhr? Ohne. Die Uhr ist für Leute, die es eilig haben. #sprecher:kira #stimmung:froh
+    Sie schiebt dir den Falken und den Bison hin. Deine kommen aufs Brett, wenn du sie einsetzt. #sprecher:erzaehler
+    ~ beginnePartie("hochebene.falkeUndBison")
+    -> END
 + [„Erklär mir die Regeln noch einmal.“]
     Falke: Läufer oder Springer. Bison: Turm oder Springer. #sprecher:kira #stimmung:laechelt
     Einsetzen, wenn eine Figur von der Grundreihe zum ersten Mal zieht. Fertig. #sprecher:kira #stimmung:laechelt
     -> END
 + [„Bis bald, Kira.“]
+    -> END
+
+// Nach der Partie gegen Kira (Begegnung hochebene.falkeUndBison, „danach“).
+=== kira_danach ===
+{ausgangHochebeneFalkeUndBison:
+- "sieg":
+    Kira starrt aufs Brett und lacht dann laut. Du hast meinen Bison gefangen. Das schafft sonst nur meine Oma. #sprecher:kira #stimmung:lacht
+    {not abschiedGesehen:
+        Man lernt sie, habe ich gesagt. Du hast sie gelernt. #sprecher:ambrose #stimmung:froh
+    }
+- "remis":
+    Remis. Kira nickt. Für das zweite Mal ist das richtig gut. #sprecher:kira #stimmung:laechelt
+- else:
+    Kira räumt die Figuren zusammen. Der Falke kam wieder von hinten, oder? Das macht er immer. #sprecher:kira #stimmung:laechelt
+    Nächstes Mal setzt du ihn früher ein. Dann hast du ihn, wenn du ihn brauchst. #sprecher:kira #stimmung:neutral
+}
++ [„Noch eine.“]
+    ~ beginnePartie("hochebene.falkeUndBison")
+    -> END
++ [„Danke, Kira.“]
     -> END
 
 // ---------------------------------------------------------------- Annek an der Schule

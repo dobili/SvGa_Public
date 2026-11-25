@@ -1555,7 +1555,12 @@
         "eroeffnungen": ["praxis:Ruy Lopez"],
         "abweichung": 10
       },
-      "steckbrief": [{ "art": "stil", "wert": "positionsspieler" }]
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "positionsspieler"
+        }
+      ]
     },
     {
       "kennung": "portDelacroix.blaeserSet1",
@@ -1919,6 +1924,29 @@
         {
           "art": "fehlerart",
           "wert": "falscherAbtausch"
+        }
+      ]
+    },
+    {
+      "kennung": "hochebene.kira",
+      "name": "figur.kira.name",
+      "rolle": "story",
+      "portraet": "portraets/kira.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -100
+      },
+      "gewichte": {
+        "ungenau": 1.2
+      },
+      "stil": "angreifer",
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "angreifer"
         }
       ]
     }

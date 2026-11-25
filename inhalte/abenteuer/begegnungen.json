@@ -1542,6 +1542,36 @@
           "niederlage": "erzaehlung.testteamGitter.niederlage"
         }
       }
+    },
+    {
+      "kennung": "hochebene.falkeUndBison",
+      "danach": "hochebene.kira_danach",
+      "gegner": "hochebene.kira",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false,
+      "variante": "falkeUndBison"
+    },
+    {
+      "kennung": "summitCity.drachenfest",
+      "danach": "summit-city-aussen.drachenfest_danach",
+      "gegner": "summitCity.sol",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false,
+      "variante": "drache"
     }
   ]
 }

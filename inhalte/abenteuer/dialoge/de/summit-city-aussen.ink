@@ -4,7 +4,8 @@
 // Szenen der Bibel (Abschnitt 29): 83 Ankunft (Mama, Juno in den Sommerferien, Plakate der
 // Landesmeisterschaft, Victor mit einem Mann im Anzug), 89 Sol auf dem Gipfelfelsen (Begegnung
 // summitCity.sol, Uhr 3 + 2, Sprüche erlaubt, beim ersten Sieg Kühler Kopf), 90 Drachenfest (L10,
-// Variante Drache, noch nicht gebaut: VARIANTE-FEHLT).
+// Variante Drache: spiel/varianten/maerchenfiguren.ts, ein Drache je Seite, eingesetzt wie im
+// S-Chess; Partie gegen die Bergführerin Sol, Begegnung summitCity.drachenfest).
 // Einstiege wie in orte.json: ankunft_zu_fuss, sol, weg_desert, weg_hochebene, seilbahn,
 // drachenfest, weg_crossroads.
 //
@@ -36,6 +37,8 @@ VAR ankunftSummitGesehen = false
 VAR solGetroffen = false
 VAR solKarteGegeben = false
 VAR ausgangSummitCitySol = ""
+// Setzt die Hülle nach der Partie am Drachenfest (R42).
+VAR ausgangSummitCityDrachenfest = ""
 VAR nadelSummitCity = 0
 VAR victorKriseGesehen = false
 VAR victorSeiteGegeben = false
@@ -210,16 +213,45 @@ Das Mädchen zeigt auf die Laternen. Am Festabend spielt die ganze Stadt, sagt s
 -> drachenfest_angebot
 
 === drachenfest_angebot ===
-// VARIANTE-FEHLT: Drache (L10). Bis sie gebaut ist, nur die Regel und eine Vertröstung.
 Du schaust an einem Tisch zu. Ein Bergführer fängt den Drachen mit zwei Bauern, und die Kinder johlen. #sprecher:erzaehler
+Am Nachbartisch sitzt Sol und winkt dich heran. Ein Platz ist frei, der Drache liegt schon neben dem Brett. #sprecher:erzaehler
+Der Drache kommt aufs Brett, wenn eine Figur von der Grundreihe zum ersten Mal zieht. Dann steht er auf ihrem Feld. #sprecher:sol #stimmung:laechelt
 {not abschiedGesehen:
-    Mit zwei Bauern. Nächstes Mal setzen wir uns dazu, und ich zähle mit. #sprecher:ambrose #stimmung:laechelt
+    Mit zwei Bauern hat er ihn gefangen. Merk dir das. #sprecher:ambrose #stimmung:laechelt
 }
--> END
++ [Hinsetzen und spielen]
+    ~ beginnePartie("summitCity.drachenfest")
+    -> END
++ [„Später.“]
+    Die Bretter stehen hier bis Mitternacht. #sprecher:sol #stimmung:laechelt
+    -> END
+
+// Nach der Partie am Drachenfest (Begegnung summitCity.drachenfest, „danach“).
+=== drachenfest_danach ===
+{ausgangSummitCityDrachenfest:
+- "sieg":
+    Sol lacht und hebt ihren gefangenen Drachen hoch. Die Kinder am Nebentisch klatschen. #sprecher:erzaehler
+    Den hast du dir verdient. Am Fest gewinnt, wer den Drachen zuletzt noch hat. #sprecher:sol #stimmung:lacht
+- "remis":
+    Remis am Drachenfest. Das bringt Glück für das ganze Jahr, sagt man hier. #sprecher:sol #stimmung:laechelt
+- else:
+    Mein Drache war schneller. Er ist immer schneller, wenn man ihn zu früh holt. #sprecher:sol #stimmung:laechelt
+}
+{not abschiedGesehen:
+    Ein Drache auf dem Brett. Zu meiner Zeit hätte man mich dafür aus dem Kaffeehaus geworfen. Herrlich. #sprecher:ambrose #stimmung:lacht
+}
++ [„Noch eine Partie.“]
+    ~ beginnePartie("summitCity.drachenfest")
+    -> END
++ [„Danke, Sol.“]
+    -> END
 
 === drachenfest_alltag ===
 {~Am Drachenbrunnen liegt eine vergessene Figur mit Flügeln.|Ein Murmeltier sitzt auf dem Brunnenrand und pfeift.|Die Laternen vom Fest hängen noch. Am Brunnen erklärt ein Vater seinem Sohn den Drachen.} #sprecher:erzaehler
--> END
++ [Am Festtisch eine Partie mit dem Drachen spielen]
+    -> drachenfest_angebot
++ [Weitergehen]
+    -> END
 
 // ---------------------------------------------------------------- Wege
 

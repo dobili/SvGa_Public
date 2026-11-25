@@ -194,6 +194,26 @@
     "rahmen": [16, 121, 46, 138],
     "herkunft": "von Hand"
   },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/18_Fire_Station_Singles_16x16/ME_Singles_Fire_Station_16x16_Building.png": {
+    "rahmen": [104, 151, 154, 191],
+    "herkunft": "von Hand",
+    "grund": "wie spiel/eigene/feuerwache.png (dieselbe Vorlage mit englischem Schild, RO53.6)"
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/15_Police_Station_Singles_16x16/ME_Singles_Police_Station_16x16_Police_Station_1.png": {
+    "rahmen": [40, 218, 76, 241],
+    "herkunft": "von Hand",
+    "grund": "wie spiel/eigene/polizei.png (dieselbe Vorlage mit englischem Schild, RO53.6)"
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/22_Post_Office_Singles_16x16/22_Post_Office_16x16_Building_1.png": {
+    "rahmen": [67, 178, 85, 206],
+    "herkunft": "von Hand",
+    "grund": "wie spiel/eigene/post.png (dieselbe Vorlage mit englischem Schild, RO53.6)"
+  },
+  "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/22_Post_Office_Singles_16x16/22_Post_Office_16x16_Building_4.png": {
+    "rahmen": [67, 178, 85, 206],
+    "herkunft": "von Hand",
+    "grund": "wie spiel/eigene/post_4.png (dieselbe Vorlage mit englischem Schild, RO53.6)"
+  },
   "spiel/eigene/feuerwache.png": {
     "rahmen": [104, 151, 154, 191],
     "herkunft": "von Hand"

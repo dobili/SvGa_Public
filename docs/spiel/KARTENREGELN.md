@@ -613,6 +613,11 @@ Werkzeug erledigt, steht dabei; daran arbeiten die Helfer nicht vorbei.
 26. **Schilder haben einen Grund und einen Ort.** Wegweiser zeigen nur die Richtungen, die es an der
     Kreuzung gibt; Schilder stehen am Wegrand, nie mitten auf dem Weg. Ein Schild ohne Aufgabe in der
     Geschichte fällt weg.
+    **Sprache** (RO53.6, 24.11.2026): Orts- und Geschäftsnamen englisch, auch Werbung und
+    Alltagsschilder der Welt („FOR SALE“), denn das Spiel liegt in Amerika; Port Delacroix darf
+    französisch heißen. Hinweise des Spiels deutsch: Sperren, Plakate zu Ereignissen der Geschichte,
+    Lehrsätze, Fahrplan, Wegweiser zu einem Questziel. Der Erzähler gibt Aufschriften im Dialog auf
+    Deutsch wieder. Prüfung: `python -m pipeline.abenteuer.schildsprache --privat PRIVAT`.
 27. **Zäune sind geschlossen oder haben Enden.** Jede Lücke endet an Pfosten; Tore sitzen auf
     derselben Linie wie der Zaun.
 28. **Straßen enden sinnvoll**: Wendehammer, Platz oder Übergang auf einen Weg mit Pfosten, nie
@@ -1420,4 +1425,3 @@ in `pipeline/tests/test_abenteuer_proportionen.py`. Zu große Möbel bekommen ei
 Platzierung, unten mittig ausgerichtet (`versatz`), und was `auf` ihnen liegt, denselben Maßstab
 (Spieltische mit Brett und Uhr den größten Maßstab im Band, damit beides Platz hat). Gebäude und
 Türen bleiben. Bildhöhen neuer Katalogeinträge: `--messen PRIVAT`.
-

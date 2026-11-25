@@ -1,6 +1,21 @@
 {
   "erklaerung": "Erzeugt von pipeline/abenteuer/bodenkacheln.py aus materialien.json; nicht von Hand ändern.",
   "moebel": {
+    "bkAcker": {
+      "quelle": "spiel/eigene/acker_gemini.png",
+      "ausschnitt": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel acker"
+    },
     "bkAsphalt": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/2_City_Terrains_16x16.png",
       "ausschnitt": [
@@ -960,6 +975,21 @@
       "art": "boden_teil",
       "blick": "keine",
       "hinweis": "sandRotRand, Rand W"
+    },
+    "bkSandSee": {
+      "quelle": "spiel/eigene/sand_see.png",
+      "ausschnitt": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "boden_teil",
+      "blick": "keine",
+      "hinweis": "Bodenkachel sandSee"
     },
     "bkSandplatz": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/1_Terrains_and_Fences_16x16.png",

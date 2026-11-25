@@ -10,7 +10,7 @@
  * docs/spiel/29, Abschnitt Kartenfächer); Antippen nimmt eine Karte ins Deck oder heraus.
  * Abhängigkeiten: regeln/karten.ts, regeln/zeitkarten.ts, schnittstelle/karten.ts, texte/texte.ts, app/blattstapel.ts.
  */
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useKurzsperre } from "../anbindung/useKurzsperre";
 import { useZurueckSchliesst } from "../../app/blattstapel";
 import type { Kartendaten } from "../daten/laden";
@@ -80,6 +80,14 @@ export function Deckwahl({
   const [deck, setzeDeck] = useState<readonly string[]>([]);
   const [zeit, setzeZeit] = useState<Zeitklasse>("ohne");
   const [farbe, setzeFarbe] = useState<"white" | "black">("white");
+  // Nur die Erklärung der zuletzt angetippten Karte steht da (Handy hoch, 24.11.2026): Alle
+  // Erklärungen untereinander drückten die Kartenreihe zusammen und füllten das Fenster.
+  const [zuletzt, setzeZuletzt] = useState<string | null>(null);
+  // Quer liegt der Kasten unter der Kartenreihe oft knapp unter dem Rand: nach jedem Tipp ins Bild.
+  const erklaerungsfeld = useRef<HTMLParagraphElement>(null);
+  useEffect(() => {
+    if (zuletzt) erklaerungsfeld.current?.scrollIntoView?.({ block: "nearest" });
+  }, [zuletzt]);
   // Ein doppelter Tipp auf die Antwort davor traf sonst „Zurück“ (useKurzsperre.ts).
   const bereit = useKurzsperre();
   useZurueckSchliesst(true, beiAbbruch);
@@ -99,8 +107,14 @@ export function Deckwahl({
     return sorte.wirkung.art === "schutzengel" && schutzengelGesperrt;
   };
   const schalte = (kennung: string) => {
-    if (deck.includes(kennung)) setzeDeck(deck.filter((k) => k !== kennung));
-    else if (deckErlaubt(deck, kennung, alleSorten, groesse)) setzeDeck([...deck, kennung]);
+    if (deck.includes(kennung)) {
+      const rest = deck.filter((k) => k !== kennung);
+      setzeDeck(rest);
+      setzeZuletzt(rest.at(-1) ?? null);
+    } else if (deckErlaubt(deck, kennung, alleSorten, groesse)) {
+      setzeDeck([...deck, kennung]);
+      setzeZuletzt(kennung);
+    }
   };
   const mitFarbwahl = deck.some(
     (k) => alleSorten.find((s) => s.kennung === k)?.wirkung.art === "farbwahl",
@@ -194,11 +208,16 @@ export function Deckwahl({
             })}
           />
         )}
-        {deck.map((kennung) => (
-          <p key={kennung} className="abenteuer-karte-erklaerung">
-            {tSpiel(`karte.${kennung}.erklaerung`)}
+        {mitKarten && waehlbar.length > 0 && (
+          <p
+            className="abenteuer-karte-erklaerung"
+            data-testid="abenteuer-deck-erklaerung"
+            ref={erklaerungsfeld}
+            aria-live="polite"
+          >
+            {zuletzt ? tSpiel(`karte.${zuletzt}.erklaerung`) : tSpiel("deck.erklaerungLeer")}
           </p>
-        ))}
+        )}
         {mitVorgabe && <p>{tSpiel("deck.vorgabeHinweis")}</p>}
         {freieKarten.length > 0 && (
           <p data-testid="abenteuer-freie-karten">

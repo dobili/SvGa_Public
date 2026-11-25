@@ -3,7 +3,8 @@
  *
  * Die Startkarte lädt das Paket oder beginnt das Spiel; vor dem ersten Start wählt der Leser
  * seinen Namen (Dokument 02: Name wählbar, Dialoge geschlechtsneutral), die Figur (Held oder
- * Heldin) und den Rivalen (Victor oder Victoria; Wunsch des Autors, 22.11.2026; Heldwahl.tsx). Das Namensfeld nutzt auch das Spielmenü.
+ * Heldin) und den Rivalen (Victor oder Victoria; Wunsch des Autors, 22.11.2026; Heldwahl.tsx). Figur und Rivale gelten für das ganze Spiel (Wunsch des Autors,
+ * 24.11.2026: nicht mehr im Spielmenü änderbar). Das Namensfeld nutzt auch das Spielmenü.
  * Abhängigkeiten: i18n, groesse.ts, Heldwahl.tsx, schnittstelle/paket.ts.
  */
 import { t } from "../../i18n/sprache";
@@ -97,6 +98,7 @@ export function Startkarte({
           <Namensfeld name={name} beiAenderung={beiName} />
           <Heldwahl figur={figur} beiWahl={beiFigur} />
           <Rivalwahl rivalin={rivalin} beiWahl={beiRivalin} />
+          <p data-testid="abenteuer-wahlfest">{t("abenteuer.wahlFest")}</p>
         </>
       )}
       {!geprueft ? (

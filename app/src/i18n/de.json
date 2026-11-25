@@ -47,6 +47,8 @@
   "abenteuer.rivaleFrage": "Wer ist dein Rivale?",
   "abenteuer.rivale.victor": "Rivale Victor",
   "abenteuer.rivale.victoria": "Rivalin Victoria",
+  "abenteuer.wahlFest": "Die Wahl gilt für das ganze Spiel. Neu wählen kannst du nur, wenn du von vorn beginnst.",
+  "abenteuer.wahlAnzeige": "Beim Start gewählt: {figur} und {rivale}. Neu wählen kannst du nur, wenn du von vorn beginnst.",
   "abenteuer.neuBeginnen": "Von vorn beginnen",
   "abenteuer.neuBeginnenFrage": "Der ganze Spielstand wird gelöscht. Wirklich von vorn beginnen?",
   "abenteuer.neuBeginnenJa": "Ja, von vorn",

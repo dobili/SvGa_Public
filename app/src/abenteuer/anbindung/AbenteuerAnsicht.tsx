@@ -6,9 +6,10 @@
  * (Paket laden, Spielstand anlegen), lädt das eigentliche Spiel erst dann als eigenen Baustein
  * (dynamischer Import von modul/abenteuer.tsx → assets/abenteuer-*.js, nicht vorab geladen) und
  * übergibt ihm die Dienste der App (anbindung/dienste.ts). Das Spielmenü (Knopf oben rechts) ist
- * der einzige Rückweg in die App: „Zurück zur App“, dazu Paket löschen, Name und Figur des Helden
- * ändern und neu beginnen (Schritt 8g; Spielmenue.tsx). Beim ersten Start wählt der Leser Namen und Figur
- * (Startkarte.tsx; Dokument 02: Name wählbar, Dialoge geschlechtsneutral); beides bleibt lokal.
+ * der einzige Rückweg in die App: „Zurück zur App“, dazu Paket löschen, den Namen des Helden
+ * ändern und neu beginnen (Schritt 8g; Spielmenue.tsx). Beim ersten Start wählt der Leser Namen,
+ * Figur und Rivalen (Startkarte.tsx; Dokument 02: Name wählbar, Dialoge geschlechtsneutral); alles
+ * bleibt lokal. Figur und Rivale gelten danach für das ganze Spiel (Wunsch des Autors, 24.11.2026).
  * Abhängigkeiten: anbindung/dienste.ts, regeln/spielstand.ts, schnittstelle/modul.ts, i18n,
  * paket/paketlader.ts (Löschen), app/blattstapel.ts (Zurück-Taste schließt das Menü).
  * Bedienung mit dem Daumen (docs/spiel/30): Die Ansicht trägt data-steuerkreuz (rechts oder links,
@@ -80,17 +81,6 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
     if (!stand) return;
     void dienste.schreibeStand({ ...stand, held: { ...stand.held, name: bereinigt(name) } });
     setzeMenue(false);
-  };
-
-  /** Wechselt die Figur (Spielmenü); die Welt lädt den neuen Bogen auf derselben Karte. */
-  const waehleFigur = (figur: Heldfigur) => {
-    if (!stand || stand.held.figur === figur) return;
-    void dienste.schreibeStand({ ...stand, held: { ...stand.held, figur } });
-  };
-
-  /** Wechselt zwischen Rivale und Rivalin (Spielmenü); gilt ab dem nächsten Gespräch. */
-  const waehleRivalin = (rivalin: boolean) => {
-    if (stand) void dienste.schreibeStand(mitRivalwahl(stand, rivalin));
   };
 
   /** Beginnt von vorn: Spielstand weg, zurück zur Startkarte mit Namenswahl (Paket bleibt). */
@@ -238,9 +228,7 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
         <Spielmenue
           heldname={stand?.held.name ?? null}
           figur={stand?.held.figur ?? ERSATZFIGUR}
-          beiFigur={waehleFigur}
           rivalin={rivalinGewaehlt(stand?.dialogvariablen ?? {})}
-          beiRivalin={waehleRivalin}
           beiSchliessen={() => setzeMenue(false)}
           beiZurueck={zurueck}
           beiName={benenneUm}

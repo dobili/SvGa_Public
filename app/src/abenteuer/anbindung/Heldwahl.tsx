@@ -1,7 +1,8 @@
 /**
- * Wahl der Figuren beim Spielbeginn und im Spielmenü: Held oder Heldin, Rivale Victor oder Rivalin
- * Victoria (Wunsch des Autors, 22.11.2026), je mit Vorschaubild (Standbild nach unten aus dem
- * Bogen im Paket).
+ * Wahl der Figuren beim Spielbeginn: Held oder Heldin, Rivale Victor oder Rivalin Victoria (Wunsch
+ * des Autors, 22.11.2026), je mit Vorschaubild (Standbild nach unten aus dem Bogen im Paket). Die
+ * Wahl gilt für das ganze Spiel; das Spielmenü zeigt sie nur noch an (Wunsch des Autors,
+ * 24.11.2026).
  *
  * Warum ein eigenes Bild statt Phaser: Die Startkarte gehört zum Kern der App und lädt den
  * Spielbaustein mit Phaser erst nach dem Start; das Vorschaubild schneidet deshalb das Standbild
@@ -129,7 +130,7 @@ const HELDWAHLEN: readonly Wahl[] = HELDFIGUREN.map((f) => ({
 
 /**
  * Die Wahl Held oder Heldin. Eingaben: gewählte Figur und was bei einer Wahl geschieht.
- * Beispiel: Startkarte vor dem ersten Start; Spielmenü (ändert die Figur sofort).
+ * Beispiel: Startkarte vor dem ersten Start.
  */
 export function Heldwahl({
   figur,

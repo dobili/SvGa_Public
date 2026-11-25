@@ -91,7 +91,7 @@ def lade_gruppen(privat: Path) -> list[Gruppe]:
     daten = [
         g
         for pfad in zuordnungsdateien(privat)
-        for g in json.loads(pfad.read_text(encoding="utf-8"))["gruppen"]
+        for g in json.loads(pfad.read_text(encoding="utf-8")).get("gruppen", [])
     ]
     gruppen: dict[str, Gruppe] = {}
     for g in daten:

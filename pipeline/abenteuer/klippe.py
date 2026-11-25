@@ -53,6 +53,11 @@ CANYON_KLIPPE = "spiel/eigene/klippe_canyon.png"
 # Gezeichnete Grasböschung (Gemini k1, 26.11.2026; Bogen „klippeBoeschung“), Lage wie klippe_gras.png;
 # ersetzt die von ``klippenarten`` selbst gezeichnete Böschung, sobald sie im Paket liegt.
 BOESCHUNG_KLIPPE = "spiel/eigene/klippe_boeschung.png"
+# Granitwand (Gemini K1, 26.11.2026; Bogen „klippeGranit“), Lage wie klippe_grau.png, für Szenen
+# mit "fels": "granit" (Steinbruch); ohne Bild bleibt dort der graue Fels.
+GRANIT_KLIPPE = "spiel/eigene/klippe_granit.png"
+# Bögen, die eine selbst gezeichnete Wandart (klippenarten.gezeichnet) ersetzen.
+GEZEICHNETE_ERSATZBOEGEN = frozenset({"klippeBoeschung"})
 # Grün umgefärbte Erdklippe für Deiche (Bogen „klippeGras“, Bildwunsch klippe_gras.py, mittel-1).
 GRAS_KLIPPE = "spiel/eigene/klippe_gras.png"
 # Graue Felswand mit Moos für Wasserfälle (Bogen „klippeGrau“, Bildwunsch klippe_grau.py, 16.11.2026).
@@ -333,6 +338,7 @@ def klippenart(szene: dict) -> str:
 def klippenbogen(szene: dict, privat: Path) -> str:
     """Bogen der Klippenkacheln: „klippeCanyon“ für die gezeichnete Canyonwand (Szene „fels“:
     „canyon“, sonst wie „rot“), „klippeBoeschung“ für die Grasböschung von Gemini (Deich, Damm),
+    „klippeGranit“ (Gemini, Steinbruch),
     „klippeRot“ für roten Fels (Szene „fels“: „rot“), „klippeGras“ für
     einen Grashang (Szene „fels“: „gras“, Deich), „klippeGrau“ für grauen Fels mit Moos (Szene
     „fels“: „grau“, Wasserfall im Stadtpark), sonst „gelaende“.
@@ -346,6 +352,9 @@ def klippenbogen(szene: dict, privat: Path) -> str:
         return "klippeCanyon"
     if klippenart(szene) == "boeschung" and (privat / BOESCHUNG_KLIPPE).exists():
         return "klippeBoeschung"
+    if farbe == "granit" and (privat / GRANIT_KLIPPE).exists():
+        return "klippeGranit"
+    farbe = "grau" if farbe == "granit" else farbe  # ohne eigenes Bild bleibt der graue Fels
     farbe = "rot" if farbe == "canyon" else farbe  # ohne eigenes Bild bleibt die rote Klippe
     if farbe == "rot" and (privat / ROTE_KLIPPE).exists():
         return "klippeRot"

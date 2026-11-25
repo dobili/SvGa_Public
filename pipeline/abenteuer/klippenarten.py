@@ -22,6 +22,7 @@ from PIL import Image
 
 from pipeline.abenteuer.kartenbau import INHALTE, K, lade
 from pipeline.abenteuer.klippe import (
+    GEZEICHNETE_ERSATZBOEGEN,
     REIHE_FUSS,
     REIHE_KANTE,
     REIHE_OBEN,
@@ -260,7 +261,7 @@ def kachelsatz(szene: dict, privat: Path) -> Kachelsatz:
     art = klippenart(szene)
     # Liegt ein gezeichneter Bogen für die Art vor (Grasböschung von Gemini), gilt er statt der
     # selbst gezeichneten Kacheln.
-    if art != "fels" and klippenbogen(szene, privat) != "klippeBoeschung":
+    if art != "fels" and klippenbogen(szene, privat) not in GEZEICHNETE_ERSATZBOEGEN:
         bogen, maske = gezeichnet(art, bogen, maske)
     elif art != "fels":
         bogen = mit_treppen(art, bogen.copy())

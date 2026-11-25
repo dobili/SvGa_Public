@@ -6,7 +6,8 @@
  * partiebesprechung_25-11.md). Die Auswertung ist die der App (useAuswertung: eigene Engine,
  * Zwischenspeicher je Stellung, Ergebnis im Speicher über mitWerten); Theoriezüge wie in der
  * Partieansicht der App (useTheorie, theorieJeZug). Stufe, Begriffe und Stimme kommen aus den
- * Dialogvariablen (regeln/besprechung.ts), die Themen der Runden aus den Spieldaten.
+ * Dialogvariablen (regeln/besprechung.ts), die Themen der Runden aus den Spieldaten; Lehrer und
+ * frühere Fehler für die Rückbezüge aus besprechungsbezug.ts.
  * Abhängigkeiten: ui/komponenten/auswertung/useAuswertung.ts, ui/komponenten/rueckblick/useTheorie.ts,
  * spiel/auswertung.ts, schach/theorie.ts, regeln/besprechung*.ts, anbindung/besprechung*.ts.
  */
@@ -16,6 +17,7 @@ import { theorieJeZug, type Theoriequellen } from "../../schach/theorie";
 import { zugurteile, type Zugklasse, type Zugurteil } from "../../spiel/auswertung";
 import { stellungen } from "../../spiel/partie";
 import type { Partieeintrag } from "../../speicher/partien";
+import { useSpeicher } from "../../speicher/speicher";
 import {
   useAuswertung,
   type Auswertungsstand,
@@ -30,6 +32,7 @@ import {
 } from "../regeln/besprechung";
 import { besprechungsmomente, type Besprechungsmoment } from "../regeln/besprechungsmomente";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
+import { fruehereFehler, lehrerJeBegriff } from "./besprechungsbezug";
 import { momentangaben, momentpfeile, motivgrundlage } from "./besprechungsdaten";
 import { zeigefolge, type Zeigefolge } from "./besprechungsfolge";
 import {
@@ -72,7 +75,10 @@ function useRundenthemen(): readonly Rundenthemen[] {
     ladeSpieldaten()
       .then(
         (d) =>
-          aktiv && setzeRunden(d.runden.map((r) => ({ kennung: r.kennung, themen: r.themen }))),
+          aktiv &&
+          setzeRunden(
+            d.runden.map((r) => ({ kennung: r.kennung, themen: r.themen, steller: r.steller })),
+          ),
       )
       .catch((fehler: unknown) => {
         // Ohne Spieldaten kennt die Besprechung keine Begriffe; sie läuft trotzdem (knapp).
@@ -136,6 +142,8 @@ export function useBesprechung(
   const theorie = useTheorie() ?? null;
   const runden = useRundenthemen();
   const variablen = abenteuer?.dialogvariablen;
+  const partien = useSpeicher((z) => z.daten.spiel.partien);
+  const frueher = useMemo(() => fruehereFehler(partien, eintrag), [partien, eintrag]);
   const kontext = useMemo<Besprechungskontext>(() => {
     const v = variablen ?? {};
     return {
@@ -144,8 +152,10 @@ export function useBesprechung(
       stufe: besprechungsstufe(v) || 1,
       begriffe: bekannteBegriffe(v, runden),
       partiekennung: eintrag.partie.id,
+      lehrer: lehrerJeBegriff(v, runden),
+      frueher,
     };
-  }, [variablen, runden, eintrag.partie.id]);
+  }, [variablen, runden, eintrag.partie.id, frueher]);
   const urteile = useMemo(() => urteileDer(eintrag, theorie), [eintrag, theorie]);
   const momente = useMemo(
     () => (urteile.length > 0 ? besprocheneMomente(eintrag, urteile, kontext, theorie) : []),

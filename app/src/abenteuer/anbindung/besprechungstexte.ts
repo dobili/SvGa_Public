@@ -20,6 +20,7 @@ import type { Begriff, Besprechungsstimme, Besprechungsstufe } from "../regeln/b
 import type { Besprechungsmoment } from "../regeln/besprechungsmomente";
 import { tSpiel } from "../texte/texte";
 import type { Role } from "chessops/types";
+import type { FruehererFehler } from "./besprechungsbezug";
 import type { Lagebefund } from "./besprechungslage";
 import type { Materialfolge } from "./besprechungsmaterial";
 import type { Momentmotiv } from "./besprechungsmotiv";
@@ -32,7 +33,14 @@ export interface Besprechungskontext {
   readonly stufe: Besprechungsstufe;
   readonly begriffe: ReadonlySet<Begriff>;
   readonly partiekennung: string;
+  /** Lehrer je Begriff (versuchte Runden, besprechungsbezug.ts); fehlt: keine Rückbezüge. */
+  readonly lehrer?: ReadonlyMap<Begriff, string>;
+  /** Frühere Partien mit derselben Ursache (besprechungsbezug.ts); fehlt: keine Rückbezüge. */
+  readonly frueher?: ReadonlyMap<string, FruehererFehler>;
 }
+
+/** Höchstens so viele Rückbezüge je Besprechung (Abschnitt 11, Punkt 5). */
+const BEZUEGE_HOECHSTENS = 2;
 
 /** Was ein Moment an Einzelheiten mitbringt (Züge schon als Text in der Sprache des Spiels). */
 export interface Momentangaben {
@@ -156,6 +164,38 @@ function opfersatz(k: Besprechungskontext, a: Momentangaben, z: Ziehung): string
   return z.zeile(`${vorsilbe(k.stimme)}.opfer`, { figur: figurwort(a.opfer, "den") });
 }
 
+/** Der Begriff, um den es am Moment geht: aus der Ursache, sonst aus dem Motiv gegen den Helden. */
+function begriffDes(a: Momentangaben): Begriff | null {
+  return a.ursache?.begriff ?? (a.motiv?.richtung === "gegen" ? a.motiv.begriff : null);
+}
+
+/**
+ * Ein Rückbezug ab Stufe 2 (Abschnitt 11, Punkt 5): zuerst auf eine frühere Partie mit derselben
+ * Ursache, sonst auf den Lehrer, bei dem der Held das Thema geübt hat.
+ */
+function bezugssatz(k: Besprechungskontext, a: Momentangaben, z: Ziehung): string | null {
+  if (k.stufe < 2) return null;
+  const basis = `${vorsilbe(k.stimme)}.bezug`;
+  const frueher = a.ursache ? k.frueher?.get(a.ursache.gruppe) : undefined;
+  if (frueher) {
+    const gruppe = frueher.gleicherGegner ? "partieGleich" : "partie";
+    return z.zeile(`${basis}.${gruppe}`, { gegner: frueher.gegner });
+  }
+  const begriff = begriffDes(a);
+  const lehrer = begriff ? k.lehrer?.get(begriff) : undefined;
+  return lehrer ? z.zeile(`${basis}.lehrer`, { lehrer }) : null;
+}
+
+/**
+ * Höchstens eine Anekdote je Besprechung, nur von Ambrose ab Stufe 2, zum Begriff des Moments,
+ * wenn der Held ihn schon kennt (Abschnitt 11, Punkt 6); null, wenn es zu dem Begriff keine gibt.
+ */
+function anekdotensatz(k: Besprechungskontext, a: Momentangaben, z: Ziehung): string | null {
+  const begriff = a.ursache?.begriff ?? a.motiv?.begriff ?? null;
+  if (k.stimme !== "ambrose" || k.stufe < 2 || !begriff || !k.begriffe.has(begriff)) return null;
+  return z.zeile(`besprechung.ambrose.anekdote.${begriff}`);
+}
+
 /** Der Satz zur Folge, ab Stufe 3 bei Fehlern und Chancen. */
 function folgesatz(k: Besprechungskontext, a: Momentangaben, z: Ziehung): string | null {
   if (k.stufe < 3 || !a.folge || !MIT_FOLGE.has(a.moment.kategorie)) return null;
@@ -171,6 +211,8 @@ function folgesatz(k: Besprechungskontext, a: Momentangaben, z: Ziehung): string
 export function momentsaetze(k: Besprechungskontext, angaben: readonly Momentangaben[]): string[] {
   const z = new Ziehung(k.partiekennung);
   let lageZuvor = false;
+  let bezuege = 0;
+  let anekdote = false;
   return angaben.map((a) => {
     const lage = lagesatz(k, a, z, !lageZuvor);
     lageZuvor = lage !== null;
@@ -188,6 +230,11 @@ export function momentsaetze(k: Besprechungskontext, angaben: readonly Momentang
       materialsatz(k, a, z),
       folgesatz(k, a, z),
     ];
+    const bezug = bezuege < BEZUEGE_HOECHSTENS ? bezugssatz(k, a, z) : null;
+    if (bezug) bezuege += 1;
+    const geschichte = !anekdote && !bezug ? anekdotensatz(k, a, z) : null;
+    if (geschichte) anekdote = true;
+    teile.push(bezug, geschichte);
     return teile.filter((t): t is string => t !== null).join(" ");
   });
 }

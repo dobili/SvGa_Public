@@ -209,3 +209,37 @@ describe("Lage und Opfer (Abschnitt 11, Punkte 3 und 4)", () => {
     expect(momentsaetze(kontext(1), [opfer])[0]).toContain("den Turm");
   });
 });
+
+describe("Rückbezüge und Anekdote (Abschnitt 11, Punkte 5 und 6)", () => {
+  const haengt = {
+    gruppe: "haengt",
+    werte: { figur: "dein Läufer", feld: "g5" },
+    begriff: "haengend" as const,
+  };
+  const fehler: Momentangaben = { ...angabe("fehler"), motiv: null, ursache: haengt };
+  const mitBezug = (stufe: Besprechungsstufe, stimme: Besprechungsstimme = "ambrose") => ({
+    ...kontext(stufe, [], stimme),
+    lehrer: new Map([["haengend", "Sam"]] as const),
+    frueher: new Map([["haengt", { gegner: "Skater Jo", gleicherGegner: false }]]),
+  });
+
+  it("nennt die frühere Partie vor dem Lehrer, höchstens zweimal, erst ab Stufe 2", () => {
+    expect(momentsaetze(mitBezug(1), [fehler])[0]).not.toContain("Skater Jo");
+    const saetze = momentsaetze(mitBezug(2), [fehler, fehler, fehler]);
+    expect(saetze.map((s) => s.includes("Skater Jo"))).toEqual([true, true, false]);
+    const ohneFrueher = { ...mitBezug(2), frueher: new Map() };
+    expect(momentsaetze(ohneFrueher, [fehler])[0]).toContain("Sam");
+  });
+
+  it("erzählt höchstens eine Anekdote, nur Ambrose, nur zu bekannten Begriffen", () => {
+    const ohne = { ...kontext(2, ["haengend"]), lehrer: new Map(), frueher: new Map() };
+    const anekdoten = texteDer("besprechung.ambrose.anekdote.haengend");
+    const saetze = momentsaetze(ohne, [fehler, fehler, fehler]);
+    const mit = saetze.filter((s) => anekdoten.some((t) => s.includes(t)));
+    expect(mit).toHaveLength(1);
+    const allein = momentsaetze({ ...ohne, stimme: "allein" }, [fehler]);
+    expect(anekdoten.some((t) => allein[0]?.includes(t))).toBe(false);
+    const unbekannt = momentsaetze({ ...ohne, begriffe: new Set() }, [fehler]);
+    expect(anekdoten.some((t) => unbekannt[0]?.includes(t))).toBe(false);
+  });
+});

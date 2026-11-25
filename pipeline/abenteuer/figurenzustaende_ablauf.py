@@ -31,6 +31,13 @@ WARTET_AUF_BILD: dict[tuple[str, str], str] = {
     # Leer seit 25.11.2026: Die Sitzbilder von 53 Figuren, dazu Dime als ganze Figur mit Sitzbild
     # und die Liegebilder von Lucia und Oma Ruth sind da (privat: werkzeuge/sitzbilder_2511.py,
     # pixellabimport.py). Ohne Stuhlbild stünde eine Person neben dem Stuhl (ohnesitzbild.json).
+    # Neu seit 25.11.2026 abends: mittel-3 setzt Figuren, deren Dialog „sitzt“ sagt, auf ihren
+    # Platz (lageangabe); diese Sitzbilder sind in Mappe 18 bei PixelLab beauftragt (P8).
+    ("haraldsen", "stuhl"): "Sessel am Kamin in der Hütte; Sitzbild beauftragt (Mappe 18, P8)",
+    ("nova", "stuhl"): "Tisch in der Capital Arena, Hocker an der Raststätte, Ringlicht in der Akademie; P8",
+    ("victor", "stuhl"): "Finaltisch in der Capital Arena; Sitzbild beauftragt (Mappe 18, P8)",
+    ("wanderer", "stuhl"): "Hocker am Seeufer; Sitzbild beauftragt (Mappe 18, P8)",
+    ("tamsin", "boden"): "sitzt am Boden neben den Kisten im Pavillon; Bodensitzbild beauftragt (P8)",
 }
 APP_TABELLE = (
     Path(__file__).resolve().parents[2] / "app" / "src" / "abenteuer" / "regeln" / "ohnesitzbild.json"

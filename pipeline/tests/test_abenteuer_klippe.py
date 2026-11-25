@@ -6,6 +6,7 @@ Rampen. Die Tests prüfen die Kachelwahl ohne Bilder; ohne den Schlüssel bleibt
 """
 
 from pipeline.abenteuer.klippe import (
+    BOESCHUNG_KLIPPE,
     CANYON_KLIPPE,
     GRAS_KLIPPE,
     REIHE_FUSS,
@@ -98,6 +99,16 @@ def test_roter_fels_nimmt_die_rote_klippe_nur_wenn_das_bild_da_ist(tmp_path):
     (tmp_path / ROTE_KLIPPE).write_bytes(b"")
     assert klippenbogen(szene, tmp_path) == "klippeRot"
     assert klippenbogen({"kante": "klippe"}, tmp_path) == "gelaende"
+
+
+def test_boeschung_nimmt_den_gezeichneten_bogen_wenn_er_da_ist(tmp_path):
+    """Regel: Kartenblick Paket A, Grasböschung von Gemini statt der selbst gezeichneten (Deich, Damm)."""
+    szene = {"kante": "klippe", "fels": "boeschung"}
+    (tmp_path / BOESCHUNG_KLIPPE).parent.mkdir(parents=True)
+    assert klippenbogen(szene, tmp_path) == "gelaende"
+    (tmp_path / BOESCHUNG_KLIPPE).write_bytes(b"")
+    assert klippenbogen(szene, tmp_path) == "klippeBoeschung"
+    assert klippenbogen({"kante": "klippe", "fels": "gras"}, tmp_path) == "klippeBoeschung"
 
 
 def test_canyonwand_nimmt_den_eigenen_bogen_sonst_die_rote_klippe(tmp_path):

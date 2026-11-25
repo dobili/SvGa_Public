@@ -225,9 +225,20 @@ def gezeichnet(
                 kachel, wand = _wandkachel(art, reihe, stelle, grund, wiese)
                 bogen.paste(kachel, _rahmen(feld)[:2])
                 maske.paste(wand, _rahmen(feld)[:2])
+    return mit_treppen(art, bogen), maske
+
+
+def mit_treppen(art: str, bogen: Image.Image) -> Image.Image:
+    """Die selbst gezeichneten Trittstufen der Art in den Bogen (im Grün der Wiese oben).
+
+    Warum: Auch ein gezeichneter Bogen (Grasböschung von Gemini) hat keine eigenen Stufen; die
+    Treppenkachel des Ausgangsbogens ist eine rotbraune Holztreppe und fiel im Hang heraus
+    (Foto Bahndamm und Deich, Kartenregel 10.94).
+    """
+    wiese = _haeufigste(bogen.crop(_rahmen((SPALTEN["gras"][1], REIHE_OBEN))))
     for feld in TREPPE.values():
         bogen.paste(_treppenkachel(art, wiese), _rahmen(feld)[:2])
-    return bogen, maske
+    return bogen
 
 
 @cache
@@ -247,8 +258,12 @@ def kachelsatz(szene: dict, privat: Path) -> Kachelsatz:
     maske = wandmaske(_bogen(privat / boegen["gelaende"]))
     bogen = geheilt(_bogen(privat / boegen[klippenbogen(szene, privat)]))
     art = klippenart(szene)
-    if art != "fels":
+    # Liegt ein gezeichneter Bogen für die Art vor (Grasböschung von Gemini), gilt er statt der
+    # selbst gezeichneten Kacheln.
+    if art != "fels" and klippenbogen(szene, privat) != "klippeBoeschung":
         bogen, maske = gezeichnet(art, bogen, maske)
+    elif art != "fels":
+        bogen = mit_treppen(art, bogen.copy())
     dunkelste = min(
         (p for p in bogen.crop(_rahmen((SPALTEN["erde"][0], REIHE_WAND))).get_flattened_data() if p[3]),
         key=lambda p: p[0] + p[1] + p[2],

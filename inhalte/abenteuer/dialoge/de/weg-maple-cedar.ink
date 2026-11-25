@@ -124,7 +124,7 @@ Gegen Mrs. Okafor hat noch niemand aus Maple Falls gewonnen. #sprecher:juno #sti
 }
 
 === wanderer_erstes ===
-Ein Mann mit Rucksack und Wanderstock sitzt am Wegrand. Aus der Tasche schaut ein Taschenschach. #sprecher:erzaehler
+Ein Mann mit Rucksack und Wanderstock steht am Wegrand und stützt sich auf den Stock. Aus der Tasche schaut ein Taschenschach. #sprecher:erzaehler
 Nach Cedar Creek? Zwei Stunden. #sprecher:wanderer #stimmung:laechelt
 Ich spiele unterwegs eine Partie im Kopf. #sprecher:wanderer #stimmung:laechelt
 Bei der Brücke bin ich meistens matt. #sprecher:wanderer #stimmung:lacht

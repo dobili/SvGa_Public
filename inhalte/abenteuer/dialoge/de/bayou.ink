@@ -125,7 +125,7 @@ Das Luftboot bringt dich zurück zum Kai von Port Delacroix. #sprecher:erzaehler
 
 === pepe_erstes ===
 ~ pepeGetroffen = true
-Auf dem Deck des Hausboots sitzt ein alter Mann neben einer verbeulten Blechkiste. Er hält ein Streichholz in der Hand. #sprecher:erzaehler
+Am Hausboot steht ein alter Mann neben einer verbeulten Blechkiste. Er hält ein Streichholz in der Hand. #sprecher:erzaehler
 Thibodeaux. Pépé sagen alle. #sprecher:pepe #stimmung:bitter
 Die Kiste kommt ins Feuer, heute Abend. Keiner liest das mehr. #sprecher:pepe #stimmung:bitter
 -> pepe_kiste

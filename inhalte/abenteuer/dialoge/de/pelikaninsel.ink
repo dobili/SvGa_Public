@@ -38,7 +38,7 @@ Empfang gibt es keinen, das Internet kommt nicht über das Wasser. Uns fehlt nic
 }
 {peteGetroffen: -> old_pete_netze}
 ~ peteGetroffen = true
-Ein alter Mann sitzt am Netzgestell und knotet. #sprecher:erzaehler
+Ein alter Mann steht am Netzgestell und knotet. #sprecher:erzaehler
 Eine Masche reißt, und das ganze Netz ist offen. Beim Schach genauso. #sprecher:oldPete #stimmung:nachdenklich
 -> old_pete_netze
 

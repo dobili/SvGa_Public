@@ -5,7 +5,7 @@
 import { readdirSync, readFileSync, existsSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { blattpfad } from "./portraetblatt";
-import { grossePortraets, portraetpfad } from "./portraetpfad";
+import { ersatzpfad, grossePortraets, portraetpfad } from "./portraetpfad";
 
 const INHALTE = new URL("../../../../inhalte/abenteuer/", import.meta.url);
 /**
@@ -75,6 +75,7 @@ function findeBild(pfade: ReadonlySet<string>, sprecher: string, stimmung: strin
   const kandidaten = [
     ...grossePortraets(pfad),
     ...(pfade.has("daten/portraetblatt.json") ? [blatt] : []),
+    ersatzpfad(sprecher),
     pfad.replace(/\.svg$/, ".png"),
     pfad,
     grund.replace(/\.svg$/, ".png"),
@@ -83,7 +84,32 @@ function findeBild(pfade: ReadonlySet<string>, sprecher: string, stimmung: strin
   return kandidaten.find(da) ?? null;
 }
 
+/**
+ * Sprecher, die auch mit privatem Paket nur das alte Ersatzgesicht (Sprechbogen oder SVG) zeigen:
+ * Sie haben keine eigene Figur in figuren-neu, aus der skripte/ersatzportraets.mjs ein Porträt
+ * baut (Stand 25.11.2026). Die Liste schrumpft nur.
+ */
+const NUR_ERSATZGESICHT = new Set(["wren", "ike", "faehrmann", "greifarm"]);
+
+/** Stufe des gefundenen Bildes: echt (Großbild, Blatt), Figur (Ersatzporträt) oder Ersatzgesicht. */
+function stufeVon(pfad: string | null): "echt" | "figur" | "ersatzgesicht" | "keins" {
+  if (!pfad) return "keins";
+  if (pfad.startsWith("portraets/gross/") || pfad.startsWith("portraets/blatt/")) return "echt";
+  return pfad.startsWith("portraets/ersatz/") ? "figur" : "ersatzgesicht";
+}
+
 describe("Porträts", () => {
+  it("mit privatem Paket zeigt nur NUR_ERSATZGESICHT das alte Ersatzgesicht", () => {
+    const pfade = paketpfade();
+    // Ohne privates Paket gibt es keine Figuren und keine Ersatzporträts: dann nichts zu prüfen.
+    if (![...pfade].some((p) => p.startsWith("portraets/ersatz/"))) return;
+    const sprecher = new Set([...sprecherUndStimmungen()].map((p) => p.split(":")[0] ?? ""));
+    const alt = [...sprecher].filter(
+      (s) => stufeVon(findeBild(pfade, s, "")) === "ersatzgesicht" && !NUR_ERSATZGESICHT.has(s),
+    );
+    expect(alt).toEqual([]);
+  });
+
   it("jede Zeile mit Sprecher findet in jeder Stimmung ein Porträt im Paket", () => {
     const pfade = paketpfade();
     // Rivalin Victoria (regeln/rivalform.ts): Ihr Blatt liegt nur im privaten Paket; ohne es zeigt

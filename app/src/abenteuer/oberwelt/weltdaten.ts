@@ -378,7 +378,13 @@ export function sprechblaseFuer(
   const s = sagt ? statistensatz(sagt, besuch, hatSpieltext) : null;
   if (!s) return null;
   const ambrose = s.ambrose && ambroseSpricht ? tSpiel(s.ambrose, { held }) : null;
-  return { satz: tSpiel(s.satz, { held }), ambrose, zeigt: statist?.zeigt ?? null };
+  // Dasselbe Bild wie auf der Karte (belebungsbilderFuer): „figuren/statist-07.png“ → „statist-07“.
+  const portraet = statist
+    ? statistenbild(statist)
+        .replace(/^figuren\//, "")
+        .replace(/\.png$/, "")
+    : null;
+  return { satz: tSpiel(s.satz, { held }), ambrose, zeigt: statist?.zeigt ?? null, portraet };
 }
 
 /** Rahmenklasse der Welt (Oberwelt.tsx): in Erinnerungen und bei Sepia-Tönung getönt. */

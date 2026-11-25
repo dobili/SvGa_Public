@@ -9,8 +9,10 @@
  * 1. ein großes Einzelbild genau dieser Fassung (`portraets/gross/<name>[-fassung].webp|png`, T4);
  * 2. das Porträtblatt der Figur (`portraets/blatt/<name>.png`, sechs Fassungen à 64 × 64), das
  *    Feld wählt portraetblatt.json über die Stimmung (dialog/portraetblatt.ts);
- * 3. der Sprechbogen aus Modern UI (`portraets/<name>.png`, animiert);
- * 4. das Ersatzbild (`portraets/<name>.svg`), erst der Fassung, dann der Grundfassung.
+ * 3. das Ersatzporträt aus der eigenen Figur (`portraets/ersatz/<name>.png`, Kopf und Schultern
+ *    aus dem Standbild, skripte/ersatzportraets.mjs; Wunsch des Autors, 25.11.2026);
+ * 4. der Sprechbogen aus Modern UI (`portraets/<name>.png`, animiert);
+ * 5. das Ersatzbild (`portraets/<name>.svg`), erst der Fassung, dann der Grundfassung.
  * Fehlt alles, bleibt nur der Name stehen.
  * Die Merklisten gelten bis zur nächsten Änderung am Paket (paket/paketmerker.ts): Danach sind die
  * alten Bildadressen freigegeben, und ein offenes Porträt sucht neu (Befund 25.11.2026).
@@ -25,7 +27,7 @@ import {
 } from "../paket/paketlader";
 import { paketmerkliste, usePaketstand } from "../paket/paketmerker";
 import { blattfeld, blattpfad, type Blattaufbau } from "./portraetblatt";
-import { grossePortraets, portraetpfad } from "./portraetpfad";
+import { ersatzpfad, grossePortraets, portraetpfad } from "./portraetpfad";
 import { rivalinJetzt, rivalinsprecher } from "../regeln/rivalform";
 
 /** Ein geladenes Porträt. */
@@ -77,7 +79,13 @@ async function ladeBlatt(pfad: string): Promise<Bild | null> {
   return a && adresse ? { art: "blatt", adresse, aufbau: a } : null;
 }
 
-/** 3. und 4. Sprechbogen, sonst Ersatzbild. */
+/** 3. Ersatzporträt aus der eigenen Figur (Name ohne Fassung). */
+async function ladeErsatz(sprecher: string): Promise<Bild | null> {
+  const adresse = await paketdateiAlsAdresseOderNull(ersatzpfad(sprecher));
+  return adresse ? { art: "gross", adresse } : null;
+}
+
+/** 4. und 5. Sprechbogen, sonst Ersatzbild. */
 async function ladeBogenOderSvg(pfad: string): Promise<Bild | null> {
   const bogen = await paketdateiAlsAdresseOderNull(pfad.replace(/\.svg$/, ".png"));
   if (bogen) return { art: "bogen", adresse: bogen };
@@ -94,6 +102,7 @@ async function suche(sprecher: string, stimmung: string | null): Promise<Bild | 
   return (
     (await einmal(`gross:${pfad}`, () => ladeGross(pfad))) ??
     (await einmal(`blatt:${blatt}`, () => ladeBlatt(blatt))) ??
+    (await einmal(`ersatz:${sprecher}`, () => ladeErsatz(sprecher))) ??
     (await einmal(`bogen:${pfad}`, () => ladeBogenOderSvg(pfad))) ??
     (pfad === grund ? null : await einmal(`bogen:${grund}`, () => ladeBogenOderSvg(grund)))
   );

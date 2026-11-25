@@ -306,6 +306,9 @@ body.abenteuer-mit-kulisse {
 
 /* ---------- Spieluhr: Warten, Ausruhen, Tageszeit (22.11.2026, oberwelt/useWarten.tsx) ----------
    Abblende beim Warten: die Welt wird kurz dunkel, ein Uhrsymbol, dann steht die Karte neu. */
+/* Zeitraffer beim Warten und Schlafen (oberwelt/Zeitraffer.tsx, 25.11.2026): Himmel mit Bogen,
+   Sonne oder Mond, Uhr mit Zeigern. Die ganze Blende ist ein Knopf (Tippen überspringt); zum
+   Ende wird sie durchsichtig, darunter steht die Karte schon im neuen Licht. */
 .abenteuer-warteblende {
   position: absolute;
   inset: 0;
@@ -315,33 +318,98 @@ body.abenteuer-mit-kulisse {
   align-items: center;
   justify-content: center;
   gap: var(--raster);
-  background: rgb(10 16 32 / 92%);
+  width: 100%;
+  border: 0;
+  padding: calc(var(--raster) * 2);
+  background: rgb(11 20 36 / 88%);
   color: var(--spiel-creme);
-  animation: abenteuer-warteblende 1.2s ease-in-out both;
+  font: inherit;
+  cursor: pointer;
+  animation: abenteuer-warteblende-ein 0.3s ease-out both;
+  transition: opacity 0.4s ease-in;
 }
 
-.abenteuer-warteblende > span {
-  font-size: 3rem;
+.abenteuer-warteblende-ende {
+  opacity: 0;
 }
 
-@keyframes abenteuer-warteblende {
-  0% {
+.abenteuer-zeitraffer {
+  width: min(80vw, 22rem);
+  height: auto;
+  border: var(--spiel-pixel) solid var(--spiel-gold);
+  image-rendering: pixelated;
+}
+
+.abenteuer-zeitraffer-bogen {
+  fill: none;
+  stroke: var(--spiel-creme);
+  stroke-dasharray: 3 4;
+  stroke-opacity: 0.5;
+}
+
+.abenteuer-zeitraffer-sonne {
+  fill: var(--spiel-gold);
+  stroke: var(--spiel-creme);
+  stroke-width: 1.5;
+}
+
+.abenteuer-zeitraffer-mond circle:first-child {
+  fill: var(--spiel-creme);
+}
+
+.abenteuer-zeitraffer-stern {
+  fill: var(--spiel-creme);
+}
+
+.abenteuer-zeitraffer-boden {
+  fill: var(--spiel-gruen-tief);
+}
+
+.abenteuer-zeitraffer-uhr {
+  width: 4rem;
+  height: 4rem;
+}
+
+.abenteuer-zeitraffer-uhr circle {
+  fill: var(--spiel-creme);
+  stroke: var(--spiel-gold);
+  stroke-width: 2;
+}
+
+.abenteuer-zeitraffer-uhr line {
+  stroke: var(--spiel-navy);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.abenteuer-warteblende p {
+  margin: 0;
+}
+
+.abenteuer-zeitraffer-zeit {
+  font-family: var(--spiel-pixelschrift);
+  font-variant-numeric: tabular-nums;
+}
+
+.abenteuer-zeitraffer-hinweis {
+  font-size: 0.85em;
+  opacity: 0.8;
+}
+
+@keyframes abenteuer-warteblende-ein {
+  from {
     opacity: 0;
   }
 
-  30%,
-  75% {
+  to {
     opacity: 1;
-  }
-
-  100% {
-    opacity: 0.85;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .abenteuer-warteblende {
     animation: none;
+    transition: none;
   }
 }
 

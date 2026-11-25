@@ -9,7 +9,8 @@
  * Hier nur Typen; die Kartendaten liegen als JSON im Zusatzpaket (Schritt 4), die Wirkung ist Code
  * in der Kartenleiste.
  * Abhängigkeiten: keine.
- * Buchbezug: „Gefahrenradar“ zeigt die Warnsignale W1–W7 des Buches (Kapitel 4), „Fingerzeig“
+ * Buchbezug: „Gefahrenradar“ zeigt, was der Gegner mit Gewinn schlagen könnte (Kapitel 1, Angreifer
+ * und Verteidiger zählen; bis 25.11.2026 die Warnsignale aus Kapitel 4), „Fingerzeig“
  * nutzt die Kandidatenfrage aus Kapitel 12 („Welche Figur sollte ziehen?“).
  */
 

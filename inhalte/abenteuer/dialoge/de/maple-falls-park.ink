@@ -24,6 +24,7 @@ VAR parkbankRaetselBestanden = false
 VAR abernathyBrief = false
 VAR joGetroffen = false
 VAR ausgangMapleFallsSkaterJo = ""
+VAR siegeMapleFallsSkaterJo = 0
 VAR aufbruchGesehen = false
 VAR ankunftCedarCreekGesehen = false
 VAR patelGetroffen = false
@@ -167,15 +168,20 @@ Du stehst besser. Wer verliert, holt Limo. #sprecher:skaterJo #stimmung:laechelt
 
 === jo_duell ===
 // Stellungsduell aus Abbildung 1.21 (Regelwerk C1, R13), Begegnung in begegnungen.json.
+// Nach dem ersten Sieg spielt Jo von vorn (regeln/freiestart.ts, Wunsch des Autors 25.11.2026).
 ~ beginnePartie("mapleFalls.skaterJo")
-Jo dreht das Brett zu dir. Ihre Hände sind schneller als ihre Augen. #sprecher:erzaehler
+{siegeMapleFallsSkaterJo >= 1:
+    Jo wischt die Stellung vom Brett und stellt alle Figuren neu auf. Ihre Hände sind schneller als ihre Augen. #sprecher:erzaehler
+- else:
+    Jo dreht das Brett zu dir. Ihre Hände sind schneller als ihre Augen. #sprecher:erzaehler
+}
 -> END
 
 === jo_nach_sieg ===
 // Jo ist pleite (deshalb holt der Held die Limo); Lektorat mittel-1, 19.11.2026.
 Okay, okay. Du hast gewonnen. #sprecher:skaterJo #stimmung:laechelt
 Limo kann ich dir keine ausgeben, ich bin pleite. Aber ich sag's jedem im Park. #sprecher:skaterJo #stimmung:laechelt
-Noch eine? #sprecher:skaterJo #stimmung:laechelt
+Noch eine? Aber diesmal von vorn, mit allen Figuren. #sprecher:skaterJo #stimmung:laechelt
 + [„Noch eine.“]
     -> jo_duell
 + [„Gleich.“]

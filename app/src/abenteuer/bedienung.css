@@ -24,8 +24,13 @@
   /* Symbolknöpfe: 44 px, über der Mindestgröße von 40 px zum Tippen; die Reihe liegt ganz unten,
      das Kreuz darüber. */
   --leistenknopf: 44px;
-  --leiste-unten: var(--daumen-unten);
-  --kreuz-unten: calc(var(--daumen-unten) + var(--leistenknopf) + var(--raster));
+  /* Reihe mit Tagebuch und Menü (Befund des Autors am iPhone, 25.11.2026: zu dicht unter den
+     Pfeiltasten): etwas tiefer als bisher, aber über dem Strich der Home-Leiste, mit gut 30 px
+     Luft zum Kreuz; seitlich weiter eingerückt, damit die äußeren Knöpfe nicht in die Rundung
+     der Bildschirmecke geraten. */
+  --leiste-unten: calc(env(safe-area-inset-bottom) + var(--raster));
+  --leiste-seite: calc(var(--daumen-rand) + var(--raster));
+  --kreuz-unten: calc(var(--daumen-unten) + var(--leistenknopf) + var(--raster) * 3);
   /* Freier Rand über dem Kreuz: Dort liegen Hinweise, wenn der Held oben steht (steuerhinweis.css). */
   --ueber-kreuz: calc(var(--kreuz-unten) + var(--kreuz-hoehe) + var(--raster));
 }
@@ -64,8 +69,8 @@
 .abenteuer-leiste {
   position: absolute;
   z-index: 3;
-  left: var(--daumen-rand);
-  right: calc(var(--daumen-rand) + var(--leistenknopf) + var(--raster) * 1.5);
+  left: var(--leiste-seite);
+  right: calc(var(--leiste-seite) + var(--leistenknopf) + var(--raster) * 1.5);
   bottom: var(--leiste-unten);
   display: flex;
   flex-direction: row-reverse;
@@ -75,8 +80,8 @@
 }
 
 [data-steuerkreuz="links"] .abenteuer-leiste {
-  left: calc(var(--daumen-rand) + var(--leistenknopf) + var(--raster) * 1.5);
-  right: var(--daumen-rand);
+  left: calc(var(--leiste-seite) + var(--leistenknopf) + var(--raster) * 1.5);
+  right: var(--leiste-seite);
   flex-direction: row;
 }
 
@@ -106,13 +111,13 @@
 /* In der Welt (ohne offenen Dialog) liegt der Menüknopf am äußeren Ende der Reihe. */
 .bildschirm-abenteuer:has(> .abenteuer-welt):not(:has(.abenteuer-dialog)) > .abenteuer-menueknopf {
   top: auto;
-  right: var(--daumen-rand);
+  right: var(--leiste-seite);
   bottom: var(--leiste-unten);
 }
 
 [data-steuerkreuz="links"]:has(> .abenteuer-welt):not(:has(.abenteuer-dialog))
   > .abenteuer-menueknopf {
-  left: var(--daumen-rand);
+  left: var(--leiste-seite);
   right: auto;
 }
 
@@ -167,14 +172,14 @@
 
   /* Die Reihe unter dem Kreuz links: Menü am Rand, daneben Tagebuch, Übungspartie, Reisen. */
   .bildschirm-abenteuer .abenteuer-leiste {
-    left: calc(var(--daumen-links) + var(--leistenknopf) + var(--raster) * 1.5);
+    left: calc(var(--daumen-links) + var(--raster) + var(--leistenknopf) + var(--raster) * 1.5);
     right: auto;
     flex-direction: row;
   }
 
   .bildschirm-abenteuer:has(> .abenteuer-welt):not(:has(.abenteuer-dialog))
     > .abenteuer-menueknopf {
-    left: var(--daumen-links);
+    left: calc(var(--daumen-links) + var(--raster));
     right: auto;
   }
 

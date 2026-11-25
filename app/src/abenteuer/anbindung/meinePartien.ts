@@ -26,6 +26,15 @@ export interface Partiezeile {
   readonly zuege: number;
   /** Nach normalen Regeln gespielt (regeln/besprechung.ts, besprechbarePartie)? */
   readonly besprechbar: boolean;
+  /** Liegen die Züge in der Partie (sonst spielte eine eigene Komponente, nichts zum Ansehen)? */
+  readonly nachspielbar: boolean;
+}
+
+/** Halbzüge einer Partie: die gespeicherten Züge, sonst die Zahl im Ende (eigene Varianten). */
+function halbzuegeVon(p: Spielstand["partien"][number]["partie"]): number {
+  if (p.zuege.length > 0) return p.zuege.length;
+  const ende = p.ende;
+  return ende && "halbzuege" in ende ? (ende.halbzuege ?? 0) : 0;
 }
 
 /**
@@ -33,22 +42,29 @@ export interface Partiezeile {
  *
  * Warum nur beendete: Die laufende Partie setzt der Leser über „Weiterspielen“ fort; hier geht es
  * ums Nachspielen. Eingaben: Spielstand der App, Höchstzahl. Ausgabe: die Zeilen der Liste.
+ * Nur dieser Spieldurchlauf (Befund des Autors, 25.11.2026: nach einem neuen Spiel standen noch
+ * die Partien des vorigen da): Partien, die nach `seit` begannen, dem Beginn des Spielstands
+ * (Abenteuerstand.begonnen; jeder Neubeginn setzt ihn neu, ohne neues Speicherformat).
  * Beispiel: Sieg gegen Skater Jo nach 47 Halbzügen → { gegner: "Skater Jo", ausgang: "sieg",
- * zuege: 24 }. Sonderfall: Partien ohne Abenteuer-Angabe (freie Partien der App) fehlen.
+ * zuege: 24 }. Sonderfälle: Partien ohne Abenteuer-Angabe (freie Partien der App) fehlen; eine
+ * Variante in eigener Komponente (Ente, Nebel, Tandem) zählt die Züge aus ihrem Ende und ist nicht
+ * nachspielbar (ihre Züge liegen nicht in der Partie; vorher stand dort „0 Züge“).
  */
 export function meinePartien(
   spiel: Pick<Spielstand, "partien">,
+  seit: string | null = null,
   hoechstens: number = MEINE_PARTIEN_HOECHSTENS,
 ): Partiezeile[] {
   return spiel.partien
     .map((e) => e.partie)
-    .filter((p) => p.einstellung.abenteuer && p.ende)
+    .filter((p) => p.einstellung.abenteuer && p.ende && (seit === null || p.begonnen >= seit))
     .slice(0, hoechstens)
     .map((p) => ({
       id: p.id,
       gegner: gegnerName(p),
       ausgang: ausgangAus(p),
-      zuege: Math.ceil(p.zuege.length / 2),
-      besprechbar: besprechbarePartie(p.einstellung),
+      zuege: Math.ceil(halbzuegeVon(p) / 2),
+      besprechbar: besprechbarePartie(p.einstellung) && p.zuege.length > 0,
+      nachspielbar: p.zuege.length > 0,
     }));
 }

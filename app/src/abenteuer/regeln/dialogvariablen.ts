@@ -24,6 +24,14 @@ function grossAnfang(wort: string): string {
 const HALBZUEGE_JE_ZUG = 2;
 
 /**
+ * Name der Siegvariable einer Begegnung (wie variablenNachPartie sie schreibt).
+ * Beispiel: „mapleFalls.skaterJo“ → „siegeMapleFallsSkaterJo“.
+ */
+export function siegvariable(begegnung: string): string {
+  return `siege${begegnung.split(".").map(grossAnfang).join("")}`;
+}
+
+/**
  * Variablen zum Ausgang einer Begegnung: `ausgangMapleFallsClubkampf` = „sieg“, dazu bei einem Sieg
  * der Zähler `siegeRivertonHarlan` (wie oft gewonnen; Ink fragt etwa „drei Siege“ ab, Harlans
  * Lupe, docs/spiel/05, Szene 31a). `bisher` sind die Variablen vor der Partie.

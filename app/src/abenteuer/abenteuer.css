@@ -440,6 +440,33 @@ body:has(:is(.bildschirm-abenteuer, .abenteuer-huelle)) .update-hinweis {
   background: var(--gold);
 }
 
+/* Laden (Befund des Autors, 25.11.2026): Bestätigung nach dem Kauf, Münzzahl blinkt kurz auf. */
+.abenteuer-laden-gekauft {
+  margin: 0;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.abenteuer-laden-muenzen-neu {
+  animation: abenteuer-muenzen-neu 0.9s ease-out;
+}
+
+@keyframes abenteuer-muenzen-neu {
+  from {
+    color: var(--gold);
+    transform: scale(1.15);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .abenteuer-laden-muenzen-neu {
+    animation: none;
+  }
+}
+
 .abenteuer-karte-meldung {
   flex-basis: 100%;
   font-style: italic;
@@ -472,8 +499,33 @@ body:has(:is(.bildschirm-abenteuer, .abenteuer-huelle)) .update-hinweis {
   padding: 0.5rem 0.7rem;
   border: 1px solid var(--akzent);
   border-radius: 0.5rem;
-  background: var(--flaeche);
-  color: inherit;
+}
+
+/* Textfelder des Spiels mit festen Farben (Befund des Autors, 25.11.2026): Im Dunkelmodus des
+   Telefons war die Schrift im weißen Namensfeld fast weiß („color: inherit“ erbte die helle
+   Schrift der App). Das Spiel hat kein Dunkelschema: dunkle Schrift auf hellem Grund, auch
+   Platzhalter, Schreibmarke und die von iOS gesetzte Füllfarbe des Texts. */
+:is(.bildschirm-abenteuer, .abenteuer-huelle, .abenteuer-namensfeld)
+  :is(
+    input:not([type]),
+    input[type="text"],
+    input[type="search"],
+    input[type="number"],
+    textarea,
+    select
+  ) {
+  color-scheme: light;
+  background: var(--spiel-weiss, #ffffff);
+  color: var(--spiel-navy, #16253d);
+  -webkit-text-fill-color: var(--spiel-navy, #16253d);
+  caret-color: var(--spiel-navy, #16253d);
+}
+
+:is(.bildschirm-abenteuer, .abenteuer-huelle, .abenteuer-namensfeld)
+  :is(input, textarea)::placeholder {
+  color: var(--spiel-text-leise, #4a5568);
+  -webkit-text-fill-color: var(--spiel-text-leise, #4a5568);
+  opacity: 1;
 }
 
 /* Wahl Held oder Heldin (Startkarte und Spielmenü, 22.11.2026): zwei Knöpfe mit Vorschaubild. */

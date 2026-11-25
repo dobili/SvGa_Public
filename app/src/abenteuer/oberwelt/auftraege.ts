@@ -16,6 +16,7 @@ import { startFen960, zufallsnummer960 } from "../../schach/chess960";
 import { varianteVon } from "../../spiel/varianten/alle";
 import type { Begegnungsdaten, Gegnerdaten, Spieldaten } from "../daten/laden";
 import { motivanzahl, schwierigkeitAus, schwierigkeitDesVersuchs } from "../regeln/aufgaben";
+import { freieRevanche } from "../regeln/freiestart";
 import { POST_GAME_AUFSCHLAG, gerechneteStaerke } from "../regeln/gegnerstaerke";
 import type { Aufgabenauftrag } from "../schnittstelle/aufgaben";
 import type { Gegnerprofil, Gegnerrolle, Gegnerzustand } from "../schnittstelle/gegnerprofil";
@@ -139,6 +140,10 @@ export function auftragFuer(
     { aktuell: stand.wertung, eingang: stand.eingangswertung },
     stand.handlung.durchlauf >= 2 ? POST_GAME_AUFSCHLAG : 0,
   );
+  // Nach dem ersten Sieg gegen einen Straßengegner eine ganze Partie aus der Grundstellung
+  // (regeln/freiestart.ts, Wunsch des Autors 25.11.2026).
+  const frei = freieRevanche(b, profil.rolle, stand.dialogvariablen);
+  const startstellung = frei ? { art: "grundstellung" as const } : startstellungDer(b);
   return {
     kennung: `${begegnung}#${Date.now().toString(36)}`,
     begegnung,
@@ -146,14 +151,12 @@ export function auftragFuer(
     zustand,
     staerke,
     farbe: farbeAus(b.farbe, Math.random),
-    format: b.format,
-    startstellung: startstellungDer(b),
+    format: frei ? { art: "partie" as const } : b.format,
+    startstellung,
     deck: { karten: [] },
     kartenErlaubt: b.kartenErlaubt,
     // Varianten zählen nie für die App und die Abenteuerwertung (Bibel Akt 4, Technikliste 4).
-    zaehltFuerApp: b.variante
-      ? false
-      : (b.zaehltFuerApp ?? b.startstellung.art === "grundstellung"),
+    zaehltFuerApp: b.variante ? false : (b.zaehltFuerApp ?? startstellung.art === "grundstellung"),
     uhr: typeof b.zeit === "object" ? b.zeit : null,
     zeitwahl: b.zeit === "wahl",
     farbeFrei: b.farbe === "zufall",

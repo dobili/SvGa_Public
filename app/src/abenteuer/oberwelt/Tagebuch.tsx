@@ -180,7 +180,11 @@ export function Tagebuch({
       )}
       {stand.gegenstaende.includes("notizbuch") && <Turnierheft stand={stand} daten={daten} />}
       <EigeneSeiten eintraege={stand.eintraege ?? []} />
-      <MeinePartien beiPartie={beiPartie} besprechbar={besprechungOffen(stand.dialogvariablen)} />
+      <MeinePartien
+        beiPartie={beiPartie}
+        besprechbar={besprechungOffen(stand.dialogvariablen)}
+        seit={stand.begonnen}
+      />
       <button type="button" className="knopf-haupt" onClick={beiSchliessen}>
         {tSpiel("tagebuch.schliessen")}
       </button>
@@ -267,12 +271,15 @@ function Turnierheft({ stand, daten }: { stand: Abenteuerstand; daten: Spieldate
 function MeinePartien({
   beiPartie,
   besprechbar,
+  seit,
 }: {
   beiPartie: (id: string, besprechen: boolean) => void;
   besprechbar: boolean;
+  /** Beginn dieses Spieldurchlaufs (Abenteuerstand.begonnen): nur seine Partien. */
+  seit: string;
 }) {
   const spiel = useSpeicher((z) => z.daten.spiel);
-  const zeilen = meinePartien(spiel);
+  const zeilen = meinePartien(spiel, seit);
   return (
     <>
       <h3>{tSpiel("tagebuch.partien")}</h3>
@@ -301,13 +308,15 @@ function MeinePartien({
                     {tSpiel("tagebuch.partieBesprechen")}
                   </button>
                 )}
-                <button
-                  type="button"
-                  className="knopf-zweit"
-                  onClick={() => beiPartie(z.id, false)}
-                >
-                  {tSpiel("tagebuch.partieAnsehen")}
-                </button>
+                {z.nachspielbar && (
+                  <button
+                    type="button"
+                    className="knopf-zweit"
+                    onClick={() => beiPartie(z.id, false)}
+                  >
+                    {tSpiel("tagebuch.partieAnsehen")}
+                  </button>
+                )}
               </span>
             </li>
           ))}

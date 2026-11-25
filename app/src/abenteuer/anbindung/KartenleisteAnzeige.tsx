@@ -6,7 +6,7 @@
  * Rolle im Gesamtbild: App-Seite der Modulgrenze (nutzt Engine, Werkzeuge und Speicher der App);
  * die Regeln (spielbar, verbuchen) kommen aus regeln/karten.ts, die Sorten aus dem Zusatzpaket.
  * Wirkungen: Fingerzeig markiert das Startfeld des besten Zuges, Gefahrenradar die bedrohten
- * eigenen Figuren (Warnsignale, Kapitel 4), Zweite Chance nimmt den letzten eigenen Zug samt
+ * eigenen Figuren (was der Gegner mit Gewinn schlagen kann, gefahrenradar.ts), Zweite Chance nimmt den letzten eigenen Zug samt
  * Antwort zurück, Flüstern zeigt drei Kandidaten als Pfeile, Mentor-Zug spielt den besten Zug.
  * Sprüche (Schritt 13): Kühler Kopf und Grübelfalle verschieben Bedenkzeit, Großes Maul setzt
  * gefühlte Zeitnot (anbindung/spruchkarte.ts); nur gegen Straßengegner, Zeitkarten nur mit Uhr.
@@ -18,11 +18,9 @@
  * spiel/zuege.ts, speicher (Spielstand), daten/laden.ts (Kartensorten), regeln/karten.ts, i18n.
  */
 import { useEffect, useState } from "react";
-import { warnsignale } from "../../analyse/k4-warnsignale";
 import type { Markierung } from "../../analyse/werkzeug";
 import { AuftragAbgebrochen, engine } from "../../engine/engineDienst";
 import { t } from "../../i18n/sprache";
-import { stellungAusFen } from "../../schach/stellung";
 import { mitLaufender } from "../../speicher/partien";
 import { aendere } from "../../speicher/speicher";
 import { leserAmZug, type Partie } from "../../spiel/partie";
@@ -50,6 +48,7 @@ import type { Leisteneigenschaften } from "../schnittstelle/modul";
 import { tSpiel } from "../texte/texte";
 import { useAbenteuerstand } from "./dienste";
 import { Funkansage } from "./Funkansage";
+import { gefahrenradar } from "./gefahrenradar";
 import { Kulisse } from "./Kulisse";
 import { Partiefaecher } from "./Partiefaecher";
 import { usePixelrahmen } from "./pixelrahmen";
@@ -116,13 +115,6 @@ async function fluestern(fen: string): Promise<Markierung[]> {
         ]
       : [];
   });
-}
-
-/** Gefahrenradar: die roten Markierungen der Warnsignale (eigene bedrohte Figuren). */
-function gefahrenradar(fen: string, eigene: Partie["einstellung"]["eigeneFarbe"]): Markierung[] {
-  const stellung = stellungAusFen(fen);
-  if (!stellung.ok) return [];
-  return warnsignale(stellung.wert, eigene).markierungen.filter((m) => m.farbe === "rot");
 }
 
 /** Die Spielkarten des Decks als Knöpfe in der Partie, jede einmal je Partie (Regelwerk R23, R24; Wirkungen im Dateikopf). */
@@ -246,9 +238,12 @@ export function KartenleisteAnzeige({
       case "fingerzeig":
         beiMarkierungen(await fingerzeig(fen));
         break;
-      case "gefahrenradar":
-        beiMarkierungen(gefahrenradar(fen, partie.einstellung.eigeneFarbe));
-        break;
+      case "gefahrenradar": {
+        // Nur was wirklich in Gefahr ist, mit einer Zeile dazu (gefahrenradar.ts, 25.11.2026).
+        const radar = gefahrenradar(fen, partie.einstellung.eigeneFarbe);
+        beiMarkierungen([...radar.markierungen]);
+        return { ergebnis: radar.text ? [radar.text] : [], spruch: null };
+      }
       case "fluestern":
         beiMarkierungen(await fluestern(fen));
         break;

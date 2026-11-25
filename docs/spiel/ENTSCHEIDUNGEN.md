@@ -4,6 +4,31 @@ Jede Entscheidung zum Spiel steht hier, damit spätere Sitzungen (auch mit Opus)
 können. Neueste Einträge oben. Offene Fragen stehen unten in „Offen“; der Autor antwortet über
 die Entscheidungsseite (Claude-Artefakt „Schach-Abenteuer Entscheidungen“) oder im Chat.
 
+## 25.11.2026 – Befunde des Autors am Abend: Radar, Kiosk, Tagebuch, Farben, Knöpfe, Jo, Zeitraffer
+
+- **Gefahrenradar:** zeigt nur, was der Gegner sofort mit Gewinn schlagen kann (Kapitel 1,
+  Zählen von Angreifern und Verteidigern, `schach/drohungen.ts`), dazu drohendes Matt; keine
+  Kennung „W1“ mehr im Feld (`anbindung/gefahrenradar.ts`).
+- **Kiosk:** Anzahl im Rucksack je Ware, sichtbare Kaufbestätigung, Münzen blinken. Dauerhafte
+  Karten und Gegenstände nur einmal; eine Verbrauchskarte, die man schon hat, erst nach einem
+  zweiten Tippen (`regeln/muenzen.ts`, `brauchtRueckfrage`). Grund: Verbrauchskarten mehrfach zu
+  besitzen ist sinnvoll, ein versehentlicher Doppelkauf nicht.
+- **Meine Partien:** nur Partien ab `Abenteuerstand.begonnen` (dieser Durchlauf, ohne neues
+  Speicherformat); Varianten in eigener Komponente zählen ihre Züge aus dem Ende und sind nicht
+  nachspielbar.
+- **Dunkelmodus:** Eingaben und Auswahlknöpfe im Spiel mit festen Farben (`color-scheme: light`).
+- **Knöpfe 📖 und ☰:** ein Raster weiter vom Rand und Steuerkreuz, tiefer, aus der iPhone-Ecke.
+- **Runde ◀ ▶:** creme mit Goldrand und Navy-Schrift.
+- **Freie Revanche:** Straßengegner mit fester Stellung (Abbildung oder FEN, auch Endspiele)
+  spielen nach dem ersten Sieg eine ganze Partie aus der Grundstellung (`regeln/freiestart.ts`).
+  Bleiben: Story-, Club- und Clubchef-Gegner (die Stellung ist Teil der Geschichte), der Stream
+  (Zuschauer wählen den Zug) und das Simultanbrett 5 (einmalige Vorstellung), dazu „vorrat“ und
+  „eroeffnung“, die ohnehin jedes Mal wechseln. Jo sagt es im Dialog.
+- **Zeitraffer:** Warten und Schlafen zeigen 2,6 Sekunden Sonne oder Mond auf dem Horizontbogen,
+  Himmelsfarben aus dem Farbsystem (Dokument 30), Sterne, Uhrzeiger zur Zielzeit; Tippen
+  überspringt, reduzierte Bewegung zeigt gleich die Zielzeit (`oberwelt/Zeitraffer.tsx`,
+  `regeln/zeitraffer.ts`).
+
 ## 24.11.2026 – Bodenvariation für alle Böden an: Kein Boden zeigt mehr das Kachelraster
 
 - **Anlass:** Kartenblick (alle 128 Karten aus menschlicher Sicht, Muster M01, Rang 1): Dielen als
@@ -1436,6 +1461,7 @@ Browserprüfung der Sperren S16 und S17 mit echt gespielten kurzen Partien (Fabl
   „Verscheuchen“ vertreiben und weichen nach einer Sekunde Drängen aus; eingeklemmt lassen sie den
   Helden durch (oberwelt/tierweg.ts). Warum: Tiere saßen Figuren auf dem Schoß, und mit Kollision
   darf kein Tier einen Weg versperren.
+
 ### Schiffskoch mit hoher Leinwand 32 × 48 (Wunsch des Autors, 25.11.2026)
 
 - Warum: Der Autor hat den Schiffskoch in PixelLab neu auf 32 × 48 erzeugt, weil die Mütze auf

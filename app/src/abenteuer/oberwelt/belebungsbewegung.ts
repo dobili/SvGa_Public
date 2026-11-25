@@ -12,6 +12,7 @@
  */
 import type { Richtung } from "./szene";
 import type { Belebung, Feld, Tierverhalten } from "./belebung";
+import { versperrt, VERSCHEUCH_TEMPO } from "./tierweg";
 
 /** Zustand eines bewegten Statisten oder Tiers; Kachelkoordinaten, die Mitte ist ganzzahlig. */
 export interface Bewegung {
@@ -34,6 +35,10 @@ export interface Bewegung {
   schaut: Richtung | null;
   /** Sekunden, die ein stehender Statist schon dem Helden zuhört (er spricht ihn an). */
   hoertZu: number;
+  /** Vom Helden verscheucht (tierweg.ts): läuft mit VERSCHEUCH_TEMPO, auch wer sonst nur sitzt. */
+  verscheucht?: boolean;
+  /** Sekunden, die ein eingeklemmtes Tier den Helden noch durchlässt (Sperre aus, tierweg.ts). */
+  durchlass?: number;
 }
 
 /** Was ein Schritt von der Welt wissen muss. */
@@ -47,6 +52,8 @@ export interface Umgebung {
   /** Blick des Helden und ob er gerade geht (fehlt: niemand wird angesprochen). */
   readonly heldBlick?: Richtung;
   readonly heldGeht?: boolean;
+  /** Felder mit Menschen, Tieren am Boden, Sitzen und dem Helden (tierweg.ts); fehlt: keine. */
+  readonly belegt?: (x: number, y: number) => boolean;
 }
 
 /** Werte eines Verhaltens: Tempo in Kacheln je Sekunde, Pausen in Sekunden, Scheu in Kacheln. */
@@ -259,6 +266,7 @@ function scheue(b: Bewegung, v: Belebung, g: Gangart, u: Umgebung): void {
  */
 export function schritt(b: Bewegung, v: Belebung, dt: number, u: Umgebung): void {
   const g = gangartVon(v);
+  if (b.durchlass) b.durchlass = Math.max(0, b.durchlass - dt);
   if (v.typ === "tier" && v.verhalten === "folgen") folge(b, u);
   else scheue(b, v, g, u);
   // Auch mitten im Gehen: Lief ein Statist beim Ansprechen schon, ging er weiter, und seine
@@ -276,10 +284,12 @@ export function schritt(b: Bewegung, v: Belebung, dt: number, u: Umgebung): void
   // Statisten laufen nicht in den Helden hinein; sie warten kurz, ob er Platz macht, und kehren
   // dann um. Sonst stünden sich beide in einem engen Gang für immer gegenüber (Wunsch des Autors,
   // 10.11.2026: Eine Figur darf nie den Weg auf Dauer versperren).
-  if (v.typ === "statist" && heldImWeg(b, u)) {
+  // Tiere am Boden laufen nicht auf Menschen, Tiere oder Sitze (tierweg.ts, Befund 25.11.2026).
+  if ((v.typ === "statist" && heldImWeg(b, u)) || versperrt(b, v, u)) {
     b.wartet += dt;
     if (b.wartet >= WARTEN_HOECHSTENS) {
       b.wartet = 0;
+      [b.flieht, b.verscheucht] = [false, false];
       b.ziel = naechstesWegziel(b, v.von, v.bis);
       // Gleich umdrehen: Mit dem alten Blick stünde der Held weiter „im Weg“.
       if (b.ziel) geheZu(b, b.ziel, UMDREHEN);
@@ -288,11 +298,13 @@ export function schritt(b: Bewegung, v: Belebung, dt: number, u: Umgebung): void
   }
   b.wartet = 0;
   const vorher = { x: b.x, y: b.y };
-  const angekommen = geheZu(b, b.ziel, (b.flieht ? g.fluchttempo : g.tempo) * dt);
+  const eile = b.verscheucht ? VERSCHEUCH_TEMPO : b.flieht ? g.fluchttempo : g.tempo;
+  const angekommen = geheZu(b, b.ziel, eile * dt);
   if (v.verhalten === "folgen") b.gefolgt += abstand(vorher, b);
   if (!angekommen) return;
   b.ziel = null;
   b.flieht = false;
+  b.verscheucht = false;
   b.pause = zufallspause(g, u.zufall);
 }
 
@@ -304,12 +316,13 @@ export function steht(b: Bewegung): boolean {
 /**
  * Hält dieser Statist oder dieses Tier den Helden auf (Wunsch des Autors, 10.11.2026: Der Held
  * soll nicht durch Figuren und Tiere laufen)? Statisten immer, Tiere am Boden auch. Ausnahmen:
- * fliegende Tiere (über Kopfhöhe), schwimmende (im Wasser, dort läuft niemand) und folgende
- * (ein Hund, der dem Helden in eine Sackgasse nachläuft, sperrte ihn sonst ein).
+ * fliegende Tiere (über Kopfhöhe) und schwimmende (im Wasser, dort läuft niemand).
  */
 export function haeltAuf(v: Belebung): boolean {
   if (v.typ === "statist") return true;
-  return !["fliegen", "schwimmen", "folgen"].includes(v.verhalten);
+  // Folgende Tiere (Hund) seit 25.11.2026 auch: Sie weichen nach einer Sekunde Drängen aus oder
+  // lassen sich verscheuchen (tierweg.ts) und sperren den Helden so nie in einer Sackgasse ein.
+  return !["fliegen", "schwimmen"].includes(v.verhalten);
 }
 
 /** Kante des Heldenkörpers in Kacheln: 12 von 16 Pixeln (szene.ts, figurbilder.ts). */

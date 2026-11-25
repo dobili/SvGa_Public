@@ -32,7 +32,10 @@ import {
   rennname,
   standbild,
   stelleAufKachel,
+  BILD_JE_RICHTUNG,
 } from "./figurbilder";
+import { festeFelder } from "./tierweg";
+import { setzeHeldtiefe, tiefenmoebelAus, type Tiefenmoebel } from "./heldtiefe";
 import { ladeMoebelbilder, richteMoebelrahmenEin, stelleMoebelAuf, teileJeTextur } from "./moebel";
 import { stelleFigurenAuf } from "./figurenaufstellung";
 import { sitzmoebelAus } from "./sitzplatz";
@@ -57,13 +60,6 @@ export type Richtung = Weltposition["richtung"];
 /** Kachelgröße der Karten in Pixeln; Laufgeschwindigkeit des Helden in Kachelpixeln je Sekunde. */
 export const KACHEL = 16;
 const TEMPO = 56;
-/** Bild je Blickrichtung im Spritesheet des Helden (grafik/held.png: unten, links, rechts, oben). */
-const BILD_JE_RICHTUNG: Readonly<Record<Richtung, number>> = {
-  unten: 0,
-  links: 1,
-  rechts: 2,
-  oben: 3,
-};
 const EBENEN = ["boden", "waende", "objekte"] as const;
 const AUSLOESER_EBENE = "ausloeser";
 
@@ -90,12 +86,13 @@ export class Oberweltszene extends Phaser.Scene {
   gangart = new Gangartsteuerung(false); // Rennen draußen (gangart.ts), Oberwelt setzt das Kreuz
   /** Statisten und Tiere der Karte (aus der Objektebene) und ihre Schicht nach create(). */
   private belebung: Belebung[] = [];
-  private belebungsschicht: Belebungsschicht | null = null;
+  belebungsschicht: Belebungsschicht | null = null; // öffentlich: Verscheuchen (useVerscheuchen.ts)
   private toenungsschicht: Toenungsschicht | null = null;
   /** Ist eine Kachel für Tiere begehbar (sperrkarte.ts)? Vor create() ist nichts frei. */
   private frei: (x: number, y: number) => boolean = () => false;
   /** Dasselbe für Zellen von 4 Pixeln (Laufhilfe an feinen Sperren, laufhilfe.ts). */
   private zellfrei: (x: number, y: number) => boolean = () => true;
+  private tiefen: Tiefenmoebel[] = []; // feste Möbel: Held daneben davor (heldtiefe.ts)
   /** Kurzes Antippen (tippschritt.ts): Kachel beim Druck und der laufende Schritt danach. */
   private druck: { richtung: Richtung; kachel: string } | null = null;
   private tipp: Tippschritt | null = null;
@@ -185,6 +182,7 @@ export class Oberweltszene extends Phaser.Scene {
     const moebel = stelleMoebelAuf(this, liste, KACHEL, this.daten.karte, moebelbildMerker(this));
     stelleFigurenAuf(this, held, this.ausloeser, this.daten, KACHEL, BILD_JE_RICHTUNG.unten, sitze);
     this.physics.add.collider(held, moebel);
+    this.tiefen = tiefenmoebelAus(liste, KACHEL);
     const sperrkarte = baueSperrkarte(karte, feste, moebel, KACHEL);
     [this.frei, this.zellfrei] = [sperrkarte.kachel, sperrkarte.zelle];
     this.ausloeser = mitDurchgang(this.ausloeser, this.frei, this.daten.uebergaenge ?? []);
@@ -192,6 +190,7 @@ export class Oberweltszene extends Phaser.Scene {
     const schicht = new Belebungsschicht(this, this.belebung, KACHEL, stunde, "figur", sitze);
     this.physics.add.collider(held, schicht.sperren());
     this.belebungsschicht = schicht;
+    schicht.tierweg.setzeFeste(festeFelder(liste, this.ausloeser, KACHEL)); // Sitze, Betten, Figuren
     this.toenungsschicht = new Toenungsschicht(this, KACHEL);
     this.setzeToenung(this.daten.toenung ?? null);
     zeigeTeilchen(this, mitSchnee(this.daten.jahreszeit, this.daten.teilchen), true);
@@ -333,7 +332,7 @@ export class Oberweltszene extends Phaser.Scene {
       if (richtung === "oben") koerper.setVelocityY(-tempo);
       if (richtung === "unten") koerper.setVelocityY(tempo);
     }
-    if (!this.held.getData(LIEGT)) this.held.setDepth(this.held.y); // liegend: fuehrungsschicht.ts
+    if (!this.held.getData(LIEGT)) setzeHeldtiefe(this.held, this.tiefen, KACHEL); // liegend: Führung
     this.kamerafuehrung?.schritt(delta, richtung, { x: this.held.x, y: this.held.y });
     this.toenungsschicht?.folge(this.held.x, this.held.y);
     // Während eines geführten Wegs löst der Held nichts aus (keine Tür, kein Gespräch).

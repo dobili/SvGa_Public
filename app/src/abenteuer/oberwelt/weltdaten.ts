@@ -370,3 +370,8 @@ export function sprechblaseFuer(
   const ambrose = s.ambrose && ambroseSpricht ? tSpiel(s.ambrose, { held }) : null;
   return { satz: tSpiel(s.satz, { held }), ambrose, zeigt: statist?.zeigt ?? null };
 }
+
+/** Rahmenklasse der Welt (Oberwelt.tsx): in Erinnerungen und bei Sepia-Tönung getönt. */
+export function weltklasse(erinnerung: boolean): string {
+  return erinnerung ? "abenteuer-welt abenteuer-welt-erinnerung" : "abenteuer-welt";
+}

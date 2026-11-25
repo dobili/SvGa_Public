@@ -40,7 +40,6 @@ import { reiseziele } from "./reiseziele";
 import { Sprechblase } from "./Sprechblase";
 import { deckwahlsteckbrief } from "./steckbrieftext";
 import { Steuerkreuz } from "./Steuerkreuz";
-import type { Richtung } from "./szene";
 import { Tagebuch } from "./Tagebuch";
 import { useAufgabenrunde } from "./useAufgabenrunde";
 import { useAusloeser } from "./useAusloeser";
@@ -56,12 +55,14 @@ import { Meldungsleiste } from "./Meldungsleiste";
 import { Orientierung } from "./Orientierung";
 import { Steuerhinweiszeile } from "./Steuerhinweis";
 import { useSpieluhr } from "./useSpieluhr";
+import { kreuzsteuerung } from "./kreuzsteuerung";
+import { useVerscheuchen } from "./useVerscheuchen";
 import { useWarten } from "./useWarten";
 import { useSteuerhinweis } from "./useSteuerhinweis";
 import { eingangsdialog } from "./eingang";
 import { schalteVerfolgung } from "../regeln/verfolgung";
 import { Untertitelzeile } from "../ton/Untertitelzeile";
-import { aktionFuer, type Weltdaten } from "./weltdaten";
+import { aktionFuer, weltklasse, type Weltdaten } from "./weltdaten";
 
 /** Gegenstand „Reisebrett“ (docs/spiel/11, I3): Übungspartie gegen Ambrose, ohne ihn gegen Juno. */
 const REISEBRETT = "reisebrett";
@@ -131,22 +132,22 @@ export function Oberwelt() {
   useTextspalte(dialog !== null, () => szeneAus(spiel)?.passeKameraAn());
   const weltFrei = welt !== null && !fensterOffen && meldung === null;
   const warten = useWarten(k, weltFrei); // Menü „Warten …“, Bank, Bett (useWarten.tsx)
+
   useSpieluhr(k, weltFrei && !warten.offen); // läuft nur in freier Welt (regeln/spieluhr.ts)
   // Einmalige Hinweise zur Steuerung (Erstspieler-Durchgang 20.11.2026, useSteuerhinweis.ts).
+  const aktionDa = welt !== null && aktionFuer(welt, treffer) !== null;
+  const neben = useVerscheuchen(spiel, weltFrei, warten.ruhe, aktionDa); // Tier vor dem Helden
   const hinweis = useSteuerhinweis(k, {
     frei: weltFrei,
     erinnerung: welt?.erinnerung === true,
-    aktionSichtbar: welt !== null && aktionFuer(welt, treffer) !== null,
+    aktionSichtbar: aktionDa,
     draussen: welt !== null && !welt.innen,
   });
   const ungestoert = weltFrei && !warten.offen && hinweis.aktiv === null;
   useBlickpunkte(k, ungestoert, treffer !== null, oeffneDialog);
   useAnsprechen(k, ungestoert, ausl.sprichFigurAn); // Hauptfiguren sprechen an (useAnsprechen.ts)
 
-  const beiRichtung = (richtung: Richtung, gedrueckt: boolean) => {
-    if (gedrueckt) hinweis.benutzt("steuerkreuz");
-    szeneAus(spiel)?.setzeRichtung(richtung, gedrueckt);
-  };
+  const kreuz = kreuzsteuerung(spiel, hinweis);
 
   if (!stand) return <p className="fehlertext">{tSpiel("oberwelt.keinSpielstand")}</p>;
 
@@ -154,11 +155,7 @@ export function Oberwelt() {
 
   return (
     <div
-      className={
-        welt?.erinnerung || k.toenung === "sepia"
-          ? "abenteuer-welt abenteuer-welt-erinnerung"
-          : "abenteuer-welt"
-      }
+      className={weltklasse(welt?.erinnerung === true || k.toenung === "sepia")}
       data-testid="abenteuer-welt"
       data-toenung={k.toenung ?? "keine"}
       data-fassung={welt?.zustand ?? "grund"}
@@ -197,14 +194,11 @@ export function Oberwelt() {
           den Rand des Fensters (20.11.2026); laufen kann der Held dort ohnehin nicht. */}
       {welt && !dialog && !vorfuehrung && !gedaechtnis && (
         <Steuerkreuz
-          beiRichtung={beiRichtung}
-          beiGangart={(rennen) => {
-            if (rennen) hinweis.benutzt("rennen");
-            szeneAus(spiel)?.gangart.setzeKreuz(rennen);
-          }}
-          aktion={aktionFuer(welt, treffer) ?? warten.ruhe?.text ?? null}
+          {...kreuz}
+          aktion={aktionFuer(welt, treffer) ?? neben.haupt?.text ?? null}
+          zweiteAktion={neben.zweite}
           beiAktion={() => {
-            if (!aktionFuer(welt, treffer) && warten.ruhe) return warten.ruhe.tu();
+            if (!aktionFuer(welt, treffer) && neben.haupt) return neben.haupt.tu();
             hinweis.benutzt("aktion");
             ausl.beiAktion();
           }}

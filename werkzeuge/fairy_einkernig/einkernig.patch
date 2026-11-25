@@ -1,0 +1,290 @@
+diff --git a/src/Makefile b/src/Makefile
+index 60e6f92..07b9680 100644
+--- a/src/Makefile
++++ b/src/Makefile
+@@ -539,7 +539,7 @@ ifeq ($(optimize),yes)
+ 	ifeq ($(comp),clang)
+ 		clangmajorversion = $(shell $(CXX) -dumpversion 2>/dev/null | cut -f1 -d.)
+ 		ifeq ($(shell expr $(clangmajorversion) \< 16),1)
+-			CXXFLAGS += -fexperimental-new-pass-manager
++			CXXFLAGS +=
+ 		endif
+ 	endif
+ endif
+diff --git a/src/emscripten/Makefile b/src/emscripten/Makefile
+index 548be1a..16003f4 100644
+--- a/src/emscripten/Makefile
++++ b/src/emscripten/Makefile
+@@ -6,22 +6,20 @@ arch = wasm
+ bits = 64
+ 
+ # Build options
+-wasm_simd = yes
+-embedded_nnue = yes
++wasm_simd = no
++embedded_nnue = no
+ minify_js = yes
+ assertion = no
+ 
+ VPATH := $(VPATH):emscripten
+-EM_CXXFLAGS +=
++EM_CXXFLAGS += -DSINGLE_THREAD
+ EM_LDFLAGS += \
+ 	--pre-js emscripten/preamble.js \
+ 	-s MODULARIZE=1 -s EXPORT_NAME="Stockfish" -s ENVIRONMENT=web,worker,node \
+-	-s STRICT=1 \
+-	-s ASYNCIFY=1 -s 'ASYNCIFY_IMPORTS=["emscripten_utils_getline_impl"]' \
+-	-s USE_PTHREADS=1 \
+-	-s PROXY_TO_PTHREAD=1 \
++	-s INCOMING_MODULE_JS_API=["print","printErr","locateFile","wasmBinary","instantiateWasm"] \
++	-s STACK_SIZE=8388608 -s EXPORTED_FUNCTIONS=["_main","_uci_befehl"] -s EXPORTED_RUNTIME_METHODS=["FS","ccall"] \
+ 	-s ALLOW_MEMORY_GROWTH=1 -s INITIAL_MEMORY=$$((1 << 27)) -s MAXIMUM_MEMORY=$$((1 << 31)) \
+-	-s FILESYSTEM=1 -s EXTRA_EXPORTED_RUNTIME_METHODS=["FS"] \
++	-s FILESYSTEM=1 \
+ 	-s ALLOW_UNIMPLEMENTED_SYSCALLS
+ 
+ ifeq ($(minify_js),yes)
+diff --git a/src/emscripten/preamble.js b/src/emscripten/preamble.js
+index 2fbf6b5..cd79efc 100644
+--- a/src/emscripten/preamble.js
++++ b/src/emscripten/preamble.js
+@@ -1,12 +1,9 @@
+ //
+ // Post custom message to all workers (including main worker)
+ //
++// Einkerniger Bau: Befehle gehen direkt in die Warteschlange der UCI-Schleife.
+ Module["postCustomMessage"] = (data) => {
+-  // TODO: Acutally want to post only to main worker
+-  for (let worker of PThread.runningWorkers) {
+-    // prettier-ignore
+-    worker.postMessage({ "cmd": "custom", "userData": data });
+-  }
++  Module["ccall"]("uci_befehl", null, ["string"], [data]);
+ };
+ 
+ //
+@@ -72,6 +69,4 @@ Module["print"] = Module["printErr"] = (data) => {
+   }
+ };
+ 
+-Module["terminate"] = () => {
+-  PThread.terminateAllThreads();
+-};
++Module["terminate"] = () => {};
+diff --git a/src/main.cpp b/src/main.cpp
+index afad7f1..3bd6777 100644
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -55,6 +55,9 @@ int main(int argc, char* argv[]) {
+ 
+   UCI::loop(argc, argv);
+ 
++#ifdef SINGLE_THREAD
++  return 0; // Laufzeit bleibt bestehen; weitere Befehle über uci_befehl()
++#endif
+   Threads.set(0);
+   variants.clear_all();
+   pieceMap.clear_all();
+diff --git a/src/search.cpp b/src/search.cpp
+index 006d65f..e33d2fe 100644
+--- a/src/search.cpp
++++ b/src/search.cpp
+@@ -232,8 +232,10 @@ void MainThread::search() {
+   // GUI sends a "stop" or "ponderhit" command. We therefore simply wait here
+   // until the GUI sends one of those commands.
+ 
++#ifndef SINGLE_THREAD
+   while (!Threads.stop && (ponder || Limits.infinite))
+   {} // Busy wait for a stop or a ponder reset
++#endif
+ 
+   // Stop the threads if not already stopped (also raise the stop if
+   // "ponderhit" just reset Threads.ponder).
+diff --git a/src/thread.cpp b/src/thread.cpp
+index fc78957..5bc1536 100644
+--- a/src/thread.cpp
++++ b/src/thread.cpp
+@@ -36,10 +36,15 @@ ThreadPool Threads; // Global object
+ /// Thread constructor launches the thread and waits until it goes to sleep
+ /// in idle_loop(). Note that 'searching' and 'exit' should be already set.
+ 
++#ifdef SINGLE_THREAD
++// Einkerniger Bau (Schach-Abenteuer): kein eigener Thread, die Suche läuft synchron im Aufrufer.
++Thread::Thread(size_t n) : idx(n) { searching = false; }
++#else
+ Thread::Thread(size_t n) : idx(n), stdThread(&Thread::idle_loop, this) {
+ 
+   wait_for_search_finished();
+ }
++#endif
+ 
+ 
+ /// Thread destructor wakes up the thread in idle_loop() and waits
+@@ -48,10 +53,11 @@ Thread::Thread(size_t n) : idx(n), stdThread(&Thread::idle_loop, this) {
+ Thread::~Thread() {
+ 
+   assert(!searching);
+-
++#ifndef SINGLE_THREAD
+   exit = true;
+   start_searching();
+   stdThread.join();
++#endif
+ }
+ 
+ 
+@@ -79,7 +85,14 @@ void Thread::clear() {
+ /// Thread::start_searching() wakes up the thread that will start the search
+ 
+ void Thread::start_searching() {
+-
++#ifdef SINGLE_THREAD
++  if (exit)
++      return;
++  searching = true;
++  search();
++  searching = false;
++  return;
++#endif
+   std::lock_guard<std::mutex> lk(mutex);
+   searching = true;
+   cv.notify_one(); // Wake up the thread in idle_loop()
+@@ -90,6 +103,9 @@ void Thread::start_searching() {
+ /// until the thread has finished searching.
+ 
+ void Thread::wait_for_search_finished() {
++#ifdef SINGLE_THREAD
++  return;
++#endif
+ 
+   std::unique_lock<std::mutex> lk(mutex);
+   cv.wait(lk, [&]{ return !searching; });
+diff --git a/src/thread.h b/src/thread.h
+index 464be79..b798456 100644
+--- a/src/thread.h
++++ b/src/thread.h
+@@ -45,7 +45,9 @@ class Thread {
+   std::condition_variable cv;
+   size_t idx;
+   bool exit = false, searching = true; // Set before starting std::thread
++#ifndef SINGLE_THREAD
+   NativeThread stdThread;
++#endif
+ 
+ public:
+   explicit Thread(size_t);
+diff --git a/src/uci.cpp b/src/uci.cpp
+index 7ae5798..3d89876 100644
+--- a/src/uci.cpp
++++ b/src/uci.cpp
+@@ -35,7 +35,11 @@
+ #include "syzygy/tbprobe.h"
+ 
+ #ifdef __EMSCRIPTEN__
++#ifndef SINGLE_THREAD
+ #include "emscripten/utils.h"
++#endif
++#include <emscripten.h>
++#include <deque>
+ #include "emscripten/misc/timeit.hpp"
+ #endif
+ 
+@@ -305,8 +309,28 @@ namespace {
+ /// run 'bench', once the command is executed the function returns immediately.
+ /// In addition to the UCI ones, also some additional debug commands are supported.
+ 
++#ifdef SINGLE_THREAD
++// Einkerniger Bau (Schach-Abenteuer): Befehle kommen über uci_befehl() in diese Warteschlange; die
++// Schleife arbeitet sie ab und kehrt zurück, sobald sie leer ist. Der Zustand bleibt statisch.
++std::deque<std::string> befehlsschlange;
++#endif
++
+ void UCI::loop(int argc, char* argv[]) {
+ 
++#ifdef SINGLE_THREAD
++  static Position pos;
++  static string token, cmd;
++  static StateListPtr states;
++  static std::vector<Move> banmoves;
++  static bool bereit = false;
++  if (!bereit)
++  {
++      bereit = true;
++      states = StateListPtr(new std::deque<StateInfo>(1));
++      pos.set(variants.find(Options["UCI_Variant"])->second, variants.find(Options["UCI_Variant"])->second->startFen, false, &states->back(), Threads.main());
++      XBoard::stateMachine = new XBoard::StateMachine(pos, states);
++  }
++#else
+   Position pos;
+   string token, cmd;
+   StateListPtr states(new std::deque<StateInfo>(1));
+@@ -321,6 +345,7 @@ void UCI::loop(int argc, char* argv[]) {
+   XBoard::stateMachine = new XBoard::StateMachine(pos, states);
+   // UCCI banmoves state
+   std::vector<Move> banmoves = {};
++#endif
+ 
+   if (argc > 1 && (std::strcmp(argv[1], "noautoload") == 0))
+   {
+@@ -336,7 +361,13 @@ void UCI::loop(int argc, char* argv[]) {
+   }
+ 
+   do {
+-      #ifdef __EMSCRIPTEN__
++      #if defined(SINGLE_THREAD)
++      argc = 1;
++      if (befehlsschlange.empty())
++          return;
++      cmd = befehlsschlange.front();
++      befehlsschlange.pop_front();
++      #elif defined(__EMSCRIPTEN__)
+       argc = 1;
+       emscripten_utils_getline(cmd);
+       #else
+@@ -444,7 +475,7 @@ void UCI::loop(int argc, char* argv[]) {
+ 
+   } while (token != "quit" && argc == 1); // Command line args are one-shot
+ 
+-  #ifdef __EMSCRIPTEN__
++  #if defined(__EMSCRIPTEN__) && !defined(SINGLE_THREAD)
+   // TODO: Ideally, we should send message to foreground and terminate gracefully from there
+   emscripten_force_exit(0);
+   #endif
+@@ -643,3 +674,12 @@ bool UCI::is_valid_option(UCI::OptionsMap& options, std::string& name) {
+ Protocol CurrentProtocol = UCI_GENERAL; // Global object
+ 
+ } // namespace Stockfish
++
++#ifdef SINGLE_THREAD
++/// Ein UCI-Befehl im einkernigen Bau: anhängen und die Schleife bis zur leeren Warteschlange laufen lassen.
++extern "C" EMSCRIPTEN_KEEPALIVE void uci_befehl(const char* befehl) {
++  Stockfish::befehlsschlange.push_back(std::string(befehl));
++  char* argv[1] = { nullptr };
++  Stockfish::UCI::loop(1, argv);
++}
++#endif
+diff --git a/src/variant.cpp b/src/variant.cpp
+index 6271c10..a7b05da 100644
+--- a/src/variant.cpp
++++ b/src/variant.cpp
+@@ -2243,6 +2243,8 @@ void VariantMap::parse(std::string path) {
+ 
+ template void VariantMap::parse<true>(std::string path);
+ template void VariantMap::parse<false>(std::string path);
++template void VariantMap::parse_istream<true>(std::istream& file);
++template void VariantMap::parse_istream<false>(std::istream& file);
+ 
+ void VariantMap::add(std::string s, Variant* v) {
+   insert(std::pair<std::string, const Variant*>(s, v->conclude()));
+diff --git a/src/xboard.cpp b/src/xboard.cpp
+index 20b9712..e3540de 100644
+--- a/src/xboard.cpp
++++ b/src/xboard.cpp
+@@ -16,6 +16,7 @@
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+ 
++#include <iterator>
+ #include <iostream>
+ #include <string>
+ 

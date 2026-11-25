@@ -1290,6 +1290,7 @@ Laden wieder an.
 ## Statisten sind Hindernisse, Übergänge im Stand, kurze Partien zu nach dem Ende (18.11.2026)
 
 Browserprüfung der Sperren S16 und S17 mit echt gespielten kurzen Partien (Fable):
+
 - **Statisten und sperrende Tiere** waren seit dem 10.11. durchlaufbar (Sperre endete zwei Pixel
   vor dem Anstoßen); jetzt echte Hindernisse. Zwei so versperrte Durchlässe geräumt (Londoner
   Kaffeehaus, Spielplatz Maple Falls); `figurensperre` prüft dauerhaft, dass Auslöser, Figuren und
@@ -1333,3 +1334,20 @@ Browserprüfung der Sperren S16 und S17 mit echt gespielten kurzen Partien (Fabl
   2–3 Schleifen und Steigerung je Sieg verändern die Musik.
 - Gleichmäßige Lautheit (A0.6) für alle Musik, geprüft mit `ton/lautheit.py`.
 - Umsetzung: mittel-4 (Stücke je Akt, Akt 1 zuerst), mittel-3 (Wiedergabe in Spuren).
+
+### Vertrieb: kostenlos in der App, Spiel einzeln im Store (Entscheidung des Autors, 26.11.2026)
+
+- Das Schach-Abenteuer bleibt vollständig kostenlos als Zusatzpaket der Schach-App
+  (schach-von-grund-auf.com, Zugang über den QR-Code im Buch). Weitergeben der Seite ist
+  erwünscht: Wer die App lädt, erfährt vom Buch.
+- Später zusätzlich in den Stores, zuerst Google Play als Testphase, danach App Store:
+  - die Schach-App kostenlos, ohne das Spiel;
+  - das Spiel als eigene, kostenpflichtige Fassung, unabhängig von der App.
+- Bau der Spielfassung (Empfehlung des Autors): das Gesamtpaket unverändert einpacken und nur die
+  Oberfläche der Schach-App ausblenden, sodass die App direkt ins Spiel startet. Grund: Nichts aus
+  dem Code herausschneiden, damit keine neuen Fehler entstehen. Erst, wenn alles fertig ist.
+- Vorher zu klären (Einschätzung des Haupt-Chats, keine Rechtsberatung): Lizenz des Winterwalds
+  (Maru, keine Lizenz gefunden: nachfragen oder ersetzen), Geräusche aus Freesound und OpenGameArt
+  Datei für Datei (kein CC BY-NC), PixelLab-Abo mit kommerziellen Rechten, GPL-Pflichten
+  (Quelltext öffentlich, Lizenzseite, eigene Lizenzbedingungen im App Store wegen Stockfish und
+  Fairy-Stockfish). Technik: Android als Capacitor- oder TWA-Paket, iOS mit Capacitor.

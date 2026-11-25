@@ -252,7 +252,9 @@ export default defineConfig({
         // (src/engine/maiapaket.ts), es gehört nicht zur Installation.
         // Das Schach-Abenteuer (Zusatzpaket seit Schritt 5, docs/spiel/04_Architektur.md 7) lädt
         // seine Daten selbst in einen eigenen Cache (src/abenteuer/paket/paketlader.ts).
-        globIgnores: ["admin/**", "maia/**", "abenteuer/**"],
+        // Die Variantenengine (engine-varianten/, Fairy-Stockfish einkernig, 26.11.2026) braucht nur das
+        // Abenteuer und gehört wie seine Daten zum Zusatzpaket.
+        globIgnores: ["admin/**", "maia/**", "abenteuer/**", "engine-varianten/**"],
         maximumFileSizeToCacheInBytes: GROESSTE_DATEI_BYTES,
       },
       manifest: {

@@ -1,6 +1,6 @@
 /**
  * Tests der Materialbilanz der Besprechung (besprechungsmaterial.ts): Figur statt Bauerneinheiten,
- * nur an ruhigen Stellen, Matt geht vor.
+ * nur bei ruhigem Ende der Folge, Matt geht vor.
  */
 import { describe, expect, it } from "vitest";
 import { materialfolge } from "./besprechungsmaterial";
@@ -21,7 +21,7 @@ describe("materialfolge", () => {
     expect(materialfolge(VOR_SF6, ["g8f6", "h5f7"], "black", "gewinn")).toBeNull();
   });
 
-  it("nennt die verlorene Figur nur an einer ruhigen Stelle", () => {
+  it("nennt die verlorene Figur nur, wenn die Folge ruhig endet", () => {
     const folge = ["c1g5", "h6g5", "e1e2"];
     expect(materialfolge(LAEUFER, folge, "white", "verlust")).toEqual({
       art: "figur",
@@ -35,6 +35,11 @@ describe("materialfolge", () => {
       rolle: "bishop",
       richtung: "gewinn",
     });
+  });
+
+  it("gibt keinen Satz, wenn die Folge mitten im Abtausch endet", () => {
+    // Txa8 Lxa8: Die Folge endet mit dem Schlag; was am Ende fehlt, ist offen.
+    expect(materialfolge(QUALITAET, ["a1a8", "b7a8"], "white", "verlust")).toBeNull();
   });
 
   it("gibt bei einer Qualität keinen Satz", () => {

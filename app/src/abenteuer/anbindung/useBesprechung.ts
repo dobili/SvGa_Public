@@ -92,7 +92,7 @@ function useRundenthemen(): readonly Rundenthemen[] {
 }
 
 /** Die Urteile aller Züge mit Theoriezügen, sobald die Partie ausgewertet ist. */
-function urteileDer(eintrag: Partieeintrag, theorie: Theoriequellen | null): Zugurteil[] {
+export function urteileDer(eintrag: Partieeintrag, theorie: Theoriequellen | null): Zugurteil[] {
   const p = eintrag.partie;
   const fens = stellungen(p);
   const sans = p.zuege.map((z) => z.san);
@@ -102,7 +102,7 @@ function urteileDer(eintrag: Partieeintrag, theorie: Theoriequellen | null): Zug
 }
 
 /** Momente mit Sätzen und Pfeilen. */
-function besprocheneMomente(
+export function besprocheneMomente(
   eintrag: Partieeintrag,
   urteile: readonly Zugurteil[],
   k: Besprechungskontext,

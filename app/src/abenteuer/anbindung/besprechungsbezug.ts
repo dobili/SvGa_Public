@@ -41,11 +41,23 @@ export interface FruehererFehler {
   readonly gleicherGegner: boolean;
 }
 
-/** Der Name einer Figur der Geschichte aus ihrer Kennung („mapleFalls.sam“ → „Sam“), oder null. */
+/**
+ * Steller, die kein Lehrer im Sinn des Rückbezugs sind: die Rätseltafeln an den Wegen (ein
+ * Gegenstand) und Ambrose selbst (er spricht ja; „Thema bei Ambrose“ klänge falsch). Messlauf
+ * 26.11.2026: „Daran hat Die Rätseltafel mit dir gearbeitet“.
+ */
+const KEINE_LEHRER: ReadonlySet<string> = new Set(["tafel", "ambrose"]);
+
+/**
+ * Der Name eines Lehrers aus der Kennung des Stellers („mapleFalls.sam“ → „Sam“), oder null für
+ * Gegenstände, Ambrose, unbekannte Namen und Namen mit Platzhalter (der Rivale: {rivale}).
+ */
 function figurname(kennung: string): string | null {
   const name = kennung.split(".").at(-1) ?? "";
   const schluessel = `figur.${name}.name`;
-  return hatSpieltext(schluessel) ? tSpiel(schluessel) : null;
+  if (KEINE_LEHRER.has(name) || !hatSpieltext(schluessel)) return null;
+  const text = tSpiel(schluessel);
+  return text.includes("{") ? null : text;
 }
 
 /**

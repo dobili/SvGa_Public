@@ -5,8 +5,8 @@
  *
  * Rolle im Gesamtbild: reine Rechnung für anbindung/besprechungsursache.ts. Grundlage ist die
  * gespeicherte Hauptvariante der Engine (keine neue Rechnung). Gezählt wird, was beide Seiten in
- * der Folge schlagen; die Bilanz gilt nur an einer ruhigen Stelle (der nächste Zug der Folge
- * schlägt nicht mehr), sonst fehlt vielleicht das Zurückschlagen. Genannt wird die schwerste
+ * der Folge schlagen; die Bilanz gilt nur, wenn die Folge ruhig endet (ihr letzter Zug schlägt
+ * nicht), sonst fehlt vielleicht das Zurückschlagen. Genannt wird die schwerste
  * Figur, die netto verloren geht und zur Bilanz passt; passt keine (etwa Turm gegen Springer),
  * gibt es keinen Satz. Matt geht vor.
  * Regel: Kapitel 1, Wert der Figuren und Zählen von Angreifern und Verteidigern.
@@ -20,13 +20,17 @@ import { FIGURENWERT } from "../../schach/stellung";
 import { regelstellung } from "../../spiel/zuege";
 
 /** Ergebnis: Matt, eine Figur (oder zwei Bauern) gewonnen oder verloren, oder nichts Sicheres. */
-export type Materialfolge =
+export type Materialfolge = (
   | { readonly art: "matt"; readonly richtung: "verlust" | "gewinn" }
   | {
       readonly art: "figur";
       readonly rolle: Role | "zweiBauern";
       readonly richtung: "verlust" | "gewinn";
-    };
+    }
+) & {
+  /** Gewinn durch die beste Antwort auf einen Fehler des Gegners (Satz in der Gegenwart). */
+  readonly antwort?: boolean;
+};
 
 /** Rollen, die geschlagen werden können, schwerste zuerst. */
 const ROLLEN: readonly Role[] = ["queen", "rook", "bishop", "knight", "pawn"];
@@ -81,14 +85,14 @@ function nettoVerluste(
   return netto;
 }
 
-/** Die längste ruhige Stelle der Folge: danach schlägt der nächste Zug nicht (oder die Folge endet ohne Schlag). */
-function ruhigeStelle(halbzuege: readonly Halbzug[]): number {
-  for (let bis = halbzuege.length; bis > 0; bis -= 1) {
-    const letzter = halbzuege[bis - 1];
-    const naechster = halbzuege[bis];
-    if (naechster ? !naechster.geschlagen : !letzter?.geschlagen) return bis;
-  }
-  return 0;
+/**
+ * Ist die Folge an ihrem Ende ruhig? Nur dann gilt ihre Bilanz: Endet sie mit einem Schlag, kann
+ * das Zurückschlagen fehlen, und eine Zwischenstelle täuscht (Messlauf 26.11.2026: an einer
+ * Zwischenstelle fehlte ein Turm, am Ende ein Springer).
+ */
+function ruhigAmEnde(halbzuege: readonly Halbzug[]): boolean {
+  const letzter = halbzuege.at(-1);
+  return letzter !== undefined && letzter.geschlagen === null;
 }
 
 /** Summe der Werte der Rollen (netto, positiv = verloren). */
@@ -135,7 +139,8 @@ export function materialfolge(
     const fuerSeite = matt.farbe === seite ? "gewinn" : "verlust";
     return fuerSeite === richtung ? { art: "matt", richtung } : null;
   }
-  const bis = ruhigeStelle(halbzuege);
+  if (!ruhigAmEnde(halbzuege)) return null;
+  const bis = halbzuege.length;
   const verlorenVon = richtung === "verlust" ? seite : seite === "white" ? "black" : "white";
   const rolle = passendeRolle(nettoVerluste(halbzuege, bis, verlorenVon));
   return rolle ? { art: "figur", rolle, richtung } : null;

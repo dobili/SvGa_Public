@@ -4,7 +4,7 @@
  */
 import { describe, expect, it } from "vitest";
 import type { Motivgrundlage } from "./besprechungsmotiv";
-import { materialVon, ursacheVon } from "./besprechungsursache";
+import { materialVon, ursachePasst, ursacheVon } from "./besprechungsursache";
 
 /** Schäfermatt bis 3... Sf6?? 4. Dxf7#; Schwarz ist der Held. */
 const SCHAEFER: Motivgrundlage = {
@@ -48,6 +48,7 @@ describe("ursacheVon", () => {
       gruppe: "haengt",
       werte: { figur: "dein Läufer", feld: "g5" },
       begriff: "haengend",
+      rolle: "bishop",
     });
   });
 
@@ -69,12 +70,29 @@ describe("materialVon", () => {
     });
   });
 
-  it("Fehler des Gegners: was der Held hätte gewinnen können", () => {
+  it("Fehler des Gegners: was die beste Antwort gewinnt (Satz in der Gegenwart)", () => {
     // Aus Sicht von Schwarz: nach 1. Lg5?? gewinnt hxg5 den Läufer.
     expect(materialVon(LAEUFER, { index: 0, kategorie: "gegnerfehler" })).toEqual({
       art: "figur",
       rolle: "bishop",
       richtung: "gewinn",
+      antwort: true,
     });
+  });
+});
+
+describe("ursachePasst", () => {
+  const bauer = {
+    gruppe: "drohung",
+    werte: {},
+    begriff: "haengend" as const,
+    rolle: "pawn" as const,
+  };
+  it("verwirft eine Ursache, wenn der Fehler eine schwerere andere Figur kostet", () => {
+    const turm = { art: "figur", rolle: "rook", richtung: "verlust" } as const;
+    expect(ursachePasst(bauer, turm)).toBe(false);
+    expect(ursachePasst({ ...bauer, rolle: "rook" }, turm)).toBe(true);
+    expect(ursachePasst(bauer, { art: "matt", richtung: "verlust" })).toBe(true);
+    expect(ursachePasst(bauer, null)).toBe(true);
   });
 });

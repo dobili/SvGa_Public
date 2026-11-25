@@ -11,7 +11,7 @@
  * Buchstaben im Kreis (abenteuer/brett/pixelfiguren.ts).
  * Abhängigkeiten: spiel/varianten/variante.ts, spiel/varianten/maerchenregeln.ts.
  */
-import { maerchenRegeln, meldeMaerchenabschnittAn } from "./maerchenregeln";
+import { ladeMaerchenregeln, maerchenRegeln, meldeMaerchenabschnittAn } from "./maerchenregeln";
 import { registriereVariante, varianteVon, type Variantendefinition } from "./variante";
 
 /** Abschnitt der variants.ini für den Drachen; derselbe steht in pipeline/abenteuer/maerchenfaelle.py. */
@@ -36,6 +36,8 @@ const MAERCHEN: readonly Variantendefinition[] = [
     regeln: maerchenRegeln("seirawan"),
     engine: { engine: "fairy", uciVariante: "seirawan" },
     startstellung: () => FALKE_UND_BISON_START,
+    // Die Hülle wartet darauf vor der Partie (ffish lädt erst dann, knapp 1 MB).
+    vorbereiten: () => ladeMaerchenregeln(),
   },
   {
     kennung: "drache",
@@ -44,6 +46,7 @@ const MAERCHEN: readonly Variantendefinition[] = [
     regeln: maerchenRegeln("drache"),
     engine: { engine: "fairy", uciVariante: "drache", ini: DRACHE_INI },
     startstellung: () => DRACHE_START,
+    vorbereiten: () => ladeMaerchenregeln(),
   },
 ];
 

@@ -115,6 +115,13 @@ export interface Variantendefinition {
    * Fehlt: Die Hülle spielt die Variante selbst über `regeln` und `engine`.
    */
   readonly ablauf?: "eigene_partie";
+  /**
+   * Lädt, was die Regeln brauchen, bevor die Partie angelegt oder gezeigt wird (etwa ffish für
+   * die Märchenfiguren, mittel-2). Die Partie legt erst an, wenn es fertig ist (anbindung/
+   * dienste.ts), und die Hülle zeigt das Brett erst danach (useVariantenbereit.ts). Mehrfaches
+   * Rufen muss billig sein (einmal laden, dann dasselbe Versprechen).
+   */
+  readonly vorbereiten?: () => Promise<void>;
 }
 
 const VARIANTEN = new Map<Variantenkennung, Variantendefinition>();

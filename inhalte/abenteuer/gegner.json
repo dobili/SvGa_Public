@@ -1555,7 +1555,12 @@
         "eroeffnungen": ["praxis:Ruy Lopez"],
         "abweichung": 10
       },
-      "steckbrief": [{ "art": "stil", "wert": "positionsspieler" }]
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "positionsspieler"
+        }
+      ]
     },
     {
       "kennung": "portDelacroix.blaeserSet1",
@@ -1919,6 +1924,111 @@
         {
           "art": "fehlerart",
           "wert": "falscherAbtausch"
+        }
+      ]
+    },
+    {
+      "kennung": "wegPinewoodGhost.juniper",
+      "name": "figur.juniper.name",
+      "rolle": "strasse",
+      "temperament": "herzlich",
+      "portraet": "portraets/juniper.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -100
+      },
+      "stil": "angreifer",
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "angreifer"
+        }
+      ]
+    },
+    {
+      "kennung": "wegSummitCrossroads.bell",
+      "name": "figur.bell.name",
+      "rolle": "strasse",
+      "temperament": "herzlich",
+      "portraet": "portraets/bell.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -100
+      },
+      "stil": "angreifer",
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "angreifer"
+        }
+      ]
+    },
+    {
+      "kennung": "wegGhostCapital.abe",
+      "name": "figur.abe.name",
+      "rolle": "strasse",
+      "temperament": "trocken",
+      "portraet": "portraets/abe.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -100
+      },
+      "stil": "angreifer",
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "angreifer"
+        }
+      ]
+    },
+    {
+      "kennung": "wegDesertSummit.earl",
+      "name": "figur.earl.name",
+      "rolle": "strasse",
+      "temperament": "verschmitzt",
+      "portraet": "portraets/earl.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -100
+      },
+      "stil": "angreifer",
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "angreifer"
+        }
+      ]
+    },
+    {
+      "kennung": "pinewoodCamp.ezra",
+      "name": "figur.ezra.name",
+      "rolle": "strasse",
+      "temperament": "frech",
+      "portraet": "portraets/ezra.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -100
+      },
+      "stil": "angreifer",
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "angreifer"
         }
       ]
     }

@@ -768,6 +768,36 @@
       "name": "fund.kreide1.name",
       "text": "fund.kreide1.text",
       "bild": "bilder/fund-kreide1.webp"
+    },
+    {
+      "kennung": "echoKarabiner",
+      "ort": "wegPinewoodGhost",
+      "name": "fund.echoKarabiner.name",
+      "text": "fund.echoKarabiner.text"
+    },
+    {
+      "kennung": "geysirSinter",
+      "ort": "wegSummitCrossroads",
+      "name": "fund.geysirSinter.name",
+      "text": "fund.geysirSinter.text"
+    },
+    {
+      "kennung": "logbuchSeite",
+      "ort": "wegGhostCapital",
+      "name": "fund.logbuchSeite.name",
+      "text": "fund.logbuchSeite.text"
+    },
+    {
+      "kennung": "dinerRechnung",
+      "ort": "wegDesertSummit",
+      "name": "fund.dinerRechnung.name",
+      "text": "fund.dinerRechnung.text"
+    },
+    {
+      "kennung": "raeuberHolzfigur",
+      "ort": "pinewoodCamp",
+      "name": "fund.raeuberHolzfigur.name",
+      "text": "fund.raeuberHolzfigur.text"
     }
   ]
 }

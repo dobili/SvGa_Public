@@ -8,8 +8,8 @@
 // Einstiege wie in orte.json: earl, zurueck_desert, tafel, fund_neon. Die
 // Ankunft in Summit City erzählt summit-city-aussen.ankunft_zu_fuss.
 //
-// Varianten: Königsrennen ist noch nicht gebaut (nur Blindschach). Earl erklärt die Regel und
-// vertröstet; die Stelle ist mit „VARIANTE-FEHLT“ markiert und kommt in den Bericht.
+// Varianten: Königsrennen ist spielbar (Begegnung wegDesertSummit.koenigsrennen, seit 26.11.2026);
+// Earl erklärt die Regel und bietet ein Rennen an.
 // Variablen: wegDesertSummitTafelBestanden setzt die Hülle (R42); die übrigen setzt diese Datei.
 // Der Fund „neonK“ kommt über gibFund; Ink merkt ihn sich selbst (neonGefunden), weil die Hülle
 // beim Dialogende alle Ink-Variablen zurückschreibt. Bringt {held} das K zu Earl zurück, setzt
@@ -27,6 +27,8 @@ VAR held = "Du"
 VAR wegDesertSummitTafelBestanden = false
 VAR earlGetroffen = false
 VAR varianteKoenigsrennenGelernt = false
+VAR dinerRechnungGegeben = false
+VAR ausgangWegDesertSummitKoenigsrennen = ""
 VAR neonGefunden = false
 VAR neonRepariert = false
 // Zähl-Merker der Sammelstücke (Chaos-Prüfung, 14.11.2026): gesetzt erst zusammen mit dem
@@ -68,16 +70,51 @@ Wer zuerst ankommt, zahlt nicht. Und wer unterwegs nur schlagen will, zahlt meis
 -> earl_angebot
 
 === earl_angebot ===
-// VARIANTE-FEHLT: Königsrennen (L8). Bis es gebaut ist, nur die Regel und eine Vertröstung.
+// Königsrennen wirklich spielen (Auftrag des Hauptchats, 26.11.2026; vorher nur eine Vertröstung).
 Am Fenstertisch rennen zwei Fahrer los. Der eine schiebt seinen König stur nach vorn, der andere schlägt unterwegs einen Läufer und zahlt den Kaffee. #sprecher:erzaehler
-Siehst du? Laufen, nicht schlagen. #sprecher:earl #stimmung:laechelt
-Wenn du wieder durchfährst, rennst du selbst. #sprecher:earl #stimmung:laechelt
+Siehst du? Laufen, nicht schlagen. Der Fensterplatz ist gerade frei. Rennen wir? #sprecher:earl #stimmung:laechelt
++ [„Rennen wir.“]
+    ~ beginnePartie("wegDesertSummit.koenigsrennen")
+    -> END
++ [„Ein andermal.“]
+    Ich trink noch einen Kaffee. Der Platz bleibt frei. #sprecher:earl #stimmung:laechelt
+    -> END
+
+=== earl_koenigsrennen_danach ===
+{ausgangWegDesertSummitKoenigsrennen:
+- "sieg":
+    Erster an der Ziellinie. Dann zahl ich wohl. #sprecher:earl #stimmung:lacht
+    {not dinerRechnungGegeben:
+        ~ dinerRechnungGegeben = true
+        Er schreibt quer über seine Rechnung „Der Sieger zahlt nicht“ und schiebt sie dir hin. #sprecher:erzaehler
+        ~ gibFund("dinerRechnung")
+    }
+    -> END
+- "remis":
+    Beide Könige gleichzeitig oben. Dann zahlt jeder seinen Kaffee selbst. #sprecher:earl #stimmung:laechelt
+    -> earl_nochmal
+- else:
+    Mein König war schneller. Du hast unterwegs zu viel geschlagen. #sprecher:earl #stimmung:lacht
+    -> earl_nochmal
+}
 -> END
+
+=== earl_nochmal ===
+Noch ein Rennen? #sprecher:earl #stimmung:laechelt
++ [„Noch eins.“]
+    ~ beginnePartie("wegDesertSummit.koenigsrennen")
+    -> END
++ [„Später.“]
+    Die Straße läuft nicht weg. Ich auch nicht. #sprecher:earl #stimmung:laechelt
+    -> END
 
 === earl_alltag ===
 {~Der Kaffee hier ist schwarz wie ein Läufer auf c8.|Ich hab mal ein Rennen in elf Zügen gewonnen. Seitdem zahl ich nie.|Bis Summit City geht's nur noch bergauf. Für Lastwagen und für Schachspieler.} #sprecher:earl #stimmung:laechelt
 + {neonGefunden and not neonRepariert} [„Ich hab dein K gefunden.“]
     -> earl_k
++ [„Ein Königsrennen?“]
+    ~ beginnePartie("wegDesertSummit.koenigsrennen")
+    -> END
 + [„Erklär mir das Königsrennen noch einmal.“]
     -> earl_regel ->
     -> END

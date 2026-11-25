@@ -69,7 +69,8 @@ interface BrettEigenschaften {
 /** Name einer Figur für Bildschirmleser, etwa „weißer Springer“. */
 function figurenname(zeichen: string): string {
   const farbe = zeichen === zeichen.toUpperCase() ? t("farbe.w") : t("farbe.b");
-  const rolle = zeichen.toLowerCase() as "p" | "n" | "b" | "r" | "q" | "k";
+  // Falke, Bison und Drache (Märchenfiguren des Schach-Abenteuers) haben eigene Namen.
+  const rolle = zeichen.toLowerCase() as "p" | "n" | "b" | "r" | "q" | "k" | "h" | "e" | "d";
   return `${t(`figur.${rolle}`)} (${farbe})`;
 }
 

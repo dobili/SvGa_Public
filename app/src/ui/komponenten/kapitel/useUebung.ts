@@ -14,7 +14,7 @@ import { useState } from "react";
 import type { Markierung } from "../../../analyse/werkzeug";
 import { notiereUebungsergebnis } from "../../../speicher/fortschritt";
 import { aendere } from "../../../speicher/speicher";
-import { spieleZug, zugFelder } from "../../../schach/weiterspielen";
+import { spieleZug, zugFelder, type Zugversuch } from "../../../schach/weiterspielen";
 import type { Rolle } from "../../../schach/stellung";
 import {
   loesungszug,
@@ -43,11 +43,7 @@ export interface Uebungssteuerung {
   /** Die Rolle der Figur, die als Nächstes zieht (für Hinweis 2), sonst null. */
   readonly naechsteFigur: Rolle | null;
   readonly markierungen: readonly Markierung[];
-  readonly spiele: (
-    von: string,
-    nach: string,
-    umwandlung?: Rolle,
-  ) => "gespielt" | "umwandlung" | "ungueltig";
+  readonly spiele: (von: string, nach: string, umwandlung?: Rolle) => Zugversuch["art"];
   readonly nachgedacht: () => void;
   readonly hinweis: () => void;
   readonly zeigeLoesung: () => void;

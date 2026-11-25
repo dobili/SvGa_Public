@@ -10,6 +10,7 @@
  * Abhängigkeiten: chessops, spiel/zuege.ts, spiel/ergebnis.ts, spiel/uhr.ts, engine/fehlerart.ts.
  */
 import type { Probeherkunft } from "./probepartie";
+import { freieRegeln, freiSpielbar } from "./varianten/freieregeln";
 import type { Variantenkennung } from "./varianten/variante";
 import type { Stilmix, Stilname } from "../engine/stile";
 import type { Color } from "chessops/types";
@@ -20,7 +21,7 @@ import type { Phase } from "../schach/phase";
 import { partieendeDurchZeit, partieendeNach, type Partieende } from "./ergebnis";
 import { steineMoeglich } from "./umwandlung";
 import { neueUhr, type Uhreinstellung, type Uhrstand } from "./uhr";
-import { fenNach, regelstellung } from "./zuege";
+import { fenNach, regelstellung, regelstellungFuer } from "./zuege";
 
 /** Wert von `eroeffnung`, wenn die Engine irgendeiner Variante des Buches folgen soll. */
 export const EROEFFNUNG_BUCH = "buch";
@@ -203,7 +204,7 @@ export function neuePartie(
   id: string,
   begonnen: string,
 ): Partie | null {
-  if (!spielbar(einstellung.startFen)) return null;
+  if (!spielbar(einstellung.startFen, einstellung.abenteuer?.variante)) return null;
   const uhr = einstellung.uhr ? neueUhr(einstellung.uhr) : null;
   return { id, begonnen, einstellung, zuege: [], ruecknahmen: 0, uhr, ende: null };
 }
@@ -212,7 +213,12 @@ export function neuePartie(
  * Kann man aus dieser Stellung eine Partie beginnen (legal, mit Zügen, beide Könige, und nicht
  * mehr Figuren, als durch Umwandlung entstehen können; sonst verweigert Stockfish die Stellung)?
  */
-export function spielbar(fen: string): boolean {
+export function spielbar(fen: string, variante?: string): boolean {
+  const frei = freieRegeln(variante);
+  if (frei) return freiSpielbar(frei, fen);
+  // Varianten mit eigenen Regeln (Räuberschach ohne König, Königsrennen, nur Könige am Hügel):
+  // spielbar, solange die Stellung nach ihren Regeln gilt und noch nicht zu Ende ist.
+  if (variante && regelstellungFuer(fen, variante)?.rules !== "chess") return ladbar(fen, variante);
   const pos = ladbar(fen) ? regelstellung(fen) : null;
   return pos !== null && steineMoeglich(pos.board, "white") && steineMoeglich(pos.board, "black");
 }
@@ -221,16 +227,24 @@ export function spielbar(fen: string): boolean {
  * Lässt sich eine gespeicherte Partie mit dieser Startstellung laden? Wie spielbar, aber ohne
  * die Prüfung der Umwandlungen, damit ältere Partien eines Lesers nicht verloren gehen.
  */
-export function ladbar(fen: string): boolean {
-  const pos = regelstellung(fen);
+export function ladbar(fen: string, variante?: string): boolean {
+  const frei = freieRegeln(variante);
+  if (frei) return freiSpielbar(frei, fen);
+  const pos = variante ? regelstellungFuer(fen, variante) : regelstellung(fen);
   return pos !== null && !pos.isEnd();
 }
 
-/** Alle Stellungen der Partie, von der Startstellung bis zur aktuellen. */
+/** Die Variante der Partie (Abenteuer, spiel/varianten/), sonst undefined. */
+export function varianteDer(partie: Partie): string | undefined {
+  return partie.einstellung.abenteuer?.variante;
+}
+
+/** Alle Stellungen der Partie, von der Startstellung bis zur aktuellen (Regeln der Variante). */
 export function stellungen(partie: Partie): string[] {
   const liste = [partie.einstellung.startFen];
+  const variante = varianteDer(partie);
   for (const zug of partie.zuege) {
-    const naechste = fenNach(liste[liste.length - 1] ?? "", zug.san);
+    const naechste = fenNach(liste[liste.length - 1] ?? "", zug.san, variante);
     if (!naechste) break;
     liste.push(naechste);
   }
@@ -266,9 +280,10 @@ export function leserAmZug(partie: Partie): boolean {
 export function ziehe(partie: Partie, zug: Partiezug): Partie | null {
   if (partie.ende) return null;
   const vorher = stellungen(partie);
-  const danach = fenNach(vorher[vorher.length - 1] ?? "", zug.san);
+  const variante = varianteDer(partie);
+  const danach = fenNach(vorher[vorher.length - 1] ?? "", zug.san, variante);
   if (!danach) return null;
-  const ende = partieendeNach([...vorher, danach]);
+  const ende = partieendeNach([...vorher, danach], variante);
   return { ...partie, zuege: [...partie.zuege, zug], ende };
 }
 

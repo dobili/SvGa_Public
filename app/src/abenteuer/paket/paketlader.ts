@@ -39,6 +39,7 @@ import {
   mitZeitlimit,
   protokollVon,
 } from "./ladehilfen";
+import { ladeFairyVorab } from "../../engine/fairyEngine";
 import { adresse, cachename, CACHE_PRAEFIX, mitCache } from "./paketadresse";
 import { passtZurFassung, tonfassung, tonpfad } from "./tonfassung";
 
@@ -190,6 +191,8 @@ export async function ladePaket(fortschritt: Ladefortschritt): Promise<void> {
   fortschritt(verzeichnis.bytes, verzeichnis.bytes);
   // Der Code-Baustein liegt beim Service Worker; ohne ihn (Entwicklung) ist nichts zu tun.
   await ladeSprachpaket(PAKET_ABENTEUER);
+  // Die Variantenengine gehört zum Paket (offline); ohne sie spielt der vorläufige Gegner.
+  await ladeFairyVorab().catch((fehler: unknown) => console.warn("Variantenengine fehlt", fehler));
   melde();
 }
 

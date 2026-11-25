@@ -8,7 +8,9 @@
  * Leser auf „Jetzt aktualisieren“ tippt (Konzept 11.3).
  * Seit V4 (Nutzungsprüfung 25.10.2026) lädt er nur den Kern vorab; die Dateien einer weiteren
  * Sprache kommen als Sprachpaket erst auf Wahl des Lesers (sw/sprachpakete.ts).
- * Abhängigkeiten: Workbox (precaching, routing), sw/dateiliste.ts, sw/sprachpakete.ts.
+ * Die Variantenengine (engine-varianten/) hält er beim ersten Abruf vor (sw/variantenengine.ts).
+ * Abhängigkeiten: Workbox (precaching, routing), sw/dateiliste.ts, sw/sprachpakete.ts,
+ * sw/variantenengine.ts.
  */
 /// <reference lib="webworker" />
 import {
@@ -21,6 +23,7 @@ import { NavigationRoute, registerRoute } from "workbox-routing";
 import { cacheNames } from "workbox-core";
 import { teileDateiliste } from "./sw/dateiliste";
 import { richteSprachpaketeEin } from "./sw/sprachpakete";
+import { richteVariantenengineEin } from "./sw/variantenengine";
 
 declare const self: ServiceWorkerGlobalScope & {
   __WB_MANIFEST: (string | { url: string; revision: string | null })[];
@@ -31,6 +34,7 @@ const { kern: DATEILISTE, pakete: SPRACHPAKETE } = teileDateiliste(self.__WB_MAN
 
 precacheAndRoute(DATEILISTE);
 richteSprachpaketeEin(SPRACHPAKETE);
+richteVariantenengineEin();
 cleanupOutdatedCaches();
 // Jede Adresse unter /app/ liefert die App aus (sie hat keine Unterseiten, Konzept 6.6). Die
 // statischen Seiten (/, /installieren/, /impressum/, /datenschutz/) beantwortet die Vorab-Liste

@@ -121,7 +121,8 @@ export function pfeilform(
 /** Liest den Stellungsteil der FEN in eine Zuordnung Feld → FEN-Buchstabe. */
 export function figurenAusFen(fen: string): Map<string, string> {
   const figuren = new Map<string, string>();
-  const zeilen = (fen.split(" ")[0] ?? "").split("/");
+  // Die Tasche einer Variante („…/RNBQKBNR[HEhe]“) steht nicht auf dem Brett.
+  const zeilen = (fen.split(" ")[0] ?? "").replace(/\[[^\]]*\]$/, "").split("/");
   zeilen.forEach((zeile, index) => {
     let linie = 0;
     for (const zeichen of zeile) {

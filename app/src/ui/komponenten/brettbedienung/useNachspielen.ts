@@ -40,7 +40,13 @@ export interface Nachspielstand {
   /** Abbildung desselben Kapitels mit genau dieser Stellung, sonst null. */
   readonly abbildungHier: Abbildung | null;
   /** Ein eigener Zug; trifft er einen Buchzug, geht es im Buch weiter. */
-  readonly spiele: (von: string, nach: string, umwandlung?: Rolle) => Zugversuch["art"];
+  /** `zusatz`: nur Märchenfiguren, das fünfte Zeichen des Zugs („h“ setzt einen Falken ein). */
+  readonly spiele: (
+    von: string,
+    nach: string,
+    umwandlung?: Rolle,
+    zusatz?: string,
+  ) => Zugversuch["art"];
   readonly schritt: (richtung: "anfang" | "zurueck" | "vor" | "ende") => void;
   readonly kann: { readonly zurueck: boolean; readonly vor: boolean };
   /**

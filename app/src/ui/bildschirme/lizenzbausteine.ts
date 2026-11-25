@@ -40,6 +40,13 @@ export const BAUSTEINE: readonly Lizenzbaustein[] = [
   { kennung: "app", text: "/lizenzen/gpl-3.0.txt", quelle: QUELLCODE },
   { kennung: "buch" },
   { kennung: "stockfish", text: "/engine/LIZENZ-stockfish.txt", pakete: ["stockfish"] },
+  // Variantenengine des Schach-Abenteuers (Zusatzpaket, werkzeuge/fairy_einkernig/): Die GPL
+  // verlangt den Quellcode; der Patch für den einkernigen Bau liegt im Repository der App.
+  {
+    kennung: "fairystockfish",
+    text: "/engine-varianten/LIZENZ-fairy-stockfish.txt",
+    quelle: "https://github.com/fairy-stockfish/fairy-stockfish.wasm",
+  },
   { kennung: "maia", text: "/lizenzen/mit-maia2.txt" },
   {
     kennung: "onnxruntime",

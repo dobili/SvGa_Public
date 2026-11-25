@@ -7,10 +7,12 @@
  * Dialogknoten danach und die Belohnung wie bei Schach960. Nur das Brett und der Bot sind je
  * Variante eigen. Eine Variante mit `ablauf: "eigene_partie"` meldet hier ihre Komponente an; die
  * Hülle zeigt sie an Stelle ihres Bretts und nimmt das Ergebnis über `beiEnde` entgegen.
- * Abhängigkeiten: React (Typ), abenteuer/schnittstelle/partie.ts.
+ * Die Hülle zeigt die Komponente mit EigeneVariantenpartie.tsx und schreibt `beiEnde` als Ende.
+ * Abhängigkeiten: React (Typ), spiel/partie.ts, abenteuer/schnittstelle/partie.ts.
  */
 import type { ComponentType } from "react";
-import type { Ausgang, Partieauftrag } from "../schnittstelle/partie";
+import type { Partie } from "../../spiel/partie";
+import type { Ausgang } from "../schnittstelle/partie";
 
 /** Ergebnis einer eigenen Variantenpartie. */
 export interface Variantenergebnis {
@@ -24,7 +26,11 @@ export interface Variantenergebnis {
 
 /** Was die Hülle der Komponente gibt. */
 export interface Variantenpartiewerte {
-  readonly auftrag: Partieauftrag;
+  /**
+   * Die Partie der App (Startstellung, Gegnername, Kennung der Begegnung, Variante). Den
+   * Partieauftrag kennt die Hülle nicht; was die Komponente braucht, steht in der Einstellung.
+   */
+  readonly partie: Partie;
   /** Gegnerstärke als Elo-Schätzung der Begegnung (wie beim Bot der Hülle). */
   readonly staerke: number;
   readonly eigeneFarbe: "weiss" | "schwarz";

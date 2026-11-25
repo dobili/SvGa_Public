@@ -1542,6 +1542,156 @@
           "niederlage": "erzaehlung.testteamGitter.niederlage"
         }
       }
+    },
+    {
+      "kennung": "wegPinewoodGhost.dreischach",
+      "danach": "weg-pinewood-ghost.juniper_dreischach_danach",
+      "gegner": "wegPinewoodGhost.juniper",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false,
+      "variante": "dreischach"
+    },
+    {
+      "kennung": "crossroads.dreischach",
+      "gegner": "mapleFalls.ambrose",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false,
+      "variante": "dreischach",
+      "danach": "crossroads-raststaette.tisch_nach_partie"
+    },
+    {
+      "kennung": "wegSummitCrossroads.atomschach",
+      "danach": "weg-summit-crossroads.bell_atomschach_danach",
+      "gegner": "wegSummitCrossroads.bell",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false,
+      "variante": "atomschach"
+    },
+    {
+      "kennung": "crossroads.atomschach",
+      "gegner": "mapleFalls.ambrose",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false,
+      "variante": "atomschach",
+      "danach": "crossroads-raststaette.tisch_nach_partie"
+    },
+    {
+      "kennung": "wegGhostCapital.koenigDerHuegel",
+      "danach": "weg-ghost-capital.abe_koenigderhuegel_danach",
+      "gegner": "wegGhostCapital.abe",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false,
+      "variante": "koenigDerHuegel"
+    },
+    {
+      "kennung": "crossroads.koenigDerHuegel",
+      "gegner": "mapleFalls.ambrose",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false,
+      "variante": "koenigDerHuegel",
+      "danach": "crossroads-raststaette.tisch_nach_partie"
+    },
+    {
+      "kennung": "wegDesertSummit.koenigsrennen",
+      "danach": "weg-desert-summit.earl_koenigsrennen_danach",
+      "gegner": "wegDesertSummit.earl",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false,
+      "variante": "koenigsrennen"
+    },
+    {
+      "kennung": "crossroads.koenigsrennen",
+      "gegner": "mapleFalls.ambrose",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false,
+      "variante": "koenigsrennen",
+      "danach": "crossroads-raststaette.tisch_nach_partie"
+    },
+    {
+      "kennung": "pinewoodCamp.raeuberschach",
+      "danach": "pinewood-camp-aussen.ezra_raeuberschach_danach",
+      "gegner": "pinewoodCamp.ezra",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false,
+      "variante": "raeuberschach"
+    },
+    {
+      "kennung": "crossroads.raeuberschach",
+      "gegner": "mapleFalls.ambrose",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false,
+      "variante": "raeuberschach",
+      "danach": "crossroads-raststaette.tisch_nach_partie"
     }
   ]
 }

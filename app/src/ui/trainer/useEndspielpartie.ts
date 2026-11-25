@@ -17,7 +17,7 @@ import type { Endspielaufgabe } from "../../daten/trainerdaten";
 import { AuftragAbgebrochen, engine, VOLLE_STAERKE } from "../../engine/engineDienst";
 import { wertFuer } from "../../engine/spielbewerter";
 import type { Rolle } from "../../schach/stellung";
-import { spieleZug } from "../../schach/weiterspielen";
+import { spieleZug, type Zugversuch } from "../../schach/weiterspielen";
 import { partieendeNach } from "../../spiel/ergebnis";
 import { uciZuSan } from "../../spiel/zuege";
 import {
@@ -45,11 +45,7 @@ export interface Endspielstand {
   /** Bester Zug für den Leser in der aktuellen Stellung (UCI), sobald gerechnet. */
   readonly bester: string | null;
   readonly fehler: string | null;
-  readonly spiele: (
-    von: string,
-    nach: string,
-    umwandlung?: Rolle,
-  ) => "gespielt" | "umwandlung" | "ungueltig";
+  readonly spiele: (von: string, nach: string, umwandlung?: Rolle) => Zugversuch["art"];
   readonly gibAuf: () => void;
 }
 

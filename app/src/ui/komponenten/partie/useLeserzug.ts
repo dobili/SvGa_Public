@@ -15,11 +15,14 @@ import type { Partiesteuerung } from "./usePartie";
  * Stellung (FEN), ob „Zählen“ gewählt ist. Beispiel: e2 und e4 antippen spielt 1. e4.
  */
 export function useLeserzug(s: Partiesteuerung, gezeigt: string, zaehlen: boolean) {
+  // Variante der Partie (Abenteuer): Das Brett bietet nur Züge nach ihren Regeln an.
+  const variante = s.partie?.einstellung.abenteuer?.variante;
   return useBrettbedienung(
     {
       fen: gezeigt,
-      spiele: (von, nach, rolle) => {
-        const versuch = spieleZug(gezeigt, von, nach, rolle);
+      variante,
+      spiele: (von, nach, rolle, zusatz) => {
+        const versuch = spieleZug(gezeigt, von, nach, rolle, variante, zusatz);
         if (versuch.art === "gespielt") s.spieleLeser(versuch.san);
         return versuch.art;
       },

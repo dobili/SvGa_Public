@@ -8,11 +8,13 @@
 // Einstiege wie in orte.json: bell, ray, zurueck_summit, tafel, fund_bisonhaar, bisons,
 // sturmkeller. Die Ankunft in Crossroads erzählt crossroads-aussen.ankunft_zu_fuss.
 //
-// Varianten: Atomschach und Entenschach sind noch nicht gebaut (VARIANTE-FEHLT, Bericht).
+// Varianten: Atomschach ist spielbar (wegSummitCrossroads.atomschach, seit 26.11.2026); Entenschach
+// ist noch nicht gebaut (VARIANTE-FEHLT, Bericht).
 // Variablen: wegSummitCrossroadsTafelBestanden setzt die Hülle (R42); die übrigen setzt diese
 // Datei. Das Bisonhaar kommt über gibFund; Ink merkt es sich selbst (bisonhaarGefunden).
 
 EXTERNAL beginneAufgaben(runde)
+EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibFund(kennung)
 
 VAR held = "Du"
@@ -23,6 +25,8 @@ VAR wegSummitCrossroadsTafelBestanden = false
 VAR bellGetroffen = false
 VAR rayCastilloGetroffen = false
 VAR varianteAtomschachGelernt = false
+VAR geysirSinterGegeben = false
+VAR ausgangWegSummitCrossroadsAtomschach = ""
 VAR varianteEntenschachGelernt = false
 VAR bisonhaarGefunden = false
 VAR bisonsGewartet = false
@@ -67,13 +71,49 @@ Also zählst du vorher. Wer greift an, wer verteidigt, was fliegt mit in die Luf
 -> bell_angebot
 
 === bell_angebot ===
-// VARIANTE-FEHLT: Atomschach (L4). Bis es gebaut ist, nur die Regel und eine Vertröstung.
+// Atomschach wirklich spielen (Auftrag des Hauptchats, 26.11.2026; vorher nur eine Vertröstung).
 Bell zieht mit der Stiefelspitze ein Brett in den Sinter. Ein Läufer schlägt auf e5, und sie wischt mit dem Fuß die halbe Mitte weg. #sprecher:erzaehler
-So sieht das aus. Das echte Brett liegt in der Station, beim nächsten Mal bring ich es mit. #sprecher:bell #stimmung:laechelt
+So sieht das aus. Das Brett aus der Station hab ich dabei. Eine Partie, bevor Old Patience kommt? #sprecher:bell #stimmung:froh
++ [„Spielen wir.“]
+    ~ beginnePartie("wegSummitCrossroads.atomschach")
+    -> END
++ [„Ein andermal.“]
+    Der Geysir wartet nicht, ich schon. #sprecher:bell #stimmung:laechelt
+    -> END
+
+=== bell_atomschach_danach ===
+{ausgangWegSummitCrossroadsAtomschach:
+- "sieg":
+    Bumm! Und weg ist mein König. Du hast vorher gezählt, das hab ich gesehen. #sprecher:bell #stimmung:lacht
+    {not geysirSinterGegeben:
+        ~ geysirSinterGegeben = true
+        Der ist vom Rand des Beckens. Noch warm. Für dich. #sprecher:bell #stimmung:froh
+        ~ gibFund("geysirSinter")
+    }
+    -> END
+- "remis":
+    Unentschieden. Old Patience auch: Heute bricht sie zweimal halb aus. #sprecher:bell #stimmung:laechelt
+    -> bell_nochmal
+- else:
+    Dein König stand neben dem falschen Feld. Ein Schlag, und alles fliegt. #sprecher:bell #stimmung:lacht
+    -> bell_nochmal
+}
 -> END
+
+=== bell_nochmal ===
+Noch eine? #sprecher:bell #stimmung:froh
++ [„Noch eine.“]
+    ~ beginnePartie("wegSummitCrossroads.atomschach")
+    -> END
++ [„Später.“]
+    Ich bin bis zum Abend hier. #sprecher:bell #stimmung:laechelt
+    -> END
 
 === bell_alltag ===
 {~Der Geysir hält sich an die Uhr. Ich stelle meine danach.|Bleib auf den Stegen. Der Boden hier ist dünn wie ein Versprechen.|Die Bisons gehören hierher. Wir sind nur zu Besuch.} #sprecher:bell #stimmung:laechelt
++ [„Eine Partie Atomschach?“]
+    ~ beginnePartie("wegSummitCrossroads.atomschach")
+    -> END
 + [„Erklär mir das Atomschach noch einmal.“]
     -> bell_regel ->
     -> END

@@ -8,11 +8,14 @@
 // Einstiege wie in orte.json: bell, ray, zurueck_summit, tafel, fund_bisonhaar, bisons,
 // sturmkeller. Die Ankunft in Crossroads erzählt crossroads-aussen.ankunft_zu_fuss.
 //
-// Varianten: Atomschach und Entenschach sind noch nicht gebaut (VARIANTE-FEHLT, Bericht).
+// Varianten: Atomschach ist noch nicht gebaut (VARIANTE-FEHLT, Bericht). Entenschach spielt Ray im
+// Sturmkeller (Begegnung wegSummitCrossroads.entenschach, Variante „ente“, Quest
+// wegSummitCrossroads.entenschach, Fund holzente; Auftrag des Hauptchats 26.11.2026).
 // Variablen: wegSummitCrossroadsTafelBestanden setzt die Hülle (R42); die übrigen setzt diese
 // Datei. Das Bisonhaar kommt über gibFund; Ink merkt es sich selbst (bisonhaarGefunden).
 
 EXTERNAL beginneAufgaben(runde)
+EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibFund(kennung)
 
 VAR held = "Du"
@@ -24,6 +27,8 @@ VAR bellGetroffen = false
 VAR rayCastilloGetroffen = false
 VAR varianteAtomschachGelernt = false
 VAR varianteEntenschachGelernt = false
+VAR ausgangWegSummitCrossroadsEntenschach = ""
+VAR holzenteGeschenkt = false
 VAR bisonhaarGefunden = false
 VAR bisonsGewartet = false
 VAR wegSummitCrossroadsGeysirblitzBestanden = false
@@ -107,21 +112,56 @@ Wir nennen sie den Twister. Sie steht immer genau da, wo du hinwolltest. #sprech
 -> ray_regel ->
 {not abschiedGesehen:
     Eine Figur, die nur im Weg steht. Ich kannte Menschen dieser Art. #sprecher:ambrose #stimmung:laechelt
+    Stell die Ente dorthin, wo er hinwollte. Dann hat er zwei Gegner, dich und den Sturm. #sprecher:ambrose #stimmung:laechelt
 }
 -> ray_angebot
 
 === ray_angebot ===
-// VARIANTE-FEHLT: Entenschach (L6). Bis es gebaut ist, nur die Regel und eine Vertröstung.
-Der Sturm dreht ab. Heute kein Keller, heute keine Ente, nächstes Mal. #sprecher:rayCastillo #stimmung:nachdenklich
--> END
+Der Himmel wird grün. Ab in den Keller! #sprecher:rayCastillo #stimmung:lacht
++ [„Spielen wir mit dem Twister.“]
+    Unten ein Tisch, ein Brett und eine Holzente. Über euch heult der Wind. #sprecher:erzaehler
+    ~ beginnePartie("wegSummitCrossroads.entenschach")
+    -> END
++ [„Nicht jetzt.“]
+    Der nächste Sturm kommt bestimmt. Dann sitzen wir wieder unten. #sprecher:rayCastillo #stimmung:laechelt
+    -> END
 
 === ray_alltag ===
 {~Siehst du die Wolke da? Die ist harmlos, die daneben nicht.|Grüß Mira von mir. Und sag Tomás, er soll mein Auto reparieren.|Ein Sturm ist wie ein Angriff. Man sieht ihn kommen, wenn man hinschaut.} #sprecher:rayCastillo #stimmung:laechelt
++ [„Eine Partie im Keller?“]
+    -> ray_angebot
 + [„Erklär mir das Entenschach noch einmal.“]
     -> ray_regel ->
-    -> END
+    -> ray_angebot
 + [„Bis bald, Ray.“]
     -> END
+
+// Rückmeldung nach der Partie (begegnungen.json `danach`; Wunsch des Autors, 19.11.2026).
+=== ray_danach ===
+{ausgangWegSummitCrossroadsEntenschach:
+- "sieg":
+    Du hast den Twister besser gesetzt als ich. Das schafft nicht jeder. #sprecher:rayCastillo #stimmung:froh
+    -> holzente
+- "remis":
+    Remis. Der Sturm hat sich nicht entschieden, wir auch nicht. #sprecher:rayCastillo #stimmung:laechelt
+    -> holzente
+- else:
+    Die Ente stand genau da, wo du hinwolltest. Hab ich doch gesagt. #sprecher:rayCastillo #stimmung:lacht
+    Noch eine? Der Wind legt sich so schnell nicht. #sprecher:rayCastillo #stimmung:laechelt
+    + [„Noch einmal.“]
+        ~ beginnePartie("wegSummitCrossroads.entenschach")
+        -> END
+    + [„Nicht jetzt.“]
+        -> END
+}
+
+= holzente
+{holzenteGeschenkt: -> END}
+~ holzenteGeschenkt = true
+Ray drückt dir die Holzente in die Hand. #sprecher:erzaehler
+Sie hat drei Tornados überstanden. Nimm sie mit. Ich schnitze mir eine neue. #sprecher:rayCastillo #stimmung:laechelt
+~ gibFund("holzente")
+-> END
 
 // ---------------------------------------------------------------- Rätseltafel
 
@@ -183,6 +223,10 @@ Am Zaun hängt ein dickes Büschel braunes Fell. #sprecher:erzaehler
 === sturmkeller ===
 {varianteEntenschachGelernt:
     Die Klappe zum Sturmkeller steht offen. Unten ein Tisch, ein Brett und eine Holzente. #sprecher:erzaehler
+    + [Hinuntersteigen und mit Ray spielen]
+        -> ray_angebot
+    + [Weitergehen]
+        -> END
 - else:
     Eine Kellerklappe mitten in der Prärie. Darauf mit Farbe: „Bei Sturm hier rein. Ray.“ #sprecher:erzaehler
 }

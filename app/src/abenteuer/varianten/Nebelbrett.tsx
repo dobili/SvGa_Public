@@ -50,7 +50,7 @@ function findeZug(p: Nebelpartie, von: Square, nach: Square): Freizug | null {
 /** Spielt den Zug und meldet das Ende an die Hülle. */
 function weiter(p: Nebelpartie, zug: Freizug, u: Variantenumgebung): Nebelpartie {
   const neu = spieleNebelzug(p, zug, alsUci(zug));
-  if (neu.ende) u.beiEnde(ergebnisFuer(neu.ende.sieger, u.heldFarbe));
+  if (neu.ende) u.beiEnde(ergebnisFuer(neu.ende.sieger, u.heldFarbe), neu.zuege);
   return neu;
 }
 

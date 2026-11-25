@@ -5,5 +5,7 @@
  * Abhängigkeiten: die Variantenmodule (jedes meldet sich beim Laden an).
  */
 import "./standardvarianten";
+// Sonderformen Nebel, Ente, Tandem (mittel-4; Partiekomponenten in abenteuer/varianten).
+import "../../abenteuer/varianten/sonderformen";
 
 export { alleVarianten, varianteVon } from "./variante";

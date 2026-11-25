@@ -17,7 +17,9 @@ import { Entenbrett } from "./Entenbrett";
 import { Nebelbrett } from "./Nebelbrett";
 import { Tandembretter } from "./Tandembretter";
 import { neueTandempartie } from "./tandem";
-import { istSonderform } from "./sonderform";
+import { variantenpartie } from "../anbindung/variantenpartien";
+import { varianteVon } from "../../spiel/varianten/alle";
+import "./Variantenpartien";
 import type { Variantenumgebung } from "./useBotzug";
 
 const u: Variantenumgebung = {
@@ -53,8 +55,10 @@ describe("Brettansichten der Sonderformen", () => {
     expect(html).toContain('data-testid="variante-tasche"');
   });
 
-  it("erkennt die Sonderformen", () => {
-    expect(istSonderform("nebel")).toBe(true);
-    expect(istSonderform("schach960")).toBe(false);
+  it("Nebel, Ente und Tandem sind als Variante und eigene Partie angemeldet", () => {
+    for (const kennung of ["nebel", "ente", "tandem"]) {
+      expect(varianteVon(kennung)?.ablauf).toBe("eigene_partie");
+      expect(variantenpartie(kennung)).toBeDefined();
+    }
   });
 });

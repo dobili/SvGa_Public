@@ -8,8 +8,10 @@
 // Einstiege wie in orte.json: ankunft_zu_fuss, ezra, hollis, dex, mae, lou, tamsin,
 // weg_crossroads, lagerfeuer, kiosk, weg_ghost.
 //
-// Varianten: Tandem und Räuberschach sind noch nicht gebaut (VARIANTE-FEHLT, Bericht); Ezra
-// erklärt die Regeln, am Lagerfeuer wird erzählt statt gespielt.
+// Varianten: Räuberschach ist noch nicht gebaut (VARIANTE-FEHLT, Bericht). Tandem wird nach dem
+// ersten Abend am Feuer gespielt: mit Sam gegen Dex und Mae (Begegnung pinewoodCamp.tandem,
+// Variante „tandem“, Quest pinewoodCamp.tandem, Fund tandemliste; Auftrag des Hauptchats
+// 26.11.2026). Der erste Abend selbst bleibt erzählt (Kapitel 55).
 // Variablen: ausgangPinewoodCampHollis setzt die Hülle (R42); die übrigen setzt diese Datei.
 // Der Marshmallow-Stock kommt über gibFund; Ink merkt ihn sich selbst (stockGefunden).
 
@@ -26,6 +28,8 @@ VAR lagerfeuerGesehen = false
 VAR stockGefunden = false
 VAR varianteRaeuberschachGelernt = false
 VAR varianteTandemGelernt = false
+VAR ausgangPinewoodCampTandem = ""
+VAR tandemlisteGeschenkt = false
 VAR hollisGetroffen = false
 VAR hollisKarteGegeben = false
 VAR ausgangPinewoodCampHollis = ""
@@ -104,6 +108,8 @@ Wer als Erster keine Figur mehr hat, ist Sieger. #sprecher:ezra #stimmung:laeche
 
 === ezra_alltag ===
 {~Kanus nur mit Weste! Auch du, {held}!|Am Kiosk gibt's Limo und Marshmallows. Die Marshmallows sind für heute Abend.|Lou hat gestern im Räuberschach die Dame im ersten Zug verschenkt, absichtlich. Genial.} #sprecher:ezra #stimmung:laechelt
++ {lagerfeuerGesehen} [„Spielen wir Tandem?“]
+    -> tandem_angebot
 + [„Erklär mir die Regeln vom Lagerfeuer noch einmal.“]
     -> ezra_regeln
 + [„Bis nachher.“]
@@ -207,6 +213,47 @@ Du wünschst dir etwas und weißt, dass es nicht in Erfüllung geht. Das ist in 
 
 === lagerfeuer_alltag ===
 {~Das Feuer ist heruntergebrannt. In der Glut liegt ein verkohlter Marshmallow.|Am Feuerplatz stehen noch zwei Bretter. Auf einem liegt ein Stapel geschlagener Figuren für das Tandem.|Über dem See steht der Polarstern. Er bleibt immer da.} #sprecher:erzaehler
+-> tandem_angebot
+
+=== tandem_angebot ===
+Sam winkt mit einem Springer. Dex und Mae sitzen schon am zweiten Brett. #sprecher:erzaehler
+Noch eine Runde Tandem? Ich nehm das Brett neben dir. #sprecher:sam #stimmung:froh
+{not abschiedGesehen:
+    Gib Sam, was er braucht. Tandem gewinnt man zu zweit. #sprecher:ambrose #stimmung:laechelt
+}
++ [„Los, zwei gegen zwei!“]
+    Ezra pfeift. Was du schlägst, wandert zu Sam; was er schlägt, kannst du einsetzen. #sprecher:erzaehler
+    ~ beginnePartie("pinewoodCamp.tandem")
+    -> END
++ [„Später.“]
+    Die Bretter bleiben stehen. Die Marshmallows nicht. #sprecher:sam #stimmung:lacht
+    -> END
+
+// Rückmeldung nach der Partie (begegnungen.json `danach`; Wunsch des Autors, 19.11.2026).
+=== tandem_danach ===
+{ausgangPinewoodCampTandem:
+- "sieg":
+    Sam springt auf und reißt die Arme hoch. Dex wird gekitzelt, weil er zu laut stöhnt. #sprecher:erzaehler
+    -> tandemliste
+- "remis":
+    Patt auf einem Brett, Gelächter auf beiden. #sprecher:erzaehler
+    -> tandemliste
+- else:
+    Dex und Mae klatschen sich ab. Sam zuckt die Schultern. #sprecher:erzaehler
+    Revanche? Ich brauch nur einen Springer, dann gehört das Brett uns. #sprecher:sam #stimmung:lacht
+    + [„Revanche!“]
+        ~ beginnePartie("pinewoodCamp.tandem")
+        -> END
+    + [„Morgen.“]
+        -> END
+}
+
+= tandemliste
+{tandemlisteGeschenkt: -> END}
+~ tandemlisteGeschenkt = true
+Ezra reißt ein Blatt von seinem Klemmbrett und drückt es dir in die Hand: Striche für Siege, Kringel fürs Kitzeln. #sprecher:erzaehler
+Die Kringel gewinnen. Immer. #sprecher:ezra #stimmung:lacht
+~ gibFund("tandemliste")
 -> END
 
 // ---------------------------------------------------------------- Hollis im Wald (Szene 96)

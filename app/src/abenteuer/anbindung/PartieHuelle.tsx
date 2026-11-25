@@ -52,6 +52,8 @@ import { useKurzform } from "./useKurzform";
 import { useZugerraten } from "./useZugerraten";
 import { useKurzsperre } from "./useKurzsperre";
 import { Testleiste } from "./Testleiste";
+// Meldet die eigenen Partien der Sonderformen Nebel, Ente und Tandem an (variantenpartien.ts).
+import "../varianten/Variantenpartien";
 
 /** Unter so viel Restzeit (ms) wird die Uhr rot, wie in der App. */
 const KNAPP_MS = 10_000;

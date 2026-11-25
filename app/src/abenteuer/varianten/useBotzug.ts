@@ -22,7 +22,8 @@ export interface Variantenumgebung {
   readonly heldFarbe: Color;
   /** Name des Gegners für die Zeile „… überlegt“. */
   readonly gegner: string;
-  readonly beiEnde: (ergebnis: Variantenergebnis) => void;
+  /** Ende mit Ergebnis und den gespielten Zügen (UCI; im Tandem erst Brett A, dann B). */
+  readonly beiEnde: (ergebnis: Variantenergebnis, zuege: readonly string[]) => void;
 }
 
 /** Pause vor dem Zug des Bots in Millisekunden (der eigene Zug soll erst zu sehen sein). */

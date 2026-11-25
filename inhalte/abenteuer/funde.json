@@ -747,6 +747,24 @@
       "ort": "wegRivertonIronwood",
       "name": "fund.kreide1.name",
       "text": "fund.kreide1.text"
+    },
+    {
+      "kennung": "nebelhorn",
+      "ort": "bayou",
+      "name": "fund.nebelhorn.name",
+      "text": "fund.nebelhorn.text"
+    },
+    {
+      "kennung": "holzente",
+      "ort": "wegSummitCrossroads",
+      "name": "fund.holzente.name",
+      "text": "fund.holzente.text"
+    },
+    {
+      "kennung": "tandemliste",
+      "ort": "pinewoodCamp",
+      "name": "fund.tandemliste.name",
+      "text": "fund.tandemliste.text"
     }
   ]
 }

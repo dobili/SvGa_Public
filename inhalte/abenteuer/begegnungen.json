@@ -1542,6 +1542,93 @@
           "niederlage": "erzaehlung.testteamGitter.niederlage"
         }
       }
+    },
+    {
+      "kennung": "bayou.nebelschach",
+      "danach": "bayou.nebel_danach",
+      "gegner": "bayou.theron",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false,
+      "variante": "nebel"
+    },
+    {
+      "kennung": "wegSummitCrossroads.entenschach",
+      "danach": "weg-summit-crossroads.ray_danach",
+      "gegner": "wegSummitCrossroads.rayCastillo",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false,
+      "variante": "ente"
+    },
+    {
+      "kennung": "pinewoodCamp.tandem",
+      "danach": "pinewood-camp-aussen.tandem_danach",
+      "gegner": "cedarCreek.dex",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false,
+      "variante": "tandem"
+    },
+    {
+      "kennung": "crossroads.nebelschach",
+      "gegner": "mapleFalls.ambrose",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false,
+      "variante": "nebel"
+    },
+    {
+      "kennung": "crossroads.entenschach",
+      "gegner": "mapleFalls.ambrose",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false,
+      "variante": "ente"
+    },
+    {
+      "kennung": "crossroads.tandem",
+      "gegner": "riverton.slick",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false,
+      "variante": "tandem"
     }
   ]
 }

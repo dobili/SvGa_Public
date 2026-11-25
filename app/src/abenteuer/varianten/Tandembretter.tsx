@@ -125,7 +125,7 @@ export function Tandembretter({
   const [auswahl, setzeAuswahl] = useState<Auswahl>(null);
   const weiter = (neu: Tandempartie) => {
     const ergebnis = tandemergebnis(neu);
-    if (ergebnis) u.beiEnde(ergebnis);
+    if (ergebnis) u.beiEnde(ergebnis, [...neu.zuegeA, ...neu.zuegeB]);
     setzePartie(neu);
   };
   const botDran = !partie.ende && !heldAmZug(partie);

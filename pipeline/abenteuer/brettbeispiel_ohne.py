@@ -86,6 +86,11 @@ OHNE: dict[tuple[str, str], str] = {
     ("weg-maple-cedar.ink", "flohmarkt_angebot"): RAETSEL + " (Matt in einem Zug)",
     ("weg-maple-cedar.ink", "flohmarkt_rueckmeldung"): NEBENBEI + " (nach dem Rätsel)",
     ("weg-riverton-ironwood.ink", "kreidespringer_geloest"): "Das Rätsel ist eben gelöst, sein Brett war da",
+    ("bayou.ink", "theron_regel"): (
+        "Spielvariante Nebelschach: Die Partie mit Nebel folgt gleich; "
+        "ein Brett ohne Nebel zeigte die Regel nicht"
+    ),
+    ("pinewood-camp-aussen.ink", "tandem_danach"): NEBENBEI + " (Patt auf einem der Tandembretter)",
     ("weg-summit-crossroads.ink", "bell_regel_erstmals"): VARIANTE
     + " (Atomschach; Zählen zeigt Ambrose in der Wüste)",
 }

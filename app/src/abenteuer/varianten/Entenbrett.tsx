@@ -34,7 +34,7 @@ function findeZug(p: Entenpartie, von: Square, nach: Square): Freizug | null {
 
 /** Meldet das Ende an die Hülle, wenn es eins gibt; gibt die Partie zurück. */
 function gemeldet(p: Entenpartie, u: Variantenumgebung): Entenpartie {
-  if (p.ende) u.beiEnde(ergebnisFuer(p.ende.sieger, u.heldFarbe));
+  if (p.ende) u.beiEnde(ergebnisFuer(p.ende.sieger, u.heldFarbe), p.zuege);
   return p;
 }
 

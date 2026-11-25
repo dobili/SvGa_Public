@@ -568,9 +568,10 @@ Profil › Einstellungen › Fehler melden.
       **Antwort:** „N2717 ok“ oder was auffällt.
 - [ ] N2718. **Tagebuch, Meine Partien (25.11.2026):** Ein neues Spiel beginnen und eine Partie
       spielen. Im Tagebuch unter „Meine Partien“ stehen nur noch die Partien dieses Spiels, nicht
-      die aus einem früheren Durchlauf. Eine Partie in einer Variante (Ente, Nebel, Tandem) zeigt
-      ihre echte Zugzahl statt „0 Züge“, aber keinen Knopf „Ansehen“, weil ihre Züge nicht
-      gespeichert werden. „Besprechen“ erscheint wie bisher erst, nachdem der Coach die
+      die aus einem früheren Durchlauf. „Gegen Ambrose: gewonnen · 0 Züge“ kam von der Testhilfe
+      „Gewinnen“, die die Partie ohne einen Zug beendet: Solche Partien zeigen jetzt kein
+      „Ansehen“ mehr (es gäbe nichts nachzuspielen). Eine Partie in einer Variante (Ente, Nebel,
+      Tandem) zeigt ihre echte Zugzahl statt „0 Züge“, ebenfalls ohne „Ansehen“. „Besprechen“ erscheint wie bisher erst, nachdem der Coach die
       Besprechung nach dem ersten Clubkampf angekündigt hat.
       **Antwort:** „N2718 ok“ oder was auffällt.
 - [ ] N2719. **Namensfeld und Eingaben im Dunkelmodus (25.11.2026):** Das Handy auf dunkle

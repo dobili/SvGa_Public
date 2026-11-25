@@ -14,8 +14,8 @@ die Entscheidungsseite (Claude-Artefakt „Schach-Abenteuer Entscheidungen“) o
   zweiten Tippen (`regeln/muenzen.ts`, `brauchtRueckfrage`). Grund: Verbrauchskarten mehrfach zu
   besitzen ist sinnvoll, ein versehentlicher Doppelkauf nicht.
 - **Meine Partien:** nur Partien ab `Abenteuerstand.begonnen` (dieser Durchlauf, ohne neues
-  Speicherformat); Varianten in eigener Komponente zählen ihre Züge aus dem Ende und sind nicht
-  nachspielbar.
+  Speicherformat); „Ansehen“ nur für Partien mit Zügen („0 Züge“ kam von der Testhilfe
+  „Gewinnen“); Varianten in eigener Komponente zählen ihre Züge aus dem Ende.
 - **Dunkelmodus:** Eingaben und Auswahlknöpfe im Spiel mit festen Farben (`color-scheme: light`).
 - **Knöpfe 📖 und ☰:** ein Raster weiter vom Rand und Steuerkreuz, tiefer, aus der iPhone-Ecke. Im
   Dialog oben auf einer Höhe: Alles in der Welt (Münzen, Tagebuchreihe, Meldungen, Ortsschild)

@@ -48,7 +48,8 @@ function halbzuegeVon(p: Spielstand["partien"][number]["partie"]): number {
  * Beispiel: Sieg gegen Skater Jo nach 47 Halbzügen → { gegner: "Skater Jo", ausgang: "sieg",
  * zuege: 24 }. Sonderfälle: Partien ohne Abenteuer-Angabe (freie Partien der App) fehlen; eine
  * Variante in eigener Komponente (Ente, Nebel, Tandem) zählt die Züge aus ihrem Ende und ist nicht
- * nachspielbar (ihre Züge liegen nicht in der Partie; vorher stand dort „0 Züge“).
+ * nachspielbar (ihre Züge liegen nicht in der Partie; vorher stand dort „0 Züge“). Ebenso eine
+ * Partie, die die Testhilfe „Gewinnen“ ohne Zug beendet hat („Gegen Ambrose: gewonnen · 0 Züge“).
  */
 export function meinePartien(
   spiel: Pick<Spielstand, "partien">,

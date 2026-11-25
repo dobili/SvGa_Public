@@ -1426,3 +1426,15 @@ Browserprüfung der Sperren S16 und S17 mit echt gespielten kurzen Partien (Fabl
 - Prüfungen: `pipeline.abenteuer.ansprechziel` (Zielfigur steht auf ihrer Karte und ist
   erreichbar, Dauertest „0 Befunde“) und `pipeline.abenteuer.ansprechzeile` (erste Zeilen, die das
   Ansprechen durch den Helden voraussetzen, Dauertest „0 offen“).
+
+### Zeichentiefe und Tiere (Befunde des Autors, 25.11.2026, umgesetzt, Widerspruch genügt)
+
+- Steht der Held neben einem festen Möbel (Zaun, Hauswand mit Kollision), wird er über ihm
+  gezeichnet, nur hinter ihm darunter (oberwelt/heldtiefe.ts; nur heben, nie senken; Bäume wie
+  bisher). Warum: In schmalen Lücken deckten Zaunpfahl und Schulwand die halbe Figur.
+- Tiere am Boden betreten keine Felder mit Menschen, Tieren, Sitzen und Betten, lassen sich mit
+  „Verscheuchen“ vertreiben und weichen nach einer Sekunde Drängen aus; eingeklemmt lassen sie den
+  Helden durch (oberwelt/tierweg.ts). Warum: Tiere saßen Figuren auf dem Schoß, und mit Kollision
+  darf kein Tier einen Weg versperren.
+- Schiffskoch: eigene Leinwand 32 × 48 nur für ihn, Faktor 1; die Mütze ragt über die anderen
+  hinaus, Kopf und Körper sind gleich hoch (Wunsch des Autors, 25.11.2026).

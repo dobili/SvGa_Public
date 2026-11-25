@@ -526,6 +526,15 @@ Profil › Einstellungen › Fehler melden.
       und Figuren aus Nebenaufgaben sprechen nie von selbst an. Fühlt es sich zu aufdringlich oder
       zu selten an? Hoch und quer.
       **Antwort:** „N2713 ok“ oder was stört.
+- [ ] N2714. **Häuser und Tiere (25.11.2026):** 1. In Maple Falls durch die schmale Lücke
+      zwischen den Villen laufen, dann zwischen Diner und Schule hoch: Der Held bleibt ganz
+      sichtbar, Zaunpfahl und Hauswand decken ihn nicht mehr. Hinter den Häusern verschwindet er
+      wie bisher unter dem Dach. 2. Vor dem Whitlock-Haus sitzt die Katze auf dem Gehweg: direkt
+      vor sie stellen, Knopf „Verscheuchen“, sie läuft ein paar Felder weg. Gegen sie laufen: Nach
+      etwa einer Sekunde weicht sie von selbst aus. 3. Auf Bänken und an Figuren sitzen keine Tiere
+      mehr auf dem Schoß. Fällt dir noch ein Haus auf, hinter dem der Held falsch verschwindet,
+      nenne Karte und Stelle.
+      **Antwort:** „N2714 ok“ oder was auffällt.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

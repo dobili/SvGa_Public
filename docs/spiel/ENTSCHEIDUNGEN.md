@@ -33,6 +33,11 @@ die Entscheidungsseite (Claude-Artefakt „Schach-Abenteuer Entscheidungen“) o
   Zeile „Dein König steht im Schach …“ unter dem mittig stehenden Brett, die es um ihre halbe
   Höhe anhob (jetzt rechts über der Spalte). Prüfung:
   `tests/e2e/abenteuer-brettruhe.spec.ts` misst die Lage in jedem Bild, Toleranz 1 px.
+- **Fenster mit Pflichtknopf:** Fund mit Bild ohne Dialog fast bildschirmfüllend (Bild
+  `contain`, „Weiter“ als goldener Knopf darunter, endet über Tagebuch und Menü); alle
+  `.abenteuer-ergebnis` enden über dieser Reihe, ihr letzter Knopf klebt unten (sticky), nur der
+  Text rollt; Steuerkreuz und Aktionsknopf ruhen hinter solchen Fenstern und dem Laden. Prüfung:
+  `tests/e2e/abenteuer-knopffenster.spec.ts` (390 × 844, iPhone 15 und Pixel 7 quer).
 - **Zeitraffer:** Warten und Schlafen zeigen 2,6 Sekunden Sonne oder Mond auf dem Horizontbogen,
   Himmelsfarben aus dem Farbsystem (Dokument 30), Sterne, Uhrzeiger zur Zielzeit; Tippen
   überspringt, reduzierte Bewegung zeigt gleich die Zielzeit (`oberwelt/Zeitraffer.tsx`,

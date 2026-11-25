@@ -611,6 +611,14 @@ Profil › Einstellungen › Fehler melden.
       Brett, und nur der Bereich darunter (eigene Uhr, Karten, Knöpfe) lässt sich rollen. Quer
       steht die Uhr des Gegners rechts oben unter dem Namen.
       **Antwort:** „N2724 ok“ oder wann das Brett noch springt.
+- [ ] N2725. **Fenster mit Weiter-Knopf (25.11.2026):** Einen Fund mit Bild aufheben (etwa auf
+      dem Weg von Maple Falls nach Cedar Creek). Das Fenster füllt jetzt fast den ganzen
+      Bildschirm, das Bild ist ganz zu sehen, darunter Text und ein goldener „Weiter“-Knopf, ohne
+      Rollen, hoch und quer. Steuerkreuz und Aktionsknopf ruhen, solange es offen ist; Tagebuch und
+      Menü bleiben unten frei. Auch Ergebnis, Belohnung, Tagebuchseite, Vorführung und
+      Gedächtnisstellung zeigen ihren Knopf immer: Ist der Text lang, rollt nur der Text, der Knopf
+      bleibt unten stehen.
+      **Antwort:** „N2725 ok“ oder Fenster und was nicht passt.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

@@ -295,14 +295,76 @@
   }
 }
 
-/* Ein Fund mit Bild (funde.json `bild`) bleibt ohne Dialog eine Karte mit großem Bild; während
-   eines Dialogs ist auch er nur die Leiste. */
-.bildschirm-abenteuer:not(:has(.abenteuer-dialog)) .abenteuer-meldung:has(> .abenteuer-fundbild) {
+/* Ein Fund mit Bild (funde.json `bild`) ist ohne Dialog ein Fenster fast so groß wie der
+   Bildschirm: das Bild ganz (contain), darunter Text und „Weiter“, immer sichtbar, ohne Rollen,
+   hoch und quer (Wunsch des Autors, 25.11.2026: Das Fenster war ein Drittel hoch, das Bild unten
+   abgeschnitten, „Weiter“ nicht zu sehen). Unten endet es über Tagebuch- und Menüknopf. Während
+   eines Dialogs bleibt er die Leiste.
+   Die Auswahl ist so lang, damit sie die Lagen der Leiste oben (Held oben, quer) übertrifft. */
+.bildschirm-abenteuer
+  .abenteuer-welt:not(:has(.abenteuer-dialog))
+  .abenteuer-ergebnis.abenteuer-meldung:has(> .abenteuer-fundbild) {
+  inset: calc(env(safe-area-inset-top) + var(--raster))
+    calc(env(safe-area-inset-right) + var(--raster))
+    calc(var(--leiste-unten) + var(--leistenknopf) + var(--raster))
+    calc(env(safe-area-inset-left) + var(--raster));
+  z-index: 6;
   flex-direction: column;
+  justify-content: center;
+  width: auto;
+  max-height: none;
+  overflow: hidden;
+  transform: none;
 }
 
-.bildschirm-abenteuer:not(:has(.abenteuer-dialog)) .abenteuer-meldung > .abenteuer-fundbild {
-  max-height: 40vh;
+.bildschirm-abenteuer
+  .abenteuer-welt:not(:has(.abenteuer-dialog))
+  .abenteuer-meldung
+  > .abenteuer-fundbild {
+  flex: 1 1 0;
+  width: 100%;
+  min-height: 0;
+  max-height: none;
+  object-fit: contain;
+}
+
+.bildschirm-abenteuer .abenteuer-welt:not(:has(.abenteuer-dialog)) .abenteuer-meldung > p {
+  flex: none;
+}
+
+/* „Weiter“ im großen Fundfenster als richtiger Knopf, nicht als kleine Zeile der Leiste. */
+.bildschirm-abenteuer
+  .abenteuer-welt:not(:has(.abenteuer-dialog))
+  .abenteuer-meldung:has(> .abenteuer-fundbild)
+  > .knopf-zweit {
+  align-self: center;
+  min-height: 48px;
+  padding: 0 calc(var(--raster) * 4);
+  border: var(--spiel-pixel) solid var(--spiel-gold-tief);
+  background: var(--spiel-gold);
+  color: var(--spiel-navy);
+}
+
+/* Fenster mit Pflichtknopf enden über der Reihe von Tagebuch und Menü unten: Der Menüknopf lag
+   sonst auf der unteren Ecke des Fensters. */
+.bildschirm-abenteuer .abenteuer-ergebnis:not(.abenteuer-meldung) {
+  max-height: calc(
+    100dvh - var(--raster) * 4 - var(--leiste-unten) - var(--leistenknopf) - var(--raster)
+  );
+}
+
+/* Hinter Fenstern mit Pflichtknopf ruhen Steuerkreuz und Aktionsknopf: Sie lagen neben dem
+   kleinen Fundfenster („Ansehen“) und verdeckten den unteren Rand der Fenster. (:has darf kein
+   :has enthalten; deshalb steht das Fundbild selbst in der Liste.) */
+.abenteuer-welt:has(
+    :is(
+      .abenteuer-ergebnis:not(.abenteuer-meldung, .lade, .fehlertext),
+      .abenteuer-meldung > .abenteuer-fundbild,
+      .abenteuer-menue
+    )
+  )
+  :is(.abenteuer-steuerkreuz, .abenteuer-aktion) {
+  visibility: hidden;
 }
 
 /* Quer im Gespräch mit Textspalte (querformat.css): Die Reihe steht links neben dem Menü, das

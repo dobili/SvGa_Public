@@ -12,12 +12,19 @@
  */
 
 /* ---------- Hochformat ---------- */
+/* Grundform (Besprechung, eigene Varianten): Brett und Spalte fließen als Inhalt der Hülle
+   untereinander; die Partie selbst bekommt unten feste Plätze. */
+.abenteuer-partie-brett,
+.abenteuer-partie-seite {
+  display: contents;
+}
+
 /* Das Brett steht still (Befund des Autors, 25.11.2026: „das ganze Schachbrett rutscht hin und
    her“, wenn Zeilen, Karten oder Knöpfe darunter kamen und gingen). Die Hülle ist genau so hoch
    wie der Bildschirm und rollt nie als Ganzes: Kopf, dann der Block mit Uhr des Gegners und Brett
    an fester Stelle, darunter die Spalte, die für sich rollt. Was dort erscheint oder verschwindet,
    ändert nur die Spalte. Sprechblasen und Momente liegen ohnehin fest über allem (huelle.css). */
-.abenteuer-huelle-partie {
+.abenteuer-huelle-partie:not(.abenteuer-huelle-besprechung) {
   height: 100dvh;
   min-height: 0;
   overflow: clip;
@@ -26,7 +33,7 @@
 /* Der Kopf ist immer so hoch wie mit großem Porträt (96 px, dialog/Portraet.tsx, GROSS_PX): Beim
    Wechsel der Stimmung lädt das Porträt neu und fehlt kurz, der Kopf wurde 52 px niedriger und
    das Brett rückte nach oben (Messung Pixel 7 hoch, 25.11.2026). */
-.abenteuer-huelle-partie > .abenteuer-huelle-kopf {
+.abenteuer-huelle-partie:not(.abenteuer-huelle-besprechung) > .abenteuer-huelle-kopf {
   --portraet-gross: 96px;
 
   flex: none;
@@ -37,7 +44,7 @@
 /* Nur wenn Brett und Mindesthöhe der Spalte nicht passen (sehr kleine Schirme, zwei Bretter im
    Tandem), rollt der Inhalt; die Rinne für den Rollbalken ist fest, damit das Brett nicht
    schmaler wird, sobald er erscheint. */
-.abenteuer-huelle-partie > .abenteuer-huelle-inhalt {
+.abenteuer-huelle-partie:not(.abenteuer-huelle-besprechung) > .abenteuer-huelle-inhalt {
   flex: 1 1 auto;
   min-height: 0;
   overflow-y: auto;
@@ -46,14 +53,14 @@
   padding-bottom: var(--raster);
 }
 
-.abenteuer-huelle-partie .abenteuer-partie-brett {
+.abenteuer-huelle-partie:not(.abenteuer-huelle-besprechung) .abenteuer-partie-brett {
   display: flex;
   flex: none;
   flex-direction: column;
   gap: var(--raster);
 }
 
-.abenteuer-huelle-partie .abenteuer-partie-seite {
+.abenteuer-huelle-partie:not(.abenteuer-huelle-besprechung) .abenteuer-partie-seite {
   display: flex;
   flex: 1 1 0;
   flex-direction: column;

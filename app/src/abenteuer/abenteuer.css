@@ -366,6 +366,20 @@ body:has(:is(.bildschirm-abenteuer, .abenteuer-huelle)) .update-hinweis {
   color: var(--navy);
 }
 
+/* Der Knopf zum Weitermachen am Ende eines Fensters bleibt immer sichtbar (Wunsch des Autors,
+   25.11.2026): Ist der Inhalt höher als der Bildschirm, rollt nur der Inhalt, der Knopf klebt
+   unten am Fensterrand. Gilt für Ergebnis, Belohnung, Tagebuchseite, Vorführung,
+   Gedächtnisstellung und Fundliste; der Hintergrund deckt den Text dahinter. */
+.abenteuer-ergebnis > :is(button, .knopfreihe):last-child {
+  position: sticky;
+  bottom: calc(var(--raster) * -2);
+  z-index: 1;
+  /* Ein Band in Fensterfarbe über die ganze Breite hinter dem Knopf, oben etwas Luft: Der Schatten
+     reicht weit zur Seite, clip-path schneidet ihn auf die Höhe des Knopfs zu. */
+  box-shadow: 0 0 0 100vw rgb(245 240 230);
+  clip-path: inset(calc(var(--raster) * -1) -100vw calc(var(--raster) * -2) -100vw);
+}
+
 /* Die Kartenleiste in der Partie (Erweiterungspunkt, Entscheidung A4). */
 .abenteuer-kartenleiste {
   display: flex;

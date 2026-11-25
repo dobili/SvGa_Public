@@ -29,6 +29,7 @@ import re
 import subprocess
 from pathlib import Path
 
+from pipeline.abenteuer.ton.opusfassung import aus_wav
 from pipeline.abenteuer.ton.satzplan import Satz, baue
 from pipeline.abenteuer.ton.stuecke import alle
 
@@ -181,7 +182,10 @@ def ohne_stille_am_ende(ton):  # noqa: ANN001, ANN201 (numpy nur zur Laufzeit)
 
 
 def kodiere(ton, ziel: Path, mono: bool = False) -> None:  # noqa: ANN001 (numpy)
-    """Schreibt Ton als m4a (AAC, BITRATE) über eine WAV im Arbeitsordner; ``mono`` mischt herunter."""
+    """Schreibt Ton als m4a (AAC, BITRATE) über eine WAV im Arbeitsordner; ``mono`` mischt herunter.
+
+    Liegt das Ziel in spiel/musik, entsteht aus derselben WAV die Opus-Fassung (``.webm``) daneben.
+    """
     from pipeline.abenteuer.ton.sampler import schreibe_wav
 
     MIDI.mkdir(parents=True, exist_ok=True)
@@ -189,6 +193,8 @@ def kodiere(ton, ziel: Path, mono: bool = False) -> None:  # noqa: ANN001 (numpy
     schreibe_wav(ton, wav)
     befehl = ["ffmpeg", "-y", "-loglevel", "error", "-i", str(wav), "-c:a", "aac", "-b:a", BITRATE]
     subprocess.run([*befehl, *(["-ac", "1"] if mono else []), str(ziel)], check=True)
+    # Opus aus derselben WAV daneben (RO41, opusfassung.py); außerhalb von spiel/ nichts.
+    aus_wav(wav, ziel, mono)
     wav.unlink()
 
 

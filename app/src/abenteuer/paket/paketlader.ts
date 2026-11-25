@@ -18,6 +18,8 @@
  * fehlende Datei des Verzeichnisses geprüft in den Cache, `haltePaketdateiVor` tut es ohne Lesen.
  * Adressen stehen in paketadresse.ts, das geprüfte Laden einer Datei in dateiladen.ts (aufgeteilt am
  * 20.11.2026, Regel 4).
+ * Ton in zwei Fassungen (RO41, 26.11.2026): Das Gerät lädt nur Opus oder nur AAC (tonfassung.ts);
+ * Aufrufer nennen den m4a-Namen, `geraetepfad` setzt ihn um, das Nachladen lässt die andere aus.
  * Abhängigkeiten: schnittstelle/paket.ts, app/sprachpaket.ts (Code-Baustein nachladen).
  */
 import { ladeSprachpaket } from "../../app/sprachpaket";
@@ -38,6 +40,7 @@ import {
   protokollVon,
 } from "./ladehilfen";
 import { adresse, cachename, CACHE_PRAEFIX, mitCache } from "./paketadresse";
+import { passtZurFassung, tonfassung, tonpfad } from "./tonfassung";
 
 /** Das Verzeichnis vom Server (immer frisch, damit eine neue Version erkannt wird). */
 async function verzeichnisVomServer(): Promise<Paketverzeichnis> {
@@ -102,6 +105,14 @@ export function paketpfad(pfad: string, pfade: ReadonlySet<string> | null = null
   const webp = pfad.replace(/\.png$/, ".webp");
   if (webp === pfad || !pfade) return webp;
   return !pfade.has(webp) && pfade.has(pfad) ? pfad : webp;
+}
+
+/**
+ * Der Pfad, den dieses Gerät liest: wie `paketpfad`, dazu Ton in der Fassung des Geräts.
+ * Beispiel auf einem iPhone mit iOS 17.4: „musik/weg.m4a“ → „musik/weg.webm“ (wenn im Paket).
+ */
+async function geraetepfad(name: string, pfade: ReadonlySet<string> | undefined): Promise<string> {
+  return tonpfad(paketpfad(name, pfade ?? null), await tonfassung(), pfade);
 }
 
 /** So lange wartet die Startkarte höchstens auf den Server; danach gilt das vorhandene Paket. */
@@ -192,7 +203,8 @@ export async function ladeNach(
 ): Promise<boolean> {
   const geladen = await geladenesVerzeichnis();
   if (!geladen) return false;
-  const auswahl = geladen.verzeichnis.dateien.filter(waehle);
+  const passt = passtZurFassung(await tonfassung(), geladen.pfade);
+  const auswahl = geladen.verzeichnis.dateien.filter((d) => waehle(d) && passt(d));
   const gesamt = auswahl.reduce((summe, d) => summe + d.bytes, 0);
   const speicher = await caches.open(geladen.name);
   let bisher = 0;
@@ -218,7 +230,8 @@ export async function fehlendeDateien(
   if (!geladen) return [];
   const speicher = await caches.open(geladen.name);
   const fehlend: Paketdatei[] = [];
-  for (const datei of geladen.verzeichnis.dateien.filter(waehle)) {
+  const passt = passtZurFassung(await tonfassung(), geladen.pfade);
+  for (const datei of geladen.verzeichnis.dateien.filter((d) => waehle(d) && passt(d))) {
     if (!(await speicher.match(adresse(datei.pfad)))) fehlend.push(datei);
   }
   return fehlend;
@@ -261,7 +274,7 @@ function behalte(geladen: GeladenesPaket, datei: Paketdatei): Promise<void> {
  */
 export async function haltePaketdateiVor(name: string): Promise<boolean> {
   const geladen = await geladenesVerzeichnis();
-  const datei = geladen?.dateien.get(paketpfad(name, geladen.pfade));
+  const datei = geladen?.dateien.get(await geraetepfad(name, geladen.pfade));
   if (!geladen || !datei) return false;
   return behalte(geladen, datei).then(
     () => true,
@@ -285,7 +298,7 @@ export function alsStartseite(pfad: string, antwort: Response): boolean {
  */
 export async function liesPaketdatei(name: string): Promise<Response> {
   const geladen = await geladenesVerzeichnis();
-  const pfad = paketpfad(name, geladen?.pfade);
+  const pfad = await geraetepfad(name, geladen?.pfade);
   if (geladen) {
     const speicher = await caches.open(geladen.name);
     const antwort = await speicher.match(adresse(pfad));

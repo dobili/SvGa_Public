@@ -537,7 +537,7 @@
           "innen": false,
           "eingang": {
             "dialog": "cedar-creek-aussen.ankunft",
-            "wenn": "nicht ankunftCedarCreekGesehen"
+            "wenn": "aufbruchGesehen und nicht ankunftCedarCreekGesehen"
           },
           "musik": "musik/cedar-creek.m4a",
           "geraeusch": "klang/bach.m4a",

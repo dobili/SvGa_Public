@@ -100,7 +100,11 @@ test("Diner-Abend: jede Zeile mit Sprecher zeigt ein Porträt, auch Ambrose gefl
     dialogvariablen: { ...NACH_ERSTEM_ABEND, joGetroffen: true },
   });
   await page.getByTestId("abenteuer-aktion").click({ timeout: FRIST_MS });
+  // Die Einladung im Wohnzimmer, dann geht ihr ins Diner (Kartenwechsel); dort spielt der
+  // Eingang des Diners den Abend (Anwesenheit, 25.11.2026).
   const zeilen = await gespraechMitPortraets(page);
+  await expect(page.getByTestId("abenteuer-dialog")).toBeVisible({ timeout: FRIST_MS });
+  zeilen.push(...(await gespraechMitPortraets(page)));
   expect(zeilen.some((z) => z.includes("Ketchup"))).toBe(true);
   expect(zeilen.some((z) => z.startsWith("Ambrose"))).toBe(true);
   expect(zeilen.filter((z) => /→ (fehlt|kaputt)$/.test(z))).toEqual([]);

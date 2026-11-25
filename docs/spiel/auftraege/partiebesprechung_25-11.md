@@ -250,6 +250,15 @@ Umsetzung in Teilen (je eigener Patch):
 
 - C1 Ursache mit Figur und Feld, Material als Figur (`anbindung/besprechungsursache.ts`,
   Texte `besprechung.<stimme>.ursache.<art>.<n>` und `….material.<figur>.<n>`), etwa 180 Texte.
+  Umgesetzt (26.11.2026): `anbindung/besprechungsursache.ts` (Ursache aus `fehlerbefundIn`:
+  hängende Figur mit Feld, stehengebliebene Drohung mit Zug, Ziel und Feld, Mattdrohung, Gabel mit
+  der gegnerischen Figur und ihrem Feld, Fesselung und Spieß nur, wenn vordere und hintere Figur
+  dem Helden gehören; die übrigen Fehlerarten mit dem gespielten Zug; Abzug und andere Linien ohne
+  eigenen Satz, dort bleibt der Begriff), `anbindung/besprechungsmaterial.ts` (Bilanz der Folge an
+  einer ruhigen Stelle, schwerste netto verlorene Figur ohne Figurenausgleich, sonst kein Satz;
+  Matt geht vor). Ursache ab Stufe 2 (ersetzt den Satz zum Begriff, Fachwort nur bei bekanntem
+  Begriff), Material beim eigenen Fehler auf jeder Stufe, bei einer Chance ab Stufe 2. Texte
+  `besprechung.figur.<rolle>.<form>`, `besprechung.<stimme>.ursache.*`, `….material.*`.
 - C2 Phase und Lage, Lob mit Opfer und Motiv (`anbindung/besprechungslage.ts`), etwa 80 Texte.
 - C3 Rückbezüge und Anekdoten (`anbindung/besprechungsbezug.ts`, Lehrer aus runden.json),
   etwa 60 Texte.

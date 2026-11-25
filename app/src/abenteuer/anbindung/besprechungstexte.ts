@@ -19,7 +19,9 @@ import type { Ausgang } from "../schnittstelle/partie";
 import type { Begriff, Besprechungsstimme, Besprechungsstufe } from "../regeln/besprechung";
 import type { Besprechungsmoment } from "../regeln/besprechungsmomente";
 import { tSpiel } from "../texte/texte";
+import type { Materialfolge } from "./besprechungsmaterial";
 import type { Momentmotiv } from "./besprechungsmotiv";
+import { figurwort, type Ursache } from "./besprechungsursache";
 import { zieheAus } from "./tischtexte";
 
 /** Wer spricht, wie viel, mit welchen Wörtern, für welche Partie. */
@@ -42,6 +44,10 @@ export interface Momentangaben {
   readonly folge: string | null;
   /** Name der Eröffnung beim Theoriemoment, null ohne. */
   readonly eroeffnung: string | null;
+  /** Ursache eines Fehlers des Helden mit Figur und Feld (besprechungsursache.ts), null ohne. */
+  readonly ursache: Ursache | null;
+  /** Was der Fehler kostet oder die Chance bringt, als Figur oder Matt, null ohne. */
+  readonly material: Materialfolge | null;
 }
 
 /** Kategorien, deren Satz (ab Stufe 2, allein immer) den besseren Zug nennt. */
@@ -97,6 +103,31 @@ function begriffssatz(k: Besprechungskontext, a: Momentangaben, z: Ziehung): str
   return z.zeile(`${vorsilbe(k.stimme)}.begriff.${motiv.begriff}.${motiv.richtung}`);
 }
 
+/**
+ * Der Satz zur Ursache ab Stufe 2 (Abschnitt 11, Punkt 1): mit Fachwort nur, wenn der Held den
+ * Begriff kennt (Gruppe `.wort`), sonst ohne. Ersetzt den Satz zum Begriff, wenn es ihn gibt.
+ */
+function ursachesatz(k: Besprechungskontext, a: Momentangaben, z: Ziehung): string | null {
+  const u = a.ursache;
+  if (!u || k.stufe < 2) return null;
+  const basis = `${vorsilbe(k.stimme)}.ursache.${u.gruppe}`;
+  const wort = u.begriff !== null && k.begriffe.has(u.begriff);
+  return (wort ? z.zeile(`${basis}.wort`, u.werte) : null) ?? z.zeile(basis, u.werte);
+}
+
+/**
+ * Der Satz zum Material (Abschnitt 11, Punkt 2): beim eigenen Fehler auf jeder Stufe, bei einer
+ * Chance ab Stufe 2. Nennt die Figur, nie Bauerneinheiten.
+ */
+function materialsatz(k: Besprechungskontext, a: Momentangaben, z: Ziehung): string | null {
+  const m = a.material;
+  if (!m || (m.richtung === "gewinn" && k.stufe < 2)) return null;
+  const basis = `${vorsilbe(k.stimme)}.material`;
+  if (m.art === "matt")
+    return z.zeile(`${basis}.${m.richtung === "verlust" ? "mattVerlust" : "mattGewinn"}`);
+  return z.zeile(`${basis}.${m.richtung}`, { figur: figurwort(m.rolle, "den") });
+}
+
 /** Der Satz zur Folge, ab Stufe 3 bei Fehlern und Chancen. */
 function folgesatz(k: Besprechungskontext, a: Momentangaben, z: Ziehung): string | null {
   if (k.stufe < 3 || !a.folge || !MIT_FOLGE.has(a.moment.kategorie)) return null;
@@ -117,9 +148,11 @@ export function momentsaetze(k: Besprechungskontext, angaben: readonly Momentang
       besser: a.besser ?? "",
       eroeffnung: a.eroeffnung ?? "",
     };
+    const ursache = ursachesatz(k, a, z);
     const teile = [
       z.zeile(kategoriegruppe(k, a), werte),
-      begriffssatz(k, a, z),
+      ursache ?? begriffssatz(k, a, z),
+      materialsatz(k, a, z),
       folgesatz(k, a, z),
     ];
     return teile.filter((t): t is string => t !== null).join(" ");

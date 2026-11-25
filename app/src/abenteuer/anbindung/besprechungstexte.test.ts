@@ -32,6 +32,8 @@ function angabe(kategorie: Momentkategorie, index = 8): Momentangaben {
     motiv: { begriff: "gabel", richtung: "gegen" },
     folge: "Sd4 Kf1",
     eroeffnung: null,
+    ursache: null,
+    material: null,
   };
 }
 
@@ -141,5 +143,48 @@ describe("Vollständige Texte", () => {
       .filter(([k]) => k.startsWith("besprechung."))
       .filter(([, t]) => /\d|Prozent|Engine/.test(t));
     expect(zahlen).toEqual([]);
+  });
+});
+
+describe("Ursache und Material (Abschnitt 11, Punkte 1 und 2)", () => {
+  const gabel = {
+    gruppe: "gabel",
+    werte: { gegnerfigur: "der gegnerische Springer", feld: "e5" },
+    begriff: "gabel" as const,
+  };
+  const mitUrsache = (kategorie: Momentkategorie): Momentangaben => ({
+    ...angabe(kategorie),
+    ursache: gabel,
+    material: { art: "figur", rolle: "rook", richtung: "verlust" },
+  });
+
+  it("nennt ab Stufe 2 Figur und Feld, mit dem Fachwort nur, wenn der Held es kennt", () => {
+    const [ohne] = momentsaetze(kontext(2), [mitUrsache("fehler")]);
+    expect(ohne).toContain("der gegnerische Springer");
+    expect(ohne).toContain("e5");
+    expect(ohne).not.toContain("Gabel");
+    const [mit] = momentsaetze(kontext(2, ["gabel"]), [mitUrsache("fehler")]);
+    expect(mit).toContain("Gabel");
+    expect(mit).toContain("e5");
+  });
+
+  it("nennt das verlorene Material als Figur, schon auf Stufe 1, nie in Bauern", () => {
+    const [satz] = momentsaetze(kontext(1), [mitUrsache("patzer")]);
+    expect(satz).toContain("den Turm");
+    expect(satz).not.toContain("e5");
+    expect(satz).not.toMatch(/Bauern?einheit|\d+[,.]\d/);
+  });
+
+  it("nennt eine Chance erst ab Stufe 2, das Matt ohne Figur", () => {
+    const chance: Momentangaben = {
+      ...angabe("verpasst"),
+      material: { art: "matt", richtung: "gewinn" },
+    };
+    const [eins] = momentsaetze(kontext(1), [chance]);
+    expect(eins).not.toMatch(/Matt/);
+    const zwei = momentsaetze(kontext(2), [chance])[0] ?? "";
+    expect(texteDer("besprechung.ambrose.material.mattGewinn").some((t) => zwei.includes(t))).toBe(
+      true,
+    );
   });
 });

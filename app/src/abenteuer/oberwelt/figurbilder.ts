@@ -16,6 +16,14 @@ import type { Umriss } from "./sitzplatz";
 import type { Richtung } from "./szene";
 import { figurzeichenmassstab } from "./weltmassstab";
 
+/** Bild je Blickrichtung im Spritesheet des Helden (grafik/held.png: unten, links, rechts, oben). */
+export const BILD_JE_RICHTUNG: Readonly<Record<Richtung, number>> = {
+  unten: 0,
+  links: 1,
+  rechts: 2,
+  oben: 3,
+};
+
 /** Rahmen einer Figur von LimeZu. */
 export const FIGUR_BREITE = 16;
 export const FIGUR_HOEHE = 32;

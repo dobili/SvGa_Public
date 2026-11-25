@@ -6,7 +6,8 @@
  * nächsten Schritt aus den Questdaten (regeln/quests.ts, naechsterSchritt). Die Zurück-Taste
  * schließt es.
  * „Meine Partien“ (docs/spiel/18, Abschnitt 8): die beendeten Partien des Abenteuers, knapp, mit
- * „Ansehen“ zum Nachspielen in der Hülle; der Rückruf sichert vorher die Position des Helden.
+ * „Ansehen“ zum Nachspielen in der Hülle und „Besprechen“ mit Ambrose (anbindung/Besprechung.tsx,
+ * seit 25.11.2026); der Rückruf sichert vorher die Position des Helden.
  * „Gegner“ (N2621): was der Leser über Gegner weiß, die freigeschalteten Steckbriefzeilen je
  * Gegner und „vorbereitet“ für analysierte (oberwelt/steckbrieftext.ts, gegnerakten).
  * Zielpfeil auf Wunsch (Wunsch des Autors, 19.11.2026): Jede laufende Aufgabe mit einem Ziel auf
@@ -23,6 +24,7 @@ import { useSpeicher } from "../../speicher/speicher";
 import { meinePartien } from "../anbindung/meinePartien";
 import type { Spieldaten } from "../daten/laden";
 import { naechsterSchritt } from "../regeln/quests";
+import { besprechungOffen } from "../regeln/besprechung";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { spieltag, stundeJetzt } from "../regeln/spieluhr";
 import { Tageszeit } from "../anbindung/Tageszeit";
@@ -48,8 +50,11 @@ export function Tagebuch({
   readonly stand: Abenteuerstand;
   readonly daten: Spieldaten;
   readonly beiSchliessen: () => void;
-  /** Öffnet eine beendete Partie zum Nachspielen (Id der Partie in der App). */
-  readonly beiPartie: (id: string) => void;
+  /**
+   * Öffnet eine beendete Partie zum Nachspielen oder, mit `besprechen`, zur Besprechung mit Ambrose
+   * (Id der Partie in der App).
+   */
+  readonly beiPartie: (id: string, besprechen: boolean) => void;
   /** Symbol einer Quest angetippt: verfolgen oder aufhören (regeln/verfolgung.ts). */
   readonly beiZielpfeil: (kennung: string) => void;
 }) {
@@ -175,7 +180,7 @@ export function Tagebuch({
       )}
       {stand.gegenstaende.includes("notizbuch") && <Turnierheft stand={stand} daten={daten} />}
       <EigeneSeiten eintraege={stand.eintraege ?? []} />
-      <MeinePartien beiPartie={beiPartie} />
+      <MeinePartien beiPartie={beiPartie} besprechbar={besprechungOffen(stand.dialogvariablen)} />
       <button type="button" className="knopf-haupt" onClick={beiSchliessen}>
         {tSpiel("tagebuch.schliessen")}
       </button>
@@ -254,8 +259,17 @@ function Turnierheft({ stand, daten }: { stand: Abenteuerstand; daten: Spieldate
   );
 }
 
-/** Die beendeten Partien des Abenteuers, neueste zuerst, je mit „Ansehen“. */
-function MeinePartien({ beiPartie }: { beiPartie: (id: string) => void }) {
+/**
+ * Die beendeten Partien des Abenteuers, neueste zuerst, je mit „Ansehen“ und, sobald Ambrose sie
+ * angekündigt hat (regeln/besprechung.ts), „Besprechen“ (Partiebesprechung, 25.11.2026).
+ */
+function MeinePartien({
+  beiPartie,
+  besprechbar,
+}: {
+  beiPartie: (id: string, besprechen: boolean) => void;
+  besprechbar: boolean;
+}) {
   const spiel = useSpeicher((z) => z.daten.spiel);
   const zeilen = meinePartien(spiel);
   return (
@@ -275,9 +289,25 @@ function MeinePartien({ beiPartie }: { beiPartie: (id: string) => void }) {
                 {" · "}
                 {tSpiel("tagebuch.partieZuege", { anzahl: z.zuege })}
               </span>
-              <button type="button" className="knopf-zweit" onClick={() => beiPartie(z.id)}>
-                {tSpiel("tagebuch.partieAnsehen")}
-              </button>
+              <span className="abenteuer-partienknoepfe">
+                {besprechbar && (
+                  <button
+                    type="button"
+                    className="knopf-zweit"
+                    data-testid="abenteuer-partie-besprechen"
+                    onClick={() => beiPartie(z.id, true)}
+                  >
+                    {tSpiel("tagebuch.partieBesprechen")}
+                  </button>
+                )}
+                <button
+                  type="button"
+                  className="knopf-zweit"
+                  onClick={() => beiPartie(z.id, false)}
+                >
+                  {tSpiel("tagebuch.partieAnsehen")}
+                </button>
+              </span>
             </li>
           ))}
         </ul>

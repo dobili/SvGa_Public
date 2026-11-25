@@ -1,0 +1,76 @@
+/*
+ * Partiebesprechung mit Ambrose (anbindung/Besprechung.tsx, docs/spiel/auftraege/
+ * partiebesprechung_25-11.md). Die Blase steht im Fluss über dem Brett (hoch) bzw. oben in der
+ * rechten Spalte (quer, huellenlage.css ordnet die Blöcke); anders als die Tischblase der Partie
+ * bleibt sie stehen, bis man weiterblättert. Farben wie die Tischblase (huelle.css).
+ */
+
+/* Hoch: Brett und Spalte stehen als Inhalt der Hülle untereinander (huellenlage.css); die Blase
+   rückt vor das Brett. Quer steht sie ohnehin oben in der rechten Spalte. */
+.abenteuer-huelle-besprechung .abenteuer-besprechung-blase,
+.abenteuer-huelle-besprechung .abenteuer-besprechung-still {
+  order: -1;
+}
+
+.abenteuer-besprechung-blase {
+  display: flex;
+  gap: var(--raster);
+  align-items: center;
+  min-height: 3.5em;
+  margin: 0;
+  padding: var(--raster) calc(var(--raster) * 1.5);
+  border: 1px solid rgba(201, 162, 39, 0.5);
+  border-radius: var(--radius);
+  background: rgba(22, 37, 61, 0.94);
+  color: var(--creme);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  animation: abenteuer-moment-ein 0.4s ease-out;
+}
+
+.abenteuer-besprechung-blase p {
+  margin: 0;
+}
+
+.abenteuer-besprechung-blase strong {
+  color: var(--gold);
+}
+
+/* Ambrose halb durchsichtig wie in der Welt (regeln/geist.ts). */
+.abenteuer-besprechung-blase[data-erscheinung="geist"] .abenteuer-dialog-portraet {
+  opacity: 0.5;
+}
+
+/* Ohne Ambrose: Notiz im Tagebuch, ohne Porträt, kursiv. */
+.abenteuer-besprechung-blase[data-erscheinung="notiz"] p {
+  font-style: italic;
+}
+
+/* Leere Stelle: Platz halten, damit das Brett beim Blättern nicht springt. */
+.abenteuer-besprechung-still {
+  min-height: 3.5em;
+  margin: 0;
+}
+
+.abenteuer-besprechung-momente {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--raster) / 2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Helle Marken mit dunkler Schrift (sonst creme auf weiß, Foto 25.11.2026). */
+.abenteuer-besprechung-momente .chip[aria-pressed="false"] {
+  color: var(--navy);
+}
+
+.abenteuer-besprechung-momente .chip[aria-pressed="true"] {
+  outline: 2px solid var(--gold);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .abenteuer-besprechung-blase {
+    animation: none;
+  }
+}

@@ -35,3 +35,12 @@
   fill: var(--spiel-gold);
   stroke: var(--spiel-gold);
 }
+
+/* „Meine Partien“: „Besprechen“ und „Ansehen“ nebeneinander rechts, auf schmalen Handys
+   untereinander (Partiebesprechung, 25.11.2026). */
+.abenteuer-partienknoepfe {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: calc(var(--raster) / 2);
+}

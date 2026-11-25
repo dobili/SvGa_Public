@@ -31,9 +31,11 @@ import { ANSICHT_VARIANTENKARTE, Variantenkarte } from "../ui/bildschirme/Varian
 import { AbenteuerAnsicht } from "../abenteuer/anbindung/AbenteuerAnsicht";
 import { AufgabenAnsicht } from "../abenteuer/anbindung/AufgabenAnsicht";
 import { PartieHuelle } from "../abenteuer/anbindung/PartieHuelle";
+import { Besprechung } from "../abenteuer/anbindung/Besprechung";
 import {
   ANSICHT_ABENTEUER,
   ANSICHT_AUFGABEN,
+  ANSICHT_BESPRECHUNG,
   ANSICHT_PARTIE,
 } from "../abenteuer/schnittstelle/modul";
 
@@ -78,6 +80,8 @@ export const ZUSATZANSICHTEN: readonly Zusatzansicht[] = [
   { kennung: ANSICHT_AUFGABEN, Bildschirm: AufgabenAnsicht, vollbild: true },
   // Partie des Abenteuers in der Spielhülle (docs/spiel/18_Spielhuelle.md), Wert: Id der Partie.
   { kennung: ANSICHT_PARTIE, Bildschirm: PartieHuelle, vollbild: true },
+  // Partiebesprechung mit Ambrose (docs/spiel/auftraege/partiebesprechung_25-11.md), Wert: Id.
+  { kennung: ANSICHT_BESPRECHUNG, Bildschirm: Besprechung, vollbild: true },
 ];
 
 /** Der eingetragene Bildschirm zu einer Kennung; undefined, wenn es ihn (noch) nicht gibt. */

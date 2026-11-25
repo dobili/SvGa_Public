@@ -40,6 +40,11 @@ export const ANSICHT_AUFGABEN = "abenteuer-aufgaben";
  * Brett, Uhren, Kartenleiste im Aussehen des Spiels statt der Partieansicht der App. Wert: Id der Partie.
  */
 export const ANSICHT_PARTIE = "abenteuer-partie";
+/**
+ * Kennung der Zusatzansicht der Partiebesprechung mit Ambrose (anbindung/Besprechung.tsx,
+ * docs/spiel/auftraege/partiebesprechung_25-11.md). Wert: Id der Partie.
+ */
+export const ANSICHT_BESPRECHUNG = "abenteuer-besprechung";
 
 /**
  * Dienste, die die App dem Spiel beim Laden übergibt. Alles, was das Spiel von der App braucht,
@@ -65,6 +70,8 @@ export interface Appdienste {
   readonly zeigePartie: (kennung: string) => boolean;
   /** Öffnet eine beendete Partie zum Nachspielen in der Hülle (Id der Partie in der App). */
   readonly zeigeBeendetePartie: (id: string) => void;
+  /** Öffnet die Besprechung einer beendeten Partie mit Ambrose (Id der Partie in der App). */
+  readonly zeigeBesprechung: (id: string) => void;
   /**
    * Sucht in einer verlorenen Partie den Kipppunkt (Regelwerk R14) mit der Engine der App; null,
    * wenn es keinen gibt oder die Partie nicht mehr in der App liegt.

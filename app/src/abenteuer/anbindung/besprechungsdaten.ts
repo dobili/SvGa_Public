@@ -5,7 +5,7 @@
  * Rolle im Gesamtbild: reine Rechnung zwischen dem gespeicherten Eintrag (speicher/partieeintrag.ts:
  * Werte, beste Züge, Hauptvarianten) und den Sätzen (anbindung/besprechungstexte.ts). Wird einmal
  * je Besprechung gerechnet (useBesprechung.ts), nur für die gewählten Momente.
- * Abhängigkeiten: anbindung/besprechungsmotiv.ts, spiel/erklaerung.ts, spiel/zuege.ts,
+ * Abhängigkeiten: anbindung/besprechungsmotiv.ts, anbindung/besprechungsursache.ts, spiel/erklaerung.ts, spiel/zuege.ts,
  * schach/notation.ts, schach/theorienamen.ts, ui/komponenten/auswertung/sprung.ts, spiel/auswertung.ts.
  */
 import type { Markierung } from "../../analyse/werkzeug";
@@ -20,6 +20,7 @@ import type { Partieeintrag } from "../../speicher/partien";
 import { zugtext } from "../../ui/komponenten/auswertung/sprung";
 import type { Besprechungsmoment } from "../regeln/besprechungsmomente";
 import { momentmotiv, type Motivgrundlage } from "./besprechungsmotiv";
+import { materialVon, ursacheVon } from "./besprechungsursache";
 import type { Momentangaben } from "./besprechungstexte";
 
 /** So viele Halbzüge der besseren Fortsetzung nennt Ambrose ab Stufe 3. */
@@ -102,13 +103,16 @@ export function momentangaben(
     stelle === i && bester !== undefined && uciZuSan(g.fens[i] ?? "", bester) === g.sans[i];
   const folgeStelle = FOLGE_DES_GEGNERS.has(moment.kategorie) ? i + 1 : stelle;
   const folge = widerlegungAus(eintrag.beste[folgeStelle], eintrag.varianten[folgeStelle]);
+  const zug = zugtext(eintrag.partie, i);
   return {
     moment,
-    zug: zugtext(eintrag.partie, i),
+    zug,
     besser: gespielt ? null : sanDeutsch(g.fens[stelle] ?? "", bester),
     motiv: momentmotiv(g, moment),
     folge: folgetext(g.fens[folgeStelle] ?? "", folge, FOLGE_HALBZUEGE),
     eroeffnung: moment.kategorie === "theorie" ? eroeffnungsname(quellen, g, i) : null,
+    ursache: ursacheVon(g, moment, zug),
+    material: materialVon(g, moment),
   };
 }
 

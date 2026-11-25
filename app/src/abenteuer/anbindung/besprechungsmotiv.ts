@@ -114,18 +114,27 @@ export function folgebegriff(fen: string, folge: readonly string[]): Begriff | n
 }
 
 /** Die Hauptvariante einer Stellung, die mit ihrem besten Zug beginnt. */
-function besteFolge(g: Motivgrundlage, stelle: number): readonly string[] {
+export function besteFolge(g: Motivgrundlage, stelle: number): readonly string[] {
   return widerlegungAus(g.beste[stelle], g.varianten[stelle]);
 }
 
-/** Der Fehler eines Zuges des Helden: der Befund mit der Widerlegung der Engine danach. */
-function fehlermotiv(g: Motivgrundlage, index: number): Momentmotiv | null {
+/**
+ * Der Befund zum Zug am Index (engine/fehlerart.ts, mit der Widerlegung der Engine danach), oder
+ * null bei unlesbarer Stellung. Beispiel: 3... Sf6?? im Schäfermatt → „drohungIgnoriert“ (Dxf7#).
+ */
+export function fehlerbefundAn(g: Motivgrundlage, index: number): Fehlerbefund | null {
   const fen = g.fens[index] ?? "";
   const lage = lageVon(fen);
   const uci = sanZuUci(fen, g.sans[index] ?? "");
   if (!lage || !uci) return null;
   const widerlegung = besteFolge(g, index + 1);
-  const befund = fehlerbefundIn(lage, uci, widerlegung, g.verluste[index] ?? 0, g.beste[index]);
+  return fehlerbefundIn(lage, uci, widerlegung, g.verluste[index] ?? 0, g.beste[index]);
+}
+
+/** Der Fehler eines Zuges des Helden als Begriff. */
+function fehlermotiv(g: Motivgrundlage, index: number): Momentmotiv | null {
+  const befund = fehlerbefundAn(g, index);
+  if (!befund) return null;
   if (befund.art === "schlagVerpasst") return { begriff: "haengend", richtung: "fuer" };
   const begriff = fehlerbegriff(befund);
   return begriff ? { begriff, richtung: "gegen" } : null;

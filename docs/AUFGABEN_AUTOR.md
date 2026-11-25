@@ -2277,44 +2277,14 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       `MAIL_VON` (etwa `Dashboard <dashboard@schach-von-grund-auf.com>`). Ohne Mailversand meldet
       GitHub rote Prüfungen trotzdem per Mail.
 
-- [ ] RO52. **Ok (26.11.2026), die Bilder erzeugst du noch.** **Mappe 15: alle offenen Bildaufträge (24.11.2026)**
-      Die Mappe „15_Bildauftraege_offen_24-11.html“ (im Chat) ersetzt alle älteren Bildmappen und
-      die Rückfragen RO10, RO16, RO18, RO22, RO27, RO37, RO44, RO46 und RO48 (erledigt durch deine
-      PixelLab-Lieferungen oder in die Mappe übernommen). Je Auftrag: Prompt zum Kopieren, Maße,
-      Ablage in ki-roh/. Nötig: PixelLab 3 (Dime neu, Liegebilder Lucia und Oma Ruth, Gideon als
-      Schmied) und dazu die Sitzbilder für den Feierabend (rund 54 Figuren, Liste folgt als
-      Ergänzung der Mappe; bis ein Bild da ist, steht die Figur neben ihrer Bank und setzt sich
-      von selbst, sobald es da ist), Gemini 54 (zuerst die vier Bilder der Einleitung von Akt 1: Fahrt, Haus, Wohnzimmer,
-      Kiste der Whitlocks; dann Victorias Porträt, die Fundbilder des Hauptwegs, Porträts von Zoe,
-      Imani, Benji und ein neues Blatt für Hector). Freiwillig: Finch-Figuren, Bretter je Ort und
-      77 Porträtblätter für Figuren mit altem Sprechbogen. Bei Dime und neun Figuren ohne eigenes
-      Bild (Ruben, Henrik, Imogen, Marian Shaw, Noor, Mama Bear, Tess Ferris, Wren, Ike) ist das
-      Aussehen aus Rolle und Ort vorgeschlagen; ändere es gern.
+- [ ] RO52. **Bildaufträge: Mappe 18 (26.11.2026)**
+      Die Mappe „18_Bildauftraege_offen_26-11.html“ (im Chat) enthält nur noch, was offen ist, und
+      ersetzt die Mappen 15 und 16b und den Bildteil von RO56. Deine Lieferung vom 25.11. ist
+      eingebaut: die vier Bilder der Einleitung von Akt 1, 15 Fundbilder und drei Kartenbilder
+      (Kantine, Bahnhofsmuseum, Klapptisch). Offen, nach Dringlichkeit: Dime (PixelLab), Porträt
+      Victoria, das Bild „Dieselbe Schräge“, 16 Porträtblätter, Gideon und die Liegebilder von
+      Lucia und Oma Ruth, Nova lächelt, 53 Sitzbilder für den Feierabend, 10 Fundbilder, zwei
+      Gartentore, 32 Aufträge aus dem Kartenblick und die Märchenfiguren (Falke, Bison, Drache)
+      mit drei kleinen Kartenbildern. Freiwilliges steht nicht mehr darin. Bis ein Bild da ist,
+      steht im Spiel ein Ersatz.
       **Antwort:** Bilder nach ki-roh/ hochladen; Nummern, die du nicht willst, kurz nennen.
-- [ ] RO54. **Ok (26.11.2026), die Bilder erzeugst du noch.** **Kartenblick: neue Bilder (24.11.2026)**
-      Die Mappe „16b_Bildauftraege_Kartenblick_24-11.html“ (im Chat) enthält 32 Aufträge mit Prompt
-      zum Kopieren. Am wichtigsten (Gruppe A): Wandstücke für Höhen (Grasböschung, roter Canyonfels,
-      Stützmauer, Granit), Schleusentor für Lockport, Fährschiff (Bordwand und Aufbau mit rotem
-      Schornstein), Werkhalle am Kanal, Kantinen- und Musikhalle in Zielgröße, Leuchtturm, Watt-,
-      Sand- und Ackerkacheln. Gruppe B für PixelLab: historische Figuren für London 1851, neutrale
-      Alltagsfiguren, Sitzbilder für Arbeiter, Wanderer, Anzug und Service. Dazu (nicht in der
-      Mappe): der Felsbogen am Canyon im Stil der neuen Klippen, dunkel rotbraun mit senkrechten
-      Riefen, ohne Kontur, Durchgang 3 Kacheln, 160 × 144. Bis die Bilder da sind, bauen wir mit
-      vorhandenen Teilen.
-      **Antwort:** Bilder nach ki-roh/ hochladen; Nummern, die du nicht willst, kurz nennen.
-- [ ] RO56. **Bilder für die Märchenfiguren und die Variantenorte (26.11.2026)**
-      Falke und Bison (Hochebene) und der Drache (Drachenfest in Summit City) sind spielbar mit
-      Platzhaltern: ein Buchstabe im Kreis (F, B, D) in den Farben des Bretts. Schöner wären eigene
-      Figuren. Bitte bei Gemini zeichnen lassen und nach ki-roh/ hochladen; Prompt zum Kopieren:
-      „Pixel-art chess pieces, 6 pieces on a plain green (#00FF00) background, arranged in two rows:
-      top row white pieces, bottom row black pieces, each in its own 128x128 square, same style as
-      classic Staunton chess pieces in 16-bit pixel art with a dark outline. Pieces: 1) a hawk with
-      folded wings on a round chess base, 2) a bison seen from the side on a round chess base,
-      head lowered, 3) a small dragon with raised wings on a round chess base. White pieces in
-      light ivory wood, black pieces in dark brown wood. No text, no shadows on the background.“
-      Für die Karten (je ein kleines Bild, Draufsicht wie die anderen Bretter im Spiel, grüner
-      Grund): „top-down pixel-art small chessboard on a table, 16-bit, one dragon chess piece in
-      the middle among normal pieces, 24x18 pixels“; „pixel-art chalk tally marks on a red rock,
-      three white strokes, 16x16“; „pixel-art yellow rubber duck standing on a chessboard square,
-      top-down, 16x16“. Bis die Bilder da sind, stehen gewöhnliche Bretter.
-      **Antwort:** Bilder hochladen oder „RO56 Platzhalter genügen“.

@@ -241,8 +241,17 @@
           ]
         },
         "variante": {
-          "description": "Schachvariante eines Nebenschauplatzes (Akt 4, docs/spiel/10): blind = Blindschach, Figuren unsichtbar; schach960 = Zufallsschach, Grundreihe gemischt (V1); gehoer = Partie nach Gehör (Runde 6, Funkschach): der Gegnerzug erscheint erst als Ansage, dann auf dem Brett. Varianten zählen nie für Nadeln, Wertung oder die App",
-          "enum": ["blind", "schach960", "gehoer"]
+          "description": "Schachvariante eines Nebenschauplatzes (Akt 4, docs/spiel/10): blind = Blindschach, Figuren unsichtbar; schach960 = Zufallsschach, Grundreihe gemischt (V1); gehoer = Partie nach Gehör (Runde 6, Funkschach): der Gegnerzug erscheint erst als Ansage, dann auf dem Brett; dreischach, atomschach, koenigDerHuegel, koenigsrennen, raeuberschach = Regelvarianten mit Fairy-Stockfish (L3, L4, L7, L8, Camp). Neue Varianten melden sich in app/src/spiel/varianten/ an und kommen hier in die Liste. Varianten zählen nie für Nadeln, Wertung oder die App",
+          "enum": [
+            "blind",
+            "schach960",
+            "gehoer",
+            "dreischach",
+            "atomschach",
+            "koenigDerHuegel",
+            "koenigsrennen",
+            "raeuberschach"
+          ]
         },
         "startnummer": {
           "description": "Nur mit variante schach960: feste Startstellung (Zählung nach Scharnagl, 518 = Grundstellung); fehlt sie, wird jede Partie neu ausgelost",

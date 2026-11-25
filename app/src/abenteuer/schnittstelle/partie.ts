@@ -20,6 +20,7 @@ import type { Color } from "chessops/types";
 import type { Phase } from "../../schach/phase";
 import type { Zugklasse } from "../../spiel/auswertung";
 import type { Buchkennung } from "../../spiel/buchbezug";
+import type { Variantenkennung } from "../../spiel/varianten/variante";
 import type { Partieende } from "../../spiel/ergebnis";
 import type { Gegnerprofil, Gegnerzustand, Gerechnetestaerke } from "./gegnerprofil";
 import type { Deck, Kartenspiel } from "./karten";
@@ -118,10 +119,11 @@ export interface Partieauftrag {
   /** Stärkewechsel mitten in der Partie (Halbfinale): ab Halbzug häufiger Fehler um den Faktor. */
   readonly abgelenktAb?: { readonly halbzug: number; readonly faktor: number };
   /**
-   * Schachvariante (Akt 4): „blind“ = Blindschach; „gehoer“ = Partie nach Gehör (Runde 6), der
-   * Gegnerzug kommt erst als Ansage. Zählt nie für Nadel, Wertung oder App.
+   * Schachvariante (Akt 4): Kennung einer angemeldeten Variante (spiel/varianten/variante.ts),
+   * etwa „blind“, „schach960“, „gehoer“, „dreischach“, „atomschach“. Zählt nie für Nadel, Wertung
+   * oder App.
    */
-  readonly variante?: "blind" | "schach960" | "gehoer";
+  readonly variante?: Variantenkennung;
   /** Kandidatenwahl: erster Zug des Gegners zufällig aus diesen (spiel/vorgabezug.ts). */
   readonly kandidaten?: readonly string[];
   /** Buch und Bruch: Linie des Gegners, danach diese Stufe (spiel/vorgabezug.ts). */

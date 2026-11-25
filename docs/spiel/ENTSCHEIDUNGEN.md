@@ -24,6 +24,15 @@ die Entscheidungsseite (Claude-Artefakt „Schach-Abenteuer Entscheidungen“) o
   Bleiben: Story-, Club- und Clubchef-Gegner (die Stellung ist Teil der Geschichte), der Stream
   (Zuschauer wählen den Zug) und das Simultanbrett 5 (einmalige Vorstellung), dazu „vorrat“ und
   „eroeffnung“, die ohnehin jedes Mal wechseln. Jo sagt es im Dialog.
+- **Brett steht still:** Die Partiehülle ist so hoch wie der Bildschirm und rollt nie als Ganzes
+  (`overflow: clip`). Hoch: Kopf, dann ein Block aus Uhr des Gegners und Brett an fester Stelle,
+  darunter die Spalte, die für sich rollt. Quer: Brett links, Uhr des Gegners rechts oben. Ursache
+  war hoch das Rollen der ganzen Seite (verschwand Inhalt unter dem Brett, sprang es um bis zu
+  800 px), quer ein Rollen der Hülle durch Fokus (18 px); dazu hoch der Kopf, der beim Wechsel
+  der Stimmung kurz ohne Porträt 52 px niedriger war (jetzt feste Mindesthöhe), und quer die
+  Zeile „Dein König steht im Schach …“ unter dem mittig stehenden Brett, die es um ihre halbe
+  Höhe anhob (jetzt rechts über der Spalte). Prüfung:
+  `tests/e2e/abenteuer-brettruhe.spec.ts` misst die Lage in jedem Bild, Toleranz 1 px.
 - **Zeitraffer:** Warten und Schlafen zeigen 2,6 Sekunden Sonne oder Mond auf dem Horizontbogen,
   Himmelsfarben aus dem Farbsystem (Dokument 30), Sterne, Uhrzeiger zur Zielzeit; Tippen
   überspringt, reduzierte Bewegung zeigt gleich die Zielzeit (`oberwelt/Zeitraffer.tsx`,

@@ -603,6 +603,14 @@ Profil › Einstellungen › Fehler melden.
       darunter). Beim Schlafen steht „Du schläfst …“, und es wird Morgen. Zum Ende blendet es aus,
       und die Karte steht schon im neuen Licht. Ein Tippen überspringt.
       **Antwort:** „N2723 ok“ oder was zu schnell, zu langsam oder unschön ist.
+- [ ] N2724. **Das Brett steht still (25.11.2026):** Eine Partie mit Uhr und Karten spielen,
+      im Hoch- und im Querformat, am besten eine Begegnung mit erzähltem Einstieg (etwa Jo im
+      Park). Das Brett bleibt an seiner Stelle, wenn der Einstieg nach dem ersten Zug
+      verschwindet, Sprechblasen kommen, du eine Karte spielst, „… überlegt“ erscheint und am
+      Ende „Weiter“ statt der Knöpfe dasteht. Hoch steht oben die Uhr des Gegners, darunter das
+      Brett, und nur der Bereich darunter (eigene Uhr, Karten, Knöpfe) lässt sich rollen. Quer
+      steht die Uhr des Gegners rechts oben unter dem Namen.
+      **Antwort:** „N2724 ok“ oder wann das Brett noch springt.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

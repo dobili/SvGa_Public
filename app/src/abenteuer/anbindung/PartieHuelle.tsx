@@ -267,7 +267,20 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
           {tSpiel(zaehler.text, zaehler.werte)}
         </BrettfreieZeile>
       )}
-      <div className="abenteuer-partie-brett">
+      {/* Brett mit der Uhr des Gegners darüber: ein Block mit fester Lage (huellenlage.css). Hoch steht
+          er oben, darunter rollt die Spalte für sich; quer steht das Brett links und die Uhr oben
+          rechts. So schiebt nichts, was unten erscheint oder verschwindet, das Brett (Befund des
+          Autors, 25.11.2026: „das ganze Schachbrett rutscht hin und her“). */}
+      <div className="abenteuer-partie-brett abenteuer-partie-brett-uhr">
+        {partie.uhr && (
+          <Uhr
+            uhr={partie.uhr}
+            farbe={gegenfarbe(eigene)}
+            name={gegner}
+            jetztMs={s.jetztMs}
+            gegnerseite
+          />
+        )}
         <Brettbereich
           stellung={stellung.wert}
           markierungen={[...variantenMarken, ...(hinweis.fen === s.fen ? hinweis.marken : [])]}
@@ -288,20 +301,10 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
           }
         />
       </div>
-      {/* Rechte Spalte im Querformat, im Hochformat unter dem Brett (huellenlage.css); die Uhr des
-          Gegners steht hoch über dem Brett, quer oben in der Spalte. */}
+      {/* Rechte Spalte im Querformat, im Hochformat unter dem Brett (huellenlage.css). */}
       <div className="abenteuer-partie-seite">
         {/* Erzählter Einstieg der kurzen Partieformen; blockiert nichts, verschwindet beim ersten Zug. */}
         <Erzaehlvorhang begegnung={begegnung} partie={partie} />
-        {partie.uhr && (
-          <Uhr
-            uhr={partie.uhr}
-            farbe={gegenfarbe(eigene)}
-            name={gegner}
-            jetztMs={s.jetztMs}
-            gegnerseite
-          />
-        )}
         {partie.uhr && (
           <Uhr uhr={partie.uhr} farbe={eigene} name={tSpiel("huelle.du")} jetztMs={s.jetztMs} />
         )}

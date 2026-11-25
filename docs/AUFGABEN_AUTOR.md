@@ -561,6 +561,21 @@ Profil › Einstellungen › Fehler melden.
       Crossroads gibt es jetzt auch Falke und Bison und den Drachen; nach Nebel, Ente und Tandem dort
       kommt eine Rückmeldung.
       **Antwort:** „N2716 ok“ oder was nicht passt.
+- [ ] N2717. **Drechslerei und Waschsalon, wer auf dich zukommt (25.11.2026):** In Cedar Creek steht
+      Mr. Dunmore in der Drechslerei vor der Drechselbank (rechts im Raum), nicht mehr mitten im
+      Raum; der erste Satz „dreht ein Stück Ahorn auf der Drechselbank“ passt. Im Waschsalon sagt der
+      erste Satz „Am Ladentisch neben dem Automaten steht ein alter Mann …, einen Korb voll bunter
+      Wäsche im Arm“. Wer auf dich zukommt (Turnierleiterin, Dot, Lou, Tamsin, Ray, Haraldsen), wird
+      im ersten Satz als kommend beschrieben, nicht bei der Arbeit an seinem Platz.
+      **Antwort:** „N2717 ok“ oder was nicht passt.
+- [ ] N2718. **Tiere, Gullys, Bänke (25.11.2026 abends):** 1. Maple Falls, Bushaltestelle: Keine
+      Taube steht auf Juno; sitzende Tauben halten dich auf und lassen sich verscheuchen. 2. Park:
+      Die Enten bleiben im Teich. 3. Straße: Gullys liegen am Bordstein, nicht unter der gelben
+      Linie. 4. Park abends: Coach, Lily, Calloway und Owen sitzen auf den Seitenbänken vor der
+      Lehne, nicht auf der Armlehne; Jo auf der Bank an der Hauswand schaut von der Lehne weg;
+      Abernathy sitzt tagsüber auf der Schachbank. 5. Capital Arena, Raststätte, Akademie, Hütte,
+      Seeufer: Victor, Nova, Kade, Lin, Haraldsen, Kit und der Wanderer sitzen, wo der Text es sagt.
+      **Antwort:** „N2718 ok“ oder was auffällt.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

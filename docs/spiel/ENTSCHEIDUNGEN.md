@@ -1462,3 +1462,12 @@ Browserprüfung der Sperren S16 und S17 mit echt gespielten kurzen Partien (Fabl
   lageangabe_geprueft.py (Bildwünsche, Sitzplätze; Obergrenze, die nur sinkt).
 - Belohnung für Kira und Sol nach Dokument 10 (Münzen, Funde, keine Nadeln); Falke und Bison und
   Drache auch am Varianten-Tisch in Crossroads.
+
+### Tiere und Sitzen, Arbeit am Platz (Befunde des Autors, 25.11.2026 abends, umgesetzt, Widerspruch genügt)
+
+- Vögel gelten im Sitzen wie Tiere am Boden und landen nie auf Menschen oder Sitzen; Schwimmer
+  einer Schar bleiben auf dem Schwimmweg und verlassen das Wasser nicht; Gullys liegen nur am Rand
+  ihres Belags; Sitzmöbel blicken so, wie sie auf der Karte liegen (gespiegelt, gedreht), und
+  Sitzende sitzen auf der Sitzfläche vor der Lehne und zwischen den Armlehnen.
+- Erste Zeilen, die eine Figur bei der Arbeit an ihrem Platz zeigen, bekommen bei ansprechenden
+  Figuren eine Fassung {angesprochen}; ansprechzeile.py findet sie (Drechslerei).

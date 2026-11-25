@@ -9,6 +9,8 @@
  */
 import type { Color } from "chessops/types";
 import { regelstellung, regelstellungFuer } from "./zuege";
+import { freieRegeln, freiesEnde } from "./varianten/freieregeln";
+import type { Regelschicht } from "./varianten/variante";
 
 export type Partieende =
   | { readonly art: "matt"; readonly sieger: Color }
@@ -33,9 +35,15 @@ export type Partieende =
    * Ende nach den Regeln einer Variante (spiel/varianten/): dreimal Schach, König explodiert, auf
    * dem Hügel, an der Ziellinie, alles verloren (Räuberschach). `grund` ist der Spieltext.
    */
-  | { readonly art: "variante"; readonly sieger: Color; readonly grund: string }
+  | {
+      readonly art: "variante";
+      readonly sieger: Color;
+      readonly grund: string;
+      /** Halbzüge einer eigenen Variantenpartie (Tandem), deren Züge nicht in `zuege` stehen. */
+      readonly halbzuege?: number;
+    }
   /** Remis nach den Regeln einer Variante (etwa beide Könige zugleich an der Ziellinie). */
-  | { readonly art: "varianteRemis"; readonly grund: string };
+  | { readonly art: "varianteRemis"; readonly grund: string; readonly halbzuege?: number };
 
 /** 50 Züge je Seite ohne Bauernzug und ohne Schlag = 100 Halbzüge. */
 const FUENFZIG_ZUEGE_HALBZUEGE = 100;
@@ -62,6 +70,8 @@ export function partieendeNach(
   variante?: string,
 ): Partieende | null {
   const fen = stellungen[stellungen.length - 1];
+  const frei = freieRegeln(variante);
+  if (frei) return fen ? freiesPartieende(frei, fen) : null;
   const pos = fen ? regelstellungFuer(fen, variante) : null;
   if (!fen || !pos) return null;
   // Varianten mit eigenen Regeln (Drei-Schach, Atom, Hügel, Rennen, Räuber): Ihr Ende geht vor.
@@ -82,6 +92,15 @@ export function partieendeNach(
   const schluessel = stellungsschluessel(fen);
   const gleich = stellungen.filter((s) => stellungsschluessel(s) === schluessel).length;
   return gleich >= WIEDERHOLUNGEN ? { art: "wiederholung" } : null;
+}
+
+/** Ende einer Partie mit Märchenfiguren (ohne chessops): wie die Regelschicht es sagt. */
+function freiesPartieende(regeln: Regelschicht, fen: string): Partieende | null {
+  const ende = freiesEnde(regeln, fen);
+  if (!ende) return null;
+  return ende.sieger
+    ? { art: "variante", sieger: ende.sieger, grund: ende.grund }
+    : { art: "varianteRemis", grund: ende.grund };
 }
 
 /**

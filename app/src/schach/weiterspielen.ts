@@ -15,6 +15,13 @@ import { makeSquare, parseSquare } from "chessops/util";
 import { brauchtChess960Stellung } from "./chess960";
 import { stellungMit } from "../spiel/varianten/regelschicht";
 import { varianteVon } from "../spiel/varianten/alle";
+import {
+  freieRegeln,
+  freieZiehbareFelder,
+  freieZiele,
+  freieZusaetze,
+  freierZug,
+} from "../spiel/varianten/freieregeln";
 import { sanInSprache } from "./notation";
 
 /** Die eigenen Züge hinter der Buchstellung und wie viele davon gerade gezeigt werden. */
@@ -69,6 +76,9 @@ function rochadeziel(pos: Position, von: number, ziel: number): number {
  * Farbe, leeres Feld oder Stellung ohne Regeln (Lehrbild ohne König) → leere Liste.
  */
 export function legaleZiele(fen: string, von: string, variante?: string): string[] {
+  // Märchenfiguren (Falke, Bison, Drache): ohne chessops über die Regelschicht.
+  const frei = freieRegeln(variante);
+  if (frei) return freieZiele(frei, fen, von);
   const pos = stellung(fen, variante);
   const feld = parseSquare(von);
   if (!pos || feld === undefined) return [];
@@ -87,6 +97,8 @@ export function legaleZiele(fen: string, von: string, variante?: string): string
  * (Lehrbild ohne König) → leere Liste.
  */
 export function ziehbareFelder(fen: string, variante?: string): string[] {
+  const frei = freieRegeln(variante);
+  if (frei) return freieZiehbareFelder(frei, fen);
   const pos = stellung(fen, variante);
   if (!pos) return [];
   return [...pos.allDests()]
@@ -107,6 +119,8 @@ export type Zugsperre = "schach" | "gefesselt" | "blockiert";
  * „schach“; in der Grundstellung Lc1 → „blockiert“.
  */
 export function zugsperre(fen: string, feld: string, variante?: string): Zugsperre | null {
+  // Ohne chessops kennt die App den Grund nicht; die Figur leuchtet dann nicht rot.
+  if (freieRegeln(variante)) return null;
   const pos = stellung(fen, variante);
   const platz = parseSquare(feld);
   if (!pos || platz === undefined) return null;
@@ -120,6 +134,8 @@ export function zugsperre(fen: string, feld: string, variante?: string): Zugsper
 export type Zugversuch =
   | { readonly art: "gespielt"; readonly san: string; readonly fen: string }
   | { readonly art: "umwandlung" }
+  /** Märchenfiguren: Mehrere Züge auf dasselbe Feld (Einsetzen eines Falken …); siehe zugzusaetze. */
+  | { readonly art: "auswahl" }
   | { readonly art: "ungueltig" };
 
 /**
@@ -136,7 +152,10 @@ export function spieleZug(
   nach: string,
   umwandlung?: Role,
   variante?: string,
+  zusatz?: string,
 ): Zugversuch {
+  const frei = freieRegeln(variante);
+  if (frei) return freierZug(frei, fen, von, nach, zusatz);
   const pos = stellung(fen, variante);
   const a = parseSquare(von);
   const b = parseSquare(nach);
@@ -157,6 +176,16 @@ export function spieleZug(
   };
   const san = makeSanAndPlay(pos, zug);
   return { art: "gespielt", san, fen: makeFen(pos.toSetup()) };
+}
+
+/**
+ * Zusätze der Züge von `von` nach `nach` in einer Variante mit Märchenfiguren, für die Auswahl
+ * nach „auswahl“: "" ohne Zusatz, sonst das fünfte Zeichen des UCI-Zugs („h“ Falke, „e“ Bison,
+ * „d“ Drache, „q“ Dame bei der Umwandlung). Ohne solche Variante leer.
+ */
+export function zugzusaetze(fen: string, von: string, nach: string, variante?: string): string[] {
+  const frei = freieRegeln(variante);
+  return frei ? freieZusaetze(frei, fen, von, nach) : [];
 }
 
 /** Stellung nach den ersten ``anzahl`` Zügen einer Liste; null, wenn einer nicht passt. */

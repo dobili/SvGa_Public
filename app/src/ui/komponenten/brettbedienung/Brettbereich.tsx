@@ -18,6 +18,7 @@ import { t } from "../../../i18n/sprache";
 import { farbkuerzel, type Stellung } from "../../../schach/stellung";
 import { skelettFen } from "../../../schach/weiterspielen";
 import { Umwandlung } from "./Umwandlung";
+import { Zusatzwahl } from "./Zusatzwahl";
 import { Brett } from "../../brett/Brett";
 import type { Brettbedienung } from "./useBrettbedienung";
 
@@ -122,6 +123,9 @@ export function Brettbereich({
         />
       </div>
       {bedienung.umwandlungOffen && <Umwandlung beiWahl={bedienung.waehleUmwandlung} />}
+      {bedienung.zusatzwahl && bedienung.waehleZusatz && (
+        <Zusatzwahl zusaetze={bedienung.zusatzwahl} beiWahl={bedienung.waehleZusatz} />
+      )}
       {bedienung.gesperrt && (
         <p className="brett-sperre" role="status" data-testid="brett-sperre">
           {t(`brett.sperre.${bedienung.gesperrt.grund}`)}

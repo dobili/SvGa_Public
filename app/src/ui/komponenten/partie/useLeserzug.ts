@@ -21,8 +21,8 @@ export function useLeserzug(s: Partiesteuerung, gezeigt: string, zaehlen: boolea
     {
       fen: gezeigt,
       variante,
-      spiele: (von, nach, rolle) => {
-        const versuch = spieleZug(gezeigt, von, nach, rolle, variante);
+      spiele: (von, nach, rolle, zusatz) => {
+        const versuch = spieleZug(gezeigt, von, nach, rolle, variante, zusatz);
         if (versuch.art === "gespielt") s.spieleLeser(versuch.san);
         return versuch.art;
       },

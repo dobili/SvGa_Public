@@ -1,5 +1,6 @@
 /**
- * Was ein Tipp aufs Brett bedeutet: Feld zählen oder eine Figur ziehen, samt Umwandlung.
+ * Was ein Tipp aufs Brett bedeutet: Feld zählen oder eine Figur ziehen, samt Umwandlung und, bei
+ * Märchenfiguren, der Wahl der eingesetzten Figur (Falke, Bison, Drache).
  *
  * Rolle im Gesamtbild: Teil des Abbildung-Bildschirms. Mit „Zählen“ zählt ein Tipp das Feld (wie
  * im Durchstich), mit „Ziehen“ wählt der erste Tipp eine Figur und der zweite ihr Zielfeld
@@ -20,6 +21,7 @@ import {
   legaleZiele,
   ziehbareFelder,
   zugsperre,
+  zugzusaetze,
   type Zugsperre,
 } from "../../../schach/weiterspielen";
 import type { Ziehbedienung } from "../../brett/useZiehen";
@@ -52,6 +54,12 @@ export interface Brettbedienung {
   /** Vergisst Zählfeld und gewählte Figur (beim Abwählen des Werkzeugs). */
   readonly vergiss: () => void;
   readonly waehleUmwandlung: (rolle: Rolle | null) => void;
+  /**
+   * Offene Einsetzwahl (Märchenfiguren): die Zusätze der möglichen Züge, "" heißt ohne Einsetzen;
+   * null, wenn nichts offen ist. Beispiel: g1 → f3 im Start von Falke und Bison → ["", "h", "e"].
+   */
+  readonly zusatzwahl?: readonly string[] | null;
+  readonly waehleZusatz?: (zusatz: string | null) => void;
 }
 
 /**
@@ -70,6 +78,7 @@ export function useBrettbedienung(
   const [gezaehlt, setzeGezaehlt] = useState<Gemerkt | null>(null);
   const [gewaehlt, setzeGewaehlt] = useState<Gemerkt | null>(null);
   const [umwandlung, setzeUmwandlung] = useState<(Gemerkt & { nach: string }) | null>(null);
+  const [auswahl, setzeAuswahl] = useState<(Gemerkt & { nach: string }) | null>(null);
   const [gesperrt, setzeGesperrt] = useState<(Gemerkt & { grund: Zugsperre }) | null>(null);
   const { ton } = useEinstellungen();
   useEffect(() => {
@@ -88,9 +97,9 @@ export function useBrettbedienung(
 
   /** Spielt den Zug von ``von`` nach ``nach``; bei einem Bauern auf der letzten Reihe folgt die Wahl. */
   const spiele = (von: string, nach: string) => {
-    if (stand.spiele(von, nach) === "umwandlung") {
-      setzeUmwandlung({ fen: stand.fen, feld: von, nach });
-    }
+    const art = stand.spiele(von, nach);
+    if (art === "umwandlung") setzeUmwandlung({ fen: stand.fen, feld: von, nach });
+    if (art === "auswahl") setzeAuswahl({ fen: stand.fen, feld: von, nach });
     setzeGewaehlt(null);
   };
   const ziehe = (feld: string) => {
@@ -127,6 +136,12 @@ export function useBrettbedienung(
       stand.spiele(umwandlung.feld, umwandlung.nach, rolle);
     setzeUmwandlung(null);
   };
+  const waehleZusatz = (zusatz: string | null) => {
+    if (zusatz !== null && auswahl?.fen === stand.fen)
+      stand.spiele(auswahl.feld, auswahl.nach, undefined, zusatz);
+    setzeAuswahl(null);
+  };
+  const offen = auswahl?.fen === stand.fen ? auswahl : null;
   return {
     zaehlfeld,
     ausgewaehlt: zaehlfeld ?? figur,
@@ -146,5 +161,7 @@ export function useBrettbedienung(
         : null,
     vergiss,
     waehleUmwandlung,
+    zusatzwahl: offen ? zugzusaetze(stand.fen, offen.feld, offen.nach, stand.variante) : null,
+    waehleZusatz,
   };
 }

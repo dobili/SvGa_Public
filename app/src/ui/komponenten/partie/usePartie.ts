@@ -13,7 +13,7 @@
  * (spiel/boteroeffnung.ts).
  * Abhängigkeiten: spiel/, speicher/, engine/, daten/laden.ts, schach/eroeffnungsindex.ts.
  */
-import { brauchtVariantenbot, variantenBotzug } from "./variantenbotzug";
+import { brauchtVariantenbot, hatEigenenAblauf, variantenBotzug } from "./variantenbotzug";
 import { useEffect, useMemo, useState } from "react";
 import { AuftragAbgebrochen } from "../../../engine/engineDienst";
 import { ladeEroeffnungsliste, ladePraxisbuch } from "../../../daten/laden";
@@ -196,6 +196,8 @@ function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) 
         const stufennummer = stufeFuer(jetzige, fen);
         // Variantenpartie (Drei-Schach, Atom …): eigener Bot über Fairy-Stockfish.
         const variante = jetzige.einstellung.abenteuer?.variante;
+        // Eigener Ablauf (Tandem, Ente, Nebel): Brett und Bot gehören der Komponente.
+        if (variante && hatEigenenAblauf(variante)) return;
         if (variante && brauchtVariantenbot(variante)) {
           return variantenBotzug(id, fen, variante, stufennummer, laeuft);
         }

@@ -95,7 +95,8 @@ export function partieergebnisAus(
       leser: heldname,
       engine: partie.einstellung.botName ?? "Gegner",
     }),
-    halbzuege: partie.zuege.length,
+    // Eigene Variantenpartien (Tandem) zählen ihre Züge selbst (EigeneVariantenpartie.tsx).
+    halbzuege: "halbzuege" in partie.ende ? (partie.ende.halbzuege ?? 0) : partie.zuege.length,
     sekunden: sekundenAus(partie, jetzt),
     gespielteKarten,
     ruecknahmen: partie.ruecknahmen,

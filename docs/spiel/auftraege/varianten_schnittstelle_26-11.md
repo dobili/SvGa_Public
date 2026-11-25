@@ -140,8 +140,15 @@ Komponente meldet sich in `app/src/abenteuer/anbindung/variantenpartien.ts` an:
 
 ```ts
 registriereVariantenpartie("tandem", Tandempartie);
-// Tandempartie({ auftrag, staerke, eigeneFarbe, beiEnde }) → beiEnde({ ausgang, halbzuege, zuege? })
+// Tandempartie({ partie, staerke, eigeneFarbe, beiEnde }) → beiEnde({ ausgang, halbzuege, zuege? })
 ```
+
+Seit Teil 6: Die Komponente bekommt statt des Partieauftrags die `partie` der App (Startstellung,
+Gegnername `einstellung.botName`, Begegnung `einstellung.abenteuer.kennung`, Variante). Die Hülle
+(`EigeneVariantenpartie.tsx`, `eigenepartie.ts`) schreibt `beiEnde` als Ende der Partie:
+„sieg“/„niederlage“ als Ende der Variante mit `grund` `variante.<kennung>.ende`, „remis“ als
+Remis der Variante, „abgebrochen“ als Aufgabe; `halbzuege` zählt fürs Ergebnis. Der Bot der Hülle
+zieht in solchen Partien nicht. Daneben zeigt die Hülle nur „Aufgeben“.
 
 Die Hülle zeigt die Komponente an Stelle ihres Bretts und übernimmt Rahmen, Porträt, den
 Dialogknoten danach, Ergebnis und Belohnung wie bei Schach960. Brett und Bot gehören der
@@ -151,6 +158,20 @@ Variante wie Drei-Schach.
 
 Neue Kennungen in `schemas/abenteuer-begegnungen.schema.json`: `drache`, `falkeUndBison`, `nebel`,
 `ente`, `tandem`.
+
+## Varianten ohne chessops (Teil 6)
+
+- `vorbereiten?: () => Promise<void>` in der Definition: Die Partie wird erst danach angelegt
+  (`anbindung/dienste.ts`), und die Hülle zeigt das Brett erst danach (`useVariantenbereit.ts`,
+  auch nach einem Neuladen). Für Falke und Bison und den Drachen: `vorbereiten: ladeMaerchenregeln`.
+- Ist `regeln.chessops` null, rechnen Partie und Brett allein über die Regelschicht
+  (`spiel/varianten/freieregeln.ts`): Kurznotation aus `ziehe(...).san`, Ziele aus `legaleZuege`,
+  Ende aus `ende`. Die Partie speichert die Kurznotation von ffish.
+- Einsetzwahl: Gibt es zu Von und Nach mehrere legale Züge, die sich im fünften Zeichen
+  unterscheiden („g1f3“, „g1f3h“, „g1f3e“), fragt die Hülle wie bei der Umwandlung
+  (`Zusatzwahl.tsx`: ohne Einsetzen, Falke, Bison, Drache).
+- Tasche: steht aus „[HEhe]“ der FEN als Zeile über dem Brett (`Taschenzeile.tsx`). Das Brett
+  zeichnet H, E, D über die Pixelfiguren des Brettstils (pixelfiguren.ts von mittel-2).
 
 ## Sonderformen
 

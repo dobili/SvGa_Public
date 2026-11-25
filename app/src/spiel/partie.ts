@@ -10,6 +10,7 @@
  * Abhängigkeiten: chessops, spiel/zuege.ts, spiel/ergebnis.ts, spiel/uhr.ts, engine/fehlerart.ts.
  */
 import type { Probeherkunft } from "./probepartie";
+import { freieRegeln, freiSpielbar } from "./varianten/freieregeln";
 import type { Variantenkennung } from "./varianten/variante";
 import type { Stilmix, Stilname } from "../engine/stile";
 import type { Color } from "chessops/types";
@@ -213,6 +214,8 @@ export function neuePartie(
  * mehr Figuren, als durch Umwandlung entstehen können; sonst verweigert Stockfish die Stellung)?
  */
 export function spielbar(fen: string, variante?: string): boolean {
+  const frei = freieRegeln(variante);
+  if (frei) return freiSpielbar(frei, fen);
   // Varianten mit eigenen Regeln (Räuberschach ohne König, Königsrennen, nur Könige am Hügel):
   // spielbar, solange die Stellung nach ihren Regeln gilt und noch nicht zu Ende ist.
   if (variante && regelstellungFuer(fen, variante)?.rules !== "chess") return ladbar(fen, variante);
@@ -225,6 +228,8 @@ export function spielbar(fen: string, variante?: string): boolean {
  * die Prüfung der Umwandlungen, damit ältere Partien eines Lesers nicht verloren gehen.
  */
 export function ladbar(fen: string, variante?: string): boolean {
+  const frei = freieRegeln(variante);
+  if (frei) return freiSpielbar(frei, fen);
   const pos = variante ? regelstellungFuer(fen, variante) : regelstellung(fen);
   return pos !== null && !pos.isEnd();
 }

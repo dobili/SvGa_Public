@@ -15,6 +15,7 @@ import { useNavigation } from "../../app/navigationsKontext";
 import { findePartie, mitLaufender } from "../../speicher/partien";
 import { aendere, speicherzustand, useSpeicher } from "../../speicher/speicher";
 import { neuePartie } from "../../spiel/partie";
+import { varianteVon } from "../../spiel/varianten/alle";
 import { aktuelleWertung } from "../../spiel/wertung";
 import { useMaiaBereit } from "../../ui/komponenten/einstellungen/maiastand";
 import { neueKennung } from "../../ui/komponenten/spielstart/spielwahl";
@@ -101,6 +102,8 @@ async function mitAufgeloesterStellung(auftrag: Partieauftrag): Promise<Partieau
  * Kennung im Spielstand merken (damit ein Neuladen mitten in der Partie zurückfindet).
  */
 async function legePartieAn(auftrag: Partieauftrag, mitMaia: boolean): Promise<string | null> {
+  // Regeln, die erst laden (Märchenfiguren über ffish), vor der ersten Prüfung der Stellung.
+  await varianteVon(auftrag.variante)?.vorbereiten?.();
   const ausVorrat = await mitVorratsstellung(mitFremderEroeffnung(auftrag));
   const aufgeloest = ausVorrat ? await mitAufgeloesterStellung(ausVorrat) : null;
   if (!aufgeloest) return null;

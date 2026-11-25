@@ -13,6 +13,7 @@ import { makeUci, parseUci } from "chessops/util";
 import { rochadeUci } from "../schach/chess960";
 import { stellungMit } from "./varianten/regelschicht";
 import { varianteVon } from "./varianten/alle";
+import { freieRegeln, freiFenNach, freiSanZuUci, freiUciZuSan } from "./varianten/freieregeln";
 
 /** Stellung mit Regeln aus einer FEN; null bei unlesbarer oder regelwidriger Stellung. */
 export function regelstellung(fen: string): Chess | null {
@@ -44,6 +45,8 @@ export function regelstellungFuer(fen: string, variante?: string): Position | nu
  * „König auf Turm“, deshalb wird der Zug vorher angeglichen.
  */
 export function uciZuSan(fen: string, uci: string, variante?: string): string | null {
+  const frei = freieRegeln(variante);
+  if (frei) return freiUciZuSan(frei, fen, uci);
   const pos = regelstellungFuer(fen, variante);
   const zug = parseUci(uci);
   if (!pos || !zug) return null;
@@ -59,6 +62,8 @@ export function uciZuSan(fen: string, uci: string, variante?: string): string | 
  * Sonderfall: illegaler Zug → null.
  */
 export function sanZuUci(fen: string, san: string, variante?: string): string | null {
+  const frei = freieRegeln(variante);
+  if (frei) return freiSanZuUci(frei, fen, san);
   const pos = regelstellungFuer(fen, variante);
   const zug = pos ? parseSan(pos, san) : undefined;
   if (!pos || !zug) return null;
@@ -71,6 +76,9 @@ export function sanZuUci(fen: string, san: string, variante?: string): string | 
 
 /** Stellung nach einem Zug in Kurznotation; null, wenn der Zug nicht passt. */
 export function fenNach(fen: string, san: string, variante?: string): string | null {
+  // Märchenfiguren (Falke, Bison, Drache): ohne chessops über die Regelschicht.
+  const frei = freieRegeln(variante);
+  if (frei) return freiFenNach(frei, fen, san);
   const pos = regelstellungFuer(fen, variante);
   const zug = pos ? parseSan(pos, san) : undefined;
   if (!pos || !zug) return null;

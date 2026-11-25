@@ -39,6 +39,11 @@ const ELO_STARK = 1600;
 // Fairy-Stockfish meldet sich hier an; der Worker startet erst beim ersten Zug des Bots.
 if (typeof Worker !== "undefined") meldeVariantenengineAn(fairyEngine);
 
+/** Spielt die Variante in einer eigenen Komponente (ablauf „eigene_partie“: Tandem, Ente, Nebel)? */
+export function hatEigenenAblauf(variante: string | undefined): boolean {
+  return varianteVon(variante)?.ablauf === "eigene_partie";
+}
+
 /** Braucht die Partie den Variantenbot (Variante mit Fairy-Stockfish)? */
 export function brauchtVariantenbot(variante: string | undefined): boolean {
   return varianteVon(variante)?.engine.engine === "fairy";

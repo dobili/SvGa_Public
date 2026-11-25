@@ -23,10 +23,8 @@
  */
 import { useMemo, useState } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
-import { stellungAusFen, type Farbe } from "../../schach/stellung";
 import { zugFelder } from "../../schach/weiterspielen";
 import { leserAmZug, stellungen, type Partie } from "../../spiel/partie";
-import { restzeit, zeitAlsText, type Uhrstand } from "../../spiel/uhr";
 import { Brettbereich } from "../../ui/komponenten/brettbedienung/Brettbereich";
 import { Ergebnisblende } from "../../ui/komponenten/partie/Ergebnisblende";
 import { passendeErweiterungen } from "../../ui/komponenten/partie/partieerweiterungen";
@@ -35,7 +33,10 @@ import { usePartie, type Partiesteuerung } from "../../ui/komponenten/partie/use
 import { partieBrettquelle, useAbenteuerBrettstil } from "../brett/useAbenteuerBrettstil";
 import { useZurWelt } from "./zurWelt";
 import { tSpiel } from "../texte/texte";
+import { EigeneVariantenpartie } from "./EigeneVariantenpartie";
+import { eigenerAblauf } from "./eigenepartie";
 import { Gegnerbild } from "./Gegnerbild";
+import { Huellenuhr as Uhr } from "./Huellenuhr";
 import { Huelle } from "./Huelle";
 import { Erzaehlvorhang, Kurzformzeile, Nachwort } from "./Kurzformzeile";
 import { endgrund, gegnerName, sprecherAusPfad, statustext } from "./huellentexte";
@@ -50,49 +51,22 @@ import { useStaerkewechsel } from "./useStaerkewechsel";
 import { useHintergrundauswertung } from "./useHintergrundauswertung";
 import { useKurzform } from "./useKurzform";
 import { useZugerraten } from "./useZugerraten";
-import { variantenmarken, variantenzaehler } from "./variantenbrett";
+import { Taschenzeile } from "./Taschenzeile";
+import {
+  freierLetzterZug,
+  tascheAus,
+  variantenmarken,
+  variantenstellung,
+  variantenzaehler,
+} from "./variantenbrett";
 import { useKurzsperre } from "./useKurzsperre";
+import { useVariantenbereit } from "./useVariantenbereit";
 import { Testleiste } from "./Testleiste";
-
-/** Unter so viel Restzeit (ms) wird die Uhr rot, wie in der App. */
-const KNAPP_MS = 10_000;
+import type { Farbe } from "../../schach/stellung";
 
 /** Die andere Farbe. */
 function gegenfarbe(farbe: Farbe): Farbe {
   return farbe === "white" ? "black" : "white";
-}
-
-/**
- * Uhr einer Seite: Name und Restzeit; die laufende Uhr hervorgehoben, knappe Zeit rot. Die Uhr
- * des Gegners trägt eine eigene Klasse: hoch steht sie über dem Brett (huellenlage.css).
- */
-function Uhr({
-  uhr,
-  farbe,
-  name,
-  jetztMs,
-  gegnerseite = false,
-}: {
-  uhr: Uhrstand;
-  farbe: Farbe;
-  name: string;
-  jetztMs: number;
-  gegnerseite?: boolean;
-}) {
-  const rest = restzeit(uhr, farbe, jetztMs);
-  return (
-    <div
-      className={`abenteuer-huelle-uhr ${gegnerseite ? "abenteuer-huelle-uhr-gegner" : ""}`}
-      data-laeuft={uhr.laeuft === farbe}
-      data-knapp={rest < KNAPP_MS}
-      data-testid={`uhr-${farbe}`}
-    >
-      <span>{name}</span>
-      <span className="abenteuer-huelle-zeit" role="timer">
-        {zeitAlsText(rest)}
-      </span>
-    </div>
-  );
 }
 
 /**
@@ -190,6 +164,30 @@ function Blaettern({
   );
 }
 
+/** Eigene Variantenpartie (EigeneVariantenpartie.tsx) mit Aufgeben; ohne Komponente ein Hinweis. */
+function EigenesSpielfeld(werte: {
+  s: Partiesteuerung;
+  partie: Partie;
+  gegner: string;
+  da: "komponente" | "fehlt";
+}) {
+  return (
+    <>
+      <Tischblase lage="oben" />
+      <Tischblase lage="unten" />
+      {werte.da === "komponente" ? (
+        <EigeneVariantenpartie partie={werte.partie} />
+      ) : (
+        <p className="fehlertext">{tSpiel("huelle.varianteFehlt")}</p>
+      )}
+      <div className="abenteuer-partie-seite">
+        <Spielfuss s={werte.s} gegner={werte.gegner} wertet />
+        <Testleiste id={werte.partie.id} />
+      </div>
+    </>
+  );
+}
+
 /** Brett, Uhren, Kartenleiste und Fuß einer geladenen Partie. */
 function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
   // Markierungen der Karten (Fingerzeig, Gefahrenradar) gelten nur für die Stellung, in der sie kamen.
@@ -216,17 +214,23 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
   const anzahl = partie.zuege.length;
   const gezeigt = partie.ende ? (stelle ?? anzahl) : anzahl;
   const fen = gezeigt === anzahl ? s.fen : (stellungen(partie)[gezeigt] ?? s.fen);
-  const stellung = useMemo(() => stellungAusFen(fen), [fen]);
-  const letzter = useMemo(() => {
-    if (gezeigt === 0) return null;
-    return zugFelder(stellungen(partie)[gezeigt - 1] ?? "", partie.zuege[gezeigt - 1]?.san ?? "");
-  }, [partie, gezeigt]);
   // Varianten (spiel/varianten/): Hügel, Ziellinie, Explosion im Atomschach, Schachzähler.
   const variante = partie.einstellung.abenteuer?.variante;
+  const stellung = useMemo(() => variantenstellung(fen, variante), [fen, variante]);
+  const letzter = useMemo(() => {
+    if (gezeigt === 0) return null;
+    const vorher = stellungen(partie)[gezeigt - 1] ?? "";
+    const san = partie.zuege[gezeigt - 1]?.san ?? "";
+    return zugFelder(vorher, san) ?? freierLetzterZug(variante, vorher, san);
+  }, [partie, gezeigt, variante]);
   const vorher = gezeigt > 0 ? (stellungen(partie)[gezeigt - 1] ?? null) : null;
   const variantenMarken = variantenmarken(variante, fen, vorher, letzter?.von ?? null);
   const zaehler = variantenzaehler(variante, fen);
+  const tasche = tascheAus(fen);
   if (!stellung.ok) return <p className="fehlertext">{stellung.fehler}</p>;
+  // Tandem, Ente, Nebel: Die Komponente der Variante spielt; nach dem Ende das Brett mit Ergebnis.
+  const eigen = partie.ende ? null : eigenerAblauf(partie);
+  if (eigen) return <EigenesSpielfeld s={s} partie={partie} gegner={gegner} da={eigen} />;
   // Steht die Wertung einer kurzen Form an, ist das Brett zu: kein Zug über die Abmachung hinaus.
   const wertet = kurz?.gesperrt ?? false;
   const amZug = leserAmZug(partie) && !partie.ende && !wertet;
@@ -255,6 +259,7 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
       {raten.zeile && (
         <BrettfreieZeile testid="abenteuer-zugerraten">{tSpiel(raten.zeile)}</BrettfreieZeile>
       )}
+      {tasche && <Taschenzeile tasche={tasche} eigene={eigene} gegner={gegner} />}
       {zaehler && (
         <BrettfreieZeile testid="abenteuer-variantenzaehler">
           {tSpiel(zaehler.text, zaehler.werte)}
@@ -325,6 +330,8 @@ export function PartieHuelle({ wert }: { readonly wert: string | null }) {
   const s = usePartie(wert ?? "");
   const partie = s.partie;
   const blind = partie?.einstellung.abenteuer?.variante === "blind";
+  // Regeln, die erst laden (Märchenfiguren über ffish): das Brett erst danach.
+  const bereit = useVariantenbereit(partie?.einstellung.abenteuer?.variante);
   // Brett und Pixelfiguren je Ort und Gegner (docs/spiel/30, Abschnitt 5); Blindschach ohne Stil.
   useAbenteuerBrettstil(partieBrettquelle(partie));
   return (
@@ -342,7 +349,14 @@ export function PartieHuelle({ wert }: { readonly wert: string | null }) {
             <Weiterknopf />
           </>
         )}
-        {partie && <Spielfeld s={s} partie={partie} />}
+        {partie && bereit === "laedt" && <p className="lade">{tSpiel("huelle.laedt")}</p>}
+        {partie && bereit === "fehler" && (
+          <>
+            <p className="fehlertext">{tSpiel("huelle.varianteFehlt")}</p>
+            <Weiterknopf />
+          </>
+        )}
+        {partie && bereit === "bereit" && <Spielfeld s={s} partie={partie} />}
       </Huelle>
     </TischblasenRahmen>
   );

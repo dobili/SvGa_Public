@@ -1,3 +1,24 @@
+Stand: 25.11.2026, spät abends (Haupt-Chat, Schach-Abenteuer): **Varianten, Ansprechen, Tiere, Porträts auf beta (5a2ec6ea, Gate n75 grün).**
+
+- Alle Schachvarianten spielbar: Fairy-Stockfish einkernig (WASM, selbst gebaut), Hülle und
+  Varianten-Tisch (mittel-3), Falke+Bison und Drache mit Kartenbildern (mittel-2), Nebel, Ente,
+  Tandem (mittel-4); Testpunkt N2715. Besprechung nur für klassische Partien.
+- Partiebesprechung: Auswertung im Hintergrund und Nachlauf, „Zeig es mir“, genauere Sätze,
+  Rückbezüge (mittel-1, N2709 bis N2712).
+- Hauptfiguren sprechen den Helden an (mittel-1, N2713, Werkzeuge ansprechziel, ansprechzeile).
+- Zeichentiefe neben festen Möbeln und Tiere mit Kollision und „Verscheuchen“ (mittel-3, N2714).
+- PixelLab: alle Sitzbilder, Dime, Gideon, London 1851, neutrale Statisten, Heldin Rennen Ost,
+  Schiffskoch mit eigener Leinwand 32 × 48 (nur er, Faktor 1).
+- Gemini: 13 Porträtblätter (Victoria, Dime, Hector neu, Marian Shaw, Ruben, Henrik, Imogen, Noor,
+  Mama Bear, Tess, Zoe, Imani, Benji), Fund Bauer e, Kartenbilder M1 bis M4 und K1 bis K8.
+- Kellner in London spricht als kellnerLondon (eigene Figur, Porträt beauftragt, B3c).
+- Mappe 18 für den Autor (scratchpad fuer_autor/18_Bildauftraege_offen_26-11.html, Vorlagen als
+  ZIP): 30 Gemini, 5 PixelLab offen (P5 Kaffeehaus, P6 Testteam).
+
+**Nächster Schritt:** Lieferung von mittel-2 (Belohnung Dokument 10, Varianten-Tabelle Kira und
+Sol) abnehmen; Testteam-Figuren P6 und Porträts B3b, B3c einbauen, sobald der Autor liefert;
+Antworten zu N2706 bis N2715. Nichts nach `main`.
+
 Stand: 25.11.2026, abends (Haupt-Chat, Schach-Abenteuer): **Kartenwahl, Geschlecht, Partiebesprechung, Schilder auf beta (b3c258ac).**
 
 - Kartenwahl: nur die Erklärung der zuletzt angetippten Karte, Fächer bleibt sichtbar (N2706).

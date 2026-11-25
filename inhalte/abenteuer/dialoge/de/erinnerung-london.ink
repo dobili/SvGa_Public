@@ -89,11 +89,11 @@ Männer mit Backenbärten über Brettern, und hinter ihnen Zuschauer, drei Reihe
 
 === kellner ===
 {londonSchlussGesehen:
-    Der kleine Herr ist ohne Hut hinaus. Den Kaffee hat er nicht bezahlt. #sprecher:kellner #stimmung:laechelt
+    Der kleine Herr ist ohne Hut hinaus. Den Kaffee hat er nicht bezahlt. #sprecher:kellnerLondon #stimmung:laechelt
     -> END
 }
 Ein Kellner mit weißer Schürze balanciert ein Tablett mit Tassen zwischen den Tischen. #sprecher:erzaehler
-{~Kaffee, junger Herr? Oder wollen Sie nur zusehen wie alle anderen?|Leise bitte, die Herren am Tisch in der Mitte spielen.|Der große Herr in der Mitte ist Lehrer, sagt man. Er spielt, als hätte er vor nichts Angst.} #sprecher:kellner #stimmung:laechelt
+{~Kaffee, junger Herr? Oder wollen Sie nur zusehen wie alle anderen?|Leise bitte, die Herren am Tisch in der Mitte spielen.|Der große Herr in der Mitte ist Lehrer, sagt man. Er spielt, als hätte er vor nichts Angst.} #sprecher:kellnerLondon #stimmung:laechelt
 -> END
 
 === zeitungsleser ===

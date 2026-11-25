@@ -552,6 +552,15 @@ Profil › Einstellungen › Fehler melden.
       Entenfeld), Falke und Bison bei Kira (Hochebene), Drache bei Sol am Drachenbrunnen (Summit
       City, abends). Besprechen kann Ambrose diese Partien nicht, nur die klassischen.
       **Antwort:** „N2715 ok“ oder Variante und was nicht stimmt.
+- [ ] N2716. **Lage im Dialog passt zur Karte (25.11.2026):** Nach dem Park Richtung Cedar Creek
+      gehen. Das Mädchen mit dem Stirnband (Nia) steht halb auf der Landstraße, in der oberen Spur;
+      unten kommt man an ihr vorbei, und ihr erster Satz „versperrt halb den Weg“ passt zum Bild.
+      Der Wanderer mit dem gelben Hut steht am Wegrand im Gras, nicht mehr mitten auf der Straße,
+      und der Text sagt „steht am Wegrand“. In Cedar Creek an der Haltestelle (Samstag) steht dein
+      Rivale mit dem Tablet in beiden Händen, und der Text sagt „steht“. Am Varianten-Tisch in
+      Crossroads gibt es jetzt auch Falke und Bison und den Drachen; nach Nebel, Ente und Tandem dort
+      kommt eine Rückmeldung.
+      **Antwort:** „N2716 ok“ oder was nicht passt.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

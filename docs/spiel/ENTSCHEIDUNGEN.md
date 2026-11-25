@@ -1436,6 +1436,7 @@ Browserprüfung der Sperren S16 und S17 mit echt gespielten kurzen Partien (Fabl
   „Verscheuchen“ vertreiben und weichen nach einer Sekunde Drängen aus; eingeklemmt lassen sie den
   Helden durch (oberwelt/tierweg.ts). Warum: Tiere saßen Figuren auf dem Schoß, und mit Kollision
   darf kein Tier einen Weg versperren.
+
 ### Schiffskoch mit hoher Leinwand 32 × 48 (Wunsch des Autors, 25.11.2026)
 
 - Warum: Der Autor hat den Schiffskoch in PixelLab neu auf 32 × 48 erzeugt, weil die Mütze auf
@@ -1451,3 +1452,13 @@ Browserprüfung der Sperren S16 und S17 mit echt gespielten kurzen Partien (Fabl
   mit Grund) und darf mit Mütze höher sein als alle anderen.
 - Alles andere bleibt byte-gleich (Vergleich alter und neuer Bogenbau an sieben künstlichen
   Exporten: Erwachsene, Kind 24, Sitzen, Rennen, Zustände, weitere Standbilder).
+
+### Lage- und Handlungsangaben im Dialog (Befund des Autors, 25.11.2026, umgesetzt, Widerspruch genügt)
+
+- Lage- und Handlungsangaben im Dialog (versperrt den Weg, an der Tür, hinter dem Tresen, sitzt,
+  unter dem Arm) prüft pipeline/abenteuer/lageangabe.py gegen Karte und Tagesablauf der
+  anwesenden Figur. Behoben wird über die Karte, wenn die Szene davon lebt (Nia halb auf der
+  Landstraße, der Weg bleibt frei), sonst über den Text; sonst steht der Fall mit Grund in
+  lageangabe_geprueft.py (Bildwünsche, Sitzplätze; Obergrenze, die nur sinkt).
+- Belohnung für Kira und Sol nach Dokument 10 (Münzen, Funde, keine Nadeln); Falke und Bison und
+  Drache auch am Varianten-Tisch in Crossroads.

@@ -16,7 +16,7 @@ import { setzeSitzend } from "./figurensitz";
 import { erzeugeSchwimmanimationen, schwimmname } from "./schwimmbilder";
 import { sitzlageAuf, sitzsperre, type Sitzlage, type Sitzmoebel } from "./sitzplatz";
 import { legeSitzausschnitt } from "./vordergrund";
-import { Tierweg } from "./tierweg";
+import { sperreAus, Tierweg } from "./tierweg";
 import Phaser from "phaser";
 import { passtZurStunde, statistenbild, type Belebung, type Feld } from "./belebung";
 import {
@@ -387,7 +387,7 @@ export class Belebungsschicht {
     if (!sperre || !(koerper instanceof Phaser.Physics.Arcade.StaticBody)) return;
     const x = Math.round(d.b.x);
     const y = Math.round(d.b.y);
-    const an = sperreAn(held, x, y, d.flaeche) && !d.b.durchlass; // eingeklemmt: durch
+    const an = sperreAn(held, x, y, d.flaeche) && !sperreAus(d.v, d.b); // eingeklemmt, im Flug
     const mx = x * this.kachel + this.kachel / 2;
     const my = y * this.kachel + this.kachel / 2;
     if (an && (sperre.x !== mx || sperre.y !== my || !koerper.enable)) {

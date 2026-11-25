@@ -316,13 +316,15 @@ export function steht(b: Bewegung): boolean {
 /**
  * Hält dieser Statist oder dieses Tier den Helden auf (Wunsch des Autors, 10.11.2026: Der Held
  * soll nicht durch Figuren und Tiere laufen)? Statisten immer, Tiere am Boden auch. Ausnahmen:
- * fliegende Tiere (über Kopfhöhe) und schwimmende (im Wasser, dort läuft niemand).
+ * schwimmende Tiere (im Wasser, dort läuft niemand); Vögel nur im Flug (über Kopfhöhe).
  */
 export function haeltAuf(v: Belebung): boolean {
   if (v.typ === "statist") return true;
   // Folgende Tiere (Hund) seit 25.11.2026 auch: Sie weichen nach einer Sekunde Drängen aus oder
   // lassen sich verscheuchen (tierweg.ts) und sperren den Helden so nie in einer Sackgasse ein.
-  return !["fliegen", "schwimmen"].includes(v.verhalten);
+  // Vögel seit dem 25.11.2026 abends auch: im Sitzen wie Tiere am Boden, im Flug ist ihre Sperre
+  // aus (tierweg.ts, sperreAus).
+  return v.verhalten !== "schwimmen";
 }
 
 /** Kante des Heldenkörpers in Kacheln: 12 von 16 Pixeln (szene.ts, figurbilder.ts). */

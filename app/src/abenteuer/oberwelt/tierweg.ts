@@ -45,6 +45,47 @@ export function amBoden(v: Pick<Belebung, "typ" | "verhalten">): boolean {
   return v.typ === "tier" && v.verhalten !== "fliegen" && v.verhalten !== "schwimmen";
 }
 
+/**
+ * Steht dieses Tier gerade am Boden? Tiere am Boden immer; Vögel (Verhalten „fliegen“: Tauben,
+ * Spatzen), solange sie sitzen oder picken. Nur im Flug dürfen sie über Figuren hinweg (Befund des
+ * Autors, 25.11.2026 abends: eine Taube stand genau auf Juno an der Bushaltestelle).
+ */
+export function amBodenJetzt(v: Pick<Belebung, "typ" | "verhalten">, b: Pick<Bewegung, "ziel">) {
+  return amBoden(v) || (v.typ === "tier" && v.verhalten === "fliegen" && b.ziel === null);
+}
+
+/** Ist die Sperre des Tiers gegen den Helden gerade aus (eingeklemmt oder im Flug)? */
+export function sperreAus(v: Pick<Belebung, "verhalten">, b: Pick<Bewegung, "ziel" | "durchlass">) {
+  return Boolean(b.durchlass) || (v.verhalten === "fliegen" && b.ziel !== null);
+}
+
+/** Bis so weit sucht ein Tier ein freies Feld, wenn sein Ziel auf einem Menschen oder Sitz liegt. */
+const AUSWEICHRADIUS = 2;
+
+/**
+ * Das nächste Feld um `feld` ohne Menschen, Sitz oder Helden (Ring für Ring bis AUSWEICHRADIUS);
+ * Tiere am Boden nur auf freie Felder, Vögel auch auf Dach oder Mauer. Keins → null.
+ * Beispiel: Ziel der Tauben (54, 24) ist Junos Feld → (53, 24) oder ein anderes Nachbarfeld.
+ */
+export function landeplatz(
+  feld: Feld,
+  fliegt: boolean,
+  mensch: (x: number, y: number) => boolean,
+  frei: (x: number, y: number) => boolean,
+): Feld | null {
+  for (let r = 1; r <= AUSWEICHRADIUS; r++) {
+    for (let dy = -r; dy <= r; dy++) {
+      for (let dx = -r; dx <= r; dx++) {
+        if (Math.max(Math.abs(dx), Math.abs(dy)) !== r) continue;
+        const x = feld.x + dx;
+        const y = feld.y + dy;
+        if (!mensch(x, y) && (fliegt || frei(x, y))) return { x, y };
+      }
+    }
+  }
+  return null;
+}
+
 function schluessel(f: Feld): string {
   return `${f.x},${f.y}`;
 }
@@ -133,7 +174,7 @@ export function tierVor<T extends { readonly v: Belebung; readonly b: Bewegung }
   const vor = { x: h.x + VOR[blick].x, y: h.y + VOR[blick].y };
   return (
     tiere.find((t) => {
-      if (!amBoden(t.v)) return false;
+      if (!amBodenJetzt(t.v, t.b)) return false;
       const f = { x: Math.round(t.b.x), y: Math.round(t.b.y) };
       return (f.x === vor.x && f.y === vor.y) || (f.x === h.x && f.y === h.y);
     }) ?? null
@@ -170,6 +211,8 @@ export class Tierweg<T extends { readonly v: Belebung; readonly b: Bewegung }> {
   private feste = new Set<string>();
   private draengen = 0;
   private letzte: Umgebung | null = null;
+  /** Felder mit Menschen, Sitzen und dem Helden aus dem letzten Bild (ohne Tiere). */
+  private menschen = new Set<string>();
 
   /** `darsteller`: die Statisten und Tiere der Szene (belebungsschicht.ts). */
   constructor(private readonly darsteller: () => readonly T[]) {}
@@ -180,13 +223,32 @@ export class Tierweg<T extends { readonly v: Belebung; readonly b: Bewegung }> {
 
   /** Belegte Felder für Tiere: Held, feste Felder, alle anderen Menschen und Tiere am Boden. */
   belegt(held: Feld): (x: number, y: number) => boolean {
-    const besetzt = new Set(this.feste);
-    besetzt.add(schluessel({ x: Math.round(held.x), y: Math.round(held.y) }));
+    const menschen = new Set(this.feste);
+    menschen.add(schluessel({ x: Math.round(held.x), y: Math.round(held.y) }));
+    const besetzt = new Set<string>();
     for (const d of this.darsteller()) {
-      if (d.v.typ === "statist" || amBoden(d.v))
-        besetzt.add(schluessel({ x: Math.round(d.b.x), y: Math.round(d.b.y) }));
+      const feld = schluessel({ x: Math.round(d.b.x), y: Math.round(d.b.y) });
+      if (d.v.typ === "statist") menschen.add(feld);
+      else if (amBodenJetzt(d.v, d.b)) besetzt.add(feld);
     }
-    return (x, y) => besetzt.has(`${x},${y}`);
+    this.menschen = menschen;
+    return (x, y) => menschen.has(`${x},${y}`) || besetzt.has(`${x},${y}`);
+  }
+
+  /**
+   * Tiere, die auf einem Feld mit Mensch, Sitz oder Held stehen oder dorthin wollen, suchen sich das
+   * nächste freie Feld (landeplatz). So landet keine Taube auf Juno und keine Schar auf der Bank.
+   * Schwimmer bleiben, wo sie sind (im Wasser steht kein Mensch).
+   */
+  private raeume(u: Umgebung): void {
+    const mensch = (x: number, y: number) => this.menschen.has(`${x},${y}`);
+    for (const d of this.darsteller()) {
+      if (d.v.typ !== "tier" || d.v.verhalten === "schwimmen") continue;
+      const ziel = d.b.ziel ?? { x: Math.round(d.b.x), y: Math.round(d.b.y) };
+      if (!mensch(ziel.x, ziel.y)) continue;
+      const platz = landeplatz(ziel, d.v.verhalten === "fliegen", mensch, u.frei);
+      if (platz) d.b.ziel = platz;
+    }
   }
 
   /**
@@ -195,6 +257,7 @@ export class Tierweg<T extends { readonly v: Belebung; readonly b: Bewegung }> {
    */
   nachBild(u: Umgebung, dt: number): void {
     this.letzte = u;
+    this.raeume(u);
     const tier = this.tierVorHeld();
     if (!tier || u.heldGeht !== true || tier.b.verscheucht) {
       this.draengen = 0;

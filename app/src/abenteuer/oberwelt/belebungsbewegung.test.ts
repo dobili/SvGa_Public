@@ -125,11 +125,12 @@ describe("Hindernisse für den Helden", () => {
 
   // Folgende Tiere halten seit dem 25.11.2026 auch auf: Sie weichen nach einer Sekunde Drängen aus
   // oder lassen sich verscheuchen (tierweg.ts), sperren also nie ein.
-  it("Statisten und Tiere am Boden halten auf (auch folgende), fliegende und schwimmende nicht", () => {
+  // Vögel seit dem 25.11.2026 abends auch (im Flug ist ihre Sperre aus, tierweg.ts, sperreAus).
+  it("Statisten, Tiere am Boden, folgende und Vögel halten auf, schwimmende nicht", () => {
     expect(haeltAuf(eintrag("statist"))).toBe(true);
     expect(haeltAuf(eintrag("tier", "sitzen"))).toBe(true);
     expect(haeltAuf(eintrag("tier", "ausweichen"))).toBe(true);
-    expect(haeltAuf(eintrag("tier", "fliegen"))).toBe(false);
+    expect(haeltAuf(eintrag("tier", "fliegen"))).toBe(true);
     expect(haeltAuf(eintrag("tier", "schwimmen"))).toBe(false);
     expect(haeltAuf(eintrag("tier", "folgen"))).toBe(true);
   });

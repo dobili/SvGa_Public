@@ -346,6 +346,22 @@ function gedrohtesMatt(pos: Chess, farbe: Color): Mattbild | null {
 }
 
 /**
+ * Gehört der eigene Zug am Index `i` noch zur Kombination? Nur, wenn der eigene Zug davor Schach
+ * gab oder die Antwort des Gegners schlug (Zurückschlagen, Annahme eines Opfers). Antwortet der
+ * Gegner frei mit einem ruhigen Zug, ist die Kombination vorbei, und ein späterer Doppelangriff
+ * ist ein neuer Gedanke, kein Motiv der Folge.
+ * Regel: Kapitel 7, Schritt 2 (erzwingende Züge: Schachs, Schläge, Drohungen).
+ * Beispiel: Abb. 7.14 „Th8+ Kxh8 Sxf7+“: Th8+ gibt Schach → die Gabel Sxf7+ zählt. Messlauf der
+ * Besprechung (26.11.2026): „Txg3 a4 Tg4“: Txg3 schlägt die Dame, a4 ist frei → der spätere
+ * Doppelangriff Tg4 auf zwei Bauern zählt nicht (vorher meldete die App eine Gabel).
+ */
+function erzwungen(folge: readonly Halbzug[], i: number): boolean {
+  const eigener = folge[i - 2];
+  const antwort = folge[i - 1];
+  return !!eigener && !!antwort && (eigener.nachher.isCheck() || antwort.geschlagen !== null);
+}
+
+/**
  * Erkennt die Motive einer Lösungszugfolge.
  *
  * Eingaben: Regeln der Ausgangsstellung, Züge (SAN englisch, eigene und gegnerische im Wechsel).
@@ -367,10 +383,11 @@ export function erkenneMotive(regeln: Chess, zuege: readonly string[]): Motivbef
     ...rettungsmotive(folge),
     ...einzugmotive(schluessel, ziele),
   ]);
-  // Spätere eigene Züge: Opfer und Motive der zweiten Welle (Abb. 7.58: Dxh7+ erst im zweiten Zug).
+  // Spätere eigene Züge: Opfer und Motive der zweiten Welle (Abb. 7.58: Dxh7+ erst im zweiten Zug),
+  // aber nur, solange die Folge erzwungen ist (erzwungen, oben).
   for (let i = 2; i < folge.length; i += 2) {
     const h = folge[i];
-    if (!h) break;
+    if (!h || !erzwungen(folge, i)) break;
     const spaeter = [
       ...folgemotive(folge.slice(i)),
       ...einzugmotive(h, zieleVon(h.nachher, h.zug.to, h.figur)),

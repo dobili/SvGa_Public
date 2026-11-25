@@ -297,15 +297,27 @@ Umsetzung in Teilen (je eigener Patch):
 - Aufwand: C1 eine Sitzung, C2 eine halbe, C3 eine halbe bis eine, C4 eine halbe; zusammen etwa
   drei Sitzungen.
 
+## 12. Nacharbeit (26.11.2026)
+
+- Motiverkennung (`schach/taktikmotive.ts`, `erkenneMotive`, wirkt in der ganzen App): Spätere
+  eigene Züge einer Folge zählen nur noch, solange die Folge erzwungen ist (der eigene Zug davor gab
+  Schach oder die Antwort schlug). Vorher meldete der Messlauf eine Gabel bei „Txg3 a4 Tg4“: Txg3
+  nimmt die Dame, a4 ist frei, der Doppelangriff Tg4 auf zwei Bauern gehört nicht zur Folge.
+  Kombinationen wie Abb. 7.14 („Th8+ Kxh8 Sxf7+“) bleiben erkannt. Alle Tests der Werkzeuge,
+  Aufgaben und Kommentare grün.
+- Phase in Ambroses Lagesatz (`gesprochenePhase` in `anbindung/besprechungslage.ts`): „im Endspiel“
+  auch, wenn die App wenig Material fürs Endspiel zählt (je Seite höchstens 13 Figurenpunkte oder
+  höchstens sechs Figuren, `wenigMaterialFuerEndspiel`), etwa Dame und Turm gegen Turm. Die Phase der
+  App selbst bleibt (Empfehlung nach Regel 9 umgesetzt).
+- Sätze zum Fehler des Gegners (Stufe 2 und allein) ohne Konjunktiv: „Die Strafe dafür heißt …“,
+  „… ist die starke Antwort“, „Die Antwort: …“.
+- Englische Texte: `inhalte/abenteuer/texte/en.json` mit allen 356 Schlüsseln der Besprechung
+  (`besprechung.*`, `tagebuch.partieBesprechen`), Begriffe nach `docs/ENGLISCH_BEGRIFFE.md`,
+  Ambrose gehoben und altmodisch (ein altes Wort je Zeile: indeed, alas, good heavens), Platzhalter
+  wie auf Deutsch (`uebersetzung.test.ts` grün).
+
 ## Offen
 
 - Auswertung während der Partie (seit 26.11.2026, Abschnitt 5): Zugzeit des Bots auf echten
   knappen Handys messen (2 Kerne: Auswertung nur, solange der Spieler am Zug ist).
-- Englische Texte (`texte/en.json`) für die Besprechung.
-- Motiverkennung (`schach/taktikmotive.ts`, `erkenneMotive`): meldete im Messlauf eine Gabel bei
-  einem einfachen Damenschlag (verpasste Chance); trifft auch die Sätze zum Begriff „für“.
-- Phase „Mittelspiel“ bei Dame und Turm gegen Turm (Phasenregel der App, Kapitel 8): für Ambroses
-  Lagesatz prüfen, ob „im Endspiel“ hier besser passt.
-- Die Sätze zum Fehler des Gegners auf Stufe 2 (`besprechung.ambrose.2.gegnerfehler.*`) stehen im
-  Konjunktiv („hättest du es bestrafen können“), auch wenn der Held die Antwort gespielt hat.
 - Lesefassung und Gesamtsimulation kennen die Besprechung nicht (sie ist kein Questschritt).

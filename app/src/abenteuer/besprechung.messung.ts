@@ -174,6 +174,7 @@ describe("Messlauf Partiebesprechung", () => {
                 zug: eintrag.partie.zuege[m.moment.index]?.san ?? "",
                 beste: eintrag.beste[m.moment.index] ?? "",
                 folge: eintrag.varianten[m.moment.index + 1] ?? [],
+                folgeVor: eintrag.varianten[m.moment.index] ?? [],
                 wert: eintrag.werte[m.moment.index] ?? 0,
                 satz: m.satz,
               })),

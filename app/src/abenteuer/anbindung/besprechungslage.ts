@@ -12,11 +12,13 @@
  * Abhängigkeiten: engine/fehlerart.ts (lageVon), engine/opfer.ts, engine/zugprobe.ts,
  * spiel/zuege.ts, schach/phase.ts (Typ).
  */
+import type { Board } from "chessops/board";
 import type { Role } from "chessops/types";
 import { lageVon } from "../../engine/fehlerart";
 import { OPFER_ALT_VERLORENE, opferwert, verloreneNach } from "../../engine/opfer";
 import { probe } from "../../engine/zugprobe";
 import type { Phase } from "../../schach/phase";
+import { wenigMaterialFuerEndspiel } from "../../schach/phasengruende";
 import { sanZuUci } from "../../spiel/zuege";
 import type { Besprechungsmoment } from "../regeln/besprechungsmomente";
 import type { Motivgrundlage } from "./besprechungsmotiv";
@@ -63,7 +65,20 @@ export function lageVor(g: Motivgrundlage, moment: Besprechungsmoment): Lagebefu
   if (!lage || wert === undefined) return null;
   const sicht = lage.regeln.turn === "white" ? wert : -wert;
   const wort = lagewort(sicht);
-  return wort ? { lage: wort, phase: lage.phase } : null;
+  return wort ? { lage: wort, phase: gesprochenePhase(lage.phase, lage.regeln.board) } : null;
+}
+
+/**
+ * Die Phase, wie Ambrose sie nennt: die Phase der App, aber „Endspiel“, sobald wenig Material auf
+ * dem Brett steht (dieselbe Schwelle wie die App für eigene Partien: je Seite höchstens 13
+ * Figurenpunkte oder höchstens sechs Figuren). Warum: Die Lesart der App lässt eine Stellung mit
+ * Dame im Mittelspiel, solange die Fragen aus Kapitel 8 nicht überwiegend Ja ergeben (Dame und
+ * Turm gegen Turm); „im Mittelspiel“ klang dort im Messlauf (26.11.2026) falsch. Empfehlung nach
+ * Regel 9 umgesetzt, die Phase der App selbst bleibt unverändert.
+ * Beispiel: Dame und Läufer gegen Turm → „endspiel“; alle Figuren noch da → „mittelspiel“.
+ */
+export function gesprochenePhase(phase: Phase, brett: Board): Phase {
+  return phase === "mittelspiel" && wenigMaterialFuerEndspiel(brett) ? "endspiel" : phase;
 }
 
 /**

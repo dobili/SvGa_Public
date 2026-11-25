@@ -65,6 +65,18 @@
   ],
   "objekte": [
     {
+      "moebel": "ld18Kurbelwinde",
+      "feld": [25, 11]
+    },
+    {
+      "moebel": "ld18Kurbelwinde",
+      "feld": [54, 11]
+    },
+    {
+      "moebel": "ld18Steigleiter",
+      "feld": [44, 12]
+    },
+    {
       "moebel": "mf4BauernhausBreit",
       "feld": [14, 23],
       "id": "gasthaus"

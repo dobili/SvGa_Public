@@ -861,6 +861,8 @@
   "kt10KlapptischTablet": [0, 7, 32, 32],
   "kuehlschrank": [0, 7, 16, 43],
   "laterne": [1, 3, 15, 64],
+  "ld18Kurbelwinde": [5, 14, 27, 32],
+  "ld18Steigleiter": [0, 10, 16, 48],
   "ld10TafelKegelkoenig": [1, 2, 31, 30],
   "ld11Kanonenofen": [0, 8, 16, 48],
   "ld14HausBlau": [2, 12, 126, 160],

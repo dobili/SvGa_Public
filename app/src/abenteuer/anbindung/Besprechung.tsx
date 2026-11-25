@@ -10,6 +10,8 @@
  * die Partie noch nicht ausgewertet, rechnet die Auswertungs-Engine der App (useBesprechung.ts);
  * Ambrose „sieht sie sich an“. Fehlt Ambrose (Tiefpunkt, nach dem Abschied), spricht niemand mit
  * Porträt: Die Sätze stehen als Notizen da (regeln/besprechung.ts, besprechungsstimme).
+ * „Soll ich es dir zeigen?“ (26.11.2026): An Fehlern und Chancen spielt das Brett auf Wunsch den
+ * besseren Weg vor, danach „Zurück zur Partie“ (Zeigefolge.tsx, besprechungsfolge.ts).
  * Hoch steht die Blase über dem Brett, quer rechts in der Spalte (huellenlage.css, Blöcke
  * abenteuer-partie-brett und abenteuer-partie-seite wie in der Partie).
  * Abhängigkeiten: anbindung/useBesprechung.ts, Huelle.tsx, Brettbereich, Zugmarke, Klassenmarke,
@@ -36,7 +38,11 @@ import { tSpiel } from "../texte/texte";
 import { useAbenteuerstand } from "./dienste";
 import { Huelle } from "./Huelle";
 import { gegnerName } from "./huellentexte";
+import type { Zeigefolge } from "./besprechungsfolge";
+import { zeigsatz } from "./besprechungstexte";
 import { useBesprechung, type Besprechungsstand, type Besprochenermoment } from "./useBesprechung";
+import { gezeigteZuege, useAbspielen, zeigeansicht, type Zeigeansicht } from "./useAbspielen";
+import { Zeigeknopf, Zeigeleiste } from "./Zeigefolge";
 import { useZurWelt } from "./zurWelt";
 import "../besprechung.css";
 
@@ -192,16 +198,19 @@ function Besprechungsbrett(props: {
   readonly eintrag: Partieeintrag;
   readonly b: Besprechungsstand;
   readonly stelle: number;
+  /** Beim Zeigen einer Folge: deren Stellung statt der Partie. */
+  readonly zeigt: Zeigeansicht | null;
 }) {
-  const { eintrag, b, stelle } = props;
+  const { eintrag, b, stelle, zeigt } = props;
   const partie = eintrag.partie;
   const fens = useMemo(() => stellungen(partie), [partie]);
-  const fen = fens[stelle] ?? fens[0] ?? "";
+  const fen = zeigt?.fen ?? fens[stelle] ?? fens[0] ?? "";
   const stellung = useMemo(() => stellungAusFen(fen), [fen]);
   if (!stellung.ok) return <p className="fehlertext">{stellung.fehler}</p>;
   const vorher = fens[stelle - 1] ?? "";
-  const letzter = stelle > 0 ? zugFelder(vorher, partie.zuege[stelle - 1]?.san ?? "") : null;
-  const fertig = b.auswertung.art === "fertig";
+  const partiezug = stelle > 0 ? zugFelder(vorher, partie.zuege[stelle - 1]?.san ?? "") : null;
+  const letzter = zeigt ? zeigt.letzter : partiezug;
+  const fertig = b.auswertung.art === "fertig" && !zeigt;
   const klasse = fertig && stelle > 0 ? (b.klassen[stelle - 1] ?? null) : null;
   return (
     <div className="abenteuer-partie-brett">
@@ -220,25 +229,48 @@ function Besprechungsbrett(props: {
   );
 }
 
+/** Die Folge, die es an dieser Stelle zu zeigen gibt, oder null. */
+function folgeAn(b: Besprechungsstand, stelle: number): Zeigefolge | null {
+  return b.momente.find((m) => m.moment.index + 1 === stelle)?.folge ?? null;
+}
+
 /** Brett, Blase und Bedienung einer geladenen Partie. */
 function Inhalt({ eintrag }: { readonly eintrag: Partieeintrag }) {
   const b = useBesprechung(eintrag, useAbenteuerstand());
   const zurWelt = useZurWelt();
   const anzahl = eintrag.partie.zuege.length;
   const [stelle, setzeStelle] = useState(0);
+  const [zeigt, setzeZeigt] = useState<Zeigefolge | null>(null);
+  const gezeigt = useAbspielen(zeigt);
   const fertig = b.auswertung.art === "fertig";
+  const mitAmbrose = b.kontext.stimme === "ambrose";
+  const folge = fertig ? folgeAn(b, stelle) : null;
+  const text = zeigt
+    ? zeigsatz(b.kontext, gezeigteZuege(zeigt, gezeigt) || "…")
+    : satzAn(b, stelle, anzahl);
   return (
     <>
-      <Besprechungsbrett eintrag={eintrag} b={b} stelle={stelle} />
+      <Besprechungsbrett
+        eintrag={eintrag}
+        b={b}
+        stelle={stelle}
+        zeigt={zeigt ? zeigeansicht(zeigt, gezeigt) : null}
+      />
       <div className="abenteuer-partie-seite">
-        <Blase text={satzAn(b, stelle, anzahl)} mitAmbrose={b.kontext.stimme === "ambrose"} />
+        <Blase text={text} mitAmbrose={mitAmbrose} />
         {b.auswertung.art === "fehler" && (
           <p className="fehlertext">{tSpiel("besprechung.fehler")}</p>
         )}
-        {fertig && (
+        {zeigt && <Zeigeleiste folge={zeigt} gezeigt={gezeigt} zurueck={() => setzeZeigt(null)} />}
+        {!zeigt && folge && (
+          <Zeigeknopf folge={folge} mitAmbrose={mitAmbrose} zeige={() => setzeZeigt(folge)} />
+        )}
+        {fertig && !zeigt && (
           <Bedienung stelle={stelle} anzahl={anzahl} momente={b.momente} setze={setzeStelle} />
         )}
-        {fertig && <Momentreihe eintrag={eintrag} b={b} stelle={stelle} setze={setzeStelle} />}
+        {fertig && !zeigt && (
+          <Momentreihe eintrag={eintrag} b={b} stelle={stelle} setze={setzeStelle} />
+        )}
         <button
           type="button"
           className="knopf-haupt"

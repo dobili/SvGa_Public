@@ -2,7 +2,8 @@
  * Partiebesprechung mit Ambrose (Wunsch des Autors, 25.11.2026; docs/spiel/auftraege/
  * partiebesprechung_25-11.md): Im Tagebuch steht bei einer beendeten Partie „Besprechen“, sobald
  * Ambrose es angekündigt hat; die Besprechung zeigt seine Blase über dem Brett, die Marke am Feld
- * und springt zur nächsten wichtigen Stelle. Hoch und quer. Ohne Ankündigung fehlt der Knopf; im
+ * und springt zur nächsten wichtigen Stelle; auf Wunsch spielt sie den besseren Weg vor. Hoch und
+ * quer. Ohne Ankündigung fehlt der Knopf; im
  * Tiefpunkt bespricht der Held allein (Notiz ohne Porträt).
  * Die Partie liegt schon ausgewertet im Speicher (Werte, beste Züge), damit der Test nicht auf die
  * Engine wartet (mit BESPRECHUNG_FOTOS=ORDNER legt der Test Fotos ab): Schwarz (der Held) verliert durch das Schäfermatt, 3... Sf6?? ist der Patzer.
@@ -143,6 +144,15 @@ async function besprechungAblaufen(seite: Page): Promise<void> {
   await expect(seite.getByTestId("zugmarke-brett")).toHaveAttribute("data-klasse", "patzer");
   // Mit BESPRECHUNG_FOTOS=ORDNER ein Foto je Lage (nur lokal, nie ins Repository).
   const fotos = process.env.BESPRECHUNG_FOTOS;
+  // „Soll ich es dir zeigen?“ (26.11.2026): Ambrose bietet den besseren Weg an, das Brett spielt
+  // ihn vor (Stufe 1: nur 3... De7), danach zurück an dieselbe Stelle der Partie.
+  await expect(blase).toContainText(/zeigen|sehen/);
+  await seite.getByTestId("abenteuer-besprechung-zeigen").click();
+  await expect(seite.getByTestId("abenteuer-besprechung-zeigestand")).toHaveText("Zug 1 von 1");
+  await expect(blase).toContainText("De7");
+  if (fotos) await seite.screenshot({ path: `${fotos}/zeigen-${seite.viewportSize()?.width}.png` });
+  await seite.getByTestId("abenteuer-besprechung-zurueck-zur-partie").click();
+  await expect(stand).toHaveText("Halbzug 6 von 7");
   if (fotos)
     await seite.screenshot({ path: `${fotos}/besprechung-${seite.viewportSize()?.width}.png` });
   await expect(blase).not.toBeEmpty();

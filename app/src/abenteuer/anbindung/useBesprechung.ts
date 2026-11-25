@@ -31,7 +31,9 @@ import {
 import { besprechungsmomente, type Besprechungsmoment } from "../regeln/besprechungsmomente";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { momentangaben, momentpfeile, motivgrundlage } from "./besprechungsdaten";
+import { zeigefolge, type Zeigefolge } from "./besprechungsfolge";
 import {
+  angebotssatz,
   auftaktsatz,
   momentsaetze,
   rechnetsatz,
@@ -46,6 +48,8 @@ export interface Besprochenermoment {
   readonly moment: Besprechungsmoment;
   readonly satz: string;
   readonly pfeile: readonly Markierung[];
+  /** Die Folge, die die Besprechung auf Wunsch vorspielt („Soll ich es dir zeigen?“), oder null. */
+  readonly folge: Zeigefolge | null;
 }
 
 /** Was der Bildschirm zeigt. */
@@ -107,11 +111,16 @@ function besprocheneMomente(
   );
   const angaben = momente.map((m) => momentangaben(eintrag, g, m, theorie));
   const saetze = momentsaetze(k, angaben);
-  return angaben.map((a, i) => ({
-    moment: a.moment,
-    satz: saetze[i] ?? "",
-    pfeile: momentpfeile(eintrag, a),
-  }));
+  return angaben.map((a, i) => {
+    const folge = zeigefolge(eintrag, a.moment, k.stufe);
+    const angebot = folge ? angebotssatz(k, folge.besser, i) : "";
+    return {
+      moment: a.moment,
+      satz: [saetze[i] ?? "", angebot].filter((t) => t !== "").join(" "),
+      pfeile: momentpfeile(eintrag, a),
+      folge,
+    };
+  });
 }
 
 /**

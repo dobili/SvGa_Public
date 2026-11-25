@@ -12,8 +12,9 @@ Befunde, je Szene (jede Fassung für sich):
   ``typen`` noch unter ``ausweich``). Bilder eigener Figuren („otis“) sind immer recht.
 - Der Bauhelm (``BAUHELM``) steht bei jemandem, dessen Regel nicht ``bau`` ist.
 - Dasselbe Bild steht zweimal höchstens ``NAH`` Felder auseinander.
-- Auf einer Erinnerungskarte (Kennung beginnt mit „erinnerung“) steht ein Bild, das nicht zur Regel
-  ``historisch`` gehört.
+- Auf einer Erinnerungskarte (Kennung beginnt mit „erinnerung“) steht ein Bild, das zu keiner Regel
+  der Vergangenheit gehört (``ERINNERUNGSREGELN``: ``london`` für London 1851, seit 25.11.2026,
+  ``historisch`` für die übrigen).
 Dazu die Liste selbst: Jedes genannte Bild ist ein Typ, der Vorrat stimmt mit
 ``pixellabtabelle.statistentyp`` überein; mit ``--privat`` auch: Jeder Typ liegt im Paket, und
 ``sitzbild`` stimmt mit dem Ordner ``zustaende/sitzstuhl`` überein.
@@ -40,13 +41,17 @@ SZENEN = INHALTE / "szenen"
 BAUHELM = "statist.arbeiter"
 BAUREGEL = "bau"
 HISTORISCH = "historisch"
+# Regeln, deren Bilder auf Erinnerungskarten stehen dürfen (London 1851 hat seit der Lieferung vom
+# 25.11.2026 eigene Herren und Damen, Kartenblick B, K11).
+ERINNERUNGSREGELN = ("london", HISTORISCH)
 ERINNERUNG = "erinnerung"
 # (Szene, Statist) → Grund, warum dasselbe Bild in der Nähe stehen darf. Der Eintrag gilt für das
 # Paar, wenn einer der beiden genannt ist.
 _NUR_DREI_HISTORISCHE = (
-    "Im Paket gibt es nur drei historische Erwachsene (statist.hist, zeitungsleser, postreiter) und "
-    "den Zeitungsjungen; im Kaffeehaus stehen sieben Gäste in einem Raum. Weitere historische Typen "
-    "sind ein Bildauftrag (gesamt.md, M05 b, Welle 3)."
+    "Im Kaffeehaus sitzen vier Herren in einem Raum; mit Sitzbild gibt es für London 1851 nur den "
+    "Herrn mit Zylinder (statist.london-herr, Lieferung 25.11.2026), statist.hist und zeitungsleser "
+    "stehen. Sitzende bekommen lieber dasselbe Bild als ein stehendes auf dem Stuhl; Kieseritzky trägt "
+    "es von Hand, weil die Wahl an seinem Namen kein Geschlecht erkennt (sonst die Dame)."
 )
 _NUR_DREI_KINDER = (
     "Vier Kinder stehen als Schachfiguren in einer Reihe, das Paket hat drei Bilder für Kinder und "
@@ -54,10 +59,9 @@ _NUR_DREI_KINDER = (
     "Bildauftrag (Welle 3)."
 )
 GEPRUEFT: dict[tuple[str, str], str] = {
-    ("erinnerung-london-kaffeehaus", "gaeste"): _NUR_DREI_HISTORISCHE,
     ("erinnerung-london-kaffeehaus", "gastAmFenstertisch"): _NUR_DREI_HISTORISCHE,
+    ("erinnerung-london-kaffeehaus", "kieseritzky"): _NUR_DREI_HISTORISCHE,
     ("erinnerung-london-kaffeehaus", "zeitungsleserBank"): _NUR_DREI_HISTORISCHE,
-    ("erinnerung-london-kaffeehaus", "zuschauer"): _NUR_DREI_HISTORISCHE,
     ("weg-crossroads-pinewood-riesenbaeume", "weissesKind4"): _NUR_DREI_KINDER,
     ("weg-crossroads-pinewood-riesenbaeume", "schwarzesKind4"): _NUR_DREI_KINDER,
 }
@@ -137,12 +141,12 @@ def befunde_der_szene(name: str, szene: dict) -> list[str]:
     angaben = W.angaben_der_szene(szene)
     bilder = W.waehle(angaben)
     befunde = []
-    historisch = _bilder_der_regel(W.REGELN[HISTORISCH])
+    historisch = [b for r in ERINNERUNGSREGELN for b in _bilder_der_regel(W.REGELN[r])]
     for a, bild in zip(angaben, bilder, strict=True):
         befunde += _rollenbefunde(a, bild)
         kenn = W.kennbild(bild)
         if szene.get("karte", "").startswith(ERINNERUNG) and kenn in W.TYPEN and kenn not in historisch:
-            befunde.append(f"{a.name}: {kenn} auf einer Erinnerungskarte; rolle „{HISTORISCH}“ setzen")
+            befunde.append(f"{a.name}: {kenn} auf einer Erinnerungskarte; rolle „london“ oder „{HISTORISCH}“ setzen")
     return befunde + _nachbarbefunde(name, angaben, bilder)
 
 

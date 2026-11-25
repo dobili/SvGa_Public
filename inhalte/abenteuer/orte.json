@@ -2357,7 +2357,7 @@
         {
           "kennung": "erinnerungLondon.kellner",
           "name": "figur.kellner.name",
-          "sprite": "figuren/kellner.png",
+          "sprite": "figuren/kellner-london.png",
           "dialog": "erinnerung-london.kellner"
         },
         {
@@ -5208,7 +5208,7 @@
         {
           "kennung": "erinnerungSiedlung.gideon",
           "name": "figur.gideon.name",
-          "sprite": "figuren/postreiter.png",
+          "sprite": "figuren/gideon.png",
           "dialog": "erinnerung-siedlung.gideon"
         }
       ],

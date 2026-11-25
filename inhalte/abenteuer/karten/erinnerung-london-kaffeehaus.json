@@ -627,7 +627,7 @@
       {
        "name": "rolle",
        "type": "string",
-       "value": "historisch"
+       "value": "london"
       },
       {
        "name": "tun",
@@ -675,7 +675,12 @@
       {
        "name": "rolle",
        "type": "string",
-       "value": "historisch"
+       "value": "london"
+      },
+      {
+       "name": "bild",
+       "type": "string",
+       "value": "statist.london-herr"
       },
       {
        "name": "tun",
@@ -723,7 +728,7 @@
       {
        "name": "rolle",
        "type": "string",
-       "value": "historisch"
+       "value": "london"
       },
       {
        "name": "tun",
@@ -766,7 +771,7 @@
       {
        "name": "rolle",
        "type": "string",
-       "value": "historisch"
+       "value": "london"
       },
       {
        "name": "tun",
@@ -804,7 +809,7 @@
       {
        "name": "rolle",
        "type": "string",
-       "value": "historisch"
+       "value": "london"
       },
       {
        "name": "bild",
@@ -852,7 +857,7 @@
       {
        "name": "rolle",
        "type": "string",
-       "value": "historisch"
+       "value": "london"
       },
       {
        "name": "tun",
@@ -900,7 +905,7 @@
       {
        "name": "rolle",
        "type": "string",
-       "value": "historisch"
+       "value": "london"
       },
       {
        "name": "tun",

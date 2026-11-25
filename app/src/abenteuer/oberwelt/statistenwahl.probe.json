@@ -175,19 +175,19 @@
           "y": 8,
           "tun": "sitzt am mittleren Tisch und spielt Schach",
           "bild": null,
-          "rolle": "historisch",
+          "rolle": "london",
           "sitzt": true,
-          "erwartet": "postreiter"
+          "erwartet": "statist.london-dame"
         },
         {
           "name": "kieseritzky",
           "x": 7,
           "y": 8,
           "tun": "sitzt am mittleren Tisch und spielt Schach",
-          "bild": null,
-          "rolle": "historisch",
+          "bild": "statist.london-herr",
+          "rolle": "london",
           "sitzt": true,
-          "erwartet": "statist.hist"
+          "erwartet": "statist.london-herr"
         },
         {
           "name": "gaeste",
@@ -195,9 +195,9 @@
           "y": 10,
           "tun": "schauen zu",
           "bild": null,
-          "rolle": "historisch",
+          "rolle": "london",
           "sitzt": false,
-          "erwartet": "zeitungsjunge"
+          "erwartet": "statist.hist"
         },
         {
           "name": "zuschauer",
@@ -205,9 +205,9 @@
           "y": 7,
           "tun": "beugt sich über das Brett",
           "bild": null,
-          "rolle": "historisch",
+          "rolle": "london",
           "sitzt": false,
-          "erwartet": "zeitungsleser"
+          "erwartet": "zeitungsjunge"
         },
         {
           "name": "herrMitZylinder",
@@ -215,7 +215,7 @@
           "y": 8,
           "tun": "flüstert einen Zug",
           "bild": "zeitungsleser",
-          "rolle": "historisch",
+          "rolle": "london",
           "sitzt": false,
           "erwartet": "zeitungsleser"
         },
@@ -225,9 +225,9 @@
           "y": 4,
           "tun": "sitzt auf der Lederbank und liest Zeitung",
           "bild": null,
-          "rolle": "historisch",
+          "rolle": "london",
           "sitzt": true,
-          "erwartet": "statist.hist"
+          "erwartet": "statist.london-herr"
         },
         {
           "name": "gastAmFenstertisch",
@@ -235,9 +235,9 @@
           "y": 10,
           "tun": "sitzt am Ecktisch und grübelt über einer Stellung",
           "bild": null,
-          "rolle": "historisch",
+          "rolle": "london",
           "sitzt": true,
-          "erwartet": "statist.hist"
+          "erwartet": "statist.london-herr"
         }
       ]
     },
@@ -262,7 +262,7 @@
           "bild": null,
           "rolle": null,
           "sitzt": false,
-          "erwartet": "statist.jugend"
+          "erwartet": "mutter"
         },
         {
           "name": "taubenfuetterer",
@@ -362,7 +362,7 @@
           "bild": null,
           "rolle": null,
           "sitzt": false,
-          "erwartet": "statist.anzug"
+          "erwartet": "statist.rentner"
         },
         {
           "name": "marktstand1",
@@ -582,7 +582,7 @@
           "bild": null,
           "rolle": null,
           "sitzt": false,
-          "erwartet": "statist.kindA"
+          "erwartet": "statist.junge"
         },
         {
           "name": "hafenmeisterRuhestand",
@@ -642,7 +642,7 @@
           "bild": null,
           "rolle": null,
           "sitzt": false,
-          "erwartet": "statist.rentner"
+          "erwartet": "statist.mann"
         },
         {
           "name": "mannMitSchubkarre",
@@ -662,7 +662,7 @@
           "bild": null,
           "rolle": null,
           "sitzt": false,
-          "erwartet": "mutter"
+          "erwartet": "statist.mann"
         },
         {
           "name": "ruben",
@@ -812,7 +812,7 @@
           "bild": null,
           "rolle": null,
           "sitzt": false,
-          "erwartet": "statist.kindA"
+          "erwartet": "statist.maedchen"
         },
         {
           "name": "eichhoernchenjunge",
@@ -852,7 +852,7 @@
           "bild": null,
           "rolle": null,
           "sitzt": false,
-          "erwartet": "statist.kindB"
+          "erwartet": "statist.maedchen"
         },
         {
           "name": "weissesKind2",
@@ -862,7 +862,7 @@
           "bild": null,
           "rolle": null,
           "sitzt": false,
-          "erwartet": "statist.kindA"
+          "erwartet": "statist.junge"
         },
         {
           "name": "weissesKind3",
@@ -872,7 +872,7 @@
           "bild": null,
           "rolle": null,
           "sitzt": false,
-          "erwartet": "statist.jugend"
+          "erwartet": "statist.kindB"
         },
         {
           "name": "weissesKind4",
@@ -892,7 +892,7 @@
           "bild": null,
           "rolle": null,
           "sitzt": false,
-          "erwartet": "statist.kindA"
+          "erwartet": "statist.junge"
         },
         {
           "name": "schwarzesKind2",
@@ -902,7 +902,7 @@
           "bild": null,
           "rolle": null,
           "sitzt": false,
-          "erwartet": "statist.kindB"
+          "erwartet": "statist.maedchen"
         },
         {
           "name": "schwarzesKind3",
@@ -912,7 +912,7 @@
           "bild": null,
           "rolle": null,
           "sitzt": false,
-          "erwartet": "statist.jugend"
+          "erwartet": "statist.kindA"
         },
         {
           "name": "schwarzesKind4",
@@ -947,7 +947,7 @@
           "bild": null,
           "rolle": null,
           "sitzt": false,
-          "erwartet": "statist.jugend"
+          "erwartet": "statist.frau"
         },
         {
           "name": "vogelbeobachterin",
@@ -1017,7 +1017,7 @@
           "bild": null,
           "rolle": null,
           "sitzt": true,
-          "erwartet": "statist.rentner"
+          "erwartet": "statist.jugend"
         },
         {
           "name": "brueckenbauer5",
@@ -1027,7 +1027,7 @@
           "bild": null,
           "rolle": "unterwegs",
           "sitzt": true,
-          "erwartet": "statist.studentin"
+          "erwartet": "joggerin"
         },
         {
           "name": "brueckenbauer6",
@@ -1037,7 +1037,7 @@
           "bild": null,
           "rolle": "unterwegs",
           "sitzt": true,
-          "erwartet": "joggerin"
+          "erwartet": "statist.studentin"
         }
       ]
     }

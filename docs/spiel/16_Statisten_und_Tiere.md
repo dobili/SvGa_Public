@@ -149,7 +149,13 @@ verschieden); jeder fünfte Statist trug den Bauhelm, auch die Empfangsdame und 
   zweimal innerhalb von 6 Feldern, das Geschlecht des Namens passt (Endung `-in`, `frau…`,
   `…mann`), und wer sitzt, bekommt ein Bild mit Sitzbild.
 - **Bauhelm** (`statist.arbeiter`) nur in der Regel `bau`. **Erinnerungskarten:** jeder Statist
-  trägt `rolle: historisch`.
+  trägt eine Rolle der Vergangenheit: `rolle: london` in London 1851 (Herr mit Zylinder, Dame mit
+  Haube, dazu `statist.hist` und der Zeitungsleser), sonst `rolle: historisch`. Berufe in London
+  tragen ihr eigenes Bild über `bild`: `statist.london-laternenanzuender`, `-kutscher`,
+  `-blumenmaedchen`; der Kellner im Kaffeehaus ist `kellner-london` (Lieferung 25.11.2026,
+  Kartenblick B, K11).
+- **Alltag und Kinder** (Lieferung 25.11.2026, K12): `statist.mann` und `statist.frau` ergänzen
+  die Regel `alltag`, `statist.junge` und `statist.maedchen` die Regel `kind`.
 - **Für neue Statisten:** Namen so wählen, dass die Rolle darin steht (`kellnerin`, `anglerAmKai`).
   Für Personen mit Eigennamen `rolle` setzen. Kein `bild: statist-NN` mehr von Hand.
 - **Prüfungen:** `python -m pipeline.abenteuer.statistenrolle` (0 Befunde; `--alle` zeigt jede

@@ -1948,7 +1948,7 @@
       {
        "name": "rolle",
        "type": "string",
-       "value": "historisch"
+       "value": "london"
       },
       {
        "name": "tun",
@@ -2014,7 +2014,12 @@
       {
        "name": "rolle",
        "type": "string",
-       "value": "historisch"
+       "value": "london"
+      },
+      {
+       "name": "bild",
+       "type": "string",
+       "value": "statist.london-laternenanzuender"
       },
       {
        "name": "tun",
@@ -2052,7 +2057,12 @@
       {
        "name": "rolle",
        "type": "string",
-       "value": "historisch"
+       "value": "london"
+      },
+      {
+       "name": "bild",
+       "type": "string",
+       "value": "statist.london-blumenmaedchen"
       },
       {
        "name": "tun",
@@ -2095,7 +2105,12 @@
       {
        "name": "rolle",
        "type": "string",
-       "value": "historisch"
+       "value": "london"
+      },
+      {
+       "name": "bild",
+       "type": "string",
+       "value": "statist.hist"
       },
       {
        "name": "tun",
@@ -2133,7 +2148,12 @@
       {
        "name": "rolle",
        "type": "string",
-       "value": "historisch"
+       "value": "london"
+      },
+      {
+       "name": "bild",
+       "type": "string",
+       "value": "statist.london-kutscher"
       },
       {
        "name": "tun",

@@ -2,11 +2,11 @@
   "erklaerung": "Bild eines Statisten nach seiner Rolle statt nach dem Los (Kartenblick M05, 24.11.2026), gemeinsam für App (oberwelt/statistenwahl.ts) und Vorschau (pipeline/abenteuer/statistenwahl.py); beide rechnen gleich (Probe: statistenwahl.probe.json). typen: Bogen im Paket (figuren/<name>.png) mit sitzbild (hat zustaende/sitzstuhl) und geschlecht (w, m; fehlt es, passt das Bild zu beiden). vorrat: die 40 alten Bögen statist-01 … statist-40 und der Typ, dessen Kopie sie sind (pipeline/abenteuer/pixellabtabelle.py). regeln: der Reihe nach; die Eigenschaft rolle eines Statisten nennt eine Regel direkt, sonst gewinnt das längste Wort aus namen, das im kleingeschriebenen Namen steckt, sonst das längste aus tun im kleingeschriebenen tun, sonst gilt die Regel in sonst. typen einer Regel sind die passenden Bilder, ausweich die noch vertretbaren, wenn sonst dasselbe Bild daneben stünde. geschlecht: der Reihe nach Endungen und Anfänge des Namens bis zum ersten Großbuchstaben oder zur ersten Ziffer, der erste Treffer gilt (ist leer: kein Geschlecht, etwa Mehrzahl). Der Bauhelm (statist.arbeiter) steht nur in der Regel bau.",
   "typen": {
     "statist.anzug": {
-      "sitzbild": false,
+      "sitzbild": true,
       "geschlecht": "m"
     },
     "statist.arbeiter": {
-      "sitzbild": false
+      "sitzbild": true
     },
     "statist.bauer": {
       "sitzbild": false
@@ -19,12 +19,20 @@
       "sitzbild": false,
       "geschlecht": "m"
     },
+    "statist.frau": {
+      "sitzbild": true,
+      "geschlecht": "w"
+    },
     "statist.hist": {
       "sitzbild": false,
       "geschlecht": "m"
     },
     "statist.jugend": {
       "sitzbild": true
+    },
+    "statist.junge": {
+      "sitzbild": true,
+      "geschlecht": "m"
     },
     "statist.kindA": {
       "sitzbild": true,
@@ -37,6 +45,22 @@
     "statist.konzern": {
       "sitzbild": false,
       "geschlecht": "w"
+    },
+    "statist.london-dame": {
+      "sitzbild": true,
+      "geschlecht": "w"
+    },
+    "statist.london-herr": {
+      "sitzbild": true,
+      "geschlecht": "m"
+    },
+    "statist.maedchen": {
+      "sitzbild": true,
+      "geschlecht": "w"
+    },
+    "statist.mann": {
+      "sitzbild": true,
+      "geschlecht": "m"
     },
     "statist.musik": {
       "sitzbild": false
@@ -53,7 +77,7 @@
       "geschlecht": "w"
     },
     "statist.service": {
-      "sitzbild": false,
+      "sitzbild": true,
       "geschlecht": "w"
     },
     "statist.studentin": {
@@ -61,10 +85,10 @@
       "geschlecht": "w"
     },
     "statist.wanderer": {
-      "sitzbild": false
+      "sitzbild": true
     },
     "joggerin": {
-      "sitzbild": false,
+      "sitzbild": true,
       "geschlecht": "w"
     },
     "kapitaen": {
@@ -83,10 +107,10 @@
       "sitzbild": false
     },
     "schaffner": {
-      "sitzbild": false
+      "sitzbild": true
     },
     "schiffskoch": {
-      "sitzbild": false,
+      "sitzbild": true,
       "geschlecht": "m"
     },
     "wanderer": {
@@ -181,9 +205,17 @@
   "sonst": "alltag",
   "regeln": [
     {
+      "rolle": "london",
+      "zweck": "Erinnerung London 1851 (Kaffeehaus, Strand): Herren mit Zylinder, Damen mit Haube (Kartenblick B, K11). Nur über die Eigenschaft rolle, nie über Wörter. Berufe tragen ihr eigenes Bild über die Eigenschaft bild (statist.london-laternenanzuender, -kutscher, -blumenmaedchen; der Kellner als Figur kellner-london) und stehen darum nicht unter typen.",
+      "typen": ["statist.london-herr", "statist.london-dame", "statist.hist", "zeitungsleser"],
+      "ausweich": ["zeitungsjunge"],
+      "namen": [],
+      "tun": []
+    },
+    {
       "rolle": "historisch",
-      "zweck": "Erinnerungskarten (London 1851, Siedlung): nur über die Eigenschaft rolle, nie über Wörter.",
-      "typen": ["statist.hist", "zeitungsleser", "postreiter"],
+      "zweck": "Erinnerung Siedlung 1866 und weitere ohne eigene Regel: nur über die Eigenschaft rolle, nie über Wörter.",
+      "typen": ["statist.hist", "postreiter"],
       "ausweich": ["zeitungsjunge"],
       "namen": [],
       "tun": []
@@ -303,7 +335,7 @@
     {
       "rolle": "kind",
       "zweck": "Kinder im Grundschulalter.",
-      "typen": ["statist.kindA", "statist.kindB"],
+      "typen": ["statist.kindA", "statist.kindB", "statist.junge", "statist.maedchen"],
       "ausweich": ["statist.jugend"],
       "namen": [
         "kind",
@@ -497,7 +529,9 @@
         "mutter",
         "statist.jugend",
         "statist.rentnerin",
-        "statist.rentner"
+        "statist.rentner",
+        "statist.mann",
+        "statist.frau"
       ],
       "ausweich": ["statist.wanderer", "joggerin"],
       "namen": ["kinderwagen", "brueckenbauer", "picknickvater", "vater", "kiebitz"],

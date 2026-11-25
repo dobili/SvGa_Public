@@ -6,5 +6,7 @@
  */
 import "./standardvarianten";
 import "./maerchenfiguren";
+// Sonderformen Nebel, Ente, Tandem (mittel-4; Partiekomponenten in abenteuer/varianten).
+import "../../abenteuer/varianten/sonderformen";
 
 export { alleVarianten, varianteVon } from "./variante";

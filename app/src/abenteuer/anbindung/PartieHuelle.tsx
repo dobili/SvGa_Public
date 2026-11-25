@@ -63,6 +63,8 @@ import { useKurzsperre } from "./useKurzsperre";
 import { useVariantenbereit } from "./useVariantenbereit";
 import { Testleiste } from "./Testleiste";
 import type { Farbe } from "../../schach/stellung";
+// Meldet die eigenen Partien der Sonderformen Nebel, Ente und Tandem an (variantenpartien.ts).
+import "../varianten/Variantenpartien";
 
 /** Die andere Farbe. */
 function gegenfarbe(farbe: Farbe): Farbe {

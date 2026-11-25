@@ -2,16 +2,21 @@
 // Nebelschach). Karte „Bootssteg im Bayou“, erreichbar von Port Delacroix nach der Eröffnung des
 // Musikhauses.
 //
-// Luftbootführer Theron erklärt Nebelschach; die Variante braucht eine eigene Bot-Logik (Bibel,
-// Abschnitt 34) und wird deshalb hier nur erzählt. Einstiege wie in orte.json: theron,
+// Luftbootführer Theron erklärt Nebelschach und spielt es mit dir (Begegnung bayou.nebelschach,
+// Variante „nebel“, eigene Bot-Logik in app/src/abenteuer/varianten; Quest bayou.nebelschach, Fund
+// nebelhorn; Auftrag des Hauptchats 26.11.2026, vorher nur erzählt). Einstiege wie in orte.json: theron,
 // zurueck_delacroix, nebel; seit Runde 6 auch pepe, ereignis_hausboot, luftboot,
 // sperre_hochwasser, seite05 und finch_bauer_c (Dokument 15, 2.6: die Kiste im Hausboot).
-// ausgangBayouHausboot setzt die Hülle (R42), alle anderen Variablen diese Datei.
+// ausgangBayouHausboot und ausgangBayouNebelschach setzt die Hülle (R42), alle anderen Variablen
+// diese Datei.
 
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL gibFund(kennung)
 
 VAR theronGetroffen = false
+VAR varianteNebelschachGelernt = false
+VAR ausgangBayouNebelschach = ""
+VAR nebelhornGeschenkt = false
 VAR bayouNebelGesehen = false
 VAR pepeGetroffen = false
 VAR hausbootFormularGesehen = false
@@ -28,18 +33,66 @@ VAR finchFiguren = 0
 VAR abschiedGesehen = false
 
 === theron ===
-{theronGetroffen:
-    {~Im Nebel siehst du nur, wohin deine Figuren ziehen können. Der Rest ist Geduld.|Der Alligator dort heißt Bernard. Er spielt nicht mit.|Nächsten Sommer bringe ich dir das richtig bei. Mit Brett und Nebel.} #sprecher:theron #stimmung:laechelt
-    -> END
-}
+{theronGetroffen: -> theron_alltag}
 ~ theronGetroffen = true
 Am Bootssteg liegt ein flaches Luftboot mit einem riesigen Propeller. Ein Mann mit Sonnenbrille winkt. #sprecher:erzaehler
 Theron. Ich fahre Leute durch den Bayou. #sprecher:theron #stimmung:laechelt
 Morgens, wenn der Nebel liegt, spielen wir Nebelschach. #sprecher:theron #stimmung:laechelt
-Du siehst nur die Felder, die deine Figuren erreichen. Den Rest verschluckt der Nebel. #sprecher:theron #stimmung:neutral
+-> theron_regel ->
 {not abschiedGesehen:
     Wie im Leben: Man sieht nie das ganze Brett. Aber man zieht trotzdem. #sprecher:ambrose #stimmung:friedlich
+    Merk dir, wo seine Figuren zuletzt standen. Im Nebel spielt das Gedächtnis mit. #sprecher:ambrose #stimmung:nachdenklich
 }
+-> theron_angebot
+
+// Die Regel allein (als Tunnel), auch zum Nachfragen.
+=== theron_regel ===
+~ varianteNebelschachGelernt = true
+Du siehst nur die Felder, die deine Figuren erreichen. Den Rest verschluckt der Nebel. #sprecher:theron #stimmung:neutral
+Schach gibt es nicht, weil du den Angreifer oft gar nicht siehst. Wer den König schlägt, gewinnt. #sprecher:theron #stimmung:laechelt
+->->
+
+=== theron_angebot ===
+Der Nebel liegt noch. Eine Partie, bevor er sich hebt? #sprecher:theron #stimmung:laechelt
++ [„Spielen wir im Nebel.“]
+    ~ beginnePartie("bayou.nebelschach")
+    -> END
++ [„Erklär es mir noch einmal.“]
+    -> theron_regel ->
+    -> theron_angebot
++ [„Nicht jetzt.“]
+    Der Nebel kommt jeden Morgen wieder. Ich auch. #sprecher:theron #stimmung:laechelt
+    -> END
+
+=== theron_alltag ===
+{~Im Nebel siehst du nur, wohin deine Figuren ziehen können. Der Rest ist Geduld.|Der Alligator dort heißt Bernard. Er spielt nicht mit.|Wer im Nebel hetzt, fährt auf eine Sandbank.} #sprecher:theron #stimmung:laechelt
+-> theron_angebot
+
+// Rückmeldung nach der Partie (begegnungen.json `danach`; Wunsch des Autors, 19.11.2026).
+=== nebel_danach ===
+{ausgangBayouNebelschach:
+- "sieg":
+    Der Nebel hebt sich, und dein Zug steht da, wo ich ihn nicht gesehen habe. Gut gespielt. #sprecher:theron #stimmung:froh
+    -> nebelhorn
+- "remis":
+    Remis. Im Nebel ist das fast ein Sieg für beide. #sprecher:theron #stimmung:laechelt
+    -> nebelhorn
+- else:
+    Mein König stand die ganze Zeit hinter dem Schilf. Du hast ihn nie gesehen. #sprecher:theron #stimmung:lacht
+    Noch eine Partie? Der Nebel bleibt noch eine Weile. #sprecher:theron #stimmung:laechelt
+    + [„Noch einmal.“]
+        ~ beginnePartie("bayou.nebelschach")
+        -> END
+    + [„Nicht jetzt.“]
+        -> END
+}
+
+= nebelhorn
+{nebelhornGeschenkt: -> END}
+~ nebelhornGeschenkt = true
+Er reicht dir ein verbeultes Horn vom Luftboot. #sprecher:erzaehler
+Im Nebel ruft man, statt zu sehen. Dann antworten die anderen, und du weißt, wo sie sind. #sprecher:theron #stimmung:laechelt
+~ gibFund("nebelhorn")
 -> END
 
 === nebel ===

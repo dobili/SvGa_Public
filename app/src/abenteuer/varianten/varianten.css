@@ -1,0 +1,64 @@
+/*
+ * Sonderformen Nebel, Ente und Tandem (varianten/*.tsx): Zeile unter dem Brett, Tasche zum
+ * Einsetzen, Tandem mit zwei Brettern im Hoch- und Querformat.
+ * Warum: Auf dem Handy hoch und quer bedienbar (Auftrag des Hauptchats, 26.11.2026); im Querformat
+ * liegt das Partnerbrett rechts neben dem eigenen, im Hochformat klein darunter.
+ */
+.variante-zeile {
+  margin: 0.5rem 0 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+.variante-phase-ente .variante-zeile {
+  color: var(--gold, #b8860b);
+}
+
+.variante-tasche {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  margin-top: 0.4rem;
+  min-height: 2.75rem;
+}
+
+.variante-tasche .knopf {
+  min-height: 2.75rem;
+  padding: 0 0.8rem;
+}
+
+.variante-tasche .knopf.gewaehlt {
+  outline: 3px solid var(--gold, #b8860b);
+}
+
+.variante-tasche-gegner,
+.variante-tandem-b p {
+  margin: 0.2rem 0;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.variante-tandem {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.variante-tandem-b .brett {
+  max-width: 45%;
+}
+
+@media (orientation: landscape) {
+  .variante-tandem {
+    grid-template-columns: 3fr 2fr;
+    align-items: start;
+  }
+
+  .variante-tandem-b .brett {
+    max-width: 100%;
+  }
+
+  .variante-tandem > .variante-zeile {
+    grid-column: 1 / -1;
+  }
+}

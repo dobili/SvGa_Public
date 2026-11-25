@@ -4095,6 +4095,99 @@
         }
       ],
       "klein": true
+    },
+    {
+      "kennung": "bayou.nebelschach",
+      "titel": "quest.nebelschach.titel",
+      "typ": "begegnung",
+      "ort": "bayou",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "bayou.theron_angebot"
+      },
+      "schritte": [
+        {
+          "text": "quest.nebelschach.schritt1",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "bayou.nebelschach",
+            "ausgang": ["sieg", "remis"]
+          },
+          "ziel": {
+            "karte": "bayou.steg",
+            "objekt": "theron"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "wegSummitCrossroads.entenschach",
+      "titel": "quest.entenschach.titel",
+      "typ": "begegnung",
+      "ort": "wegSummitCrossroads",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "weg-summit-crossroads.ray_angebot"
+      },
+      "schritte": [
+        {
+          "text": "quest.entenschach.schritt1",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "wegSummitCrossroads.entenschach",
+            "ausgang": ["sieg", "remis"]
+          },
+          "ziel": {
+            "karte": "wegSummitCrossroads.praerie",
+            "objekt": "ray"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kennung": "pinewoodCamp.tandem",
+      "titel": "quest.tandem.titel",
+      "typ": "begegnung",
+      "ort": "pinewoodCamp",
+      "haupt": false,
+      "start": {
+        "art": "dialog",
+        "knoten": "pinewood-camp-aussen.tandem_angebot"
+      },
+      "schritte": [
+        {
+          "text": "quest.tandem.schritt1",
+          "ereignis": {
+            "art": "partie",
+            "begegnung": "pinewoodCamp.tandem",
+            "ausgang": ["sieg", "remis"]
+          },
+          "ziel": {
+            "karte": "pinewoodCamp.aussen",
+            "objekt": "lagerfeuer"
+          },
+          "wirkungen": [
+            {
+              "art": "muenzen",
+              "anzahl": 25
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -798,6 +798,24 @@
       "ort": "pinewoodCamp",
       "name": "fund.raeuberHolzfigur.name",
       "text": "fund.raeuberHolzfigur.text"
+    },
+    {
+      "kennung": "nebelhorn",
+      "ort": "bayou",
+      "name": "fund.nebelhorn.name",
+      "text": "fund.nebelhorn.text"
+    },
+    {
+      "kennung": "holzente",
+      "ort": "wegSummitCrossroads",
+      "name": "fund.holzente.name",
+      "text": "fund.holzente.text"
+    },
+    {
+      "kennung": "tandemliste",
+      "ort": "pinewoodCamp",
+      "name": "fund.tandemliste.name",
+      "text": "fund.tandemliste.text"
     }
   ]
 }

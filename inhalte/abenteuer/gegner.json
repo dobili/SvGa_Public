@@ -2054,6 +2054,46 @@
           "wert": "angreifer"
         }
       ]
+    },
+    {
+      "kennung": "bayou.theron",
+      "name": "figur.theron.name",
+      "rolle": "strasse",
+      "portraet": "portraets/theron.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -50
+      },
+      "stil": "verteidiger",
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "verteidiger"
+        }
+      ]
+    },
+    {
+      "kennung": "wegSummitCrossroads.rayCastillo",
+      "name": "figur.rayCastillo.name",
+      "rolle": "strasse",
+      "portraet": "portraets/ray-castillo.svg",
+      "staerke": {
+        "art": "aktuell",
+        "versatz": -50
+      },
+      "stil": "angreifer",
+      "eroeffnung": {
+        "art": "frei"
+      },
+      "steckbrief": [
+        {
+          "art": "stil",
+          "wert": "angreifer"
+        }
+      ]
     }
   ]
 }

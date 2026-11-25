@@ -199,9 +199,8 @@
       "id": "meisterei"
     },
     {
-      "moebel": "sb5Leuchtturm",
-      "feld": [54, 19],
-      "massstab": 1.1875
+      "moebel": "sb18LeuchtturmRotWeiss",
+      "feld": [55, 26]
     },
     {
       "moebel": "sb5Faehrhaus",

@@ -6,6 +6,7 @@ Rampen. Die Tests prüfen die Kachelwahl ohne Bilder; ohne den Schlüssel bleibt
 """
 
 from pipeline.abenteuer.klippe import (
+    CANYON_KLIPPE,
     GRAS_KLIPPE,
     REIHE_FUSS,
     REIHE_KANTE,
@@ -99,6 +100,16 @@ def test_roter_fels_nimmt_die_rote_klippe_nur_wenn_das_bild_da_ist(tmp_path):
     assert klippenbogen({"kante": "klippe"}, tmp_path) == "gelaende"
 
 
+def test_canyonwand_nimmt_den_eigenen_bogen_sonst_die_rote_klippe(tmp_path):
+    """Regel: Kartenblick Paket A, gezeichnete Canyonwand; fehlt das Bild, gilt der rote Fels."""
+    szene = {"kante": "klippe", "fels": "canyon"}
+    (tmp_path / ROTE_KLIPPE).parent.mkdir(parents=True)
+    (tmp_path / ROTE_KLIPPE).write_bytes(b"")
+    assert klippenbogen(szene, tmp_path) == "klippeRot"
+    (tmp_path / CANYON_KLIPPE).write_bytes(b"")
+    assert klippenbogen(szene, tmp_path) == "klippeCanyon"
+
+
 def test_deich_nimmt_den_grashang_nur_wenn_das_bild_da_ist(tmp_path):
     """Regel: Runde 9, Deich mit grünem Hang statt Felswand (Gutachten weg-silicon-delacroix)."""
     szene = {"kante": "klippe", "fels": "gras"}
@@ -152,7 +163,7 @@ def test_keine_flache_erdflaeche_in_den_klippenkarten():
     szenen = Path(__file__).resolve().parents[2] / "inhalte" / "abenteuer" / "szenen"
     for datei in sorted(szenen.glob("*.json")):
         szene = json.loads(datei.read_text(encoding="utf-8"))
-        if szene.get("kante") != "klippe" or szene.get("fels") == "rot" or not grasboden(szene):
+        if szene.get("kante") != "klippe" or szene.get("fels") in ("rot", "canyon") or not grasboden(szene):
             continue
         zeilen, gras = raster(szene), grasboden(szene)
         flach = [

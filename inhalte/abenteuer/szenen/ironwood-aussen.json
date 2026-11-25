@@ -1495,19 +1495,11 @@
     },
     {
       "name": "kantineTuer",
-      "feld": [65, 17]
-    },
-    {
-      "name": "kantineTuer",
       "feld": [66, 17]
     },
     {
       "name": "kantineTuer",
       "feld": [67, 17]
-    },
-    {
-      "name": "kantineTuer",
-      "feld": [68, 17]
     },
     {
       "name": "umkleideTuer",

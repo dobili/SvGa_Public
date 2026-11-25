@@ -8741,12 +8741,12 @@
     },
     {
      "id": 46,
-     "name": "sb5Leuchtturm",
+     "name": "sb18LeuchtturmRotWeiss",
      "type": "moebel",
-     "x": 864,
-     "y": 304,
-     "width": 133,
-     "height": 304,
+     "x": 880,
+     "y": 416,
+     "width": 96,
+     "height": 192,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -8759,16 +8759,6 @@
        "name": "kollision",
        "type": "bool",
        "value": true
-      },
-      {
-       "name": "massstab",
-       "type": "float",
-       "value": 1.1875
-      },
-      {
-       "name": "maske",
-       "type": "string",
-       "value": "........./#########/#########/#########/#########/#########/#########/#########/#########/#########/#########/#########/#########/#########/#########/#########/#########/#########/#########"
       }
      ]
     },

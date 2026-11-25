@@ -8,6 +8,10 @@
     "rahmen": [154, 217, 198, 250],
     "herkunft": "gemessen"
   },
+  "spiel/eigene/leuchtturm_silicon.png": {
+    "rahmen": [53, 158, 74, 186],
+    "herkunft": "gemessen"
+  },
   "spiel/eigene/villa_whitlock.png": {
     "rahmen": [31, 151, 49, 170],
     "herkunft": "von Hand"

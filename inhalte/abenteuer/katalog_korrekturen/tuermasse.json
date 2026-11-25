@@ -12,6 +12,14 @@
     "rahmen": [53, 158, 74, 186],
     "herkunft": "gemessen"
   },
+  "spiel/eigene/musikhaus_ruine.png": {
+    "rahmen": [89, 90, 116, 128],
+    "herkunft": "gemessen"
+  },
+  "spiel/eigene/musikhaus_neu.png": {
+    "rahmen": [88, 95, 120, 129],
+    "herkunft": "gemessen"
+  },
   "spiel/eigene/villa_whitlock.png": {
     "rahmen": [31, 151, 49, 170],
     "herkunft": "von Hand"

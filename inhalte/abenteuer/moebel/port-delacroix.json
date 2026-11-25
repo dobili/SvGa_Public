@@ -1134,6 +1134,30 @@
       "stil": "rustikal",
       "blick": "unten"
     },
+    "pd18MusikhausRuine": {
+      "quelle": "spiel/eigene/musikhaus_ruine.png",
+      "breite": 208,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "kaputt",
+      "stil": "rustikal",
+      "blick": "unten",
+      "tuer": [[6, 10], [7, 10]],
+      "beschreibung": "Musikhaus von Port Delacroix als Ruine vor dem Wiederaufbau (Gemini K6, 26.11.2026): Schindeldach mit Loch und Planen, vernagelte Fenster, schiefe Tür, Gras am Sockel; etwa 10 Kacheln breit, mittig auf 13"
+    },
+    "pd18MusikhausNeu": {
+      "quelle": "spiel/eigene/musikhaus_neu.png",
+      "breite": 208,
+      "hoehe": 160,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "neu",
+      "stil": "rustikal",
+      "blick": "unten",
+      "tuer": [[6, 10], [7, 10]],
+      "beschreibung": "Musikhaus von Port Delacroix nach dem Wiederaufbau (Gemini K6, 26.11.2026): dunkles Schindeldach, leere Schildtafel, Holzfront mit Veranda, Doppeltür mittig; Gegenstück zu pd18MusikhausRuine"
+    },
     "pd6MusikhausSolar": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Post_Apocalyptic_House_2_16x16.png",
       "breite": 208,

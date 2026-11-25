@@ -1371,6 +1371,8 @@
   "pd10WerkGrau": [1, 9, 159, 144],
   "pd10WerkGruen": [1, 9, 159, 144],
   "pd17Turnhalle": [0, 16, 208, 256],
+  "pd18MusikhausNeu": [27, 0, 181, 160],
+  "pd18MusikhausRuine": [26, 0, 182, 160],
   "pd6Absperrgitter": [0, 1, 15, 15],
   "pd6Ball": [4, 5, 12, 13],
   "pd6Basketballkorb": [2, 1, 30, 30],

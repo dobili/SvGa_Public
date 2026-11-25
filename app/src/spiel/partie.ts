@@ -20,7 +20,7 @@ import type { Phase } from "../schach/phase";
 import { partieendeDurchZeit, partieendeNach, type Partieende } from "./ergebnis";
 import { steineMoeglich } from "./umwandlung";
 import { neueUhr, type Uhreinstellung, type Uhrstand } from "./uhr";
-import { fenNach, regelstellung } from "./zuege";
+import { fenNach, regelstellung, regelstellungFuer } from "./zuege";
 
 /** Wert von `eroeffnung`, wenn die Engine irgendeiner Variante des Buches folgen soll. */
 export const EROEFFNUNG_BUCH = "buch";
@@ -203,7 +203,7 @@ export function neuePartie(
   id: string,
   begonnen: string,
 ): Partie | null {
-  if (!spielbar(einstellung.startFen)) return null;
+  if (!spielbar(einstellung.startFen, einstellung.abenteuer?.variante)) return null;
   const uhr = einstellung.uhr ? neueUhr(einstellung.uhr) : null;
   return { id, begonnen, einstellung, zuege: [], ruecknahmen: 0, uhr, ende: null };
 }
@@ -212,7 +212,10 @@ export function neuePartie(
  * Kann man aus dieser Stellung eine Partie beginnen (legal, mit Zügen, beide Könige, und nicht
  * mehr Figuren, als durch Umwandlung entstehen können; sonst verweigert Stockfish die Stellung)?
  */
-export function spielbar(fen: string): boolean {
+export function spielbar(fen: string, variante?: string): boolean {
+  // Varianten mit eigenen Regeln (Räuberschach ohne König, Königsrennen, nur Könige am Hügel):
+  // spielbar, solange die Stellung nach ihren Regeln gilt und noch nicht zu Ende ist.
+  if (variante && regelstellungFuer(fen, variante)?.rules !== "chess") return ladbar(fen, variante);
   const pos = ladbar(fen) ? regelstellung(fen) : null;
   return pos !== null && steineMoeglich(pos.board, "white") && steineMoeglich(pos.board, "black");
 }
@@ -221,8 +224,8 @@ export function spielbar(fen: string): boolean {
  * Lässt sich eine gespeicherte Partie mit dieser Startstellung laden? Wie spielbar, aber ohne
  * die Prüfung der Umwandlungen, damit ältere Partien eines Lesers nicht verloren gehen.
  */
-export function ladbar(fen: string): boolean {
-  const pos = regelstellung(fen);
+export function ladbar(fen: string, variante?: string): boolean {
+  const pos = variante ? regelstellungFuer(fen, variante) : regelstellung(fen);
   return pos !== null && !pos.isEnd();
 }
 

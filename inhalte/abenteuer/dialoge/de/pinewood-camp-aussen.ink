@@ -8,8 +8,8 @@
 // Einstiege wie in orte.json: ankunft_zu_fuss, ezra, hollis, dex, mae, lou, tamsin,
 // weg_crossroads, lagerfeuer, kiosk, weg_ghost.
 //
-// Varianten: Tandem und Räuberschach sind noch nicht gebaut (VARIANTE-FEHLT, Bericht); Ezra
-// erklärt die Regeln, am Lagerfeuer wird erzählt statt gespielt.
+// Varianten: Räuberschach ist spielbar (pinewoodCamp.raeuberschach gegen Ezra, seit 26.11.2026);
+// Tandem ist noch nicht gebaut (VARIANTE-FEHLT, Bericht). Am Lagerfeuer wird Kapitel 55 erzählt.
 // Variablen: ausgangPinewoodCampHollis setzt die Hülle (R42); die übrigen setzt diese Datei.
 // Der Marshmallow-Stock kommt über gibFund; Ink merkt ihn sich selbst (stockGefunden).
 
@@ -26,6 +26,8 @@ VAR lagerfeuerGesehen = false
 VAR stockGefunden = false
 VAR varianteRaeuberschachGelernt = false
 VAR varianteTandemGelernt = false
+VAR raeuberHolzfigurGegeben = false
+VAR ausgangPinewoodCampRaeuberschach = ""
 VAR hollisGetroffen = false
 VAR hollisKarteGegeben = false
 VAR ausgangPinewoodCampHollis = ""
@@ -100,10 +102,42 @@ Tandem! Zwei gegen zwei! #sprecher:ezra #stimmung:lacht
 Was dein Partner schlägt, kriegst du in die Hand und darfst es einsetzen! Wer redet, wird gekitzelt! #sprecher:ezra #stimmung:lacht
 Und Räuberschach: Wer alles verliert, gewinnt. Schlagen ist Pflicht. #sprecher:ezra #stimmung:laechelt
 Wer als Erster keine Figur mehr hat, ist Sieger. #sprecher:ezra #stimmung:laechelt
+-> ezra_angebot
+
+// Räuberschach wirklich spielen (Auftrag des Hauptchats, 26.11.2026); Tandem folgt (mittel-4).
+=== ezra_angebot ===
+Ich hab ein Brett im Rucksack. Räuberschach, jetzt gleich? #sprecher:ezra #stimmung:froh
++ [„Her damit.“]
+    ~ beginnePartie("pinewoodCamp.raeuberschach")
+    -> END
++ [„Heute Abend.“]
+    Ich halt dir einen Platz am Feuer frei. #sprecher:ezra #stimmung:lacht
+    -> END
+
+=== ezra_raeuberschach_danach ===
+{ausgangPinewoodCampRaeuberschach:
+- "sieg":
+    Alles weg und gewonnen! So muss das. #sprecher:ezra #stimmung:lacht
+    {not raeuberHolzfigurGegeben:
+        ~ raeuberHolzfigurGegeben = true
+        Er drückt dir einen Holzbauern aus der Lagerfeuerkiste in die Hand. Eine Seite ist schwarz. #sprecher:erzaehler
+        ~ gibFund("raeuberHolzfigur")
+    }
+    -> END
+- "remis":
+    Unentschieden im Räuberschach. Das gibt's selten. Ich schreib's ans Klemmbrett. #sprecher:ezra #stimmung:laechelt
+    -> ezra_angebot
+- else:
+    Du hast zu gut aufgepasst. Im Räuberschach ist das ein Fehler. #sprecher:ezra #stimmung:lacht
+    -> ezra_angebot
+}
 -> END
 
 === ezra_alltag ===
 {~Kanus nur mit Weste! Auch du, {held}!|Am Kiosk gibt's Limo und Marshmallows. Die Marshmallows sind für heute Abend.|Lou hat gestern im Räuberschach die Dame im ersten Zug verschenkt, absichtlich. Genial.} #sprecher:ezra #stimmung:laechelt
++ [„Eine Runde Räuberschach?“]
+    ~ beginnePartie("pinewoodCamp.raeuberschach")
+    -> END
 + [„Erklär mir die Regeln vom Lagerfeuer noch einmal.“]
     -> ezra_regeln
 + [„Bis nachher.“]
@@ -128,7 +162,8 @@ Wer als Erster keine Figur mehr hat, ist Sieger. #sprecher:ezra #stimmung:laeche
     ~ varianteRaeuberschachGelernt = true
     ~ varianteTandemGelernt = true
 }
-// VARIANTE-FEHLT: Tandem und Räuberschach. Bis sie gebaut sind, wird am Feuer erzählt statt gespielt.
+// Kapitel 55 wird erzählt (Lou gewinnt das Räuberschach). Selbst spielen geht bei Ezra
+// (ezra_angebot, seit 26.11.2026). VARIANTE-FEHLT: Tandem (mittel-4).
 Am Abend brennt das Feuer. Du sitzt neben Sam, gegenüber Dex und Mae, und Figuren fliegen über den Tisch. #sprecher:erzaehler #licht:nacht #musik:lagerfeuer #klang:tandem #uhr:abend
 {not ezraGetroffen:
     ~ ezraGetroffen = true

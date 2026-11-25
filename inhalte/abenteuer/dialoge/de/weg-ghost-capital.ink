@@ -57,6 +57,9 @@ VAR gefundenFinchBauerD = false
 VAR gefundenFinchDame = false
 VAR gefundenFinchBauerE = false
 VAR abeGetroffen = false
+VAR varianteKoenigDerHuegelGelernt = false
+VAR logbuchSeiteGegeben = false
+VAR ausgangWegGhostCapitalKoenigDerHuegel = ""
 // Abe stellt sich beim ersten Auftritt vor, wo immer der ist (Lektorat Akt 4, Frage 4).
 VAR abeVorgestellt = false
 VAR linseGefunden = false
@@ -69,9 +72,10 @@ VAR wegGhostCapitalTafelVersucht = false
 === abe ===
 {abeGetroffen:
     {~Bei Sturm suchen die Kapitäne das Licht. Bei dir ist es die Mitte.|Der Turm ist hundert Jahre alt, die Stufen auch. Ich zähle sie jeden Tag.|Viel Glück in der Arena. Bring den König in den Hafen.} #sprecher:abe #stimmung:laechelt
-    -> END
+    -> abe_angebot
 }
 ~ abeGetroffen = true
+~ varianteKoenigDerHuegelGelernt = true
 // Roman Kapitel 60: König der Hügel; Ambrose: „Wie wir alle.“ Es klingt nicht traurig.
 Vor dem Leuchtturm, weiß mit rotem Band, flickt {abeVorgestellt:Abe|ein Mann} ein Netz. #sprecher:erzaehler #musik:leuchtturm
 {not abeVorgestellt:
@@ -81,11 +85,38 @@ Vor dem Leuchtturm, weiß mit rotem Band, flickt {abeVorgestellt:Abe|ein Mann} e
 König der Hügel. Kennst du das? #sprecher:abe #stimmung:laechelt
 Wer seinen König zuerst in die Mitte bringt, auf eines von den vier Feldern, hat gewonnen. #sprecher:abe #stimmung:laechelt
 Die Kapitäne haben das hier gespielt, wenn sie auf besseres Wetter gewartet haben. Der König muss in den Hafen. #sprecher:abe #stimmung:laechelt
-* [Eine Partie spielen]
-- Dein König läuft los, sobald er kann. Das hast du inzwischen gelernt. #sprecher:erzaehler
 {not abschiedGesehen:
     Der König muss zum Leuchtturm. Wie wir alle. #sprecher:ambrose #stimmung:froh
     Es klingt nicht traurig. Du tust, als hättest du es nicht gehört. #sprecher:erzaehler
+}
+-> abe_angebot
+
+// König der Hügel wirklich spielen (Auftrag des Hauptchats, 26.11.2026; vorher nur erzählt).
+=== abe_angebot ===
++ [Eine Partie spielen]
+    Abe legt das Netz weg und stellt ein Brett auf die Kiste. #sprecher:erzaehler
+    ~ beginnePartie("wegGhostCapital.koenigDerHuegel")
+    -> END
++ [„Ein andermal.“]
+    Der Turm steht noch eine Weile. #sprecher:abe #stimmung:laechelt
+    -> END
+
+=== abe_koenigderhuegel_danach ===
+{ausgangWegGhostCapitalKoenigDerHuegel:
+- "sieg":
+    Im Hafen. Bei dem Wetter, Respekt. #sprecher:abe #stimmung:froh
+    {not logbuchSeiteGegeben:
+        ~ logbuchSeiteGegeben = true
+        Er reißt eine Seite aus seinem Logbuch und schreibt etwas darauf. „Heute kam der König in den Hafen.“ #sprecher:erzaehler
+        ~ gibFund("logbuchSeite")
+    }
+    -> END
+- "remis":
+    Keiner im Hafen. Dann wartet ihr beide auf besseres Wetter. #sprecher:abe #stimmung:laechelt
+    -> abe_angebot
+- else:
+    Mein König war zuerst in der Mitte. Deiner hat zu lange am Ufer gewartet. #sprecher:abe #stimmung:laechelt
+    -> abe_angebot
 }
 -> END
 

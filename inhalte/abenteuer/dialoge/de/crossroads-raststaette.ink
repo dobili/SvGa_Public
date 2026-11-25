@@ -9,7 +9,8 @@
 //
 // Varianten: Gebaut sind Blindschach (Begegnung wegCrossroadsPinewood.blindschach, gelernt
 // bei Greta an Weg 9) und Schach960 (Begegnung crossroads.schach960 gegen Ambrose, gelernt bei
-// Mabel im Musikhaus von Port Delacroix). Die übrigen nennt der Tisch mit „kommt bald“ (VARIANTE-FEHLT, Bericht).
+// Mabel im Musikhaus von Port Delacroix), seit 26.11.2026 die Regelvarianten (crossroads.dreischach,
+// .atomschach, .koenigDerHuegel, .koenigsrennen, .raeuberschach). Die übrigen sind Kulisse (VARIANTE-FEHLT).
 // Variablen: variante<Name>Gelernt setzen die Dialoge der Wege und von Summit City;
 // novaBitteGehoert, novaHilfeZugesagt und die übrigen setzt diese Datei. novaBitteGehoert und
 // novaHilfeZugesagt sind für die Dialoge der Capital Arena gedacht (Szene 103).
@@ -25,6 +26,8 @@ VAR novaHilfeZugesagt = false
 VAR postkarteGefunden = false
 VAR lieferungFuerDolores = false
 VAR gatterschluessel = false
+VAR varianteDreischachGelernt = false
+VAR varianteKoenigDerHuegelGelernt = false
 VAR varianteKoenigsrennenGelernt = false
 VAR varianteDracheGelernt = false
 VAR varianteAtomschachGelernt = false
@@ -52,6 +55,11 @@ VAR kaffeehausGesehen = false
 VAR tischPartie = ""
 VAR ausgangWegCrossroadsPinewoodBlindschach = ""
 VAR ausgangCrossroadsSchach960 = ""
+VAR ausgangCrossroadsDreischach = ""
+VAR ausgangCrossroadsAtomschach = ""
+VAR ausgangCrossroadsKoenigDerHuegel = ""
+VAR ausgangCrossroadsKoenigsrennen = ""
+VAR ausgangCrossroadsRaeuberschach = ""
 // Eingang der Raststätte (19.11.2026): beim ersten Betreten statt beim ersten Gespräch mit Darlene.
 VAR raststaetteBetreten = false
 
@@ -184,11 +192,17 @@ Ich glaub, ich geh hin. #sprecher:theo #stimmung:laechelt
 {tischPartie != "": -> tisch_nach_partie}
 An einem langen Tisch liegen Bretter in allen Größen, Kisten mit seltsamen Figuren, eine Holzente, ein Drache aus Glas. #sprecher:erzaehler
 Ein Schild: „Varianten-Tisch. Alles erlaubt, nur kein normales Schach.“ #sprecher:erzaehler
-{not (varianteKoenigsrennenGelernt or varianteDracheGelernt or varianteAtomschachGelernt or varianteEntenschachGelernt or varianteBlindschachGelernt or varianteRaeuberschachGelernt or varianteTandemGelernt or varianteFalkeUndBisonGelernt or varianteSchach960Gelernt):
+{not (varianteDreischachGelernt or varianteKoenigDerHuegelGelernt or varianteKoenigsrennenGelernt or varianteDracheGelernt or varianteAtomschachGelernt or varianteEntenschachGelernt or varianteBlindschachGelernt or varianteRaeuberschachGelernt or varianteTandemGelernt or varianteFalkeUndBisonGelernt or varianteSchach960Gelernt):
     Du kennst noch keine der Varianten. Unterwegs spielen die Leute sie, an jedem Weg eine andere. #sprecher:darlene #stimmung:neutral
     -> END
 }
 Was du schon kennst: #sprecher:erzaehler
+{varianteDreischachGelernt:
+    Drei-Schach, von Juniper am Canyon. Bei jedem Schach klopft jemand dreimal auf den Tisch. #sprecher:erzaehler
+}
+{varianteKoenigDerHuegelGelernt:
+    König der Hügel, von Abe am Leuchtturm. Ein König steht schon mitten auf dem Brett, wie im Hafen. #sprecher:erzaehler
+}
 {varianteKoenigsrennenGelernt:
     Königsrennen, von Earl am Diner. Zwei Fernfahrer jagen ihre Könige gerade um die Wette nach oben. #sprecher:erzaehler
 }
@@ -217,7 +231,8 @@ Was du schon kennst: #sprecher:erzaehler
     Schach960, von Mabel am Musikhaus. Jemand würfelt die Grundreihe aus und stöhnt. #sprecher:erzaehler
 }
 // Der Tisch ist Kulisse: Die Sätze zeigen, was dort gespielt wird, ohne ein Versprechen an den
-// Spieler („Kommt bald“). Spielbar sind bisher nur Blindschach und Schach960 bei ihren Figuren.
+// Spieler („Kommt bald“). Spielbar gegen Ambrose: Blindschach, Schach960 und seit 26.11.2026 die
+// Regelvarianten Drei-Schach, Atomschach, König der Hügel, Königsrennen und Räuberschach.
 // Nach dem Abschied (abschiedGesehen) spielt Ambrose nicht mehr mit: Beide Partien entfallen.
 // Schach960 bleibt bei Mabel im Musikhaus spielbar.
 + {varianteBlindschachGelernt and not abschiedGesehen} [Blindschach gegen Ambrose]
@@ -230,6 +245,31 @@ Was du schon kennst: #sprecher:erzaehler
     ~ tischPartie = "schach960"
     ~ beginnePartie("crossroads.schach960")
     -> END
++ {varianteDreischachGelernt and not abschiedGesehen} [Drei-Schach gegen Ambrose]
+    Dreimal Schach, und ich bin raus. Früher hätte ich das für einen Vorteil gehalten. #sprecher:ambrose #stimmung:lacht
+    ~ tischPartie = "dreischach"
+    ~ beginnePartie("crossroads.dreischach")
+    -> END
++ {varianteAtomschachGelernt and not abschiedGesehen} [Atomschach gegen Ambrose]
+    Wer schlägt, fliegt mit. Ich zähle vorher, versprochen. #sprecher:ambrose #stimmung:lacht
+    ~ tischPartie = "atomschach"
+    ~ beginnePartie("crossroads.atomschach")
+    -> END
++ {varianteKoenigDerHuegelGelernt and not abschiedGesehen} [König der Hügel gegen Ambrose]
+    Der König in die Mitte. Meiner kennt den Weg. #sprecher:ambrose #stimmung:lacht
+    ~ tischPartie = "koenigDerHuegel"
+    ~ beginnePartie("crossroads.koenigDerHuegel")
+    -> END
++ {varianteKoenigsrennenGelernt and not abschiedGesehen} [Königsrennen gegen Ambrose]
+    Ein Rennen? Mit meinen Beinen? Nun gut, die Figuren laufen. #sprecher:ambrose #stimmung:lacht
+    ~ tischPartie = "koenigsrennen"
+    ~ beginnePartie("crossroads.koenigsrennen")
+    -> END
++ {varianteRaeuberschachGelernt and not abschiedGesehen} [Räuberschach gegen Ambrose]
+    Alles verschenken. Darin war ich nie gut, {held}. Zeig es mir. #sprecher:ambrose #stimmung:lacht
+    ~ tischPartie = "raeuberschach"
+    ~ beginnePartie("crossroads.raeuberschach")
+    -> END
 + [Nur schauen]
     -> END
 
@@ -237,13 +277,28 @@ Was du schon kennst: #sprecher:erzaehler
 // gibt es nur vor dem Abschied; der Erzähler steht für den Fall dahinter.
 === tisch_nach_partie ===
 ~ temp blind = tischPartie == "blindschach"
+~ temp regelvariante = tischPartie != "blindschach" and tischPartie != "schach960"
 ~ temp ausgang = ausgangCrossroadsSchach960
-{blind:
-    ~ ausgang = ausgangWegCrossroadsPinewoodBlindschach
+{
+- blind: ~ ausgang = ausgangWegCrossroadsPinewoodBlindschach
+- tischPartie == "dreischach": ~ ausgang = ausgangCrossroadsDreischach
+- tischPartie == "atomschach": ~ ausgang = ausgangCrossroadsAtomschach
+- tischPartie == "koenigDerHuegel": ~ ausgang = ausgangCrossroadsKoenigDerHuegel
+- tischPartie == "koenigsrennen": ~ ausgang = ausgangCrossroadsKoenigsrennen
+- tischPartie == "raeuberschach": ~ ausgang = ausgangCrossroadsRaeuberschach
 }
 ~ tischPartie = ""
 {abschiedGesehen:
     Die Bretter auf dem Tisch stehen wieder still. #sprecher:erzaehler
+    -> END
+}
+{regelvariante:
+    {ausgang:
+    - "sieg": Nach ihren Regeln geschlagen. Ich lerne noch, und du bist schon weiter. #sprecher:ambrose #stimmung:froh
+    - "remis": Remis. Neue Regeln, alter Mann, junger Gegner. Das ist gerecht. #sprecher:ambrose #stimmung:laechelt
+    - else: Neue Regeln, alte Gewohnheiten. Du hast gespielt, als wäre es gewöhnliches Schach. #sprecher:ambrose #stimmung:nachdenklich
+    }
+    Der Tisch steht noch da, wenn du wieder magst. #sprecher:ambrose #stimmung:laechelt
     -> END
 }
 {ausgang:

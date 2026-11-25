@@ -12,6 +12,9 @@ EXTERNAL beginneAufgaben(runde)
 
 VAR wegPinewoodGhostTafelBestanden = false
 VAR juniperGetroffen = false
+VAR varianteDreischachGelernt = false
+VAR echoKarabinerGegeben = false
+VAR ausgangWegPinewoodGhostDreischach = ""
 // Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
 // (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
 VAR abschiedGesehen = false
@@ -26,9 +29,10 @@ VAR finchBauerEGezaehlt = false
 === juniper ===
 {juniperGetroffen:
     {~Drei Schachs, drei Echos. Dann ist die Partie vorbei.|Das Seil hält. Das Brett auch.|Hinter der Staubstraße liegt Ghost Town. Niemand wohnt da, fast niemand.} #sprecher:juniper #stimmung:laechelt
-    -> END
+    -> juniper_angebot
 }
 ~ juniperGetroffen = true
+~ varianteDreischachGelernt = true
 Am Canyonrand hängt eine Frau im Seil und winkt. Unten auf einem Felsvorsprung steht ein Brett. #sprecher:erzaehler
 Juniper. Wir Kletterer spielen hier Drei-Schach. #sprecher:juniper #stimmung:laechelt
 Wer dreimal Schach gibt, gewinnt. #sprecher:juniper #stimmung:laechelt
@@ -36,6 +40,35 @@ Bei jedem Schach rufen wir laut. Wenn das dritte Echo verklungen ist, ist Schlus
 Sie rufen sich die Züge zu und warten auf das Echo, bevor die Nächste zieht. Ein seltsames, schönes Spiel. #sprecher:erzaehler #geraeusch:canyonrand
 {not abschiedGesehen:
     Aber Ambrose ist still geworden. Er sieht nach Osten, wo die Staubstraße verschwindet. #sprecher:erzaehler
+}
+-> juniper_angebot
+
+// Drei-Schach wirklich spielen (Auftrag des Hauptchats, 26.11.2026; vorher erklärte Juniper nur).
+=== juniper_angebot ===
+Eine Partie? Das Brett steht unten am Vorsprung, das Echo ist umsonst. #sprecher:juniper #stimmung:laechelt
++ [„Spielen wir.“]
+    ~ beginnePartie("wegPinewoodGhost.dreischach")
+    -> END
++ [„Ein andermal.“]
+    Ich häng hier noch eine Weile. #sprecher:juniper #stimmung:lacht
+    -> END
+
+=== juniper_dreischach_danach ===
+{ausgangWegPinewoodGhostDreischach:
+- "sieg":
+    Drei Echos für dich! Das hört man bis Ghost Town. #sprecher:juniper #stimmung:froh
+    {not echoKarabinerGegeben:
+        ~ echoKarabinerGegeben = true
+        Hier, mein alter Karabiner. Drei Kerben, für jedes Echo eine. #sprecher:juniper #stimmung:froh
+        ~ gibFund("echoKarabiner")
+    }
+    -> END
+- "remis":
+    Kein drittes Echo, für keinen. Der Canyon ist enttäuscht. #sprecher:juniper #stimmung:laechelt
+    -> juniper_angebot
+- else:
+    Mein drittes Echo. Dein König stand zu offen, da hallt jedes Schach doppelt. #sprecher:juniper #stimmung:lacht
+    -> juniper_angebot
 }
 -> END
 

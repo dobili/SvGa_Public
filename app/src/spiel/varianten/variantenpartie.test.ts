@@ -5,7 +5,7 @@
 import { describe, expect, it } from "vitest";
 import { legaleZiele, spieleZug } from "../../schach/weiterspielen";
 import { vorlaeufigerZug, variantenstaerke } from "../../ui/komponenten/partie/variantenbotzug";
-import { leserzug, stellungen, ziehe, type Partie } from "../partie";
+import { leserzug, spielbar, stellungen, ziehe, type Partie } from "../partie";
 import { DREISCHACH_START, KOENIGSRENNEN_START } from "./standardvarianten";
 import { varianteVon } from "./variante";
 
@@ -85,6 +85,17 @@ describe("Variantenpartie im Kern", () => {
     const fen = "rnbqkbnr/p1pppppp/8/1p6/8/4P3/PPPP1PPP/RNBQKBNR w - - 0 2";
     expect(spieleZug(fen, "e3", "e4", undefined, "raeuberschach").art).toBe("ungueltig");
     expect(spieleZug(fen, "f1", "b5", undefined, "raeuberschach").art).toBe("gespielt");
+  });
+});
+
+describe("Startstellung nach den Regeln der Variante", () => {
+  it("Räuberschach ohne König und Hügel mit nur zwei Königen sind spielbar, gewöhnlich nicht", () => {
+    expect(spielbar("8/8/8/8/1k6/8/P7/8 w - - 0 1", "raeuberschach")).toBe(true);
+    expect(spielbar("8/8/8/8/1k6/8/P7/8 w - - 0 1")).toBe(false);
+    expect(spielbar("8/8/8/8/8/3K4/8/k7 w - - 0 1", "koenigDerHuegel")).toBe(true);
+    expect(spielbar("8/8/8/8/8/3K4/8/k7 w - - 0 1")).toBe(false);
+    // Schon zu Ende (König auf dem Hügel): nicht spielbar.
+    expect(spielbar("8/8/8/8/4K3/8/8/k7 b - - 0 1", "koenigDerHuegel")).toBe(false);
   });
 });
 

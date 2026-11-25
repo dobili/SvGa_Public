@@ -149,3 +149,23 @@ export function schlusssatz(
 export function rechnetsatz(k: Besprechungskontext): string {
   return new Ziehung(k.partiekennung).zeile(`${vorsilbe(k.stimme)}.rechnet`) ?? "";
 }
+
+/**
+ * Ambroses Angebot am Ende der Blase, wenn es eine Folge zu zeigen gibt (Abschnitt 10 des
+ * Entwurfs); ohne Ambrose kein Satz, dort steht nur der Knopf.
+ * Beispiel: Patzer mit besserem Weg → „Soll ich es dir zeigen?“; brillanter Zug → „Soll ich dir
+ * zeigen, wie es weitergeht?“. `nr` ist die Nummer des Moments (verschiedene Zeilen je Moment).
+ */
+export function angebotssatz(k: Besprechungskontext, besser: boolean, nr: number): string {
+  if (k.stimme !== "ambrose") return "";
+  const gruppe = besser ? "besprechung.ambrose.angebot" : "besprechung.ambrose.angebotWeiter";
+  const schluessel = zieheAus([gruppe], nr, k.partiekennung);
+  return schluessel ? tSpiel(schluessel) : "";
+}
+
+/** Der Satz, während die Folge läuft („Sieh her: g6 Df3.“); ohne Ambrose als Notiz. */
+export function zeigsatz(k: Besprechungskontext, folge: string): string {
+  const gruppe = k.stimme === "ambrose" ? "besprechung.ambrose.zeigt" : "besprechung.allein.zeigt";
+  const schluessel = zieheAus([gruppe], 0, k.partiekennung);
+  return schluessel ? tSpiel(schluessel, { folge }) : folge;
+}

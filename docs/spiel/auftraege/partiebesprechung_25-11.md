@@ -198,6 +198,12 @@ Umgesetzt:
   bindet ein; Texte `besprechung.zeigen*`. Tests: Vitest für Länge je Stufe und Abbruch, Playwright
   in `abenteuer-besprechung.spec.ts` (Knopf, Abspielen bis zum Ende, zurück).
 - Aufwand: etwa eine halbe Sitzung.
+- Umgesetzt (26.11.2026): `regeln/zeigefolge.ts`, `anbindung/besprechungsfolge.ts`,
+  `anbindung/useAbspielen.ts` (Takt, bei reduzierter Bewegung sofort die Schlussstellung),
+  `anbindung/Zeigefolge.tsx` (Knöpfe), Angebot in Ambroses Blase (`angebotssatz`), Texte
+  `besprechung.zeigen*`, `besprechung.zurueckZurPartie`, `besprechung.zeigeStand`,
+  `besprechung.ambrose.angebot*`, `besprechung.ambrose.zeigt`, `besprechung.allein.zeigt`. Tests:
+  Vitest (Länge je Stufe, Folge aus dem Eintrag), Playwright (Knopf, Abspielen, zurück).
 
 ## 11. Plan C: tiefere, persönlichere Sätze (regelbasiert, offline)
 

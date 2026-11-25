@@ -93,16 +93,22 @@ Aber er zieht trotzdem. #sprecher:kira #stimmung:laechelt
 === kira_alltag ===
 {~Mein Cousin sagt, Schach ist Falke und Bison für Leute ohne Fantasie. Ich sag, es ist Falke und Bison mit weniger Figuren.|Ich will Basketball-Trainerin werden oder Ingenieurin. Oder beides.|Wenn du wiederkommst, spielen wir richtig, mit Uhr. Ich hab eine.} #sprecher:kira #stimmung:laechelt
 + [„Spielen wir eine richtige Partie.“]
-    Mit Uhr? Ohne. Die Uhr ist für Leute, die es eilig haben. #sprecher:kira #stimmung:froh
-    Sie schiebt dir den Falken und den Bison hin. Deine kommen aufs Brett, wenn du sie einsetzt. #sprecher:erzaehler
-    ~ beginnePartie("hochebene.falkeUndBison")
-    -> END
+    -> kira_angebot
 + [„Erklär mir die Regeln noch einmal.“]
     Falke: Läufer oder Springer. Bison: Turm oder Springer. #sprecher:kira #stimmung:laechelt
     Einsetzen, wenn eine Figur von der Grundreihe zum ersten Mal zieht. Fertig. #sprecher:kira #stimmung:laechelt
     -> END
 + [„Bis bald, Kira.“]
     -> END
+
+// Angebot der Partie: Start der Nebenquest hochebene.falkeUndBisonPartie (25 Münzen bei Sieg
+// oder Remis; Dokument 10, Abschnitt 3a: Münzen, Funde, ein Extra; der Fund ist Kiras Falke, das
+// Extra die Partie am Varianten-Tisch in Crossroads).
+=== kira_angebot ===
+Mit Uhr? Ohne. Die Uhr ist für Leute, die es eilig haben. #sprecher:kira #stimmung:froh
+Sie schiebt dir den Falken und den Bison hin. Deine kommen aufs Brett, wenn du sie einsetzt. #sprecher:erzaehler
+~ beginnePartie("hochebene.falkeUndBison")
+-> END
 
 // Nach der Partie gegen Kira (Begegnung hochebene.falkeUndBison, „danach“).
 === kira_danach ===

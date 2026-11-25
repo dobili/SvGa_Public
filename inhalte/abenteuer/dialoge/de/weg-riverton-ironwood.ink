@@ -55,7 +55,7 @@ VAR wegRivertonIronwoodTafelVersucht = false
     -> END
 }
 ~ daleGetroffen = true
-Ein Mann lehnt am Zaun und kaut einen Halm. #sprecher:erzaehler
+Ein Mann steht am Gemüsebeet und kaut einen Halm. #sprecher:erzaehler
 Ein Bauer zieht nie zurück. #sprecher:dale #stimmung:nachdenklich
 Also überleg vorher. #sprecher:dale #stimmung:nachdenklich
 Keiner hat ihn gefragt. Er meint vermutlich auch sich selbst. #sprecher:erzaehler

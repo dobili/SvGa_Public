@@ -1735,7 +1735,8 @@
       },
       "kartenErlaubt": false,
       "zaehltFuerApp": false,
-      "variante": "nebel"
+      "variante": "nebel",
+      "danach": "crossroads-raststaette.tisch_nach_partie"
     },
     {
       "kennung": "crossroads.entenschach",
@@ -1749,7 +1750,38 @@
       },
       "kartenErlaubt": false,
       "zaehltFuerApp": false,
-      "variante": "ente"
+      "variante": "ente",
+      "danach": "crossroads-raststaette.tisch_nach_partie"
+    },
+    {
+      "kennung": "crossroads.falkeUndBison",
+      "gegner": "mapleFalls.ambrose",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false,
+      "variante": "falkeUndBison",
+      "danach": "crossroads-raststaette.tisch_nach_partie"
+    },
+    {
+      "kennung": "crossroads.drache",
+      "gegner": "mapleFalls.ambrose",
+      "farbe": "zufall",
+      "format": {
+        "art": "partie"
+      },
+      "startstellung": {
+        "art": "grundstellung"
+      },
+      "kartenErlaubt": false,
+      "zaehltFuerApp": false,
+      "variante": "drache",
+      "danach": "crossroads-raststaette.tisch_nach_partie"
     },
     {
       "kennung": "crossroads.tandem",
@@ -1763,7 +1795,8 @@
       },
       "kartenErlaubt": false,
       "zaehltFuerApp": false,
-      "variante": "tandem"
+      "variante": "tandem",
+      "danach": "crossroads-raststaette.tisch_nach_partie"
     },
     {
       "kennung": "bayou.nebelschach",

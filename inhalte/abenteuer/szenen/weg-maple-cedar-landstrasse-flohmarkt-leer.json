@@ -4816,11 +4816,11 @@
     },
     {
       "name": "wanderer",
-      "feld": [67, 16]
+      "feld": [67, 14]
     },
     {
       "name": "gegnerin",
-      "feld": [82, 14]
+      "feld": [82, 15]
     },
     {
       "name": "ada",

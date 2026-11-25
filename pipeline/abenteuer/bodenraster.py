@@ -103,10 +103,25 @@ def bodenfeld(
         # direkt unter einer Wand gezeichnet; auf der ganzen Fläche wiederholt wirkt sie gebändert
         # und verwaschen (Gutachten Runde 8, Punkt e: Dielen im Gasthaus, Fliesen im Diner).
         return art["unter_wand"]
+    if "textur" in art:
+        return texturfeld(art, x, y)
     if "varianten" in art:
         # Fest je Ort (kein echter Zufall), damit das Bild bei jedem Bau gleich bleibt.
         return art["varianten"][(x * 7349 + y * 1931 + x * y * 13) % len(art["varianten"])]
     return art["feld"]
+
+
+def texturfeld(art: dict, x: int, y: int) -> list[int]:
+    """Kachel eines nahtlosen Bodenbilds am Feld (x, y): Ort modulo Bildgröße.
+
+    Warum: Gemini liefert Böden als nahtloses Stück (Sand am See, Acker), in dem Rippeln und Furchen
+    über die Kachelgrenzen laufen. Zufällig gemischte Kacheln zerrissen sie; nach dem Ort gelegt
+    wird das Stück lückenlos wiederholt.
+    Eingaben: Bodenangabe mit ``feld`` (linke obere Kachel) und ``textur`` (Breite, Höhe in Kacheln).
+    Beispiel: feld [0, 0], textur [12, 12], Feld (13, 2) → [1, 2].
+    """
+    breite, hoehe = art["textur"]
+    return [art["feld"][0] + x % breite, art["feld"][1] + y % hoehe]
 
 
 def eckzusaetze(

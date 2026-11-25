@@ -20,6 +20,9 @@
     "sinter": "spiel/eigene/boden_sinter.png",
     "klippeRot": "spiel/eigene/klippe_rot.png",
     "klippeCanyon": "spiel/eigene/klippe_canyon.png",
+    "klippeBoeschung": "spiel/eigene/klippe_boeschung.png",
+    "sandSee": "spiel/eigene/sand_see.png",
+    "ackerGemini": "spiel/eigene/acker_gemini.png",
     "klippeGras": "spiel/eigene/klippe_gras.png",
     "klippeGrau": "spiel/eigene/klippe_grau.png",
     "moor": "spiel/eigene/wasser_moor.png",
@@ -204,6 +207,26 @@
         "kiesel": 0.12,
         "wolken": 0.03,
         "koernung": 5
+      }
+    },
+    "sandSee": {
+      "bogen": "sandSee",
+      "feld": [0, 0],
+      "textur": [12, 12],
+      "saum": "fransen",
+      "variation": {
+        "kiesel": 0.12,
+        "wolken": 0.03,
+        "koernung": 2
+      }
+    },
+    "acker": {
+      "bogen": "ackerGemini",
+      "feld": [0, 0],
+      "textur": [3, 3],
+      "saum": "weich",
+      "variation": {
+        "koernung": 1.5
       }
     },
     "wasser": {

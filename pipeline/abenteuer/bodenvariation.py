@@ -158,7 +158,11 @@ def _variiere_feld(teil: Image.Image, v: dict, r: random.Random, gully: bool) ->
 
 
 def innenkachel(art: dict, feld: list[int]) -> bool:
-    """Ob ``feld`` eine Innenkachel des Bodens ist (Grundkachel oder eine seiner Varianten)."""
+    """Ob ``feld`` eine Innenkachel des Bodens ist (Grundkachel, Variante oder Teil der Textur)."""
+    if "textur" in art:
+        (x0, y0), (breite, hoehe) = art["feld"], art["textur"]
+        if x0 <= feld[0] < x0 + breite and y0 <= feld[1] < y0 + hoehe:
+            return True
     return list(feld) == list(art["feld"]) or list(feld) in [list(k) for k in art.get("varianten", [])]
 
 

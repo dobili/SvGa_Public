@@ -114,6 +114,12 @@ def test_innenkachel_kennt_varianten():
     assert innenkachel(gras, [0, 0]) and innenkachel(gras, (1, 0)) and not innenkachel(gras, [9, 9])
 
 
+def test_innenkachel_kennt_jede_kachel_einer_textur():
+    """Regel: Kartenblick Paket A, Texturböden (Sand am See, Acker) bekommen auf jeder Kachel Variation."""
+    acker = {"feld": [0, 0], "textur": [3, 3]}
+    assert innenkachel(acker, [2, 2]) and innenkachel(acker, [0, 1]) and not innenkachel(acker, [3, 0])
+
+
 def test_standard_an_schaltet_alle_szenen_ein():
     assert aktiv({}, FLAECHIG) and not aktiv({"bodenvariation": False}, FLAECHIG)
 

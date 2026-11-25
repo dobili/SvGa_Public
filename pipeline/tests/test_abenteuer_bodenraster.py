@@ -154,3 +154,12 @@ def test_randfeld_vor_anderem_boden_bleibt_wie_bisher():
         [7, 7],
         [7, 7],
     )
+
+
+def test_textur_legt_das_stueck_nach_dem_ort_lueckenlos():
+    """Regel: Kartenblick Paket A (26.11.2026), nahtlose Gemini-Böden laufen über Kachelgrenzen."""
+    art = {"feld": [2, 5], "textur": [3, 2], "varianten": [[9, 9]]}
+    zeilen = ["aaaa", "aaaa", "aaaa"]
+    assert bodenfeld(art, zeilen, 0, 0) == [2, 5]
+    assert bodenfeld(art, zeilen, 3, 1) == [2, 6]
+    assert bodenfeld(art, zeilen, 2, 2) == [4, 5]

@@ -329,6 +329,11 @@
     {
       "name": "hector",
       "feld": [6, 3]
+    },
+    {
+      "name": "mutterDiner",
+      "feld": [10, 6],
+      "blick": "links"
     }
   ],
   "belebung": [

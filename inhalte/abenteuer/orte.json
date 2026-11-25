@@ -12,6 +12,10 @@
         {
           "kennung": "mapleFalls.dachboden",
           "datei": "karten/maple-falls-dachboden.json",
+          "eingang": {
+            "dialog": "maple-falls-dachboden.epilog_oben",
+            "wenn": "epilogHinauf und nicht epilogGesehen"
+          },
           "name": "ort.mapleFalls.dachboden",
           "innen": true,
           "geraeusch": "klang/wind_fenster.m4a",
@@ -90,6 +94,10 @@
           "datei": "karten/maple-falls-diner.json",
           "name": "ort.mapleFalls.diner",
           "innen": true,
+          "eingang": {
+            "dialog": "maple-falls-wohnzimmer.diner_abend",
+            "wenn": "dinerAbendGesehen und nicht dinerAbendErlebt"
+          },
           "geraeusch": "klang/diner_kueche.m4a",
           "klangquellen": [
             {
@@ -125,6 +133,27 @@
           "sprite": "figuren/mutter.png",
           "dialog": "maple-falls-aussen.einleitung_hinein",
           "wenn": "nicht ankunftGesehen und nicht brettBeruehrt"
+        },
+        {
+          "kennung": "mapleFalls.victorClub",
+          "name": "figur.victor.name",
+          "sprite": "figuren/victor.png",
+          "dialog": "maple-falls-clubraum.victor",
+          "wenn": "nadelMapleFalls > 0 und nicht kenntHale"
+        },
+        {
+          "kennung": "mapleFalls.haleClub",
+          "name": "figur.grahamHale.name",
+          "sprite": "figuren/graham-hale.png",
+          "dialog": "maple-falls-clubraum.victor",
+          "wenn": "nadelMapleFalls > 0 und nicht kenntHale"
+        },
+        {
+          "kennung": "mapleFalls.mutterDiner",
+          "name": "figur.mutter.name",
+          "sprite": "figuren/mutter.png",
+          "dialog": "maple-falls-wohnzimmer.mutter_diner",
+          "wenn": "dinerAbendGesehen und nicht dinerAbendErlebt"
         },
         {
           "kennung": "mapleFalls.coachDelgado",
@@ -166,6 +195,13 @@
           "name": "figur.lily.name",
           "sprite": "figuren/lily.png",
           "dialog": "maple-falls-aussen.lily"
+        },
+        {
+          "kennung": "mapleFalls.lilyDachboden",
+          "name": "figur.lily.name",
+          "sprite": "figuren/lily.png",
+          "dialog": "maple-falls-dachboden.epilog_lily",
+          "wenn": "abschiedGesehen und nicht epilogGesehen"
         },
         {
           "kennung": "mapleFalls.hector",
@@ -492,6 +528,10 @@
           "datei": "karten/cedar-creek-aussen.json",
           "name": "ort.cedarCreek.aussen",
           "innen": false,
+          "eingang": {
+            "dialog": "cedar-creek-aussen.ankunft",
+            "wenn": "nicht ankunftCedarCreekGesehen"
+          },
           "musik": "musik/cedar-creek.m4a",
           "geraeusch": "klang/bach.m4a",
           "licht": "tag",
@@ -633,6 +673,62 @@
           "name": "figur.dunmore.name",
           "sprite": "figuren/dunmore.png",
           "dialog": "cedar-creek-drechslerei.dunmore"
+        },
+        {
+          "kennung": "cedarCreek.maeSteg",
+          "name": "figur.mae.name",
+          "sprite": "figuren/mae.png",
+          "dialog": "cedar-creek-aussen.steg",
+          "wenn": "maeEingeladen und nicht sternennachtGesehen und nicht nachtImLesesaal und nadelCedarCreek == 0"
+        },
+        {
+          "kennung": "cedarCreek.dexSteg",
+          "name": "figur.dex.name",
+          "sprite": "figuren/dex.png",
+          "dialog": "cedar-creek-aussen.steg",
+          "wenn": "maeEingeladen und nicht sternennachtGesehen und nicht nachtImLesesaal und nadelCedarCreek == 0"
+        },
+        {
+          "kennung": "cedarCreek.okaforSteg",
+          "name": "figur.okafor.name",
+          "sprite": "figuren/okafor.png",
+          "dialog": "cedar-creek-aussen.steg",
+          "wenn": "maeEingeladen und nicht sternennachtGesehen und nicht nachtImLesesaal und nadelCedarCreek == 0"
+        },
+        {
+          "kennung": "cedarCreek.coachCedar",
+          "name": "figur.coachDelgado.name",
+          "sprite": "figuren/coach-delgado.png",
+          "dialog": "cedar-creek-aussen.team_kommt",
+          "wenn": "nachtImLesesaal und nicht teamAngekommen"
+        },
+        {
+          "kennung": "cedarCreek.samCedar",
+          "name": "figur.sam.name",
+          "sprite": "figuren/sam.png",
+          "dialog": "cedar-creek-aussen.team_kommt",
+          "wenn": "nachtImLesesaal und nicht teamAngekommen"
+        },
+        {
+          "kennung": "cedarCreek.coachBibliothek",
+          "name": "figur.coachDelgado.name",
+          "sprite": "figuren/coach-delgado.png",
+          "dialog": "cedar-creek-bibliothek.coach_clubkampf",
+          "wenn": "teamAngekommen und nadelCedarCreek == 0"
+        },
+        {
+          "kennung": "cedarCreek.samBibliothek",
+          "name": "figur.sam.name",
+          "sprite": "figuren/sam.png",
+          "dialog": "cedar-creek-bibliothek.sam_clubkampf",
+          "wenn": "teamAngekommen und nadelCedarCreek == 0"
+        },
+        {
+          "kennung": "cedarCreek.okaforArchiv",
+          "name": "figur.okafor.name",
+          "sprite": "figuren/okafor.png",
+          "dialog": "cedar-creek-archiv.karton",
+          "wenn": "okaforGetroffen und nicht archivGeordnet"
         }
       ],
       "ausloeser": [

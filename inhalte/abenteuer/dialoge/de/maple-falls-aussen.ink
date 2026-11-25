@@ -22,6 +22,7 @@ EXTERNAL reise(karte, ausloeser)
 
 VAR ankunftIronwoodGesehen = false
 VAR verbotGesehen = false
+VAR junoFahrradGesehen = false
 VAR ausgangMapleFallsClubkampf = ""
 VAR junoAnDerSchultuer = false
 VAR nadelRiverton = 0
@@ -58,6 +59,7 @@ VAR angesprochen = false
 - not junoGetroffen and ausgangMapleFallsErsteLektion != "" and ausgangMapleFallsErsteLektion != "abgebrochen": -> juno_trifft
 - not junoGetroffen: -> juno_frueh
 - not clubBeigetreten: -> juno_zum_club
+- verbotGesehen and not ankunftIronwoodGesehen: -> juno_fahrrad
 - else: -> juno_alltag
 }
 
@@ -107,6 +109,24 @@ Du hast die Hand schon an der Schultür, da ruft jemand von der Bushaltestelle n
 ~ junoAnDerSchultuer = true
 -> juno_trifft
 
+// Aufbruch nach Ironwood (vorher im Wohnzimmer, Anwesenheit 25.11.2026): Juno wartet mit dem Rad
+// vor der Haustür. Spieltest 2 (17.11.2026): Die Reise bringt {held} an den Anfang des Kanalwegs.
+=== juno_fahrrad ===
+{junoFahrradGesehen:
+    Das Rad steht bereit. Der Zug wartet nicht. #sprecher:juno #stimmung:laechelt
+- else:
+    ~ junoFahrradGesehen = true
+    Juno sitzt schon auf dem Gepäckträger. #sprecher:erzaehler
+    Ich frag gar nicht. Ich komm einfach mit. #sprecher:juno #stimmung:froh
+    Bis Riverton nimmt uns der Zug mit, Räder dürfen mit. Ab da immer am Kanal entlang, bis Ironwood. #sprecher:juno #stimmung:froh
+}
+* [Mit Juno nach Riverton fahren]
+    ~ reise("riverton.aussen", "kanalweg")
+    -> END
+* [Noch nicht]
+    Ich warte. Das Rad auch. #sprecher:juno #stimmung:laechelt
+    -> END
+
 === juno_zum_club ===
 Raum 12, Erdgeschoss! Coach Delgado beißt nicht – meistens. #sprecher:juno #stimmung:lacht
 -> END
@@ -118,7 +138,7 @@ Raum 12, Erdgeschoss! Coach Delgado beißt nicht – meistens. #sprecher:juno #s
     ~ return "Silicon Bay! Ich hab im Tagebuch schon eine Seite freigemacht. Mit Glitzerrand."
 - nadelIronwood > 0:
     ~ return "Vier Nadeln im Tagebuch. Und ein Foto von deiner Mama. Mit Glitzer, diesmal ja."
-// Lektorat 20.11.2026: Junos „Ich warte. Das Rad auch.“ (aufbruch_ironwood) greift sie hier auf.
+// Lektorat 20.11.2026: Junos „Ich warte. Das Rad auch.“ (juno_fahrrad) greift sie hier auf.
 - verbotGesehen and not ankunftIronwoodGesehen:
     ~ return "Das Rad steht noch vor deiner Tür. Zug bis Riverton, dann am Kanal entlang."
 - nadelRiverton > 0:

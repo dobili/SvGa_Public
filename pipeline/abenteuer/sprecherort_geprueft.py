@@ -13,6 +13,10 @@ sitzen in den Szenen (Stuhl, Sessel, Klapphocker oder am Boden); zwei Sätze pas
 """
 
 GEPRUEFT: dict[str, str] = {
+    "sitzt:dexSteg:cedar-creek-bibliothek.zwillinge_d": (
+        "Dex sitzt im Club am Brett (Bibliothek); dexSteg ist die Figur der Sternennacht am Steg, die "
+        "steht (Anwesenheit, 25.11.2026)."
+    ),
     "kommt:juno:capital-arena-aussen.abschied_ende": (
         "Juno steht nach dem Abschied nicht mehr vor der Arena (wenn: nicht abschiedGesehen); sie "
         "kommt nur in der Erzählung dazu, die Szene endet mit der Reise nach Hause."

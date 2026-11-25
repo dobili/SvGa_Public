@@ -12,6 +12,7 @@
 // - Der Name des Helden kommt aus dem Spielstand: {held}.
 // - Keine Verweise auf das Buch (Kapitel, Abschnitte, Seiten): docs/spiel/ENTSCHEIDUNGEN.md, 10.11.2026.
 
+EXTERNAL reise(karte, ausloeser)
 EXTERNAL gibKarte(kennung)
 EXTERNAL setzeSzene(kennung)
 EXTERNAL beginnePartie(begegnung)
@@ -22,6 +23,8 @@ VAR held = "Du"
 VAR ambroseImHalbfinaleGerufen = false
 VAR mentorzugFreiGespielt = false
 VAR epilogGesehen = false
+// Der Held geht im Epilog auf den Dachboden; dessen Eingang spielt epilog_oben (orte.json).
+VAR epilogHinauf = false
 VAR abschiedGesehen = false
 VAR ambroseVertrauen = 0
 VAR brettBeruehrt = false
@@ -298,8 +301,10 @@ Kurz bevor dir die Augen zufallen, denkst du: Mama hatte recht. Weiß steht bess
 Du weißt nur nicht, woher du das weißt. #sprecher:erzaehler #musik:ambrose #geraeusch:aus
 // Erstspieler-Durchgang 20.11.2026: Der Morgen war nicht erzählt; draußen hieß es plötzlich „Guten
 // Morgen“, und keine Quest nannte das nächste Ziel. Jetzt der Morgen und der Weg zur Schule.
-Am Morgen steht Mama schon in der Tür, den Autoschlüssel in der Hand. #sprecher:erzaehler #licht:tag #uhr:morgen
-Die Schule ist die Straße runter. Frag nach Coach Delgado und dem Schachteam, ja? #sprecher:mutter #stimmung:laechelt
+// Anwesenheit (Befund des Autors, 25.11.2026): Mama sprach hier im Zimmer, stand aber nicht dort.
+// Jetzt ruft sie von unten herauf, und die Haustür fällt ins Schloss: Sie ist schon auf dem Weg.
+Am Morgen klappern unten Schlüssel. Mama ruft die Treppe herauf: „Die Schule ist die Straße runter. Frag nach Coach Delgado und dem Schachteam, ja?“ #sprecher:erzaehler #licht:tag #uhr:morgen
+Dann fällt die Haustür ins Schloss, und unten springt ein Motor an. #sprecher:erzaehler
 -> END
 
 // ---------------------------------------------------------------- Abende auf dem Dachboden
@@ -378,6 +383,14 @@ In einem Keller in Silicon Bay unterrichtet eine Frau acht Kinder bei einem Heiz
 Eines davon hatte früher zwei Titel und kommt jetzt jeden Tag. #sprecher:erzaehler
 * [Auf den Dachboden gehen]
 -
+// Anwesenheit (25.11.2026): Der Epilog begann auch am Brett im Zimmer und erzählte dort schon den
+// Dachboden und Lily. Jetzt geht {held} hinauf; dort spielt der Eingang des Dachbodens den Rest
+// (epilog_oben, orte.json), wo Lily an der Treppe steht.
+~ epilogHinauf = true
+~ reise("mapleFalls.dachboden", "treppe")
+-> END
+
+=== epilog_oben ===
 Du trägst das Brett hinauf und stellst es auf den niedrigen Tisch unter dem runden Fenster. Keine Decke darüber. #sprecher:erzaehler
 {not (mentorzugFreiGespielt or ambroseImHalbfinaleGerufen): -> epilog_zettel}
 -> epilog_lily
@@ -389,6 +402,9 @@ Eine Figur steht anders als am Abend. Daneben liegt ein Zettel in alter, schräg
 * [Den Zettel einstecken]
 - -> epilog_lily
 
+// Anwesenheit (25.11.2026): Lily sprach hier, stand aber nicht im Bild. Jetzt steht sie oben an der
+// Treppe des Dachbodens (mapleFalls.lilyDachboden), bis der Epilog gesehen ist, und geht zum
+// Schaukelstuhl, wenn sie sich setzt.
 === epilog_lily ===
 An einem Nachmittag im Oktober steht jemand auf der Treppe. Du hörst die neunte Stufe. #sprecher:erzaehler #klang:stufe
 {ausgangCapitalArenaFinale == "sieg":Mama sagt, du hast gewonnen.|Mama sagt, du warst bei der Meisterschaft.} Mein Cousin sagt, Mädchen können nicht richtig spielen. Nur den Springer. #sprecher:lily #stimmung:laechelt
@@ -397,7 +413,7 @@ An einem Nachmittag im Oktober steht jemand auf der Treppe. Du hörst die neunte
 Du räumst die Schlussstellung ab, Figur für Figur, vorsichtig, und legst sie in den Geigenkasten. Dann stellst du alle zweiunddreißig auf. #sprecher:erzaehler
 Der weiße König ist schwer, unten mit Blei ausgegossen, und das Kreuz auf seiner Krone ist ein bisschen schief. #sprecher:erzaehler
 * [„Setz dich. Du hast Weiß.“]
-- Lily klettert auf den Schaukelstuhl. Er knarrt. #sprecher:erzaehler
+- Lily klettert auf den Schaukelstuhl. Er knarrt. #sprecher:erzaehler #gehe:lilyDachboden>10,8
 Sie sieht auf zweiunddreißig Dinge, von denen ihr keines etwas sagt. #sprecher:erzaehler
 Und jetzt? #sprecher:lily #stimmung:nachdenklich
 Durch das runde Fenster fällt das Licht. Der Staub hängt in der Luft wie etwas, das sich entschieden hat, nicht zu fallen. #sprecher:erzaehler

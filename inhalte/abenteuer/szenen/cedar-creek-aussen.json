@@ -959,6 +959,11 @@
     }
   ],
   "figuren": [
+    { "name": "maeSteg", "feld": [44, 15], "blick": "rechts" },
+    { "name": "dexSteg", "feld": [42, 15], "blick": "rechts" },
+    { "name": "okaforSteg", "feld": [43, 15], "blick": "rechts" },
+    { "name": "coachCedar", "feld": [38, 29], "blick": "links" },
+    { "name": "samCedar", "feld": [39, 29], "blick": "links" },
     {
       "name": "rosa",
       "feld": [53, 14]

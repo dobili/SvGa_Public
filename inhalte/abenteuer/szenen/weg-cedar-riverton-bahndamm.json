@@ -2694,6 +2694,15 @@
   ],
   "belebung": [
     {
+      "name": "rosalind",
+      "typ": "statist",
+      "feld": [38, 5],
+      "eigenschaften": {
+        "tun": "Marian Shaw sitzt vor dem Stellwerk auf der Bank, die rechte Hand im Verband, und wartet auf den Güterzug",
+        "sitzt": "unten"
+      }
+    },
+    {
       "name": "streckenwaerterin",
       "typ": "statist",
       "feld": [34, 13],

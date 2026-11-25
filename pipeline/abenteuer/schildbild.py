@@ -107,8 +107,10 @@ class Schild:
 # soll dort nur das Fischschild verdecken, nicht die Markise; „schild_bergwacht“ muss mit dem Kreuz
 # unter das Dach der Blockhütte passen (dort 49 Pixel Wand).
 SCHILDER = {
-    "schild_bergladen": Schild("BERGLADEN"),
-    "schild_bergwacht": Schild("BERGWACHT", rand=1, zeichen="kreuz"),
+    # Namen englisch, Hinweise deutsch (RO53.6, Entscheidung des Autors 24.11.2026): Das Spiel liegt
+    # in Amerika; der Erzähler gibt Aufschriften im Dialog auf Deutsch wieder.
+    "schild_bergladen": Schild("OUTFITTERS"),
+    "schild_bergwacht": Schild("RESCUE", rand=1, zeichen="kreuz"),
     "schild_ranger": Schild("RANGER", zeichen="wimpel"),
     "schild_kiosk": Schild("KIOSK", rand=1),
 }

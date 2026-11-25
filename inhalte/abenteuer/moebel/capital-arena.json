@@ -2587,7 +2587,7 @@
       "blick": "unten"
     },
     "ca10Feuerwache": {
-      "quelle": "spiel/eigene/feuerwache.png",
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/18_Fire_Station_Singles_16x16/ME_Singles_Fire_Station_16x16_Building.png",
       "breite": 256,
       "hoehe": 240,
       "kollision": true,
@@ -2598,7 +2598,7 @@
       "gebaeude": true
     },
     "ca10Polizei": {
-      "quelle": "spiel/eigene/polizei.png",
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/15_Police_Station_Singles_16x16/ME_Singles_Police_Station_16x16_Police_Station_1.png",
       "breite": 336,
       "hoehe": 288,
       "kollision": true,
@@ -2609,7 +2609,7 @@
       "gebaeude": true
     },
     "ca10Post": {
-      "quelle": "spiel/eigene/post.png",
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/22_Post_Office_Singles_16x16/22_Post_Office_16x16_Building_1.png",
       "breite": 128,
       "hoehe": 208,
       "kollision": true,
@@ -2620,7 +2620,7 @@
       "gebaeude": true
     },
     "ca10Post4": {
-      "quelle": "spiel/eigene/post_4.png",
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/22_Post_Office_Singles_16x16/22_Post_Office_16x16_Building_4.png",
       "breite": 128,
       "hoehe": 208,
       "kollision": true,

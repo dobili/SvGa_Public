@@ -50,18 +50,20 @@ def test_wimpel_steht_links_vor_der_schrift():
 
 
 def test_schildbild_liegt_mittig_im_kachelraster():
+    # „OUTFITTERS“ (seit RO53.6 statt „BERGLADEN“): Brett 45 Pixel, mittig im 48 Pixel breiten Bild.
     bild = s.schildbild(s.SCHILDER["schild_bergladen"])
     assert bild.size == (48, 16)
-    assert bild.getbbox() == (3, s.BRETT_OBEN, 45, s.BRETT_OBEN + s.BRETT_HOEHE)
+    assert bild.getbbox() == (1, s.BRETT_OBEN, 46, s.BRETT_OBEN + s.BRETT_HOEHE)
 
 
 def test_kreuz_der_bergwacht_passt_unter_das_dach():
     brett = s.brett(s.SCHILDER["schild_bergwacht"])
-    assert brett.width == 47  # Wand unter dem Dach der Blockhütte: 49 Pixel
+    # „RESCUE“ (seit RO53.6 statt „BERGWACHT“); Wand unter dem Dach der Blockhütte: 49 Pixel.
+    assert brett.width == 33
     px = brett.load()
     assert px[4, s.SCHRIFT_OBEN] == s.ROT and px[2, s.SCHRIFT_OBEN + 2] == s.ROT
     assert px[2, s.SCHRIFT_OBEN] == s.WEISS
-    assert px[8, s.SCHRIFT_OBEN] == s.SCHRIFT  # B beginnt nach einer Spalte Holz
+    assert px[8, s.SCHRIFT_OBEN] == s.SCHRIFT  # R beginnt nach einer Spalte Holz
 
 
 def test_main_schreibt_alle_bilder(tmp_path, capsys):

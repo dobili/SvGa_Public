@@ -2,14 +2,15 @@
 
 Warum: Die Porträtblätter (app/src/abenteuer/dialog/portraetblatt.ts) haben je Figur sechs
 Fassungen à 64 × 64 Pixel in 3 Spalten und 2 Zeilen (inhalte/abenteuer/portraetblatt.json). Gemini
-liefert sie als großes Bild auf grünem Grund (#00FF00), oft mit dunklen Trennlinien und mit
-Pixeln, die zu Blöcken vergrößert sind. Von Hand zuschneiden ist mühsam und ungenau (Auftrag des
-Haupt-Chats, 13.11.2026).
+liefert sie als großes Bild auf grünem Grund (#00FF00), mit dunklen oder (seit den Prompts der
+Mappe 18, 25.11.2026) weißen Trennlinien und mit Pixeln, die zu Blöcken vergrößert sind. Von
+Hand zuschneiden ist mühsam und ungenau (Auftrag des Haupt-Chats, 13.11.2026).
 
 Aufruf: ``python -m pipeline.abenteuer.portraetblatt EINGABE.png AUSGABE.png [--raster 3x2]``.
 
-Ablauf: Grün und durchgehende dunkle Trennlinien werden durchsichtig; die Felder ergeben sich aus
-den Trennlinien, sonst aus gleichmäßiger Teilung nach dem Raster. Je Feld wird das Pixelraster
+Ablauf: Grün und durchgehende dunkle oder weiße Trennlinien werden durchsichtig; die Felder ergeben
+sich aus den Trennlinien, sonst aus gleichmäßiger Teilung nach dem Raster. Ein schmaler Rand je
+Feld fällt weg (JPEG-Saum der Linie), ebenso dunkelgrüne Saumpixel am Umriss. Je Feld wird das Pixelraster
 erkannt (Blockgröße aus den Farbwechseln), jeder Block an seiner Mitte abgetastet (nearest) und
 das Ergebnis unten bündig und mittig in 64 × 64 gesetzt; ist es größer, wird es nearest verkleinert.
 """
@@ -22,8 +23,14 @@ FELD = 64
 RASTER = (3, 2)
 # Grün des Hintergrunds: deutlich grüner als rot und blau (verträgt JPEG-Säume).
 GRUEN_MIN, GRUEN_ABSTAND = 150, 80
-# Trennlinie: fast schwarz über (fast) die ganze Breite oder Höhe des Blatts.
+# Trennlinie: fast schwarz oder fast weiß über (fast) die ganze Breite oder Höhe des Blatts.
 DUNKEL_MAX, LINIENANTEIL = 70, 0.9
+# Weiß: alle Kanäle hell und kaum bunt (JPEG färbt die Linie am grünen Grund leicht grün).
+WEISS_MIN, WEISS_BUNT_MAX = 200, 45
+# Rand je Feld, der wegfällt (Anteil der Feldgröße): Mischsaum aus Linie und Grün.
+FELDRAND = 0.01
+# Saumpixel: Grün überwiegt Rot und Blau so stark (dunkler Umriss mit Grün gemischt, etwa (0, 53, 0)).
+SAUM_FAKTOR, SAUM_ABSTAND, SAUM_DURCHGAENGE = 2, 20, 2
 # Farbwechsel ab dieser Summe der Kanalabstände; Blockgrößen, die geprüft werden.
 WECHSEL = 60
 BLOCK_BIS = 40
@@ -42,15 +49,25 @@ def ist_dunkel(p: tuple[int, ...]) -> bool:
     return max(p[:3]) <= DUNKEL_MAX
 
 
+def ist_weiss(p: tuple[int, ...]) -> bool:
+    """Ist das Pixel fast weiß (helle Trennlinie zwischen den Feldern)?"""
+    return min(p[:3]) >= WEISS_MIN and max(p[:3]) - min(p[:3]) <= WEISS_BUNT_MAX
+
+
+def ist_linie(p: tuple[int, ...]) -> bool:
+    """Gehört das Pixel zu einer Trennlinie (dunkel oder weiß)?"""
+    return ist_dunkel(p) or ist_weiss(p)
+
+
 def trennlinien(bild: Image.Image, waagrecht: bool) -> list[int]:
-    """Zeilen (waagrecht) oder Spalten, die fast ganz dunkel sind."""
+    """Zeilen (waagrecht) oder Spalten, die fast ganz dunkel oder fast ganz weiß sind."""
     breite, hoehe = bild.size
     px = bild.load()
     laenge, anzahl = (breite, hoehe) if waagrecht else (hoehe, breite)
     linien = []
     for i in range(anzahl):
-        dunkel = sum(ist_dunkel(px[j, i] if waagrecht else px[i, j]) for j in range(laenge))
-        if dunkel >= LINIENANTEIL * laenge:
+        treffer = sum(ist_linie(px[j, i] if waagrecht else px[i, j]) for j in range(laenge))
+        if treffer >= LINIENANTEIL * laenge:
             linien.append(i)
     return linien
 
@@ -140,6 +157,41 @@ def abtasten(feld: Image.Image) -> Image.Image:
     return klein.crop(klein.getbbox() or (0, 0, 1, 1))
 
 
+def ist_saum(p: tuple[int, ...]) -> bool:
+    """Dunkelgrünes Mischpixel aus Umriss und Grund? Beispiel: (0, 53, 0) ja, Oliv (90, 110, 50) nein."""
+    r, g, b = p[:3]
+    return p[3] > 0 and g >= SAUM_FAKTOR * max(r, b) + SAUM_ABSTAND
+
+
+def ohne_saum(bild: Image.Image) -> Image.Image:
+    """Saumpixel am Rand der Figur durchsichtig (nur solche neben Durchsichtigem), neu zugeschnitten.
+
+    Warum: Die Blockmitte trifft am Umriss oft ein JPEG-Mischpixel; im Spiel sähe man grüne Punkte.
+    Grüne Kleidung innen bleibt, weil nur Pixel neben dem Grund geprüft werden.
+    """
+    bild = bild.copy()
+    px = bild.load()
+    breite, hoehe = bild.size
+    for _ in range(SAUM_DURCHGAENGE):
+        weg = []
+        for y in range(hoehe):
+            for x in range(breite):
+                if not ist_saum(px[x, y]):
+                    continue
+                nachbarn = ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1))
+                if any(not (0 <= u < breite and 0 <= v < hoehe) or px[u, v][3] == 0 for u, v in nachbarn):
+                    weg.append((x, y))
+        for x, y in weg:
+            px[x, y] = (0, 0, 0, 0)
+    return bild.crop(bild.getbbox() or (0, 0, 1, 1))
+
+
+def ohne_rand(x0: int, y0: int, x1: int, y1: int) -> tuple[int, int, int, int]:
+    """Feldgrenzen ohne den schmalen Mischsaum der Trennlinie (FELDRAND je Seite)."""
+    rx, ry = round((x1 - x0) * FELDRAND), round((y1 - y0) * FELDRAND)
+    return x0 + rx, y0 + ry, x1 - rx, y1 - ry
+
+
 def ins_feld(bild: Image.Image, feld: int = FELD) -> Image.Image:
     """Unten bündig und mittig in ein Feld; größer als das Feld: nearest verkleinert."""
     if bild.width > feld or bild.height > feld:
@@ -161,7 +213,7 @@ def schneide(eingabe: Image.Image, raster: tuple[int, int] = RASTER) -> Image.Im
     blatt = Image.new("RGBA", (spalten * FELD, zeilen * FELD))
     for zeile, (y0, y1) in enumerate(ys):
         for spalte, (x0, x1) in enumerate(xs):
-            feld = ins_feld(abtasten(frei.crop((x0, y0, x1, y1))))
+            feld = ins_feld(ohne_saum(abtasten(frei.crop(ohne_rand(x0, y0, x1, y1)))))
             blatt.paste(feld, (spalte * FELD, zeile * FELD))
     return blatt
 

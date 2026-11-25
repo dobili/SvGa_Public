@@ -1,7 +1,7 @@
 """Porträtblatt-Schneider (pipeline/abenteuer/portraetblatt.py) an einem erzeugten Gemini-Blatt.
 
 Warum: Gemini liefert die sechs Fassungen eines Porträts als großes Bild auf grünem Grund, mit
-dunklen Trennlinien und vergrößerten Pixeln. Der Schneider muss daraus das Spielblatt 3 × 2 à 64
+dunklen oder weißen Trennlinien und vergrößerten Pixeln. Der Schneider muss daraus das Spielblatt 3 × 2 à 64
 machen (Format von inhalte/abenteuer/portraetblatt.json): Grund durchsichtig, Pixelraster sauber.
 """
 
@@ -15,7 +15,8 @@ from pipeline.abenteuer.portraetblatt import FELD, blockgroesse, schneide  # noq
 
 ZELLE, LINIE, BLOCK = 120, 4, 6
 BREIT, HOCH = 12, 16  # echtes Pixelbild je Fassung
-GRUEN, DUNKEL = (0, 255, 0), (20, 20, 30)
+GRUEN, DUNKEL, WEISS = (0, 255, 0), (20, 20, 30), (238, 252, 236)
+SAUM = (0, 53, 0)  # JPEG-Mischpixel aus dunklem Umriss und Grün
 
 
 def _farbe(feld: int, x: int, y: int) -> tuple[int, int, int]:
@@ -24,12 +25,12 @@ def _farbe(feld: int, x: int, y: int) -> tuple[int, int, int]:
     return (25 * feld + (100 if hell else 20), 30 if hell else 140, 200 - 20 * feld)
 
 
-def _gemini_blatt() -> Image.Image:
+def _gemini_blatt(linie: tuple[int, int, int] = DUNKEL) -> Image.Image:
     breite, hoehe = 3 * ZELLE + 2 * LINIE, 2 * ZELLE + LINIE
     blatt = Image.new("RGB", (breite, hoehe), GRUEN)
     for i in range(1, 3):  # senkrechte Trennlinien
-        blatt.paste(DUNKEL, (i * ZELLE + (i - 1) * LINIE, 0, i * (ZELLE + LINIE), hoehe))
-    blatt.paste(DUNKEL, (0, ZELLE, breite, ZELLE + LINIE))
+        blatt.paste(linie, (i * ZELLE + (i - 1) * LINIE, 0, i * (ZELLE + LINIE), hoehe))
+    blatt.paste(linie, (0, ZELLE, breite, ZELLE + LINIE))
     for feld in range(6):
         spalte, zeile = feld % 3, feld // 3
         x0 = spalte * (ZELLE + LINIE) + 17  # Versatz, der kein Vielfaches des Blocks ist
@@ -50,8 +51,9 @@ def test_blatt_hat_spielformat_und_durchsichtigen_grund():
     assert ergebnis.getpixel((FELD + 1, FELD + 1))[3] == 0
 
 
-def test_jedes_feld_im_echten_pixelraster_unten_mittig():
-    ergebnis = schneide(_gemini_blatt())
+@pytest.mark.parametrize("linie", [DUNKEL, WEISS], ids=["dunkle Linien", "weiße Linien"])
+def test_jedes_feld_im_echten_pixelraster_unten_mittig(linie):
+    ergebnis = schneide(_gemini_blatt(linie))
     links, oben = (FELD - BREIT) // 2, FELD - HOCH
     for feld in range(6):
         ox, oy = (feld % 3) * FELD + links, (feld // 3) * FELD + oben
@@ -66,3 +68,21 @@ def test_blockgroesse_wird_erkannt():
         for x in range(BREIT):
             bild.paste(_farbe(0, x, y), (x * BLOCK, y * BLOCK, (x + 1) * BLOCK, (y + 1) * BLOCK))
     assert blockgroesse(bild)[0] == BLOCK
+
+
+def test_weisse_linien_und_gruener_saum_fallen_weg():
+    """Mappe 18 (25.11.2026): weiße Trennlinien, dazu ein dunkelgrüner Saumblock links am Bild."""
+    blatt = _gemini_blatt(WEISS)
+    x0, y0 = 17 - BLOCK, 11 + 3 * BLOCK  # ein Block links neben dem ersten Bild, Zeile 3
+    blatt.paste(SAUM, (x0, y0, x0 + BLOCK, y0 + BLOCK))
+    ergebnis = schneide(blatt)
+    assert ergebnis.size == (3 * FELD, 2 * FELD)
+    links, oben = (FELD - BREIT) // 2, FELD - HOCH
+    assert ergebnis.getpixel((links, oben))[:3] == _farbe(0, 0, 0)
+    sichtbar = {
+        ergebnis.getpixel((x, y))[:3]
+        for x in range(FELD)
+        for y in range(FELD)
+        if ergebnis.getpixel((x, y))[3]
+    }
+    assert SAUM not in sichtbar and WEISS not in sichtbar

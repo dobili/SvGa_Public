@@ -60,6 +60,7 @@ export const BAUSTEINE: readonly Lizenzbaustein[] = [
   },
   { kennung: "ortwasm", text: "/maia/LIZENZEN-onnxruntime-wasm.txt" },
   { kennung: "chessops", text: PAKETTEXTE, pakete: ["chessops"] },
+  { kennung: "ffish", text: PAKETTEXTE, pakete: ["ffish-es6"] },
   { kennung: "skaknew", text: "/lizenzen/lppl-1.3c.txt" },
   { kennung: "cburnett", text: "/lizenzen/gpl-3.0.txt" },
   { kennung: "mpchess", text: "/lizenzen/gpl-3.0.txt" },

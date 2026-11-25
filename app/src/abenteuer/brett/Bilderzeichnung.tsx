@@ -40,11 +40,15 @@ function bildunterlage(adresse: string) {
   };
 }
 
-/** Eine Figur als Bild; die Bilder stehen schon auf gemeinsamer Grundlinie (128 × 128). */
-function bildfigur(figuren: Readonly<Record<string, string>>) {
-  return function Bildfigur({ zeichen, x, y }: Figurzeichnung) {
+/**
+ * Eine Figur als Bild; die Bilder stehen schon auf gemeinsamer Grundlinie (128 × 128). Fehlt das
+ * Bild (Märchenfiguren Falke, Bison, Drache ohne eigenen Satz), zeichnet `ersatz` die Pixelfigur.
+ */
+function bildfigur(figuren: Readonly<Record<string, string>>, Ersatz: Brettstilvorgabe["Figur"]) {
+  return function Bildfigur(angabe: Figurzeichnung) {
+    const { zeichen, x, y } = angabe;
     const adresse = figuren[zeichen];
-    if (!adresse) return null;
+    if (!adresse) return Ersatz ? <Ersatz {...angabe} /> : null;
     return (
       <image
         className="brett-figur"
@@ -101,7 +105,7 @@ export function bildvorgabe(kennung: Brettstilkennung, bilder: Brettbilder): Bre
     ...grund,
     palette: { ...grund.palette, ...(bilder.farben ?? {}) },
     Unterlage: bildunterlage(bilder.brett),
-    Figur: bilder.figuren ? bildfigur(bilder.figuren) : grund.Figur,
+    Figur: bilder.figuren ? bildfigur(bilder.figuren, grund.Figur) : grund.Figur,
     ...(markenfarben ? { markenfarben } : {}),
   };
   VORGABEN.set(bilder, vorgabe);

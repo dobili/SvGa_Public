@@ -102,6 +102,20 @@ describe("Vorgabe mit Bildern", () => {
     expect(bildvorgabe("schiefer", BILDER)).toBe(vorgabe);
   });
 
+  it("zeichnet Märchenfiguren ohne eigenes Bild als Pixelfigur (Falke, Bison, Drache)", () => {
+    const { Figur } = bildvorgabe("schiefer", BILDER);
+    if (!Figur) throw new Error("Figur erwartet");
+    for (const zeichen of ["H", "e", "d"]) {
+      const figur = renderToStaticMarkup(
+        <svg>
+          <Figur zeichen={zeichen} x={0} y={0} />
+        </svg>,
+      );
+      expect(figur).toContain("<rect");
+      expect(figur).not.toContain("<image");
+    }
+  });
+
   it("behält ohne vollständigen Figurensatz die Pixelfiguren", () => {
     const vorgabe = bildvorgabe("schiefer", { ...BILDER, figuren: null });
     expect(vorgabe.Figur).toBe(brettstilvorgabe("schiefer").Figur);

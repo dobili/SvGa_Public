@@ -35,6 +35,7 @@
     "@fontsource/source-sans-3": "5.3.1",
     "@fontsource/source-serif-4": "5.3.1",
     "chessops": "0.15.1",
+    "ffish-es6": "^0.7.10",
     "idb": "8.0.4",
     "inkjs": "2.4.0",
     "lucide-react": "1.56.0",

@@ -1660,6 +1660,32 @@
         "bis": "28,7",
         "sagt": "statist.wegCrossroadsPinewood.huetten.vogelkundler"
       }
+    },
+    {
+      "name": "blindwanderin",
+      "typ": "statist",
+      "feld": [57, 23],
+      "eigenschaften": {
+        "von": "57,23",
+        "bis": "57,23",
+        "tun": "spielt am Picknicktisch Blindschach, ohne Brett",
+        "wann": "tag",
+        "blick": "links",
+        "sagt": "statist.wegCrossroadsPinewood.huetten.blindwanderin"
+      }
+    },
+    {
+      "name": "blindwanderer",
+      "typ": "statist",
+      "feld": [56, 25],
+      "eigenschaften": {
+        "von": "56,25",
+        "bis": "56,25",
+        "tun": "überlegt mit geschlossenen Augen seinen nächsten Zug",
+        "wann": "tag",
+        "blick": "oben",
+        "sagt": "statist.wegCrossroadsPinewood.huetten.blindwanderer"
+      }
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],

@@ -12912,6 +12912,11 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.wegGhostCapital.leuchtturm.angler"
       }
      ]
     },

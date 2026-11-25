@@ -15219,6 +15219,11 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.wegDesertSummit.diner.trucker"
       }
      ]
     },
@@ -15427,6 +15432,11 @@
        "name": "wann",
        "type": "string",
        "value": "tag"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.wegDesertSummit.diner.tankwart"
       }
      ]
     },

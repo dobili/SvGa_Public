@@ -14148,6 +14148,11 @@
        "name": "sitzt",
        "type": "string",
        "value": "oben"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.wegGhostCapital.seeufer.schachspielerin"
       }
      ]
     },
@@ -14191,6 +14196,11 @@
        "name": "sitzt",
        "type": "string",
        "value": "oben"
+      },
+      {
+       "name": "sagt",
+       "type": "string",
+       "value": "statist.wegGhostCapital.seeufer.schachspieler"
       }
      ]
     },

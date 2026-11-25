@@ -743,6 +743,18 @@
       "zustand": "neu",
       "stil": "modern",
       "hinweis": "Ausschnitt [16, 0, 32, 48] von wolkenmeer.png: Wolken in Spalte 17 rechts neben der Plattform (Spalte 17 liegt bei Pixel 16 des Musters)"
+    },
+    "sc17Drachenbrett": {
+      "quelle": "spiel/eigene/drachenbrett.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Holztisch mit Brett und rotem Drachen in der Mitte (Drachenschach am Brunnen, M2 26.11.); Maske wie der Klapptisch",
+      "maske_fein": ["........", "........", "........", "........", "########", "########", "########", "##....##"]
     }
   }
 }

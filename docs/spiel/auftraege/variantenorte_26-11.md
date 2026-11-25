@@ -38,7 +38,9 @@ Sitzplatz, Laufweg und Kartenbau sind geprüft (siehe unten).
   der Anfang.
 - **Bilder** (Auftrag für den Autor in `docs/AUFGABEN_AUTOR.md`, zusammen mit den Märchenfiguren):
   Brett mit Drachenfigur für den Marktplatz, Kreidestriche am Fels (Schachzähler am Canyon), eine
-  Gummiente als Entenfigur für die Prärie. Bis dahin stehen gewöhnliche Bretter.
+  Gummiente als Entenfigur für die Prärie. Eingebaut am 26.11.: `sc17Drachenbrett` an beiden
+  Tischen am Brunnen, `pg14Kreidefels` (Fels in der Farbe der Canyonwand) neben dem Spielfels,
+  `sx10Entenfeld` (3 × 3 Brettfelder mit Ente, begehbar) neben Ray.
 - **Geräusche**, die im Paket fehlen: eine Sumpfschleife (Frösche, Wasser, ferner Reiher) für das
   Bayou; das Kinderlachen `tandem` ist ein Einzelgeräusch und bleibt dem Tandem-Dialog von mittel-4.
 - **Tagesabläufe:** Juniper, Bell, Ray, Abe, Earl, Kira und Sol haben keine eigenen Tagesabläufe;

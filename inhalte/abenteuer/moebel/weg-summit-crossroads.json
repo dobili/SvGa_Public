@@ -300,6 +300,18 @@
         "########",
         ".######."
       ]
+    },
+    "sx10Entenfeld": {
+      "quelle": "spiel/eigene/entenfeld.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "gebraucht",
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach im Gras",
+      "hinweis": "Drei mal drei Brettfelder mit Gummiente in der Mitte: Rays Entenschach (M4 26.11.), ein Brettfeld je Kachel"
     }
   }
 }

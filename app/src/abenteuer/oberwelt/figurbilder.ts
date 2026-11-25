@@ -11,7 +11,7 @@
  * Abhängigkeiten: Phaser.
  */
 import Phaser from "phaser";
-import { hoehenfaktorDerAdresse, istGrossbogen } from "./figurbogen";
+import { hoehenfaktorDerAdresse, istGrossbogen, rahmenhoeheDerAdresse } from "./figurbogen";
 import type { Umriss } from "./sitzplatz";
 import type { Richtung } from "./szene";
 import { figurzeichenmassstab } from "./weltmassstab";
@@ -56,7 +56,8 @@ export function ladeFigurbogen(szene: Phaser.Scene, schluessel: string, adresse:
   else hoehenfaktoren.set(schluessel, faktor);
   szene.load.spritesheet(schluessel, adresse, {
     frameWidth: gross ? GROSS_RAHMEN : FIGUR_BREITE,
-    frameHeight: gross ? GROSS_RAHMEN : FIGUR_HOEHE,
+    // Hohe PixelLab-Rahmen (32 × 48, figurbogen.ts): die Füße stehen trotzdem zwei Pixel über dem Rand.
+    frameHeight: gross ? rahmenhoeheDerAdresse(adresse) : FIGUR_HOEHE,
   });
 }
 

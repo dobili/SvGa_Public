@@ -10,11 +10,16 @@
  * pipeline/abenteuer/pixellabhoehen.py, Zielhöhen je Altersgruppe). figurbilder.ts liest ihn je
  * Adresse und nimmt ihn in den Maßstab der Figur.
  *
+ * Hohe Rahmen (Auftrag des Haupt-Chats, 25.11.2026): Ein Bogen kann Rahmen von 32 × 48 haben (der
+ * Schiffskoch, dessen Mütze auf 32 × 32 abgeschnitten war). Welche, steht im Index
+ * figuren32/rahmenhoehen.json des Pakets (skripte/figurenbogen.mjs schreibt ihn, nur Figuren mit
+ * einer Höhe über 32); ohne Index oder Eintrag gilt 32.
+ *
  * Rolle im Gesamtbild: weltdaten.ts lädt die Bilder hierüber; figurbilder.ts fragt beim Laden in
  * Phaser, welche Rahmengröße eine Adresse hat. Ohne Phaser, damit weltdaten.ts klein bleibt.
  * Abhängigkeiten: paket/paketlader.ts, figurhoehen.json.
  */
-import { paketdateiAlsAdresseOderNull } from "../paket/paketlader";
+import { liesPaketJson, paketdateiAlsAdresseOderNull } from "../paket/paketlader";
 import figurhoehen from "./figurhoehen.json";
 
 /** Adressen der geladenen Bögen mit Rahmen 32 × 32. */
@@ -22,6 +27,26 @@ const grossbogen = new Set<string>();
 /** Höhenfaktor je Adresse eines PixelLab-Bogens (nur wo er von 1 abweicht). */
 const faktorJeAdresse = new Map<string, number>();
 const FAKTOREN: Readonly<Record<string, number>> = figurhoehen.faktoren;
+/** Rahmenhöhe je Adresse eines PixelLab-Bogens (nur wo sie von 32 abweicht). */
+const hoeheJeAdresse = new Map<string, number>();
+/** Rahmenhöhe der gewöhnlichen PixelLab-Bögen. */
+export const GROSS_HOEHE = 32;
+
+/** Bogenname → Rahmenhöhe (Index des Pakets); Einträge nur für Höhen über 32. */
+export type Rahmenhoehen = Readonly<Record<string, number>>;
+const RAHMENINDEX = "figuren32/rahmenhoehen.json";
+let rahmenvorrat: Promise<Rahmenhoehen> | null = null;
+
+/** Der Index der Rahmenhöhen, einmal je Sitzung; leer ohne Datei (ältere Pakete, CI). */
+export function ladeRahmenhoehen(): Promise<Rahmenhoehen> {
+  rahmenvorrat ??= liesPaketJson<Rahmenhoehen>(RAHMENINDEX).catch(() => ({}));
+  return rahmenvorrat;
+}
+
+/** Rahmenhöhe des PixelLab-Bogens hinter einer Adresse (32, beim Schiffskoch 48). */
+export function rahmenhoeheDerAdresse(adresse: string): number {
+  return hoeheJeAdresse.get(adresse) ?? GROSS_HOEHE;
+}
 
 /** Name eines Bogens aus seinem Pfad. Beispiel: figuren/juno.png → juno. */
 function bogenname(pfad: string): string {
@@ -59,13 +84,17 @@ export function istGrossbogen(adresse: string): boolean {
 export async function figurenbildAdresse(
   pfad: string,
   lies: (pfad: string) => Promise<string | null> = paketdateiAlsAdresseOderNull,
+  hoehen: () => Promise<Rahmenhoehen> = ladeRahmenhoehen,
 ): Promise<string | null> {
   if (ALT.test(pfad)) {
     const neu = await lies(grosspfad(pfad));
     if (neu) {
       grossbogen.add(neu);
-      const faktor = hoehenfaktor(bogenname(pfad));
+      const name = bogenname(pfad);
+      const faktor = hoehenfaktor(name);
       if (faktor !== 1) faktorJeAdresse.set(neu, faktor);
+      const hoehe = (await hoehen())[name];
+      if (hoehe && hoehe !== GROSS_HOEHE) hoeheJeAdresse.set(neu, hoehe);
       return neu;
     }
   }

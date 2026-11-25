@@ -1400,3 +1400,19 @@ Browserprüfung der Sperren S16 und S17 mit echt gespielten kurzen Partien (Fabl
   - RO50: Größe des Hundes (23.11.2026)
   - RO53: Kartenblick: acht Entscheidungen (24.11.2026, umgesetzt oder beauftragt, Widerspruch genügt)
   - RO55: Ambrose als Begleiter: wie oft (24.11.2026, umgesetzt, Widerspruch genügt)
+
+### Schiffskoch mit hoher Leinwand 32 × 48 (Wunsch des Autors, 25.11.2026)
+
+- Warum: Der Autor hat den Schiffskoch in PixelLab neu auf 32 × 48 erzeugt, weil die Mütze auf
+  32 × 32 oben abgeschnitten war. Bisher nahmen Import, Bogenbau und App nur Rahmen von 32 × 32.
+- Eine Ausnahme nur für den Koch, keine allgemeine Umstellung: Die Rahmenhöhe ist eine optionale
+  Angabe je Figur (Leinwand in metadata.json; der Import schreibt sie nur, wenn das Südbild höher
+  als breit ist), ohne Angabe gilt 32. Die Breite bleibt 32, die Füße stehen zwei Pixel über dem
+  unteren Rand wie bisher, der Kopf ragt nach oben hinaus; Fußpunkt, Körper (nur die Fußkachel),
+  Zeichentiefe, Sitz- und Liegebilder richten sich nach der Fußzeile. Die App erfährt die Höhe aus
+  dem Paketindex `figuren32/rahmenhoehen.json` (nur Figuren über 32).
+- Größe: kein Angleichen über den Höhenfaktor. Kopf und Körper des Kochs sind so hoch wie bei den
+  anderen, nur die Mütze ragt höher; er bekommt Faktor 1 (`OHNE_FAKTOR` in pixellabtabelle.py,
+  mit Grund) und darf mit Mütze höher sein als alle anderen.
+- Alles andere bleibt byte-gleich (Vergleich alter und neuer Bogenbau an sieben künstlichen
+  Exporten: Erwachsene, Kind 24, Sitzen, Rennen, Zustände, weitere Standbilder).

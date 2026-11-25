@@ -42,9 +42,9 @@ async function eintraege(ordner) {
 }
 
 /** Die vier Rahmen eines Standbilds (Ordnung des Bogens), oder null ohne Südansicht. */
-async function vierRahmen(ordner) {
+async function vierRahmen(ordner, masse) {
   const roh = {};
-  for (const { name } of RICHTUNGEN) roh[name] = await standbildAus(ordner, name);
+  for (const { name } of RICHTUNGEN) roh[name] = await standbildAus(ordner, name, masse);
   if (!roh.south) return null;
   const still = RICHTUNGEN.map(({ name, spiegel }) => {
     const partner = spiegel ? roh[spiegel] : null;
@@ -54,15 +54,16 @@ async function vierRahmen(ordner) {
 }
 
 /**
- * Die weiteren Standbilder einer Figur: Kennungen und je vier Rahmen; leer ohne Ordner.
+ * Die weiteren Standbilder einer Figur: Kennungen und je vier Rahmen; leer ohne Ordner. `masse`
+ * (Breite und Höhe der Leinwand) wie die Hauptbilder, damit alle Rahmen gleich hoch sind.
  * Beispiel: figuren-neu/abe mit standbilder/without-telescope → { kennungen: ["without-telescope"],
  * rahmen: [[rechts, oben, links, unten]] }.
  */
-export async function weitereStandbilder(ordner) {
+export async function weitereStandbilder(ordner, masse = undefined) {
   const kennungen = [];
   const rahmen = [];
   for (const e of await eintraege(ordner)) {
-    const vier = await vierRahmen(join(ordner, "standbilder", e.kennung));
+    const vier = await vierRahmen(join(ordner, "standbilder", e.kennung), masse);
     if (!vier) continue;
     kennungen.push(e.kennung);
     rahmen.push(vier);

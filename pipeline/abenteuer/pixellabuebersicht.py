@@ -5,6 +5,8 @@ Warum: Nach dem Import (pixellabimport.py) soll der Autor alle Menschen auf eine
 laufender Filmstreifen (CSS, Bild für Bild aus dem Bogen) und die Zustände Sitzen und Liegen, dazu
 Altersgruppe, gemessene Höhe und Höhenfaktor (pixellabhoehen.py). Die Seite liest die Bögen, die der
 Paketbau aus figuren-neu baut (app/skripte/figurenbogen.mjs, Rahmen 32 × 32, 24 Rahmen je Reihe).
+Hohe Rahmen (32 × 48, Schiffskoch, 25.11.2026) stehen in BOEGEN/rahmenhoehen.json
+(figurenboegen-ordner.mjs); die Seite schneidet diese Bögen in ihrer Höhe.
 
 Ablauf (im Hauptordner):
     python -m pipeline.abenteuer.pixellabuebersicht BOEGEN ZIEL [--privat PRIVAT]
@@ -31,6 +33,8 @@ GEHEN_AB = 24
 RENNEN_AB = 120
 RENNEN_REIHE = 5
 PNG_KOPF = 16
+# Index der hohen Rahmen im Bogenordner (app/skripte/figurenboegen-ordner.mjs).
+RAHMENINDEX = "rahmenhoehen.json"
 FIGURHOEHEN = (
     Path(__file__).resolve().parents[2] / "app" / "src" / "abenteuer" / "oberwelt" / "figurhoehen.json"
 )
@@ -43,34 +47,39 @@ def bildgroesse(pfad: Path) -> tuple[int, int]:
     return struct.unpack(">II", kopf[PNG_KOPF : PNG_KOPF + 8])
 
 
-def _rahmen(bogen: str, nummer: int, extra: str = "") -> str:
-    """Ein Rahmen als div mit Hintergrundausschnitt."""
-    x, y = (nummer % SPALTEN) * RAHMEN * ZOOM, (nummer // SPALTEN) * RAHMEN * ZOOM
-    stil = f"background-image:url('{bogen}');background-position:-{x}px -{y}px"
+def _rahmen(bogen: str, nummer: int, extra: str = "", hoehe: int = RAHMEN) -> str:
+    """Ein Rahmen als div mit Hintergrundausschnitt (Rahmenhöhe 32, bei hohen Bögen mehr)."""
+    x, y = (nummer % SPALTEN) * RAHMEN * ZOOM, (nummer // SPALTEN) * hoehe * ZOOM
+    stil = f"background-image:url('{bogen}');background-position:-{x}px -{y}px;height:{hoehe * ZOOM}px"
     return f"<div class='r{extra}' style=\"{stil}\"></div>"
 
 
-def _film(bogen: str, beginn: int, titel: str) -> str:
+def _film(bogen: str, beginn: int, titel: str, hoehe: int = RAHMEN) -> str:
     """Gehen oder Rennen nach unten als laufender Filmstreifen (sechs Bilder, CSS steps)."""
     erstes = beginn + SPALTE["unten"] * LAUFBILDER
-    x, y = (erstes % SPALTEN) * RAHMEN * ZOOM, (erstes // SPALTEN) * RAHMEN * ZOOM
-    stil = f"background-image:url('{bogen}');--x:-{x}px;background-position:-{x}px -{y}px"
+    x, y = (erstes % SPALTEN) * RAHMEN * ZOOM, (erstes // SPALTEN) * hoehe * ZOOM
+    stil = (
+        f"background-image:url('{bogen}');--x:-{x}px;background-position:-{x}px -{y}px;"
+        f"height:{hoehe * ZOOM}px"
+    )
     return f"<figure><div class='r film' style=\"{stil}\"></div><figcaption>{titel}</figcaption></figure>"
 
 
-def karte(name: str, bogen: str, hoehe_px: int, faktor: float | None) -> str:
-    """Abschnitt einer Figur: Standbilder, Gehen, Rennen, Zustände."""
-    reihen = hoehe_px // RAHMEN
-    teile = [f"<figure>{_rahmen(bogen, SPALTE[r])}<figcaption>{r}</figcaption></figure>" for r in RICHTUNGEN]
-    teile.append(_film(bogen, GEHEN_AB, "gehen"))
+def karte(name: str, bogen: str, hoehe_px: int, faktor: float | None, rahmen: int = RAHMEN) -> str:
+    """Abschnitt einer Figur: Standbilder, Gehen, Rennen, Zustände (`rahmen`: Rahmenhöhe)."""
+    reihen = hoehe_px // rahmen
+    teile = [
+        f"<figure>{_rahmen(bogen, SPALTE[r], hoehe=rahmen)}<figcaption>{r}</figcaption></figure>"
+        for r in RICHTUNGEN
+    ]
+    teile.append(_film(bogen, GEHEN_AB, "gehen", rahmen))
     if reihen > RENNEN_REIHE:
-        teile.append(_film(bogen, RENNEN_AB, "rennen"))
+        teile.append(_film(bogen, RENNEN_AB, "rennen", rahmen))
     for reihe, titel in REIHEN.items():
         if reihe < reihen:
             spalte = SPALTE["unten"] if titel != "Liegen" else 0
-            teile.append(
-                f"<figure>{_rahmen(bogen, reihe * SPALTEN + spalte)}<figcaption>{titel}</figcaption></figure>"
-            )
+            bild = _rahmen(bogen, reihe * SPALTEN + spalte, hoehe=rahmen)
+            teile.append(f"<figure>{bild}<figcaption>{titel}</figcaption></figure>")
     angabe = f"Faktor {faktor}" if faktor else "Faktor 1"
     kopf = f"<h2>{html.escape(name)} <small>{angabe}</small></h2>"
     return f"<section>{kopf}<div class=z>{''.join(teile)}</div></section>"
@@ -104,6 +113,8 @@ def main() -> None:
     parser.add_argument("ziel", type=Path)
     args = parser.parse_args()
     faktoren = json.loads(FIGURHOEHEN.read_text(encoding="utf-8"))["faktoren"]
+    index = args.boegen / RAHMENINDEX
+    rahmenhoehen = json.loads(index.read_text(encoding="utf-8")) if index.exists() else {}
     (args.ziel / "boegen").mkdir(parents=True, exist_ok=True)
     abschnitte = []
     for pfad in sorted(args.boegen.glob("*.png")):
@@ -111,7 +122,8 @@ def main() -> None:
             continue
         shutil.copy(pfad, args.ziel / "boegen" / pfad.name)
         _, hoehe = bildgroesse(pfad)
-        abschnitte.append(karte(pfad.stem, f"boegen/{pfad.name}", hoehe, faktoren.get(pfad.stem)))
+        rahmen = rahmenhoehen.get(pfad.stem, RAHMEN)
+        abschnitte.append(karte(pfad.stem, f"boegen/{pfad.name}", hoehe, faktoren.get(pfad.stem), rahmen))
     (args.ziel / "index.html").write_text(seite(abschnitte), encoding="utf-8")
     print(f"{len(abschnitte)} Figuren → {args.ziel / 'index.html'}")
 

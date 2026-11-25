@@ -99,3 +99,10 @@ def statistentyp(nummer: int) -> str:
 ALTER_VON_HAND: dict[str, str] = {
     "empfangsroboter": "keine",
 }
+
+# Figuren ohne Höhenfaktor, mit Grund (pixellabhoehen.py gibt ihnen Faktor 1).
+OHNE_FAKTOR: dict[str, str] = {
+    "schiffskoch": "Hohe Leinwand 32 × 48 nur wegen der Mütze (Wunsch des Autors, 25.11.2026): Kopf und "
+    "Körper sind so hoch wie bei den anderen, die Mütze zählt nicht zur Körperhöhe; er darf mit Mütze "
+    "höher sein als alle anderen.",
+}

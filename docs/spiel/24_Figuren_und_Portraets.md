@@ -169,6 +169,13 @@ Prompts in `ki-roh/zuordnung_23-11.json`).
   × 1,1). Die App zeichnet die Figur damit (`figurhoehen.json`, `figurbogen.ts`,
   `figurbilder.ts`): Die Füße bleiben auf der Kachel, der Körper für Kollisionen bleibt eine
   Kachel. Im Spiel statt im Bogen skaliert, damit die Pixelzeichnung nicht neu gerastert wird.
+- **Hohe Leinwand 32 × 48, nur der Schiffskoch** (25.11.2026, Mütze auf 32 × 32 oben
+  abgeschnitten): Ist das Südbild im Export höher als breit, schreibt der Import diese Größe in
+  `metadata.json`; `figurenbogen.mjs` baut dann Rahmen von 32 × 48 (Füße auf Zeile 46, Kopf ragt
+  höher), der Paketbau nennt die Höhe im Index `figuren32/rahmenhoehen.json`, die App lädt den
+  Bogen in dieser Höhe (`figurbogen.ts`). Kein Höhenfaktor (`pixellabtabelle.OHNE_FAKTOR`): Kopf
+  und Körper sind so hoch wie bei den anderen, nur die Mütze ragt höher. Alle anderen Figuren
+  bleiben 32 × 32 und byte-gleich.
 - **Übersicht für den Autor**: `pixellabuebersicht.py` (nur lokal, `buch/arbeit/pixellab/`).
 
 ## Verdeckung beim Sitzen und Liegen (23.11.2026)

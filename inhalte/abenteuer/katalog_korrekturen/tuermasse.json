@@ -1,5 +1,13 @@
 {
   "_hinweis": "Türrahmen außen in Pixeln des ungeskalierten Bildes, rahmen = [links, oben, rechts, unten] (rechts und unten ausschließlich). herkunft: „von Hand“ (mit der Lupe abgelesen, 16.11.2026), „gemessen“ (automatisch, pipeline/abenteuer/tuermessung.py, im Bild geprüft am 17.11.2026), „verworfen“ (automatische Messung im Bild falsch, ohne rahmen; bitte von Hand messen, grund sagt warum) oder „nicht messbar“ (keine Türangabe in Katalog oder Grundriss, oder keine Türfläche gefunden). Wer neu messen will, löscht den Eintrag. Von Hand geht immer vor. Regel 10.92, Prüfung pipeline/abenteuer/tuergroesse.py.",
+  "spiel/eigene/bahnhof_museum.png": {
+    "rahmen": [69, 104, 91, 137],
+    "herkunft": "gemessen"
+  },
+  "spiel/eigene/kantine_breit.png": {
+    "rahmen": [154, 217, 198, 250],
+    "herkunft": "gemessen"
+  },
   "spiel/eigene/villa_whitlock.png": {
     "rahmen": [31, 151, 49, 170],
     "herkunft": "von Hand"

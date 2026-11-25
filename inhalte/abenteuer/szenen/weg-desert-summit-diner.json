@@ -52,6 +52,11 @@
   ],
   "objekte": [
     {
+      "moebel": "kt10KlapptischTablet",
+      "feld": [2, 12],
+      "id": "testteamTisch"
+    },
+    {
       "moebel": "wds6Speisewagen",
       "feld": [74, 5],
       "versatz": [0, 14],

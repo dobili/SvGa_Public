@@ -54,6 +54,11 @@
   ],
   "objekte": [
     {
+      "moebel": "kt10KlapptischTablet",
+      "feld": [137, 11],
+      "id": "testteamTisch"
+    },
+    {
       "moebel": "wc11HolzbrueckeQuer",
       "feld": [85, 13],
       "bauteil_ok": true,

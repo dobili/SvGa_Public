@@ -491,6 +491,32 @@ Profil › Einstellungen › Fehler melden.
       auch die Folge. Fehlt Ambrose (Tiefpunkt, nach dem Abschied), erscheinen die Sätze als Notiz.
       Hoch und quer.
       **Antwort:** „N2708 ok“ oder was stört.
+- [ ] N2709. **Besprechung sofort bereit (26.11.2026):** Spiel im Abenteuer eine Partie zu Ende
+      (etwa den Clubkampf gegen Coach Delgado in Maple Falls), öffne gleich danach das Tagebuch,
+      „Meine Partien“, und tippe auf „Besprechen“. Erwartet: Ambrose beginnt sofort, ohne den Satz
+      „Einen Augenblick …“. Nur wenn du sehr schnell gezogen hast, rechnet er kurz. Eine
+      Schach960-Partie hat in der Liste nur „Ansehen“, kein „Besprechen“.
+      **Antwort:** „N2709 ok“ oder ob eine Rechenphase kam und wie lange.
+- [ ] N2710. **„Soll ich es dir zeigen?“ (26.11.2026):** Spring in einer Besprechung mit ⏭ zu einem
+      Fehler oder Patzer. Ambroses Satz endet mit einer Frage wie „Soll ich dir den besseren Weg
+      zeigen?“, darunter der Knopf „Zeig es mir.“. Tippe darauf: Das Brett spielt den besseren Weg
+      Zug für Zug vor, die Blase nennt die Züge, unten stehen „Zug 1 von …“ und „Zurück zur Partie“
+      (zurück an dieselbe Stelle). Früh im Spiel zeigt er nur einen Zug, nach dem Ende von Akt 1 bis
+      zu vier, nach Akt 3 bis zu sechs Halbzüge. Ohne Ambrose heißt der Knopf „Besseren Weg zeigen“.
+      **Antwort:** „N2710 ok“ oder was stört.
+- [ ] N2711. **Genauere Sätze (26.11.2026):** Besprich nach dem Ende von Akt 1 eine Partie mit einem
+      Fehler und prüfe am Brett, ob stimmt, was Ambrose sagt: welche Figur auf welchem Feld hing
+      oder was gedroht war („Danach stand dein Läufer auf g5 ohne Schutz.“), was es gekostet hat
+      (immer als Figur, „Das kostet dich den Läufer.“, nie in Bauern), wie es vorher stand („Dabei
+      standest du im Endspiel gut da.“) und beim brillanten Zug, welche Figur geopfert wurde.
+      **Antwort:** „N2711 ok“ oder jeden Satz, der nicht zum Brett passt, mit Zug.
+- [ ] N2712. **Rückbezüge und Geschichte (26.11.2026):** Spiel eine Aufgabenrunde bei einem Lehrer
+      (etwa Sam im Club von Maple Falls) und danach zwei Partien, in denen dir ein ähnlicher Fehler
+      passiert. In der zweiten Besprechung sagt Ambrose höchstens zweimal Sätze wie „Genau das war
+      Thema bei Sam.“ oder „Das ist dir schon in der Partie gegen … passiert.“ und erzählt höchstens
+      eine kurze Geschichte aus seiner Zeit (Kaffeehaus, Dampfer), nur zu einem Begriff, den du schon
+      gelernt hast. Ist Ambrose nicht da (Tiefpunkt), gibt es keine Geschichte.
+      **Antwort:** „N2712 ok“ oder was stört.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

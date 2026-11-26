@@ -66,8 +66,8 @@ VAR abschiedGesehen = false
 // Musik der Karte.
 ~ ankunftCedarCreekGesehen = true
 {not schildCedarGesehen: Zwischen den Bäumen schlägt eine Uhr. Viermal, langsam. #sprecher:erzaehler #klang:turmuhr4 #musik:aus #pause:3}
-Cedar Creek ist kleiner als Maple Falls und sieht älter aus. In der Mitte, wo woanders eine Kirche steht, steht die Bibliothek. #sprecher:erzaehler #musik:karte
-Auf ihrer Treppe sitzen zwei Kinder, die gleich aussehen, mit Figuren in den Händen und ohne Brett. #sprecher:erzaehler
+Cedar Creek ist kleiner als Maple Falls und sieht älter aus. In der Mitte, wo woanders eine Kirche steht, steht die Bibliothek. #sprecher:erzaehler #musik:karte #schwenk:mf2Bibliothek
+Auf ihrer Treppe sitzen zwei Kinder, die gleich aussehen, mit Figuren in den Händen und ohne Brett. #sprecher:erzaehler #schwenk:zwillinge
 Ich hab gewonnen! #sprecher:ivy #stimmung:laechelt
 Du hast den Turm bewegt, als ich nicht geguckt hab! #sprecher:jonah #stimmung:bitter
 Du guckst nie! #sprecher:ivy #stimmung:lacht
@@ -75,7 +75,7 @@ Du guckst nie! #sprecher:ivy #stimmung:lacht
     Beide zeigen auf sich. Dann aufeinander. #sprecher:erzaehler
 * [Leise vorbeigehen]
     Sie verstummen und sehen euch nach. #sprecher:erzaehler
-- Hier flüstert sogar die Straße. #sprecher:juno #stimmung:laechelt
+- Hier flüstert sogar die Straße. #sprecher:juno #stimmung:laechelt #schwenk:held
 Mrs. Okafor erwartet uns. Der Coach kommt erst morgen mit dem Bus. #sprecher:juno #stimmung:neutral
 -> END
 
@@ -115,7 +115,7 @@ Unten im Archiv steht noch ein Karton. #sprecher:erzaehler
 === sterne_angebot ===
 // Anwesenheit (25.11.2026): Mae, Dex und Mrs. Okafor stehen jetzt am Steg (cedarCreek.maeSteg,
 // dexSteg, okaforSteg), solange die Sternennacht aussteht; Maes Teleskop steht schon dort.
-Es wird dunkel. Am Steg haben Mae und Dex eine Decke ausgebreitet, neben dem Teleskop. #sprecher:erzaehler #uhr:abend
+Es wird dunkel. Am Steg haben Mae und Dex eine Decke ausgebreitet, neben dem Teleskop. #sprecher:erzaehler #uhr:abend #schwenk:steg
 Mrs. Okafor hat eine Thermoskanne dabei. #sprecher:erzaehler
 Da bist du ja! Gleich geht es los! #sprecher:mae #stimmung:froh
 * [Dazusetzen]
@@ -376,7 +376,7 @@ Gehalten, aber nicht ausgebaut. Remis, noch mal? #sprecher:rosa #stimmung:laeche
 // der Riss ist eine gemessene Stille von drei Sekunden (#pause:3). Victor durchgehend kalt; die
 // Porträtfassung „Riss“ für genau eine Zeile gibt es noch nicht (bis dahin muede). Klang: Stillen
 // S18 und S19 (21_Klangplan.md), Victors Thema beim Gehen.
-An der Haltestelle steht jemand. Gerade, die Füße nebeneinander, das Tablet in beiden Händen. #sprecher:erzaehler #musik:aus
+An der Haltestelle steht jemand. Gerade, die Füße nebeneinander, das Tablet in beiden Händen. #sprecher:erzaehler #musik:aus #schwenk:victor
 Das Plakat hängt über {rv_ihm}. #sprecher:erzaehler
 {rv_Er} zieht. Das Programm antwortet sofort. #sprecher:erzaehler #klang:tablet
 Ein leises Klicken, wie ein Fingernagel auf Glas. #sprecher:erzaehler

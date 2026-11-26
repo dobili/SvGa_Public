@@ -63,7 +63,7 @@ VAR testteamArenaGesehen = false
 
 === ankunft_zu_fuss ===
 {ankunftCapitalArenaGesehen:
-    Der Weg vom See endet am Vorplatz der Capital Arena. #sprecher:erzaehler
+    Der Weg vom See endet am Vorplatz der Capital Arena. #sprecher:erzaehler #schwenk:ca7Arena
     -> END
 }
 {not abeGetroffen:
@@ -75,14 +75,14 @@ Am Abend fahrt ihr in die Hauptstadt und schlaft in einem Hotel, von dessen Fens
 Am Morgen steht ihr davor. #sprecher:erzaehler #uhr:morgen
 // Roman Kapitel 60: die Arena als weiße Muschel, die Busse aller Städte, alle auf der Treppe.
 * [Hinsehen]
-- Die Arena ist rund und weiß, mit einem Dach wie eine Muschel. Über dem Eingang hängt das Band mit acht Gesichtern. #sprecher:erzaehler #musik:arena
+- Die Arena ist rund und weiß, mit einem Dach wie eine Muschel. Über dem Eingang hängt das Band mit acht Gesichtern. #sprecher:erzaehler #musik:arena #schwenk:ca7Arena
 Deines hat noch immer Ketchup am Kinn. #sprecher:erzaehler
 Auf dem Platz stehen Busse. Der graue mit den Rostflecken. #sprecher:erzaehler
 Ein Kleinbus mit „RIVERTON“ aus Klebeband. #sprecher:erzaehler
 Ein türkisfarbener Lastwagen, aus dem es dampft. Ein Pick-up mit einem Zahnstocher am Rückspiegel. #sprecher:erzaehler
 Sie sind alle gekommen. #sprecher:mutter #stimmung:ueberrascht
 * [Zur Treppe sehen]
-- Coach Delgado zählt Köpfe. Mrs. Okafor sehr aufrecht neben Mr. Boateng mit seinem besten Hut. #sprecher:erzaehler
+- Coach Delgado zählt Köpfe. Mrs. Okafor sehr aufrecht neben Mr. Boateng mit seinem besten Hut. #sprecher:erzaehler #schwenk:held
 Slick auf dem Geländer, mit drei Kindern. #sprecher:erzaehler
 Big Joe braucht allein zwei Stufen. Dr. Lin ohne Kittel. #sprecher:erzaehler
 Miss Odile, Remy, Lou. Mira auf Tomás' Schultern – Dot mit Lockenwicklern. #sprecher:erzaehler

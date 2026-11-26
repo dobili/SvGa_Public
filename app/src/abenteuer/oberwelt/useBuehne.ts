@@ -9,8 +9,11 @@
  * oder `#uhr:22` stellt die Spieluhr (Geschichte geht vor, regeln/spieluhr.ts); am Dialogende gilt
  * dann das Licht der neuen Zeit. Spricht der Geist und steht er nicht auf der Karte, erscheint er
  * als Begleiter neben dem Helden und blendet am Dialogende aus (begleiterschicht.ts).
+ * `#schwenk:ZIEL` (26.11.2026, schwenk.ts) fährt die Kamera zu dem, was die Zeile beschreibt; der
+ * Held bleibt stehen. Jede neue Zeile lässt einen laufenden Schwenk ans Ziel springen; `#gehe`,
+ * `#stelle` und das Dialogende holen die Kamera zum Helden zurück.
  * Abhängigkeiten: kern.ts, buehne.ts, figurblende.ts, gefuehrterweg.ts, fuehrungsschicht.ts,
- * begleiterschicht.ts, regeln/begleiter.ts.
+ * begleiterschicht.ts, schwenkschicht.ts, regeln/begleiter.ts.
  */
 import { useRef, useState } from "react";
 import { fuehre, stehAuf, stelle } from "./fuehrungsschicht";
@@ -26,6 +29,63 @@ import { verabschiedeBegleiter, zeigeBegleiter } from "./begleiterschicht";
 import { begleiterErscheint } from "../regeln/begleiter";
 import { geistsprecher } from "../regeln/geist";
 import { ambroseNichtDa } from "../regeln/abwesenheit";
+import { setzeFahrt } from "./schwenkfahrt";
+import { schwenkAmZiel, schwenkeKamera, schwenkeZurueck, type Dialoglage } from "./schwenkschicht";
+import type { Fuehrungszugang } from "./fuehrungsschicht";
+
+/** Bewegung reduziert (Systemeinstellung)? Dann springt die Kamera statt zu fahren. */
+function ruhig(): boolean {
+  return typeof window.matchMedia === "function"
+    ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    : false;
+}
+
+/** Lage des Dialogfensters (dialog/Dialog.tsx) auf dem Bildschirm, oder null. */
+function dialoglage(): Dialoglage {
+  const fenster = document.querySelector("[data-testid='abenteuer-dialog']");
+  // Eine Sprechblase bei der Figur ist kein Fenster am Rand; sie verdeckt keinen Streifen.
+  if (!fenster || fenster.classList.contains("abenteuer-sprechblase")) return null;
+  const r = fenster.getBoundingClientRect();
+  return { links: r.left, oben: r.top };
+}
+
+/** So viele Bilder wartet ein Schwenk höchstens auf die Szene (gut eine Sekunde). */
+const SCHWENK_WARTEBILDER = 90;
+
+/**
+ * Kamera zur Zeile: Ein laufender Schwenk springt ans Ziel; wer geht, wird wieder verfolgt; ein
+ * Schwenk-Tag fährt zum Ziel, sobald das Fenster der Zeile steht (es verdeckt den unteren Rand); die
+ * Zeile selbst erscheint erst am Ziel (schwenkschicht.ts, Speicher der Fahrt).
+ * Die erste Zeile eines Eingangs kommt, bevor die neue Karte ihren Helden aufgestellt hat; dann
+ * wartet der Schwenk Bild für Bild auf den Zugang der Szene (höchstens SCHWENK_WARTEBILDER).
+ */
+function schwenkeZurZeile(
+  zugang: () => Fuehrungszugang | null,
+  tags: Readonly<Record<string, string>>,
+): void {
+  const jetzt = zugang();
+  if (jetzt) schwenkAmZiel(jetzt);
+  if (tags.gehe !== undefined || tags.stelle !== undefined) {
+    if (jetzt) schwenkeZurueck(jetzt, ruhig());
+    return;
+  }
+  const ziel = tags.schwenk;
+  if (ziel === undefined) return;
+  // Die Zeile wartet von Anfang an (kein kurzes Aufblitzen vor der Fahrt), außer bei ruhiger Bewegung.
+  if (!ruhig()) setzeFahrt(true);
+  let bilder = 0;
+  const versuche = () => {
+    const z = zugang();
+    const ergebnis = z ? schwenkeKamera(z, ziel, dialoglage(), ruhig()) : "wartet";
+    if (ergebnis === "faehrt") return;
+    if (ergebnis === "wartet" && ++bilder < SCHWENK_WARTEBILDER) {
+      requestAnimationFrame(versuche);
+      return;
+    }
+    setzeFahrt(false); // Ziel unbekannt oder Szene zu lange nicht bereit: die Zeile kommt gleich.
+  };
+  requestAnimationFrame(versuche);
+}
 
 /** Rückrufe für den Dialog. */
 export interface Buehne {
@@ -107,6 +167,7 @@ export function useBuehne(k: Oberweltkern): Buehne {
       // Wer spricht und auf der Karte steht, schaut den Helden an (zuwendungsschicht.ts).
       const zugang = szene.fuehrungszugang();
       if (zugang && tags.sprecher) wendeZu(zugang, tags.sprecher);
+      schwenkeZurZeile(() => szeneAus(k.spiel)?.fuehrungszugang() ?? null, tags);
       gehe(tags);
       begleite(tags);
       stelleUhr(tags.uhr);
@@ -116,6 +177,8 @@ export function useBuehne(k: Oberweltkern): Buehne {
       const zugang = szene?.fuehrungszugang();
       if (zugang) stehAuf(zugang);
       if (zugang) wendeZurueck(zugang);
+      if (zugang) schwenkeZurueck(zugang, ruhig());
+      setzeFahrt(false);
       if (szene) verabschiedeBegleiter(szene);
       erinnerung.current = false;
       if (teilchenGeaendert.current && szene) zeigeKartenteilchen(szene);

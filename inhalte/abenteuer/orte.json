@@ -517,7 +517,11 @@
         "mitglieder": ["mapleFalls.sam"],
         "aufgaben": {
           "minuten": 12,
-          "buchuebungen": ["ueb:droh-ignorieren", "ueb:zaehlen-vorstoss", "ueb:angriff-zaehlen"],
+          "buchuebungen": [
+            "ueb:droh-ignorieren",
+            "ueb:zaehlen-vorstoss",
+            "ueb:angriff-zaehlen"
+          ],
           "themen": ["zaehlen", "haengend", "matt1"]
         }
       }
@@ -1279,7 +1283,8 @@
             "karte": "riverton.aussen",
             "ausloeser": "bahndamm"
           },
-          "dialog": "riverton-aussen.ankunft_zu_fuss"
+          "dialog": "riverton-aussen.ankunft_zu_fuss",
+          "nachher": true
         },
         {
           "name": "ereignisZugpartie",
@@ -1693,7 +1698,8 @@
             "karte": "ironwood.aussen",
             "ausloeser": "kanalweg"
           },
-          "dialog": "ironwood-aussen.ankunft_zu_fuss"
+          "dialog": "ironwood-aussen.ankunft_zu_fuss",
+          "nachher": true
         },
         {
           "name": "lockport",
@@ -2636,6 +2642,7 @@
           "karte": "wegIronwoodSilicon.glasbruecke",
           "art": "uebergang",
           "dialog": "silicon-bay-aussen.ankunft_zu_fuss",
+          "nachher": true,
           "ziel": {
             "karte": "siliconBay.aussen",
             "ausloeser": "glasbruecke"
@@ -3146,6 +3153,7 @@
           "karte": "wegSiliconDelacroix.deich",
           "art": "uebergang",
           "dialog": "port-delacroix-aussen.ankunft_zu_fuss",
+          "nachher": true,
           "ziel": {
             "karte": "portDelacroix.aussen",
             "ausloeser": "deich"
@@ -3582,6 +3590,7 @@
           "karte": "wegDelacroixDesert.felsbogen",
           "art": "uebergang",
           "dialog": "desert-springs-aussen.ankunft_zu_fuss",
+          "nachher": true,
           "ziel": {
             "karte": "desertSprings.aussen",
             "ausloeser": "canyon"
@@ -3907,6 +3916,7 @@
           "karte": "wegDesertSummit.bergstrasse",
           "art": "uebergang",
           "dialog": "summit-city-aussen.ankunft_zu_fuss",
+          "nachher": true,
           "ziel": {
             "karte": "summitCity.aussen",
             "ausloeser": "wegDesert"
@@ -4496,6 +4506,7 @@
           "karte": "wegSummitCrossroads.praerie",
           "art": "uebergang",
           "dialog": "crossroads-aussen.ankunft_zu_fuss",
+          "nachher": true,
           "ziel": {
             "karte": "crossroads.aussen",
             "ausloeser": "wegSummit"
@@ -4835,6 +4846,7 @@
           "karte": "wegCrossroadsPinewood.riesenbaeume",
           "art": "uebergang",
           "dialog": "pinewood-camp-aussen.ankunft_zu_fuss",
+          "nachher": true,
           "ziel": {
             "karte": "pinewoodCamp.aussen",
             "ausloeser": "wegCrossroads"
@@ -5050,6 +5062,7 @@
           "karte": "wegPinewoodGhost.staubstrasse",
           "art": "uebergang",
           "dialog": "ghost-town-aussen.ankunft_zu_fuss",
+          "nachher": true,
           "ziel": {
             "karte": "ghostTown.aussen",
             "ausloeser": "wegPinewood"
@@ -5434,6 +5447,7 @@
           "karte": "wegGhostCapital.leuchtturm",
           "art": "uebergang",
           "dialog": "capital-arena-aussen.ankunft_zu_fuss",
+          "nachher": true,
           "wenn": "abeGetroffen",
           "ziel": {
             "karte": "capitalArena.aussen",

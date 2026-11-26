@@ -7,7 +7,7 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import type { Ortdaten } from "../daten/laden";
 import { STARTPOSITION } from "../regeln/spielstand";
-import { eingangsdialog } from "./eingang";
+import { ankunftNachher, dialogBeimBetreten, eingangsdialog } from "./eingang";
 
 const INHALTE = new URL("../../../../inhalte/abenteuer/", import.meta.url);
 const orte = (
@@ -50,5 +50,27 @@ describe("eingangsdialog", () => {
   it("Karten ohne Eingang und unbekannte Karten liefern nichts", () => {
     expect(eingangsdialog(mapleFalls, "mapleFalls.dachboden", {})).toBeNull();
     expect(eingangsdialog(mapleFalls, "gibtEsNicht", {})).toBeNull();
+  });
+});
+
+describe("Ankunft zu Fuß nach dem Wechsel (nachher)", () => {
+  const ankunft = { dialog: "cedar-creek-aussen.ankunft_zu_fuss", nachher: true };
+  it("ohne nachher: Dialog vor dem Wechsel wie bisher", () => {
+    expect(ankunftNachher({ dialog: "x.y" }, {})).toBe(false);
+  });
+  it("mit nachher: vorgemerkt, einmal beim Betreten, dann wieder der Eingang", () => {
+    expect(ankunftNachher(ankunft, {})).toBe(true);
+    expect(dialogBeimBetreten(mapleFalls, "mapleFalls.aussen", { einleitungGesehen: true })).toBe(
+      "cedar-creek-aussen.ankunft_zu_fuss",
+    );
+    expect(
+      dialogBeimBetreten(mapleFalls, "mapleFalls.aussen", { einleitungGesehen: true }),
+    ).toBeNull();
+  });
+  it("Bedingung nicht erfüllt: der Held bleibt, nichts vorgemerkt", () => {
+    expect(ankunftNachher({ ...ankunft, wenn: "abeGetroffen" }, {})).toBe(false);
+    expect(
+      dialogBeimBetreten(mapleFalls, "mapleFalls.aussen", { einleitungGesehen: true }),
+    ).toBeNull();
   });
 });

@@ -15,6 +15,7 @@
  * Lage von Wahlen und „Weiter“ (hoch und quer) regelt bedienung.css.
  * Abhängigkeiten: dialog/geschichte.ts, dialog/dialogtakt.ts, texte/texte.ts, app/blattstapel.ts.
  */
+import { useSchwenkfahrt } from "../oberwelt/schwenkfahrt";
 import { useEffect, useRef, useState } from "react";
 import { useZurueckSchliesst } from "../../app/blattstapel";
 import { tSpiel } from "../texte/texte";
@@ -102,7 +103,10 @@ export function Dialog({
   // weiter), aufgehoben von der Uhr; jede neue Zeile startet sie neu.
   const dauerVon = (s: Dialogschritt) => (s.art === "zeile" ? pausendauer(s.zeile.tags) : 0);
   const [pausiert, setzeWartet] = useState(() => (letzteZeile ? dauerVon(letzteZeile) > 0 : false));
-  const wartet = pausiert || buehneWartet;
+  // Kameraschwenk (oberwelt/schwenkschicht.ts): Die Zeile erscheint erst am Ziel; ein Tippen auf
+  // „Weiter“ oder das Fenster lässt die Fahrt ans Ziel springen.
+  const fahrt = useSchwenkfahrt();
+  const wartet = pausiert || buehneWartet || fahrt.laeuft;
   const [erinnerung, setzeErinnerung] = useState(() =>
     letzteZeile ? erinnerungNach(false, letzteZeile) : false,
   );
@@ -199,6 +203,7 @@ export function Dialog({
       }
       aria-live="polite"
       data-testid="abenteuer-dialog"
+      onClick={fahrt.laeuft ? fahrt.springe : undefined}
     >
       {bild && <Grossansicht pfad={bild} />}
       {brett && !bild && <Brettbeispiel marke={brett} />}
@@ -232,6 +237,7 @@ export function Dialog({
       <p
         className="abenteuer-dialog-text"
         data-weiter={textWeiter ? "ja" : undefined}
+        data-schwenk={fahrt.laeuft ? "ja" : undefined}
         data-ton={fluestert ? "fluestern" : gedanke ? "gedanke" : undefined}
         onClick={textWeiter ? weiter : undefined}
       >
@@ -258,9 +264,9 @@ export function Dialog({
         <button
           type="button"
           className="abenteuer-dialog-weiter"
-          disabled={wartet}
+          disabled={wartet && !fahrt.laeuft}
           data-pause={wartet ? "ja" : undefined}
-          onClick={weiter}
+          onClick={fahrt.laeuft ? undefined : weiter}
         >
           {tSpiel("dialog.weiter")}
         </button>

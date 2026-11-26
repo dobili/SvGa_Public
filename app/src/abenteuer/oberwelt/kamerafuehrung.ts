@@ -8,7 +8,12 @@
  * in Laufrichtung. An den Kartengrenzen hält Phaser die Kamera an (setBounds).
  * Nebenbei meldet sie, in welcher Bildhälfte der Held steht (heldhaelfte.ts), damit kurze Hinweise
  * ihn nicht verdecken (Wunsch des Autors, 20.11.2026).
- * Abhängigkeiten: Phaser (Typen), kamera.ts, kameraregie.ts, kameravoraus.ts, heldhaelfte.ts.
+ * Schwenk (26.11.2026, schwenk.ts): Ein Dialog kann die Kamera zu einem Ziel fahren lassen; dann
+ * ersetzt die Fahrt den Vorausversatz, bis die Kamera wieder beim Helden ist. Die Szene bleibt
+ * unberührt (sie ist an ihrer Größengrenze): Jede Kameraführung meldet sich unter ihrer Szene an
+ * (kamerafuehrungVon), dort findet sie oberwelt/schwenkschicht.ts.
+ * Abhängigkeiten: Phaser (Typen), kamera.ts, kameraregie.ts, kameravoraus.ts, heldhaelfte.ts,
+ * schwenk.ts.
  */
 import type Phaser from "phaser";
 import type { Ausloeser } from "./ausloeserebene";
@@ -22,20 +27,102 @@ import {
   type Laufrichtung,
   type Versatz,
 } from "./kameravoraus";
+import { fahre, profildauer, schwenkprofil, schwenkversatz, type Fahrt } from "./schwenk";
 import type { Melder } from "./szenentypen";
+
+/** Kameraführung je Szene (für den Schwenk aus dem Dialog, schwenkschicht.ts). */
+const fuehrungen = new WeakMap<object, Kamerafuehrung>();
+
+/** Die Kameraführung einer Szene, oder null (Szene noch nicht aufgebaut). */
+export function kamerafuehrungVon(szene: object): Kamerafuehrung | null {
+  return fuehrungen.get(szene) ?? null;
+}
+
+/** Ein Schwenk: Ziel in Kartenpixeln (null: zurück zum Helden), Ränder mit Dialog, Fahrt. */
+interface Schwenkstand {
+  readonly ziel: Versatz | null;
+  readonly raender: Raender;
+  fahrt: Fahrt;
+  /** Wird einmal gerufen, wenn die Fahrt ankommt (der Dialog zeigt dann seine Zeile). */
+  beiZiel: (() => void) | null;
+}
 
 export class Kamerafuehrung {
   private grund: Versatz = OHNE_VERSATZ;
   private voraus: Versatz = OHNE_VERSATZ;
   private raender: Raender | null = null;
   private haelfte: Heldhaelfte | null = null;
+  private schwenkstand: Schwenkstand | null = null;
+  private held: Versatz = OHNE_VERSATZ;
 
   constructor(
     private readonly kamera: Phaser.Cameras.Scene2D.Camera,
     private readonly kachel: number,
     private readonly ausloeser: () => readonly Ausloeser[],
     private readonly melder?: Melder,
-  ) {}
+  ) {
+    // Ohne Szene (Komponententests mit nachgebauter Kamera) gibt es keinen Schwenk.
+    if (kamera.scene) fuehrungen.set(kamera.scene, this);
+  }
+
+  /** Verdeckte Ränder der Bedienung in Kartenpixeln (null vor dem Einrichten). */
+  get verdeckt(): Raender | null {
+    return this.raender;
+  }
+
+  /**
+   * Schwenk zu einem Punkt (Kartenpixel) oder zurück zum Helden (null). Eingaben: Ziel, verdeckte
+   * Ränder samt Dialogfenster (schwenk.ts, raenderMitDialog), sofort (reduzierte Bewegung),
+   * Rückruf bei Ankunft. Die Fahrt beginnt am aktuellen Versatz, im Tempo von schwenkprofil.
+   * Ausgabe: false ohne Fahrt (Kamera noch nicht eingerichtet, oder zurück ohne Schwenk).
+   */
+  schwenke(
+    ziel: Versatz | null,
+    raender: Raender,
+    sofort: boolean,
+    beiZiel: (() => void) | null = null,
+  ): boolean {
+    if (!this.raender || (ziel === null && !this.schwenkstand)) return false;
+    const von = { x: this.kamera.followOffset.x, y: this.kamera.followOffset.y };
+    const nach = this.schwenkziel(ziel, raender);
+    const profil = schwenkprofil(von, nach, this.kachel);
+    const fahrt = { von, nach, profil, vergangenMs: 0 };
+    this.schwenkstand = { ziel, raender, fahrt, beiZiel };
+    this.voraus = OHNE_VERSATZ;
+    if (sofort) this.ueberspringe();
+    return true;
+  }
+
+  /** Ein laufender Schwenk springt ans Ziel (Weitertippen im Dialog). */
+  ueberspringe(): void {
+    const stand = this.schwenkstand;
+    if (stand) this.schwenkschritt(profildauer(stand.fahrt.profil));
+  }
+
+  /** Läuft gerade ein Schwenk oder steht die Kamera bei einem Ziel? */
+  get schwenkt(): boolean {
+    return this.schwenkstand !== null;
+  }
+
+  /** Folgeversatz für das Ziel; zurück zum Helden ist es der Grundversatz. */
+  private schwenkziel(ziel: Versatz | null, raender: Raender): Versatz {
+    return ziel ? schwenkversatz(this.held, ziel, raender) : this.grund;
+  }
+
+  /** Ein Bild der Fahrt; am Helden angekommen, endet der Schwenk. */
+  private schwenkschritt(deltaMs: number): void {
+    const stand = this.schwenkstand;
+    if (!stand) return;
+    const nach = this.schwenkziel(stand.ziel, stand.raender);
+    const { fahrt, versatz, da } = fahre({ ...stand.fahrt, nach }, deltaMs);
+    stand.fahrt = fahrt;
+    this.setzeRoh(versatz);
+    if (!da) return;
+    const beiZiel = stand.beiZiel;
+    stand.beiZiel = null;
+    beiZiel?.();
+    if (stand.ziel === null && this.schwenkstand === stand) this.schwenkstand = null;
+  }
 
   /** Kamera für eine Welt einrichten (auch nach dem Drehen); Ausgabe: die verdeckten Ränder. */
   richteEin(breite: number, hoehe: number, zoom: number): Raender {
@@ -53,6 +140,12 @@ export class Kamerafuehrung {
    */
   schritt(deltaMs: number, richtung: Laufrichtung | null, held: Versatz): void {
     if (!this.raender) return;
+    this.held = held;
+    if (this.schwenkstand) {
+      this.schwenkschritt(deltaMs);
+      this.protokolliere(false, this.aufDemBild(held));
+      return;
+    }
     const k = this.kachel;
     const ziele = this.ausloeser()
       .filter((a) => a.typ === "ausloeser")
@@ -109,11 +202,13 @@ export class Kamerafuehrung {
    * ganzzahligem Zoom ohnehin auf Bildschirmpixel (roundPixels), feiner muss es nicht sein.
    */
   private setzeVersatz(): void {
+    this.setzeRoh({ x: this.grund.x - this.voraus.x, y: this.grund.y - this.voraus.y });
+  }
+
+  /** Setzt einen Folgeversatz, auf ganze Bildschirmpixel gerundet. */
+  private setzeRoh(versatz: Versatz): void {
     const zoom = this.kamera.zoomX || 1;
     const aufBildpixel = (wert: number) => Math.round(wert * zoom) / zoom;
-    this.kamera.setFollowOffset(
-      aufBildpixel(this.grund.x - this.voraus.x),
-      aufBildpixel(this.grund.y - this.voraus.y),
-    );
+    this.kamera.setFollowOffset(aufBildpixel(versatz.x), aufBildpixel(versatz.y));
   }
 }

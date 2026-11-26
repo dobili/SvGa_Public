@@ -676,6 +676,26 @@ Profil › Einstellungen › Fehler melden.
       hoch und quer. Im Menü „Joystick links“ wählen: Joystick links, Aktionsknopf und Knöpfe rechts.
       Quer liegt der Joystick immer links.
       **Antwort:** „N2732 ok“ oder ob Größe, Lage oder Rennschwelle (80 % Ausschlag) stören.
+- [ ] N2733. **Keine Zeitlupe nach dem Kartenwechsel (26.11.2026):** Auf dem iPhone in Maple
+      Falls ins Haus und wieder hinaus, in den Park und zurück, einmal reisen. Gleich nach jedem
+      Wechsel loslaufen: Der Held läuft sofort in normalem Tempo, auch wenn das erste Bild kurz hakt.
+      **Antwort:** „N2733 ok“ oder was auffällt (wie lange es hakt).
+- [ ] N2734. **Die Kamera zeigt, was der Text beschreibt (26.11.2026):** Zu Fuß am Fluss entlang
+      nach Cedar Creek gehen (oder einen Spielstand vor der Ankunft nehmen). Die Ankunft läuft
+      jetzt erst, wenn du in Cedar Creek stehst. Bei „In der Mitte … steht die Bibliothek“ fährt
+      die Kamera zur Bibliothek, bei „Auf ihrer Treppe sitzen zwei Kinder“ zu den Zwillingen, bei
+      Junos „Hier flüstert sogar die Straße“ zurück zu dir; du bleibst stehen. Die Zeile erscheint
+      erst, wenn die Kamera angekommen ist, und die Kamera bleibt dort, bis du weitertippst. Ein
+      Tippen während der Fahrt springt ans Ziel. Das Ziel liegt über dem Textfenster (quer links
+      daneben). Tempo: das Dreifache des Zurückgleitens der Kamera beim Stehenbleiben, etwa 6,7
+      Kacheln je Sekunde, weich an- und abgebremst (je ein Drittel der Strecke); ab 12 Kacheln wird
+      die Kamera unterwegs schneller, höchstens dreimal so schnell. 12 Kacheln dauern so 3 s, ein
+      Weg über eine ganze große Karte (100 Kacheln) gut 8 s, sehr kurze Wege 0,8 s. Passt das
+      Tempo? Die Werte lassen sich leicht ändern (Faktor 3, Schwelle 12 Kacheln, Spitze dreifach). Dasselbe bei allen Ankünften zu Fuß (Riverton, Ironwood,
+      Silicon Bay, Port Delacroix, Desert Springs, Summit City, Crossroads, Pinewood Camp, Ghost
+      Town, Capital Arena), beim Einzug in Birch Lane, im Wohnzimmer am ersten Abend, im Park bei
+      Mr. Abernathy und am Steg, im Clubraum bei Sam und in der Kantine von Ironwood.
+      **Antwort:** „N2734 ok“, oder „schneller“/„langsamer“, oder Ort, Zeile und was nicht passt.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

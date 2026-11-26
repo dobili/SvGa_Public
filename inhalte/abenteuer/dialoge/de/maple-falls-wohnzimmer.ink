@@ -92,7 +92,7 @@ VAR abschiedGesehen = false
 ~ treppeAbendGesehen = true
 Du kommst mit dem alten Brett die Treppe herunter. Auf der neunten Stufe knarrt es. #sprecher:erzaehler #klang:knarren
 Die hat schon geknarrt, als das Haus neu war. #sprecher:ambrose #stimmung:laechelt
-Unten im Wohnzimmer sitzt Mama auf dem Boden zwischen den Kartons und schraubt an einem Tisch. #sprecher:erzaehler
+Unten im Wohnzimmer sitzt Mama auf dem Boden zwischen den Kartons und schraubt an einem Tisch. #sprecher:erzaehler #schwenk:mutter
 -> END
 
 === ankunft ===
@@ -101,9 +101,9 @@ Unten im Wohnzimmer sitzt Mama auf dem Boden zwischen den Kartons und schraubt a
 ~ ankunftGesehen = true
 ~ setzeSzene("akt1.ankunft")
 // Erstspieler-Durchgang 20.11.2026: kürzer bis zum ersten Schritt; Sofa und Rauschen erzählt schon die Einleitung.
-Am Abend ist der Umzugswagen weg. Kartons überall, das Licht fällt in langen staubigen Streifen. #sprecher:erzaehler #musik:aus #bild:einzug_wohnzimmer #uhr:abend
+Am Abend ist der Umzugswagen weg. Kartons überall, das Licht fällt in langen staubigen Streifen. #sprecher:erzaehler #musik:aus #bild:einzug_wohnzimmer #uhr:abend #schwenk:mf4KartonStapel
 Auf den meisten Kartons steht nur ein Name, deiner oder ihrer. #sprecher:erzaehler #bild:aus
-Alles, wo nur ein Name draufsteht, ins Wohnzimmer. #sprecher:mutter #stimmung:muede
+Alles, wo nur ein Name draufsteht, ins Wohnzimmer. #sprecher:mutter #stimmung:muede #schwenk:mutter
 Hörst du das? Der Wasserfall. Daher der Name. #sprecher:mutter #stimmung:laechelt
 Man gewöhnt sich dran, sagt die Maklerin. Nach einer Woche hört man ihn nicht mehr. #sprecher:mutter #stimmung:nachdenklich
 * [„Es ist ziemlich groß.“]
@@ -112,7 +112,7 @@ Man gewöhnt sich dran, sagt die Maklerin. Nach einer Woche hört man ihn nicht 
     Ich auch. #sprecher:mutter #stimmung:bitter #pause
 - Mama fragt nicht, wie es dir geht. Dafür bist du ihr dankbar. #sprecher:erzaehler
 Eins noch. #sprecher:mutter #stimmung:nachdenklich
-Sie schiebt dir mit dem Fuß eine Kiste hin. Aus Holz, nicht aus Pappe. #sprecher:erzaehler #bild:kiste_whitlock
+Sie schiebt dir mit dem Fuß eine Kiste hin. Aus Holz, nicht aus Pappe. #sprecher:erzaehler #bild:kiste_whitlock #schwenk:held
 Auf dem Deckel, in steiler, altmodischer Schrift: „Whitlock – nicht wegwerfen.“ #sprecher:erzaehler
 Stand im Flur. Die Vorbesitzerin. #sprecher:mutter #stimmung:nachdenklich #bild:aus
 Sie hat hier gewohnt, seit … immer, glaube ich. #sprecher:mutter #stimmung:nachdenklich
@@ -351,7 +351,7 @@ Setz dich, Spatz. Die Pommes kommen gleich. #sprecher:mutter #stimmung:laechelt
 -> diner_abend
 
 === diner_abend ===
-Das Diner an der Hauptstraße ist lang und schmal wie ein Eisenbahnwagen. Rote Bänke, eine Theke aus Blech. #sprecher:erzaehler #musik:diner #geraeusch:diner_kueche #klang:tuerglocke
+Das Diner an der Hauptstraße ist lang und schmal wie ein Eisenbahnwagen. Rote Bänke, eine Theke aus Blech. #sprecher:erzaehler #musik:diner #geraeusch:diner_kueche #klang:tuerglocke #schwenk:hector
 Es riecht nach Zwiebeln und Kaffee. Aus der Musikbox kommt leise ein altes Lied. #sprecher:erzaehler
 Bestellung läuft! #sprecher:hector #stimmung:froh
 {hectorGetroffen:Hector ruft es in die Küche, obwohl außer ihm niemand in der Küche ist.|Er ruft es in die Küche, obwohl außer ihm niemand in der Küche ist. Auf seiner Schürze steht „Hector“.} #sprecher:erzaehler

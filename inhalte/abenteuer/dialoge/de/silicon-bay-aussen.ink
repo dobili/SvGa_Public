@@ -59,16 +59,16 @@ VAR ambroseSprichtWieder = false
 VAR versoehnungGesehen = false
 === ankunft_zu_fuss ===
 {ankunftSiliconBayGesehen:
-    Die Glasbrücke endet am Campus von Silicon Bay. Kein Baum, kein Vogel, nur Glas. #sprecher:erzaehler
+    Die Glasbrücke endet am Campus von Silicon Bay. Kein Baum, kein Vogel, nur Glas. #sprecher:erzaehler #schwenk:sb5AkademieBau
     -> END
 }
 ~ ankunftSiliconBayGesehen = true
 In Silicon Bay ist es nicht kalt. Es liegt kein Schnee. #sprecher:erzaehler
-Die Häuser sind aus Glas. In ihnen spiegeln sich die anderen Häuser, man sieht nicht, wo eines aufhört. #sprecher:erzaehler
+Die Häuser sind aus Glas. In ihnen spiegeln sich die anderen Häuser, man sieht nicht, wo eines aufhört. #sprecher:erzaehler #schwenk:sb5AkademieBau
 Es ist still. Still wie ein Raum, in dem ein Gerät läuft, das man erst bemerkt, wenn es ausgeht. #sprecher:erzaehler
-Auf den Bänken sitzt jeder für sich, auf vielen Bildschirmen kleine Schachbretter. Niemand spielt gegen jemanden. #sprecher:erzaehler
+Auf den Bänken sitzt jeder für sich, auf vielen Bildschirmen kleine Schachbretter. Niemand spielt gegen jemanden. #sprecher:erzaehler #schwenk:mf9BankRechts
 * [Weitergehen]
-- Etwas Weißes, Kniehohes summt auf dich zu und fährt vorbei, ohne langsamer zu werden. #sprecher:erzaehler #klang:lieferroboter
+- Etwas Weißes, Kniehohes summt auf dich zu und fährt vorbei, ohne langsamer zu werden. #sprecher:erzaehler #klang:lieferroboter #schwenk:held
 Ein Lieferroboter. Der bringt Essen. #sprecher:juno #stimmung:ueberrascht
 * [„Wem?“]
 - Jemandem, der nicht rausgehen will. #sprecher:juno #stimmung:nachdenklich

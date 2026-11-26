@@ -87,7 +87,7 @@ VAR besprechungAngekuendigt = false
 // Szene 5, zweiter Teil, nach dem Roman, Kapitel 5, und der Dialogprüfung (VM30 bis VM33).
 ~ clubBeigetreten = true
 Raum 12, Erdgeschoss, Blick auf den Fahnenmast. Die Tische sind zu vier Inseln zusammengeschoben. #sprecher:erzaehler #klang:schulglocke #musik:mapleFalls.club
-Pokale von 1994, ein Plakat: ERST ZÄHLEN. #sprecher:erzaehler
+Pokale von 1994, ein Plakat: ERST ZÄHLEN. #sprecher:erzaehler #schwenk:plakatZaehlen
 Aufstellung! Juno, wen bringst du mir da? #sprecher:coachDelgado #stimmung:laechelt #klang:klatschen
 Ein viertes Brett, Coach. #sprecher:juno #stimmung:froh
 Na, das wollen wir sehen. Delgado. #sprecher:coachDelgado #stimmung:laechelt
@@ -101,7 +101,7 @@ Die Nadel holt man gegen mich. #sprecher:coachDelgado #stimmung:laechelt
 * [„Was muss ich tun?“]
     Erst die Aufgaben von Sam und Juno. Dann eine Partie gegen mich. #sprecher:coachDelgado #stimmung:neutral
 - Das ist hier Gesetz, und ich bin die Polizei. #sprecher:coachDelgado #stimmung:froh #klang:pfiff
-Am Fenster sitzt ein Junge, die Füße auf dem Stuhl. Er hat die ganze Zeit zugehört, ohne herzusehen, das ist Sam. #sprecher:erzaehler
+Am Fenster sitzt ein Junge, die Füße auf dem Stuhl. Er hat die ganze Zeit zugehört, ohne herzusehen, das ist Sam. #sprecher:erzaehler #schwenk:sam
 // Lektorat 19.11.2026: Wer das Brett schon angesehen hat (ansehen-maple-falls), liest es nicht zweimal.
 {angesehenBrettOhneDame:Der Radiergummi steht noch auf d8. #sprecher:erzaehler}
 {not angesehenBrettOhneDame:Auf einem der Bretter fehlt die schwarze Dame. An ihrer Stelle steht ein Radiergummi. #sprecher:erzaehler}
@@ -297,7 +297,7 @@ Ich sage dir, wo es gut war und wo nicht. Mehr nicht, fürs Erste. #sprecher:amb
 // Sams Aufgaben erst nach dem ersten Treffen mit dem Coach: Die Quest „Das vierte Brett“ beginnt dort
 // und wartet zuerst auf Sams Reihe; vorher bestanden, hing sie für immer (Chaos-Prüfung, 14.11.2026).
 === sam_vor_dem_coach ===
-Am Fenster sitzt ein Junge, die Füße auf dem Stuhl, und sieht nicht hoch. #sprecher:erzaehler
+Am Fenster sitzt ein Junge, die Füße auf dem Stuhl, und sieht nicht hoch. #sprecher:erzaehler #schwenk:sam
 Erst zum Coach. Ohne Aufstellung keine Aufgaben. #sprecher:sam #stimmung:laechelt
 -> END
 

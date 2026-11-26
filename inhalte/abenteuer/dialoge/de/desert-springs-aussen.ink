@@ -37,10 +37,10 @@ VAR abschiedGesehen = false
 }
 // Kapitel 43 (Roman): Desert Springs ist eine Straße. Musik sparsam, Windspiel.
 ~ ankunftDesertSpringsGesehen = true
-Desert Springs ist eine Straße. Eine Tankstelle, ein Diner, an dessen Leuchtreklame drei Buchstaben fehlen. #sprecher:erzaehler #musik:desertSprings #geraeusch:wueste
-Ein Motel mit zwölf Türen in zwölf Farben. Im Schwimmbecken ohne Wasser hat jemand Kakteen gepflanzt. #sprecher:erzaehler
-Am Ortseingang ein Schild: „Desert Springs. Einwohner: 211. Schachspieler: 211.“ #sprecher:erzaehler #bild:ortsschild_211
-Ambrose schweigt. Das Schild sagt alles. #sprecher:erzaehler #bild:aus
+Desert Springs ist eine Straße. Eine Tankstelle, ein Diner, an dessen Leuchtreklame drei Buchstaben fehlen. #sprecher:erzaehler #musik:desertSprings #geraeusch:wueste #schwenk:ds6TankstelleGross
+Ein Motel mit zwölf Türen in zwölf Farben. Im Schwimmbecken ohne Wasser hat jemand Kakteen gepflanzt. #sprecher:erzaehler #schwenk:wds6Motelzeile
+Am Ortseingang ein Schild: „Desert Springs. Einwohner: 211. Schachspieler: 211.“ #sprecher:erzaehler #bild:ortsschild_211 #schwenk:ds13Ortsschild
+Ambrose schweigt. Das Schild sagt alles. #sprecher:erzaehler #bild:aus #schwenk:held
 -> END
 
 === canyon ===

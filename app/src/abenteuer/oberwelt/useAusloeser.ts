@@ -11,6 +11,8 @@
 import { useRef, useState } from "react";
 import { ambroseSprichtJetzt } from "../regeln/abwesenheit";
 import { ANGESPROCHEN } from "../regeln/ansprechen";
+import { variablenAusBesitz } from "../regeln/dialogvariablen";
+import { ankunftNachher } from "./eingang";
 import { tSpiel } from "../texte/texte";
 import { szeneAus, type Oberweltkern } from "./kern";
 import type { SprechblasenInhalt } from "./Sprechblase";
@@ -57,6 +59,12 @@ export function useAusloeser(
     const a = ausloeserFuer(w.ort, w.kennung, t.name);
     const uebergang = t.typ === "ausloeser" && a?.art === "uebergang";
     if (uebergang && !t.durch) return;
+    // Ankunft zu Fuß (`nachher`, eingang.ts): erst wechseln, der Dialog läuft auf der Zielkarte.
+    const bedingungen = { ...aktuell.dialogvariablen, ...variablenAusBesitz(aktuell) };
+    if (uebergang && a.ziel && ankunftNachher(a, bedingungen)) {
+      k.wechsleKarte(a.ziel.karte, a.ziel.ausloeser);
+      return;
+    }
     if (uebergang && a.dialog && a.ziel) {
       dialoge.oeffneUebergang(a.dialog, a.ziel, a.wenn ?? null);
       return;

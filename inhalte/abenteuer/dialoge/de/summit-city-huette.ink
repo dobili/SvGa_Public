@@ -78,7 +78,7 @@ VAR angesprochen = false
 // Beim ersten Betreten (orte.json, Feld „eingang“), nicht erst beim Gespräch mit Ward.
 === eingang ===
 ~ huetteBetreten = true
-Die Hütte ist aus dunklem Holz. Die Wände sind kahl, im Kamin knistert Feuer. #sprecher:erzaehler
+Die Hütte ist aus dunklem Holz. Die Wände sind kahl, im Kamin knistert Feuer. #sprecher:erzaehler #schwenk:sc7Kamin
 Im Sessel am Feuer sitzt eine Frau und liest. Sie sieht nicht auf. #sprecher:erzaehler
 -> END
 

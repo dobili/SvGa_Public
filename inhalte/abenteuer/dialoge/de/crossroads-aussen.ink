@@ -43,7 +43,7 @@ VAR coachCrossroadsGetroffen = false
 
 === ankunft_zu_fuss ===
 {ankunftCrossroadsGesehen:
-    Die Prärie endet an einer Kreuzung. Vier Straßen, eine Raststätte, ein Wegweiser. #sprecher:erzaehler
+    Die Prärie endet an einer Kreuzung. Vier Straßen, eine Raststätte, ein Wegweiser. #sprecher:erzaehler #schwenk:cr7WegweiserStaedte
     -> END
 }
 -> ankunft_crossroads
@@ -52,9 +52,9 @@ VAR coachCrossroadsGetroffen = false
 // Kapitel 53 (Roman): vier Straßen, die sich in der Mitte von nichts treffen. Musik: die
 // Ortsthemen nacheinander über einem fröhlichen Rhythmus (crossroads), Stimmengewirr.
 ~ ankunftCrossroadsGesehen = true
-Vier Straßen kommen aus vier Richtungen und treffen sich in der Mitte von nichts. #sprecher:erzaehler #musik:crossroads #geraeusch:crossroads_stimmen #licht:abend #uhr:abend
-An der Ecke eine Raststätte, ein silberner Speisewagen, lang und niedrig: „Darlene's. Alle Wege. Alle Spiele.“ #sprecher:erzaehler #bild:schild_darlene
-Der Parkplatz ist voll. Ein grauer Werksbus mit Rostflecken: „Stahlwerk Ironwood. Schicht B.“ #sprecher:erzaehler #bild:aus
+Vier Straßen kommen aus vier Richtungen und treffen sich in der Mitte von nichts. #sprecher:erzaehler #musik:crossroads #geraeusch:crossroads_stimmen #licht:abend #uhr:abend #schwenk:cr7WegweiserStaedte
+An der Ecke eine Raststätte, ein silberner Speisewagen, lang und niedrig: „Darlene's. Alle Wege. Alle Spiele.“ #sprecher:erzaehler #bild:schild_darlene #schwenk:wds6Speisewagen
+Der Parkplatz ist voll. Ein grauer Werksbus mit Rostflecken: „Stahlwerk Ironwood. Schicht B.“ #sprecher:erzaehler #bild:aus #schwenk:fz11BusAb
 Alle Wege führen zur Capital Arena. Und alle machen hier Pause. #sprecher:mutter #stimmung:laechelt
 // Nachtauftrag 19.11.2026 (Spieler-Durchlauf): Kein Dialog nannte das Camp; Darlene schickt später
 // über die Minenstraße direkt nach Ghost Town. Juno nennt Pinewood Camp und den Weg dorthin.

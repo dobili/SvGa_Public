@@ -25,6 +25,4 @@ GEPRUEFT: dict[str, str] = {
     ),
 }
 
-GEMELDET: dict[str, str] = {
-    "sprecher:juno:weg-cedar-riverton.fenwick@wegCedarRiverton.zedernwald": MITREISENDE,
-}
+GEMELDET: dict[str, str] = {}

@@ -306,8 +306,8 @@ Sie lacht, kurz und rau, und wirft dir die leere Flasche zu. #sprecher:erzaehler
 - begleiter == "juno":
     Juno geht neben dir her, den Rucksack auf dem Rücken. Zwei Stunden, am Fluss entlang. #sprecher:erzaehler
 - else:
-    Juno wartet am Ortsschild, den Rucksack schon auf dem Rücken. #sprecher:erzaehler
-    Da bist du ja! Zwei Stunden, am Fluss entlang. Ich hab Kekse dabei. #sprecher:juno #stimmung:froh
+    Juno wartet am Ortsschild. Zwei Stunden, am Fluss entlang. #sprecher:erzaehler
+    Da bist du ja! Ich hab Kekse dabei. #sprecher:juno #stimmung:froh
     ~ begleiter = "juno"
 }
 -> END

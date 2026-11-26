@@ -31,7 +31,7 @@ import type { Standbildindex } from "./figurzustand";
 import { figurstandbilderFuer, ladeStandbildindex } from "./standbildindex";
 import { geisterDerKarte } from "../regeln/geist";
 import { kartenfassung } from "./kartenfassung";
-import { begleiterAus } from "../regeln/gefolge";
+import { begleiterFuer } from "../regeln/gefolge";
 import { begleiterbilderFuer, ohneBegleiter } from "./gefolgedaten";
 import { jahreszeitDer, type Jahreszeit } from "./jahreszeitfarben";
 import { ladeMoebel, type Moebel } from "./moebel";
@@ -232,7 +232,8 @@ export async function ladeWelt(
     variablen,
   );
   // Begleiter (regeln/gefolge.ts) gehen mit dem Helden und stehen nicht an ihrem Platz.
-  const begleiter = fund.ort.art === "erinnerung" ? [] : begleiterAus(variablen);
+  const begleiter =
+    fund.ort.art === "erinnerung" ? [] : begleiterFuer(fund.ort.begleiter, variablen);
   // Tagesabläufe (regeln/tagesablauf.ts): die Uhr stellt die Figuren auf, die Geschichte geht vor.
   const aufgestellt = stand
     ? nachUhr(

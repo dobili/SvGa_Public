@@ -46,6 +46,8 @@ AUSNAHMEN: dict[str, str] = {
     "wegCedarRiverton.testteam:1": "Die nächste Sperre steht auf dem Weg, den die Hauptquest ohnehin nimmt.",
     "wegCedarRiverton.testteam:2": "Die nächste Sperre steht auf dem Weg, den die Hauptquest ohnehin nimmt.",
     "wegCedarRiverton.testteam:3": "Das Wiedersehen vor der Arena kommt mit der Hauptquest von selbst.",
+    "mapleFalls.ersterAbend:2": "Mama nennt Coach Delgado am Morgen unten im Wohnzimmer"
+    " (maple-falls-wohnzimmer.morgen_mama, Eingang der Karte); oben klappern nur die Schlüssel.",
 }
 
 # Wörter, die in Namen stehen, aber allein nichts benennen.

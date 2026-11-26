@@ -49,7 +49,7 @@
           },
           "eingang": {
             "dialog": "maple-falls-wohnzimmer.eingang",
-            "wenn": "(einleitungGesehen und nicht ankunftGesehen) oder (ersteLektionBesprochen und nicht ersterAbendGesehen und nicht treppeAbendGesehen)"
+            "wenn": "(einleitungGesehen und nicht ankunftGesehen) oder (ersteLektionBesprochen und nicht ersterAbendGesehen und nicht treppeAbendGesehen) oder (ersteNachtGesehen und nicht morgenMamaGesehen und nicht clubBeigetreten)"
           },
           "musik_nacht": "musik/maple-falls.nacht.m4a"
         },
@@ -133,6 +133,13 @@
           "sprite": "figuren/mutter.png",
           "dialog": "maple-falls-aussen.einleitung_hinein",
           "wenn": "nicht ankunftGesehen und nicht brettBeruehrt"
+        },
+        {
+          "kennung": "mapleFalls.prattClub",
+          "name": "figur.pratt.name",
+          "sprite": "figuren/pratt.png",
+          "dialog": "maple-falls-clubraum.pratt_club",
+          "wenn": "nadelMapleFalls > 0 und nicht heimwegNadelGesehen"
         },
         {
           "kennung": "mapleFalls.victorClub",
@@ -581,6 +588,10 @@
           "datei": "karten/cedar-creek-archiv.json",
           "name": "ort.cedarCreek.archiv",
           "innen": true,
+          "eingang": {
+            "dialog": "cedar-creek-archiv.eingang",
+            "wenn": "nicht archivBetreten"
+          },
           "zustaende": {
             "archivGeordnet": "karten/cedar-creek-archiv-geordnet.json"
           },
@@ -1168,6 +1179,12 @@
     },
     {
       "kennung": "wegCedarRiverton",
+      "begleiter": [
+        {
+          "name": "juno",
+          "wenn": "endeAkt1Gesehen und nicht abschiedGesehen"
+        }
+      ],
       "name": "ort.wegCedarRiverton.name",
       "nummer": 0,
       "staffel": 1,
@@ -1308,6 +1325,12 @@
     },
     {
       "kennung": "riverton",
+      "begleiter": [
+        {
+          "name": "juno",
+          "wenn": "endeAkt1Gesehen und nicht abschiedGesehen"
+        }
+      ],
       "brett": "steintisch",
       "name": "ort.riverton.name",
       "nummer": 3,
@@ -1601,6 +1624,12 @@
     },
     {
       "kennung": "wegRivertonIronwood",
+      "begleiter": [
+        {
+          "name": "juno",
+          "wenn": "endeAkt1Gesehen und nicht abschiedGesehen"
+        }
+      ],
       "name": "ort.wegRivertonIronwood.name",
       "nummer": 0,
       "staffel": 1,
@@ -1911,6 +1940,12 @@
     },
     {
       "kennung": "ironwood",
+      "begleiter": [
+        {
+          "name": "juno",
+          "wenn": "endeAkt1Gesehen und nicht abschiedGesehen"
+        }
+      ],
       "brett": "stahl",
       "name": "ort.ironwood.name",
       "nummer": 4,
@@ -2521,6 +2556,12 @@
     },
     {
       "kennung": "wegIronwoodSilicon",
+      "begleiter": [
+        {
+          "name": "juno",
+          "wenn": "endeAkt1Gesehen und nicht abschiedGesehen"
+        }
+      ],
       "name": "ort.wegIronwoodSilicon.name",
       "nummer": 0,
       "staffel": 2,
@@ -2688,6 +2729,12 @@
     },
     {
       "kennung": "siliconBay",
+      "begleiter": [
+        {
+          "name": "juno",
+          "wenn": "endeAkt1Gesehen und nicht abschiedGesehen"
+        }
+      ],
       "brett": "glas",
       "name": "ort.siliconBay.name",
       "nummer": 5,
@@ -3055,6 +3102,12 @@
     },
     {
       "kennung": "wegSiliconDelacroix",
+      "begleiter": [
+        {
+          "name": "mutter",
+          "wenn": "nicht ankunftPortDelacroixGesehen"
+        }
+      ],
       "name": "ort.wegSiliconDelacroix.name",
       "nummer": 0,
       "staffel": 2,
@@ -3629,6 +3682,16 @@
     },
     {
       "kennung": "desertSprings",
+      "begleiter": [
+        {
+          "name": "juno",
+          "wenn": "endeAkt1Gesehen und nicht abschiedGesehen"
+        },
+        {
+          "name": "mutter",
+          "wenn": "endeAkt3Gesehen und nicht abschiedGesehen"
+        }
+      ],
       "brett": "sandstein",
       "name": "ort.desertSprings.name",
       "nummer": 7,
@@ -3790,6 +3853,16 @@
     },
     {
       "kennung": "wegDesertSummit",
+      "begleiter": [
+        {
+          "name": "juno",
+          "wenn": "endeAkt1Gesehen und nicht abschiedGesehen"
+        },
+        {
+          "name": "mutter",
+          "wenn": "endeAkt3Gesehen und nicht abschiedGesehen"
+        }
+      ],
       "name": "ort.wegDesertSummit.name",
       "nummer": 0,
       "staffel": 2,
@@ -4149,6 +4222,16 @@
     },
     {
       "kennung": "summitCity",
+      "begleiter": [
+        {
+          "name": "juno",
+          "wenn": "endeAkt1Gesehen und nicht abschiedGesehen"
+        },
+        {
+          "name": "mutter",
+          "wenn": "endeAkt3Gesehen und nicht abschiedGesehen"
+        }
+      ],
       "brett": "schiefer",
       "name": "ort.summitCity.name",
       "nummer": 8,
@@ -4410,6 +4493,16 @@
     },
     {
       "kennung": "wegSummitCrossroads",
+      "begleiter": [
+        {
+          "name": "juno",
+          "wenn": "endeAkt1Gesehen und nicht abschiedGesehen"
+        },
+        {
+          "name": "mutter",
+          "wenn": "endeAkt3Gesehen und nicht abschiedGesehen"
+        }
+      ],
       "name": "ort.wegSummitCrossroads.name",
       "nummer": 0,
       "staffel": 2,
@@ -4552,6 +4645,16 @@
     },
     {
       "kennung": "crossroads",
+      "begleiter": [
+        {
+          "name": "juno",
+          "wenn": "endeAkt1Gesehen und nicht abschiedGesehen"
+        },
+        {
+          "name": "mutter",
+          "wenn": "endeAkt3Gesehen und nicht abschiedGesehen"
+        }
+      ],
       "name": "ort.crossroads.name",
       "nummer": 9,
       "groesse": "klein",
@@ -4767,6 +4870,16 @@
     },
     {
       "kennung": "wegCrossroadsPinewood",
+      "begleiter": [
+        {
+          "name": "juno",
+          "wenn": "endeAkt1Gesehen und nicht abschiedGesehen"
+        },
+        {
+          "name": "mutter",
+          "wenn": "endeAkt3Gesehen und nicht abschiedGesehen"
+        }
+      ],
       "name": "ort.wegCrossroadsPinewood.name",
       "nummer": 0,
       "staffel": 2,
@@ -4880,6 +4993,16 @@
     },
     {
       "kennung": "pinewoodCamp",
+      "begleiter": [
+        {
+          "name": "juno",
+          "wenn": "endeAkt1Gesehen und nicht abschiedGesehen"
+        },
+        {
+          "name": "mutter",
+          "wenn": "endeAkt3Gesehen und nicht abschiedGesehen"
+        }
+      ],
       "name": "ort.pinewoodCamp.name",
       "nummer": 10,
       "groesse": "klein",
@@ -4982,6 +5105,16 @@
     },
     {
       "kennung": "wegPinewoodGhost",
+      "begleiter": [
+        {
+          "name": "juno",
+          "wenn": "endeAkt1Gesehen und nicht abschiedGesehen"
+        },
+        {
+          "name": "mutter",
+          "wenn": "endeAkt3Gesehen und nicht abschiedGesehen"
+        }
+      ],
       "name": "ort.wegPinewoodGhost.name",
       "nummer": 0,
       "staffel": 2,
@@ -5132,6 +5265,16 @@
     },
     {
       "kennung": "ghostTown",
+      "begleiter": [
+        {
+          "name": "juno",
+          "wenn": "endeAkt1Gesehen und nicht abschiedGesehen"
+        },
+        {
+          "name": "mutter",
+          "wenn": "endeAkt3Gesehen und nicht abschiedGesehen"
+        }
+      ],
       "name": "ort.ghostTown.name",
       "nummer": 11,
       "groesse": "klein",
@@ -5353,6 +5496,16 @@
     },
     {
       "kennung": "wegGhostCapital",
+      "begleiter": [
+        {
+          "name": "juno",
+          "wenn": "endeAkt1Gesehen und nicht abschiedGesehen"
+        },
+        {
+          "name": "mutter",
+          "wenn": "endeAkt3Gesehen und nicht abschiedGesehen"
+        }
+      ],
       "name": "ort.wegGhostCapital.name",
       "nummer": 0,
       "staffel": 2,
@@ -5482,6 +5635,12 @@
     },
     {
       "kennung": "capitalArena",
+      "begleiter": [
+        {
+          "name": "juno",
+          "wenn": "endeAkt1Gesehen und nicht arenaGesehen und nicht abschiedGesehen"
+        }
+      ],
       "brett": "turnier",
       "name": "ort.capitalArena.name",
       "nummer": 12,

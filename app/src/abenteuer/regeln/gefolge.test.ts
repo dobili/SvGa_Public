@@ -1,6 +1,13 @@
 // Begleiter auf Wegen (Wunsch des Autors, 25.11.2026): Namen aus der Dialogvariable und die Spur.
 import { describe, expect, it } from "vitest";
-import { begleiterAus, begleiterGeaendert, eckfeld, schrittrichtung, Spur } from "./gefolge";
+import {
+  begleiterAus,
+  begleiterFuer,
+  begleiterGeaendert,
+  eckfeld,
+  schrittrichtung,
+  Spur,
+} from "./gefolge";
 
 describe("Begleiter", () => {
   it("liest die Namen aus der Dialogvariable", () => {
@@ -12,9 +19,18 @@ describe("Begleiter", () => {
   });
 
   it("erkennt eine Änderung", () => {
-    expect(begleiterGeaendert([], { begleiter: "juno" })).toBe(true);
-    expect(begleiterGeaendert(["juno"], { begleiter: " juno" })).toBe(false);
-    expect(begleiterGeaendert(["juno"], { begleiter: "" })).toBe(true);
+    expect(begleiterGeaendert([], ["juno"])).toBe(true);
+    expect(begleiterGeaendert(["juno"], ["juno"])).toBe(false);
+    expect(begleiterGeaendert(["juno"], [])).toBe(true);
+  });
+
+  it("nimmt die Begleiter des Orts dazu, deren Bedingung gilt", () => {
+    const riverton = [{ name: "juno", wenn: "endeAkt1Gesehen und nicht abschiedGesehen" }];
+    expect(begleiterFuer(riverton, { endeAkt1Gesehen: true })).toEqual(["juno"]);
+    expect(begleiterFuer(riverton, { endeAkt1Gesehen: false })).toEqual([]);
+    expect(begleiterFuer(riverton, { endeAkt1Gesehen: true, abschiedGesehen: true })).toEqual([]);
+    expect(begleiterFuer(riverton, { begleiter: "juno", endeAkt1Gesehen: true })).toEqual(["juno"]);
+    expect(begleiterFuer(undefined, { begleiter: "mutter" })).toEqual(["mutter"]);
   });
 });
 

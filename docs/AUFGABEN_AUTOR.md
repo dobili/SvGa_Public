@@ -696,6 +696,26 @@ Profil › Einstellungen › Fehler melden.
       Town, Capital Arena), beim Einzug in Birch Lane, im Wohnzimmer am ersten Abend, im Park bei
       Mr. Abernathy und am Steg, im Clubraum bei Sam und in der Kantine von Ironwood.
       **Antwort:** „N2734 ok“, oder „schneller“/„langsamer“, oder Ort, Zeile und was nicht passt.
+- [ ] N2735. **Keine Dialogzeile gestrichen (26.11.2026):** Die Zeilen, die beim Aufräumen der
+      Anwesenheit weggefallen waren, sind zurück, jeweils dort, wo die Figuren stehen: Mr. Pratt
+      und Mr. Hale im Clubraum, der schwarze Wagen vor dem Haus, das Archiv in Cedar Creek mit der
+      Wendeltreppe am Eingang, Mamas Morgen im Wohnzimmer (sie nennt dabei den Coach), „um acht“
+      am Abend in Cedar Creek. Bitte diese Stellen anspielen: Passt die Zeile zu dem, was du
+      siehst, und fehlt dir eine Zeile, die du von früher kennst?
+      **Antwort:** „N2735 ok“ oder Ort und Zeile, die fehlt oder nicht passt.
+- [ ] N2736. **Juno und Mama gehen mit (26.11.2026):** Juno folgt dir ab Akt 2 bis zur Arena,
+      Mama auf der Fähre und ab Desert Springs. Sie laufen hinter dir her, schräg mit, und stehen
+      nach einem Gespräch an der neuen Stelle, wenn sich etwas ändert. Bitte je einen Ort
+      ablaufen (Juno etwa in Riverton, Mama in Desert Springs).
+      **Antwort:** „N2736 ok“ oder wo sie fehlen, hängen bleiben oder im Weg stehen.
+- [ ] N2737. **Deine Lieferung vom 26.11. ist eingebaut:** Das Testteam sind jetzt Zoe (mit
+      Weste), Imani und Benji mit eigenen Figuren statt drei gleicher Statisten. Nia, Kira, Theo,
+      Victor und Ezra halten, was ihr Dialog erzählt (Buch, Brett, Laptop, Schachuhr). Alle
+      sitzenden Figuren haben ein Sitzbild, keine steht mehr neben ihrem Stuhl. Neue Porträts:
+      Zoe mit Weste, Kellner im Kaffeehaus London, Ward, Slick, Big Joe, Nova, Mira, Dr. Lin.
+      Bitte das Testteam in Ironwood und an der Landstraße ansehen und ein Gespräch mit Ward
+      oder Nova führen.
+      **Antwort:** „N2737 ok“ oder Figur und was nicht passt.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

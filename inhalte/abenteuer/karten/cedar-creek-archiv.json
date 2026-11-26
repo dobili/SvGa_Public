@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 28,
+ "nextobjectid": 29,
  "layers": [
   {
    "id": 1,
@@ -621,6 +621,24 @@
     },
     {
      "id": 9,
+     "name": "okaforArchiv",
+     "type": "figur",
+     "x": 160,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "unten"
+      }
+     ]
+    },
+    {
+     "id": 10,
      "name": "cc4Archivregal",
      "type": "moebel",
      "x": 16,
@@ -643,7 +661,7 @@
      ]
     },
     {
-     "id": 10,
+     "id": 11,
      "name": "cc4ArchivregalB",
      "type": "moebel",
      "x": 48,
@@ -666,7 +684,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 12,
      "name": "cc4Boxerfoto",
      "type": "moebel",
      "x": 80,
@@ -689,7 +707,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 13,
      "name": "cc4Kellertuer",
      "type": "moebel",
      "x": 96,
@@ -712,7 +730,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 14,
      "name": "cc4Treppe",
      "type": "moebel",
      "x": 160,
@@ -735,7 +753,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 15,
      "name": "cc13BodenNass",
      "type": "moebel",
      "x": 16,
@@ -758,7 +776,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 16,
      "name": "cc4KartonHoch",
      "type": "moebel",
      "x": 16,
@@ -781,7 +799,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 17,
      "name": "cc4KartonHoch",
      "type": "moebel",
      "x": 16,
@@ -804,7 +822,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 18,
      "name": "cc4KartonHoch",
      "type": "moebel",
      "x": 16,
@@ -827,7 +845,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 19,
      "name": "cc12KartonsOben",
      "type": "moebel",
      "x": 48,
@@ -850,7 +868,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 20,
      "name": "cc12KartonsUnten",
      "type": "moebel",
      "x": 48,
@@ -873,7 +891,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 21,
      "name": "cc12Wasserfleck",
      "type": "moebel",
      "x": 96,
@@ -896,7 +914,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 22,
      "name": "cc17PfuetzeKeller",
      "type": "moebel",
      "x": 116,
@@ -919,7 +937,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 23,
      "name": "cc4StuhlHinten",
      "type": "moebel",
      "x": 176,
@@ -942,7 +960,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 24,
      "name": "cc5Tisch",
      "type": "moebel",
      "x": 176,
@@ -965,7 +983,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 25,
      "name": "cc4Leselampe",
      "type": "moebel",
      "x": 189,
@@ -988,7 +1006,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 26,
      "name": "cc12BuchOffen",
      "type": "moebel",
      "x": 177,
@@ -1011,7 +1029,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 27,
      "name": "cc12Programmheft",
      "type": "moebel",
      "x": 184,
@@ -1034,7 +1052,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 28,
      "name": "cc4ArchivregalB",
      "type": "moebel",
      "x": 128,

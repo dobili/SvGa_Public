@@ -31,6 +31,8 @@ import type { Standbildindex } from "./figurzustand";
 import { figurstandbilderFuer, ladeStandbildindex } from "./standbildindex";
 import { geisterDerKarte } from "../regeln/geist";
 import { kartenfassung } from "./kartenfassung";
+import { begleiterAus } from "../regeln/gefolge";
+import { begleiterbilderFuer, ohneBegleiter } from "./gefolgedaten";
 import { jahreszeitDer, type Jahreszeit } from "./jahreszeitfarben";
 import { ladeMoebel, type Moebel } from "./moebel";
 import { tierartVon } from "./tiere";
@@ -77,6 +79,8 @@ export interface Weltdaten {
   readonly jahreszeit: Jahreszeit | null;
   /** Bögen der Statisten und Tiere dieser Karte, Pfad im Paket → Adresse (nur vorhandene). */
   readonly belebungsbilder: Readonly<Record<string, string>>;
+  /** Begleiter, die dem Helden folgen (regeln/gefolge.ts); in Erinnerungen keine. */
+  readonly begleiter: readonly string[];
 }
 
 /**
@@ -227,8 +231,10 @@ export async function ladeWelt(
     (name) => figurZu(fund.ort, name)?.wenn,
     variablen,
   );
+  // Begleiter (regeln/gefolge.ts) gehen mit dem Helden und stehen nicht an ihrem Platz.
+  const begleiter = fund.ort.art === "erinnerung" ? [] : begleiterAus(variablen);
   // Tagesabläufe (regeln/tagesablauf.ts): die Uhr stellt die Figuren auf, die Geschichte geht vor.
-  const karte = stand
+  const aufgestellt = stand
     ? nachUhr(
         ohneVerborgene,
         kartenkennung,
@@ -239,9 +245,11 @@ export async function ladeWelt(
         await ladeTagesablaeufe(),
       )
     : ohneVerborgene;
+  const karte = ohneBegleiter(aufgestellt, fund.ort, begleiter);
   const erinnerung = fund.ort.art === "erinnerung";
   const spriteVon = (name: string) => spriteZu(daten.orte, fund.ort, name);
   const standbildindex = await ladeStandbildindex();
+  const gefolgebilder = await begleiterbilderFuer(daten.orte, begleiter);
   const [stilbild, heldfigur, figurenbilder, moebel, hintergrund, belebungsbilder, geisterbilder] =
     await Promise.all([
       paketdateiAlsAdresseOderNull(
@@ -267,7 +275,9 @@ export async function ladeWelt(
     heldbild,
     figurbild,
     heldfigur,
-    figurenbilder: { ...geisterbilder, ...figurenbilder },
+    figurenbilder: { ...geisterbilder, ...gefolgebilder, ...figurenbilder },
+    // Ungefiltert: Ohne Bogen zeichnet die Szene ihn nicht (gefolgeschicht.ts), gezählt wird er.
+    begleiter,
     figurstandbilder: figurstandbilderFuer(
       figurennamen(karte),
       spriteVon,
@@ -368,7 +378,13 @@ export function sprechblaseFuer(
   const s = sagt ? statistensatz(sagt, besuch, hatSpieltext) : null;
   if (!s) return null;
   const ambrose = s.ambrose && ambroseSpricht ? tSpiel(s.ambrose, { held }) : null;
-  return { satz: tSpiel(s.satz, { held }), ambrose, zeigt: statist?.zeigt ?? null };
+  // Dasselbe Bild wie auf der Karte (belebungsbilderFuer): „figuren/statist-07.png“ → „statist-07“.
+  const portraet = statist
+    ? statistenbild(statist)
+        .replace(/^figuren\//, "")
+        .replace(/\.png$/, "")
+    : null;
+  return { satz: tSpiel(s.satz, { held }), ambrose, zeigt: statist?.zeigt ?? null, portraet };
 }
 
 /** Rahmenklasse der Welt (Oberwelt.tsx): in Erinnerungen und bei Sepia-Tönung getönt. */

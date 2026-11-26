@@ -273,6 +273,8 @@
     }
   ],
   "figuren": [
+    { "name": "coachBibliothek", "feld": [15, 4], "blick": "links" },
+    { "name": "samBibliothek", "feld": [14, 4], "blick": "links" },
     {
       "name": "okafor",
       "feld": [13, 7],

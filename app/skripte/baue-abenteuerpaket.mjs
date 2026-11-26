@@ -24,6 +24,7 @@ import {
 import { baueFigurenbogenMitStandbildern, RAHMEN } from "./figurenbogen.mjs";
 import { brettbilderDateien } from "./brettbilder-paket.mjs";
 import { alsWebp, webpPfad, wirdWebp } from "./paketbilder.mjs";
+import { ersatzportraets } from "./ersatzportraets.mjs";
 import { alsGrossbild, HOCHGELADEN } from "./grossbilder.mjs";
 import { liesOpusvermerk, opusname, passendeOpusfassung } from "./opusfassungen.mjs";
 
@@ -325,6 +326,9 @@ async function main() {
   await kopierePrivatordner("portraets/gross", () => true, [".png", ".webp"]);
   // Porträtblätter: je Figur sechs Fassungen à 64 × 64 (3 × 2), portraetblatt.json.
   await kopierePrivatordner("portraets/blatt");
+  // Ersatzporträts aus der eigenen Figur für Sprecher ohne Blatt und Großbild (25.11.2026).
+  for (const { pfad, inhalt } of await ersatzportraets(PRIVAT))
+    await schreibe(pfad, inhalt, "grafik");
   await kopierePrivatordner("grafik");
   // Motive der Spielkarten (Gemini, Wunsch des Autors 14.11.2026): karten/<kennung>.webp, dazu
   // die Rückseite; ohne Ordner zeichnet der Kartenfächer ein Muster (anbindung/Spielkarte.tsx).

@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 70,
+ "nextobjectid": 71,
  "layers": [
   {
    "id": 1,
@@ -4438,6 +4438,24 @@
     },
     {
      "id": 14,
+     "name": "junoLandstrasse",
+     "type": "figur",
+     "x": 656,
+     "y": 224,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
+      }
+     ]
+    },
+    {
+     "id": 15,
      "name": "prattSteg",
      "type": "figur",
      "x": 112,
@@ -4448,7 +4466,7 @@
      "visible": true
     },
     {
-     "id": 15,
+     "id": 16,
      "name": "skaterJo",
      "type": "figur",
      "x": 256,
@@ -4459,7 +4477,7 @@
      "visible": true
     },
     {
-     "id": 16,
+     "id": 17,
      "name": "abernathy",
      "type": "figur",
      "x": 48,
@@ -4477,7 +4495,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 18,
      "name": "rentner",
      "type": "statist",
      "x": 288,
@@ -4515,7 +4533,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 19,
      "name": "kioskbesucher",
      "type": "statist",
      "x": 368,
@@ -4548,7 +4566,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 20,
      "name": "enten",
      "type": "tier",
      "x": 400,
@@ -4576,7 +4594,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 21,
      "name": "kraehen",
      "type": "tier",
      "x": 256,
@@ -4604,7 +4622,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 22,
      "name": "patel",
      "type": "statist",
      "x": 432,
@@ -4637,7 +4655,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 23,
      "name": "mf6Basketballplatz",
      "type": "moebel",
      "x": 16,
@@ -4660,7 +4678,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 24,
      "name": "mf12Zebrastreifen",
      "type": "moebel",
      "x": 432,
@@ -4683,7 +4701,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 25,
      "name": "mf11HolzbrueckeQuer",
      "type": "moebel",
      "x": 480,
@@ -4706,7 +4724,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 26,
      "name": "mf9FussbrueckeLaengs3",
      "type": "moebel",
      "x": 160,
@@ -4729,7 +4747,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 27,
      "name": "mf4BuschKlein",
      "type": "moebel",
      "x": 192,
@@ -4752,7 +4770,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 28,
      "name": "mf6Busch",
      "type": "moebel",
      "x": 208,
@@ -4775,7 +4793,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 29,
      "name": "mf4Wegweiser",
      "type": "moebel",
      "x": 192,
@@ -4798,7 +4816,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 30,
      "name": "mfBank",
      "type": "moebel",
      "x": 52,
@@ -4831,7 +4849,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 31,
      "name": "mfBank",
      "type": "moebel",
      "x": 20,
@@ -4864,7 +4882,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 32,
      "name": "mf4Abfalleimer",
      "type": "moebel",
      "x": 80,
@@ -4887,7 +4905,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 33,
      "name": "mfBaum",
      "type": "moebel",
      "x": 624,
@@ -4910,7 +4928,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 34,
      "name": "mf2BankLang",
      "type": "moebel",
      "x": 272,
@@ -4943,7 +4961,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 35,
      "name": "mf4Abfalleimer",
      "type": "moebel",
      "x": 320,
@@ -4966,7 +4984,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 36,
      "name": "mf9Limowagen",
      "type": "moebel",
      "x": 384,
@@ -4989,7 +5007,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 37,
      "name": "mf4Laterne",
      "type": "moebel",
      "x": 32,
@@ -5012,33 +5030,10 @@
      ]
     },
     {
-     "id": 37,
-     "name": "mf4Laterne",
-     "type": "moebel",
-     "x": 240,
-     "y": 96,
-     "width": 16,
-     "height": 64,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
      "id": 38,
      "name": "mf4Laterne",
      "type": "moebel",
-     "x": 384,
+     "x": 240,
      "y": 96,
      "width": 16,
      "height": 64,
@@ -5061,6 +5056,29 @@
      "id": 39,
      "name": "mf4Laterne",
      "type": "moebel",
+     "x": 384,
+     "y": 96,
+     "width": 16,
+     "height": 64,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 40,
+     "name": "mf4Laterne",
+     "type": "moebel",
      "x": 608,
      "y": 160,
      "width": 16,
@@ -5081,7 +5099,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 41,
      "name": "mf4Laterne",
      "type": "moebel",
      "x": 144,
@@ -5104,7 +5122,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 42,
      "name": "mf4Laterne",
      "type": "moebel",
      "x": 336,
@@ -5127,7 +5145,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 43,
      "name": "mf4Laterne",
      "type": "moebel",
      "x": 608,
@@ -5150,7 +5168,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 44,
      "name": "mf6BankSeiteLinks",
      "type": "moebel",
      "x": 240,
@@ -5173,7 +5191,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 45,
      "name": "mf6BankSeiteLinks",
      "type": "moebel",
      "x": 240,
@@ -5196,7 +5214,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 46,
      "name": "mf6BankSeiteLinks",
      "type": "moebel",
      "x": 352,
@@ -5234,7 +5252,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 47,
      "name": "mf2Blumenbeet",
      "type": "moebel",
      "x": 288,
@@ -5257,7 +5275,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 48,
      "name": "mf6Haltestelle",
      "type": "moebel",
      "x": 384,
@@ -5280,7 +5298,7 @@
      ]
     },
     {
-     "id": 48,
+     "id": 49,
      "name": "mf4Abfalleimer",
      "type": "moebel",
      "x": 464,
@@ -5303,7 +5321,7 @@
      ]
     },
     {
-     "id": 49,
+     "id": 50,
      "name": "mf6Seerose1",
      "type": "moebel",
      "x": 384,
@@ -5326,7 +5344,7 @@
      ]
     },
     {
-     "id": 50,
+     "id": 51,
      "name": "mf6Seerose2",
      "type": "moebel",
      "x": 416,
@@ -5349,7 +5367,7 @@
      ]
     },
     {
-     "id": 51,
+     "id": 52,
      "name": "mf6Seerose3",
      "type": "moebel",
      "x": 416,
@@ -5372,7 +5390,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 53,
      "name": "mf3BrettKlein",
      "type": "moebel",
      "x": 63,
@@ -5400,7 +5418,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 54,
      "name": "mf2Blumenbeet",
      "type": "moebel",
      "x": 160,
@@ -5423,7 +5441,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 55,
      "name": "mfBaum",
      "type": "moebel",
      "x": 544,
@@ -5446,7 +5464,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 56,
      "name": "mfAhorn",
      "type": "moebel",
      "x": 608,
@@ -5469,7 +5487,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 57,
      "name": "mf4Strassenbaum",
      "type": "moebel",
      "x": 528,
@@ -5492,7 +5510,7 @@
      ]
     },
     {
-     "id": 57,
+     "id": 58,
      "name": "mfAhorn",
      "type": "moebel",
      "x": 272,
@@ -5515,7 +5533,7 @@
      ]
     },
     {
-     "id": 58,
+     "id": 59,
      "name": "mf4Strassenbaum",
      "type": "moebel",
      "x": 96,
@@ -5538,7 +5556,7 @@
      ]
     },
     {
-     "id": 59,
+     "id": 60,
      "name": "mf4Strassenbaum",
      "type": "moebel",
      "x": 176,
@@ -5561,7 +5579,7 @@
      ]
     },
     {
-     "id": 60,
+     "id": 61,
      "name": "mf4Strassenbaum",
      "type": "moebel",
      "x": 320,
@@ -5584,7 +5602,7 @@
      ]
     },
     {
-     "id": 61,
+     "id": 62,
      "name": "mf9StegNeu",
      "type": "moebel",
      "x": 80,
@@ -5607,7 +5625,7 @@
      ]
     },
     {
-     "id": 62,
+     "id": 63,
      "name": "mf12WasserfallBand",
      "type": "moebel",
      "x": 480,
@@ -5630,7 +5648,7 @@
      ]
     },
     {
-     "id": 63,
+     "id": 64,
      "name": "mf12HalfpipeHolz",
      "type": "moebel",
      "x": 280,
@@ -5653,7 +5671,7 @@
      ]
     },
     {
-     "id": 64,
+     "id": 65,
      "name": "bkWasserRandW",
      "type": "moebel",
      "x": 64,
@@ -5676,7 +5694,7 @@
      ]
     },
     {
-     "id": 65,
+     "id": 66,
      "name": "bkWasserRandW",
      "type": "moebel",
      "x": 64,
@@ -5699,33 +5717,10 @@
      ]
     },
     {
-     "id": 66,
+     "id": 67,
      "name": "bkWasserRandW",
      "type": "moebel",
      "x": 64,
-     "y": 0,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 67,
-     "name": "bkWasserRot",
-     "type": "moebel",
-     "x": 80,
      "y": 0,
      "width": 16,
      "height": 16,
@@ -5749,7 +5744,7 @@
      "name": "bkWasserRot",
      "type": "moebel",
      "x": 80,
-     "y": 16,
+     "y": 0,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -5769,6 +5764,29 @@
     },
     {
      "id": 69,
+     "name": "bkWasserRot",
+     "type": "moebel",
+     "x": 80,
+     "y": 16,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 70,
      "name": "bkWasserRot",
      "type": "moebel",
      "x": 80,

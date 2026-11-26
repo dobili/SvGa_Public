@@ -20,6 +20,10 @@ GEPRUEFT: dict[str, str] = {
     "kommt:slick:riverton-pavillon.tamsin_erstes_treffen": (
         "Fassung {angesprochen}: Tamsin kommt zu dir (ansprechen.ts); Slick zieht nur hinter ihr."
     ),
+    "sitzt:dexSteg:cedar-creek-bibliothek.zwillinge_d": (
+        "Dex sitzt im Club am Brett (Bibliothek); dexSteg ist die Figur der Sternennacht am Steg, die "
+        "steht (Anwesenheit, 25.11.2026)."
+    ),
     "kommt:juno:capital-arena-aussen.abschied_ende": (
         "Juno steht nach dem Abschied nicht mehr vor der Arena (wenn: nicht abschiedGesehen); sie "
         "kommt nur in der Erzählung dazu, die Szene endet mit der Reise nach Hause."

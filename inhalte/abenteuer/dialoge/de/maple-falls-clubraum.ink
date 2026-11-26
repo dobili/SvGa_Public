@@ -246,9 +246,10 @@ Noch einmal? Ich habe Zeit, und Kekse. #sprecher:coachDelgado #stimmung:laechelt
 // Laternen gehen an.
 === pratt_und_heimweg ===
 ~ heimwegNadelGesehen = true
-An der Tür steht der Hausmeister, einen Lappen in der Hand, und sieht auf die Pokale von 1994. #sprecher:erzaehler
-Die haben auch gezählt. Bevor sie geschlagen haben. #sprecher:pratt #stimmung:nachdenklich
-Dann geht er wieder. #sprecher:erzaehler
+// Anwesenheit (25.11.2026): Mr. Pratt stand nur im Text an der Tür, nicht im Bild. Jetzt geht er
+// draußen im Flur vorbei, und {held} hört ihn durch die offene Tür.
+Draußen im Flur quietscht der Wagen des Hausmeisters. Durch die offene Tür hörst du Mr. Pratt murmeln: „Die haben auch gezählt. Bevor sie geschlagen haben.“ #sprecher:erzaehler
+Dann wird das Quietschen leiser. #sprecher:erzaehler
 Ambrose sagt lange nichts. Draußen vor dem Fenster gehen die Laternen an, eine nach der anderen. #sprecher:erzaehler #pause #licht:abend #musik:aus #uhr:abend
 Es war keine schöne Partie. #sprecher:ambrose #stimmung:nachdenklich
 * [„Ich habe sie aber nicht verloren.“]
@@ -461,7 +462,10 @@ Und ein Matt in eins, das hab ich selbst gefunden. #sprecher:juno #stimmung:laec
 // Klang: Beim Wagen setzt die Musik aus; Victors Thema kalt; in der Partie ein Metronom; bei
 // „Hale“ ein tiefer Ton, Ambroses Thema bricht ab.
 ~ victorGesehen = true
-Ein schwarzer Wagen hält vor der Schule. Ein Mann steigt aus, ein Telefon am Ohr, ein zweites in der Hand. #sprecher:erzaehler #pause #musik:aus #klang:wagen
+// Anwesenheit (Befund des Autors, 25.11.2026): Hale und {rivale} kamen nur im Text, im Bild stand
+// niemand. Jetzt stehen sie nach der ersten Nadel im Clubraum (mapleFalls.haleClub, victorClub)
+// und gehen am Ende sichtbar zur Tür (#gehe).
+Draußen vor dem Fenster parkt ein schwarzer Wagen. Neben Coach Delgado steht ein Mann, ein Telefon am Ohr, ein zweites in der Hand. #sprecher:erzaehler #pause #musik:aus #klang:wagen
 Coach Delgado hat die Trainingsjacke bis oben zugezogen. #sprecher:erzaehler
 Der Mann gibt jedem die Hand, auch dir. Er hat ein freundliches, müdes Gesicht. #sprecher:erzaehler
 Ein Programm, das nie krank wird und nie die Geduld verliert. Perfect Move. #sprecher:grahamHale #stimmung:laechelt
@@ -515,7 +519,7 @@ Gut gespielt, {rivale}. Nächstes Mal schneller, ja? #sprecher:grahamHale #stimm
 Wir haben um vier den Termin. #sprecher:grahamHale #stimmung:nachdenklich
 Etwas geht über {rivale}s Gesicht. Sehr kurz. #sprecher:erzaehler #pause
 Ja. #sprecher:victor #stimmung:riss
-Dann sind sie weg. #sprecher:erzaehler
+Dann gehen beide zur Tür hinaus. #sprecher:erzaehler #gehe:victorClub>13,13;haleClub>14,13
 {rivalin:Die|Der} war nicht nett. #sprecher:juno #stimmung:nachdenklich #pause
 Niemand widerspricht. #sprecher:erzaehler
 Aber {rv_er} war gut. #sprecher:juno #stimmung:nachdenklich
@@ -527,7 +531,7 @@ Aber {rv_er} war gut. #sprecher:juno #stimmung:nachdenklich
 {rivale} sieht auf das Brett. Drei Sekunden lang rührt {rv_er} sich nicht. #sprecher:erzaehler #pause:3
 Glück. Das passiert einmal. #sprecher:victor #stimmung:kalt
 {rivale}? Wir fahren. #sprecher:grahamHale #stimmung:nachdenklich
-{rv_Er} geht, ohne sich umzudrehen. Juno hält dir die Hand zum Abklatschen hin. #sprecher:erzaehler
+{rv_Er} geht, ohne sich umzudrehen. Juno hält dir die Hand zum Abklatschen hin. #sprecher:erzaehler #gehe:victorClub>13,13;haleClub>14,13
 -> victor_ambrose
 
 === victor_ambrose ===

@@ -1,0 +1,105 @@
+/**
+ * Begleiter auf Wegen (Wunsch des Autors, 25.11.2026): Eine Figur, die mit dem Helden unterwegs ist,
+ * geht wirklich hinter ihm her, über die Strecke und die Kartenwechsel hinweg, wie die Kette in
+ * klassischen Rollenspielen. Vorher sagte das Tagebuch „mit Juno nach Cedar Creek“, und am Obststand
+ * legte Juno einen Dollar in die Dose, aber Juno war nicht da.
+ *
+ * Gesteuert aus Ink über die Dialogvariable `begleiter` (Kurznamen wie im Tag `#sprecher`, mehrere
+ * mit Komma: „juno“ oder „juno,mutter“; leer: niemand). Sie liegt im Spielstand wie jede
+ * Dialogvariable. Solange eine Figur begleitet, steht sie nicht zugleich an ihrem Platz auf der
+ * Karte (oberwelt/gefolgedaten.ts blendet sie dort aus).
+ *
+ * Rolle im Gesamtbild: reine Regeln ohne Phaser. oberwelt/gefolgeschicht.ts zeichnet, die Prüfung
+ * pipeline/abenteuer/anwesenheit.py zählt Begleiter als anwesend.
+ * Abhängigkeiten: keine.
+ */
+
+/** Name der Dialogvariable mit den Begleitern. */
+export const BEGLEITER_VARIABLE = "begleiter";
+
+/** So viele Schritte (Felder) geht der erste Begleiter hinter dem Helden, jeder weitere einen mehr. */
+export const FOLGEABSTAND = 1;
+
+/** Ein Feld der Karte in Kachelkoordinaten. */
+export interface Spurfeld {
+  readonly x: number;
+  readonly y: number;
+}
+
+/**
+ * Die Begleiter aus den Dialogvariablen, in ihrer Reihenfolge, ohne Leeres und Doppeltes.
+ * Beispiel: { begleiter: "juno, mutter" } → ["juno", "mutter"]; { begleiter: "" } → [].
+ * Sonderfall: kein Text (fehlt, Zahl) → [].
+ */
+export function begleiterAus(variablen: Readonly<Record<string, unknown>>): string[] {
+  const wert = variablen[BEGLEITER_VARIABLE];
+  if (typeof wert !== "string") return [];
+  const namen = wert
+    .split(",")
+    .map((n) => n.trim())
+    .filter(Boolean);
+  return [...new Set(namen)];
+}
+
+/**
+ * Weichen die Begleiter der Dialogvariablen von denen ab, mit denen die Karte aufgestellt ist?
+ * Beispiel: Karte ohne Begleiter, nach dem Gespräch begleiter „juno“ → ja (neu aufstellen).
+ */
+export function begleiterGeaendert(
+  aufgestellt: readonly string[],
+  nachher: Readonly<Record<string, unknown>>,
+): boolean {
+  return aufgestellt.join(",") !== begleiterAus(nachher).join(",");
+}
+
+/**
+ * Die Spur des Helden: die zuletzt betretenen Felder, das neueste zuerst. Ein Begleiter steht auf
+ * dem Feld `abstand` Schritte hinter dem Helden; so geht er denselben Weg (um Ecken, durch Türen)
+ * und läuft nie durch Wände.
+ * Beispiel: Held geht von (5, 5) nach (6, 5) und (7, 5) → Spur [(7,5), (6,5), (5,5)];
+ * ziel(1) = (6, 5).
+ */
+export class Spur {
+  private felder: Spurfeld[];
+
+  /** Beginnt mit dem Feld des Helden und dem Feld, auf dem der Begleiter erscheint. */
+  constructor(held: Spurfeld, begleiter: readonly Spurfeld[] = []) {
+    this.felder = [held, ...begleiter];
+  }
+
+  /** Merkt das Feld des Helden, wenn es neu ist; die Spur wird nie länger als nötig. */
+  merke(feld: Spurfeld, laenge: number): void {
+    const erstes = this.felder[0];
+    if (erstes && erstes.x === feld.x && erstes.y === feld.y) return;
+    // Geht der Held auf ein Feld der Spur zurück, wird sie dort abgeschnitten: Der Begleiter
+    // weicht dann nicht im Kreis aus, sondern bleibt hinter ihm.
+    const zurueck = this.felder.findIndex((f) => f.x === feld.x && f.y === feld.y);
+    const rest = zurueck >= 0 ? this.felder.slice(zurueck + 1) : this.felder;
+    this.felder = [feld, ...rest].slice(0, laenge + 1);
+  }
+
+  /** Das Feld `abstand` Schritte hinter dem Helden; ist die Spur kürzer, ihr letztes Feld. */
+  ziel(abstand: number): Spurfeld {
+    const feld = this.felder[Math.min(abstand, this.felder.length - 1)];
+    // Die Spur hat immer mindestens das Feld des Helden (Konstruktor).
+    return feld ?? { x: 0, y: 0 };
+  }
+}
+
+/** Blickrichtung wie in der Szene. */
+export type Schrittblick = "oben" | "unten" | "links" | "rechts";
+
+/**
+ * Richtung eines Schritts von `von` nach `nach` (die größere Achse zählt); null bei gleichem Ort.
+ * Beispiel: (5, 5) → (6, 5) „rechts“; (5, 5) → (5, 4) „oben“.
+ */
+export function schrittrichtung(
+  von: { readonly x: number; readonly y: number },
+  nach: { readonly x: number; readonly y: number },
+): Schrittblick | null {
+  const dx = nach.x - von.x;
+  const dy = nach.y - von.y;
+  if (dx === 0 && dy === 0) return null;
+  if (Math.abs(dx) >= Math.abs(dy)) return dx > 0 ? "rechts" : "links";
+  return dy > 0 ? "unten" : "oben";
+}

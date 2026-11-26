@@ -49,3 +49,11 @@ export function portraetpfad(sprecher: string, stimmung: string | null): string 
   const fassung = stimmung && FASSUNGEN.includes(stimmung) ? `-${kebab(stimmung)}` : "";
   return `portraets/${kebab(sprecher)}${fassung}.svg`;
 }
+
+/**
+ * Ersatzporträt aus der eigenen Figur (skripte/ersatzportraets.mjs, 25.11.2026), ohne Fassung.
+ * Beispiel: „wanderer“ → „portraets/ersatz/wanderer.png“; „statist-07“ bleibt wie es ist.
+ */
+export function ersatzpfad(sprecher: string): string {
+  return `portraets/ersatz/${kebab(sprecher)}.png`;
+}

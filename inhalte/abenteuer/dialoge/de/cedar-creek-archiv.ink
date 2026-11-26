@@ -73,9 +73,11 @@ Frag oben die Dame mit dem Buch. Das gebietet der Anstand. #sprecher:ambrose #st
 // Wer einmal „Nicht jetzt“ gesagt hat, darf auch nach der Clubnadel noch ordnen (Quest
 // cedarCreek.archivOrdnen beginnt hier; Befund der Gesamtsimulation).
 ~ ordnenAngeboten = true
-Eine Wendeltreppe hinunter. Es riecht nach Büchern, die nass geworden sind. #sprecher:erzaehler
-Eine einzige Lampe hängt am Kabel von der Decke. Sie flackert. #sprecher:erzaehler
-Da bin ich. Links das neunzehnte Jahrhundert, rechts das zwanzigste. #sprecher:okafor #stimmung:laechelt
+// Anwesenheit (25.11.2026): Mrs. Okafor sprach hier, stand aber oben im Lesesaal. Jetzt wartet sie
+// im Archiv unten an der Treppe (cedarCreek.okaforArchiv), bis es geordnet ist.
+Es riecht nach Büchern, die nass geworden sind. Eine einzige Lampe hängt am Kabel von der Decke. Sie flackert. #sprecher:erzaehler
+Mrs. Okafor steht unten an der Treppe, die Brille in die Stirn geschoben. #sprecher:erzaehler
+Da bist du ja. Links das neunzehnte Jahrhundert, rechts das zwanzigste. #sprecher:okafor #stimmung:laechelt
 Wo der Boden trocken ist. #sprecher:okafor #stimmung:laechelt
 * [Anfangen]
     -> ordnen_wahl
@@ -108,7 +110,7 @@ Bei uns sagte man: Wer nur auf seinen Weg schaut, fällt in das Loch daneben. #s
 Ich habe den Kalender gelesen und nie in den Karton daneben geschaut. #sprecher:okafor #stimmung:bitter
 Ich muss nach oben. Prudence schließt sonst die Kasse falsch ab. #sprecher:okafor #stimmung:laechelt
 Du findest dich zurecht. #sprecher:okafor #stimmung:laechelt
-Ihre Schritte auf der Wendeltreppe. Dann nichts mehr. #sprecher:erzaehler #pause:2
+Ihre Schritte auf der Wendeltreppe. Dann nichts mehr. #sprecher:erzaehler #pause:2 #gehe:okaforArchiv>10,2
 * [Den Karton öffnen]
     -> karton_1858
 * [Nicht jetzt]

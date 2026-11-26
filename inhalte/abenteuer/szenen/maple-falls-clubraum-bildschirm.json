@@ -907,6 +907,16 @@
     {
       "name": "junoClub",
       "feld": [22, 8]
+    },
+    {
+      "name": "haleClub",
+      "feld": [19, 5],
+      "blick": "links"
+    },
+    {
+      "name": "victorClub",
+      "feld": [23, 5],
+      "blick": "oben"
     }
   ],
   "belebung": [

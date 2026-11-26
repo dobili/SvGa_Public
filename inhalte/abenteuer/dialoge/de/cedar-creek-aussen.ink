@@ -19,6 +19,8 @@ EXTERNAL setzeZustand(gegner, faktor, grund)
 EXTERNAL reise(karte, ausloeser)
 EXTERNAL gibFund(kennung)
 
+// Wer mit {held} geht (regeln/gefolge.ts); die Heimfahrt im Bus beendet Junos Begleitung.
+VAR begleiter = ""
 VAR rivalin = false
 VAR rivale = "Victor"
 VAR rv_er = "er"
@@ -111,7 +113,9 @@ Unten im Archiv steht noch ein Karton. #sprecher:erzaehler
 -> END
 
 === sterne_angebot ===
-Es wird dunkel. Am Steg sitzen Mae, Dex und Juno auf einer Decke. #sprecher:erzaehler #uhr:abend
+// Anwesenheit (25.11.2026): Mae, Dex und Mrs. Okafor stehen jetzt am Steg (cedarCreek.maeSteg,
+// dexSteg, okaforSteg), solange die Sternennacht aussteht; Maes Teleskop steht schon dort.
+Es wird dunkel. Am Steg haben Mae und Dex eine Decke ausgebreitet, neben dem Teleskop. #sprecher:erzaehler #uhr:abend
 Mrs. Okafor hat eine Thermoskanne dabei. #sprecher:erzaehler
 Da bist du ja! Gleich geht es los! #sprecher:mae #stimmung:froh
 * [Dazusetzen]
@@ -226,6 +230,8 @@ Ein Kind mit einem Radiergummi als Dame. #sprecher:ambrose #stimmung:lacht
 -> ende_akt1_bus
 
 === ende_akt1_bus ===
+// Juno fährt mit im Bus; zu Hause steht sie wieder an ihren Plätzen (regeln/gefolge.ts).
+~ begleiter = ""
 Hinter euch hupt der Bus. Mr. Kettering fährt, wie er seit einunddreißig Jahren fährt. #sprecher:erzaehler #klang:bus_hupe
 Die Witwe. – Der Hühnerstall. – Achtung, der lange Otis. #sprecher:kettering #stimmung:laechelt #musik:busfahrt #geraeusch:bus_innen
 Sam schläft nach der dritten Kurve ein, den Kopf auf dem Schachkoffer. #sprecher:erzaehler
@@ -446,12 +452,12 @@ Erst auf dem Weg zum Steg, zwischen den Zedernhecken, hörst du Ambrose wieder. 
 // ---------------------------------------------------------------- Ankunft zu Fuß (W5)
 // Ankunft über den Flussweg: dieselbe Szene wie „ankunft“ (Runde 11, VC30).
 
+// Anwesenheit (25.11.2026): Die Ankunft lief am Ende des Flusswegs, also auf dessen Karte, und
+// erzählte schon die Zwillinge auf der Bibliothekstreppe. Jetzt spielt sie beim Betreten von Cedar
+// Creek (Eingang der Karte cedarCreek.aussen, orte.json), wo die Zwillinge stehen.
 === ankunft_zu_fuss ===
-{ankunftCedarCreekGesehen:
-    Der Flussweg endet an der Bushaltestelle von Cedar Creek. #sprecher:erzaehler
-    -> END
-}
--> ankunft
+Der Flussweg endet an der Bushaltestelle von Cedar Creek. #sprecher:erzaehler
+-> END
 
 // ---------------------------------------------------------------- Zedernpfad nach Maple Falls
 // Übergang „zedernpfad“ (orte.json, wenn: nadelCedarCreek): Der Pfad ist bis zur zweiten Nadel
@@ -511,9 +517,11 @@ Sie hat nicht gefragt, warum. Sie fragt in letzter Zeit weniger. #sprecher:erzae
 // Ankunft (Klang turmuhr, neu; Dokument 21 ordnet ihn zu); die Ankunft selbst steht im Knoten
 // „ankunft“ oben. Stimmung: still, dann forschend.
 
+// Anwesenheit (25.11.2026): Coach und Sam stehen an der Haltestelle, solange das Team noch nicht
+// angekommen ist (cedarCreek.coachCedar, samCedar); teamAngekommen erst am Ende, sonst verschwänden
+// sie mitten im Gespräch, und am Schluss gehen sie zur Bibliothek.
 === team_kommt ===
-~ teamAngekommen = true
-Über dem Ort schlägt die Uhr acht. Auf der Straße klappert ein Bus. #sprecher:erzaehler #klang:bus
+Über dem Ort schlägt die Uhr acht. An der Haltestelle steht der Bus, der Motor tickt noch. #sprecher:erzaehler #klang:bus
 Dann ein Pfiff auf zwei Fingern. #sprecher:erzaehler #klang:pfiff_finger
 Morgen, Vorhut! Steht die Bibliothek noch? #sprecher:coachDelgado #stimmung:laechelt
 Ich hab im Bus geschlafen. Mit dem Kopf auf dem Schachkoffer, der ist hart. #sprecher:sam #stimmung:laechelt
@@ -524,6 +532,8 @@ Ich hab im Bus geschlafen. Mit dem Kopf auf dem Schachkoffer, der ist hart. #spr
     Doch. Wär ich. #sprecher:sam #stimmung:lacht
 - Clubkampf am Vormittag. Bis dahin: Kopf frei, Figuren sortiert. #sprecher:coachDelgado #stimmung:froh #klang:pfiff
 Der Bus wartet bis heute Abend. Mr. Kettering fährt uns zurück. #sprecher:coachDelgado #stimmung:neutral
+~ teamAngekommen = true
+Der Coach und Sam gehen voraus zur Bibliothek. #sprecher:erzaehler #gehe:coachCedar>22,17;samCedar>23,17
 -> END
 
 // ---------------------------------------------------------------- Mr. Kettering, der Busfahrer

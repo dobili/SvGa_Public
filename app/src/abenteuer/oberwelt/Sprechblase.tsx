@@ -3,7 +3,8 @@
  *
  * Steht unten im selben Fenster wie die Dialoge (Wunsch des Autors, 14.11.2026: ein Textfenster
  * für alles, was zur Geschichte gehört; oben nur Meldungen zum Spiel). Ambroses Antwort trägt
- * sein Porträt, damit man sieht, wer spricht.
+ * sein Porträt, damit man sieht, wer spricht; der Statist selbst trägt das Ersatzporträt seines
+ * Bildes auf der Karte (skripte/ersatzportraets.mjs, 25.11.2026).
  *
  * Rolle im Gesamtbild: Teil von oberwelt/Oberwelt.tsx (Runde 7, Dokument 16, Abschnitt 3.1).
  * Statisten haben keinen Dialog aus Ink; sie sagen einen Satz aus den Texten, beim nächsten
@@ -17,6 +18,11 @@ export interface SprechblasenInhalt {
   readonly ambrose: string | null;
   /** Kennung einer Vorführung, die der Statist anbietet (Dokument 16, 3.4); null ohne. */
   readonly zeigt: string | null;
+  /**
+   * Porträt des Statisten: der Name seines Bildes auf der Karte („statist-07“, belebung.ts
+   * statistenbild), damit Blase und Karte dieselbe Person zeigen (25.11.2026); null ohne.
+   */
+  readonly portraet?: string | null;
 }
 
 /** Texte der Knöpfe und der Frage, schon übersetzt. */
@@ -42,6 +48,11 @@ export function Sprechblase(props: {
       role="status"
       data-testid="abenteuer-sprechblase"
     >
+      {props.inhalt.portraet && (
+        <div className="abenteuer-dialog-kopf">
+          <Portraet sprecher={props.inhalt.portraet} stimmung={null} zeile={props.inhalt.satz} />
+        </div>
+      )}
       <p className="abenteuer-dialog-text">{props.inhalt.satz}</p>
       {props.inhalt.ambrose && (
         <div className="abenteuer-sprechblase-ambrose">

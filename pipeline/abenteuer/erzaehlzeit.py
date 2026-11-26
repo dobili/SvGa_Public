@@ -39,6 +39,17 @@ ANKOMMEN = re.compile(
 
 # Angesehen und passend: „datei:knoten:Anfang der Zeile“ → Grund.
 GEPRUEFT: dict[str, str] = {
+    # Anwesenheit (25.11.2026, pipeline/abenteuer/anwesenheit.py): Wege, die der Dialog selbst geht.
+    "cedar-creek-archiv:ordnen:Es riecht nach Büchern": "Beschreibt das Archiv, in dem {held} steht.",
+    "cedar-creek-archiv:ordnen:Mrs. Okafor steht unten an der Treppe": "Sie steht dort (okaforArchiv).",
+    "cedar-creek-archiv:ordnen_fertig:Ihre Schritte auf der Wendeltreppe": "Sie geht im Gespräch (#gehe).",
+    "maple-falls-clubraum:pratt_und_heimweg:Draußen im Flur quietscht": "Geräusch aus dem Flur.",
+    "maple-falls-clubraum:pratt_und_heimweg:Dann wird das Quietschen leiser": "Geräusch aus dem Flur.",
+    "maple-falls-dachboden:erste_nacht:Am Morgen klappern unten Schlüssel": "Mama ruft von unten herauf.",
+    "maple-falls-wohnzimmer:diner_einladung:Mama nimmt die Jacke vom Haken": (
+        "Der Weg ins Diner; danach wechselt die Karte (reise, Diner-Abend dort)."
+    ),
+    "maple-falls-wohnzimmer:diner_abend:Mama zahlt": "Der Heimweg; danach wechselt die Karte (reise).",
     "capital-arena-halle:finale_lauf:Als die Halle leer wird, gehst du hinaus auf die Treppe": (
         "Erzählter Szenenwechsel nach dem Finale (Rückmeldung, mittel-3)."
     ),

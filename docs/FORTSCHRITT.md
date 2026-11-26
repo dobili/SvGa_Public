@@ -1,3 +1,20 @@
+Stand: 26.11.2026, abends (Haupt-Chat, Schach-Abenteuer): **Auftritte, Gemini-Schnittstelle, Lieferung 26.11. auf beta (0cd5f676, Gate n84 grün).**
+
+- Figuren kommen sichtbar herein und gehen sichtbar hinaus (regeln/auftritt.ts, orte.json
+  `auftritt.wartet`, Werkzeug auftritt.py, 11 Befunde behoben; N2738). Clubraum: Victor-Szene direkt
+  nach dem Sieg, Ausgang nach der Partie frei (Hotfix beb4b09a).
+- Gemini über die Schnittstelle (pipeline/abenteuer/geminibilder.py, Nano Banana 2.1, 1K; Schlüssel
+  als Network Secret der Umgebung, Kopf x-goog-api-key): alle 36 Aufträge der Mappe 18 erzeugt,
+  8 Porträtblätter, Großbild Nova, 3 Fundbilder und Kartenteile eingebaut (N2739). B22/K17
+  zurückgezogen (winter_mild).
+- PixelLab P9 (Theo flacher Laptop, Tamsin am Boden mit Schachuhr) eingebaut, privat 3f1c9cba.
+  Keine offenen Bildaufträge beim Autor.
+
+**Nächster Schritt:** zweite Gemini-Fassungen K14, K20, K21, K23 (privat ki-roh/gemini-api_26-11b)
+einbauen, K15 Stadthäuser neu; Bildschirmtisch, Fährhaus, Kellertreppe, Wüstensteine einsetzen;
+Simulation rot unter ABENTEUER_SIMULATION (test_wirtschaft_ziele Startwert 1, ambrose_danach eilig);
+Karteneditor neu bauen; Antworten des Autors zu N2666 bis N2739. Nichts nach `main`.
+
 Stand: 25.11.2026, spät abends (Haupt-Chat, Schach-Abenteuer): **Varianten, Ansprechen, Tiere, Porträts auf beta (5a2ec6ea, Gate n75 grün).**
 
 - Alle Schachvarianten spielbar: Fairy-Stockfish einkernig (WASM, selbst gebaut), Hülle und

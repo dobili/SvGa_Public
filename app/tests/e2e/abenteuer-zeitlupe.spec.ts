@@ -111,6 +111,15 @@ async function laufeHinueber(seite: Page, taste: string): Promise<Lauf> {
   return werteAus(roh, los, felder);
 }
 
+/** JS-Speicher grob (nur Chromium: performance.memory, ohne Texturen auf der Grafikkarte). */
+function speicher(seite: Page): Promise<string> {
+  return seite.evaluate(() => {
+    const m = (performance as unknown as { memory?: { usedJSHeapSize: number } }).memory;
+    const MB = 1024 * 1024;
+    return m ? `JS-Speicher ${Math.round(m.usedJSHeapSize / MB)} MB` : "JS-Speicher unbekannt";
+  });
+}
+
 async function drossele(seite: Page, rate: number): Promise<void> {
   const cdp = await seite.context().newCDPSession(seite);
   await cdp.send("Emulation.setCPUThrottlingRate", { rate });
@@ -119,7 +128,9 @@ async function drossele(seite: Page, rate: number): Promise<void> {
 function zeile(name: string, lauf: Lauf): string {
   const b = lauf.bilder;
   return (
-    `${name}: Tempo ${Math.round(lauf.anteil * 100)} %, Szene steht nach ${lauf.szeneMs} ms, ` +
+    `${name}: Tempo ${Math.round(lauf.anteil * 100)} %, Übergang bis Leinwand ` +
+    `${lauf.wechselMs} ms, Szene steht nach ${lauf.szeneMs} ms, flüssig ab Übergang ` +
+    `${lauf.fluessigMs} ms, ` +
     `Felder/s ${lauf.feldJeSekunde.join(" | ")}; ` +
     `erste 3 s: ${b.zahl} Bilder, über 33 ms ${b.ueber33}, über 50 ms ${b.ueber50}, ` +
     `längstes ${b.laengstes} ms; über 100 ms (ab Leinwand: Dauer) ${lauf.langeBilder.join(" ")}`
@@ -142,7 +153,9 @@ for (const rate of MESSLAUF ? DROSSELUNG : []) {
     for (let i = 0; i < WECHSEL_MESSLAUF; i++) {
       const inDenPark = i % 2 === 0;
       const lauf = await laufeHinueber(page, inDenPark ? "ArrowRight" : "ArrowLeft");
-      zeilen.push(zeile(inDenPark ? "→ Park" : "→ Maple Falls", lauf));
+      zeilen.push(
+        `${zeile(inDenPark ? "→ Park" : "→ Maple Falls", lauf)}; ${await speicher(page)}`,
+      );
     }
     console.log(zeilen.map((z) => `Zeitlupe: ${z}`).join("\n"));
   });

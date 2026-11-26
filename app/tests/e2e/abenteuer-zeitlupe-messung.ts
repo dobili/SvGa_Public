@@ -102,8 +102,12 @@ export function liesAufzeichnung(seite: Page): Promise<Aufzeichnung> {
 
 /** Kennzahlen eines Laufs nach dem Kartenwechsel. */
 export interface Lauf {
+  /** Vom Betreten des Übergangs (letztes Feld der alten Karte) bis zur neuen Leinwand (ms). */
+  readonly wechselMs: number;
   /** So lange nach der neuen Leinwand meldete die Szene das erste Feld (sie steht). */
   readonly szeneMs: number;
+  /** Vom Betreten des Übergangs bis zum ersten flüssigen Bild der neuen Karte (ms). */
+  readonly fluessigMs: number;
   /** Bilder über 100 ms als „Zeitpunkt ab Leinwand:Dauer“ in ms, bis zum Ende des Laufs. */
   readonly langeBilder: readonly string[];
   /** Tempo über die ersten Felder gegen das Solltempo des Helden (1 = volle Geschwindigkeit). */
@@ -124,7 +128,35 @@ const ANFANG_MS = 3000;
 const LANG_MS = 33;
 const SEHR_LANG_MS = 50;
 const AUSREISSER_MS = 100;
+/** Flüssig: ab diesem Bild so viele Bilder in Folge höchstens SEHR_LANG_MS lang. */
+const FLUESSIGE_BILDER = 10;
 const MS_JE_S = 1000;
+
+/**
+ * Das erste Bild ab `ab`, nach dem FLUESSIGE_BILDER Bilder in Folge höchstens 50 ms dauern.
+ * Ausgabe: sein Zeitpunkt, oder das Ende der Aufzeichnung, wenn es nie flüssig wurde.
+ */
+function erstesFluessiges(bilder: readonly number[], ab: number): number {
+  for (let i = bilder.findIndex((t) => t >= ab); i >= 0 && i < bilder.length; i++) {
+    const folge = bilder.slice(i, i + FLUESSIGE_BILDER + 1);
+    if (folge.length <= FLUESSIGE_BILDER) break;
+    if (folge.every((t, k) => k === 0 || t - (folge[k - 1] ?? t) <= SEHR_LANG_MS)) {
+      return bilder[i] ?? ab;
+    }
+  }
+  return bilder.at(-1) ?? ab;
+}
+
+/** Zeiten des Wechsels: Übergang betreten, Szene steht, erstes flüssiges Bild (alle in ms). */
+function phasen(auf: Aufzeichnung, start: number) {
+  const vorher = auf.kacheln.filter((k) => k.t < start).at(-1)?.t ?? start;
+  const szene = auf.kacheln.find((k) => k.t >= start)?.t ?? start;
+  return {
+    wechselMs: Math.round(start - vorher),
+    szeneMs: Math.round(szene - start),
+    fluessigMs: Math.round(erstesFluessiges(auf.bilder, szene) - vorher),
+  };
+}
 
 /**
  * Wertet eine Aufzeichnung aus, `los` ist die neue Leinwand: Tempo über die ersten Felder
@@ -151,7 +183,7 @@ export function werteAus(auf: Aufzeichnung, los: number, felder: number): Lauf {
     .filter((b) => b.t >= 0 && b.dauer > AUSREISSER_MS)
     .map((b) => `${Math.round(b.t)}:${Math.round(b.dauer)}`);
   return {
-    szeneMs: Math.round((schritte[0]?.t ?? los) - start),
+    ...phasen(auf, start),
     langeBilder,
     anteil: Math.round((tempo / SOLL_FELDER_JE_S) * 100) / 100,
     feldJeSekunde,

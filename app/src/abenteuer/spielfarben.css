@@ -91,7 +91,6 @@
 :is(.bildschirm-abenteuer, .abenteuer-huelle)
   :is(.knopf-haupt, .knopf-zweit, .knopf-gefahr, .knopf-link),
 .abenteuer-huelle-blaettern .chip,
-.abenteuer-steuerkreuz button,
 .abenteuer-aktion,
 .abenteuer-tagebuchknopf,
 .abenteuer-menueknopf,
@@ -137,7 +136,6 @@
 
 :is(.bildschirm-abenteuer, .abenteuer-huelle)
   :is(.knopf-haupt, .knopf-zweit, .knopf-gefahr, .knopf-link):active:not(:disabled),
-.abenteuer-steuerkreuz button[data-gedrueckt="ja"],
 .abenteuer-aktion:active,
 .abenteuer-tagebuchknopf:active,
 .abenteuer-menueknopf:active {
@@ -172,8 +170,7 @@
   --knopf-kante: transparent;
 }
 
-/* Steuerkreuz und Aktion: Navy mit Gold, gedrückt Gold. */
-.abenteuer-steuerkreuz button,
+/* Aktion: Navy mit Gold, gedrückt Gold (der Joystick hat eigene Farben, abenteuer.css). */
 .abenteuer-aktion {
   --knopf-grund: rgb(22 37 61 / 80%);
   --knopf-schrift: var(--spiel-creme);
@@ -182,7 +179,6 @@
   padding: 0;
 }
 
-.abenteuer-steuerkreuz button[data-gedrueckt="ja"],
 .abenteuer-aktion:active {
   --knopf-grund: var(--spiel-gold);
   --knopf-schrift: var(--spiel-navy);

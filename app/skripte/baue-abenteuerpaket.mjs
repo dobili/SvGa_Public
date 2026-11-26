@@ -97,6 +97,8 @@ async function baueFigurenboegen() {
   // Weitere Standbilder je Figur (Karteneditor 1.9): Anfang und Kennungen im Bogen.
   const standbilder = {};
   const rahmenhoehen = {};
+  // Schrägen von Held, Heldin, Juno und Mama (figurdiagonalen.mjs): erster Rahmen je Figur.
+  const diagonalen = {};
   for (const name of (await readdir(quelle, { withFileTypes: true }))
     .filter((e) => e.isDirectory())
     .map((e) => e.name)
@@ -106,9 +108,11 @@ async function baueFigurenboegen() {
     await schreibe(`figuren32/${name}.png`, bogen.bild, "grafik");
     if (bogen.standbilder) standbilder[name] = bogen.standbilder;
     if (bogen.rahmenhoehe !== RAHMEN) rahmenhoehen[name] = bogen.rahmenhoehe;
+    if (bogen.diagonalen !== null) diagonalen[name] = bogen.diagonalen;
   }
   await schreibe("figuren32/standbilder.json", Buffer.from(JSON.stringify(standbilder)), "daten");
   await schreibe("figuren32/rahmenhoehen.json", Buffer.from(JSON.stringify(rahmenhoehen)), "daten");
+  await schreibe("figuren32/diagonalen.json", Buffer.from(JSON.stringify(diagonalen)), "daten");
 }
 
 /** Letzter Akt des Abenteuers (Ton je Akt in akt2 … akt4). */

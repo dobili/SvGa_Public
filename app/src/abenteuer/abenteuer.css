@@ -1,4 +1,4 @@
-/* Schach-Abenteuer: Oberwelt, Steuerkreuz, Dialogfenster, Startkarte (docs/spiel/04_Architektur.md 8). */
+/* Schach-Abenteuer: Oberwelt, Joystick, Dialogfenster, Startkarte (docs/spiel/04_Architektur.md 8). */
 
 /* Erinnerungen Ambroses (docs/spiel/08, F1): die Welt in Sepia, wie ein altes Foto. */
 .abenteuer-welt-erinnerung canvas {
@@ -24,18 +24,8 @@
   image-rendering: pixelated;
 }
 
-/* Steuerkreuz und Aktionsknopf, groß genug für Daumen (48 px). Lage nach Daumenzonen (rechts oder
-   links, hoch oder quer) in bedienung.css, Farben und Pixelrahmen in spielfarben.css. */
-.abenteuer-steuerkreuz {
-  position: absolute;
-  display: grid;
-  grid-template-columns: repeat(3, 48px);
-  grid-template-rows: repeat(3, 48px);
-  /* Breit genug für die Pixelrahmen der Felder (spielfarben.css); bedienung.css rechnet damit. */
-  gap: var(--kreuz-fuge, 8px);
-}
-
-.abenteuer-steuerkreuz button,
+/* Aktionsknopf, groß genug für Daumen (48 px); der Joystick hat eigene Regeln
+   (oberwelt/joystick.css). */
 .abenteuer-aktion {
   min-width: 48px;
   min-height: 48px;
@@ -393,7 +383,7 @@ body:has(:is(.bildschirm-abenteuer, .abenteuer-huelle)) .update-hinweis {
   font-size: var(--groesse-klein);
 }
 
-/* Tagebuch, Übungspartie und Reisen stehen in der Leiste über dem Steuerkreuz (bedienung.css);
+/* Tagebuch, Übungspartie und Reisen stehen in der Leiste unten (gegenüber dem Joystick) (bedienung.css);
    das Tagebuch selbst nutzt die Menükarte. */
 
 .abenteuer-tagebuch {

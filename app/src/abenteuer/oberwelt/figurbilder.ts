@@ -11,7 +11,13 @@
  * Abhängigkeiten: Phaser.
  */
 import Phaser from "phaser";
-import { hoehenfaktorDerAdresse, istGrossbogen, rahmenhoeheDerAdresse } from "./figurbogen";
+import { SCHRAEGEN, type Achtrichtung } from "./achtrichtung";
+import {
+  diagonalbeginnDerAdresse,
+  hoehenfaktorDerAdresse,
+  istGrossbogen,
+  rahmenhoeheDerAdresse,
+} from "./figurbogen";
 import type { Umriss } from "./sitzplatz";
 import type { Richtung } from "./szene";
 import { figurzeichenmassstab } from "./weltmassstab";
@@ -48,13 +54,15 @@ export function standbild(richtung: Richtung): number {
   return REIHENFOLGE.indexOf(richtung);
 }
 
-/** Name der Laufanimation eines Bildes in einer Richtung. */
-export function laufname(schluessel: string, richtung: Richtung): string {
+/** Name der Laufanimation eines Bildes in einer Richtung (Schrägen: Held, Heldin, Begleiter). */
+export function laufname(schluessel: string, richtung: Achtrichtung): string {
   return `${schluessel}:lauf:${richtung}`;
 }
 
 /** Höhenfaktor je Texturschlüssel (figurhoehen.json über figurbogen.ts), nur wo er von 1 abweicht. */
 const hoehenfaktoren = new Map<string, number>();
+/** Erster Rahmen der Schrägen je Texturschlüssel (figurbogen.ts), nur Bögen mit Schrägen. */
+const diagonalbeginn = new Map<string, number>();
 
 /** Lädt einen Bogen im Format von LimeZu oder PixelLab (Rahmengröße nach figurbogen.ts). */
 export function ladeFigurbogen(szene: Phaser.Scene, schluessel: string, adresse: string): void {
@@ -62,6 +70,9 @@ export function ladeFigurbogen(szene: Phaser.Scene, schluessel: string, adresse:
   const faktor = hoehenfaktorDerAdresse(adresse);
   if (faktor === 1) hoehenfaktoren.delete(schluessel);
   else hoehenfaktoren.set(schluessel, faktor);
+  const schraeg = diagonalbeginnDerAdresse(adresse);
+  if (schraeg === null) diagonalbeginn.delete(schluessel);
+  else diagonalbeginn.set(schluessel, schraeg);
   szene.load.spritesheet(schluessel, adresse, {
     frameWidth: gross ? GROSS_RAHMEN : FIGUR_BREITE,
     // Hohe PixelLab-Rahmen (32 × 48, figurbogen.ts): die Füße stehen trotzdem zwei Pixel über dem Rand.
@@ -70,7 +81,7 @@ export function ladeFigurbogen(szene: Phaser.Scene, schluessel: string, adresse:
 }
 
 /** Name der Rennanimation eines Bildes in einer Richtung (Rennen, 21.11.2026). */
-export function rennname(schluessel: string, richtung: Richtung): string {
+export function rennname(schluessel: string, richtung: Achtrichtung): string {
   return `${schluessel}:renn:${richtung}`;
 }
 
@@ -121,6 +132,41 @@ export function erzeugeLaufanimationen(szene: Phaser.Scene, schluessel: string):
       schluessel,
       rennname(schluessel, richtung),
       rennreihe + i * LAUFBILDER,
+      RENN_BILDRATE,
+    );
+  });
+  erzeugeSchraeganimationen(szene, schluessel);
+}
+
+/** Abstand der Geh- und der Rennreihe vom ersten Rahmen der Schrägen (figurdiagonalen.mjs). */
+const SCHRAEG_GEHEN = 24;
+const SCHRAEG_RENNEN = 48;
+
+/**
+ * Geh- und Rennanimationen der vier Schrägen, wenn der Bogen sie hat (Held, Heldin, Juno, Mama,
+ * 26.11.2026). Ohne Schrägen geschieht nichts; dann zeigt die Szene die Hauptrichtung des Blicks.
+ */
+function erzeugeSchraeganimationen(szene: Phaser.Scene, schluessel: string): void {
+  const beginn = diagonalbeginn.get(schluessel);
+  if (beginn === undefined) return;
+  const rahmen = szene.textures.exists(schluessel)
+    ? szene.textures.get(schluessel).frameTotal - 1
+    : 0;
+  if (rahmen < beginn + SCHRAEG_RENNEN + SCHRAEGEN.length * LAUFBILDER) return;
+  SCHRAEGEN.forEach((r, i) => {
+    const versatz = i * LAUFBILDER;
+    animation(
+      szene,
+      schluessel,
+      laufname(schluessel, r),
+      beginn + SCHRAEG_GEHEN + versatz,
+      BILDRATE,
+    );
+    animation(
+      szene,
+      schluessel,
+      rennname(schluessel, r),
+      beginn + SCHRAEG_RENNEN + versatz,
       RENN_BILDRATE,
     );
   });

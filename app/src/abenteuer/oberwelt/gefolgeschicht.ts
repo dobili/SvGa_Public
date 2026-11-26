@@ -6,13 +6,18 @@
  * Ambrose, regeln/begleiter.ts); danach läuft er der Spur des Helden nach. Er hat keinen Körper für
  * die Kollision und sperrt deshalb keinen Weg; im Gespräch steht der Held, also steht er neben ihm.
  * Beim Kartenwechsel baut die neue Karte ihn wieder neben dem Helden auf.
+ * Schräg (Joystick, 26.11.2026): Die Spur nimmt Stufen heraus, wo die Schräge frei ist, und legt
+ * an Wandecken das freie Eckfeld dazwischen (regeln/gefolge.ts). Der Begleiter zeigt dann seine
+ * Schrägbilder (Juno und Mama haben welche, figurbilder.ts); ohne sie die nächste Hauptrichtung.
  * Für die Oberflächentests steht die Lage am Attribut `data-gefolge` der Spielfläche
  * („juno@6,5“, mehrere mit Semikolon); im Spiel ohne Wirkung.
  * Abhängigkeiten: Phaser, figurbilder.ts, regeln/begleiter.ts, regeln/gefolge.ts.
  */
 import Phaser from "phaser";
 import { begleiterfeld, type Blick, type Kachelfeld } from "../regeln/begleiter";
-import { FOLGEABSTAND, schrittrichtung, Spur } from "../regeln/gefolge";
+import { FOLGEABSTAND, Spur } from "../regeln/gefolge";
+import { blickZu, istSchraege, type Achtrichtung } from "./achtrichtung";
+import { sektorZu, winkelVon } from "./joystick";
 import { erzeugeLaufanimationen, fussUrsprungY, laufname, standbild } from "./figurbilder";
 import { PLATZHALTER_BILD } from "./zuwendung";
 
@@ -33,6 +38,8 @@ interface Glied {
   /** Eigener Bogen (gekaufte Grafik); ohne ihn die Platzhalterfigur ohne Laufbilder. */
   readonly eigen: boolean;
   blick: Blick;
+  /** Laufrichtung in acht Werten (Hysterese an den Sektorgrenzen, joystick.ts); null: steht. */
+  richtung: Achtrichtung | null;
 }
 
 /** Was die Schicht von der Szene braucht (Teil von fuehrungsschicht.ts, Fuehrungszugang). */
@@ -71,7 +78,7 @@ function stelleNeben(
   sprite.setName(`gefolge:${name}`);
   sprite.setOrigin(MITTE, eigen ? fussUrsprungY(sprite, z.kachel) : MITTE);
   if (eigen) erzeugeLaufanimationen(z.szene, schluessel);
-  return { name, sprite, eigen, blick };
+  return { name, sprite, eigen, blick, richtung: null };
 }
 
 /** Bewegt ein Glied in diesem Bild auf sein Ziel zu; Ausgabe: ob es geht. */
@@ -90,16 +97,25 @@ function gehe(g: Glied, ziel: Kachelfeld, kachel: number, delta: number): boolea
   const tempo = GRUNDTEMPO * (1 + weite / kachel);
   const schritt = Math.min(weite, (tempo * delta) / MS_JE_SEKUNDE);
   g.sprite.setPosition(g.sprite.x + (dx / weite) * schritt, g.sprite.y + (dy / weite) * schritt);
-  g.blick = schrittrichtung({ x: 0, y: 0 }, { x: dx, y: dy }) ?? g.blick;
+  g.richtung = sektorZu(winkelVon(dx, dy), g.richtung);
+  g.blick = blickZu(g.richtung, g.blick);
   return true;
+}
+
+/** Richtung der Laufbilder: die Schräge, wenn es ihre Animation gibt, sonst der Blick. */
+function bildrichtung(g: Glied): Achtrichtung {
+  const r = g.richtung;
+  if (r && istSchraege(r) && g.sprite.scene.anims.exists(laufname(`figur:${g.name}`, r))) return r;
+  return g.blick;
 }
 
 /** Bild eines Glieds: Laufanimation in Bewegung, sonst Standbild seines Blicks. */
 function zeige(g: Glied, geht: boolean): void {
   const schluessel = `figur:${g.name}`;
   if (!g.eigen) g.sprite.setFrame(PLATZHALTER_BILD[g.blick]);
-  else if (geht) g.sprite.anims.play(laufname(schluessel, g.blick), true);
+  else if (geht) g.sprite.anims.play(laufname(schluessel, bildrichtung(g)), true);
   else {
+    g.richtung = null;
     g.sprite.anims.stop();
     g.sprite.setFrame(standbild(g.blick));
   }
@@ -129,7 +145,7 @@ export function richteGefolgeEin(
   );
   const laenge = FOLGEABSTAND + glieder.length;
   z.szene.events.on(Phaser.Scenes.Events.UPDATE, (_zeit: number, delta: number) => {
-    spur.merke(feldVon(z.held, z.kachel), laenge);
+    spur.merke(feldVon(z.held, z.kachel), laenge, z.frei); // schräg, wo frei (regeln/gefolge.ts)
     glieder.forEach((g, i) => zeige(g, gehe(g, spur.ziel(FOLGEABSTAND + i), z.kachel, delta)));
     const lage = glieder.map((g) => {
       const f = feldVon(g.sprite, z.kachel);

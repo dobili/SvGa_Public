@@ -1,7 +1,8 @@
 /**
- * Rennen draußen (Wunsch des Autors, 21.11.2026, gangart.ts): Zieht man den Finger auf dem
- * Steuerkreuz weit über den Rand nach außen, rennt der Held auf Außenkarten schneller; innen geht
- * er gleich schnell weiter. Gemessen wird die Zahl der Kacheln in derselben Zeit.
+ * Rennen draußen (Wunsch des Autors, 21.11.2026, gangart.ts): Schiebt man den Joystick bis an den
+ * Ring (oder darüber hinaus), rennt der Held auf Außenkarten schneller; innen geht er gleich schnell
+ * weiter. Gemessen wird die Zahl der Kacheln in derselben Zeit. „Auf der Taste“ ist die unsichtbare
+ * Marke „Nach rechts“ auf halbem Radius (Joystick.tsx): gehen.
  */
 import { expect, test, type Page } from "@playwright/test";
 import { EINLEITUNG_GESEHEN, GRUNDSTAND, starteMitStand } from "./abenteuer-affe";

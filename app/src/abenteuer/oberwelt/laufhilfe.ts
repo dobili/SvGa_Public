@@ -37,21 +37,35 @@ export function querziel(
 ): number {
   const senkrecht = richtung === "oben" || richtung === "unten";
   const quer = senkrecht ? mitte.x : mitte.y;
-  const laengs = senkrecht ? mitte.y : mitte.x;
-  // Die Zellreihen der nächsten 4 Pixel vor dem Körper (vorn: oben oder links ist kleiner).
-  const vorn = richtung === "oben" || richtung === "links" ? -1 : 1;
-  const kante = vorn < 0 ? laengs - KOERPER_HALB - 1 : laengs + KOERPER_HALB;
-  const reihen = [Math.floor(kante / ZELLE), Math.floor((kante + vorn * (ZELLE - 1)) / ZELLE)];
-  const passt = (q: number): boolean => {
-    for (let z = Math.floor((q - KOERPER_HALB) / ZELLE); z * ZELLE < q + KOERPER_HALB; z++) {
-      for (const r of reihen) if (!(senkrecht ? frei(z, r) : frei(r, z))) return false;
-    }
-    return true;
-  };
+  const passt = (q: number): boolean => passtVor(mitte, richtung, q, frei);
   const kachelmitte = Math.floor(quer / kachel) * kachel + kachel / 2;
   if (passt(kachelmitte)) return kachelmitte;
   for (let d = 1; d <= SPIEL; d++) {
     for (const q of [kachelmitte - d, kachelmitte + d]) if (passt(q)) return q;
   }
   return kachelmitte;
+}
+
+/**
+ * Hat der Körper in Querlage `q` die nächsten 4 Pixel vor sich frei (Zellen von 4 Pixeln)?
+ * Eingaben wie querziel; `q` ist x beim Gehen nach oben oder unten, sonst y.
+ * Auch für das Rutschen an Wänden beim Schräglaufen (schraeglauf.ts).
+ * Beispiel: Körper bei (102, 100), Lücke 96..108 über ihm → nach oben bei q = 102 frei.
+ */
+export function passtVor(
+  mitte: { readonly x: number; readonly y: number },
+  richtung: Richtung,
+  q: number,
+  frei: (zx: number, zy: number) => boolean,
+): boolean {
+  const senkrecht = richtung === "oben" || richtung === "unten";
+  const laengs = senkrecht ? mitte.y : mitte.x;
+  // Die Zellreihen der nächsten 4 Pixel vor dem Körper (vorn: oben oder links ist kleiner).
+  const vorn = richtung === "oben" || richtung === "links" ? -1 : 1;
+  const kante = vorn < 0 ? laengs - KOERPER_HALB - 1 : laengs + KOERPER_HALB;
+  const reihen = [Math.floor(kante / ZELLE), Math.floor((kante + vorn * (ZELLE - 1)) / ZELLE)];
+  for (let z = Math.floor((q - KOERPER_HALB) / ZELLE); z * ZELLE < q + KOERPER_HALB; z++) {
+    for (const r of reihen) if (!(senkrecht ? frei(z, r) : frei(r, z))) return false;
+  }
+  return true;
 }

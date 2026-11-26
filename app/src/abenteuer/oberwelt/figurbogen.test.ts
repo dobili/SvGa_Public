@@ -2,6 +2,7 @@
 import { describe, expect, it } from "vitest";
 import figurhoehen from "./figurhoehen.json";
 import {
+  diagonalbeginnDerAdresse,
   figurenbildAdresse,
   grosspfad,
   hoehenfaktor,
@@ -45,6 +46,17 @@ describe("Figurenbogen", () => {
     expect(rahmenhoeheDerAdresse(koch ?? "")).toBe(48);
     expect(rahmenhoeheDerAdresse(juno ?? "")).toBe(GROSS_HOEHE);
     expect(rahmenhoeheDerAdresse("blob:unbekannt")).toBe(GROSS_HOEHE);
+  });
+
+  it("merkt den Anfang der Schrägen aus dem Index des Pakets, sonst keinen", async () => {
+    const vorhanden = new Set(["figuren32/held-0.png", "figuren32/abe.png"]);
+    const lies = (p: string) => Promise.resolve(vorhanden.has(p) ? `blob:schraeg/${p}` : null);
+    const hoehen = () => Promise.resolve({});
+    const schraeg = () => Promise.resolve({ "held-0": 144 });
+    const held = await figurenbildAdresse("figuren/held-0.png", lies, hoehen, schraeg);
+    const abe = await figurenbildAdresse("figuren/abe.png", lies, hoehen, schraeg);
+    expect(diagonalbeginnDerAdresse(held ?? "")).toBe(144);
+    expect(diagonalbeginnDerAdresse(abe ?? "")).toBeNull();
   });
 
   it("hält die Höhenfaktoren im erlaubten Bereich (nur verkleinern, höchstens × 1,1)", () => {

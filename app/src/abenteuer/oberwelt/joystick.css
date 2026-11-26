@@ -1,0 +1,81 @@
+/*
+ * Joystick der Oberwelt (Wunsch des Autors, 26.11.2026: „minimalistisch wie in anderen
+ * Mobile-Games, zwei Kreise ineinander“): durchscheinender Ring mit goldenem Rand, Knopf in Creme,
+ * beim Rennen Gold (Farbsystem, spielfarben.css, Dokument 30). Lage nach Daumenzonen in
+ * bedienung.css. Gehört zu oberwelt/Joystick.tsx; eigene Datei, weil abenteuer.css über der
+ * Größengrenze liegt.
+ */
+.abenteuer-joystick {
+  position: absolute;
+  width: var(--kreuz-hoehe, 152px);
+  height: var(--kreuz-hoehe, 152px);
+  touch-action: none;
+}
+
+.abenteuer-joystick-ring {
+  position: absolute;
+  inset: calc((var(--kreuz-hoehe, 152px) - var(--joystick-ring, 112px)) / 2);
+  border: 2px solid rgb(201 162 39 / 75%);
+  border-radius: 50%;
+  background: rgb(22 37 61 / 30%);
+  pointer-events: none;
+}
+
+.abenteuer-joystick-knopf {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--joystick-knopf, 52px);
+  height: var(--joystick-knopf, 52px);
+  margin: calc(var(--joystick-knopf, 52px) / -2);
+  border: 2px solid var(--spiel-gold-tief, #7d6007);
+  border-radius: 50%;
+  background: rgb(245 240 230 / 80%);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 30%);
+  transform: translate(var(--knopf-x, 0), var(--knopf-y, 0));
+  pointer-events: none;
+}
+
+.abenteuer-joystick[data-gangart="rennen"] .abenteuer-joystick-knopf {
+  background: var(--spiel-gold, #c9a227);
+}
+
+/* Vier unsichtbare Knöpfe auf halbem Radius (Joystick.tsx): für Tastatur und Vorleser; sichtbar
+   nur, wenn die Tastatur auf ihnen steht. */
+.abenteuer-joystick-marke {
+  --marke: 36px;
+  --abstand: calc(var(--joystick-ring, 112px) / 4);
+  position: absolute;
+  top: calc(50% - var(--marke) / 2);
+  left: calc(50% - var(--marke) / 2);
+  width: var(--marke);
+  height: var(--marke);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  opacity: 0;
+  touch-action: none;
+}
+
+.abenteuer-joystick-marke:focus-visible {
+  outline: 2px solid var(--spiel-gold, #c9a227);
+  opacity: 1;
+}
+
+.abenteuer-joystick-marke[data-richtung="oben"] {
+  top: calc(50% - var(--marke) / 2 - var(--abstand));
+}
+
+.abenteuer-joystick-marke[data-richtung="unten"] {
+  top: calc(50% - var(--marke) / 2 + var(--abstand));
+}
+
+.abenteuer-joystick-marke[data-richtung="links"] {
+  left: calc(50% - var(--marke) / 2 - var(--abstand));
+}
+
+.abenteuer-joystick-marke[data-richtung="rechts"] {
+  left: calc(50% - var(--marke) / 2 + var(--abstand));
+}

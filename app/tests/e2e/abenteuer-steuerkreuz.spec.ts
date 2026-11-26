@@ -1,8 +1,8 @@
 /**
- * Steuerkreuz beim Wischen (Wunsch des Autors, 20.11.2026, steuerrichtung.ts): Mit gehaltenem Finger
- * über die Lücke zwischen zwei Pfeilen wischen. Bisher zählte in der Lücke keine Richtung, und der
- * Held blieb stehen; jetzt zählt die nächste Taste, zu jedem Zeitpunkt genau eine, und der Held läuft
- * ohne Halt weiter.
+ * Wischen auf dem Joystick (Wunsch des Autors, 20.11.2026, damals Steuerkreuz, steuerrichtung.ts):
+ * Mit gehaltenem Finger von „rechts“ nach „unten“ wischen. Zu jedem Zeitpunkt zählt genau ein Blick
+ * (vorherrschende Hauptrichtung, data-gedrueckt an den Marken des Joysticks), und der Held läuft
+ * ohne Halt weiter, dazwischen schräg (26.11.2026).
  */
 import { expect, test, type Page } from "@playwright/test";
 import { EINLEITUNG_GESEHEN, GRUNDSTAND, starteMitStand } from "./abenteuer-affe";
@@ -21,7 +21,7 @@ async function kachel(seite: Page): Promise<string> {
   return (await seite.getByTestId("abenteuer-kachel").textContent()) ?? "";
 }
 
-test("Steuerkreuz: über die Lücke wischen, der Held läuft ohne Halt weiter (20.11.2026)", async ({
+test("Joystick: von rechts nach unten wischen, der Held läuft ohne Halt weiter (20.11.2026)", async ({
   page,
 }) => {
   await page.addInitScript(() => window.localStorage.setItem("svga.safariHinweis", "aus"));
@@ -59,7 +59,7 @@ for (const format of [
 ]) {
   test.describe(`Symbolknöpfe ${format.name}`, () => {
     test.use({ viewport: format.viewport });
-    test("Tagebuch und Menü klein unter dem Steuerkreuz, mit Namen (20.11.2026)", async ({
+    test("Tagebuch und Menü klein unten links, gegenüber dem Joystick (26.11.2026)", async ({
       page,
     }) => {
       await page.addInitScript(() => window.localStorage.setItem("svga.safariHinweis", "aus"));
@@ -70,13 +70,18 @@ for (const format of [
       for (const knopf of [tagebuch, menue]) {
         const box = await knopf.boundingBox();
         if (!box || !kreuz) throw new Error("Knopf ohne Lage");
-        // Tippgröße mindestens 40 px, unter dem Kreuz, auf seiner Seite.
+        // Tippgröße mindestens 40 px, unten links (Wunsch des Autors, 26.11.2026); hoch liegt der
+        // Joystick rechts, quer links über der Reihe.
         expect(box.width).toBeGreaterThanOrEqual(40);
         expect(box.height).toBeGreaterThanOrEqual(40);
-        expect(box.y).toBeGreaterThanOrEqual(kreuz.y + kreuz.height);
-        const mitteKreuz = kreuz.x + kreuz.width / 2;
-        const mitteSeite = format.viewport.width / 2;
-        expect(box.x + box.width / 2 < mitteSeite).toBe(mitteKreuz < mitteSeite);
+        expect(box.x + box.width / 2).toBeLessThan(format.viewport.width / 2);
+        expect(box.y).toBeGreaterThan(format.viewport.height / 2);
+        const ueberlappt =
+          box.x < kreuz.x + kreuz.width &&
+          kreuz.x < box.x + box.width &&
+          box.y < kreuz.y + kreuz.height &&
+          kreuz.y < box.y + box.height;
+        expect(ueberlappt).toBe(false);
       }
       // Nur das Zeichen ist zu sehen; der Name steht nicht sichtbar daneben.
       await expect(page.getByText("Tagebuch", { exact: true })).toBeHidden();

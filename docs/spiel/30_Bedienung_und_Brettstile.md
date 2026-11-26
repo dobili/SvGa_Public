@@ -18,22 +18,28 @@ Daumenzonen:
 
 ## 2. Hochformat
 
-- **Oberwelt:** Steuerkreuz unten, Aktionsknopf („Sprechen“, „Ansehen“) daneben. In den
-  Einstellungen des Spiels gibt es „Steuerkreuz rechts“ (Vorgabe, Einhand mit rechts) und
-  „Steuerkreuz links“; der Aktionsknopf liegt jeweils auf der anderen Seite. Menü ☰, Tagebuch 📖,
+- **Oberwelt:** Joystick unten (seit 26.11.2026 statt des Steuerkreuzes, Wunsch des Autors),
+  Aktionsknopf („Sprechen“, „Ansehen“) auf der anderen Seite. In den Einstellungen des Spiels gibt
+  es „Joystick rechts“ (Vorgabe, Einhand mit rechts) und „Joystick links“. Menü ☰, Tagebuch 📖,
   Übungspartie ♞ und Reisen 🎫 stehen als kleine Symbolknöpfe (44 px, nur Zeichen, Name als
-  zugänglicher Name) in einer Reihe unter dem Steuerkreuz, das Menü außen (Wunsch des Autors,
-  20.11.2026). Im Dialog stehen Tagebuch und Menü oben rechts.
-- **Steuerkreuz beim Wischen:** Solange ein Finger auf dem Kreuz liegt, zählt die Richtung, deren
-  Taste ihm am nächsten ist, auch in den Lücken und in der Mitte; kleiner toter Kern, Hysterese
-  auf der Diagonale, erst Loslassen beendet die Bewegung (steuerrichtung.ts, 20.11.2026).
-- **Rennen draußen** (Wunsch des Autors, 21.11.2026): Zieht der Finger auf dem Kreuz weit über den
-  Rand nach außen (ab 1,4-fachem Tastenabstand, zurück unter 1,25-fach), rennt der Held 1,8-mal so
-  schnell; Tastatur: Umschalttaste. Nur auf Außenkarten und nicht auf dem Fahrrad (gangart.ts).
-  Bis Rennbilder im Bogen liegen (Reihe 6, ab Rahmen 120), laufen die Gehbilder schneller. Ein
-  Steuerhinweis „Zieh weiter nach außen, dann rennst du.“ kommt ab Akt 2 beim ersten Mal draußen.
+  zugänglicher Name) in einer Reihe unten links unter dem Aktionsknopf, das Menü außen (Wunsch des
+  Autors, 26.11.2026); mit dem Joystick links liegt die Reihe rechts. Im Dialog stehen Tagebuch und
+  Menü oben rechts.
+- **Joystick** (Joystick.tsx, joystick.ts): fest, nicht schwebend; ein durchscheinender Ring
+  (Navy, goldener Rand, 112 px) mit einem Knopf (Creme, 52 px), der dem Daumen bis zum Ring folgt;
+  die Fangfläche ist 20 px größer als der Ring. Totzone 15 % des Daumenradius (56 px), acht
+  Richtungen in Sektoren zu 45 Grad mit 8 Grad Hysterese; der Held läuft schräg mit derselben
+  Geschwindigkeit wie geradeaus und rutscht an Wänden entlang (schraeglauf.ts). Blick für
+  Ansprechen, Auslöser und die Kachel vor dem Helden bleibt die vorherrschende Hauptrichtung
+  (steuerrichtung.ts), das Laufbild zeigt die Schräge (Bögen mit Schrägen: Held, Heldin, Juno,
+  Mama; alle anderen Figuren bleiben bei vier Richtungen). Tastatur: Pfeile oder WASD, zwei
+  zugleich ergeben eine Schräge.
+- **Rennen draußen** (Wunsch des Autors, 21.11.2026): Steht der Knopf am Ring (ab 80 % des
+  Radius, zurück unter 70 %), rennt der Held 1,8-mal so schnell; Tastatur: Umschalttaste. Nur auf
+  Außenkarten und nicht auf dem Fahrrad (gangart.ts). Ein Steuerhinweis „Schieb den Joystick bis
+  an den Rand, dann rennst du.“ kommt ab Akt 2 beim ersten Mal draußen.
 - **Kurze Hinweise** (Steuerhinweis, Meldungen) liegen am Rand fern vom Helden: steht er in der
-  oberen Bildhälfte, unten über dem Kreuz, sonst oben (heldhaelfte.ts, 20.11.2026).
+  oberen Bildhälfte, unten über dem Joystick, sonst oben (heldhaelfte.ts, 20.11.2026).
 - **Dialog:** Fenster unten (wie schon), Antwortwahlen als große Knöpfe am unteren Rand, „Weiter“
   ganz unten auf der Seite des Aktionsknopfs. Antippen des Textfensters geht auch weiter.
 - **Partie und Rätsel:** Kopf mit Porträt oben, Brett in der Mitte, darunter Sprechblase,
@@ -42,10 +48,10 @@ Daumenzonen:
 
 ## 3. Querformat
 
-- **Oberwelt:** Die Welt füllt den Bildschirm. Das Steuerkreuz liegt links unten, halb
+- **Oberwelt:** Die Welt füllt den Bildschirm. Der Joystick liegt links unten, halb
   durchsichtig, über der Welt, darunter dieselbe Reihe Symbolknöpfe wie hochkant (Menü am linken
-  Rand). Rechts unten liegt der Aktionsknopf. Hinweise stehen ganz oben oder unten zwischen Kreuz
-  und Aktionsknopf.
+  Rand, also auch quer unten links). Rechts unten liegt der Aktionsknopf. Hinweise stehen ganz
+  oben oder unten zwischen Joystick und Aktionsknopf.
 - **Dialog:** Porträt links, Textfenster unten über zwei Drittel der Breite; Wahlen und „Weiter“
   rechts in einer Spalte, im Daumenbereich der rechten Hand.
 - **Partie:** Brett links in voller Höhe. Rechts eine Spalte: oben Porträt mit Name und Uhr des
@@ -110,7 +116,7 @@ Gegner dürfen ihn ändern (Feld `brett` in `begegnungen.json`, Vorgabe aus `ort
 ## 6. Reihenfolge
 
 1. Farbsystem und Knöpfe in der Hülle (wirkt überall, kleiner Umbau).
-2. Hochformat nach Daumenzonen, Einstellung „Steuerkreuz links/rechts“.
+2. Hochformat nach Daumenzonen, Einstellung „Joystick links/rechts“ (bis 26.11.2026 Steuerkreuz).
 3. Querformat für Oberwelt, Dialog, Partie und Rätsel.
 4. Pixelfiguren und Brettstile je Ort.
 5. Rätsel ohne Trainerkarte (nach den Anmerkungen des Autors zur Vorschau).

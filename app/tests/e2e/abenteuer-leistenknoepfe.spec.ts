@@ -1,7 +1,7 @@
 /**
  * Tagebuch und Menü stehen ordentlich nebeneinander (Befund des Autors, 25.11.2026: hoch oben
  * rechts saß ☰ ganz oben, 📖 tiefer und weiter links, über Möbeln, Wänden und bei Juno über einem
- * Gebäude). Gemessen in jeder Lage der beiden Knöpfe: in freier Welt unten neben dem Steuerkreuz
+ * Gebäude). Gemessen in jeder Lage der beiden Knöpfe: in freier Welt unten links gegenüber dem Joystick (26.11.2026)
  * und im Dialog oben, hoch und quer. Beide gleich hoch (±1 px), gleich groß, nebeneinander mit
  * der Fuge der Reihe (höchstens zwei Raster), ganz im Bild; im Dialog die Münzen in derselben Zeile.
  * Ursache am iPhone: Was in der Welt steht, zählte den sicheren Rand oben doppelt (bedienung.css);

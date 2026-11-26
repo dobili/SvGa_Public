@@ -1,19 +1,20 @@
 /**
  * Rennen in jede Richtung, auch zum nahen Bildschirmrand (Befund des Autors, 24.11.2026: im
- * Hochformat nach rechts nicht auslösbar; rennschwelle.ts).
+ * Hochformat nach rechts nicht auslösbar). Seit dem Joystick (26.11.2026) rennt der Held, wenn der
+ * Knopf am Ring steht (gangart.ts); der Finger muss nicht mehr über den Rand hinaus.
  *
  * Warum ein eigener Test: abenteuer-rennen.spec.ts zieht die Maus weit über den Bildschirmrand
- * hinaus, was ein Finger nicht kann. Hier zieht der Finger von der Pfeiltaste nach außen, aber
- * höchstens bis RESERVE_PX vor den Rand des Bildes, bei üblichen Handygrößen hoch und quer.
- * Gemessen werden außerdem die Abstände von der Mitte des Kreuzes zu den Rändern (Ausgabe).
+ * hinaus, was ein Finger nicht kann. Hier zieht der Finger aus der Mitte bis kurz vor den Ring
+ * (WUNSCH_PX), aber höchstens bis RESERVE_PX vor den Rand des Bildes, bei üblichen Handygrößen
+ * hoch und quer. Gemessen werden außerdem die Abstände der Joystickmitte zu den Rändern (Ausgabe).
  */
 import { expect, test, type Page } from "@playwright/test";
 import { EINLEITUNG_GESEHEN, GRUNDSTAND, starteMitStand } from "./abenteuer-affe";
 
 /** So nah an den Rand kommt ein Finger noch bequem (Pixel). */
 const RESERVE_PX = 24;
-/** So weit will der Finger über die Taste hinaus (wird am Rand gekürzt). */
-const WUNSCH_PX = 60;
+/** So weit zieht der Finger aus der Mitte: knapp innerhalb des Rings (Daumenradius 56 px). */
+const WUNSCH_PX = 50;
 // Die einmaligen Erklärungen (erklaerungen.ts) gelten als gesehen: GRUNDSTAND hat 80 Münzen, und
 // die Münz-Erklärung hielt den Helden auf langsamen Geräten (WebKit) mitten in der Messung an.
 const VARIABLEN = {
@@ -36,12 +37,12 @@ const HOCH = [
   { width: 412, height: 915 },
 ];
 
-/** Zieht von der Taste nach außen (am Rand gekürzt) und meldet, ob das Kreuz „rennen“ zeigt. */
-async function renntNach(seite: Page, name: string, rx: number, ry: number): Promise<boolean> {
+/** Zieht aus der Mitte zum Ring (am Rand gekürzt) und meldet, ob der Joystick „rennen“ zeigt. */
+async function renntNach(seite: Page, rx: number, ry: number): Promise<boolean> {
   const kreuz = seite.locator(".abenteuer-steuerkreuz");
-  const box = await kreuz.locator(`[data-richtung="${name}"]`).boundingBox();
+  const box = await kreuz.boundingBox();
   const bild = seite.viewportSize();
-  if (!box || !bild) throw new Error("Taste oder Bild ohne Lage");
+  if (!box || !bild) throw new Error("Joystick oder Bild ohne Lage");
   const x = box.x + box.width / 2;
   const y = box.y + box.height / 2;
   const zielX = Math.min(Math.max(x + rx * WUNSCH_PX, RESERVE_PX), bild.width - RESERVE_PX);
@@ -55,7 +56,7 @@ async function renntNach(seite: Page, name: string, rx: number, ry: number): Pro
   return rennt;
 }
 
-/** Abstände der Kreuzmitte zu den vier Rändern (für die Ausgabe). */
+/** Abstände der Joystickmitte zu den vier Rändern (für die Ausgabe). */
 async function randabstaende(seite: Page): Promise<string> {
   const box = await seite.locator(".abenteuer-steuerkreuz").boundingBox();
   const bild = seite.viewportSize();
@@ -80,11 +81,11 @@ for (const hoch of HOCH) {
       await page.setViewportSize(groesse);
       await starteMitStand(page, { ...GRUNDSTAND, position: DRAUSSEN, dialogvariablen: VARIABLEN });
       test.info().annotations.push({
-        type: "Abstände der Kreuzmitte",
+        type: "Abstände der Joystickmitte",
         description: await randabstaende(page),
       });
       const ergebnis: Record<string, boolean> = {};
-      for (const [name, rx, ry] of RICHTUNGEN) ergebnis[name] = await renntNach(page, name, rx, ry);
+      for (const [name, rx, ry] of RICHTUNGEN) ergebnis[name] = await renntNach(page, rx, ry);
       expect(ergebnis).toEqual({ rechts: true, links: true, unten: true, oben: true });
     });
   }

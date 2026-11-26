@@ -1,21 +1,19 @@
-/** Tests der Gangart (gangart.ts): Abstand des Fingers → gehen oder rennen. */
+/** Tests der Gangart (gangart.ts): Ausschlag des Joysticks → gehen oder rennen. */
 import { describe, expect, it } from "vitest";
-import { GEHEN_UNTER, Gangartsteuerung, RENNEN_AB, TASTENABSTAND_PX, gangartZu } from "./gangart";
-
-const T = TASTENABSTAND_PX;
+import { GEHEN_UNTER, Gangartsteuerung, RENNEN_AB, gangartZu } from "./gangart";
 
 describe("gangartZu", () => {
-  it("auf den Tasten gehen, weit draußen rennen", () => {
-    expect(gangartZu(T, 0, "gehen")).toBe("gehen");
-    expect(gangartZu(0, T * RENNEN_AB, "gehen")).toBe("rennen");
-    expect(gangartZu(-T * 2, 0, "gehen")).toBe("rennen");
+  it("kleiner Ausschlag geht, großer rennt", () => {
+    expect(gangartZu(0.5, "gehen")).toBe("gehen");
+    expect(gangartZu(RENNEN_AB, "gehen")).toBe("rennen");
+    expect(gangartZu(1, "gehen")).toBe("rennen");
   });
 
   it("Hysterese zwischen den Grenzen", () => {
-    const mitte = (T * (RENNEN_AB + GEHEN_UNTER)) / 2;
-    expect(gangartZu(mitte, 0, "rennen")).toBe("rennen");
-    expect(gangartZu(mitte, 0, "gehen")).toBe("gehen");
-    expect(gangartZu(T * GEHEN_UNTER - 1, 0, "rennen")).toBe("gehen");
+    const mitte = (RENNEN_AB + GEHEN_UNTER) / 2;
+    expect(gangartZu(mitte, "rennen")).toBe("rennen");
+    expect(gangartZu(mitte, "gehen")).toBe("gehen");
+    expect(gangartZu(GEHEN_UNTER - 0.01, "rennen")).toBe("gehen");
   });
 });
 

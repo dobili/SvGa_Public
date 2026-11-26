@@ -12,7 +12,7 @@
  * - useAusloeser.ts: Auslöser und Aktionsknopf (Übergang, Figur, Gegenstand, Statist in der Blase);
  * - useBlickpunkte.ts: Ambroses Satz zu einer Stelle, an der der Held vorbeikommt (regeln/blickpunkte.ts).
  * - useAnsprechen.ts: Die Hauptfigur des laufenden Schritts geht auf den Helden zu und spricht ihn an.
- * Abhängigkeiten: Hooks oben, Steuerkreuz.tsx, Tagebuch.tsx, weltdaten.ts, dialog/Dialog.tsx.
+ * Abhängigkeiten: Hooks oben, Joystick.tsx, Tagebuch.tsx, weltdaten.ts, dialog/Dialog.tsx.
  */
 import { useEffect, useRef, useState } from "react";
 import { Dialog } from "../dialog/Dialog";
@@ -39,7 +39,7 @@ import { Reisen } from "./Reisen";
 import { reiseziele } from "./reiseziele";
 import { Sprechblase } from "./Sprechblase";
 import { deckwahlsteckbrief } from "./steckbrieftext";
-import { Steuerkreuz } from "./Steuerkreuz";
+import { Joystick } from "./Joystick";
 import { Tagebuch } from "./Tagebuch";
 import { useAufgabenrunde } from "./useAufgabenrunde";
 import { useAusloeser } from "./useAusloeser";
@@ -55,7 +55,7 @@ import { Meldungsleiste } from "./Meldungsleiste";
 import { Orientierung } from "./Orientierung";
 import { Steuerhinweiszeile } from "./Steuerhinweis";
 import { useSpieluhr } from "./useSpieluhr";
-import { kreuzsteuerung } from "./kreuzsteuerung";
+import { joysticksteuerung } from "./joysticksteuerung";
 import { useVerscheuchen } from "./useVerscheuchen";
 import { useWarten } from "./useWarten";
 import { useSteuerhinweis } from "./useSteuerhinweis";
@@ -147,7 +147,7 @@ export function Oberwelt() {
   useBlickpunkte(k, ungestoert, treffer !== null, oeffneDialog);
   useAnsprechen(k, ungestoert, ausl.sprichFigurAn); // Hauptfiguren sprechen an (useAnsprechen.ts)
 
-  const kreuz = kreuzsteuerung(spiel, hinweis);
+  const kreuz = joysticksteuerung(spiel, hinweis);
 
   if (!stand) return <p className="fehlertext">{tSpiel("oberwelt.keinSpielstand")}</p>;
 
@@ -193,7 +193,7 @@ export function Oberwelt() {
       {/* Nicht über Brettfenstern: Quer ragte das Kreuz in Vorführung und Gedächtnisstellung über
           den Rand des Fensters (20.11.2026); laufen kann der Held dort ohnehin nicht. */}
       {welt && !dialog && !vorfuehrung && !gedaechtnis && (
-        <Steuerkreuz
+        <Joystick
           {...kreuz}
           aktion={aktionFuer(welt, treffer) ?? neben.haupt?.text ?? null}
           zweiteAktion={neben.zweite}

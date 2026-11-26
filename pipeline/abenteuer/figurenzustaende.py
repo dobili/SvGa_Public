@@ -11,7 +11,7 @@ listet dieses Werkzeug je Figurenbild die Zustände:
 - **liegen:** Ein Dialog legt sie mit ``#stelle:<wer>>x,y>liegt`` ins Bett (der Held in der Nacht).
 - **rennen:** Ein Dialog lässt sie mit ``#gehe:<wer>>ziel>rennt`` rennen, oder sie ist ein Statist
   mit Verhalten ``rennen`` (Kinder zwischen den Fahnenmasten). Der Held rennt draußen immer
-  (Steuerkreuz weit nach außen, Nachtrag des Haupt-Chats vom 21.11.2026); PixelLab-Animation
+  (Joystick bis an den Rand, früher Steuerkreuz weit nach außen, Nachtrag des Haupt-Chats vom 21.11.2026); PixelLab-Animation
   „Running“, Ordner ``animations/Running/``.
 
 Gezählt werden Figuren (``figuren`` der Szenen, Bild aus orte.json) und Statisten mit eigenem Bild
@@ -129,7 +129,7 @@ def _aus_ink(daten: Path, bilder: dict[str, str], bedarf: dict[str, Bedarf]) -> 
                 bild = HELD if wer == HELD else namen.get(wer)
                 if bild:
                     bedarf.setdefault(bild, Bedarf(bild)).merke(zustand, pfad.stem)
-    bedarf.setdefault(HELD, Bedarf(HELD)).merke("rennen", "draußen (Steuerkreuz)")
+    bedarf.setdefault(HELD, Bedarf(HELD)).merke("rennen", "draußen (Joystick)")
 
 
 def _aus_ablaeufen(daten: Path, bilder: dict[str, str], katalog: dict, bedarf: dict[str, Bedarf]) -> None:

@@ -6,8 +6,8 @@
  * Verdeckte Ränder: Feste Bedienelemente liegen über dem Bild. Am Kartenrand stand der Held sonst
  * unter ihnen. Die Kamera darf deshalb so weit über die Karte hinaus, dass der Kartenrand neben den
  * Bedienelementen liegt, und kleine Räume stehen mittig in der freien Fläche.
- * - Hochformat (Spieltest „einstieg“, 15.11.2026, R7): unten Steuerkreuz, Aktionsknopf und Leiste.
- * - Querformat (Spieltest Variante B, 16.11.2026, F3): links das Steuerkreuz, rechts die
+ * - Hochformat (Spieltest „einstieg“, 15.11.2026, R7): unten Joystick, Aktionsknopf und Leiste.
+ * - Querformat (Spieltest Variante B, 16.11.2026, F3): links der Joystick, rechts die
  *   Knopfspalte mit Aktionsknopf, Menü und Leiste; sie reichen von unten fast bis oben.
  * - Oben in beiden Lagen die Münzen (F3: im Hochformat deckten sie den Helden zu 30 %), mindestens
  *   aber eine halbe Figurenhöhe: Der Kopf ragt über die Fußkachel, in der obersten Kartenreihe
@@ -19,11 +19,11 @@
  */
 
 /**
- * Höhe der Knöpfe unten im Hochformat in Bildschirmpixeln (bedienung.css: Rand 16, Steuerkreuz
- * 160, Fuge 8, Leiste 48, dazu etwas Luft).
+ * Höhe der Knöpfe unten im Hochformat in Bildschirmpixeln (bedienung.css: Rand 16, Joystick
+ * 152 (bis 26.11.2026 Steuerkreuz 160), Fuge 8, Leiste 48, dazu etwas Luft).
  */
 const VERDECKT_HOCHFORMAT_PX = 240;
-/** Querformat links: Rand 16 und Steuerkreuz 160 (bedienung.css), dazu 8 Luft. */
+/** Querformat links: Rand 16 und Joystick 152 (bedienung.css), dazu 16 Luft. */
 const VERDECKT_QUER_LINKS_PX = 184;
 /** Querformat rechts: Rand 16 und Aktionsknopf 72 (die Knopfspalte ist schmaler), dazu 8 Luft. */
 const VERDECKT_QUER_RECHTS_PX = 96;
@@ -75,7 +75,7 @@ export function verdeckteHoehe(ansichtBreite: number, ansichtHoehe: number, zoom
 }
 
 /**
- * Liegt die Bedienung quer (Steuerkreuz links, Knopfspalte rechts)? Wie bedienung.css: breiter
+ * Liegt die Bedienung quer (Joystick links, Knopfspalte rechts)? Wie bedienung.css: breiter
  * als hoch und höchstens 600 CSS-Pixel hoch. Beispiel: 800 × 420 → ja; 1280 × 800 → nein.
  */
 export function bedienungQuer(ansichtBreite: number, ansichtHoehe: number, zoom: number): boolean {

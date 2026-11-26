@@ -43,7 +43,10 @@
  *   Index figuren32/rahmenhoehen.json (rahmenhoehe unten). Jeder Rahmen ist ein Puffer von
  *   32 × hoehe Pixeln; die Höhe ergibt sich aus seiner Länge (zeilenVon), deshalb brauchen die
  *   Hilfen sie nur dort als Eingabe, wo ein Rahmen neu entsteht.
- * Abhängigkeiten: sharp, figurenzustaende.mjs, figurstandbilder.mjs.
+ * - Schrägen (Held, Heldin, Juno und Mama, 26.11.2026): drei Reihen hinter allem anderen, Index
+ *   figuren32/diagonalen.json (figurdiagonalen.mjs); ohne Schrägen ändert sich nichts.
+ * Abhängigkeiten: sharp, rahmenwerk.mjs, figurenzustaende.mjs, figurstandbilder.mjs,
+ * figurdiagonalen.mjs.
  */
 import { existsSync } from "node:fs";
 import { readdir, readFile } from "node:fs/promises";
@@ -51,11 +54,13 @@ import { join } from "node:path";
 import sharp from "sharp";
 import { ZUSTAENDE, zustandsrahmen } from "./figurenzustaende.mjs";
 import { weitereStandbilder } from "./figurstandbilder.mjs";
+import { diagonalreihen, DIAGONALREIHEN, legeDiagonalen } from "./figurdiagonalen.mjs";
+import { gedreht, gespiegelt, KANAELE, RAHMEN, verschoben, zeilenVon } from "./rahmenwerk.mjs";
 
-export const RAHMEN = 32;
+export { gedreht, gespiegelt, RAHMEN, verschoben, zeilenVon };
+
 const SPALTEN = 24;
 const LAUFBILDER = 6;
-const KANAELE = 4;
 /** Schattenfarbe des Exports und wie viele Zeilen über dem unteren Rand sie als Schatten gilt. */
 const SCHATTEN = [0x4f, 0x4f, 0x4e];
 const SCHATTEN_ZEILEN = 8;
@@ -65,11 +70,6 @@ const FUSSRAND = 2;
 export const FUSSZEILE = RAHMEN - FUSSRAND;
 /** Höchste Rahmenhöhe (PixelLab bietet höchstens 32 × 64 für schlanke Figuren). */
 const HOECHSTENS = 64;
-
-/** Zeilen eines Rahmens (Breite immer RAHMEN). Beispiel: 32 × 48 → 48. */
-export function zeilenVon(rahmen) {
-  return rahmen.length / (RAHMEN * KANAELE);
-}
 
 /** Fußzeile eines Rahmens dieser Höhe. Beispiel: 48 → 46. */
 export function fusszeileFuer(hoehe) {
@@ -171,19 +171,6 @@ export function untersteZeile(rahmen) {
   return -1;
 }
 
-/** Verschiebt einen Rahmen um dy Zeilen (positiv nach unten); was hinausfällt, entfällt. */
-export function verschoben(rahmen, dy) {
-  if (dy === 0) return rahmen;
-  const aus = Buffer.alloc(rahmen.length);
-  const zeile = RAHMEN * KANAELE;
-  const zeilen = zeilenVon(rahmen);
-  for (let y = 0; y < zeilen; y++) {
-    const ziel = y + dy;
-    if (ziel >= 0 && ziel < zeilen) rahmen.copy(aus, ziel * zeile, y * zeile, (y + 1) * zeile);
-  }
-  return aus;
-}
-
 /**
  * Setzt alle Rahmen einer Figur so, dass die Füße der Standbilder auf der Fußzeile stehen
  * (FUSSZEILE, bei hohen Rahmen hoehe − 2). Beispiel: Kind mit Füßen auf Zeile 26 → alle Rahmen
@@ -202,46 +189,6 @@ export function aufFusszeile(richtungen) {
     sitz: schiebe(r.sitz),
     renn: r.renn ? r.renn.map(schiebe) : r.renn,
   }));
-}
-
-/**
- * Dreht einen Rahmen um eine Vierteldrehung, im Uhrzeigersinn (Kopf nach rechts) oder dagegen
- * (Kopf nach links): Ersatz für ein fehlendes Liegebild vor einer Rennreihe. Bei hohen Rahmen
- * (32 × 48) wird das gedrehte Bild (48 breit) in die Mitte des Rahmens gesetzt und seitlich auf 32
- * Pixel beschnitten; die Figur liegt dann etwas gekürzt, nur als Ersatz.
- */
-export function gedreht(rahmen, imUhrzeigersinn) {
-  const zeilen = zeilenVon(rahmen);
-  const aus = Buffer.alloc(rahmen.length);
-  const dx = Math.floor((zeilen - RAHMEN) / 2);
-  const dy = Math.floor((zeilen - RAHMEN) / 2);
-  for (let y = 0; y < zeilen; y++) {
-    for (let x = 0; x < RAHMEN; x++) {
-      const zx = (imUhrzeigersinn ? zeilen - 1 - y : y) - dx;
-      const zy = (imUhrzeigersinn ? x : RAHMEN - 1 - x) + dy;
-      if (zx < 0 || zx >= RAHMEN) continue;
-      rahmen.copy(
-        aus,
-        (zy * RAHMEN + zx) * KANAELE,
-        (y * RAHMEN + x) * KANAELE,
-        (y * RAHMEN + x + 1) * KANAELE,
-      );
-    }
-  }
-  return aus;
-}
-
-/** Spiegelt einen Rahmen waagerecht. */
-export function gespiegelt(rahmen) {
-  const aus = Buffer.alloc(rahmen.length);
-  for (let y = 0; y < zeilenVon(rahmen); y++) {
-    for (let x = 0; x < RAHMEN; x++) {
-      const q = (y * RAHMEN + x) * KANAELE;
-      const z = (y * RAHMEN + (RAHMEN - 1 - x)) * KANAELE;
-      rahmen.copy(aus, z, q, q + KANAELE);
-    }
-  }
-  return aus;
 }
 
 /** Namen des Laufordners im Export (PixelLab nennt ihn je nach Fassung so oder so). */
@@ -375,7 +322,8 @@ export async function baueFigurenbogen(ordner) {
 /**
  * Wie baueFigurenbogen, dazu die weiteren Standbilder (figurstandbilder.mjs) ab Rahmen 144 (Reihe 7;
  * fehlende Reihen davor füllt der Ersatz, damit die App Sitz-, Liege- und Rennreihe an der Zahl
- * der Rahmen erkennt): { bild, standbilder: { beginn, kennungen } | null }; null ohne Bild.
+ * der Rahmen erkennt): { bild, standbilder: { beginn, kennungen } | null, rahmenhoehe,
+ * diagonalen: erster Rahmen der Schrägen | null }; null ohne Bild.
  * Beispiel: abe mit einem weiteren Standbild → beginn 144, kennungen [„without-telescope“].
  */
 export async function baueFigurenbogenMitStandbildern(ordner) {
@@ -384,10 +332,14 @@ export async function baueFigurenbogenMitStandbildern(ordner) {
   const hoehe = zeilenVon(richtungen.find((r) => r.still).still);
   const leer = Buffer.alloc(RAHMEN * hoehe * KANAELE);
   const weitere = await weitereStandbilder(ordner, { breite: RAHMEN, hoehe });
-  const zusatz = await zustandsreihen(ordner, richtungen, weitere.kennungen.length > 0);
+  // Mit Schrägen braucht der Bogen wie mit weiteren Standbildern alle Reihen bis zum Rennen.
+  const diagonal = await diagonalreihen(ordner);
+  const alle = weitere.kennungen.length > 0 || diagonal !== null;
+  const zusatz = await zustandsreihen(ordner, richtungen, alle);
   const beginnReihe = SITZREIHE + zusatz.length;
   const standbildrahmen = weitere.rahmen.flat();
-  const reihen = beginnReihe + Math.ceil(standbildrahmen.length / SPALTEN);
+  const diagonalReihe = beginnReihe + Math.ceil(standbildrahmen.length / SPALTEN);
+  const reihen = diagonalReihe + (diagonal ? DIAGONALREIHEN : 0);
   const bogen = Buffer.alloc(SPALTEN * RAHMEN * reihen * hoehe * KANAELE);
   richtungen.forEach((r, i) => {
     lege(bogen, r.still ?? leer, i, 0);
@@ -402,6 +354,7 @@ export async function baueFigurenbogenMitStandbildern(ordner) {
   standbildrahmen.forEach((rahmen, i) =>
     lege(bogen, rahmen, i % SPALTEN, beginnReihe + Math.floor(i / SPALTEN)),
   );
+  if (diagonal) legeDiagonalen(diagonal, diagonalReihe, (r, s, z) => lege(bogen, r, s, z), leer);
   const bild = await sharp(bogen, {
     raw: { width: SPALTEN * RAHMEN, height: reihen * hoehe, channels: KANAELE },
   })
@@ -410,5 +363,6 @@ export async function baueFigurenbogenMitStandbildern(ordner) {
   const standbilder = weitere.kennungen.length
     ? { beginn: beginnReihe * SPALTEN, kennungen: weitere.kennungen }
     : null;
-  return { bild, standbilder, rahmenhoehe: hoehe };
+  const diagonalen = diagonal ? diagonalReihe * SPALTEN : null;
+  return { bild, standbilder, rahmenhoehe: hoehe, diagonalen };
 }

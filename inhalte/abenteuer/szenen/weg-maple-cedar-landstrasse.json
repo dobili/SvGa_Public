@@ -4971,7 +4971,8 @@
     },
     {
       "name": "gegnerin",
-      "feld": [82, 15]
+      "feld": [82, 15],
+      "standbild": "skateboard"
     },
     {
       "name": "ada",

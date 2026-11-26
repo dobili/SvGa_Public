@@ -24,7 +24,7 @@
       "geschlecht": "w"
     },
     "statist.hist": {
-      "sitzbild": false,
+      "sitzbild": true,
       "geschlecht": "m"
     },
     "statist.jugend": {
@@ -114,7 +114,7 @@
       "geschlecht": "m"
     },
     "wanderer": {
-      "sitzbild": false,
+      "sitzbild": true,
       "geschlecht": "m"
     },
     "zeitungsjunge": {
@@ -122,7 +122,7 @@
       "geschlecht": "m"
     },
     "zeitungsleser": {
-      "sitzbild": false,
+      "sitzbild": true,
       "geschlecht": "m"
     }
   },

@@ -14687,7 +14687,14 @@
      "width": 16,
      "height": 16,
      "rotation": 0,
-     "visible": true
+     "visible": true,
+     "properties": [
+      {
+       "name": "standbild",
+       "type": "string",
+       "value": "tablet"
+      }
+     ]
     },
     {
      "id": 21,

@@ -1,8 +1,4 @@
 {
   "erklaerung": "Personen ohne Stuhlbild: stehen neben dem Stuhl (figurenzustaende_ablauf.py)",
-  "personen": {
-    "haraldsen": {
-      "summitCity.huette@6,6": [6, 7]
-    }
-  }
+  "personen": {}
 }

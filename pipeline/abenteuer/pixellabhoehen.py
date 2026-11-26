@@ -28,6 +28,7 @@ import re
 from pathlib import Path
 
 from pipeline.abenteuer import pixellabtabelle as T
+from pipeline.abenteuer.pixellabimport import zuordnungsdateien
 
 ZUORDNUNG = Path("ki-roh") / "zuordnung_23-11.json"
 FIGUREN = Path("spiel") / "figuren-neu"
@@ -110,8 +111,14 @@ def hoehenfaktor(hoehe: int, gruppe: str) -> float | None:
 
 
 def prompts(privat: Path) -> dict[str, str]:
-    """Prompt des ersten Zustands je Figur aus der Zuordnung (Zweitfiguren wie ihre Gruppe)."""
-    daten = json.loads((privat / ZUORDNUNG).read_text(encoding="utf-8"))["gruppen"]
+    """Prompt des ersten Zustands je Figur aus den Zuordnungen, die neueste zuerst (Zweitfiguren wie
+    ihre Gruppe). Seit 26.11.2026 alle Dateien wie der Import: Zoe, Imani und Benji stehen in
+    zuordnung_26-11.json."""
+    daten = [
+        g
+        for pfad in zuordnungsdateien(privat)
+        for g in json.loads(pfad.read_text(encoding="utf-8")).get("gruppen", [])
+    ]
     ergebnis: dict[str, str] = {}
     for g in daten:
         ergebnis.setdefault(g["name"], g["zustaende"][0].get("prompt", ""))

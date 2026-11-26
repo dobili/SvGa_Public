@@ -1559,7 +1559,8 @@
     },
     {
       "name": "victor",
-      "feld": [12, 33]
+      "feld": [12, 33],
+      "standbild": "tablet"
     },
     {
       "name": "grahamHale",

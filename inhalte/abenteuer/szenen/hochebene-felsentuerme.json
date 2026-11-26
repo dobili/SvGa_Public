@@ -403,7 +403,8 @@
   "figuren": [
     {
       "name": "kira",
-      "feld": [44, 16]
+      "feld": [44, 16],
+      "standbild": "basketball"
     }
   ],
   "belebung": [

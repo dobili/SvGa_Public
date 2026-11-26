@@ -122,3 +122,14 @@ Automaten steht ein alter Mann mit sehr großen, ruhigen Händen, einen Korb vol
 | geprüft  | bild    | haraldsen       | `summit-city-huette.haraldsen_reihe` (535)         | {angesprochen:Ein alter Mann in Seilbahnuniform kommt vom Kamin herüber, eine halb polierte Turmfigur in der Hand./Ein alter Mann in Seilbah | summitCity.huette [13, 6] steht auf dielen (summit-city-huette)                                                       | Kleiner Gegenstand in der Hand, im Figurenbild nicht darstellbar und nicht nötig. (Turmfigur, Fassung „angesprochen“)                    |
 | geprüft  | bild    | earl            | `weg-desert-summit.earl_k` (127)                   | Earl dreht das gebogene Glasrohr in der Hand. Dann holt er eine Leiter aus dem Lastwagen.                                                    | wegDesertSummit.diner [90, 23] steht auf sandRot (weg-desert-summit-diner-neon)                                       | Kleiner Gegenstand in der Hand, im Figurenbild nicht darstellbar und nicht nötig. (Glasrohr, das er gerade dreht)                        |
 | geprüft  | tuer    | schiffskoch     | `weg-silicon-delacroix.ruiz_erstes_treffen` (73)   | {not ankunftPortDelacroixGesehen: Mama lehnt in der Tür.                                                                                     | wegSiliconDelacroix.faehre [17, 25] steht auf holzDunkel (weg-silicon-delacroix-faehre), nichts Passendes in der Nähe | „Mama lehnt in der Tür“ spielt bei der Ankunft in Port Delacroix, nicht auf der Fähre.                                                   |
+
+## Nachtrag: Bildwünsche erfüllt (26.11.2026, PixelLab-Lieferung P7)
+
+Der Autor hat die sechs Standbilder mit Gegenstand geliefert. Sie liegen als weitere Standbilder der
+Figur im privaten Paket (`figuren-neu/<figur>/standbilder/<kennung>/`, Werkzeug
+`werkzeuge/pixellab_lieferung_2611.py`) und stehen in den Szenen als `standbild`:
+Nia `skateboard` (vier Fassungen der Landstraße), Kira `basketball` (Felsentürme), Theo `bildschirm`
+(Raststätte), {rivale} `tablet` (drei Fassungen von Ironwood außen), Ezra `pfeife-klemmbrett`
+(Camp). Das Werkzeug zählt ein Standbild an der Stelle als erfüllte Angabe (Platz `standbild`, nur
+stehend). Offen bleibt Tamsin: Sie sitzt im Pavillon am Boden (tamsin_eli), das Sitzbild zeigt keine
+Uhr; das Standbild `schachuhr` ist da, wirkt aber erst, wenn sie dort steht. Gemeldet: 10 → 5.

@@ -10,7 +10,8 @@ from pipeline.abenteuer.lageangabe_geprueft import GEMELDET, GEPRUEFT
 
 # Gemeldete Fälle (Bildwünsche, Sitzplätze für die Karte), Stand 26.11.2026. Nur senken.
 # 25.11.2026 abends: 13 Sitzplätze behoben (mittel-3, Figuren auf Stuhl, Hocker, Sessel gesetzt).
-OBERGRENZE_GEMELDET = 10
+# 26.11.2026: fünf Bildwünsche erfüllt (Standbilder mit Gegenstand aus PixelLab, Szene „standbild“).
+OBERGRENZE_GEMELDET = 5
 
 
 def test_jeder_kandidat_ist_angesehen():
@@ -37,6 +38,13 @@ def test_gemeldete_nur_weniger():
 def test_nia_versperrt_halb_den_weg():
     """Das Skatermädchen steht auf der Landstraße (kein Kandidat „weg“ mehr)."""
     assert not [k for k in kandidaten() if k.pruefung == "weg" and k.figur == "gegnerin"]
+
+
+def test_standbild_mit_gegenstand():
+    """Ein weiteres Standbild an der Stelle erfüllt „unter dem Arm“ (Nia mit Skateboard, 26.11.2026)."""
+    bild = [k.schluessel for k in kandidaten() if k.pruefung == "bild"]
+    assert "bild:gegnerin:weg-maple-cedar.nia_erstes_treffen" not in bild
+    assert "bild:kira:hochebene.kira_regel" not in bild
 
 
 def test_muster():

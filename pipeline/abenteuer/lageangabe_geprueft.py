@@ -53,17 +53,12 @@ GEPRUEFT: dict[str, str] = {
 }
 
 GEMELDET: dict[str, str] = {
-    # Bildwünsche: Das Figurenbild zeigt den Gegenstand nicht (Bilder angesehen am 26.11.2026).
-    "bild:gegnerin:weg-maple-cedar.nia_erstes_treffen": (
-        "Bildwunsch: Nia mit Skateboard unter dem Arm (Schachbrett auf dem Board); ihr Bild zeigt "
-        "Stirnband und lila Oberteil, aber kein Board."
-    ),
-    "bild:kira:hochebene.kira_regel": "Bildwunsch: Kira mit Basketball unter dem Arm (Bild ohne Ball).",
-    "bild:theo:crossroads-raststaette.theo": "Bildwunsch: Theo mit Bildschirm unter dem Arm (Bild ohne).",
-    "bild:tamsin:riverton-pavillon.tamsin_erstes_treffen": "Bildwunsch: Tamsin mit Schachuhr (Bild ohne).",
-    "bild:victor:ironwood-aussen.kauf": "Bildwunsch: {rivale} mit Tablet unter dem Arm (Bild ohne).",
-    "bild:ezra:pinewood-camp-aussen.ezra": (
-        "Bildwunsch oder Text: Ezra hat im Bild eine Gitarre, keine Pfeife und kein Klemmbrett."
+    # Bildwünsche: Seit der PixelLab-Lieferung vom 26.11.2026 tragen Nia, Kira, Theo, {rivale} und
+    # Ezra an der Stelle ihr Standbild mit Gegenstand (Szene „standbild“). Offen bleibt Tamsin:
+    "bild:tamsin:riverton-pavillon.tamsin_erstes_treffen": (
+        "Standbild „schachuhr“ gibt es (26.11.2026), aber Tamsin sitzt dort am Boden (tamsin_eli sagt "
+        "„sitzt“, Tagesablauf „sitzt am Boden“); das Sitzbild zeigt keine Uhr. Text („die Schachuhr "
+        "neben sich“) oder Sitzbild am Boden mit Schachuhr."
     ),
     # Sitzen mit Stuhl in der Nähe: Karte (Sitzplatz und Sitzrichtung, mit mittel-3 abstimmen).
     "sitzt:wanderer:capital-arena-aussen.wanderer": (

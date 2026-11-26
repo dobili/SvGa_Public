@@ -564,7 +564,8 @@
   "figuren": [
     {
       "name": "ezra",
-      "feld": [24, 16]
+      "feld": [24, 16],
+      "standbild": "pfeife-klemmbrett"
     },
     {
       "name": "dex",

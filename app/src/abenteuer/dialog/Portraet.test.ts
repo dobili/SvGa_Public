@@ -25,7 +25,8 @@ const NOCH_OHNE_PORTRAET = new Set([
   "henrik",
   "rosalind",
   // Kellner im Kaffeehaus London 1851 (25.11.2026): eigene Figur von 1851, das Porträt des
-  // modernen Kellners mit Fliege passte nicht; Porträtblatt ist bei Gemini beauftragt (Mappe 18).
+  // modernen Kellners mit Fliege passte nicht. Sein Porträtblatt liegt seit 26.11.2026 im privaten
+  // Paket (blatt/kellner-london.png); eine SVG für das öffentliche Paket hat er nicht.
   "kellnerLondon",
 ]);
 

@@ -19,7 +19,9 @@ Prüfungen (``PRUEFUNGEN``):
   Bildquelle) oder ein Auslöser (Tür) liegt höchstens ``NAH`` Felder entfernt.
 - **sitzt, liegt:** Die Figur sitzt in der Szene (``sitzt``) oder im Tagesablauf (``tut``).
 - **bild:** Die Figur hält etwas „in der Hand“ oder „unter dem Arm“. Das Werkzeug kann das Bild nicht
-  sehen; jeder Fall wird einmal angesehen (Bild zeigt es, Text allgemein genug, Bildwunsch).
+  sehen; jeder Fall wird einmal angesehen (Bild zeigt es, Text allgemein genug, Bildwunsch). Trägt
+  die Figur an ihrem Platz ein weiteres Standbild (Szene ``standbild``, etwa Nia mit Skateboard,
+  PixelLab-Lieferung 26.11.2026), gilt die Angabe als erfüllt: Das Standbild ist der Gegenstand.
 
 Jeder Kandidat ist behoben oder steht mit Grund in ``lageangabe_geprueft.GEPRUEFT`` (passt) oder
 ``GEMELDET`` (Bericht: Bildwunsch, Akt 2 bis 4 noch offen). Der Dauertest
@@ -121,6 +123,7 @@ class Platz:
     feld: tuple[int, int]
     haltung: str  # steht, sitzt, liegt
     szene: str
+    standbild: str = ""  # weiteres Standbild aus der Szene (Figur hält den Gegenstand)
 
 
 def _katalog(daten: Path) -> dict[str, dict]:
@@ -149,7 +152,8 @@ def plaetze(objekt: str, karten: list[str], szenen: dict[str, list[dict]], ablau
             for figur in szene.get("figuren", []):
                 if figur["name"] == objekt:
                     haltung = "sitzt" if figur.get("sitzt") else "steht"
-                    gefunden.append(Platz(karte, tuple(figur["feld"]), haltung, szene["_datei"]))
+                    standbild = figur.get("standbild", "") if haltung == "steht" else ""
+                    gefunden.append(Platz(karte, tuple(figur["feld"]), haltung, szene["_datei"], standbild))
             for block in (ablauf.get(objekt) or {}).get("bloecke", []):
                 if block.get("karte") == karte and block.get("feld"):
                     haltung = (
@@ -221,7 +225,7 @@ def passt(pruefung: str, platz: Platz, szene: dict, katalog: dict) -> tuple[bool
     if pruefung in ("sitzt", "liegt"):
         return platz.haltung == pruefung or (pruefung == "sitzt" and platz.haltung == "liegt"), lage
     if pruefung == "bild":
-        return False, lage
+        return bool(platz.standbild), lage + (f", Standbild {platz.standbild}" if platz.standbild else "")
     nah = naehe(platz, szene, katalog, muster) if muster else []
     return bool(nah), lage + (f", nah: {', '.join(nah[:3])}" if nah else ", nichts Passendes in der Nähe")
 

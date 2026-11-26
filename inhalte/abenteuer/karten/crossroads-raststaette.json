@@ -927,6 +927,11 @@
        "name": "blick",
        "type": "string",
        "value": "links"
+      },
+      {
+       "name": "standbild",
+       "type": "string",
+       "value": "bildschirm"
       }
      ]
     },

@@ -9,6 +9,7 @@
   "faktoren": {
     "abernathy": 1.054,
     "bea": 0.887,
+    "benji": 0.887,
     "big-joe": 1.089,
     "boateng": 1.054,
     "carla": 0.917,
@@ -27,6 +28,7 @@
     "henri": 1.052,
     "hollis": 1.089,
     "holloway": 1.089,
+    "imani": 0.917,
     "juniper": 1.089,
     "juno": 0.887,
     "kade": 0.917,
@@ -72,6 +74,7 @@
     "victor": 0.859,
     "victor-pullover": 0.917,
     "victoria": 0.859,
-    "victoria-pullover": 0.887
+    "victoria-pullover": 0.887,
+    "zoe": 0.859
   }
 }

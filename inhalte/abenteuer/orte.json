@@ -1222,14 +1222,14 @@
         {
           "kennung": "wegCedarRiverton.testteamZoe",
           "name": "figur.zoe.name",
-          "sprite": "figuren/statist-36.png",
+          "sprite": "figuren/zoe.png",
           "dialog": "weg-cedar-riverton.testteam_wald",
           "wenn": "endeAkt1Gesehen und nicht ankunftRivertonGesehen"
         },
         {
           "kennung": "wegCedarRiverton.testteamBenji",
           "name": "figur.benji.name",
-          "sprite": "figuren/statist-23.png",
+          "sprite": "figuren/benji.png",
           "dialog": "weg-cedar-riverton.testteam_wald",
           "wenn": "endeAkt1Gesehen und nicht ankunftRivertonGesehen",
           "gegner": "wegCedarRiverton.testteam"
@@ -1237,7 +1237,7 @@
         {
           "kennung": "wegCedarRiverton.testteamImani",
           "name": "figur.imani.name",
-          "sprite": "figuren/statist-22.png",
+          "sprite": "figuren/imani.png",
           "dialog": "weg-cedar-riverton.testteam_wald",
           "wenn": "endeAkt1Gesehen und nicht ankunftRivertonGesehen"
         }
@@ -2605,21 +2605,21 @@
         {
           "kennung": "wegIronwoodSilicon.testteamZoe",
           "name": "figur.zoe.name",
-          "sprite": "figuren/statist-36.png",
+          "sprite": "figuren/zoe.png",
           "dialog": "weg-ironwood-silicon.testteam_bruecke",
           "wenn": "einladungGesehen und nicht ankunftSiliconBayGesehen"
         },
         {
           "kennung": "wegIronwoodSilicon.testteamBenji",
           "name": "figur.benji.name",
-          "sprite": "figuren/statist-23.png",
+          "sprite": "figuren/benji.png",
           "dialog": "weg-ironwood-silicon.testteam_bruecke",
           "wenn": "einladungGesehen und nicht ankunftSiliconBayGesehen"
         },
         {
           "kennung": "wegIronwoodSilicon.testteamImani",
           "name": "figur.imani.name",
-          "sprite": "figuren/statist-22.png",
+          "sprite": "figuren/imani.png",
           "dialog": "weg-ironwood-silicon.testteam_bruecke",
           "wenn": "einladungGesehen und nicht ankunftSiliconBayGesehen",
           "gegner": "wegIronwoodSilicon.testteam"
@@ -3917,7 +3917,7 @@
         {
           "kennung": "wegDesertSummit.testteamZoe",
           "name": "figur.zoe.name",
-          "sprite": "figuren/statist-36.png",
+          "sprite": "figuren/zoe.png",
           "dialog": "weg-desert-summit.testteam_gitter",
           "wenn": "endeAkt3Gesehen und nicht ankunftSummitGesehen",
           "gegner": "wegDesertSummit.testteam"
@@ -3925,14 +3925,14 @@
         {
           "kennung": "wegDesertSummit.testteamBenji",
           "name": "figur.benji.name",
-          "sprite": "figuren/statist-23.png",
+          "sprite": "figuren/benji.png",
           "dialog": "weg-desert-summit.testteam_gitter",
           "wenn": "endeAkt3Gesehen und nicht ankunftSummitGesehen"
         },
         {
           "kennung": "wegDesertSummit.testteamImani",
           "name": "figur.imani.name",
-          "sprite": "figuren/statist-22.png",
+          "sprite": "figuren/imani.png",
           "dialog": "weg-desert-summit.testteam_gitter",
           "wenn": "endeAkt3Gesehen und nicht ankunftSummitGesehen"
         }
@@ -5766,21 +5766,21 @@
         {
           "kennung": "capitalArena.testteamZoe",
           "name": "figur.zoe.name",
-          "sprite": "figuren/statist-36.png",
+          "sprite": "figuren/zoe.png",
           "dialog": "capital-arena-aussen.testteam",
           "wenn": "testteamStand >= 3"
         },
         {
           "kennung": "capitalArena.testteamBenji",
           "name": "figur.benji.name",
-          "sprite": "figuren/statist-23.png",
+          "sprite": "figuren/benji.png",
           "dialog": "capital-arena-aussen.testteam",
           "wenn": "testteamStand >= 3"
         },
         {
           "kennung": "capitalArena.testteamImani",
           "name": "figur.imani.name",
-          "sprite": "figuren/statist-22.png",
+          "sprite": "figuren/imani.png",
           "dialog": "capital-arena-aussen.testteam",
           "wenn": "testteamStand >= 3"
         }

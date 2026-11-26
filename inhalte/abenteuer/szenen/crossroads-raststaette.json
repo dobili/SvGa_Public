@@ -328,6 +328,7 @@
     {
       "name": "theo",
       "feld": [10, 9],
+      "standbild": "bildschirm",
       "blick": "links"
     }
   ],

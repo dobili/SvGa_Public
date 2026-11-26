@@ -1563,3 +1563,12 @@ Browserprüfung der Sperren S16 und S17 mit echt gespielten kurzen Partien (Fabl
 - Für Ansprechen und Auslöser zählt weiter die vorherrschende Hauptrichtung. Schrägbilder haben
   Held, Heldin, Juno und Mama (Lieferung des Autors), alle anderen Figuren bleiben vierrichtig.
   Tagebuch und Menü stehen unten links.
+
+### Zeitbasis der Oberwelt (Befund des Autors, 26.11.2026: Zeitlupe nach dem Kartenwechsel)
+
+- Phaser gibt der Welt ab dem ersten Bild eines Spiels die echte Zeit (fps.panicMax 0,
+  oberwelt/zeitbasis.ts). Vorher begrenzte es die ersten 120 Bilder auf 16,7 ms, und weil jede
+  Karte ein neues Spiel startet, lief jede Karte am Anfang in Zeitlupe.
+- Vorladen der Nachbarkarten bleibt vorerst aus: Daten und Bilddateien kommen schon aus dem
+  Speicher, das Hochladen der Texturen gilt je Phaser-Spiel; es lohnt erst, wenn ein Phaser-Spiel
+  über alle Karten bestehen bleibt (eigenes Paket, empfohlen).

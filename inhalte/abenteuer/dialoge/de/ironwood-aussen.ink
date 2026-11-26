@@ -70,10 +70,10 @@ VAR abschiedGesehen = false
 // einem langsamen Schlag, dazu das Fauchen des Hochofens in Abständen; Lichtwechsel orange.
 Ironwood ist grau. Nicht hässlich. #sprecher:erzaehler #musik:ironwood
 Grau, wie Dinge grau sind, die gearbeitet haben. #sprecher:erzaehler
-Reihenhäuser, eins am anderen, alle gleich, mit schmalen Treppen und Eisengeländern. #sprecher:erzaehler
+Reihenhäuser, eins am anderen, alle gleich, mit schmalen Treppen und Eisengeländern. #sprecher:erzaehler #schwenk:iw5Reihenhaus
 Über den Hallen leuchtet der Himmel orange auf. Einen Atemzug später kommt das Geräusch, ein tiefes Fauchen. #sprecher:erzaehler #klang:hochofen #licht:ironwood
 {verbotGesehen:
-    Auf den Gehwegen malen Kinder Schachbretter mit Kreide. Richtige, acht mal acht. #sprecher:erzaehler
+    Auf den Gehwegen malen Kinder Schachbretter mit Kreide. Richtige, acht mal acht. #sprecher:erzaehler #schwenk:iw5Kreidebrett
     Die können hier zählen. #sprecher:juno #stimmung:laechelt
     Ich zähl die Kreidebretter. Elf! Ironwood ist ein Brett. #sprecher:juno #stimmung:laechelt
     -> END
@@ -81,7 +81,7 @@ Reihenhäuser, eins am anderen, alle gleich, mit schmalen Treppen und Eisengelä
 ~ verbotGesehen = true
 ~ setzeSzene("akt2.verbot")
 Coach Delgado hat uns für ein Freundschaftsturnier hier angemeldet! Ich hab es deiner Mama gesagt. #sprecher:juno #stimmung:laechelt
-Dein Handy klingelt. Mama. #sprecher:erzaehler
+Dein Handy klingelt. Mama. #sprecher:erzaehler #schwenk:held
 Nein. #sprecher:mutter #stimmung:verschlossen
 Nicht Ironwood. #sprecher:mutter #stimmung:verschlossen
 * [„Warum?“]

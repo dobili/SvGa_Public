@@ -188,6 +188,10 @@
         "dialog": {
           "type": "string",
           "pattern": "^[a-z][a-z0-9-]*\\.[a-z][a-z0-9_]*$"
+        },
+        "nachher": {
+          "description": "uebergang mit dialog: Der Dialog läuft nach dem Wechsel auf der Zielkarte (Ankunft zu Fuß, die beschreibt, was dort zu sehen ist; die Kamera kann dorthin schwenken). Gilt `wenn` nicht, läuft er wie sonst vor dem Wechsel, und der Held bleibt.",
+          "type": "boolean"
         }
       }
     },

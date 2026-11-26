@@ -63,21 +63,21 @@ VAR abschiedGesehen = false
 
 === ankunft_zu_fuss ===
 {ankunftRivertonGesehen:
-    Der Feldweg endet am Bahnhof von Riverton. #sprecher:erzaehler
+    Der Feldweg endet am Bahnhof von Riverton. #sprecher:erzaehler #schwenk:bahnhof
     -> END
 }
-Der Feldweg neben den Gleisen endet an einem Bahnhof aus rotem Backstein. Es beginnt zu regnen. #sprecher:erzaehler
+Der Feldweg neben den Gleisen endet an einem Bahnhof aus rotem Backstein. Es beginnt zu regnen. #sprecher:erzaehler #schwenk:bahnhof
 -> ankunft
 
 === ankunft ===
 // Kapitel 18: laut, nass, lebendig. Musik und Regen kommen von der Karte (riverton, regen).
 ~ ankunftRivertonGesehen = true
 Riverton riecht nach Regen auf Stein. Backstein, rot und rußig, Feuerleitern, Schornsteine, aus denen nichts mehr kommt. #sprecher:erzaehler
-Ein Bus hupt. Jemand ruft über die Straße nach einem Earl. #sprecher:erzaehler
+Ein Bus hupt. Jemand ruft über die Straße nach einem Earl. #sprecher:erzaehler #schwenk:held
 Aus zwei Fenstern kommen zwei Musiken und streiten sich. #sprecher:erzaehler
 Hier bin ich geboren. Also fast. #sprecher:juno #stimmung:froh
 Meine Cousine. Die ist hier geboren. #sprecher:juno #stimmung:froh
-An jeder Laterne ein Plakat, sauber und glänzend auf dem nassen Stein: „Perfect Move Park. Schach für alle. Ohne Wartezeit.“ #sprecher:erzaehler
+An jeder Laterne ein Plakat, sauber und glänzend auf dem nassen Stein: „Perfect Move Park. Schach für alle. Ohne Wartezeit.“ #sprecher:erzaehler #schwenk:mf4Laterne
 Ohne Wartezeit. Als wäre das Warten nicht das Schönste daran. #sprecher:ambrose #stimmung:laechelt
 // Wiedereinstieg (20.11.2026): Wer nach einer Pause mit Akt 2 beginnt, hört hier, worum es geht.
 {nadelCedarCreek > 0:

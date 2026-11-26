@@ -335,9 +335,9 @@ An der Eisenbrücke wird sie still. #sprecher:erzaehler
 Vor dem Haus mit dem grünen Geländer bleibt sie eine Minute sitzen, die Hände am Lenkrad. #sprecher:erzaehler #pause:2
 Was sie und Oma Ruth an der Tür sagen, weißt du nicht. Du bleibst im Wagen. #sprecher:erzaehler
 Manche Dinge gehören einem nicht. #sprecher:erzaehler
-In der Kantine bullert der Ofen. Sie sind alle da, Hank und Priya und ein Dutzend andere in Arbeitsjacken. #sprecher:erzaehler #musik:aus
-Als Mama in der Tür steht, wird es still wie in einer Kirche. #sprecher:erzaehler
-Big Joe steht auf. Er sagt nichts, sie sagt nichts. #sprecher:erzaehler
+In der Kantine bullert der Ofen. Sie sind alle da, Hank und Priya und ein Dutzend andere in Arbeitsjacken. #sprecher:erzaehler #musik:aus #schwenk:hank
+Als Mama in der Tür steht, wird es still wie in einer Kirche. #sprecher:erzaehler #schwenk:held
+Big Joe steht auf. Er sagt nichts, sie sagt nichts. #sprecher:erzaehler #schwenk:bigJoe
 Sie geht durch den ganzen langen Raum. Er kommt ihr drei Schritte entgegen und hält sie fest, als könnte sie zerbrechen. #sprecher:erzaehler #pause:2
 Laurie. #sprecher:bigJoe #stimmung:ueberrascht
 Du hättest noch mal klingeln können. #sprecher:mutter #stimmung:bitter

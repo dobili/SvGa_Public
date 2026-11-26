@@ -55,20 +55,20 @@ VAR abschiedGesehen = false
 
 === ankunft_zu_fuss ===
 {ankunftSummitGesehen:
-    Die Bergstraße endet an der Talstation von Summit City. Irgendwo pfeift ein Murmeltier. #sprecher:erzaehler
+    Die Bergstraße endet an der Talstation von Summit City. Irgendwo pfeift ein Murmeltier. #sprecher:erzaehler #schwenk:sc7Talstation
     -> END
 }
 -> ankunft_summit
 
 === ankunft_summit ===
 ~ ankunftSummitGesehen = true
-Summit City liegt so hoch, dass man die Wolken von oben sieht. Holzhäuser, eine Seilbahn, die leise surrt. #sprecher:erzaehler
+Summit City liegt so hoch, dass man die Wolken von oben sieht. Holzhäuser, eine Seilbahn, die leise surrt. #sprecher:erzaehler #schwenk:sc7Talstation
 Es ist Juli, und auf den Gipfeln liegt Schnee. #sprecher:erzaehler
 Zwischen den Häusern pfeift etwas, schrill und kurz. #sprecher:erzaehler #klang:murmeltier
 Murmeltiere. Die warnen sich. #sprecher:mutter #stimmung:laechelt
 * [„Wovor?“]
 - Vor uns. #sprecher:mutter #stimmung:lacht
-An der Seilbahnstation glänzt ein Plakat: „Landesmeisterschaft der Jugend. Präsentiert von Perfect Move.“ Acht Gesichter. #sprecher:erzaehler
+An der Seilbahnstation glänzt ein Plakat: „Landesmeisterschaft der Jugend. Präsentiert von Perfect Move.“ Acht Gesichter. #sprecher:erzaehler #schwenk:sc7Plakat
 Das zweite ist Nova. Das vierte {rivale}. #sprecher:erzaehler
 Das achte bist du. #sprecher:erzaehler
 Das ist von meinem Foto! Da hast du Ketchup am Kinn! #sprecher:juno #stimmung:froh
@@ -77,7 +77,7 @@ Das ist von meinem Foto! Da hast du Ketchup am Kinn! #sprecher:juno #stimmung:fr
 {rivale} nickt. #sprecher:erzaehler
 * [„Der Trainer, der kein Mensch ist.“]
 - Der dort ist ein Mensch. Aber ich glaube, er ist nur der Bote. #sprecher:ambrose #stimmung:nachdenklich
-Die Hütte der Großmeisterin liegt eine Stunde über der Stadt. Mama bleibt unten. #sprecher:erzaehler
+Die Hütte der Großmeisterin liegt eine Stunde über der Stadt. Mama bleibt unten. #sprecher:erzaehler #schwenk:held
 Sie hat mich in neunzehn Zügen geschlagen. Ich will ihr nicht gleich am ersten Tag begegnen. #sprecher:mutter #stimmung:nachdenklich
 -> END
 

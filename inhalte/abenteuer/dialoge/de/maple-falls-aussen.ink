@@ -229,7 +229,7 @@ Sie lässt das Plastikpferd über den ganzen Gehweg hüpfen, bis zur Ecke. #spre
 // Stimmung: fremd, dann überrumpelt. Klang: Die Musik nimmt sich zurück, Vögel und Wasserfall.
 === calloway_auf_dem_weg ===
 -> calloway_a ->
-Von der Haltestelle winkt dir jemand zu. #sprecher:erzaehler
+Von der Haltestelle winkt dir jemand zu. #sprecher:erzaehler #schwenk:mfBushaltestelle
 -> juno_trifft
 
 === calloway ===
@@ -333,7 +333,7 @@ Das weiß kaum einer. #sprecher:calloway #stimmung:laechelt
 
 // Stufe A (Ankunft): Sie repariert ein Fahrrad am Zaun und winkt ab, wenn es um Schach geht.
 === carla_a ===
-Vor dem gelben Haus kniet ein Mädchen, älter als Juno, und schraubt an einem Fahrrad. #sprecher:erzaehler
+Vor dem gelben Haus kniet ein Mädchen, älter als Juno, und schraubt an einem Fahrrad. #sprecher:erzaehler #schwenk:carla
 {junoGetroffen:
     Du bist Junos neues viertes Brett? Viel Glück. #sprecher:carla #stimmung:laechelt
     Sie redet, bis du umfällst. #sprecher:carla #stimmung:laechelt
@@ -364,7 +364,7 @@ Man vergisst nicht, was man geliebt hat. #sprecher:ambrose #stimmung:nachdenklic
 // Stufe C (nach Akt 1): Sie steht von außen am Fenster des Clubraums und schaut zu. Sie geht,
 // wenn man sie anspricht.
 === carla_c ===
-Vor dem Fenster des Clubraums steht Carla und sieht hinein. Drinnen spielen zwei Kinder aus der Sechsten. #sprecher:erzaehler
+Vor dem Fenster des Clubraums steht Carla und sieht hinein. Drinnen spielen zwei Kinder aus der Sechsten. #sprecher:erzaehler #schwenk:carla
 * [„Willst du nicht reinkommen?“]
     Nur geguckt. Ich muss los. #sprecher:carla #stimmung:nachdenklich
 * [Neben sie stellen und mitschauen]
@@ -413,9 +413,9 @@ Hüpft der jetzt gerade oder schief? Zeig's mir nochmal, ja? #sprecher:lily #sti
 ~ einleitungGesehen = true
 Ende August. Drei Tage Packen, ein langer Tag im Auto. #sprecher:erzaehler #bild:einzug_fahrt #musik:aus
 Hinter dem Ortsschild von Maple Falls rauscht irgendwo Wasser. #sprecher:erzaehler
-Birch Lane. Ein altes Holzhaus mit Veranda, davor ein Ahorn, dessen Blätter an den Rändern schon rot sind. #sprecher:erzaehler #bild:einzug_haus
-Am Bordstein steht der Umzugswagen mit offener Klappe. #sprecher:erzaehler
-Mama stellt den Motor ab und bleibt einen Moment sitzen, die Hände noch am Lenkrad. #sprecher:erzaehler #bild:aus
+Birch Lane. Ein altes Holzhaus mit Veranda, davor ein Ahorn, dessen Blätter an den Rändern schon rot sind. #sprecher:erzaehler #bild:einzug_haus #schwenk:haustuer
+Am Bordstein steht der Umzugswagen mit offener Klappe. #sprecher:erzaehler #schwenk:fz11LkwRechts
+Mama stellt den Motor ab und bleibt einen Moment sitzen, die Hände noch am Lenkrad. #sprecher:erzaehler #bild:aus #schwenk:held
 Das ist es. Unser Haus. #sprecher:mutter #stimmung:muede
 Ich weiß, es ist nicht die alte Wohnung. Aber es hat einen Garten. #sprecher:mutter #stimmung:laechelt
 Und einen Dachboden, so groß wie unsere ganze alte Küche. #sprecher:mutter #stimmung:laechelt

@@ -56,8 +56,8 @@ VAR abschiedGesehen = false
 // {held} (Entscheidung mittel-1: ein Schulkind; das „Sie“ klang fremd). Park: Rollen auf Beton,
 // Enten, der Wasserfall lauter als in der Stadt.
 ~ abernathyGetroffen = true
-Von hier sieht man den Wasserfall zum ersten Mal richtig, ein weißes Band zwischen den Bäumen. #sprecher:erzaehler
-Auf der Nachbarbank klopft ein sehr alter Mann seine Taschen ab. Neben ihm eine Thermoskanne. #sprecher:erzaehler
+Von hier sieht man den Wasserfall zum ersten Mal richtig, ein weißes Band zwischen den Bäumen. #sprecher:erzaehler #schwenk:mf12WasserfallBand
+Auf der Nachbarbank klopft ein sehr alter Mann seine Taschen ab. Neben ihm eine Thermoskanne. #sprecher:erzaehler #schwenk:abernathy
 Ich hatte doch … nein, das ist meine Brille. Das Brett, das Brett! #sprecher:abernathy #stimmung:ueberrascht
 Abernathy, sehr erfreut. Früher Bibliothekar, heute Sucher von Dingen. #sprecher:abernathy #stimmung:laechelt
 Mein Reisebrett. Ich habe es auf einer Bank vergessen, aber auf welcher? #sprecher:abernathy #stimmung:nachdenklich
@@ -263,7 +263,7 @@ Sie lacht, kurz und rau, und wirft dir die leere Flasche zu. #sprecher:erzaehler
     Juno wartet an der Landstraße. Zu Fuß, am Fluss entlang. #sprecher:erzaehler
     -> END
 - else:
-    Der Bus nach Cedar Creek steht an der Haltestelle, der Motor läuft. Der Fahrer nickt dir zu. #sprecher:erzaehler #klang:bus
+    Der Bus nach Cedar Creek steht an der Haltestelle, der Motor läuft. Der Fahrer nickt dir zu. #sprecher:erzaehler #klang:bus #schwenk:bushaltestelle
 }
 * [Einsteigen]
     Der Bus fährt los, die Landstraße entlang nach Cedar Creek. #sprecher:erzaehler
@@ -331,7 +331,7 @@ Am Pfosten ein Zettel: „Für Pokale baue ich alles. Pratt.“ #sprecher:erzaeh
 -> steg_aussicht
 
 === steg_aussicht ===
-Vom Ende des Stegs sieht man den kleinen Wasserfall hinter den Ahornbäumen. #sprecher:erzaehler
+Vom Ende des Stegs sieht man den kleinen Wasserfall hinter den Ahornbäumen. #sprecher:erzaehler #schwenk:mf12WasserfallBand
 {initialenGefunden:
     -> END
 }

@@ -59,7 +59,7 @@ import { kreuzsteuerung } from "./kreuzsteuerung";
 import { useVerscheuchen } from "./useVerscheuchen";
 import { useWarten } from "./useWarten";
 import { useSteuerhinweis } from "./useSteuerhinweis";
-import { eingangsdialog } from "./eingang";
+import { dialogBeimBetreten } from "./eingang";
 import { schalteVerfolgung } from "../regeln/verfolgung";
 import { Untertitelzeile } from "../ton/Untertitelzeile";
 import { aktionFuer, weltklasse, type Weltdaten } from "./weltdaten";
@@ -102,8 +102,8 @@ export function Oberwelt() {
       ausl.setzeTreffer(null);
       partie.meldeErgebnis(w);
       runden.meldeRunde(w);
-      // Eingangsdialog der Karte (Einleitung, 19.11.2026): läuft von selbst, solange er gilt.
-      const eingang = eingangsdialog(w.ort, w.kennung, standRef.current?.dialogvariablen ?? {});
+      // Ankunft zu Fuß (eingang.ts) oder Eingangsdialog der Karte: läuft von selbst.
+      const eingang = dialogBeimBetreten(w.ort, w.kennung, standRef.current?.dialogvariablen ?? {});
       if (eingang) oeffneDialog(eingang);
     },
   });

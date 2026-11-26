@@ -54,7 +54,7 @@ VAR abschiedGesehen = false
 
 === ankunft_zu_fuss ===
 {ankunftCampGesehen:
-    Zwischen den Riesenbäumen öffnet sich der Wald. Vor dir liegt der See mit den Hütten des Camps. #sprecher:erzaehler
+    Zwischen den Riesenbäumen öffnet sich der Wald. Vor dir liegt der See mit den Hütten des Camps. #sprecher:erzaehler #schwenk:pw7Bootssteg3
     -> END
 }
 -> ankunft_camp
@@ -63,11 +63,11 @@ VAR abschiedGesehen = false
 // Kapitel 55 (Roman): vierzig Kinder aus dem ganzen Staat, ein Drittel kennt {held}.
 {not esIstStillGesagt: -> es_ist_still ->}
 ~ ankunftCampGesehen = true
-Das Camp liegt an einem See zwischen den Bäumen. Zelte im Halbkreis, ein Steg, Kanus kieloben. #sprecher:erzaehler #musik:pinewood #geraeusch:camp
+Das Camp liegt an einem See zwischen den Bäumen. Zelte im Halbkreis, ein Steg, Kanus kieloben. #sprecher:erzaehler #musik:pinewood #geraeusch:camp #schwenk:pwZeltGruen
 Ein Schild aus einem halben Baumstamm: „Pinewood Camp. Schach, Schwimmen, Schlafen. In dieser Reihenfolge.“ #sprecher:erzaehler #bild:schild_camp
 Vierzig Kinder aus dem ganzen Staat. Ein Drittel davon kennst du. #sprecher:erzaehler #bild:aus
-Dex hat etwas gebaut, das Marshmallows von selbst dreht. Es funktioniert fast. #sprecher:erzaehler
-Mae hat ihr Teleskop dabei. Lou hat Muscheln im Haar und einen Plan. #sprecher:erzaehler
+Dex hat etwas gebaut, das Marshmallows von selbst dreht. Es funktioniert fast. #sprecher:erzaehler #schwenk:dex
+Mae hat ihr Teleskop dabei. Lou hat Muscheln im Haar und einen Plan. #sprecher:erzaehler #schwenk:mae
 Die kennen sich alle seit einer Woche. Mae hat allen die Sterne erklärt. #sprecher:juno #stimmung:froh
 Ich brauch ein zweites Tagebuch. #sprecher:juno #stimmung:froh
 -> END

@@ -4,6 +4,35 @@ Jede Entscheidung zum Spiel steht hier, damit spätere Sitzungen (auch mit Opus)
 können. Neueste Einträge oben. Offene Fragen stehen unten in „Offen“; der Autor antwortet über
 die Entscheidungsseite (Claude-Artefakt „Schach-Abenteuer Entscheidungen“) oder im Chat.
 
+## 26.11.2026 – Kameraschwenk zu dem, was der Text beschreibt; Ankunft zu Fuß auf der Zielkarte
+
+- **Wunsch des Autors:** Beschreibt ein Erzähltext beim Betreten eines Orts, was dort zu sehen ist,
+  fährt die Kamera dorthin; der Held bleibt stehen; am Ende kommt sie zu ihm zurück.
+- **Ink-Tag `#schwenk:ZIEL`:** Figur, Auslöser, Kartenobjekt (Möbel, Gebäude; Ziel ist die
+  Vorderseite bei drei Vierteln der Höhe) oder `x,y` in Kacheln; `#schwenk:held`, `#gehe`, `#stelle`
+  und das Dialogende holen die Kamera zurück. Ablauf: hinschwenken, am Ziel erscheint die Zeile,
+  die Kamera verweilt bis zum Weitertippen; Tippen während der Fahrt springt ans Ziel; bei
+  reduzierter Bewegung springt die Kamera; immer innerhalb der Kartengrenzen. Tempo (Autor):
+  `SCHWENK_KACHELN_JE_S = SCHWENK_FAKTOR (3) × VORAUS_KACHELN / RUECK_MS` (das Zurückgleiten der
+  vorausschauenden Kamera, rund 6,7 Kacheln/s), Anfahren und Abbremsen je ein Drittel der Strecke
+  als Kosinusrampe; ab `SCHWENK_SCHWELLE_KACHELN` (12) wächst die Spitze mit der Strecke bis
+  `SCHWENK_SPITZENFAKTOR` (3) × Grundtempo; mindestens 0,8 s. Folge: 100 Kacheln dauern gut 8 s;
+  die gewünschten 5 bis 6 s gingen nur mit einer Spitze von etwa dem Viereinhalbfachen. Das Ziel liegt in der freien Fläche über dem Textfenster
+  (quer links neben der Textspalte). Technik: `oberwelt/schwenk.ts` (Rechnung),
+  `kamerafuehrung.ts` (Fahrt als Folgeversatz), `schwenkschicht.ts`, `useBuehne.ts`.
+- **Ankunft zu Fuß nach dem Wechsel:** Die Übergänge mit `…ankunft_zu_fuss` liefen vor dem
+  Kartenwechsel; ihr Text beschreibt aber die Zielkarte (Cedar Creek spielt die Ankunft seit
+  mittel-4 als Eingang der Karte; die übrigen zehn bekommen `nachher`). Neues Feld `nachher` in orte.json: erst
+  wechseln, dann läuft der Dialog auf der Zielkarte (`oberwelt/eingang.ts`). Gilt `wenn` nicht
+  (Capital: erst Abe treffen), läuft er wie bisher vorher, und der Held bleibt. Ink unverändert.
+- **Tags:** alle Ankunfts- und Eingangstexte von Akt 1 bis 4 (65 Schwenks), sechs Stellen mit
+  Grund ohne Schwenk (Hotel nicht auf der Karte, Uhr nur zu hören …). Weitere Erzählzeilen mit
+  Sichtbarem außerhalb der Ankünfte schlägt `python -m pipeline.abenteuer.schwenkstellen --alle`
+  vor (335, Obergrenze sinkt nur).
+- **Prüfung:** Dauertest `pipeline/tests/test_abenteuer_schwenkstellen.py` (jedes Ziel auf seiner
+  Karte, Ankünfte vollständig, `nachher` an jeder Ankunft zu Fuß), Komponententests,
+  `tests/e2e/abenteuer-schwenk.spec.ts` (Ankunft in Cedar Creek hoch und quer).
+
 ## 25.11.2026 – Befunde des Autors am Abend: Radar, Kiosk, Tagebuch, Farben, Knöpfe, Jo, Zeitraffer
 
 - **Gefahrenradar:** zeigt nur, was der Gegner sofort mit Gewinn schlagen kann (Kapitel 1,

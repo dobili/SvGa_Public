@@ -43,13 +43,13 @@ VAR seeErreichtGesehen = false
 ~ ankunftGhostTownGesehen = true
 Mit jedem Kilometer wird alles blasser. Das Rot der Erde, das Grün der Büsche, das Blau am Himmel. #sprecher:erzaehler #musik:aus #geraeusch:ghosttown
 Guck mal. Es sieht aus wie ein altes Foto. #sprecher:juno #stimmung:ueberrascht
-Die Stadt kommt ohne Schild. Häuser aus Brettern, die das Wetter silbern gemacht hat. #sprecher:erzaehler
-Ein Saloon mit einem Balkon, der an einer Seite herunterhängt. #sprecher:erzaehler
+Die Stadt kommt ohne Schild. Häuser aus Brettern, die das Wetter silbern gemacht hat. #sprecher:erzaehler #schwenk:gt7FassadeSchmiede
+Ein Saloon mit einem Balkon, der an einer Seite herunterhängt. #sprecher:erzaehler #schwenk:gt7SaloonFassade
 Es ist niemand da. Seit hundert Jahren. #sprecher:erzaehler
 Der Wind schiebt einen Busch über die Straße. #sprecher:erzaehler
 {abschiedGesehen: -> END}
 Hier. #sprecher:ambrose #stimmung:fern
-Er steht mitten auf der Straße und dreht sich langsam um sich selbst. #sprecher:erzaehler
+Er steht mitten auf der Straße und dreht sich langsam um sich selbst. #sprecher:erzaehler #schwenk:held
 Der Laden. Das war der Laden. #sprecher:ambrose #stimmung:nachdenklich
 Darüber war ein Zimmer. Es hatte eine Tapete mit Rosen. #sprecher:ambrose #stimmung:nachdenklich
 Ich habe die Rosen gezählt, als ich nicht schlafen konnte. #sprecher:ambrose #stimmung:still

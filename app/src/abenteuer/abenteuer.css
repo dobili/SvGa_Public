@@ -134,6 +134,12 @@
   line-height: 1.4;
 }
 
+/* Während eines Kameraschwenks wartet die Zeile (oberwelt/schwenkschicht.ts): Sie ist noch
+   unsichtbar, nimmt aber ihren Platz ein, damit das Fenster nicht springt. */
+.abenteuer-dialog-text[data-schwenk="ja"] {
+  visibility: hidden;
+}
+
 .abenteuer-dialog-wahlen {
   display: flex;
   flex-direction: column;

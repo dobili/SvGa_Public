@@ -50,7 +50,7 @@ VAR tiefpunktGesehen = false
 
 === ankunft_zu_fuss ===
 {ankunftPortDelacroixGesehen:
-    Der Deichweg endet am Kai von Port Delacroix. An allen Häusern läuft der braune Strich entlang. #sprecher:erzaehler
+    Der Deichweg endet am Kai von Port Delacroix. An allen Häusern läuft der braune Strich entlang. #sprecher:erzaehler #schwenk:pd9StrichQ16
     -> END
 }
 ~ ankunftPortDelacroixGesehen = true
@@ -59,17 +59,17 @@ Und Teer. Und etwas Süßes, das fault: die Magnolien. #sprecher:ambrose #stimmu
 Ich kenne diese Luft. #sprecher:ambrose #stimmung:fern
 * [„Du bist hier geboren.“]
 - Ich bin hier weggegangen. Das ist nicht dasselbe. #sprecher:ambrose #stimmung:bitter
-Schmale Häuser mit Balkonen aus geschmiedetem Eisen, Fensterläden in Grün und Blau, Palmen. Auf vielen Dächern liegen Planen. #sprecher:erzaehler
-An den Hauswänden läuft in Hüfthöhe ein brauner Strich entlang, von Haus zu Haus, schnurgerade. #sprecher:erzaehler
+Schmale Häuser mit Balkonen aus geschmiedetem Eisen, Fensterläden in Grün und Blau, Palmen. Auf vielen Dächern liegen Planen. #sprecher:erzaehler #schwenk:pd6HausGross
+An den Hauswänden läuft in Hüfthöhe ein brauner Strich entlang, von Haus zu Haus, schnurgerade. #sprecher:erzaehler #schwenk:pd9StrichQ16
 * [„Was ist das?“]
 - Da stand das Wasser. #sprecher:mutter #stimmung:nachdenklich #pause
-Am Kai ist eine Lücke. Mauern ohne Dach, durch die leeren Fenster sieht man den Himmel. #sprecher:erzaehler
+Am Kai ist eine Lücke. Mauern ohne Dach, durch die leeren Fenster sieht man den Himmel. #sprecher:erzaehler #schwenk:pd18MusikhausRuine
 Über dem Eingang hängt ein Schild an einer einzigen Schraube: „Maison de Musique. Club d'Échecs, depuis 1889.“ #sprecher:erzaehler
 Das Musikhaus. Mein Vater hat die Orgel darin gestimmt. #sprecher:ambrose #stimmung:fern
 Ich habe unter der Empore gesessen und gewartet, bis er fertig war. #sprecher:ambrose #stimmung:fern
 * [Warten]
 - Er macht einen Schritt darauf zu. Dann noch einen. #sprecher:erzaehler
-Aus einem Zelt neben der Ruine kommt eine Trompete, erst langsam, dann plötzlich schnell, als könne sie sich nicht entscheiden. #sprecher:erzaehler #musik:karte
+Aus einem Zelt neben der Ruine kommt eine Trompete, erst langsam, dann plötzlich schnell, als könne sie sich nicht entscheiden. #sprecher:erzaehler #musik:karte #schwenk:pd6Zelt
 Ich geh zum Notzelt, da brauchen sie Hände. Das Turnier ist in der Turnhalle. #sprecher:mutter #stimmung:ernst
 Wir sehen uns heute Abend. #sprecher:mutter #stimmung:ernst
 -> END

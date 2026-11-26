@@ -1575,34 +1575,16 @@
       "vorn": true
     },
     {
-      "moebel": "wc5Tor1",
-      "feld": [21, 83],
-      "bauteil_ok": true
+      "moebel": "wr20LattentorZu",
+      "feld": [21, 83]
     },
     {
-      "moebel": "wc5Tor2",
-      "feld": [22, 83],
-      "bauteil_ok": true
+      "moebel": "wr20LattentorZu",
+      "feld": [21, 101]
     },
     {
-      "moebel": "wc5Tor1",
-      "feld": [21, 101],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Tor2",
-      "feld": [22, 101],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Tor1",
-      "feld": [21, 119],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "wc5Tor2",
-      "feld": [22, 119],
-      "bauteil_ok": true
+      "moebel": "wr20LattentorZu",
+      "feld": [21, 119]
     },
     {
       "moebel": "wrLastkahnBug",

@@ -974,6 +974,18 @@
       "zustand": "alt",
       "stil": "natur",
       "beschreibung": "Geröllstein ohne Grasfuß für Sand, Erde und Fels (AP7, 24.11.2026); in Szenen mit massstab 0.75 eine Kachel groß"
+    },
+    "wds20WegweiserErde": {
+      "quelle": "spiel/eigene/wegweiser_erde.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "natur",
+      "maske_fein": ["........", "........", "........", "........", "........", "........", "...##...", "...##..."],
+      "hinweis": "Holzwegweiser mit zwei leeren Pfeilen, Pfosten in nackter Erde (kein Grasfuß) für Sand und Erde der Hochebene und Bergstraße; steht 8 Pixel links versetzt, damit der Pfosten auf der Kachel des alten Wegweisers bleibt (Gemini K28, Schnittstelle 26.11.2026)"
     }
   }
 }

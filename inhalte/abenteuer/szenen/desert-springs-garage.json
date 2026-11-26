@@ -128,13 +128,8 @@
       "deckkraft": 75
     },
     {
-      "moebel": "rv5TuerSuedHell",
+      "moebel": "ds20RolltorInnen",
       "feld": [2, 10],
-      "deckkraft": 75
-    },
-    {
-      "moebel": "rv5TuerSuedHell",
-      "feld": [3, 10],
       "deckkraft": 75
     }
   ],

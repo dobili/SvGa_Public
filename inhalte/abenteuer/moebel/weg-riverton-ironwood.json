@@ -747,6 +747,29 @@
       "stil": "industrie",
       "tuer": [[3, 7], [4, 7]],
       "beschreibung": "Werkhalle aus Backstein am Kanal mit Sheddach (vier Oberlichter), zwei Schornsteinen, Sprossenfenstern und eisernem Doppeltor (Gemini K5, 26.11.2026); ersetzt die vergrößerte Blechhütte wr5Fabrikhalle, nicht begehbar"
+    },
+    "wr20LattentorZu": {
+      "quelle": "spiel/eigene/lattentor_zu.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "laendlich",
+      "maske_fein": ["........", "........", "########", "########"],
+      "hinweis": "Weidetor im hellen Lattenzaun (ccZaun), geschlossen; ersetzt die zwei Hälften des braunen Hoftors wc5Tor1/wc5Tor2 (Gemini B24, Schnittstelle 26.11.2026, RO44 Nr. 2)"
+    },
+    "wr20LattentorOffen": {
+      "quelle": "spiel/eigene/lattentor_offen.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "laendlich",
+      "begehbar": true,
+      "begehbar_grund": "offenes Tor, der Flügel steht nach innen",
+      "hinweis": "dasselbe Tor offen (Gemini B24); noch in keiner Karte"
     }
   }
 }

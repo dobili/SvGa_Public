@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 331,
+ "nextobjectid": 328,
  "layers": [
   {
    "id": 1,
@@ -24727,11 +24727,11 @@
     },
     {
      "id": 323,
-     "name": "wc5Tor1",
+     "name": "wr20LattentorZu",
      "type": "moebel",
      "x": 336,
      "y": 1328,
-     "width": 16,
+     "width": 32,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -24750,11 +24750,11 @@
     },
     {
      "id": 324,
-     "name": "wc5Tor2",
+     "name": "wr20LattentorZu",
      "type": "moebel",
-     "x": 352,
-     "y": 1328,
-     "width": 16,
+     "x": 336,
+     "y": 1616,
+     "width": 32,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -24762,7 +24762,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1336
+       "value": 1624
       },
       {
        "name": "kollision",
@@ -24773,11 +24773,11 @@
     },
     {
      "id": 325,
-     "name": "wc5Tor1",
+     "name": "wr20LattentorZu",
      "type": "moebel",
      "x": 336,
-     "y": 1616,
-     "width": 16,
+     "y": 1904,
+     "width": 32,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -24785,7 +24785,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1624
+       "value": 1912
       },
       {
        "name": "kollision",
@@ -24796,75 +24796,6 @@
     },
     {
      "id": 326,
-     "name": "wc5Tor2",
-     "type": "moebel",
-     "x": 352,
-     "y": 1616,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1624
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 327,
-     "name": "wc5Tor1",
-     "type": "moebel",
-     "x": 336,
-     "y": 1904,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1912
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 328,
-     "name": "wc5Tor2",
-     "type": "moebel",
-     "x": 352,
-     "y": 1904,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1912
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 329,
      "name": "wrLastkahnBug",
      "type": "moebel",
      "x": 56,
@@ -24887,7 +24818,7 @@
      ]
     },
     {
-     "id": 330,
+     "id": 327,
      "name": "wrLastkahnHeck",
      "type": "moebel",
      "x": 56,

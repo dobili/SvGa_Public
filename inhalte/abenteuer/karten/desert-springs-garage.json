@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 31,
+ "nextobjectid": 30,
  "layers": [
   {
    "id": 1,
@@ -1129,39 +1129,11 @@
     },
     {
      "id": 29,
-     "name": "rv5TuerSuedHell",
+     "name": "ds20RolltorInnen",
      "type": "moebel",
      "x": 32,
      "y": 160,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 1
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      },
-      {
-       "name": "deckkraft",
-       "type": "int",
-       "value": 75
-      }
-     ]
-    },
-    {
-     "id": 30,
-     "name": "rv5TuerSuedHell",
-     "type": "moebel",
-     "x": 48,
-     "y": 160,
-     "width": 16,
+     "width": 32,
      "height": 16,
      "rotation": 0,
      "visible": true,

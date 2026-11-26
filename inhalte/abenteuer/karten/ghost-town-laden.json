@@ -782,12 +782,12 @@
     },
     {
      "id": 13,
-     "name": "gt14RegalLeer",
+     "name": "gt20RegalVerstaubt",
      "type": "moebel",
      "x": 32,
-     "y": 32,
+     "y": 16,
      "width": 32,
-     "height": 32,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -805,12 +805,12 @@
     },
     {
      "id": 14,
-     "name": "gt14RegalLeer",
+     "name": "gt20RegalVerstaubt",
      "type": "moebel",
      "x": 64,
-     "y": 32,
+     "y": 16,
      "width": 32,
-     "height": 32,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [

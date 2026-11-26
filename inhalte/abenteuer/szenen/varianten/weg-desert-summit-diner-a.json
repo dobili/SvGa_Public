@@ -134,8 +134,9 @@
       "feld": [6, 17]
     },
     {
-      "moebel": "wds6Wegweiser",
-      "feld": [2, 17]
+      "moebel": "wds20WegweiserErde",
+      "feld": [2, 17],
+      "versatz": [-8, 0]
     },
     {
       "moebel": "wds6Saguaro",

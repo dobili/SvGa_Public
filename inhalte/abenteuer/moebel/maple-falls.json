@@ -5814,6 +5814,29 @@
       "zustand": "gebraucht",
       "stil": "rustikal",
       "hinweis": "nur der Eckpfosten links oben der Reling C: Abschluss der linken Seite eines Geländers am Treppenloch, Gegenstück zu mf15GelaenderPfostenRechts (Regel 10.89, Autor, 16.11.2026)"
+    },
+    "mf20GartentorEisenOffen": {
+      "quelle": "spiel/eigene/gartentor_eisen_offen.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "offenes Tor in der Pforte, die Flügel stehen nach innen",
+      "hinweis": "Gartentor für den dunklen Eisenzaun (mf4Zaun), offen, beide Flügel nach innen; Pforten der Vorgärten und des Spielplatzes (Gemini B23, Schnittstelle 26.11.2026, RO44 Nr. 1)"
+    },
+    "mf20GartentorEisenZu": {
+      "quelle": "spiel/eigene/gartentor_eisen_zu.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "zaun",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "maske_fein": ["........", "........", "########", "########"],
+      "hinweis": "dasselbe Tor geschlossen (Gemini B23); noch in keiner Karte"
     }
   }
 }

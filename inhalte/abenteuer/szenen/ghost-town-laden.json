@@ -29,12 +29,12 @@
       "versatz": [0, 4]
     },
     {
-      "moebel": "gt14RegalLeer",
-      "feld": [2, 2]
+      "moebel": "gt20RegalVerstaubt",
+      "feld": [2, 1]
     },
     {
-      "moebel": "gt14RegalLeer",
-      "feld": [4, 2]
+      "moebel": "gt20RegalVerstaubt",
+      "feld": [4, 1]
     },
     {
       "moebel": "es7Fenster",

@@ -731,6 +731,18 @@ Profil › Einstellungen › Fehler melden.
       den Lesesaal. Hale sagte bisher „Wir haben um vier den Termin“, obwohl es nach Pratts
       Heimweg schon Abend ist; jetzt „Wir haben heute Abend noch einen Termin“ (Widerspruch genügt).
       **Antwort:** „N2738 ok“ oder Ort, Figur und was nicht passt.
+- [ ] N2739. **Neue Gemini-Bilder (26.11.2026, erstmals über die Schnittstelle):** Im Gespräch
+      zeigen Wren, Ike, der Fährmann, Gideon, die Bläserin, Odile, Dot und die Turnierleiterin
+      jetzt echte Porträts mit Mienen. In der Raststätte (Akt 4) erscheint bei Novas erstem
+      echten Lächeln ein großes Bild. Am Weg Pinewood–Ghost Town zeigen Typenschild Z-1, lose
+      Seite und Metallbauer ein Fundbild. Auf den Karten: offene Eisentore an den Pforten in Maple
+      Falls, helle Lattentore am Weg Riverton–Ironwood, das Schleusentor in Lockport von der
+      Seite, ein Rolltor innen in der Garage von Desert Springs, ein grauer Stolleneingang im
+      Steinbruch, ein verstaubtes Regal im Laden von Ghost Town, eine Waage mit Kürbis auf dem
+      Kürbishof, Wegweiser ohne Grasfuß auf Sand und Erde. Rasthaus und Flachdach im Schnee (B22,
+      K17) sind zurückgezogen: Die Raststätte liegt im milden Winter ohne Schnee (Widerspruch
+      genügt). Passt alles, und lassen sich die Pforten durchgehen?
+      **Antwort:** „N2739 ok“ oder Notiz je Bild.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

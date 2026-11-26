@@ -481,6 +481,17 @@
       "stil": "laendlich",
       "hinweis": "Kürbiswaage am Hofladen (Auslöser kuerbiswaage, Kartengutachten Akt 1: die Waage war nicht zu sehen)",
       "maske_fein": [".##.", "####", ".###", "####"]
+    },
+    "kh20Kuerbiswaage": {
+      "quelle": "spiel/eigene/kuerbiswaage.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "waage",
+      "zustand": "gebraucht",
+      "stil": "laendlich",
+      "hinweis": "Kürbiswaage am Hofladen mit Kürbis auf der Schale (Auslöser kuerbiswaage; Gemini K32, Schnittstelle 26.11.2026, statt der Marktwaage kh13Kuerbiswaage)",
+      "maske_fein": ["....", "....", "....", "....", ".##.", "####", ".###", "####"]
     }
   }
 }

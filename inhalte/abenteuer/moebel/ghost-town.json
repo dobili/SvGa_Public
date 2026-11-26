@@ -1257,6 +1257,17 @@
       "zustand": "alt",
       "stil": "rustikal",
       "beschreibung": "Leeres Holzgestell für Ware; in der verlassenen Stadt steht es leer."
+    },
+    "gt20RegalVerstaubt": {
+      "quelle": "spiel/eigene/regal_verstaubt.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "regal",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "rustikal",
+      "beschreibung": "Leeres, verstaubtes Holzregal mit Spinnweben; in der verlassenen Stadt steht es leer (Gemini K31, Schnittstelle 26.11.2026, statt des Käseregals gt14RegalLeer)."
     }
   }
 }

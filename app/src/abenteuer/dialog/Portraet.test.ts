@@ -90,7 +90,8 @@ function findeBild(pfade: ReadonlySet<string>, sprecher: string, stimmung: strin
  * Sie haben keine eigene Figur in figuren-neu, aus der skripte/ersatzportraets.mjs ein Porträt
  * baut (Stand 25.11.2026). Die Liste schrumpft nur.
  */
-const NUR_ERSATZGESICHT = new Set(["wren", "ike", "faehrmann", "greifarm"]);
+// Wren, Ike und der Fährmann haben seit dem 26.11.2026 ein Porträtblatt (Gemini-Schnittstelle).
+const NUR_ERSATZGESICHT = new Set(["greifarm"]);
 
 /** Stufe des gefundenen Bildes: echt (Großbild, Blatt), Figur (Ersatzporträt) oder Ersatzgesicht. */
 function stufeVon(pfad: string | null): "echt" | "figur" | "ersatzgesicht" | "keins" {

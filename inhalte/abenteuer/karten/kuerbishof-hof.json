@@ -13117,12 +13117,12 @@
     },
     {
      "id": 357,
-     "name": "kh13Kuerbiswaage",
+     "name": "kh20Kuerbiswaage",
      "type": "moebel",
      "x": 16,
-     "y": 384,
+     "y": 368,
      "width": 16,
-     "height": 16,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [

@@ -518,7 +518,8 @@
       "begehbar_grund": "liegt im Wasser, dort läuft niemand"
     },
     "ld8Stemmtor": {
-      "quelle": "spiel/eigene/schleusentor_stemm.png",
+      "quelle": "spiel/eigene/schleusentor_seite.png",
+      "hinweis": "Stemmtor von der Seite: Laufsteg mit Geländer quer über den Kanal (West–Ost), Wasser durchsichtig, oben und unten frei für das Pflaster der Kaimauer (Gemini K2b, Schnittstelle 26.11.2026; vorher schleusentor_stemm.png)",
       "lauf": "senkrecht",
       "breite": 32,
       "hoehe": 144,

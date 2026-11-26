@@ -485,6 +485,17 @@
         [2, 4]
       ],
       "hinweis": "Stolleneingang im Fels mit Holzrahmen, ohne Schild (Gemini 15.11.2026), Fels in den Farben der Grubenwand umgefärbt"
+    },
+    "st20StollenmundGrau": {
+      "quelle": "spiel/eigene/stollenmund_grau.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "tuer",
+      "zustand": "alt",
+      "stil": "industrie",
+      "tuer": [[1, 3]],
+      "hinweis": "Stolleneingang aus grauem Granit mit Holzrahmen; ersetzt die Hausecke aus dem Paket (st5Stollenmund) in den Fassungen der Grube (Gemini K30, Schnittstelle 26.11.2026)"
     }
   }
 }

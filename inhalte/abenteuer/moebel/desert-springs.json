@@ -339,6 +339,17 @@
         "...#............#...",
         "...#............#..."
       ]
+    },
+    "ds20RolltorInnen": {
+      "quelle": "spiel/eigene/rolltor_innen.png",
+      "kollision": false,
+      "art": "tuer",
+      "zustand": "gebraucht",
+      "stil": "industrie",
+      "blick": "unten",
+      "breite": 32,
+      "hoehe": 16,
+      "hinweis": "Rolltor der Garage von innen in der Südwand (Walze oben, Kette); außen hat die Garage ein Rolltor (ds6Garage), innen standen zwei Holztüren (Gemini K18, Schnittstelle 26.11.2026)"
     }
   }
 }

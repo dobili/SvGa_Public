@@ -151,8 +151,9 @@
       "feld": [28, 117]
     },
     {
-      "moebel": "wds6Wegweiser",
-      "feld": [28, 72]
+      "moebel": "wds20WegweiserErde",
+      "feld": [28, 72],
+      "versatz": [-8, 0]
     },
     {
       "moebel": "wds6Schranke",

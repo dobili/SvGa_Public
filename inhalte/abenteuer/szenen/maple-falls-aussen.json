@@ -768,7 +768,7 @@
     },
     {
       "moebel": "mf4ZaunEckeRechts",
-      "feld": [24, 29]
+      "feld": [25, 29]
     },
     {
       "moebel": "mf4ZaunEckeLinks",
@@ -1192,6 +1192,30 @@
     {
       "moebel": "cc4Hecke",
       "feld": [0, 28]
+    },
+    {
+      "moebel": "mf20GartentorEisenOffen",
+      "feld": [3, 22]
+    },
+    {
+      "moebel": "mf20GartentorEisenOffen",
+      "feld": [13, 22]
+    },
+    {
+      "moebel": "mf20GartentorEisenOffen",
+      "feld": [23, 22]
+    },
+    {
+      "moebel": "mf20GartentorEisenOffen",
+      "feld": [26, 28]
+    },
+    {
+      "moebel": "mf20GartentorEisenOffen",
+      "feld": [54, 30]
+    },
+    {
+      "moebel": "mf4ZaunMitte",
+      "feld": [24, 29]
     }
   ],
   "ausloeser": [

@@ -11,8 +11,12 @@
  *
  * Rolle im Gesamtbild: reine Regeln ohne Phaser. oberwelt/gefolgeschicht.ts zeichnet, die Prüfung
  * pipeline/abenteuer/anwesenheit.py zählt Begleiter als anwesend.
- * Abhängigkeiten: keine.
+ * Dazu kommen Begleiter je Ort aus orte.json (Feld `begleiter` mit Bedingung, 26.11.2026): Juno ab
+ * dem Ende von Akt 1 auf den Reisen, Mama ab Desert Springs. So folgt die Figur auf jedem Weg dorthin,
+ * auch mit Bus oder Zug, ohne dass jede Reise in Ink gesetzt werden muss.
+ * Abhängigkeiten: regeln/bedingung.ts.
  */
+import { erfuellt } from "./bedingung";
 
 /** Name der Dialogvariable mit den Begleitern. */
 export const BEGLEITER_VARIABLE = "begleiter";
@@ -42,14 +46,14 @@ export function begleiterAus(variablen: Readonly<Record<string, unknown>>): stri
 }
 
 /**
- * Weichen die Begleiter der Dialogvariablen von denen ab, mit denen die Karte aufgestellt ist?
- * Beispiel: Karte ohne Begleiter, nach dem Gespräch begleiter „juno“ → ja (neu aufstellen).
+ * Weichen die Begleiter nach einem Gespräch (begleiterFuer) von denen ab, mit denen die Karte
+ * aufgestellt ist? Beispiel: Karte ohne Begleiter, danach ["juno"] → ja (neu aufstellen).
  */
 export function begleiterGeaendert(
   aufgestellt: readonly string[],
-  nachher: Readonly<Record<string, unknown>>,
+  nachher: readonly string[],
 ): boolean {
-  return aufgestellt.join(",") !== begleiterAus(nachher).join(",");
+  return aufgestellt.join(",") !== nachher.join(",");
 }
 
 /**
@@ -84,6 +88,26 @@ export class Spur {
     // Die Spur hat immer mindestens das Feld des Helden (Konstruktor).
     return feld ?? { x: 0, y: 0 };
   }
+}
+
+/** Begleiter eines Orts mit Bedingung (orte.json, Feld `begleiter`). */
+export interface Ortsbegleiter {
+  readonly name: string;
+  readonly wenn?: string;
+}
+
+/**
+ * Die Begleiter auf einer Karte dieses Orts: aus der Dialogvariable, dazu die des Orts, deren
+ * Bedingung gilt; ohne Doppelte, Ink zuerst.
+ * Beispiel: Riverton mit { name: "juno", wenn: "endeAkt1Gesehen und nicht abschiedGesehen" } und
+ * endeAkt1Gesehen → ["juno"]; in Maple Falls ohne Variable → [].
+ */
+export function begleiterFuer(
+  ortsbegleiter: readonly Ortsbegleiter[] | undefined,
+  variablen: Readonly<Record<string, unknown>>,
+): string[] {
+  const vomOrt = (ortsbegleiter ?? []).filter((b) => !b.wenn || erfuellt(b.wenn, variablen));
+  return [...new Set([...begleiterAus(variablen), ...vomOrt.map((b) => b.name)])];
 }
 
 /** Blickrichtung wie in der Szene. */

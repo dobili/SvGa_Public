@@ -14,7 +14,7 @@ import { useRef, useState } from "react";
 import type { Dialogvariablen, Wirkungen } from "../dialog/geschichte";
 import { stillesEnde } from "../dialog/stillesende";
 import { erfuellt } from "../regeln/bedingung";
-import { begleiterGeaendert } from "../regeln/gefolge";
+import { begleiterFuer, begleiterGeaendert } from "../regeln/gefolge";
 import { variablenAusBesitz, variablenNachDialog } from "../regeln/dialogvariablen";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { tSpiel } from "../texte/texte";
@@ -23,7 +23,7 @@ import type { Oberweltkern } from "./kern";
 import { mitGemerktemDialog } from "./nachergebnis";
 import type { Runden } from "./useAufgabenrunde";
 import type { Partien } from "./usePartiestart";
-import { ladeDialog } from "./weltdaten";
+import { ladeDialog, type Weltdaten } from "./weltdaten";
 
 /** Ein offener Dialog: die übersetzte Geschichte, der Knoten und der Name der Datei. */
 export interface OffenerDialog {
@@ -115,6 +115,15 @@ function starteFolge(
  * Dialoge der Oberwelt. Beispiel: Der Dialog mit Jo ruft `beginnePartie("mapleFalls.jo")`; beim
  * Ende sichert `beiDialogende` die Variablen und startet über die Deckwahl die Partie.
  */
+/**
+ * Stehen nach einem Gespräch andere Begleiter auf der Karte als beim Aufbau (Dialogvariable oder
+ * Bedingung des Orts, regeln/gefolge.ts)? In Erinnerungen nie.
+ */
+function begleiterNeu(w: Weltdaten | null, variablen: Readonly<Record<string, unknown>>): boolean {
+  if (!w || w.ort.art === "erinnerung") return false;
+  return begleiterGeaendert(w.begleiter, begleiterFuer(w.ort.begleiter, variablen));
+}
+
 export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden): Dialoge {
   const [dialog, setzeDialog] = useState<OffenerDialog | null>(null);
   const [abspann, setzeAbspann] = useState(false);
@@ -199,8 +208,7 @@ export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden):
     const reise = nimm(m.reise, null);
     if (reise) k.wechsleKarte(reise.karte, reise.ausloeser);
     // Neuer Begleiter (regeln/gefolge.ts): Die Karte stellt sich neu auf, er folgt ab jetzt.
-    else if (begleiterGeaendert(k.weltRef.current?.begleiter ?? [], neu.dialogvariablen))
-      k.stelleNeuAuf();
+    else if (begleiterNeu(k.weltRef.current, neu.dialogvariablen)) k.stelleNeuAuf();
     if (nimm(m.abspann, false)) setzeAbspann(true);
     if (nimm(m.fensterbank, false)) setzeFensterbank(true);
     const seite = nimm(m.tagebuchseite, null);

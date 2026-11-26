@@ -40,6 +40,8 @@ VAR kenntHale = false
 VAR okaforGetroffen = false
 VAR archivGeordnet = false
 VAR ordnenAngeboten = false
+// Das Archiv einmal betreten (Eingang der Karte, orte.json).
+VAR archivBetreten = false
 VAR erzaehlung1858Gesehen = false
 VAR erinnerungNewYorkBestanden = false
 VAR nadelCedarCreek = 0
@@ -52,6 +54,15 @@ VAR ausgangMapleFallsVictor = ""
 // Aus capital-arena-aussen.ink: Nach dem Abschied (Szene 109) spricht Ambrose nicht mehr
 // (Story-Bibel Abschnitt 33, Frage 5; Entscheidung Q21-5). Hier nur gelesen.
 VAR abschiedGesehen = false
+
+// ---------------------------------------------------------------- Eingang
+// Beim ersten Betreten des Archivs (orte.json, cedarCreek.archiv, eingang).
+
+=== eingang ===
+~ archivBetreten = true
+Eine Wendeltreppe hinunter. Es riecht nach Büchern, die nass geworden sind. #sprecher:erzaehler
+Eine einzige Lampe hängt am Kabel von der Decke. Sie flackert. #sprecher:erzaehler
+-> END
 
 // ---------------------------------------------------------------- Karton
 
@@ -74,10 +85,10 @@ Frag oben die Dame mit dem Buch. Das gebietet der Anstand. #sprecher:ambrose #st
 // cedarCreek.archivOrdnen beginnt hier; Befund der Gesamtsimulation).
 ~ ordnenAngeboten = true
 // Anwesenheit (25.11.2026): Mrs. Okafor sprach hier, stand aber oben im Lesesaal. Jetzt wartet sie
-// im Archiv unten an der Treppe (cedarCreek.okaforArchiv), bis es geordnet ist.
-Es riecht nach Büchern, die nass geworden sind. Eine einzige Lampe hängt am Kabel von der Decke. Sie flackert. #sprecher:erzaehler
-Mrs. Okafor steht unten an der Treppe, die Brille in die Stirn geschoben. #sprecher:erzaehler
-Da bist du ja. Links das neunzehnte Jahrhundert, rechts das zwanzigste. #sprecher:okafor #stimmung:laechelt
+// im Archiv an der Treppe (cedarCreek.okaforArchiv) und kommt herüber. Die beiden Zeilen vom Weg
+// hinunter spielen beim Betreten des Archivs (eingang, Wunsch des Autors 26.11.: nichts streichen).
+Mrs. Okafor kommt von der Treppe herüber. #sprecher:erzaehler #gehe:okaforArchiv>held
+Da bin ich. Links das neunzehnte Jahrhundert, rechts das zwanzigste. #sprecher:okafor #stimmung:laechelt
 Wo der Boden trocken ist. #sprecher:okafor #stimmung:laechelt
 * [Anfangen]
     -> ordnen_wahl

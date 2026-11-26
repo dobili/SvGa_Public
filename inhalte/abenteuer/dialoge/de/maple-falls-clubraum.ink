@@ -244,12 +244,18 @@ Noch einmal? Ich habe Zeit, und Kekse. #sprecher:coachDelgado #stimmung:laechelt
 // Heimweg-Gespräch, der erste Schritt in Ambroses Bogen (schön gegen richtig). Nur nach der
 // ersten Nadel, etwa eine Minute. Klang: nach der Siegfanfare Stille, dann Abendgeräusche; die
 // Laternen gehen an.
+// Mr. Pratt an der Tür des Clubraums, wenn man ihn vor dem Coach anspricht (mapleFalls.prattClub).
+=== pratt_club ===
+Der Hausmeister wischt über den Rahmen der Vitrine und nickt dir zu. Erst der Coach, sagt sein Blick. #sprecher:erzaehler
+-> END
+
 === pratt_und_heimweg ===
 ~ heimwegNadelGesehen = true
-// Anwesenheit (25.11.2026): Mr. Pratt stand nur im Text an der Tür, nicht im Bild. Jetzt geht er
-// draußen im Flur vorbei, und {held} hört ihn durch die offene Tür.
-Draußen im Flur quietscht der Wagen des Hausmeisters. Durch die offene Tür hörst du Mr. Pratt murmeln: „Die haben auch gezählt. Bevor sie geschlagen haben.“ #sprecher:erzaehler
-Dann wird das Quietschen leiser. #sprecher:erzaehler
+// Anwesenheit (25.11.2026): Mr. Pratt steht nach der ersten Nadel an der Tür des Clubraums
+// (mapleFalls.prattClub, bis zu diesem Gespräch) und geht danach hinaus.
+An der Tür steht der Hausmeister, einen Lappen in der Hand, und sieht auf die Pokale von 1994. #sprecher:erzaehler
+Die haben auch gezählt. Bevor sie geschlagen haben. #sprecher:pratt #stimmung:nachdenklich
+Dann geht er wieder. #sprecher:erzaehler #gehe:prattClub>13,13
 Ambrose sagt lange nichts. Draußen vor dem Fenster gehen die Laternen an, eine nach der anderen. #sprecher:erzaehler #pause #licht:abend #musik:aus #uhr:abend
 Es war keine schöne Partie. #sprecher:ambrose #stimmung:nachdenklich
 * [„Ich habe sie aber nicht verloren.“]
@@ -463,9 +469,10 @@ Und ein Matt in eins, das hab ich selbst gefunden. #sprecher:juno #stimmung:laec
 // „Hale“ ein tiefer Ton, Ambroses Thema bricht ab.
 ~ victorGesehen = true
 // Anwesenheit (Befund des Autors, 25.11.2026): Hale und {rivale} kamen nur im Text, im Bild stand
-// niemand. Jetzt stehen sie nach der ersten Nadel im Clubraum (mapleFalls.haleClub, victorClub)
-// und gehen am Ende sichtbar zur Tür (#gehe).
-Draußen vor dem Fenster parkt ein schwarzer Wagen. Neben Coach Delgado steht ein Mann, ein Telefon am Ohr, ein zweites in der Hand. #sprecher:erzaehler #pause #musik:aus #klang:wagen
+// niemand. Jetzt warten sie nach der ersten Nadel an der Tür des Clubraums (mapleFalls.haleClub,
+// victorClub), kommen herein (#gehe) und gehen am Ende sichtbar hinaus.
+Ein schwarzer Wagen hält vor der Schule. Ein Mann steigt aus, ein Telefon am Ohr, ein zweites in der Hand. #sprecher:erzaehler #pause #musik:aus #klang:wagen
+Dann steht er in der Tür und kommt herein, hinter ihm {rivalin:ein Mädchen|ein Junge}. #sprecher:erzaehler #gehe:haleClub>19,5;victorClub>23,5
 Coach Delgado hat die Trainingsjacke bis oben zugezogen. #sprecher:erzaehler
 Der Mann gibt jedem die Hand, auch dir. Er hat ein freundliches, müdes Gesicht. #sprecher:erzaehler
 Ein Programm, das nie krank wird und nie die Geduld verliert. Perfect Move. #sprecher:grahamHale #stimmung:laechelt
@@ -519,7 +526,7 @@ Gut gespielt, {rivale}. Nächstes Mal schneller, ja? #sprecher:grahamHale #stimm
 Wir haben um vier den Termin. #sprecher:grahamHale #stimmung:nachdenklich
 Etwas geht über {rivale}s Gesicht. Sehr kurz. #sprecher:erzaehler #pause
 Ja. #sprecher:victor #stimmung:riss
-Dann gehen beide zur Tür hinaus. #sprecher:erzaehler #gehe:victorClub>13,13;haleClub>14,13
+Dann sind sie weg. #sprecher:erzaehler #gehe:victorClub>13,13;haleClub>14,13
 {rivalin:Die|Der} war nicht nett. #sprecher:juno #stimmung:nachdenklich #pause
 Niemand widerspricht. #sprecher:erzaehler
 Aber {rv_er} war gut. #sprecher:juno #stimmung:nachdenklich

@@ -63,8 +63,9 @@ STATIST_ALS_FIGUR: dict[tuple[str | None, str], str] = {
 # Sprecher, die eine Figur unter anderem Namen ist (Tessa heißt, bis sie sich vorstellt, „Joggerin“).
 SPRECHER_ALS_FIGUR = {"joggerin": "tessa"}
 # Begleiter (app/src/abenteuer/regeln/gefolge.ts): Wer mit {held} geht, ist auf den Karten dieser
-# Orte anwesend. Gesetzt in Ink (`~ begleiter = "juno"`); test_abenteuer_anwesenheit.py prüft, dass
-# jeder Eintrag in Ink gesetzt wird. Juno: vom Ortsschild in Maple Falls bis zur Busfahrt zurück.
+# Orte anwesend. Hier die in Ink gesetzten (`~ begleiter = "juno"`); test_abenteuer_anwesenheit.py
+# prüft, dass jeder Eintrag in Ink gesetzt wird. Juno: vom Ortsschild in Maple Falls bis zur
+# Busfahrt zurück. Dazu die Begleiter je Ort aus orte.json (Feld `begleiter`, Welt.begleitung).
 BEGLEITUNG: dict[str, frozenset[str]] = {
     "juno": frozenset({"wegMapleCedar", "cedarCreek"}),
 }
@@ -105,6 +106,7 @@ class Welt:
     akt: dict[str, int] = field(default_factory=dict)
     hauptknoten: set[str] = field(default_factory=set)
     erinnerungsorte: set[str] = field(default_factory=set)
+    begleitung: dict[str, set[str]] = field(default_factory=dict)  # Ort → Begleiter (orte.json)
 
 
 def _objekte(pfad: Path) -> list[dict]:
@@ -196,6 +198,7 @@ def lade_welt(daten: Path = DATEN) -> Welt:
     orte = lade_orte(daten)
     welt = Welt(namen=_namen(orte, daten), akt=_akte(orte, daten), hauptknoten=_hauptknoten(daten))
     for ort in orte:
+        welt.begleitung[ort["kennung"]] = {b["name"] for b in ort.get("begleiter", [])}
         if ort.get("art") == "erinnerung" or ort["kennung"].startswith("erinnerung"):
             welt.erinnerungsorte.add(ort["kennung"])
         for karte in ort["karten"]:
@@ -206,7 +209,7 @@ def lade_welt(daten: Path = DATEN) -> Welt:
 def _zeilenfunde(welt: Welt, text: str, marken: str, karte: str) -> list[tuple[str, str]]:
     """Die Funde einer Zeile als (Prüfung, Figur oder Ortswort)."""
     ort = karte.split(".")[0]
-    mit = {name for name, orte in BEGLEITUNG.items() if ort in orte}
+    mit = {name for name, orte in BEGLEITUNG.items() if ort in orte} | welt.begleitung.get(ort, set())
     hier = welt.anwesend.get(karte, set()) | mit
     funde = []
     sprecher = SPRECHER.search(marken)
@@ -308,7 +311,9 @@ def vorschlag(fund: Fund) -> str:
     """
     knoten = fund.stelle.split(".")[-1]
     if fund.wer in MITREISENDE and fund.pruefung != "ort":
-        return "Begleiter für diesen Reiseabschnitt setzen (Ink: ~ begleiter = …; BEGLEITUNG ergänzen)"
+        return (
+            "Begleiter für diesen Ort in orte.json (Feld begleiter, mit Bedingung) oder die Figur hinführen"
+        )
     if "ankunft" in knoten:
         return "Ankunft beim Betreten der Zielkarte spielen (Eingang der Karte), nicht am Übergang"
     if fund.pruefung == "ort":

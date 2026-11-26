@@ -13,7 +13,8 @@ import { EINLEITUNG_GESEHEN, GRUNDSTAND, starteMitStand } from "./abenteuer-affe
 import { klickeDurch } from "./abenteuer-wegsperren";
 import { liesPartieImBrowser, tippeZug } from "./abenteuer-zugwahl";
 
-const FRIST_MS = 30000;
+/** Großzügig: Unter Last (alle Tests parallel) braucht der Bot der Variante bis zu einer halben Minute. */
+const FRIST_MS = 60000;
 const NACHSEHEN_MS = 250;
 /** Dame schlägt den König (Nebel, Ente: kein Schach, Königsfang). */
 const KOENIGSFANG = "4k3/8/8/8/8/8/4Q3/4K3 w - - 0 1";
@@ -64,7 +65,9 @@ const FAELLE: readonly Fall[] = [
 
 for (const fall of FAELLE) {
   test(`${fall.variante}: eine Partie bis zum Ende und der Satz danach`, async ({ page }) => {
-    test.slow();
+    // Eigene Gesamtfrist statt test.slow (180 s): Paket, Gespräch, Bot und Rückweg können unter Last je
+    // eine halbe Minute brauchen.
+    test.setTimeout(4 * FRIST_MS);
     await page.route("**/abenteuer/paket.json", async (r) => {
       const antwort = await r.fetch();
       const verzeichnis = (await antwort.json()) as { dateien: { pfad: string }[] };
@@ -86,7 +89,7 @@ for (const fall of FAELLE) {
       position: fall.position,
       dialogvariablen: { ...EINLEITUNG_GESEHEN, ...fall.variablen },
     });
-    await page.getByTestId("abenteuer-aktion").click({ timeout: 15000 });
+    await page.getByTestId("abenteuer-aktion").click({ timeout: FRIST_MS });
     const los = page.getByTestId("abenteuer-deck-los");
     await klickeDurch(page, fall.wahl, los);
     await los.click();

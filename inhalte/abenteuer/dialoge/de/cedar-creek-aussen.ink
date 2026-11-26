@@ -115,7 +115,7 @@ Unten im Archiv steht noch ein Karton. #sprecher:erzaehler
 === sterne_angebot ===
 // Anwesenheit (25.11.2026): Mae, Dex und Mrs. Okafor stehen jetzt am Steg (cedarCreek.maeSteg,
 // dexSteg, okaforSteg), solange die Sternennacht aussteht; Maes Teleskop steht schon dort.
-Es wird dunkel. Am Steg haben Mae und Dex eine Decke ausgebreitet, neben dem Teleskop. #sprecher:erzaehler #uhr:abend
+Es wird dunkel. Am Steg breiten Mae, Dex und Juno eine Decke aus. #sprecher:erzaehler #uhr:abend
 Mrs. Okafor hat eine Thermoskanne dabei. #sprecher:erzaehler
 Da bist du ja! Gleich geht es los! #sprecher:mae #stimmung:froh
 * [Dazusetzen]
@@ -521,7 +521,7 @@ Sie hat nicht gefragt, warum. Sie fragt in letzter Zeit weniger. #sprecher:erzae
 // angekommen ist (cedarCreek.coachCedar, samCedar); teamAngekommen erst am Ende, sonst verschwänden
 // sie mitten im Gespräch, und am Schluss gehen sie zur Bibliothek.
 === team_kommt ===
-Über dem Ort schlägt die Uhr acht. An der Haltestelle steht der Bus, der Motor tickt noch. #sprecher:erzaehler #klang:bus
+Über dem Ort schlägt die Uhr acht. Auf der Straße klappert ein Bus. #sprecher:erzaehler #klang:bus
 Dann ein Pfiff auf zwei Fingern. #sprecher:erzaehler #klang:pfiff_finger
 Morgen, Vorhut! Steht die Bibliothek noch? #sprecher:coachDelgado #stimmung:laechelt
 Ich hab im Bus geschlafen. Mit dem Kopf auf dem Schachkoffer, der ist hart. #sprecher:sam #stimmung:laechelt

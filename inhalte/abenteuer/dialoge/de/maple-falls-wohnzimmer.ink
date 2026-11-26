@@ -38,6 +38,8 @@ VAR hectorGetroffen = false
 // Eingang des Wohnzimmers (19.11.2026, Wunsch des Autors): Das Knarren der Treppe gehört zum
 // Herunterkommen, nicht ins Gespräch mit Mama. treppeAbendGesehen setzt treppe_abend.
 VAR treppeAbendGesehen = false
+// Der erste Morgen mit Mama an der Haustür (morgen_mama, Eingang des Wohnzimmers).
+VAR morgenMamaGesehen = false
 // Akt 2, Szene 38 (Roman, Kapitel 23): nadelRiverton setzt die Hülle, verbotGesehen setzt diese
 // Datei oder, wer ohne Heimweg nach Ironwood geht, ironwood-aussen.ankunft_zu_fuss (Anruf).
 VAR nadelRiverton = 0
@@ -83,8 +85,18 @@ VAR abschiedGesehen = false
 === eingang ===
 {
 - not ankunftGesehen: -> ankunft
+- ersteNachtGesehen and not morgenMamaGesehen: -> morgen_mama
 - else: -> treppe_abend
 }
+
+// Der erste Morgen (vorher am Ende von maple-falls-dachboden.erste_nacht, im Zimmer ohne Mama;
+// Anwesenheit 25.11.2026, Wortlaut nach Wunsch des Autors vom 26.11. erhalten): Wer herunterkommt,
+// trifft Mama an der Haustür.
+=== morgen_mama ===
+~ morgenMamaGesehen = true
+Am Morgen steht Mama schon in der Tür, den Autoschlüssel in der Hand. #sprecher:erzaehler #licht:tag #uhr:morgen #gehe:mutter>5,10
+Die Schule ist die Straße runter. Frag nach Coach Delgado und dem Schachteam, ja? #sprecher:mutter #stimmung:laechelt
+-> END
 
 // Wunsch des Autors (19.11.2026): Das Bild hält an, wenn {held} am Abend herunterkommt; das Knarren
 // der neunten Stufe und wo Mama ist, stehen hier statt im Gespräch mit ihr (erster_abend).

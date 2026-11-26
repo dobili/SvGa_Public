@@ -12,8 +12,9 @@ from pathlib import Path
 from pipeline.abenteuer.anwesenheit import BEGLEITUNG, SCHAUPLATZ, funde, offene
 from pipeline.abenteuer.anwesenheit_geprueft import GEMELDET, GEPRUEFT
 
-# Offene Funde (ohne Grund in GEPRUEFT); darf nur sinken. Stand 25.11.2026 nach Akt 1.
-OBERGRENZE = 147
+# Offene Funde (ohne Grund in GEPRUEFT); darf nur sinken. Stand 26.11.2026: Akt 1 behoben, Juno ab
+# Akt 2 und Mama ab Desert Springs als Begleiterinnen (orte.json, Feld begleiter).
+OBERGRENZE = 89
 
 
 def test_offene_funde_unter_der_obergrenze():

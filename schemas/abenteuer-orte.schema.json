@@ -29,16 +29,7 @@
       "pattern": "^[a-z][a-zA-Z0-9]*(\\.[a-zA-Z0-9]+)+$"
     },
     "licht": {
-      "enum": [
-        "tag",
-        "abend",
-        "nacht",
-        "nebel",
-        "dunst",
-        "serverblau",
-        "sepia",
-        "dunkel"
-      ]
+      "enum": ["tag", "abend", "nacht", "nebel", "dunst", "serverblau", "sepia", "dunkel"]
     },
     "karte": {
       "type": "object",
@@ -233,14 +224,7 @@
     "ort": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "kennung",
-        "name",
-        "nummer",
-        "karten",
-        "figuren",
-        "ausloeser"
-      ],
+      "required": ["kennung", "name", "nummer", "karten", "figuren", "ausloeser"],
       "properties": {
         "kennung": { "$ref": "#/$defs/kennung" },
         "name": { "$ref": "#/$defs/textschluessel" },
@@ -286,7 +270,20 @@
           "type": "array",
           "items": { "$ref": "#/$defs/ausloeser" }
         },
-        "club": { "$ref": "#/$defs/club" }
+        "club": { "$ref": "#/$defs/club" },
+        "begleiter": {
+          "description": "Begleiter auf Wegen (Wunsch des Autors, 25.11.2026; app/src/abenteuer/regeln/gefolge.ts): Wer an diesem Ort mit dem Helden unterwegs ist und ihm sichtbar folgt, solange die Bedingung gilt. Kurzname wie im Tag #sprecher. Dazu kommen die Begleiter aus der Dialogvariable begleiter.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name"],
+            "properties": {
+              "name": { "type": "string", "pattern": "^[a-z][A-Za-z]*$" },
+              "wenn": { "type": "string" }
+            }
+          }
+        }
       }
     }
   }

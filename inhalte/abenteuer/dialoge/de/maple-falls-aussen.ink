@@ -116,7 +116,7 @@ Du hast die Hand schon an der Schultür, da ruft jemand von der Bushaltestelle n
     Das Rad steht bereit. Der Zug wartet nicht. #sprecher:juno #stimmung:laechelt
 - else:
     ~ junoFahrradGesehen = true
-    Juno sitzt schon auf dem Gepäckträger. #sprecher:erzaehler
+    Am Samstag steht das grüne Fahrrad vor der Tür. Juno sitzt schon auf dem Gepäckträger. #sprecher:erzaehler #klang:fahrradklingel
     Ich frag gar nicht. Ich komm einfach mit. #sprecher:juno #stimmung:froh
     Bis Riverton nimmt uns der Zug mit, Räder dürfen mit. Ab da immer am Kanal entlang, bis Ironwood. #sprecher:juno #stimmung:froh
 }

@@ -302,9 +302,9 @@ Du weißt nur nicht, woher du das weißt. #sprecher:erzaehler #musik:ambrose #ge
 // Erstspieler-Durchgang 20.11.2026: Der Morgen war nicht erzählt; draußen hieß es plötzlich „Guten
 // Morgen“, und keine Quest nannte das nächste Ziel. Jetzt der Morgen und der Weg zur Schule.
 // Anwesenheit (Befund des Autors, 25.11.2026): Mama sprach hier im Zimmer, stand aber nicht dort.
-// Jetzt ruft sie von unten herauf, und die Haustür fällt ins Schloss: Sie ist schon auf dem Weg.
-Am Morgen klappern unten Schlüssel. Mama ruft die Treppe herauf: „Die Schule ist die Straße runter. Frag nach Coach Delgado und dem Schachteam, ja?“ #sprecher:erzaehler #licht:tag #uhr:morgen
-Dann fällt die Haustür ins Schloss, und unten springt ein Motor an. #sprecher:erzaehler
+// Ihr Morgen spielt jetzt unten im Wohnzimmer, wo sie steht (maple-falls-wohnzimmer.morgen_mama,
+// Eingang der Karte); hier hört {held} nur die Schlüssel.
+Am Morgen klappern unten Schlüssel. #sprecher:erzaehler #licht:tag #uhr:morgen
 -> END
 
 // ---------------------------------------------------------------- Abende auf dem Dachboden

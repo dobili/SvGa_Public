@@ -68,3 +68,21 @@ export function ohneFigurenNachBedingung<T extends object>(
   );
   return { ...karte, layers: gefiltert };
 }
+
+/**
+ * Schlägt die Bedingung einer Figur zwischen zwei Ständen um (Befund des Autors, 26.11.2026)?
+ * Warum: Die Karte filterte Figuren nur beim Betreten. Hale und {rivale} gingen nach der Partie
+ * im Clubraum zur Tür (`#gehe`), blieben dort stehen und versperrten den Ausgang, obwohl ihre
+ * Bedingung „nicht kenntHale“ nach dem Gespräch nicht mehr galt. Schlägt eine um, stellt die
+ * Oberwelt die Karte neu auf (oberwelt/useDialogende.ts).
+ * Beispiel: wenn "nadelMapleFalls > 0 und nicht kenntHale", kenntHale false → true: ja.
+ */
+export function bedingteFigurUmgeschlagen(
+  bedingungen: readonly (string | undefined)[],
+  vorher: Readonly<Record<string, unknown>>,
+  nachher: Readonly<Record<string, unknown>>,
+): boolean {
+  return bedingungen.some(
+    (wenn) => wenn !== undefined && erfuellt(wenn, vorher) !== erfuellt(wenn, nachher),
+  );
+}

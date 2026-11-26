@@ -14,6 +14,7 @@ import { useRef, useState } from "react";
 import type { Dialogvariablen, Wirkungen } from "../dialog/geschichte";
 import { stillesEnde } from "../dialog/stillesende";
 import { erfuellt } from "../regeln/bedingung";
+import { bedingteFigurUmgeschlagen } from "../regeln/figurbedingung";
 import { begleiterFuer, begleiterGeaendert } from "../regeln/gefolge";
 import { variablenAusBesitz, variablenNachDialog } from "../regeln/dialogvariablen";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
@@ -124,6 +125,23 @@ function begleiterNeu(w: Weltdaten | null, variablen: Readonly<Record<string, un
   return begleiterGeaendert(w.begleiter, begleiterFuer(w.ort.begleiter, variablen));
 }
 
+/**
+ * Kommt oder geht durch das Gespräch eine Figur dieses Orts mit Bedingung (regeln/figurbedingung.ts)?
+ * Beispiel: Hale und {rivale} verlassen den Clubraum, sobald kenntHale gilt.
+ */
+function figurenNeu(
+  w: Weltdaten | null,
+  vorher: Readonly<Record<string, unknown>>,
+  nachher: Readonly<Record<string, unknown>>,
+): boolean {
+  if (!w) return false;
+  return bedingteFigurUmgeschlagen(
+    w.ort.figuren.map((f) => f.wenn),
+    vorher,
+    nachher,
+  );
+}
+
 export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden): Dialoge {
   const [dialog, setzeDialog] = useState<OffenerDialog | null>(null);
   const [abspann, setzeAbspann] = useState(false);
@@ -207,8 +225,13 @@ export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden):
     k.schreibe(neu);
     const reise = nimm(m.reise, null);
     if (reise) k.wechsleKarte(reise.karte, reise.ausloeser);
-    // Neuer Begleiter (regeln/gefolge.ts): Die Karte stellt sich neu auf, er folgt ab jetzt.
-    else if (begleiterNeu(k.weltRef.current, neu.dialogvariablen)) k.stelleNeuAuf();
+    // Neuer Begleiter (regeln/gefolge.ts) oder eine Figur, deren Bedingung umschlug: Die Karte
+    // stellt sich neu auf (wer zur Tür ging, ist dann fort und versperrt sie nicht mehr).
+    else if (
+      begleiterNeu(k.weltRef.current, neu.dialogvariablen) ||
+      figurenNeu(k.weltRef.current, variablenBeimOeffnen.current, neu.dialogvariablen)
+    )
+      k.stelleNeuAuf();
     if (nimm(m.abspann, false)) setzeAbspann(true);
     if (nimm(m.fensterbank, false)) setzeFensterbank(true);
     const seite = nimm(m.tagebuchseite, null);

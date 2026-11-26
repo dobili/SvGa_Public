@@ -1,6 +1,6 @@
 /** Tests für regeln/figurbedingung.ts: Figuren mit `wenn` stehen nur, wenn die Bedingung gilt. */
 import { describe, expect, it } from "vitest";
-import { ohneFigurenNachBedingung } from "./figurbedingung";
+import { bedingteFigurUmgeschlagen, ohneFigurenNachBedingung } from "./figurbedingung";
 
 const karte = {
   layers: [
@@ -63,5 +63,18 @@ describe("bedingte Möbel", () => {
   it("lässt es stehen, wenn die Bedingung gilt", () => {
     const ergebnis = ohneFigurenNachBedingung(mitMoebel, () => undefined, { lilyGeholfen: true });
     expect(ergebnis).toBe(mitMoebel);
+  });
+});
+
+describe("bedingteFigurUmgeschlagen", () => {
+  const hale = "nadelMapleFalls > 0 und nicht kenntHale";
+  it("meldet, wenn Hale nach dem Gespräch gehen muss", () => {
+    const vorher = { nadelMapleFalls: 1, kenntHale: false };
+    const nachher = { nadelMapleFalls: 1, kenntHale: true };
+    expect(bedingteFigurUmgeschlagen([undefined, hale], vorher, nachher)).toBe(true);
+  });
+  it("bleibt still, wenn sich nichts ändert", () => {
+    const stand = { nadelMapleFalls: 1, kenntHale: false };
+    expect(bedingteFigurUmgeschlagen([hale], stand, { ...stand, andere: 3 })).toBe(false);
   });
 });

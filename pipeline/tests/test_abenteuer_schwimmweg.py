@@ -1,6 +1,11 @@
 """Dauertest: Schwimmer bleiben im Wasser (pipeline/abenteuer/schwimmweg.py, Befund 25.11.2026 abends)."""
 
-from pipeline.abenteuer.schwimmweg import alle_befunde, befunde, laufweg
+import pytest
+
+# schwimmweg liest das gezeichnete Raster über klippenbild, das Pillow braucht.
+pytest.importorskip("PIL")  # in Actions ohne Pillow übersprungen, wie die übrigen Bildtests
+
+from pipeline.abenteuer.schwimmweg import alle_befunde, befunde, laufweg  # noqa: E402
 
 
 def test_laufweg_erst_waagerecht_dann_senkrecht():

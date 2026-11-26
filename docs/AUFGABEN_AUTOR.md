@@ -743,6 +743,14 @@ Profil › Einstellungen › Fehler melden.
       K17) sind zurückgezogen: Die Raststätte liegt im milden Winter ohne Schnee (Widerspruch
       genügt). Passt alles, und lassen sich die Pforten durchgehen?
       **Antwort:** „N2739 ok“ oder Notiz je Bild.
+- [ ] N2740. **Gehaltener Joystick über den Kartenwechsel und Brett in Safari (26.11.2026):**
+      (1) Draußen in Maple Falls den Joystick nach rechts halten und über den rechten Rand in den
+      Park laufen, ohne loszulassen: Auf der neuen Karte bleibt der Held einen Augenblick stehen
+      (wie bisher, damit niemand gleich in den nächsten Auslöser läuft) und läuft dann von allein
+      weiter. Früher musste man loslassen und neu drücken. Mit der Tastatur genauso.
+      (2) Auf dem iPhone in Safari (nicht als installierte App) eine Partie beginnen und den
+      ersten Zug machen: Das Brett springt nicht mehr nach oben, es steht vom ersten Zug an still.
+      **Antwort:** „N2740 ok“ oder was springt oder stockt.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

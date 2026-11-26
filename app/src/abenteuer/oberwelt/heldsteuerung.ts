@@ -10,11 +10,15 @@
  * - Tippschritt (tippschritt.ts, Spieltest „einstieg“, 15.11.2026): Ein kurzes Antippen des
  *   Joysticks läuft bis zur Mitte der nächsten Kachel in Blickrichtung, wenn der Held seine Kachel
  *   beim Loslassen noch nicht verlassen hat. Gilt nur für den Joystick, wie früher fürs Kreuz.
- * Abhängigkeiten: phaser (Typen), achtrichtung.ts, tippschritt.ts, eingabepause.ts.
+ * - Kartenwechsel: Die neue Szene baut eine neue Heldsteuerung. Sie übernimmt, was Joystick und
+ *   Tastatur schon halten (gehalteneeingabe.ts); so läuft der Held nach der Eingabepause weiter.
+ * Abhängigkeiten: phaser (Typen), achtrichtung.ts, tippschritt.ts, eingabepause.ts,
+ * gehalteneeingabe.ts.
  */
 import type Phaser from "phaser";
 import { ausTasten, blickZu, type Achtrichtung, type Hauptrichtung } from "./achtrichtung";
 import { pfeiltasten } from "./eingabepause";
+import { gehaltenerJoystick, richtungGehalten } from "./gehalteneeingabe";
 import { kachelVon, tippschrittBeimLoslassen, type Punkt, type Tippschritt } from "./tippschritt";
 
 /** Was der Spieler will: Laufrichtung (acht) und Blick (vier, für Ansprechen und Auslöser). */
@@ -58,8 +62,10 @@ export class Heldsteuerung {
   tipp: Tippschritt | null = null;
   private readonly tasten: Readonly<Record<Hauptrichtung, Tastenpaar>> | null;
 
+  /** Übernimmt den schon gehaltenen Joystick (Kartenwechsel); ohne Tippschritt beim Loslassen. */
   constructor(tastatur: Phaser.Input.Keyboard.KeyboardPlugin | null | undefined = null) {
     this.tasten = tastenAus(tastatur);
+    this.eingabe = gehaltenerJoystick().eingabe;
   }
 
   /**
@@ -94,12 +100,16 @@ export class Heldsteuerung {
     this.tipp = null;
   }
 
-  /** Was der Spieler gerade will (Joystick vor Tastatur); null, wenn nichts gedrückt ist. */
+  /**
+   * Was der Spieler gerade will (Joystick vor Tastatur); null, wenn nichts gedrückt ist. Eine Taste
+   * gilt als gehalten, wenn Phaser sie kennt oder sie schon vor dem Kartenwechsel gedrückt war.
+   */
   wunsch(blick: Hauptrichtung): Steuereingabe | null {
     if (this.eingabe) return this.eingabe;
     const t = this.tasten;
     if (!t) return null;
-    const gehalten = (r: Hauptrichtung): boolean => t[r].some((taste) => taste.isDown);
+    const gehalten = (r: Hauptrichtung): boolean =>
+      t[r].some((taste) => taste.isDown) || richtungGehalten(r);
     const richtung = ausTasten({
       oben: gehalten("oben"),
       unten: gehalten("unten"),

@@ -94,8 +94,9 @@ async function laufeHinueber(seite: Page, taste: string): Promise<Lauf> {
     timeout: WECHSEL_FRIST_MS,
   });
   const los = await seite.evaluate(() => window.__zeitlupe.leinwaende.at(-1) ?? 0);
-  // Die neue Karte kennt den gehaltenen Tastendruck nicht: sobald ihre Szene steht (erste
-  // Kachelmeldung), loslassen und gleich wieder drücken.
+  // Sobald die Szene steht (erste Kachelmeldung), loslassen und gleich wieder drücken. Seit
+  // gehalteneeingabe.ts liefe der Held auch so weiter; der Messlauf bleibt so, damit die Zahlen
+  // mit den früheren vergleichbar sind (die Eingabepause endet beim Loslassen).
   await seite.waitForFunction((t) => window.__zeitlupe.kacheln.some((k) => k.t >= t), los, {
     timeout: WECHSEL_FRIST_MS,
     polling: ABFRAGE_MS,

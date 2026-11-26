@@ -55,7 +55,7 @@ import { Meldungsleiste } from "./Meldungsleiste";
 import { Orientierung } from "./Orientierung";
 import { Steuerhinweiszeile } from "./Steuerhinweis";
 import { useSpieluhr } from "./useSpieluhr";
-import { joysticksteuerung } from "./joysticksteuerung";
+import { useJoysticksteuerung } from "./joysticksteuerung";
 import { useVerscheuchen } from "./useVerscheuchen";
 import { useWarten } from "./useWarten";
 import { useSteuerhinweis } from "./useSteuerhinweis";
@@ -149,7 +149,7 @@ export function Oberwelt() {
   useBlickpunkte(k, ungestoert, treffer !== null, oeffneDialog);
   useAnsprechen(k, ungestoert, ausl.sprichFigurAn); // Hauptfiguren sprechen an (useAnsprechen.ts)
 
-  const kreuz = joysticksteuerung(spiel, hinweis);
+  const { bleibt, ...kreuz } = useJoysticksteuerung(spiel, hinweis, welt !== null);
 
   if (!stand) return <p className="fehlertext">{tSpiel("oberwelt.keinSpielstand")}</p>;
 
@@ -194,13 +194,13 @@ export function Oberwelt() {
       {!welt && !fehler && <p className="lade abenteuer-ergebnis">{tSpiel("oberwelt.laedt")}</p>}
       {/* Nicht über Brettfenstern: Quer ragte das Kreuz in Vorführung und Gedächtnisstellung über
           den Rand des Fensters (20.11.2026); laufen kann der Held dort ohnehin nicht. */}
-      {welt && !dialog && !vorfuehrung && !gedaechtnis && (
+      {(welt || bleibt) && !dialog && !vorfuehrung && !gedaechtnis && (
         <Joystick
           {...kreuz}
-          aktion={aktionFuer(welt, treffer) ?? neben.haupt?.text ?? null}
+          aktion={welt ? (aktionFuer(welt, treffer) ?? neben.haupt?.text ?? null) : null}
           zweiteAktion={neben.zweite}
           beiAktion={() => {
-            if (!aktionFuer(welt, treffer) && neben.haupt) return neben.haupt.tu();
+            if (welt && !aktionFuer(welt, treffer) && neben.haupt) return neben.haupt.tu();
             hinweis.benutzt("aktion");
             ausl.beiAktion();
           }}

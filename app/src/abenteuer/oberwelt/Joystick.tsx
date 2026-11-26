@@ -14,11 +14,20 @@
  * Ring. Ein Daumen darauf ist gewöhnliche Joystick-Eingabe; mit der Tastatur ausgelöst (Enter,
  * Leertaste) machen sie einen Schritt. Die Oberflächentests tippen sie an wie früher die Pfeile.
  * Für Tests steht die Lage an `data-richtung`, `data-blick` und `data-gangart` des Joysticks.
- * Abhängigkeiten: joystick.ts, joystick.css, achtrichtung.ts, heldsteuerung.ts (Typ).
+ * Abhängigkeiten: joystick.ts, joystick.css, achtrichtung.ts, heldsteuerung.ts (Typ),
+ * gehalteneeingabe.ts.
  */
-import { useRef, useState, type CSSProperties, type MouseEvent, type PointerEvent } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type MouseEvent,
+  type PointerEvent,
+} from "react";
 import { tSpiel } from "../texte/texte";
 import type { Hauptrichtung } from "./achtrichtung";
+import { merkeJoystick } from "./gehalteneeingabe";
 import type { Steuereingabe } from "./heldsteuerung";
 import { joystickLage, RUHE, type Joysticklage } from "./joystick";
 import "./joystick.css";
@@ -44,6 +53,11 @@ function useJoystickzeiger(
   const finger = useRef<number | null>(null);
   const lageRef = useRef<Joysticklage>(RUHE);
   const [lage, setzeLage] = useState<Joysticklage>(RUHE);
+  // Verschwindet der Joystick mit dem Daumen darauf (ein Dialog öffnet sich), kommt kein Loslassen
+  // mehr: Dann hält er auch nichts mehr fest, sonst liefe der Held auf der nächsten Karte allein.
+  useEffect(() => {
+    return () => merkeJoystick(null);
+  }, []);
 
   const melde = (neu: Joysticklage) => {
     const alt = lageRef.current;

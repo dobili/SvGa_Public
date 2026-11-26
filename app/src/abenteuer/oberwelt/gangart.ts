@@ -13,9 +13,12 @@
  * Bild: Figuren ohne Rennreihe rennen mit schnelleren Laufbildern (figurbilder.ts, rennname).
  * Auslöser prüft die Szene weiter je Bild auf der eigenen und der nächsten Kachel; bei 1,8-fachem
  * Tempo sind das unter 2 Pixel je Bild, nichts wird übersprungen.
- * Abhängigkeiten: Phaser (nur Typen).
+ * Kartenwechsel: Die neue Gangartsteuerung übernimmt Joystick und Umschalttaste, die schon gehalten
+ * sind (gehalteneeingabe.ts).
+ * Abhängigkeiten: Phaser (nur Typen), gehalteneeingabe.ts.
  */
 import type Phaser from "phaser";
+import { gehaltenerJoystick, umschaltGehalten } from "./gehalteneeingabe";
 
 /** Ab diesem Anteil des Daumenradius rennt der Held (Joystick, joystick.ts). */
 export const RENNEN_AB = 0.8;
@@ -44,7 +47,7 @@ export function gangartZu(ausschlag: number, alt: Gangart): Gangart {
  * `erlaubt` ist false innen und auf dem Fahrrad; dann bleibt es immer beim Gehen.
  */
 export class Gangartsteuerung {
-  private kreuz = false;
+  private kreuz = gehaltenerJoystick().rennen;
   private readonly umschalt: Phaser.Input.Keyboard.Key | null;
 
   /**
@@ -65,7 +68,7 @@ export class Gangartsteuerung {
 
   /** Rennt der Held gerade? */
   rennt(): boolean {
-    return this.erlaubt && (this.kreuz || this.umschalt?.isDown === true);
+    return this.erlaubt && (this.kreuz || this.umschalt?.isDown === true || umschaltGehalten());
   }
 
   /** Faktor auf das Tempo und auf die Bildrate der Laufbilder. */

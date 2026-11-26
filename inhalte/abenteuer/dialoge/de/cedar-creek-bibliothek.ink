@@ -441,3 +441,15 @@ Du hast jedes Bild erkannt! Auch das Erstickte! #sprecher:mae #stimmung:froh
     -> END
 + [„Nicht jetzt.“]
     -> END
+
+// ---------------------------------------------------------------- Team beim Clubkampf
+// Anwesenheit (25.11.2026): Coach und Sam stehen während des Clubkampfs im Lesesaal
+// (cedarCreek.coachBibliothek, samBibliothek); vorher redeten sie nur im Text.
+
+=== coach_clubkampf ===
+{~Erst zählen, dann ziehen. Und flüstern, wir sind in einer Bibliothek.|Mrs. Okafor spielt seit sechzig Jahren. Lass dich nicht von der Strickjacke täuschen.} #sprecher:coachDelgado #stimmung:laechelt
+-> END
+
+=== sam_clubkampf ===
+{~Dex rechnet alles dreimal nach. Das dauert, ist aber kein Grund zum Gähnen.|Ich hab Mae gefragt, ob sie Angst hat. Sie hat gefragt, wovor.} #sprecher:sam #stimmung:laechelt
+-> END

@@ -14,6 +14,15 @@ GEPRUEFT: dict[str, str] = {
         "Wie bei tessa: Der Steg am Flussweg ist ihr Laufziel, nicht der Ort des Gesprächs."
     ),
     # Prüfung „abschied“
+    "abschied:cedarCreek.coachCedar:cedar-creek-aussen.zedernwald": (
+        "Steht nur bis zur Ankunft des Teams (wenn: nicht teamAngekommen), lange vor dem Aufbruch."
+    ),
+    "abschied:cedarCreek.coachBibliothek:cedar-creek-aussen.zedernwald": (
+        "Steht nur bis zur Nadel von Cedar Creek (wenn: nadelCedarCreek == 0), vor dem Aufbruch."
+    ),
+    "abschied:mapleFalls.mutterDiner:maple-falls-wohnzimmer.aufbruch": (
+        "Mama steht nur am Diner-Abend im Diner (wenn: nicht dinerAbendErlebt), nicht beim Aufbruch."
+    ),
     "abschied:mapleFalls.mutter:maple-falls-wohnzimmer.aufbruch": (
         "Nur {held} und Juno brechen auf; Mama bleibt zu Hause (Story-Bibel, Szene 13)."
     ),

@@ -20,6 +20,7 @@
     "#............#",
     "##############"
   ],
+  "figuren": [{ "name": "lilyDachboden", "feld": [4, 8], "blick": "rechts" }],
   "objekte": [
     {
       "moebel": "mf12FensterRund",

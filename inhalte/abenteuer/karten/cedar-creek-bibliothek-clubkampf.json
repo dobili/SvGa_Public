@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 57,
+ "nextobjectid": 59,
  "layers": [
   {
    "id": 1,
@@ -1208,6 +1208,42 @@
     },
     {
      "id": 10,
+     "name": "coachBibliothek",
+     "type": "figur",
+     "x": 240,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
+      }
+     ]
+    },
+    {
+     "id": 11,
+     "name": "samBibliothek",
+     "type": "figur",
+     "x": 224,
+     "y": 64,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "blick",
+       "type": "string",
+       "value": "links"
+      }
+     ]
+    },
+    {
+     "id": 12,
      "name": "okafor",
      "type": "figur",
      "x": 208,
@@ -1225,7 +1261,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 13,
      "name": "dex",
      "type": "figur",
      "x": 128,
@@ -1243,7 +1279,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 14,
      "name": "mae",
      "type": "figur",
      "x": 160,
@@ -1261,7 +1297,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 15,
      "name": "zwillingeDrinnen",
      "type": "figur",
      "x": 128,
@@ -1279,7 +1315,7 @@
      ]
     },
     {
-     "id": 14,
+     "id": 16,
      "name": "jonahDrinnen",
      "type": "figur",
      "x": 144,
@@ -1297,7 +1333,7 @@
      ]
     },
     {
-     "id": 15,
+     "id": 17,
      "name": "zuschauerin",
      "type": "statist",
      "x": 208,
@@ -1330,7 +1366,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 18,
      "name": "zuschauer",
      "type": "statist",
      "x": 192,
@@ -1363,7 +1399,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 19,
      "name": "cc4RegalB",
      "type": "moebel",
      "x": 80,
@@ -1386,7 +1422,7 @@
      ]
     },
     {
-     "id": 18,
+     "id": 20,
      "name": "cc4RegalD",
      "type": "moebel",
      "x": 112,
@@ -1409,7 +1445,7 @@
      ]
     },
     {
-     "id": 19,
+     "id": 21,
      "name": "cc4Fenster",
      "type": "moebel",
      "x": 144,
@@ -1432,7 +1468,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 22,
      "name": "cc4RegalB",
      "type": "moebel",
      "x": 176,
@@ -1455,7 +1491,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 23,
      "name": "cc13Bibliotheksleiter",
      "type": "moebel",
      "x": 192,
@@ -1478,7 +1514,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 24,
      "name": "cc4PinnwandK",
      "type": "moebel",
      "x": 208,
@@ -1501,7 +1537,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 25,
      "name": "cc12Zeitungsregal",
      "type": "moebel",
      "x": 240,
@@ -1524,7 +1560,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 26,
      "name": "cc24Clubtisch",
      "type": "moebel",
      "x": 144,
@@ -1547,7 +1583,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 27,
      "name": "cc4Brett",
      "type": "moebel",
      "x": 168,
@@ -1570,7 +1606,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 28,
      "name": "cc4StuhlVorn",
      "type": "moebel",
      "x": 168,
@@ -1593,7 +1629,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 29,
      "name": "cc4StuhlRuecken",
      "type": "moebel",
      "x": 168,
@@ -1616,7 +1652,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 30,
      "name": "cc4Tresen",
      "type": "moebel",
      "x": 96,
@@ -1639,7 +1675,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 31,
      "name": "cc4RegalD",
      "type": "moebel",
      "x": 224,
@@ -1662,7 +1698,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 32,
      "name": "cc4RegalB",
      "type": "moebel",
      "x": 256,
@@ -1685,7 +1721,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 33,
      "name": "cc4StuhlVorn",
      "type": "moebel",
      "x": 232,
@@ -1708,7 +1744,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 34,
      "name": "cc5Tisch",
      "type": "moebel",
      "x": 224,
@@ -1731,7 +1767,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 35,
      "name": "ccBankerlampe",
      "type": "moebel",
      "x": 239,
@@ -1754,7 +1790,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 36,
      "name": "cc4StuhlVorn",
      "type": "moebel",
      "x": 264,
@@ -1777,7 +1813,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 37,
      "name": "cc5Tisch",
      "type": "moebel",
      "x": 256,
@@ -1800,7 +1836,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 38,
      "name": "ccBankerlampe",
      "type": "moebel",
      "x": 271,
@@ -1823,7 +1859,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 39,
      "name": "ccBankerlampeSteh",
      "type": "moebel",
      "x": 384,
@@ -1846,7 +1882,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 40,
      "name": "cc5Anrichte",
      "type": "moebel",
      "x": 304,
@@ -1869,7 +1905,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 41,
      "name": "cc4Globus",
      "type": "moebel",
      "x": 312,
@@ -1892,7 +1928,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 42,
      "name": "ccDoppeltuerSuedHolz",
      "type": "moebel",
      "x": 32,
@@ -1920,7 +1956,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 43,
      "name": "cc5Fussmatte",
      "type": "moebel",
      "x": 33,
@@ -1943,7 +1979,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 44,
      "name": "cc6RegalSeiteHell",
      "type": "moebel",
      "x": 80,
@@ -1966,7 +2002,7 @@
      ]
     },
     {
-     "id": 43,
+     "id": 45,
      "name": "cc4Treppe",
      "type": "moebel",
      "x": 336,
@@ -2004,7 +2040,7 @@
      ]
     },
     {
-     "id": 44,
+     "id": 46,
      "name": "cc15GelaenderPfostenLinks",
      "type": "moebel",
      "x": 336,
@@ -2037,7 +2073,7 @@
      ]
     },
     {
-     "id": 45,
+     "id": 47,
      "name": "cc15GelaenderSeiteLinks",
      "type": "moebel",
      "x": 336,
@@ -2060,7 +2096,7 @@
      ]
     },
     {
-     "id": 46,
+     "id": 48,
      "name": "cc15GelaenderUntenLinks",
      "type": "moebel",
      "x": 336,
@@ -2083,7 +2119,7 @@
      ]
     },
     {
-     "id": 47,
+     "id": 49,
      "name": "cc15GelaenderPfostenRechts",
      "type": "moebel",
      "x": 363,
@@ -2116,7 +2152,7 @@
      ]
     },
     {
-     "id": 48,
+     "id": 50,
      "name": "cc15GelaenderSeiteRechts",
      "type": "moebel",
      "x": 352,
@@ -2139,7 +2175,7 @@
      ]
     },
     {
-     "id": 49,
+     "id": 51,
      "name": "cc15GelaenderUntenRechts",
      "type": "moebel",
      "x": 352,
@@ -2162,7 +2198,7 @@
      ]
     },
     {
-     "id": 50,
+     "id": 52,
      "name": "mf12InnentuerHolz",
      "type": "moebel",
      "x": 304,
@@ -2185,7 +2221,7 @@
      ]
     },
     {
-     "id": 51,
+     "id": 53,
      "name": "cc4Kellertuer",
      "type": "moebel",
      "x": 32,
@@ -2208,7 +2244,7 @@
      ]
     },
     {
-     "id": 52,
+     "id": 54,
      "name": "cc4PflanzeK",
      "type": "moebel",
      "x": 16,
@@ -2231,7 +2267,7 @@
      ]
     },
     {
-     "id": 53,
+     "id": 55,
      "name": "ccBankerlampe",
      "type": "moebel",
      "x": 189,
@@ -2254,7 +2290,7 @@
      ]
     },
     {
-     "id": 54,
+     "id": 56,
      "name": "cc4StuhlRuecken",
      "type": "moebel",
      "x": 176,
@@ -2277,7 +2313,7 @@
      ]
     },
     {
-     "id": 55,
+     "id": 57,
      "name": "cc4StuhlRuecken",
      "type": "moebel",
      "x": 192,
@@ -2300,7 +2336,7 @@
      ]
     },
     {
-     "id": 56,
+     "id": 58,
      "name": "cc5Fussmatte",
      "type": "moebel",
      "x": 47,

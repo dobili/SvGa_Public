@@ -1514,3 +1514,13 @@ Browserprüfung der Sperren S16 und S17 mit echt gespielten kurzen Partien (Fabl
   Sitzende sitzen auf der Sitzfläche vor der Lehne und zwischen den Armlehnen.
 - Erste Zeilen, die eine Figur bei der Arbeit an ihrem Platz zeigen, bekommen bei ansprechenden
   Figuren eine Fassung {angesprochen}; ansprechzeile.py findet sie (Drechslerei).
+
+### Porträts, Anwesenheit, Begleiter (Befunde des Autors, 25.11.2026, umgesetzt, Widerspruch genügt)
+
+- Bilder des Pakets gelten bis zur nächsten Änderung am Paket (paket/paketmerker.ts), weil die App
+  nach jeder Partie eine neue Version gleich nachlädt; vorher fehlten danach Porträts.
+- Wer im Dialog spricht oder im Text vorkommt, steht auf der Karte, kommt als Begleiter mit
+  (Dialogvariable `begleiter`), oder die Szene wechselt dorthin; das prüft
+  pipeline/abenteuer/anwesenheit.py mit einer Obergrenze, die nur sinkt.
+- Sprecher ohne Porträtblatt zeigen ein Ersatzporträt aus der eigenen Figur
+  (skripte/ersatzportraets.mjs).

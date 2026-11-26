@@ -31,6 +31,9 @@ VAR nadelMapleFalls = 0
 // maple-falls-park.ink, dinerAbendGesehen diese Datei.
 VAR joGetroffen = false
 VAR dinerAbendGesehen = false
+// Der Abend im Diner ist erlebt (Ende von diner_abend): Mama sitzt danach nicht mehr in der Nische,
+// und der Eingang des Diners spielt die Szene nicht noch einmal (orte.json, mapleFalls.diner).
+VAR dinerAbendErlebt = false
 VAR hectorGetroffen = false
 // Eingang des Wohnzimmers (19.11.2026, Wunsch des Autors): Das Knarren der Treppe gehört zum
 // Herunterkommen, nicht ins Gespräch mit Mama. treppeAbendGesehen setzt treppe_abend.
@@ -334,7 +337,18 @@ Diner? Ich lade dich ein. #sprecher:mutter #stimmung:froh
 * [„Pommes?“]
     Pommes. Und vielleicht sogar ein Salat – vielleicht. #sprecher:mutter #stimmung:lacht
 * [„Gern.“]
-- -> diner_abend
+// Anwesenheit (Befund des Autors, 25.11.2026): Der Abend spielte im Wohnzimmer, Hector redete
+// dort, und Mama fragte „Gibt es hier Ketchup?“. Jetzt geht ihr ins Diner; dort sitzt Mama in der
+// Nische (mapleFalls.mutterDiner), Hector steht hinter der Theke, und der Eingang des Diners
+// spielt den Abend (diner_abend).
+- Mama nimmt die Jacke vom Haken. Ihr geht die Hauptstraße hinunter, bis die Leuchtschrift vom Diner über euch summt. #sprecher:erzaehler
+~ reise("mapleFalls.diner", "dinerAusgang")
+-> END
+
+// Mama in der Nische, falls {held} den Abend abgebrochen hat und sie anspricht.
+=== mutter_diner ===
+Setz dich, Spatz. Die Pommes kommen gleich. #sprecher:mutter #stimmung:laechelt
+-> diner_abend
 
 === diner_abend ===
 Das Diner an der Hauptstraße ist lang und schmal wie ein Eisenbahnwagen. Rote Bänke, eine Theke aus Blech. #sprecher:erzaehler #musik:diner #geraeusch:diner_kueche #klang:tuerglocke
@@ -376,6 +390,9 @@ Hat er nicht komisch gefunden. #sprecher:hector #stimmung:laechelt #musik:diner
 Draußen ist es dunkel geworden. Hinter dem Fenster die Hauptstraße, die einzige Ampel, dahinter schwarze Bäume. #sprecher:erzaehler
 Es ist ein guter Abend. Du merkst es erst, als er fast vorbei ist. #sprecher:erzaehler
 Du hast den ganzen Tag nicht an die alte Wohnung gedacht. #sprecher:erzaehler #musik:karte #geraeusch:aus
+~ dinerAbendErlebt = true
+Mama zahlt. Ihr geht zusammen nach Hause, die Hände in den Jackentaschen. #sprecher:erzaehler
+~ reise("mapleFalls.wohnzimmer", "haustuer")
 -> END
 
 // ---------------------------------------------------------------- Akt 2: Nicht Ironwood
@@ -410,16 +427,9 @@ Vor Menschen hat man Angst, vor Schulden, vor dem Zahnarzt. Aber vor einer Stadt
 - Nicht zum Turnier, sagst du. Das ist eine Unterscheidung, die Advokaten machen. #sprecher:ambrose #stimmung:laechelt
 Er klingt nicht tadelnd. Er klingt neugierig. #sprecher:erzaehler
 Zum ersten Mal seit Riverton interessiert ihn etwas mehr als die Tische. #sprecher:erzaehler
-Am Samstag steht das grüne Fahrrad vor der Tür. Juno sitzt schon auf dem Gepäckträger. #sprecher:erzaehler #klang:fahrradklingel #geraeusch:aus
-Ich frag gar nicht. Ich komm einfach mit. #sprecher:juno #stimmung:froh
-// Spieltest 2 (17.11.2026): Der Held steht noch in Maple Falls; die Reise bringt ihn an den Anfang des Kanalwegs.
-Bis Riverton nimmt uns der Zug mit, Räder dürfen mit. Ab da immer am Kanal entlang, bis Ironwood. #sprecher:juno #stimmung:froh
--> aufbruch_ironwood
-
-=== aufbruch_ironwood ===
-* [Mit Juno nach Riverton fahren]
-    ~ reise("riverton.aussen", "kanalweg")
-    -> END
-* [Noch nicht]
-    Ich warte. Das Rad auch. #sprecher:juno #stimmung:laechelt
-    -> END
+// Anwesenheit (Befund des Autors, 25.11.2026): Juno sprach hier im Wohnzimmer, stand aber draußen
+// vor der Tür. Jetzt klingelt sie, {held} geht hinaus, und das Gespräch mit dem Rad führt sie vor
+// dem Haus (maple-falls-aussen.juno_fahrrad).
+Am Samstag klingelt draußen eine Fahrradklingel. Vor der Haustür wartet Juno mit dem grünen Rad. #sprecher:erzaehler #klang:fahrradklingel #geraeusch:aus
+~ reise("mapleFalls.aussen", "start")
+-> END

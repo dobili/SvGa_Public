@@ -15,6 +15,7 @@
  */
 import { useEffect, useId, useState, type ReactNode } from "react";
 import { paketdateiAlsAdresseOderNull } from "../paket/paketlader";
+import { paketmerkliste, usePaketstand } from "../paket/paketmerker";
 import type { Kartensorte, Kartenstufe } from "../schnittstelle/karten";
 import { tSpiel } from "../texte/texte";
 import "../spielkarte.css";
@@ -64,8 +65,11 @@ function stufentext(stufe: Kartenstufe): string {
   return tSpiel(`karte.stufe.${stufe}`);
 }
 
-/** Einmal geladene Bilder (Adresse oder null) für die ganze Sitzung, je Pfad im Paket. */
-const bilder = new Map<string, Promise<string | null>>();
+/**
+ * Einmal geladene Bilder (Adresse oder null) je Pfad im Paket, bis zur nächsten Änderung am Paket
+ * (paket/paketmerker.ts: danach sind die alten Adressen freigegeben; Befund 25.11.2026).
+ */
+const bilder = paketmerkliste<Promise<string | null>>();
 
 /**
  * Ein Bild des Pakets als Adresse; null, solange es lädt oder wenn es fehlt.
@@ -73,6 +77,7 @@ const bilder = new Map<string, Promise<string | null>>();
  */
 function usePaketbild(pfad: string | null): string | null {
   const [adresse, setzeAdresse] = useState<string | null>(null);
+  const paketstand = usePaketstand();
   useEffect(() => {
     if (!pfad) return undefined;
     let aktiv = true;
@@ -90,7 +95,7 @@ function usePaketbild(pfad: string | null): string | null {
     return () => {
       aktiv = false;
     };
-  }, [pfad]);
+  }, [pfad, paketstand]);
   return adresse;
 }
 

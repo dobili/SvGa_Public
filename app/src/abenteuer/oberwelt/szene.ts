@@ -38,6 +38,7 @@ import { festeFelder } from "./tierweg";
 import { setzeHeldtiefe, tiefenmoebelAus, type Tiefenmoebel } from "./heldtiefe";
 import { ladeMoebelbilder, richteMoebelrahmenEin, stelleMoebelAuf, teileJeTextur } from "./moebel";
 import { stelleFigurenAuf } from "./figurenaufstellung";
+import { richteGefolgeEin } from "./gefolgeschicht";
 import { sitzmoebelAus } from "./sitzplatz";
 import { LIEGT } from "./sitzrichtung";
 import { moebelbildMerker, sichtbarMesser } from "./sitzumriss";
@@ -54,7 +55,6 @@ import { liesBelebung, type Belebung, type Feld } from "./belebung";
 import { Belebungsschicht, ladeBelebungsbilder } from "./belebungsschicht";
 import type { Szenendaten } from "./szenentypen";
 export type { Ausloesertreffer, Melder, Szenendaten } from "./szenentypen";
-
 export type Richtung = Weltposition["richtung"];
 
 /** Kachelgröße der Karten in Pixeln; Laufgeschwindigkeit des Helden in Kachelpixeln je Sekunde. */
@@ -196,6 +196,7 @@ export class Oberweltszene extends Phaser.Scene {
     zeigeTeilchen(this, mitSchnee(this.daten.jahreszeit, this.daten.teilchen), true);
     this.tasten = pfeiltasten(this.input.keyboard);
     this.gangart = new Gangartsteuerung(this.daten.rennenErlaubt === true, this.input.keyboard);
+    richteGefolgeEin(this.fuehrungszugang(), () => this.blick, this.daten.begleiter ?? []);
   }
 
   /**
@@ -394,6 +395,5 @@ export class Oberweltszene extends Phaser.Scene {
 }
 
 /** Die Auslöser der Ebene „ausloeser“ einer geladenen Karte (ausloeserebene.ts). */
-function liesAusloeserAus(karte: Phaser.Tilemaps.Tilemap): Ausloeser[] {
-  return liesAusloeser(karte.getObjectLayer(AUSLOESER_EBENE)?.objects ?? [], KACHEL);
-}
+const liesAusloeserAus = (karte: Phaser.Tilemaps.Tilemap): Ausloeser[] =>
+  liesAusloeser(karte.getObjectLayer(AUSLOESER_EBENE)?.objects ?? [], KACHEL);

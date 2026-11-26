@@ -327,6 +327,7 @@
     }
   ],
   "figuren": [
+    { "name": "junoLandstrasse", "feld": [41, 14], "blick": "links" },
     {
       "name": "prattSteg",
       "feld": [7, 6]

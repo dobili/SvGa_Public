@@ -145,7 +145,7 @@
       "feld": [6, 3]
     }
   ],
-  "figuren": [],
+  "figuren": [{ "name": "okaforArchiv", "feld": [10, 4], "blick": "unten" }],
   "belebung": [],
   "zustand": ["gebraucht", "alt"],
   "stil": ["klassisch", "einfach"],

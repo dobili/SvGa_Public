@@ -646,6 +646,27 @@ Profil › Einstellungen › Fehler melden.
       Gedächtnisstellung zeigen ihren Knopf immer: Ist der Text lang, rollt nur der Text, der Knopf
       bleibt unten stehen.
       **Antwort:** „N2728 ok“ oder Fenster und was nicht passt.
+- [ ] N2729. **Porträts für alle (25.11.2026):** Nach einer Partie (etwa gegen Victor) zeigen
+      Ambrose („Bin ich das.“) und alle Sprecher wieder ihr Porträt; vorher fehlte es, wenn das
+      Spiel nach der Partie eine neue Version nachlud. Figuren ohne eigenes Porträt zeigen ihr
+      eigenes Gesicht aus der Figur: der Wanderer auf der Landstraße mit gelbem Hut und grauem
+      Bart, Statisten wie der Lkw-Fahrer im Diner in ihrer Sprechblase.
+      **Antwort:** „N2729 ok“ oder wo ein Porträt fehlt oder nicht passt.
+- [ ] N2730. **Wer spricht, ist da (Akt 1, 25.11.2026):** Mama lädt im Wohnzimmer zum Essen ein,
+      ihr geht ins Diner, Mama steht an der Theke, Hector dahinter; danach seid ihr zu Hause. Am
+      Morgen nach der ersten Nacht ruft Mama von unten herauf, dann fällt die Haustür zu. Im
+      Clubraum nach der ersten Nadel stehen Victor (oder Victoria) und Graham Hale im Raum und gehen
+      nach der Partie sichtbar zur Tür. Beim Aufbruch nach Ironwood steht der Held vor dem Haus bei
+      Juno und dem Rad. In Cedar Creek spielt die Ankunft nach dem Betreten des Orts (Ivy und Jonah
+      sind zu sehen); die Sternennacht hat Mae, Dex und Mrs. Okafor am Steg; Coach und Sam stehen
+      an der Haltestelle und beim Clubkampf im Lesesaal; Mrs. Okafor wartet im Archiv. Im Epilog
+      schickt das Brett im Zimmer den Helden auf den Dachboden, wo Lily an der Treppe steht.
+      **Antwort:** „N2730 ok“ oder wer spricht, ohne da zu sein.
+- [ ] N2731. **Juno begleitet dich (25.11.2026):** Juno steht nach dem Aufbruch am Ortsschild im
+      Park. Nach dem Gespräch geht sie hinter dir her, über Landstraße und Flussweg; am Obststand
+      steht sie neben dir, wenn sie den Dollar in die Dose legt, und sie geht bis zur Busfahrt nach
+      Hause mit.
+      **Antwort:** „N2731 ok“ oder wo sie zurückbleibt oder im Weg steht.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

@@ -22,9 +22,6 @@ GEPRUEFT: dict[str, str] = {
         "„Am Fenster sitzt ein Junge … das ist Sam“: gemeint ist Sam, und Sam sitzt (Szene sitzt rechts)."
     ),
     "bild:junoClub:maple-falls-clubraum.coach_reihe_offen": KLEIN + " (Heft)",
-    "bild:coachDelgado:maple-falls-clubraum.pratt_und_heimweg": (
-        "Der Hausmeister (Pratt) hält den Lappen, nicht Coach Delgado; Lappen ist ein kleiner Gegenstand."
-    ),
     "bild:coachDelgado:maple-falls-clubraum.victor_trifft": (
         "„Ein Mann steigt aus“ ist Graham Hale vor der Schule, nicht Coach Delgado."
     ),

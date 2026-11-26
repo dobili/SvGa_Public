@@ -4,13 +4,15 @@
  * Rolle im Gesamtbild: Teil des Dialogfensters (dialog/Dialog.tsx). Den Pfad bildet
  * dialog/grossbild.ts aus dem Tag `#bild:kennung`. Fehlt das Bild im Paket, zeigt die Ansicht
  * nichts, und die Zeile erscheint wie sonst.
- * Abhängigkeiten: paket/paketlader.ts.
+ * Die Merkliste gilt bis zur nächsten Änderung am Paket (paket/paketmerker.ts, Befund 25.11.2026).
+ * Abhängigkeiten: paket/paketlader.ts, paket/paketmerker.ts.
  */
 import { useEffect, useState } from "react";
 import { paketdateiAlsAdresseOderNull } from "../paket/paketlader";
+import { paketmerkliste, usePaketstand } from "../paket/paketmerker";
 
 /** Einmal geladene Bilder (null: fehlt im Paket), damit ein zweites Zeigen nicht neu lädt. */
-const geladen = new Map<string, Promise<string | null>>();
+const geladen = paketmerkliste<Promise<string | null>>();
 
 function lade(pfad: string): Promise<string | null> {
   let adresse = geladen.get(pfad);
@@ -26,6 +28,7 @@ function lade(pfad: string): Promise<string | null> {
  * Ausgabe: das Bild oder nichts (noch nicht geladen oder fehlt).
  */
 export function Grossansicht({ pfad }: { readonly pfad: string }) {
+  const paketstand = usePaketstand();
   const [bild, setzeBild] = useState<{ pfad: string; adresse: string | null } | null>(null);
   useEffect(() => {
     let aktiv = true;
@@ -35,7 +38,7 @@ export function Grossansicht({ pfad }: { readonly pfad: string }) {
     return () => {
       aktiv = false;
     };
-  }, [pfad]);
+  }, [pfad, paketstand]);
   if (!bild || bild.pfad !== pfad || !bild.adresse) return null;
   // Das Bild erzählt mit der Zeile darunter; die Zeile trägt den Sinn, deshalb kein Alternativtext.
   return (

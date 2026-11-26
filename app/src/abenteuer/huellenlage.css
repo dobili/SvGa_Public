@@ -34,11 +34,9 @@
    Wechsel der Stimmung lädt das Porträt neu und fehlt kurz, der Kopf wurde 52 px niedriger und
    das Brett rückte nach oben (Messung Pixel 7 hoch, 25.11.2026). */
 .abenteuer-huelle-partie > .abenteuer-huelle-kopf {
-  --portraet-gross: 96px;
-
   flex: none;
   box-sizing: border-box;
-  min-height: calc(var(--portraet-gross) + var(--raster) * 2 + 2px);
+  min-height: var(--kopf-hoch);
 }
 
 /* Nur wenn Brett und Mindesthöhe der Spalte nicht passen (sehr kleine Schirme, zwei Bretter im
@@ -51,6 +49,31 @@
   overscroll-behavior: contain;
   scrollbar-gutter: stable;
   padding-bottom: var(--raster);
+}
+
+/* Das Brett ist hoch höchstens so groß, dass Kopf, Uhr des Gegners, Brett und die Mindesthöhe der
+   Spalte ins Fenster passen. Sonst rollte der Inhalt, und das Brett rückte mit (Safari auf dem
+   iPhone 15 mit Leisten, 393 × 659: 56 px, Befund mittel-3, 26.11.2026). Gleiche Gewichtung wie
+   die Regel für quer, die später steht und dort gilt. */
+.abenteuer-huelle-partie {
+  --portraet-gross: 96px;
+  --kopf-hoch: calc(var(--portraet-gross) + var(--raster) * 2 + 2px);
+  --spalte-mindestens: min(12rem, 30dvh);
+  --uhr-platz: 0px;
+}
+
+.abenteuer-huelle-partie:has(.abenteuer-partie-brett-uhr > .abenteuer-huelle-uhr-gegner) {
+  --uhr-platz: calc(3rem + var(--raster));
+}
+
+.abenteuer-huelle-partie .brett {
+  max-width: min(
+    480px,
+    calc(
+      100dvh - env(safe-area-inset-top) - var(--kopf-hoch) - var(--uhr-platz) -
+        var(--spalte-mindestens) - var(--raster) * 3
+    )
+  );
 }
 
 .abenteuer-huelle-partie .abenteuer-partie-brett {

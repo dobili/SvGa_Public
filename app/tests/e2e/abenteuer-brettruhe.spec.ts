@@ -161,6 +161,15 @@ async function pruefe(s: Page): Promise<void> {
   );
 }
 
+test.describe("hoch, kleines Fenster (iPhone 15 in Safari, 393 × 659)", () => {
+  // Safari mit seinen Leisten (Projekt iphone-webkit): Hier sprang das Brett um 56 px, weil Kopf,
+  // Brett und Mindesthöhe der Spalte höher waren als das Fenster (Befund mittel-3, 26.11.2026).
+  test.use({ viewport: { width: 393, height: 659 } });
+  test("hoch klein: Das Brett steht still, was auch ein- und ausblendet", async ({ page }) => {
+    await pruefe(page);
+  });
+});
+
 test("hoch: Das Brett steht still, was auch ein- und ausblendet", async ({ page }) => {
   await pruefe(page);
 });

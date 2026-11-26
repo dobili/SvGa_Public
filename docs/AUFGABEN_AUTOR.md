@@ -667,6 +667,15 @@ Profil › Einstellungen › Fehler melden.
       steht sie neben dir, wenn sie den Dollar in die Dose legt, und sie geht bis zur Busfahrt nach
       Hause mit.
       **Antwort:** „N2731 ok“ oder wo sie zurückbleibt oder im Weg steht.
+- [ ] N2732. **Joystick und schräges Laufen (26.11.2026):** Draußen (etwa im Park von Maple
+      Falls) den Daumen auf den Joystick unten rechts legen und schräg ziehen. Der Held läuft
+      schräg, so schnell wie geradeaus, und zeigt das schräge Laufbild; ganz an den Ring gezogen
+      rennt er. Schräg gegen eine Wand oder einen Zaun ziehen: Er rutscht an ihr entlang, statt
+      stehen zu bleiben. Mit Juno als Begleiterin (Weg nach Cedar Creek) schräg laufen: Juno folgt
+      schräg und geht nicht durch Ecken. Tagebuch 📖 und Menü ☰ liegen unten links nebeneinander,
+      hoch und quer. Im Menü „Joystick links“ wählen: Joystick links, Aktionsknopf und Knöpfe rechts.
+      Quer liegt der Joystick immer links.
+      **Antwort:** „N2732 ok“ oder ob Größe, Lage oder Rennschwelle (80 % Ausschlag) stören.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

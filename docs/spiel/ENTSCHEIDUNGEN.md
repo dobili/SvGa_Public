@@ -1524,3 +1524,13 @@ Browserprüfung der Sperren S16 und S17 mit echt gespielten kurzen Partien (Fabl
   pipeline/abenteuer/anwesenheit.py mit einer Obergrenze, die nur sinkt.
 - Sprecher ohne Porträtblatt zeigen ein Ersatzporträt aus der eigenen Figur
   (skripte/ersatzportraets.mjs).
+
+### Joystick statt Steuerkreuz (Wunsch des Autors, 26.11.2026, umgesetzt, Widerspruch genügt)
+
+- Der Held läuft in acht Richtungen mit gleichem Tempo und rutscht an Wänden entlang. Gesteuert
+  wird er mit einem festen Joystick, hoch nach Wahl rechts oder links, quer links; Totzone 15 %,
+  Rennen ab 80 % Ausschlag. Fest statt schwebend, weil Kamera, Hinweise und Knöpfe mit festen
+  Bedienflächen rechnen und Kinder einen sichtbaren Joystick sofort verstehen.
+- Für Ansprechen und Auslöser zählt weiter die vorherrschende Hauptrichtung. Schrägbilder haben
+  Held, Heldin, Juno und Mama (Lieferung des Autors), alle anderen Figuren bleiben vierrichtig.
+  Tagebuch und Menü stehen unten links.

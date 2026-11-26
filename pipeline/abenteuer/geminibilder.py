@@ -34,7 +34,9 @@ from pathlib import Path
 from pipeline.abenteuer.geminimappe import Auftrag, auftraege_lesen
 
 BASIS = "https://generativelanguage.googleapis.com/v1beta"
-MODELL = "gemini-2.5-flash-image"
+# Wahl des Autors nach seinem Probebild in AI Studio (26.11.2026): Nano Banana 2.1, 1K
+MODELL = "gemini-nano-banana-2.1"
+AUFLOESUNG = "1K"
 PLATZHALTER_SCHLUESSEL = "vom-proxy-gesetzt"
 WARTEZEIT_SEKUNDEN = 300
 # Inline-Stapel dürfen bis 20 MB groß sein; mit Abstand darunter bleiben
@@ -84,13 +86,13 @@ def inhalt_fuer(auftrag: Auftrag, schritt: int, vorbild: bytes | None = None) ->
     else:
         bilder = [vorbild]
     teile = [_bildteil(b) for b in bilder] + [{"text": auftrag.schritte[schritt - 1]}]
-    erzeugung: dict = {"responseModalities": ["TEXT", "IMAGE"]}
+    erzeugung: dict = {"responseModalities": ["TEXT", "IMAGE"], "imageConfig": {"imageSize": AUFLOESUNG}}
     if auftrag.ist_portraet:
         verhaeltnis = SEITENVERHAELTNIS_PORTRAET if schritt == 1 else SEITENVERHAELTNIS_BLATT
-        erzeugung["imageConfig"] = {"aspectRatio": verhaeltnis}
+        erzeugung["imageConfig"]["aspectRatio"] = verhaeltnis
     elif "landscape 4:3" in auftrag.schritte[0]:
         # Großbilder im Dialog (Mappe: „FORMAT: one single image in landscape 4:3“)
-        erzeugung["imageConfig"] = {"aspectRatio": SEITENVERHAELTNIS_GROSSBILD}
+        erzeugung["imageConfig"]["aspectRatio"] = SEITENVERHAELTNIS_GROSSBILD
     return {"contents": [{"role": "user", "parts": teile}], "generationConfig": erzeugung}
 
 

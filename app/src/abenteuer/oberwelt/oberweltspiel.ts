@@ -6,12 +6,13 @@
  * Szene unter 400 Zeilen bleibt. Ändert sich die Größe des Elements (Gerät gedreht,
  * docs/spiel/30, Abschnitt 3), wächst das Spiel mit, und die Kamera bekommt neue Grenzen; der Held
  * bleibt, wo er ist.
- * Abhängigkeiten: phaser, szene.ts (Kamera über kameraregie.ts).
+ * Abhängigkeiten: phaser, szene.ts (Kamera über kameraregie.ts), zeitbasis.ts (Takt).
  */
 import { FIGURFAKTOR } from "./figurbilder";
 import Phaser from "phaser";
 import { raeumePhaserNachlassAuf } from "./phaserNachlass";
 import { Oberweltszene, type Szenendaten } from "./szene";
+import { ZEITBASIS } from "./zeitbasis";
 
 /**
  * Spielgröße zu einem Element: seine Fläche in Bildschirmpixeln (CSS), mindestens ein Pixel. Das
@@ -53,6 +54,8 @@ export function starteOberwelt(element: HTMLElement, daten: Szenendaten): Phaser
     pixelArt: true,
     backgroundColor: "#1a1612",
     physics: { default: "arcade", arcade: { debug: false } },
+    // Echte Zeit ab dem ersten Bild, ohne Zeitlupe nach dem Kartenwechsel (zeitbasis.ts).
+    fps: ZEITBASIS,
     scene: szene,
     // Die App regelt Ton und Blattstapel selbst; Phaser soll keine Tastatur-Scrolls abfangen.
     input: { keyboard: { capture: [] } },

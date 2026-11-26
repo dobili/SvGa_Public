@@ -6,12 +6,19 @@
  * Geprüft in Maple Falls an der Katze vor dem Whitlock-Haus (sitzt auf (4, 24)): Der Held steht
  * direkt über ihr mit Blick nach unten, der Aktionsknopf heißt „Verscheuchen“; nach dem Tipp
  * läuft die Katze weg, und der Held kommt auf ihr Feld.
+ * Ohne private Grafik legt die App keine Tiere an (weltdaten.ts, belebungsbilderFuer); in GitHub
+ * Actions fehlt das Bild der Katze, dort werden die Tests übersprungen (sie scheiterten dort seit
+ * dem 25.11.2026 mit leerem Aktionsknopf).
  * Abhängigkeiten: abenteuer-affe.ts (Spielstand).
  */
+import { existsSync } from "node:fs";
 import { expect, test, type Page } from "@playwright/test";
 import { EINLEITUNG_GESEHEN, GRUNDSTAND, starteMitStand } from "./abenteuer-affe";
 
 const KATZE = { x: 4, y: 24 };
+/** Das Bild der Katze im gebauten Paket: nur mit privater Grafik da. */
+const KATZENBILD = new URL("../../dist/abenteuer/tiere/katze.webp", import.meta.url);
+const OHNE_TIERBILD = "ohne private Grafik gibt es keine Tiere (Bild der Katze fehlt)";
 /** Taste halten: genug für zwei Kacheln. */
 const LAUFZEIT_MS = 900;
 /** Zeit, bis die verscheuchte Katze aus dem Weg ist (4 Kacheln je Sekunde, höchstens 4 Kacheln). */
@@ -38,6 +45,7 @@ async function kachel(seite: Page): Promise<{ x: number; y: number }> {
 
 test("die Katze hält auf, „Verscheuchen“ macht ihr Feld frei", async ({ page, browserName }) => {
   test.skip(browserName !== "chromium", "Laufen mit gehaltener Taste nur in Chromium");
+  test.skip(!existsSync(KATZENBILD), OHNE_TIERBILD);
   await starteUeberKatze(page);
   const aktion = page.getByTestId("abenteuer-aktion");
   await expect(aktion).toHaveText("Verscheuchen", { timeout: 15000 });
@@ -52,6 +60,7 @@ test("die Katze hält auf, „Verscheuchen“ macht ihr Feld frei", async ({ pag
 
 test("ohne Verscheuchen bleibt der Held vor der Katze stehen", async ({ page, browserName }) => {
   test.skip(browserName !== "chromium", "Laufen mit gehaltener Taste nur in Chromium");
+  test.skip(!existsSync(KATZENBILD), OHNE_TIERBILD);
   await starteUeberKatze(page);
   await expect(page.getByTestId("abenteuer-aktion")).toHaveText("Verscheuchen", { timeout: 15000 });
   // Ein kurzer Schritt (unter einer Sekunde Drängen): die Katze bleibt, der Held auch.

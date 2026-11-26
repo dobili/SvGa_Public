@@ -146,14 +146,20 @@
           "name": "figur.victor.name",
           "sprite": "figuren/victor.png",
           "dialog": "maple-falls-clubraum.victor",
-          "wenn": "nadelMapleFalls > 0 und nicht kenntHale"
+          "wenn": "nadelMapleFalls > 0 und nicht kenntHale",
+          "auftritt": {
+            "wartet": "nicht victorGesehen"
+          }
         },
         {
           "kennung": "mapleFalls.haleClub",
           "name": "figur.grahamHale.name",
           "sprite": "figuren/graham-hale.png",
           "dialog": "maple-falls-clubraum.victor",
-          "wenn": "nadelMapleFalls > 0 und nicht kenntHale"
+          "wenn": "nadelMapleFalls > 0 und nicht kenntHale",
+          "auftritt": {
+            "wartet": "nicht victorGesehen"
+          }
         },
         {
           "kennung": "mapleFalls.mutterDiner",
@@ -269,7 +275,10 @@
           "name": "figur.juno.name",
           "sprite": "figuren/juno.png",
           "dialog": "maple-falls-clubraum.juno",
-          "wenn": "clubBeigetreten und (nicht aufbruchGesehen oder endeAkt1Gesehen)"
+          "wenn": "(clubBeigetreten oder junoGetroffen) und (nicht aufbruchGesehen oder endeAkt1Gesehen)",
+          "auftritt": {
+            "wartet": "nicht clubBeigetreten"
+          }
         }
       ],
       "ausloeser": [
@@ -2058,7 +2067,11 @@
           "name": "figur.mutter.name",
           "sprite": "figuren/mutter.png",
           "dialog": "ironwood-kantine.mama",
-          "wenn": "mamaInKantine und (nicht kaufGesehen oder (mamaSpielt und nicht lernkarteFaktorenwaage))",
+          "wenn": "(mamaInKantine oder mamaFotoGesehen) und (nicht kaufGesehen oder (mamaSpielt und nicht lernkarteFaktorenwaage))",
+          "auftritt": {
+            "wartet": "nicht mamaInKantine",
+            "von": "kantineAusgang"
+          },
           "gegner": "ironwood.mama"
         },
         {

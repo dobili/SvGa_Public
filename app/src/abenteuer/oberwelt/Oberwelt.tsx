@@ -127,7 +127,9 @@ export function Oberwelt() {
     abspann;
   useEffect(() => {
     szeneAus(spiel)?.laufenErlaubt(!fensterOffen);
-  }, [spiel, fensterOffen, welt]);
+    // Neue Figuren kommen herein, sobald keine Ergebniskarte davor liegt (auftrittsschicht.ts).
+    if (!partie.ergebnis && !rundenergebnis) szeneAus(spiel)?.gibAuftritteFrei();
+  }, [spiel, fensterOffen, welt, partie.ergebnis, rundenergebnis]);
   useOffeneRueckmeldung(k, oeffneDialog, welt !== null && !fensterOffen);
   useTextspalte(dialog !== null, () => szeneAus(spiel)?.passeKameraAn());
   const weltFrei = welt !== null && !fensterOffen && meldung === null;

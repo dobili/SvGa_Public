@@ -14,6 +14,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { naechsteStunde, spielminuteJetzt, spieltag, stundeJetzt, ZIELE } from "../regeln/spieluhr";
 import { tSpiel } from "../texte/texte";
+import { naechsterAufbauOhneAuftritt } from "./auftrittsgedaechtnis";
 import { szeneAus, type Oberweltkern } from "./kern";
 import { ruheplatz, type Ruhe } from "./ruheplatz";
 import { KACHEL } from "./szene";
@@ -67,7 +68,11 @@ export function useWarten(k: Oberweltkern, frei: boolean): Warten {
     setzeRaffer({ von, nach, schlafen });
   };
   const stelleNeuAuf = () => {
-    void geschrieben.current.then(() => kRef.current.stelleNeuAuf());
+    // Nach Stunden sind neue Figuren einfach da, ohne Auftritt (auftrittsgedaechtnis.ts).
+    void geschrieben.current.then(() => {
+      naechsterAufbauOhneAuftritt();
+      kRef.current.stelleNeuAuf();
+    });
   };
   const stand = k.stand;
   const moeglich = frei && !abblende && !auswahl;

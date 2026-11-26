@@ -174,6 +174,10 @@ Dex' Lampe geht endgültig aus. Niemand vermisst sie. #sprecher:erzaehler
 // Die Nacht verbringen {held} und Juno im Lesesaal (Roman, Kapitel 10 und 14).
 ~ nachtImLesesaal = true
 Dann geht ihr hinüber in den Lesesaal. Die Matten liegen zwischen den Regalen. #sprecher:erzaehler
+// Auftritt (26.11.2026): Der Text bringt {held} in den Lesesaal, also geht die Szene dorthin. Sonst
+// stand {held} um Mitternacht noch am Steg, und der Coach und Sam (nachtImLesesaal) kamen dort an,
+// Stunden vor ihrem Bus am Morgen (team_kommt).
+~ reise("cedarCreek.bibliothek", "bibliothekAusgang")
 -> END
 
 === ende_akt1 ===
@@ -533,7 +537,7 @@ Ich hab im Bus geschlafen. Mit dem Kopf auf dem Schachkoffer, der ist hart. #spr
 - Clubkampf am Vormittag. Bis dahin: Kopf frei, Figuren sortiert. #sprecher:coachDelgado #stimmung:froh #klang:pfiff
 Der Bus wartet bis heute Abend. Mr. Kettering fährt uns zurück. #sprecher:coachDelgado #stimmung:neutral
 ~ teamAngekommen = true
-Der Coach und Sam gehen voraus zur Bibliothek. #sprecher:erzaehler #gehe:coachCedar>22,17;samCedar>23,17
+Der Coach und Sam gehen voraus zur Bibliothek. #sprecher:erzaehler #gehe:coachCedar>bibliothekTuer;samCedar>bibliothekTuer
 -> END
 
 // ---------------------------------------------------------------- Mr. Kettering, der Busfahrer

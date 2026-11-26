@@ -22,6 +22,12 @@ import { liesBelebung, statistenbild, statistensatz } from "./belebung";
 import type { SprechblasenInhalt } from "./Sprechblase";
 import { ohneAbwesende } from "../regeln/abwesenheit";
 import { ohneFigurenNachBedingung } from "../regeln/figurbedingung";
+import {
+  gehendeFiguren,
+  weltauftritt,
+  type Aufstellung,
+  type Weltauftritt,
+} from "../regeln/auftritt";
 import type { Abenteuerstand, Heldfigur } from "../schnittstelle/spielstand";
 import { ERSATZFIGUR, heldbogenpfad } from "../regeln/heldfigur";
 import { rivalinbogen, rivalinGewaehlt } from "../regeln/rivalform";
@@ -37,6 +43,8 @@ import { jahreszeitDer, type Jahreszeit } from "./jahreszeitfarben";
 import { ladeMoebel, type Moebel } from "./moebel";
 import { tierartVon } from "./tiere";
 import type { Ausloesertreffer } from "./szene";
+import { kachelstil } from "./kachelstil";
+export { kachelstil } from "./kachelstil";
 
 /** Bilder des Prototyps im Paket (bis die LimeZu-Kacheln da sind, Entscheidung A10). */
 const KACHELBILD = "grafik/platzhalter.png";
@@ -81,6 +89,8 @@ export interface Weltdaten {
   readonly belebungsbilder: Readonly<Record<string, string>>;
   /** Begleiter, die dem Helden folgen (regeln/gefolge.ts); in Erinnerungen keine. */
   readonly begleiter: readonly string[];
+  /** Auftritte (regeln/auftritt.ts): Wartende, nur zum Hinausgehen Behaltene, Übergang je Figur. */
+  readonly auftritt: Weltauftritt;
 }
 
 /**
@@ -103,7 +113,7 @@ async function belebungsbilderFuer(karte: object): Promise<Record<string, string
 }
 
 /** Objektnamen der Figuren einer Tiled-Karte (Objekte mit type „figur“). */
-function figurennamen(karte: object): string[] {
+export function figurennamen(karte: object): string[] {
   const ebenen = (karte as { layers?: readonly { objects?: readonly unknown[] }[] }).layers ?? [];
   return ebenen.flatMap((e) =>
     (e.objects ?? []).flatMap((o) => {
@@ -162,36 +172,6 @@ async function erscheinungsbilderFuer(
   return Object.fromEntries(paare.filter((p) => p !== null));
 }
 
-/** Orte in Wüste und Canyon (Weltbeschreibung): Sandboden statt Gras. */
-const WUESTE = new Set([
-  "desertSprings",
-  "ghostTown",
-  "wegDelacroixDesert",
-  "wegDesertSummit",
-  "wegPinewoodGhost",
-]);
-
-/** Eigenschaft `stil` einer Tiled-Karte (etwa „kueste“ für Fähre, Deich, Bayou), sonst null. */
-function kartenstil(karte?: object): string | null {
-  const eigenschaften = (karte as { properties?: readonly { name?: string; value?: unknown }[] })
-    ?.properties;
-  const stil = eigenschaften?.find((e) => e.name === "stil")?.value;
-  return typeof stil === "string" ? stil : null;
-}
-
-/**
- * Kachelstil einer Karte (gekaufte Grafik, `grafik/stil-<stil>.png` im Raster des Platzhalters):
- * Eigenschaft `stil` der Karte, sonst innen, Wüste, Weg (Natur) oder Stadt.
- * Beispiel: Clubraum → „innen“, Landstraße → „natur“, Ghost Town draußen → „wueste“.
- */
-export function kachelstil(ort: Ortdaten, innen: boolean, karte?: object): string {
-  const eigener = kartenstil(karte);
-  if (eigener) return eigener;
-  if (innen) return "innen";
-  if (WUESTE.has(ort.kennung)) return "wueste";
-  return ort.art === "weg" ? "natur" : "aussen";
-}
-
 /**
  * Bogen des Helden: in Erinnerungen der junge Ambrose, sonst die gewählte Figur. Fehlt ihr Bogen
  * (die Heldin, bis der Autor sie in PixelLab erstellt hat), gilt der Held (regeln/heldfigur.ts).
@@ -204,13 +184,16 @@ async function heldfigurbogen(erinnerung: boolean, figur: Heldfigur): Promise<st
 
 /**
  * Lädt Spieldaten, Karte und Bilder für die Karte des Spielstands. `variablen` (Dialogvariablen)
- * wählen die Fassung der Karte (zustand_der_karte).
+ * wählen die Fassung der Karte (zustand_der_karte). `vorher`: die Aufstellung beim letzten Abbau
+ * (auftrittsgedaechtnis.ts); wer dort stand und dessen Bedingung nicht mehr gilt, bleibt zum
+ * Hinausgehen auf der Karte (regeln/auftritt.ts).
  */
 export async function ladeWelt(
   kartenkennung: string,
   gewaehlteFigur: Heldfigur = ERSATZFIGUR,
   variablen: Readonly<Record<string, unknown>> = {},
   stand: Abenteuerstand | null = null,
+  vorher: Aufstellung | null = null,
 ): Promise<Weltdaten> {
   // Spieltexte in der Sprache der App (Dokument 17); ohne Übersetzung im Paket bleibt Deutsch.
   await ladeSpieltexte(sprache());
@@ -226,9 +209,11 @@ export async function ladeWelt(
   ]);
   // Im Tiefpunkt steht Ambrose auf keiner Karte (regeln/abwesenheit.ts); Figuren mit `wenn`
   // und Möbel stehen nur, wenn ihre Bedingung gilt (regeln/figurbedingung.ts).
+  const wennZu = (name: string) => figurZu(fund.ort, name)?.wenn;
+  const gehend = gehendeFiguren(vorher, kartenkennung, wennZu, variablen);
   const ohneVerborgene = ohneFigurenNachBedingung(
     ohneAbwesende(geladen, variablen as Abenteuerstand["dialogvariablen"]),
-    (name) => figurZu(fund.ort, name)?.wenn,
+    (name) => (gehend.includes(name) ? undefined : wennZu(name)),
     variablen,
   );
   // Begleiter (regeln/gefolge.ts) gehen mit dem Helden und stehen nicht an ihrem Platz.
@@ -295,6 +280,10 @@ export async function ladeWelt(
     belebungsbilder,
     zustand: fassung.zustand,
     jahreszeit: jahreszeitDer(karte),
+    auftritt: weltauftritt(figurennamen(karte), (n) => figurZu(fund.ort, n)?.auftritt, {
+      gehend,
+      variablen,
+    }),
   };
 }
 

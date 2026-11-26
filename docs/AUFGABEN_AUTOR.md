@@ -716,6 +716,21 @@ Profil › Einstellungen › Fehler melden.
       Bitte das Testteam in Ironwood und an der Landstraße ansehen und ein Gespräch mit Ward
       oder Nova führen.
       **Antwort:** „N2737 ok“ oder Figur und was nicht passt.
+- [ ] N2738. **Figuren kommen sichtbar herein und gehen sichtbar hinaus (26.11.2026):** Den
+      Clubkampf gegen Coach Delgado gewinnen. Nach der Ergebniskarte kommt Mr. Pratt durch die
+      Tür herein; Hale und {rivale} stehen noch nicht im Raum. Direkt nach der Nadel und Pratts
+      Heimweg erzählt der Dialog den schwarzen Wagen, ohne dass du den Coach noch einmal
+      ansprechen musst. Bei „Dann steht er in der Tür und kommt herein“ treten Hale und {rivale}
+      in der Tür auf; Hale geht zum Coach, {rivale} ans Fenster. Pratt geht bei „Dann geht er
+      wieder.“ hinaus. Nach der Partie gegen {rivale} gehen beide zur Tür und verschwinden dort,
+      die Tür ist danach frei. Allgemein: Wer nach einer Partie oder einem Gespräch neu auf eine
+      Karte kommt, erscheint am nächsten Eingang und läuft zu seinem Platz; wer geht, geht
+      sichtbar hinaus. Außerdem: Beim ersten Clubbesuch kommt Juno bei „Aufstellung! Juno …“ mit
+      herein; in Ironwood kommt Mama bei „Als Mama in der Tür steht …“ durch die Tür zu Big Joe;
+      nach der Sternennacht in Cedar Creek bringt „Dann geht ihr hinüber in den Lesesaal“ dich in
+      den Lesesaal. Hale sagte bisher „Wir haben um vier den Termin“, obwohl es nach Pratts
+      Heimweg schon Abend ist; jetzt „Wir haben heute Abend noch einen Termin“ (Widerspruch genügt).
+      **Antwort:** „N2738 ok“ oder Ort, Figur und was nicht passt.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

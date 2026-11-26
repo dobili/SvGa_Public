@@ -54,6 +54,7 @@ import { Toenungsschicht } from "./toenungsschicht";
 import { faerbeJahreszeitlich, mitSchnee } from "./jahreszeitfarben";
 import { liesBelebung, type Belebung, type Feld } from "./belebung";
 import { Belebungsschicht, ladeBelebungsbilder } from "./belebungsschicht";
+import { aufgestellteFiguren, richteAuftritteEin, type Auftrittsschicht } from "./auftrittsschicht";
 import type { Szenendaten } from "./szenentypen";
 export type { Ausloesertreffer, Melder, Szenendaten } from "./szenentypen";
 export type Richtung = Weltposition["richtung"];
@@ -101,6 +102,8 @@ export class Oberweltszene extends Phaser.Scene {
   private verdeckt: Raender = OHNE_RAENDER;
   private kamerafuehrung: Kamerafuehrung | null = null; // vorausschauend (kameravoraus.ts)
   private fuehrung: Heldfuehrung | null = null; // geführter Weg aus dem Dialog (fuehrungsschicht.ts)
+  private auftritte: Auftrittsschicht | null = null; // Figuren kommen und gehen (auftrittsschicht.ts)
+  private auftrittFrei = false; // die Oberwelt hat die Auftritte freigegeben (auch vor create())
 
   constructor(private readonly daten: Szenendaten) {
     super("oberwelt");
@@ -195,6 +198,18 @@ export class Oberweltszene extends Phaser.Scene {
     this.steuerung = new Heldsteuerung(this.input.keyboard);
     this.gangart = new Gangartsteuerung(this.daten.rennenErlaubt === true, this.input.keyboard);
     richteGefolgeEin(this.fuehrungszugang(), () => this.blick, this.daten.begleiter ?? []);
+    this.auftritte = richteAuftritteEin(this.fuehrungszugang(), this.daten, this.auftrittFrei);
+  }
+
+  /** Keine Ergebniskarte mehr vor der Karte: Neue Figuren kommen herein (auftrittsschicht.ts). */
+  gibAuftritteFrei(): void {
+    this.auftrittFrei = true;
+    this.auftritte?.gibFrei();
+  }
+
+  /** Wer sichtbar auf der Karte steht und wo (Gedächtnis der Auftritte); vor create() null. */
+  aufstellung(): Map<string, Feld> | null {
+    return aufgestellteFiguren(this.fuehrungszugang());
   }
 
   /**
@@ -278,6 +293,7 @@ export class Oberweltszene extends Phaser.Scene {
       kachel: KACHEL,
       frei: this.frei,
       ausloeser: this.ausloeser,
+      uebergaenge: this.daten.uebergaenge ?? [],
       moebel: this.daten.moebel ?? [],
       setzeFuehrung,
       blicke,

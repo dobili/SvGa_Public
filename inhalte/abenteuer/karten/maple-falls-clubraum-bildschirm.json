@@ -1378,8 +1378,8 @@
      "id": 12,
      "name": "haleClub",
      "type": "figur",
-     "x": 256,
-     "y": 192,
+     "x": 288,
+     "y": 80,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1388,7 +1388,7 @@
       {
        "name": "blick",
        "type": "string",
-       "value": "oben"
+       "value": "links"
       }
      ]
     },
@@ -1396,8 +1396,8 @@
      "id": 13,
      "name": "victorClub",
      "type": "figur",
-     "x": 240,
-     "y": 208,
+     "x": 144,
+     "y": 48,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1406,7 +1406,7 @@
       {
        "name": "blick",
        "type": "string",
-       "value": "oben"
+       "value": "unten"
       }
      ]
     },

@@ -170,6 +170,8 @@ function fasseAn(welt, st, ort, hier, o, a) {
   );
   // Figuren mit `wenn` stehen nur, wenn die Bedingung gilt (regeln/figurbedingung.ts).
   if (figur && !gilt(st, figur.wenn)) return false;
+  // Wer unsichtbar in der Tür wartet (`auftritt.wartet`, regeln/auftritt.ts), ist nicht ansprechbar.
+  if (figur?.auftritt?.wartet && gilt(st, figur.auftritt.wartet)) return false;
   if (figur) {
     wendeFolgenAn(
       welt,

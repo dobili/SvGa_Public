@@ -14,6 +14,7 @@ import type { Heldhaelfte } from "./heldhaelfte";
 import type { Moebel } from "./moebel";
 import type { Jahreszeit } from "./jahreszeitfarben";
 import type { Teilchenart } from "./teilchen";
+import type { Szenenauftritt } from "./auftrittsschicht";
 import type { Toenung } from "./toenung";
 
 /** Ein Auslöser, auf dem der Held steht oder den er ansieht: Name und Art aus der Tiled-Datei. */
@@ -84,4 +85,6 @@ export interface Szenendaten {
   /** Jahreszeit (jahreszeitfarben.ts): Möbel umfärben; „winter“ lässt Schnee fallen, sonst Teilchen (T8). */
   readonly jahreszeit?: Jahreszeit | null;
   readonly teilchen?: Teilchenart | null;
+  /** Wer beim Aufbau hereinkommt, hinausgeht oder am Übergang wartet (auftrittsschicht.ts). */
+  readonly auftritt?: Szenenauftritt;
 }

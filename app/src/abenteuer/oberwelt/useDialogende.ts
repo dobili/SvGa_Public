@@ -20,11 +20,15 @@ import { variablenAusBesitz, variablenNachDialog } from "../regeln/dialogvariabl
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { tSpiel } from "../texte/texte";
 import { dialogwirkungen, type Nachdialogmerker } from "./dialogwirkungen";
-import type { Oberweltkern } from "./kern";
+import { szeneAus, type Oberweltkern } from "./kern";
+import { AUFTRITT } from "./auftrittsbild";
 import { mitGemerktemDialog } from "./nachergebnis";
 import type { Runden } from "./useAufgabenrunde";
 import type { Partien } from "./usePartiestart";
 import { ladeDialog, type Weltdaten } from "./weltdaten";
+
+/** Dialogvariablen, wie die Bedingungen sie lesen. */
+type Variablen = Readonly<Record<string, unknown>>;
 
 /** Ein offener Dialog: die übersetzte Geschichte, der Knoten und der Name der Datei. */
 export interface OffenerDialog {
@@ -127,18 +131,23 @@ function begleiterNeu(w: Weltdaten | null, variablen: Readonly<Record<string, un
 
 /**
  * Kommt oder geht durch das Gespräch eine Figur dieses Orts mit Bedingung (regeln/figurbedingung.ts)?
- * Beispiel: Hale und {rivale} verlassen den Clubraum, sobald kenntHale gilt.
+ * Beispiel: Hale und {rivale} verlassen den Clubraum, sobald kenntHale gilt. Dazu `auftritt.wartet`
+ * (regeln/auftritt.ts): Wartet eine Figur noch am Übergang (`wartetNoch`, kein `#gehe` hat sie
+ * geholt), kommt sie nach dem Neuaufbau herein; wer schon hereinkam, bleibt ohne Neuaufbau stehen.
  */
 function figurenNeu(
   w: Weltdaten | null,
-  vorher: Readonly<Record<string, unknown>>,
-  nachher: Readonly<Record<string, unknown>>,
+  staende: { readonly vorher: Variablen; readonly nachher: Variablen },
+  wartetNoch: (name: string) => boolean,
 ): boolean {
   if (!w) return false;
+  const wartende = w.ort.figuren.filter((f) =>
+    wartetNoch(f.kennung.slice(f.kennung.indexOf(".") + 1)),
+  );
   return bedingteFigurUmgeschlagen(
-    w.ort.figuren.map((f) => f.wenn),
-    vorher,
-    nachher,
+    [...w.ort.figuren.map((f) => f.wenn), ...wartende.map((f) => f.auftritt?.wartet)],
+    staende.vorher,
+    staende.nachher,
   );
 }
 
@@ -229,7 +238,11 @@ export function useDialogende(k: Oberweltkern, partie: Partien, runden: Runden):
     // stellt sich neu auf (wer zur Tür ging, ist dann fort und versperrt sie nicht mehr).
     else if (
       begleiterNeu(k.weltRef.current, neu.dialogvariablen) ||
-      figurenNeu(k.weltRef.current, variablenBeimOeffnen.current, neu.dialogvariablen)
+      figurenNeu(
+        k.weltRef.current,
+        { vorher: variablenBeimOeffnen.current, nachher: neu.dialogvariablen },
+        (name) => szeneAus(k.spiel)?.children.getByName(name)?.getData(AUFTRITT) === "wartet",
+      )
     )
       k.stelleNeuAuf();
     if (nimm(m.abspann, false)) setzeAbspann(true);

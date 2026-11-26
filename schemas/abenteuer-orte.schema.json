@@ -146,6 +146,15 @@
           "description": "Die Figur steht nur auf der Karte, wenn diese Bedingung beim Betreten gilt (Stufen A bis D der kleinen Geschichten, Haupt-Chat 13.11.2026). Sprache wie bei Auslösern (app/src/abenteuer/regeln/bedingung.ts). Beispiel: Tessa am Flussweg erst mit „tessaStufe >= 2“.",
           "type": "string",
           "minLength": 1
+        },
+        "auftritt": {
+          "description": "Auftritt der Figur, wenn ihre Bedingung umschlägt, während der Held auf der Karte ist (Befund des Autors, 26.11.2026; app/src/abenteuer/regeln/auftritt.ts). Ohne Angabe erscheint sie am nächsten Übergang der Karte und läuft zu ihrem Feld; wird die Bedingung falsch, geht sie zum nächsten Übergang hinaus. `von`: Name des Übergangs, durch den sie kommt und geht. `wartet`: Solange diese Bedingung gilt, steht die Figur unsichtbar am Übergang, bis ein `#gehe` einer Erzählzeile sie hereinholt (Hale und {rivale} im Clubraum: „nicht victorGesehen“).",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "von": { "type": "string", "minLength": 1 },
+            "wartet": { "type": "string", "minLength": 1 }
+          }
         }
       }
     },

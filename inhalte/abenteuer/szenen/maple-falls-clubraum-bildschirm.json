@@ -910,13 +910,13 @@
     },
     {
       "name": "haleClub",
-      "feld": [16, 12],
-      "blick": "oben"
+      "feld": [18, 5],
+      "blick": "links"
     },
     {
       "name": "victorClub",
-      "feld": [15, 13],
-      "blick": "oben"
+      "feld": [9, 3],
+      "blick": "unten"
     },
     {
       "name": "prattClub",

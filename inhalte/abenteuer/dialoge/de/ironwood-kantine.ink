@@ -336,7 +336,9 @@ Vor dem Haus mit dem grünen Geländer bleibt sie eine Minute sitzen, die Hände
 Was sie und Oma Ruth an der Tür sagen, weißt du nicht. Du bleibst im Wagen. #sprecher:erzaehler
 Manche Dinge gehören einem nicht. #sprecher:erzaehler
 In der Kantine bullert der Ofen. Sie sind alle da, Hank und Priya und ein Dutzend andere in Arbeitsjacken. #sprecher:erzaehler #musik:aus #schwenk:hank
-Als Mama in der Tür steht, wird es still wie in einer Kirche. #sprecher:erzaehler #schwenk:held
+// Auftritt (Befund des Autors, 26.11.2026): Mama wartet unsichtbar in der Tür (orte.json,
+// auftritt.wartet „nicht mamaInKantine“) und kommt mit dieser Zeile herein, zu Big Joe.
+Als Mama in der Tür steht, wird es still wie in einer Kirche. #sprecher:erzaehler #schwenk:held #gehe:mama>bigJoe
 Big Joe steht auf. Er sagt nichts, sie sagt nichts. #sprecher:erzaehler #schwenk:bigJoe
 Sie geht durch den ganzen langen Raum. Er kommt ihr drei Schritte entgegen und hält sie fest, als könnte sie zerbrechen. #sprecher:erzaehler #pause:2
 Laurie. #sprecher:bigJoe #stimmung:ueberrascht

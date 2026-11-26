@@ -27,7 +27,9 @@ import { KACHEL, type Ausloesertreffer } from "./szene";
 import { phase, stundeJetzt } from "../regeln/spieluhr";
 import { toenungJetzt } from "./uhrtoenung";
 import { BELEBUNG_EREIGNIS } from "./belebungsschicht";
-import { KACHELSATZ, ladeWelt, type Weltdaten } from "./weltdaten";
+import { figurennamen, KACHELSATZ, ladeWelt, type Weltdaten } from "./weltdaten";
+import { auftrittsplan, type Aufstellung } from "../regeln/auftritt";
+import { gemerkteAufstellung, merkeAufstellung } from "./auftrittsgedaechtnis";
 import { INNEN_FIGURFAKTOR } from "./weltmassstab";
 
 /** Gegenstand für den Lichtkreis auf dunklen Karten (Sperren S4, S9, S11, S14). */
@@ -59,6 +61,27 @@ function merkeBesuch(k: Oberweltkern, w: Weltdaten): void {
   });
 }
 
+/**
+ * Auftritte beim Aufbau (regeln/auftritt.ts): Vergleich mit der Aufstellung beim letzten Abbau
+ * derselben Karte. Beispiel: nach dem gewonnenen Clubkampf kommt Pratt durch die Tür.
+ */
+function auftrittFuer(w: Weltdaten, vorher: Aufstellung | null) {
+  const jetzt = figurennamen(w.karte).filter((n) => !w.auftritt.gehend.includes(n));
+  const lage = {
+    jetzt,
+    gehend: w.auftritt.gehend,
+    wartend: w.auftritt.wartend,
+    geister: w.geister,
+  };
+  return { plan: auftrittsplan(vorher, w.kennung, lage), von: w.auftritt.von };
+}
+
+/** Beim Abbau: Wer sichtbar stand und wo, für die Auftritte beim nächsten Aufbau dieser Karte. */
+function merkeAbbau(k: Oberweltkern, karte: string): void {
+  const figuren = szeneAus(k.spiel)?.aufstellung();
+  if (figuren) merkeAufstellung({ karte, figuren });
+}
+
 /** Startet Phaser für eine geladene Welt. */
 function starteSpiel(
   k: Oberweltkern,
@@ -66,6 +89,7 @@ function starteSpiel(
   w: Weltdaten,
   stand: Abenteuerstand,
   moebel: Readonly<Record<string, Sperrangabe>>,
+  vorher: Aufstellung | null,
 ) {
   const rahmen = a.rahmen.current;
   if (!rahmen) return;
@@ -113,6 +137,8 @@ function starteSpiel(
     stunde: stundeJetzt(stand),
     // Teilchen der Karte aus orte.json (T8); Winterkarten haben Schnee.
     teilchen: istTeilchenart(eintrag?.teilchen) ? eintrag.teilchen : null,
+    // Wer hereinkommt, hinausgeht oder wartet (auftrittsschicht.ts).
+    auftritt: auftrittFuer(w, vorher),
     laterne: stand.gegenstaende.includes(LATERNE),
     jahreszeit: w.jahreszeit,
     kachelsatz: KACHELSATZ,
@@ -195,7 +221,9 @@ export function useWeltladen(k: Oberweltkern, a: Weltanschluss): string | null {
     const moebelliste = liesPaketJson<{ moebel: Record<string, Sperrangabe> }>("daten/moebel.json")
       .then((d) => d.moebel)
       .catch(() => ({}));
-    Promise.all([ladeWelt(karte, stand.held.figur, variablen, stand), moebelliste])
+    // Wer beim letzten Abbau dieser Karte stand (auftrittsgedaechtnis.ts), für die Auftritte.
+    const vorher = gemerkteAufstellung();
+    Promise.all([ladeWelt(karte, stand.held.figur, variablen, stand, vorher), moebelliste])
       .then(([w, moebel]) => {
         if (!aktiv || !a.rahmen.current) return;
         k.setzeWelt(w);
@@ -203,13 +231,14 @@ export function useWeltladen(k: Oberweltkern, a: Weltanschluss): string | null {
         // Karte betreten (Quests), dann Ergebnisse, die auf die Welt gewartet haben.
         k.melde({ art: "ort", karte: w.kennung }, w);
         a.beiWelt(w);
-        starteSpiel(k, a, w, stand, moebel);
+        starteSpiel(k, a, w, stand, moebel, vorher);
       })
       .catch((f: unknown) => setzeFehler(fehlertext(f)));
     return () => {
       aktiv = false;
       document.removeEventListener("visibilitychange", beiSichtwechsel);
       sichereSitzung(k, karte, begonnen);
+      merkeAbbau(k, karte);
       if (k.spiel.current) beendeOberwelt(k.spiel.current);
       k.spiel.current = null;
     };

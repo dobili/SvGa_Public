@@ -14,7 +14,11 @@
  * Liegen (seit 21.11.2026): Hat der Bogen eine Liegereihe (PixelLab-Zustand, sitzrichtung.ts), zeigt
  * die Figur das Liegebild mit dem Kopf auf der Seite des Betts (Name KopfRechts/KopfWest im
  * Katalog); sonst kippt sie wie bisher das Standbild um eine Vierteldrehung.
- * Abhängigkeiten: phaser, gefuehrterweg.ts, figurbilder.ts, figurensitz.ts, sitzrichtung.ts.
+ * Auftritte (26.11.2026, auftrittsbild.ts): Eine Figur, die unsichtbar am Übergang wartet, tritt mit
+ * ihrem `#gehe` hervor; am Ziel rückt ihr Auslöser mit; ein `#gehe` in einen Übergang (Name oder
+ * Feld) lässt sie dort hinausgehen, statt davor stehen zu bleiben.
+ * Abhängigkeiten: phaser, gefuehrterweg.ts, figurbilder.ts, figurensitz.ts, sitzrichtung.ts,
+ * auftrittsbild.ts.
  */
 import Phaser from "phaser";
 import { laufname, rennname, standbild, stelleAufKachel } from "./figurbilder";
@@ -25,6 +29,7 @@ import { rueckeAnsKopfende } from "./liegelage";
 import { kippwinkel, kopfseiteDesBetts, liegebild, LIEGT, type Kopfseite } from "./sitzrichtung";
 import { deckeZu, nimmDeckeWeg } from "./vordergrund";
 import { GEFUEHRT, GRUNDBILD } from "./zuwendungsschicht";
+import { gehtHinaus, istAusgang, rueckeAusloeser, trittHervor } from "./auftrittsbild";
 import {
   blickZu,
   endfelder,
@@ -62,6 +67,8 @@ export interface Fuehrungszugang {
    * auf den Helden zugegangen ist (ansprechschicht.ts): Ihr Auslöser rückt mit ihr.
    */
   readonly ausloeser: Ausloeser[];
+  /** Namen der Übergänge der Karte: Ein `#gehe` dorthin lässt die Figur hinausgehen (auftrittsbild.ts). */
+  readonly uebergaenge: readonly string[];
   /** Möbel der Karte (das Bett unter einer Liegenden gibt die Kopfseite vor). */
   readonly moebel: readonly Moebel[];
   readonly setzeFuehrung: (f: Heldfuehrung | null) => void;
@@ -163,6 +170,8 @@ export function freiFuer(
 export function fuehre(z: Fuehrungszugang, auftrag: Wegauftrag): Promise<void> {
   const wer = figurNamens(z, auftrag.wer);
   if (!wer) return Promise.resolve();
+  // Wartet sie am Übergang (auftrittsbild.ts), tritt sie jetzt hervor und geht herein.
+  if (wer !== z.held) trittHervor(z, wer);
   const frei = freiFuer(z, wer);
   const { felder, blickAuf } = ziele(z, auftrag, frei);
   const start = kachelVon(wer, z.kachel);
@@ -170,7 +179,13 @@ export function fuehre(z: Fuehrungszugang, auftrag: Wegauftrag): Promise<void> {
   const ende = weg.at(-1) ?? start;
   const blick = blickAuf ? blickZu(ende, blickAuf) : null;
   if (wer === z.held) return fuehreHeld(z, weg, blick);
-  return fuehreFigur(z, wer, { name: auftrag.wer, rennt: auftrag.rennt === true }, weg, blick);
+  const gang = { name: auftrag.wer, rennt: auftrag.rennt === true };
+  return fuehreFigur(z, wer, gang, weg, blick).then(() => {
+    // Der Auslöser rückt mit (man spricht sie dort an, wo sie steht); in einem Übergang geht sie
+    // hinaus und versperrt ihn nicht (Befund des Autors, 26.11.2026: Hale und {rivale} vor der Tür).
+    rueckeAusloeser(z, auftrag.wer, ende);
+    return istAusgang(z, auftrag.ziel) ? gehtHinaus(z, wer) : undefined;
+  });
 }
 
 /** Der Held geht den Weg mit seiner Laufbewegung (szene.ts fragt die Führung in jedem Bild). */

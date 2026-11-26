@@ -67,10 +67,36 @@ export class Spur {
     this.felder = [held, ...begleiter];
   }
 
-  /** Merkt das Feld des Helden, wenn es neu ist; die Spur wird nie länger als nötig. */
-  merke(feld: Spurfeld, laenge: number): void {
+  /**
+   * Merkt das Feld des Helden, wenn es neu ist; die Spur wird nie länger als nötig.
+   * Schräg (Joystick, 26.11.2026), nur mit `frei` (Sperrkarte der Szene):
+   * - Springt der Held über die Ecke auf ein schräges Nachbarfeld und ist eins der beiden Eckfelder
+   *   gesperrt, kommt das freie dazwischen (eckfeld): Der Begleiter geht nicht durch die Wandecke.
+   * - Läuft der Held eine Treppe (rechts, unten, rechts …) und sind beide Eckfelder frei, fällt die
+   *   Stufe weg (glaette): Der Begleiter geht schräg hinterher wie der Held.
+   * Ohne `frei` bleibt die Spur genau der Weg des Helden in Kachelschritten.
+   * Beispiel mit freier Wiese: (5, 5) → (6, 5) → (6, 6) → Spur [(6,6), (5,5)].
+   */
+  merke(feld: Spurfeld, laenge: number, frei?: (x: number, y: number) => boolean): void {
     const erstes = this.felder[0];
     if (erstes && erstes.x === feld.x && erstes.y === feld.y) return;
+    const ecke = erstes && frei ? eckfeld(erstes, feld, frei) : null;
+    if (ecke) this.schiebe(ecke, laenge);
+    this.schiebe(feld, laenge);
+    if (frei) this.glaette(frei);
+  }
+
+  /** Nimmt die Stufe einer Treppe heraus, wenn die Schräge an beiden Ecken frei ist. */
+  private glaette(frei: (x: number, y: number) => boolean): void {
+    const [neu, stufe, alt] = this.felder;
+    if (!neu || !stufe || !alt) return;
+    if (Math.abs(neu.x - alt.x) !== 1 || Math.abs(neu.y - alt.y) !== 1) return;
+    const andere = stufe.x === neu.x ? { x: alt.x, y: neu.y } : { x: neu.x, y: alt.y };
+    if (frei(andere.x, andere.y) && frei(stufe.x, stufe.y)) this.felder.splice(1, 1);
+  }
+
+  /** Legt ein Feld vorn auf die Spur (mit Abschneiden beim Zurückgehen). */
+  private schiebe(feld: Spurfeld, laenge: number): void {
     // Geht der Held auf ein Feld der Spur zurück, wird sie dort abgeschnitten: Der Begleiter
     // weicht dann nicht im Kreis aus, sondern bleibt hinter ihm.
     const zurueck = this.felder.findIndex((f) => f.x === feld.x && f.y === feld.y);
@@ -84,6 +110,25 @@ export class Spur {
     // Die Spur hat immer mindestens das Feld des Helden (Konstruktor).
     return feld ?? { x: 0, y: 0 };
   }
+}
+
+/**
+ * Das Eckfeld, über das ein Begleiter zwischen zwei schräg benachbarten Feldern gehen muss: null,
+ * wenn sie nicht schräg benachbart sind oder beide Eckfelder frei sind (dann geht er schräg);
+ * sonst das freie (sind beide zu, das waagrechte).
+ * Beispiel: (5, 5) → (6, 4), (6, 5) gesperrt → (5, 4); beide frei → null.
+ */
+export function eckfeld(
+  von: Spurfeld,
+  nach: Spurfeld,
+  frei: (x: number, y: number) => boolean,
+): Spurfeld | null {
+  if (Math.abs(nach.x - von.x) !== 1 || Math.abs(nach.y - von.y) !== 1) return null;
+  const waag = { x: nach.x, y: von.y };
+  const senk = { x: von.x, y: nach.y };
+  const waagFrei = frei(waag.x, waag.y);
+  if (waagFrei && frei(senk.x, senk.y)) return null;
+  return waagFrei || !frei(senk.x, senk.y) ? waag : senk;
 }
 
 /** Blickrichtung wie in der Szene. */

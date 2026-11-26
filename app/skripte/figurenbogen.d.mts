@@ -18,6 +18,8 @@ export function baueFigurenbogenMitStandbildern(ordner: string): Promise<{
   readonly standbilder: Standbildindex | null;
   /** Rahmenhöhe des Bogens: 32, bei hoher Leinwand (Schiffskoch, 25.11.2026) etwa 48. */
   readonly rahmenhoehe: number;
+  /** Erster Rahmen der Schrägen (figurdiagonalen.mjs, nur Held, Heldin, Juno, Mama), sonst null. */
+  readonly diagonalen: number | null;
 } | null>;
 
 /**

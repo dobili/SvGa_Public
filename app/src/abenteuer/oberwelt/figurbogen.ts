@@ -15,6 +15,10 @@
  * figuren32/rahmenhoehen.json des Pakets (skripte/figurenbogen.mjs schreibt ihn, nur Figuren mit
  * einer Höhe über 32); ohne Index oder Eintrag gilt 32.
  *
+ * Schrägen (Wunsch des Autors, 26.11.2026, diagonales Laufen): Held, Heldin, Juno und Mama haben am Ende ihres
+ * Bogens drei Reihen mit Standbildern, Gehen und Rennen in den vier Schrägen. Wo sie beginnen, steht
+ * im Index figuren32/diagonalen.json (skripte/figurdiagonalen.mjs); ohne Eintrag hat der Bogen keine.
+ *
  * Rolle im Gesamtbild: weltdaten.ts lädt die Bilder hierüber; figurbilder.ts fragt beim Laden in
  * Phaser, welche Rahmengröße eine Adresse hat. Ohne Phaser, damit weltdaten.ts klein bleibt.
  * Abhängigkeiten: paket/paketlader.ts, figurhoehen.json.
@@ -46,6 +50,24 @@ export function ladeRahmenhoehen(): Promise<Rahmenhoehen> {
 /** Rahmenhöhe des PixelLab-Bogens hinter einer Adresse (32, beim Schiffskoch 48). */
 export function rahmenhoeheDerAdresse(adresse: string): number {
   return hoeheJeAdresse.get(adresse) ?? GROSS_HOEHE;
+}
+
+/** Bogenname → erster Rahmen der Schrägen (Index des Pakets). */
+export type Diagonalindex = Readonly<Record<string, number>>;
+const DIAGONALINDEX = "figuren32/diagonalen.json";
+let diagonalvorrat: Promise<Diagonalindex> | null = null;
+/** Erster Rahmen der Schrägen je Adresse eines PixelLab-Bogens (nur Bögen mit Schrägen). */
+const diagonalJeAdresse = new Map<string, number>();
+
+/** Der Index der Schrägen, einmal je Sitzung; leer ohne Datei (ältere Pakete, CI). */
+export function ladeDiagonalindex(): Promise<Diagonalindex> {
+  diagonalvorrat ??= liesPaketJson<Diagonalindex>(DIAGONALINDEX).catch(() => ({}));
+  return diagonalvorrat;
+}
+
+/** Erster Rahmen der Schrägen im Bogen hinter einer Adresse, oder null (keine Schrägen). */
+export function diagonalbeginnDerAdresse(adresse: string): number | null {
+  return diagonalJeAdresse.get(adresse) ?? null;
 }
 
 /** Name eines Bogens aus seinem Pfad. Beispiel: figuren/juno.png → juno. */
@@ -85,6 +107,7 @@ export async function figurenbildAdresse(
   pfad: string,
   lies: (pfad: string) => Promise<string | null> = paketdateiAlsAdresseOderNull,
   hoehen: () => Promise<Rahmenhoehen> = ladeRahmenhoehen,
+  diagonalen: () => Promise<Diagonalindex> = ladeDiagonalindex,
 ): Promise<string | null> {
   if (ALT.test(pfad)) {
     const neu = await lies(grosspfad(pfad));
@@ -95,6 +118,8 @@ export async function figurenbildAdresse(
       if (faktor !== 1) faktorJeAdresse.set(neu, faktor);
       const hoehe = (await hoehen())[name];
       if (hoehe && hoehe !== GROSS_HOEHE) hoeheJeAdresse.set(neu, hoehe);
+      const schraeg = (await diagonalen())[name];
+      if (typeof schraeg === "number") diagonalJeAdresse.set(neu, schraeg);
       return neu;
     }
   }

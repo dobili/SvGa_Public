@@ -23,6 +23,8 @@ let anzahl = 0;
 const standbilder = {};
 // Hohe Rahmen (32 × 48, figurenbogen.mjs): Index wie im Paket (figuren32/rahmenhoehen.json).
 const rahmenhoehen = {};
+// Schrägen von Held, Heldin, Juno und Mama (figurdiagonalen.mjs): erster Rahmen je Figur.
+const diagonalen = {};
 for (const eintrag of await readdir(quelle, { withFileTypes: true })) {
   if (!eintrag.isDirectory()) continue;
   const bogen = await baueFigurenbogenMitStandbildern(join(quelle, eintrag.name));
@@ -30,9 +32,11 @@ for (const eintrag of await readdir(quelle, { withFileTypes: true })) {
     await writeFile(join(ziel, `${eintrag.name}.png`), bogen.bild);
     if (bogen.standbilder) standbilder[eintrag.name] = bogen.standbilder;
     if (bogen.rahmenhoehe !== RAHMEN) rahmenhoehen[eintrag.name] = bogen.rahmenhoehe;
+    if (bogen.diagonalen !== null) diagonalen[eintrag.name] = bogen.diagonalen;
     anzahl += 1;
   }
 }
 await writeFile(join(ziel, "standbilder.json"), JSON.stringify(standbilder, null, 2));
 await writeFile(join(ziel, "rahmenhoehen.json"), JSON.stringify(rahmenhoehen, null, 2));
+await writeFile(join(ziel, "diagonalen.json"), JSON.stringify(diagonalen, null, 2));
 console.log(`${anzahl} Bögen → ${ziel}`);

@@ -1,6 +1,6 @@
 // Begleiter auf Wegen (Wunsch des Autors, 25.11.2026): Namen aus der Dialogvariable und die Spur.
 import { describe, expect, it } from "vitest";
-import { begleiterAus, begleiterGeaendert, schrittrichtung, Spur } from "./gefolge";
+import { begleiterAus, begleiterGeaendert, eckfeld, schrittrichtung, Spur } from "./gefolge";
 
 describe("Begleiter", () => {
   it("liest die Namen aus der Dialogvariable", () => {
@@ -50,5 +50,28 @@ describe("Spur", () => {
     expect(schrittrichtung({ x: 5, y: 5 }, { x: 6, y: 5 })).toBe("rechts");
     expect(schrittrichtung({ x: 5, y: 5 }, { x: 5, y: 4 })).toBe("oben");
     expect(schrittrichtung({ x: 5, y: 5 }, { x: 5, y: 5 })).toBeNull();
+  });
+
+  it("schräg: Eckfeld nur an einer Wandecke, auf freier Wiese geht der Begleiter schräg", () => {
+    const offen = () => true;
+    const frei = new Spur({ x: 5, y: 5 });
+    frei.merke({ x: 6, y: 4 }, 3, offen);
+    expect(frei.ziel(1)).toEqual({ x: 5, y: 5 });
+    const mitWand = new Spur({ x: 5, y: 5 });
+    mitWand.merke({ x: 6, y: 4 }, 3, (x, y) => !(x === 6 && y === 5));
+    expect(mitWand.ziel(1)).toEqual({ x: 5, y: 4 });
+    expect(eckfeld({ x: 1, y: 1 }, { x: 3, y: 2 }, offen)).toBeNull();
+  });
+
+  it("Treppe des Helden: die Stufe fällt weg, wenn beide Ecken frei sind, an der Wand nicht", () => {
+    const wiese = new Spur({ x: 5, y: 5 });
+    wiese.merke({ x: 6, y: 5 }, 3, () => true);
+    wiese.merke({ x: 6, y: 6 }, 3, () => true);
+    expect(wiese.ziel(1)).toEqual({ x: 5, y: 5 });
+    const ecke = new Spur({ x: 5, y: 5 });
+    const wand = (x: number, y: number) => !(x === 5 && y === 6);
+    ecke.merke({ x: 6, y: 5 }, 3, wand);
+    ecke.merke({ x: 6, y: 6 }, 3, wand);
+    expect(ecke.ziel(1)).toEqual({ x: 6, y: 5 });
   });
 });

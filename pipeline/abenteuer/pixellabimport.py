@@ -9,7 +9,9 @@ Figur einen Ordner ``spiel/figuren-neu/<name>/`` mit ``rotations/<richtung>.png`
 schlaf>/rotations/``. Dieses Werkzeug baut genau diese Ordner (Auftrag des Haupt-Chats, 23.11.2026).
 
 Entscheidungen:
-- Nur die vier Richtungen, die das Spiel braucht (Süd, Nord, Ost, West); Schrägen bleiben weg.
+- Nur die vier Richtungen, die das Spiel braucht (Süd, Nord, Ost, West); Schrägen bleiben weg,
+  außer bei Held, Heldin, Juno und Mama: Sie laufen diagonal und bekommen danach Standbilder,
+  Gehen und Rennen in acht Richtungen aus ihren Einzelexporten (pixellabdiagonal.py, 26.11.2026).
 - Das Standbild kommt aus dem Zustand nach pixellabtabelle.STANDBILD, sonst aus dem Zustand, an
   dem die Laufanimation hängt. Gehen und Rennen kommen je aus dem Zustand, an dem sie hängen.
 - Zustände Sitzen auf dem Stuhl, Sitzen am Boden und Schlafen nach pixellabtabelle.ZUSTANDSORDNER.
@@ -40,6 +42,7 @@ import zipfile
 from dataclasses import dataclass
 from pathlib import Path
 
+from pipeline.abenteuer import pixellabdiagonal as D
 from pipeline.abenteuer import pixellabtabelle as T
 
 ZUORDNUNG = Path("ki-roh") / "zuordnung_23-11.json"
@@ -253,6 +256,7 @@ def schreibe_figur(privat: Path, gruppe: Gruppe) -> dict:
             if ordner and ordner not in zustaende:
                 zustaende[ordner] = _rotationen(archiv, z, ziel / "zustaende" / ordner)
     _metadaten(gruppe, stand, ziel, masse)
+    D.uebernimm_figur(privat, gruppe.name)  # Schrägen nur für Held, Heldin und Begleiter
     return {
         "stand": stand.name,
         "grund": grund,

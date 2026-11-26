@@ -2,32 +2,35 @@
  * Bedienung mit dem Daumen in der Oberwelt und im Dialog (docs/spiel/30_Bedienung_und_Brettstile.md,
  * Abschnitte 1 bis 3). Was man antippt, liegt dort, wo der Daumen ohnehin ist.
  *
- * Hochformat: Steuerkreuz unten auf der gewählten Seite (data-steuerkreuz an .bildschirm-abenteuer,
- * Vorgabe rechts), Aktionsknopf auf der anderen Seite. Unter dem Kreuz, ganz unten am Rand, eine
- * Reihe kleiner Symbolknöpfe: Menü ☰ außen, daneben Tagebuch 📖, Übungspartie ♞ und Reisen 🎫
- * (Wunsch des Autors, 20.11.2026: „Tagebuch und Menü als kleine Symbolknöpfe unter dem
- * Steuerkreuz“; vorher stand eine Leiste mit Namen über dem Kreuz). Im Dialog stehen Tagebuch und
- * Menü oben rechts, „Weiter“ liegt auf der Seite des Aktionsknopfs.
- * Querformat (niedrige Höhe): Steuerkreuz links unten, halb durchsichtig, darunter dieselbe Reihe
- * (das Querformat hat keine Seitenwahl, das Kreuz steht immer links); rechts unten der
+ * Hochformat: Joystick unten auf der gewählten Seite (data-steuerkreuz an .bildschirm-abenteuer,
+ * Vorgabe rechts; seit 26.11.2026 statt des Steuerkreuzes), Aktionsknopf auf der anderen Seite.
+ * Unter dem Aktionsknopf, ganz unten am Rand, eine Reihe kleiner Symbolknöpfe: Menü ☰ außen,
+ * daneben Tagebuch 📖, Übungspartie ♞ und Reisen 🎫 (Wunsch des Autors, 26.11.2026: „Die Buttons
+ * für Einstellungen und Tagebuch können jetzt nach unten links“; vorher lagen sie unter dem
+ * Kreuz). Mit dem Joystick links wandert die Reihe nach rechts unter den Aktionsknopf. Im Dialog
+ * stehen Tagebuch und Menü oben rechts, „Weiter“ liegt auf der Seite des Aktionsknopfs.
+ * Querformat (niedrige Höhe): Joystick links unten, halb durchsichtig, darunter dieselbe Reihe
+ * (das Querformat hat keine Seitenwahl, der Joystick steht immer links); rechts unten der
  * Aktionsknopf. Der Dialog legt Porträt, Text und Wahlen nebeneinander, die Wahlen rechts.
- * Gehört zu anbindung/AbenteuerAnsicht.tsx, oberwelt/Steuerkreuz.tsx, oberwelt/Kopfleiste.tsx
+ * Gehört zu anbindung/AbenteuerAnsicht.tsx, oberwelt/Joystick.tsx, oberwelt/Kopfleiste.tsx
  * und dialog/Dialog.tsx; Farben und Pixelrahmen in spielfarben.css.
  */
 .bildschirm-abenteuer {
   --daumen-rand: calc(var(--raster) * 2);
   --daumen-unten: calc(env(safe-area-inset-bottom) + var(--daumen-rand));
-  /* Höhe des Steuerkreuzes: drei Felder à 48 px und zwei Fugen (abenteuer.css). */
-  --kreuz-fuge: 8px;
-  --kreuz-hoehe: calc(48px * 3 + var(--kreuz-fuge) * 2);
+  /* Joystick (Joystick.tsx, joystick.ts): Ring von zweimal dem Daumenradius (56 px), Knopf 52 px,
+     Fangfläche mit 20 px Zugabe je Seite. --kreuz-hoehe bleibt der Name der Fläche, mit der alle
+     Lagen rechnen (152 px, früher das Kreuz mit 160 px). */
+  --joystick-ring: 112px;
+  --joystick-knopf: 52px;
+  --kreuz-hoehe: calc(var(--joystick-ring) + var(--raster) * 5);
   --aktion-groesse: 72px;
   /* Symbolknöpfe: 44 px, über der Mindestgröße von 40 px zum Tippen; die Reihe liegt ganz unten,
-     das Kreuz darüber. */
+     Joystick und Aktionsknopf darüber. */
   --leistenknopf: 44px;
-  /* Reihe mit Tagebuch und Menü (Befund des Autors am iPhone, 25.11.2026: zu dicht unter den
-     Pfeiltasten): etwas tiefer als bisher, aber über dem Strich der Home-Leiste, mit gut 30 px
-     Luft zum Kreuz; seitlich weiter eingerückt, damit die äußeren Knöpfe nicht in die Rundung
-     der Bildschirmecke geraten. */
+  /* Reihe mit Tagebuch und Menü (Befund des Autors am iPhone, 25.11.2026): über dem Strich der
+     Home-Leiste, mit gut 30 px Luft zum Aktionsknopf darüber; seitlich eingerückt, damit die
+     äußeren Knöpfe nicht in die Rundung der Bildschirmecke geraten. */
   --leiste-unten: calc(env(safe-area-inset-bottom) + var(--raster));
   --leiste-seite: calc(var(--daumen-rand) + var(--raster));
   --kreuz-unten: calc(var(--daumen-unten) + var(--leistenknopf) + var(--raster) * 3);
@@ -35,7 +38,7 @@
   --ueber-kreuz: calc(var(--kreuz-unten) + var(--kreuz-hoehe) + var(--raster));
 }
 
-/* ---------- Hochformat (Vorgabe): Steuerkreuz rechts, Aktion links ---------- */
+/* ---------- Hochformat (Vorgabe): Joystick rechts, Aktion links ---------- */
 .abenteuer-steuerkreuz {
   right: var(--daumen-rand);
   bottom: var(--kreuz-unten);
@@ -64,25 +67,26 @@
   );
 }
 
-/* Die Reihe unter dem Steuerkreuz; am äußeren Ende steht der Menüknopf, das Tagebuch gleich
-   daneben (row-reverse: das erste Kind, das Tagebuch, liegt dem Menü am nächsten). */
+/* Die Reihe unter dem Aktionsknopf, unten links (Wunsch des Autors, 26.11.2026); am äußeren Ende
+   steht der Menüknopf, das Tagebuch gleich daneben auf derselben Höhe. Mit dem Joystick links
+   liegt sie rechts (row-reverse: das erste Kind, das Tagebuch, liegt dem Menü am nächsten). */
 .abenteuer-leiste {
   position: absolute;
   z-index: 3;
-  left: var(--leiste-seite);
-  right: calc(var(--leiste-seite) + var(--leistenknopf) + var(--raster) * 1.5);
+  left: calc(var(--leiste-seite) + var(--leistenknopf) + var(--raster) * 1.5);
+  right: calc(var(--leiste-seite) + var(--kreuz-hoehe));
   bottom: var(--leiste-unten);
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: flex-start;
   gap: var(--raster);
   pointer-events: none;
 }
 
 [data-steuerkreuz="links"] .abenteuer-leiste {
-  left: calc(var(--leiste-seite) + var(--leistenknopf) + var(--raster) * 1.5);
-  right: var(--leiste-seite);
-  flex-direction: row;
+  left: calc(var(--leiste-seite) + var(--kreuz-hoehe));
+  right: calc(var(--leiste-seite) + var(--leistenknopf) + var(--raster) * 1.5);
+  flex-direction: row-reverse;
 }
 
 .abenteuer-leiste > * {
@@ -108,17 +112,18 @@
   display: none;
 }
 
-/* In der Welt (ohne offenen Dialog) liegt der Menüknopf am äußeren Ende der Reihe. */
+/* In der Welt (ohne offenen Dialog) liegt der Menüknopf am äußeren Ende der Reihe, unten links. */
 .bildschirm-abenteuer:has(> .abenteuer-welt):not(:has(.abenteuer-dialog)) > .abenteuer-menueknopf {
   top: auto;
-  right: var(--leiste-seite);
+  left: var(--leiste-seite);
+  right: auto;
   bottom: var(--leiste-unten);
 }
 
 [data-steuerkreuz="links"]:has(> .abenteuer-welt):not(:has(.abenteuer-dialog))
   > .abenteuer-menueknopf {
-  left: var(--leiste-seite);
-  right: auto;
+  left: auto;
+  right: var(--leiste-seite);
 }
 
 /* Liegt der Menüknopf unten, rücken die Münzen ganz nach rechts oben. */
@@ -170,7 +175,7 @@
     bottom: var(--daumen-unten);
   }
 
-  /* Die Reihe unter dem Kreuz links: Menü am Rand, daneben Tagebuch, Übungspartie, Reisen. */
+  /* Die Reihe unter dem Joystick links: Menü am Rand, daneben Tagebuch, Übungspartie, Reisen. */
   .bildschirm-abenteuer .abenteuer-leiste {
     left: calc(var(--daumen-links) + var(--raster) + var(--leistenknopf) + var(--raster) * 1.5);
     right: auto;

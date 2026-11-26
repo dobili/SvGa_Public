@@ -3,8 +3,8 @@
  *
  * Rolle im Gesamtbild: Phaser zeichnet nur Karte und Figuren (Entscheidung C4); alles andere ist
  * React (oberwelt/Oberwelt.tsx). Die Schnittstelle nach oben ist der `Melder` (Held steht auf
- * einem Auslöser, Held hat ihn verlassen, Position beim Verlassen); nach unten `setzeRichtung`
- * (Steuerkreuz) und `laufenErlaubt` (Dialog offen → stehen bleiben).
+ * einem Auslöser, Held hat ihn verlassen, Position beim Verlassen); nach unten `setzeSteuerung`
+ * (Joystick, acht Richtungen, heldsteuerung.ts) und `laufenErlaubt` (Dialog offen → stehen bleiben).
  * Kacheln 16 px (inhalte/abenteuer/README.md), Faktor ZOOM (Architektur 10), PixelLab-Figuren mit
  * 2/3 (weltmassstab.ts). Kollision: Kacheleigenschaft `kollision`; Auslöser: Objektebene `ausloeser`.
  * Abhängigkeiten: phaser (MIT, docs/spiel/LIZENZEN.md), schnittstelle/spielstand.ts (Weltposition).
@@ -21,8 +21,9 @@ import {
 import { OHNE_RAENDER, type Raender } from "./kamera";
 import { Kamerafuehrung } from "./kamerafuehrung";
 import { ZOOM } from "./weltmassstab";
-import { kachelVon, tippschrittBeimLoslassen, type Tippschritt } from "./tippschritt";
-import { rueckeZurMitte, tippRichtung } from "./heldlauf";
+import { bewegeHeld, tippRichtung } from "./heldlauf";
+import { blickZu, istSchraege, type Achtrichtung } from "./achtrichtung";
+import { Heldsteuerung, type Steuereingabe } from "./heldsteuerung";
 import { Zielmarker, type Zielfeld } from "./zielmarker";
 import type { Weltposition } from "../schnittstelle/spielstand";
 import {
@@ -45,7 +46,7 @@ import { moebelbildMerker, sichtbarMesser } from "./sitzumriss";
 import { erscheineAlsGeist } from "./geisterscheinung";
 import type { Fuehrungszugang, Heldfuehrung } from "./fuehrungsschicht";
 import { Gangartsteuerung } from "./gangart";
-import { EINGABEPAUSE_MS, gegenrichtung, pausenschritt, pfeiltasten } from "./eingabepause";
+import { EINGABEPAUSE_MS, gegenrichtung, pausenschritt } from "./eingabepause";
 import { baueSperrkarte } from "./sperrkarte";
 import type { Toenung } from "./toenung";
 import { zeigeTeilchen } from "./teilchen";
@@ -71,7 +72,8 @@ const HELDFIGUR = "heldfigur";
 export class Oberweltszene extends Phaser.Scene {
   /** Der Held; null, bis create() gelaufen ist (die Hülle kann vorher schon fragen). */
   private held: Phaser.Physics.Arcade.Sprite | null = null;
-  private readonly gedrueckt = new Set<Richtung>();
+  /** Joystick, Tastatur und Tippschritt (heldsteuerung.ts); die Tastatur kommt in create(). */
+  private steuerung = new Heldsteuerung();
   private laufen = true;
   private blick: Richtung;
   private ausloeser: Ausloeser[] = [];
@@ -82,7 +84,6 @@ export class Oberweltszene extends Phaser.Scene {
   private pause = EINGABEPAUSE_MS;
   /** Zuletzt gemeldete Kachel des Helden („x,y“), damit beiKachel nur bei Änderung feuert. */
   private letzteKachel: string | null = null;
-  private tasten!: Phaser.Types.Input.Keyboard.CursorKeys | null;
   gangart = new Gangartsteuerung(false); // Rennen draußen (gangart.ts), Oberwelt setzt das Kreuz
   /** Statisten und Tiere der Karte (aus der Objektebene) und ihre Schicht nach create(). */
   private belebung: Belebung[] = [];
@@ -93,9 +94,6 @@ export class Oberweltszene extends Phaser.Scene {
   /** Dasselbe für Zellen von 4 Pixeln (Laufhilfe an feinen Sperren, laufhilfe.ts). */
   private zellfrei: (x: number, y: number) => boolean = () => true;
   private tiefen: Tiefenmoebel[] = []; // feste Möbel: Held daneben davor (heldtiefe.ts)
-  /** Kurzes Antippen (tippschritt.ts): Kachel beim Druck und der laufende Schritt danach. */
-  private druck: { richtung: Richtung; kachel: string } | null = null;
-  private tipp: Tippschritt | null = null;
   /** Zielhinweis (zielmarker.ts) und das Ziel, das schon vor create() kommen kann. */
   private zielmarker: Zielmarker | null = null;
   private ziel: { feld: Zielfeld | null; an: boolean } = { feld: null, an: true };
@@ -194,29 +192,19 @@ export class Oberweltszene extends Phaser.Scene {
     this.toenungsschicht = new Toenungsschicht(this, KACHEL);
     this.setzeToenung(this.daten.toenung ?? null);
     zeigeTeilchen(this, mitSchnee(this.daten.jahreszeit, this.daten.teilchen), true);
-    this.tasten = pfeiltasten(this.input.keyboard);
+    this.steuerung = new Heldsteuerung(this.input.keyboard);
     this.gangart = new Gangartsteuerung(this.daten.rennenErlaubt === true, this.input.keyboard);
     richteGefolgeEin(this.fuehrungszugang(), () => this.blick, this.daten.begleiter ?? []);
   }
 
   /**
-   * Das Steuerkreuz: Richtung gedrückt oder losgelassen. Ein kurzes Antippen läuft bis zur
+   * Der Joystick: Laufrichtung und Blick, oder null (Daumen weg). Ein kurzes Antippen läuft bis zur
    * nächsten Kachel weiter (tippschritt.ts), wenn der Held seine Kachel noch nicht verlassen hat.
    */
-  setzeRichtung(richtung: Richtung, gedrueckt: boolean): void {
+  setzeSteuerung(eingabe: Steuereingabe | null): void {
     const mitte = this.held ? { x: this.held.x, y: this.held.y } : null;
-    if (gedrueckt) {
-      this.gedrueckt.add(richtung);
-      this.tipp = null;
-      const frei = mitte && this.laufen && this.pause === 0;
-      this.druck = frei ? { richtung, kachel: kachelVon(mitte, KACHEL) } : null;
-      return;
-    }
-    this.gedrueckt.delete(richtung);
-    const d = this.druck;
-    this.druck = null;
-    if (d?.richtung !== richtung || !mitte || this.gedrueckt.size > 0) return;
-    this.tipp = tippschrittBeimLoslassen(richtung, d.kachel, mitte, KACHEL, this.frei);
+    const gilt = this.laufen && this.pause === 0;
+    this.steuerung.setze(eingabe, mitte, gilt, KACHEL, this.frei);
   }
 
   /** Neue Größe des Bildes (Gerät gedreht, oberweltspiel.ts): Kamera neu einrichten. */
@@ -248,9 +236,7 @@ export class Oberweltszene extends Phaser.Scene {
   /** Dialog offen: Der Held bleibt stehen, Eingaben werden verworfen. */
   laufenErlaubt(erlaubt: boolean): void {
     this.laufen = erlaubt;
-    if (erlaubt) return;
-    this.gedrueckt.clear();
-    this.tipp = null;
+    if (!erlaubt) this.steuerung.leere();
   }
 
   /**
@@ -298,41 +284,28 @@ export class Oberweltszene extends Phaser.Scene {
     };
   }
 
-  /** Die gewünschte Richtung aus Steuerkreuz und Tastatur; null, wenn nichts gedrückt ist. */
-  private gewuenschteRichtung(): Richtung | null {
-    const t = this.tasten;
-    if (this.gedrueckt.has("links") || t?.left.isDown) return "links";
-    if (this.gedrueckt.has("rechts") || t?.right.isDown) return "rechts";
-    if (this.gedrueckt.has("oben") || t?.up.isDown) return "oben";
-    if (this.gedrueckt.has("unten") || t?.down.isDown) return "unten";
-    return null;
-  }
-
   override update(_zeit: number, delta: number): void {
     if (!this.held) return;
     const heldfeld: Feld = { x: this.held.x / KACHEL - 0.5, y: this.held.y / KACHEL - 0.5 };
     const blick = { heldBlick: this.blick, heldGeht: this.geht }; // wen er ansieht, bleibt stehen
     this.belebungsschicht?.aktualisiere(delta, heldfeld, this.frei, blick);
-    const gewuenscht = this.gewuenschteRichtung() ?? this.tippschritt();
+    const gewuenscht = this.steuerung.wunsch(this.blick) ?? this.tippschritt();
     // Der Held kommt mit Blick vom Durchgang weg an; die Gegenrichtung führte zurück hinein.
-    const zurueck = gewuenscht === gegenrichtung(this.daten.start.richtung);
+    const zurueck = gewuenscht?.blick === gegenrichtung(this.daten.start.richtung);
     this.pause = pausenschritt(this.pause, delta, gewuenscht !== null, zurueck);
     const gefuehrt = this.fuehrung?.richtung(this.held, delta); // undefined: keine Führung
     const frei = this.laufen && this.pause === 0 ? gewuenscht : null;
-    const richtung = gefuehrt === undefined ? frei : gefuehrt;
-    this.geht = richtung !== null;
+    const zug = gefuehrt === undefined ? frei : gefuehrt && { richtung: gefuehrt, blick: gefuehrt };
+    this.geht = zug !== null;
     const koerper = this.held.body as Phaser.Physics.Arcade.Body;
     koerper.setVelocity(0, 0);
-    this.zeigeHeld(richtung);
-    if (richtung) {
-      this.blick = richtung;
+    this.zeigeHeld(zug);
+    if (zug) {
+      this.blick = zug.blick;
       const tempo = TEMPO * (this.daten.tempofaktor ?? 1) * this.gangart.faktor();
-      rueckeZurMitte(this.held, richtung, KACHEL, this.zellfrei);
-      if (richtung === "links") koerper.setVelocityX(-tempo);
-      if (richtung === "rechts") koerper.setVelocityX(tempo);
-      if (richtung === "oben") koerper.setVelocityY(-tempo);
-      if (richtung === "unten") koerper.setVelocityY(tempo);
+      bewegeHeld(this.held, zug.richtung, tempo, delta, KACHEL, this.zellfrei);
     }
+    const richtung = zug?.blick ?? null;
     if (!this.held.getData(LIEGT)) setzeHeldtiefe(this.held, this.tiefen, KACHEL); // liegend: Führung
     this.kamerafuehrung?.schritt(delta, richtung, { x: this.held.x, y: this.held.y });
     this.toenungsschicht?.folge(this.held.x, this.held.y);
@@ -343,25 +316,35 @@ export class Oberweltszene extends Phaser.Scene {
   }
 
   /** Richtung des laufenden Tippschritts (heldlauf.ts); beendet ihn am Ziel. */
-  private tippschritt(): Richtung | null {
+  private tippschritt(): Steuereingabe | null {
     if (!this.held) return null;
-    const { richtung, tipp } = tippRichtung(this.held, this.tipp);
-    this.tipp = tipp;
-    return richtung;
+    const { richtung, tipp } = tippRichtung(this.held, this.steuerung.tipp);
+    this.steuerung.tipp = tipp;
+    return richtung && { richtung, blick: richtung };
   }
 
-  /** Bild des Helden: Laufanimation in Bewegung, sonst Standbild der Blickrichtung. */
-  private zeigeHeld(richtung: Richtung | null): void {
+  /**
+   * Bild des Helden: Laufanimation in Bewegung (schräg, wenn der Bogen Schrägen hat, sonst die
+   * Hauptrichtung des Blicks), sonst Standbild der Blickrichtung.
+   */
+  private zeigeHeld(zug: Steuereingabe | null): void {
     const held = this.held;
     if (!held || held.getData(LIEGT)) return; // liegend: Liegebild (fuehrungsschicht.ts)
     if (!this.daten.heldfigur) {
-      if (richtung) held.setFrame(BILD_JE_RICHTUNG[richtung]);
+      if (zug) held.setFrame(BILD_JE_RICHTUNG[zug.blick]);
       return;
     }
     const bildname = this.gangart.rennt() ? rennname : laufname; // ohne Rennreihe: Gehbilder schneller
-    if (richtung) held.anims.play(bildname(HELDFIGUR, richtung), true);
+    if (zug) held.anims.play(bildname(HELDFIGUR, this.bildrichtung(zug, bildname)), true);
     else if (held.anims.isPlaying) held.anims.stop();
-    if (!richtung) held.setFrame(standbild(this.blick));
+    if (!zug) held.setFrame(standbild(this.blick));
+  }
+
+  /** Richtung der Laufbilder: die Schräge, wenn es ihre Animation gibt, sonst eine Hauptrichtung. */
+  private bildrichtung(zug: Steuereingabe, name: typeof laufname): Achtrichtung {
+    const { richtung, blick } = zug;
+    if (!istSchraege(richtung) || this.anims.exists(name(HELDFIGUR, richtung))) return richtung;
+    return blickZu(richtung, blick);
   }
 
   /** Meldet die Kachel des Helden nach oben, wenn sie sich geändert hat. */

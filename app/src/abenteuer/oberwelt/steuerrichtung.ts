@@ -8,7 +8,9 @@
  * Lücke stand der Held, die Bewegung hackte ab. Jetzt entscheidet der Winkel zur Mitte des Kreuzes.
  * Ein kleiner toter Kern in der Mitte hält die alte Richtung (sonst zittert sie beim Überstreichen der
  * Mitte), und eine Hysterese auf der Diagonale verhindert Flackern zwischen zwei Nachbarn.
- * Rolle im Gesamtbild: reine Regel für oberwelt/Steuerkreuz.tsx. Abhängigkeiten: keine.
+ * Seit dem Joystick (26.11.2026) bestimmt die Regel den Blick bei schrägem Laufen: die vorherrschende
+ * Achse mit derselben Hysterese (joystick.ts); die Laufrichtung selbst hat acht Sektoren.
+ * Rolle im Gesamtbild: reine Regel für oberwelt/joystick.ts. Abhängigkeiten: keine.
  */
 import type { Richtung } from "./szene";
 

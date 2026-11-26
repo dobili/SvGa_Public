@@ -11,7 +11,8 @@ listet dieses Werkzeug je Figurenbild die Zustände:
 - **liegen:** Ein Dialog legt sie mit ``#stelle:<wer>>x,y>liegt`` ins Bett (der Held in der Nacht).
 - **rennen:** Ein Dialog lässt sie mit ``#gehe:<wer>>ziel>rennt`` rennen, oder sie ist ein Statist
   mit Verhalten ``rennen`` (Kinder zwischen den Fahnenmasten). Der Held rennt draußen immer
-  (Joystick bis an den Rand, früher Steuerkreuz weit nach außen, Nachtrag des Haupt-Chats vom 21.11.2026); PixelLab-Animation
+  (Joystick bis an den Rand, früher Steuerkreuz weit nach außen, Nachtrag des Haupt-Chats vom
+  21.11.2026); PixelLab-Animation
   „Running“, Ordner ``animations/Running/``.
 
 Gezählt werden Figuren (``figuren`` der Szenen, Bild aus orte.json) und Statisten mit eigenem Bild

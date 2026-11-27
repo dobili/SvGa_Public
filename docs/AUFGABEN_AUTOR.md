@@ -899,6 +899,30 @@ Profil › Einstellungen › Fehler melden.
       Partie, in der du es sagst. Bitte prüfen: Clubkampf, „Atme“ sagen, verlieren, „Noch mal.“ –
       spielt Mira in der Revanche wieder wie vor dem „Atme“? Schon umgesetzt, Widerspruch genügt.
       **Antwort:** „N2780 ok“ oder eine Notiz.
+- [ ] N2781. **Ausweg bei Miss Odile (27.11.2026):** Der Clubkampf gegen Miss Odile in der Turnhalle
+      von Port Delacroix ist Pflicht und ohne Karten; ein Leser mit 1200 gewinnt dort je Versuch
+      höchstens etwa jede zehnte Partie. Neu: Nach der dritten Niederlage ohne Nadel stellt Miss
+      Odile die Figuren nicht wieder auf und sagt: „Dreimal hast du gegen mich gespielt. Dreimal
+      deine eigene Partie, ohne ein Wort aus dem Kasten.“, „Dafür hat der Club diesen Kampf
+      angesetzt. Nicht, um zu sehen, wer gewinnt.“ und „Ich schreibe ihn als gespielt ins Buch. Eine
+      Nadel gibt es dafür nicht, die holt man am Brett.“ Spricht Ambrose schon wieder, sagt er: „Sie
+      hat recht. Gegen sie zu verlieren ist eine Lektion. Keine Schande.“ Zum Schluss: „Der Zug nach
+      Westen fährt auch ohne Nadel. Und das Brett hier bleibt aufgebaut, bis du um sie spielen
+      willst.“ Die Hauptquest geht weiter wie nach einem Sieg, um die Nadel spielen bleibt möglich.
+      Nach der zweiten Niederlage sagt sie: „Du hast schneller gespielt als beim ersten Mal. Das war
+      nicht besser.“ Bitte testen: dreimal verlieren (Aufgeben genügt), dann zum Bahnhof. Schon
+      umgesetzt, Widerspruch genügt.
+      **Antwort:** „N2781 ok“ oder eine Notiz.
+- [ ] N2782. **Nachspielregel in der Vorrunde (27.11.2026):** In der Vorrunde der
+      Landesmeisterschaft braucht man 2 von 4 Punkten; ein Leser mit 1200 brauchte dafür oft sechs
+      bis zehn Partien. Neu: Nach der sechsten verlorenen Vorrundenpartie blättert die
+      Turnierleiterin in der Turnierordnung und sagt: „Sechs Partien verloren, und du sitzt immer
+      noch am Brett. Dafür gibt es die Nachspielregel.“ und „Ab jetzt reichen dir anderthalb Punkte
+      für das Halbfinale.“ Turnierleiterin und Turniertafel nennen danach 1,5 als Schwelle; wer
+      schon 1,5 Punkte hat, steht sofort im Halbfinale. Abgebrochene Partien zählen nicht. Bitte
+      testen: sechs Vorrundenpartien verlieren, dann einen Sieg und ein Remis holen. Schon
+      umgesetzt, Widerspruch genügt.
+      **Antwort:** „N2782 ok“ oder eine Notiz.
 - [ ] N2810. **Silicon Bay und Desert Springs aufgeräumt (27.11.2026):** Auf den Flachdächern stehen
       jetzt Klimageräte, Lüftungsanlagen, Luken und Rohre, auf manchen Solarmodule oder
       Pflanzkästen. Im Park von Silicon Bay stehen die Bäume frei im Rasen (zwei haben noch ihre

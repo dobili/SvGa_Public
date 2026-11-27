@@ -625,7 +625,7 @@
       "kennung": "desertSprings.clubkampf",
       "staerkeNach": [
         {
-          "wenn": "atmeGesagt",
+          "wenn": "atmeInDieserPartie",
           "stufe": 1,
           "profil": "positionsspieler"
         }

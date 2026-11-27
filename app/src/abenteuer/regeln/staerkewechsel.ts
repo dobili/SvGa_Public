@@ -1,7 +1,7 @@
 /**
  * Spielstärke durch Dialog (Wunsch des Haupt-Chats, 13.11.2026): Sagt der Held im Clubkampf von
- * Desert Springs „Atme“ (Dialogvariable atmeGesagt), spielt Mira für den Rest der Partie eine Stufe
- * stärker und ruhiger. Allgemein: `staerkeNach` je Begegnung in begegnungen.json, Bedingung →
+ * Desert Springs „Atme“ (Dialogvariable atmeInDieserPartie, vor jeder Partie zurückgesetzt), spielt
+ * Mira für den Rest der Partie eine Stufe stärker und ruhiger. Allgemein: `staerkeNach` je Begegnung in begegnungen.json, Bedingung →
  * Stufen (±) und wahlweise ein Stil (profil).
  *
  * Rolle im Gesamtbild: reine Regel; die Spielhülle wendet sie an, sobald sich die Dialogvariablen

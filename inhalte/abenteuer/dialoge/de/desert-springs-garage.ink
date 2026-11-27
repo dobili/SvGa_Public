@@ -50,6 +50,10 @@ VAR erinnerung1858Gesehen = false
 VAR miraGarageGesehen = false
 // Kapitel 46 (Roman): „Atme“ als Wahl mitten im Clubkampf (Partiemoment clubkampf_atme).
 VAR atmeGesagt = false
+// Nur für die laufende Partie (Balance 27.11.2026): Daran hängt Miras Stärkewechsel (begegnungen.json,
+// staerkeNach). atmeGesagt bleibt als Erinnerung (crossroads-aussen.ink); hinge der Wechsel daran,
+// spielte Mira nach einem „Atme“ in jedem weiteren Versuch von Anfang an eine Stufe stärker.
+VAR atmeInDieserPartie = false
 VAR atmeMomentGesehen = false
 VAR warumAtmeGefragt = false
 VAR margaretErzaehlt = false
@@ -139,6 +143,7 @@ Mira setzt sich. Ihre Füße reichen nicht bis zum Boden. #sprecher:erzaehler
 Ich opfere früh. Du kannst es nicht verhindern. #sprecher:mira #stimmung:laechelt
 + [„Ich will sehen, ob es stimmt.“]
     Sie grinst. Zum ersten Mal sieht sie aus wie zehn. #sprecher:erzaehler #musik:desertSprings.clubkampf
+    ~ atmeInDieserPartie = false
     ~ beginnePartie("desertSprings.clubkampf")
     -> END
 + [„Noch nicht.“]
@@ -170,6 +175,7 @@ Miras Summen hört auf. Ihre Hand geht vor, schnell, zu einem Schach. #sprecher:
 Die Hand von jemandem, unter dem der Boden weggebrochen ist. #sprecher:erzaehler
 * [„Mira. Atme.“]
     ~ atmeGesagt = true
+    ~ atmeInDieserPartie = true
     Sie starrt dich an. #sprecher:erzaehler #musik:atme
     * * [„Weißt du noch, was du über das Opfer gesagt hast?“]
     - - „Er hat richtig geopfert und dann Angst gekriegt. Du hast es selbst gesagt.“ #sprecher:erzaehler
@@ -189,6 +195,7 @@ Jetzt. #sprecher:mira #stimmung:laechelt
     Sie opfert früh, und du nimmst zu spät. Nimm, was sie gibt, und gib es nicht zurück. #sprecher:ambrose #stimmung:nachdenklich
 }
 + [„Noch mal.“]
+    ~ atmeInDieserPartie = false
     ~ beginnePartie("desertSprings.clubkampf")
     -> END
 + [„Nicht jetzt.“]
@@ -236,6 +243,7 @@ Ambrose sagt nichts. Aber er sieht dich an, wie er dich noch nie angesehen hat. 
 + {nadelDesertSprings > 0 and nadelDesertSprings < 3} [„Revanche um eine bessere Nadel?“]
     ~ revancheDesertSprings = true
     Jetzt. #sprecher:mira #stimmung:ernst
+    ~ atmeInDieserPartie = false
     ~ beginnePartie("desertSprings.clubkampf")
     -> END
 + [„Bis später, Mira.“]
@@ -508,6 +516,7 @@ Mira wartet auf ihren Clubkampf. Aber vorher noch etwas anderes. #sprecher:dot #
 }
 + {nadelDesertSprings < 3} [„Noch einmal.“]
     ~ revancheDesertSprings = true
+    ~ atmeInDieserPartie = false
     ~ beginnePartie("desertSprings.clubkampf")
     -> END
 + [„Nicht jetzt.“]

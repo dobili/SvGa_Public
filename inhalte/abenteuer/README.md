@@ -153,11 +153,13 @@ Tipp. Jeder Moment kommt höchstens einmal je Partie.
 
 ## Spielstärke durch Dialog (`begegnungen.json`, `staerkeNach`)
 
-`"staerkeNach": [{ "wenn": "atmeGesagt", "stufe": 1, "profil": "positionsspieler" }]`: Sobald die
+`"staerkeNach": [{ "wenn": "atmeInDieserPartie", "stufe": 1, "profil": "positionsspieler" }]`: Sobald die
 Bedingung gilt (Sprache wie `wenn` in `orte.json`, meist eine Variable aus einem Partiemoment mit
 Dialog), spielt der Gegner für den Rest der Partie um `stufe` Stufen stärker (negativ: schwächer, in
 allen Phasen, Grenzen 1 bis 10) und mit `profil` im Stil dieses Namens (`positionsspieler`: ruhiger,
-weniger Opfer). Jeder Eintrag wirkt einmal je Partie, auch nach dem Neuladen.
+weniger Opfer). Jeder Eintrag wirkt einmal je Partie, auch nach dem Neuladen. Die Variable muss der
+Dialog vor jedem `beginnePartie` zurücksetzen, sonst gilt der Wechsel in jedem weiteren Versuch vom
+ersten Zug an (Befund 27.11.2026: Mira nach „Atme“ in jeder Revanche eine Stufe stärker).
 
 ## Aufgabenrunden (`runden.json`)
 

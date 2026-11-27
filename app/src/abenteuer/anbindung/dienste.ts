@@ -37,7 +37,7 @@ import { sucheKipppunkt, type Bewerter } from "./kipppunkt";
 import { mitMaiaPflicht } from "./maiapflicht";
 import { partieeinstellungAus } from "./partiestart";
 import { partieergebnisAus } from "./partieergebnis";
-import { platzkennung } from "./speicherplaetze";
+import { mitGeschriebenemStand, platzkennung } from "./speicherplaetze";
 import { mitFremderEroeffnung, mitVorratsstellung } from "./vorratsstellung";
 
 /** Rechenzeit und Tiefe je Stellung bei der Kipppunktsuche (klein, damit das Angebot schnell kommt). */
@@ -203,8 +203,9 @@ export function useAppdienste(): Appdienste {
         return ergebnis?.kennung === kennung ? ergebnis : null;
       },
       liesStand: standJetzt,
+      // Nur in den gespielten Platz (speicherplaetze.ts, verspätetes Schreiben nach einem Wechsel).
       schreibeStand: async (stand) => {
-        await aendere((d) => ({ ...d, abenteuer: stand }));
+        await aendere((d) => mitGeschriebenemStand(d, stand));
       },
       loescheStand: async () => {
         await aendere((d) => ({ ...d, abenteuer: null }));

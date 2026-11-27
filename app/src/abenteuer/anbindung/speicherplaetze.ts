@@ -131,6 +131,23 @@ export function ohnePlatz<T extends Platzdaten>(d: T, kennung: string): T {
   return plaetze.length === d.abenteuerplaetze.length ? d : { ...d, abenteuerplaetze: plaetze };
 }
 
+/**
+ * Schreibt einen geänderten Spielstand (Dienst schreibeStand der Oberwelt) in den gespielten
+ * Platz. Warum die Prüfung: Die Oberwelt schreibt oft verzögert (nach einem Gespräch, beim Abbau
+ * der Karte, nach dem Warten). Kommt so ein Schreiben erst an, wenn im Hauptmenü schon ein anderer
+ * Stand geladen oder der gespielte gelöscht ist, hätte es den anderen Stand durch den alten
+ * ersetzt (der dann doppelt da wäre) oder den gelöschten zurückgeholt.
+ * Ausgabe: die Daten mit dem Stand, oder unverändert, wenn der Stand nicht zum gespielten Platz
+ * gehört. Beispiel: Alex gespielt, verspätetes Schreiben von Kim → unverändert.
+ */
+export function mitGeschriebenemStand<T extends Platzdaten>(d: T, stand: Abenteuerstand): T {
+  if (!d.abenteuer || platzkennung(d.abenteuer) !== platzkennung(stand)) {
+    console.warn("Schach-Abenteuer: Stand eines anderen Spielstands nicht geschrieben.");
+    return d;
+  }
+  return { ...d, abenteuer: stand };
+}
+
 /** Der Platz, den „Fortsetzen“ öffnet: der gespielte, sonst der zuletzt gespielte ruhende; null ohne Plätze. */
 export function fortsetzbarerPlatz(
   d: Pick<Platzdaten, "abenteuer" | "abenteuerplaetze">,

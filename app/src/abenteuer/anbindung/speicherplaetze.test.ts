@@ -3,7 +3,7 @@
  * laden, löschen, die laufende Partie wandert mit ihrem Platz, Übernahme des bisherigen einen
  * Stands und Lesen aus gespeicherten Rohdaten (Wunsch des Autors, 27.11.2026).
  */
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { leereDaten, wandleUm } from "../../speicher/format";
 import { neuePartie, type Partie } from "../../spiel/partie";
 import { leererAbenteuerstand } from "../regeln/spielstand";
@@ -12,6 +12,7 @@ import { meinePartien } from "./meinePartien";
 import {
   fortsetzbarerPlatz,
   mitGeladenemPlatz,
+  mitGeschriebenemStand,
   mitNeuemSpiel,
   ohnePlatz,
   platzkennung,
@@ -172,5 +173,17 @@ describe("Speicherplätze", () => {
     };
     const partien = [vonAlex, vonKim].map((p) => ({ partie: p }) as never);
     expect(meinePartien({ partien }, platzkennung(KIM)).map((z) => z.id)).toEqual(["k"]);
+  });
+
+  it("schreibt verspätete Stände eines anderen oder gelöschten Platzes nicht (27.11.2026)", () => {
+    const warnung = vi.spyOn(console, "warn").mockImplementation(() => undefined);
+    const zwei = mitNeuemSpiel({ ...leereDaten(JETZT), abenteuer: KIM }, ALEX);
+    const spaeterKim = { ...KIM, muenzen: 999 };
+    expect(mitGeschriebenemStand(zwei, spaeterKim)).toBe(zwei);
+    const ohne = ohnePlatz(zwei, platzkennung(ALEX));
+    expect(mitGeschriebenemStand(ohne, { ...ALEX, muenzen: 5 })).toBe(ohne);
+    expect(mitGeschriebenemStand(zwei, { ...ALEX, muenzen: 5 }).abenteuer?.muenzen).toBe(5);
+    expect(warnung).toHaveBeenCalledTimes(2);
+    warnung.mockRestore();
   });
 });

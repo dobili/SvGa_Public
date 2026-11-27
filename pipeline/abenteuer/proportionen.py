@@ -100,6 +100,20 @@ AUSNAHMEN: dict[str, str] = {
     "wzArbeitsplatte": "Küchenzeile an der Wand: Bild zeigt Platte und Front, die Wand trägt die Höhe",
     "mf5Buffet": "Küchenzeile an der Wand: Bild zeigt Platte und Front, die Wand trägt die Höhe",
     "rv8Wandbord": "Wandbord, hängt an der Wand und steht nicht auf dem Boden",
+    # Erstmals gemessen am 27.11.2026 (vorher ohne Bildhöhe, daher ungeprüft); im Spiel angesehen.
+    "fzKioskGemini": "Kiosk-Häuschen mit Blechdach am Fähranleger, ein kleines Gebäude; Theke ist "
+    "nur das Verkaufsfenster in Hüfthöhe",
+    "rv14Fahrkartenschalter": "Schalterwand mit Glasaufsatz bis unter die Decke der Bahnhofshalle; "
+    "der Tresen davor ist das untere Drittel",
+    "n15TribueneBlickOben": "Tribüne mit mehreren Sitzreihen übereinander, von hinten",
+    "sc17Drachenbrett": "Schachtisch am Drachenbrunnen mit großem Brett, damit Zuschauer und Spieler "
+    "die Stellung mit dem Drachen sehen; Brett von oben, Maßstab unter 0,7 wäre unscharf",
+    "caFanshopStand": "Marktstand mit Markise auf Stangen; die Höhe ist das Dach, der Tresen darunter "
+    "in Hüfthöhe",
+    "sb5Empfang": "Empfangstresen mit zwei Felder tiefer Arbeitsfläche von oben; die Vorderseite "
+    "steht in Hüfthöhe",
+    "kt10KlapptischTablet": "Klapptisch mit aufgestelltem Tablet und Wasserflasche; die Höhe enthält "
+    "die Aufbauten",
     # Innentüren von LimeZu (21 px) sind seit Figur innen × 4/3 (26⅔ px) kleiner als die Figur. Der
     # Autor hat die größere Figur gewählt (20.11.2026); neue Türbilder wären Kartenarbeit, Rückfrage
     # in docs/AUFGABEN_AUTOR.md. Durchgänge bleiben eine Kachel breit (Körper 12 px).

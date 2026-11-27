@@ -108,9 +108,11 @@ async function bedieneStart(lauf: Lauf, lage: Lage): Promise<void> {
       await seite.waitForTimeout(300);
       return;
     }
+    // Mit vorhandenem Spielstand kommt nach dem Laden das Hauptmenü (seit 27.11.2026).
     await seite
       .getByTestId("abenteuer-spielen")
       .or(seite.locator(".abenteuer-welt canvas"))
+      .or(seite.getByTestId("abenteuer-hauptmenue"))
       .first()
       .waitFor({ state: "visible", timeout: PAKET_FRIST_MS })
       .catch(() => lauf.messung.fund("laden", "Spielpaket lädt nicht in 300 s"));

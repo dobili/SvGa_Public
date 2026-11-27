@@ -801,6 +801,22 @@ Profil › Einstellungen › Fehler melden.
       Widerspruch genügt. Offen: Soll der Reiter auch in der Fassung für die Leser (1.0) erscheinen?
       Dort fehlt er bis zu deiner Antwort.
       **Antwort:** „N2745 ok“, und zur Leserfassung „ja“ oder „nein“.
+- [ ] N2760. **Lektorat des ganzen Spieltexts (27.11.2026):** Alle vier Akte und die Nebenpfade
+      wurden gelesen und kleine Fehler behoben, ohne neue Szenen (Logik, Namen vor der Vorstellung,
+      Wiederholungen, Satzbau, ein Schachfehler beim Damengambit). Stichproben: In Cedar Creek
+      zuerst zu Mrs. Okafor gehen und spielen, dann zur Haltestelle: Der Coach sagt „Ihr habt schon
+      gespielt? Ohne Pfiff?“. Zu Hause nach dem Zettel aus Ironwood lautet die Antwort „Sie hat Nein
+      zu Ironwood gesagt. Nicht zum Turnier.“. Am Felsbogen ohne den Postsack aus Ironwood heißt die
+      Frage „Erzähl mir von deiner Reise nach Norden.“. In der Klavierwerkstatt heißen Henri und
+      Céleste erst nach dem Kennenlernen beim Namen. Mit Rivalin Victoria bei Mrs. Ward: „die
+      Begabteste, die ich …“. Gefällt dir die Sprache, stimmt irgendwo etwas nicht mehr?
+      **Antwort:** „N2760 ok“ oder die Stelle, die nicht passt.
+- [ ] N2761. **Startbild: stehendes Ende, Figuren auf dem Weg (27.11.2026):** Auf deinen Wunsch ist
+      das Startbild noch ein Fünftel langsamer (gut 9 s), auf dem Weg stehen verstreut Schachfiguren
+      im Stil des Dachbodenbretts und ziehen vorbei, und am Ende bleibt das Bild mit dem Titel
+      stehen, bis du auf das blinkende „Weiter“ tippst (hoch unter dem Weg, quer unter dem
+      Untertitel). Vorher überspringt ein Tipp wie bisher. Passen Tempo, Figuren und „Weiter“?
+      **Antwort:** „N2761 ok“ oder was anders sein soll.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,
@@ -2587,14 +2603,38 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       `MAIL_VON` (etwa `Dashboard <dashboard@schach-von-grund-auf.com>`). Ohne Mailversand meldet
       GitHub rote Prüfungen trotzdem per Mail.
 
-- [ ] RO52. **Bildaufträge: Mappe 18 (26.11.2026)**
-      Die Mappe „18_Bildauftraege_offen_26-11.html“ (im Chat) enthält nur noch, was offen ist, und
-      ersetzt die Mappen 15 und 16b und den Bildteil von RO56. Deine Lieferung vom 25.11. ist
-      eingebaut: die vier Bilder der Einleitung von Akt 1, 15 Fundbilder und drei Kartenbilder
-      (Kantine, Bahnhofsmuseum, Klapptisch). Offen, nach Dringlichkeit: Dime (PixelLab), Porträt
-      Victoria, das Bild „Dieselbe Schräge“, 16 Porträtblätter, Gideon und die Liegebilder von
-      Lucia und Oma Ruth, Nova lächelt, 53 Sitzbilder für den Feierabend, 10 Fundbilder, zwei
-      Gartentore, 32 Aufträge aus dem Kartenblick und die Märchenfiguren (Falke, Bison, Drache)
-      mit drei kleinen Kartenbildern. Freiwilliges steht nicht mehr darin. Bis ein Bild da ist,
-      steht im Spiel ein Ersatz.
-      **Antwort:** Bilder nach ki-roh/ hochladen; Nummern, die du nicht willst, kurz nennen.
+### Q27 Name des Spiels und Fragen aus dem Lektorat (27.11.2026)
+
+- [ ] Q27-1. **Name des Spiels:** „Schach-Abenteuer“ ist nur ein Arbeitstitel. Geprüft wurden 28
+      Namen per Websuche gegen App Store, Google Play, Steam, itch.io und Markenfunde, dazu ob die
+      .com-Domain frei ist. Ausgeschieden sind unter anderem Gambit (Schach-App, Poker-App von
+      Chess.com, Marvel-Figur), Zugzwang (Steam-Spiel, zwei Apps), Tempo (App „Chess Tempo“, Sega-
+      Spiel, Taschentuchmarke), Rookie Road (US-Marke) und Kingsroad. Nahe Konkurrenz: Chess Club
+      Valley, Pocket Pawns, CHECKBORNE. Empfehlung: „Gambit Road – Eine Reise von Stadt zu Stadt“
+      (englisch „Gambit Road – A Chess Journey“): sagt in beiden Sprachen Schach und Reise, nichts
+      Gleichnamiges gefunden, gambitroad.com, .net und .games frei; Schwäche: viele Marken mit
+      GAMBIT allein, daher nur mittlerer Schutz. Ausweichlösung mit dem stärksten Schutz:
+      „Wanderpawn“ (Kunstwort aus wander und pawn, der wandernde Bauer, der zur Dame wird; nichts
+      gefunden, .com frei). Weitere freie Kandidaten: „Ambrose“ (mit Untertitel „Schach“),
+      „Checkmate Trail“, „Sixty-Four Roads“. Die Websuche ersetzt keine Markenrecherche: Vor der
+      Veröffentlichung amtlich bei DPMA, EUIPO, USPTO und WIPO in den Klassen 9 und 41 suchen (am
+      besten mit einem Markenanwalt), dann Marke anmelden und Domains sichern, bevor der Name
+      öffentlich wird. Noch nicht umgesetzt, weil der Name nach außen geht; nach deiner Wahl ändere
+      ich Titel und Startbild.
+      **Antwort:** Name oder „Gambit Road“.
+- [ ] Q27-2. **Clubkampf in Cedar Creek vor dem Bus:** Man kann den Clubkampf bei Mrs. Okafor am
+      Morgen spielen, bevor das Team mit dem Bus ankommt. Schon umgesetzt: Der Coach reagiert darauf
+      („Ihr habt schon gespielt? Ohne Pfiff?“). Empfehlung: so lassen, weil eine erzwungene
+      Reihenfolge mehr Wartezeit bringt. Alternative: Mrs. Okafor wartet auf das Team.
+      **Antwort:** „so lassen“ oder „warten“.
+- [ ] Q27-3. **Doppelte Vornamen:** Es gibt zwei Earls (den Lokführer bei Marian Shaw und Earl
+      Dubois am Diner) und zwei Ruths (Oma Ruth und Ruth Keene, „Mama Bear“). Empfehlung: den
+      Lokführer in „Walt“ umbenennen und Ruth Keene nur noch „Mama Bear“ nennen; noch nicht
+      umgesetzt, weil Namen auch in Porträts und Tagebuch stehen.
+      **Antwort:** „ja“, andere Namen oder „so lassen“.
+- [ ] Q27-4. **Ambroses Fernpartien:** Ambrose sagt „Zwölf Jahre habe ich Partien in Briefen
+      gespielt“, die Fernpartie mit Hale lief aber nur etwa 1859 bis 1866. Empfehlung: so lassen und
+      so verstehen, dass er mehrere Fernpartien spielte (vor Hale mit anderen). Im Spiel heißt es
+      jetzt außerdem „hundertsechzig Jahre lang“ statt „seit New York“ auf das Brett gestarrt; der
+      Romantext (akt4_teil1) sagt noch „seit New York“. Soll der Roman angeglichen werden?
+      **Antwort:** „so lassen“ oder die Zahl; zum Roman „ja“ oder „nein“.

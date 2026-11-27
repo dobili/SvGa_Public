@@ -1593,3 +1593,5 @@ Browserprüfung der Sperren S16 und S17 mit echt gespielten kurzen Partien (Fabl
   über alle Karten bestehen bleibt (eigenes Paket, empfohlen).
 
   27.11.2026 (Wunsch des Autors): Das Abenteuer hat beliebig viele Spielstände und ein Hauptmenü (Fortsetzen, Neues Spiel, Laden, Löschen mit Rückfrage, Einstellungen, Zurück zur App). Der gespielte Stand bleibt im Feld `abenteuer`, die übrigen ruhen mit ihrer offenen Partie in `abenteuerplaetze`, und Partien tragen ihren Platz. Ein neuer Start zeigt ein Startbild der Reise (Brett wird Weg, Held und Ambrose, Ortsschilder, Gemini-Panorama, ohne Paket schlicht); Rückweg aus der Partie und Neuladen führen gleich in die Welt. „Von vorn beginnen“ wurde zu „Hauptmenü“.
+
+27.11.2026: Startbild nach Wünschen des Autors gut 9 s lang (zweimal verlängert), mit Schachfiguren des Dachbodenbretts auf dem Weg und stehendem Ende mit blinkendem „Weiter“. Lektorat des ganzen Spieltexts (Lesefassung, Nebenpfade). RO52 (Mappe 18) erledigt: alle Aufträge über die Gemini-Schnittstelle erzeugt und eingebaut, keine offenen Bildaufträge beim Autor.

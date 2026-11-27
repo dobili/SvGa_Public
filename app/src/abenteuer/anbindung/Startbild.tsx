@@ -24,16 +24,21 @@ import { t } from "../../i18n/sprache";
 import { GEIST_DECKKRAFT } from "../regeln/geist";
 import { ERSATZFIGUR, heldbogenpfad } from "../regeln/heldfigur";
 import type { Heldfigur } from "../schnittstelle/spielstand";
+import { figurfarben, type Brettstilkennung } from "../brett/brettstile";
+import { figurenraster, pixellaeufe, RASTERGROESSE } from "../brett/pixelfiguren";
 import { tSpiel } from "../texte/texte";
 import { Figurrahmen } from "./Figurrahmen";
 import { useFigurbogen } from "./useFigurbogen";
 import { paketdateiAlsAdresseOderNull } from "../paket/paketlader";
 import "../startbild.css";
+import "../startbild-weg.css";
 
 /** Dauer mit Bewegung und still (ms), passend zu den Keyframes in startbild.css. */
-// Doppelt so lang wie der erste Entwurf (3,9 s), Wunsch des Autors 27.11.2026: „zack, ist es weg“;
-// überspringen geht mit einem Tipp oder einer Taste.
-const STARTBILD_MS = 7800;
+// Doppelt so lang wie der erste Entwurf (3,9 s), Wunsch des Autors 27.11.2026: „zack, ist es weg“.
+// Danach bleibt das Bild stehen, bis der Spieler auf „Weiter“ tippt (ebenfalls Wunsch des Autors:
+// den Titel in Ruhe lesen), und alles um ein Fünftel langsamer (ebenfalls 27.11.2026); vorher
+// überspringt ein Tipp oder eine Taste.
+const STARTBILD_MS = 9360;
 const STARTBILD_STILL_MS = 1800;
 /** Felder des Bretts in einer Reihe. */
 const BRETTREIHE = 8;
@@ -50,11 +55,82 @@ const AMBROSE = "figuren/ambrose.png";
  */
 const PANORAMA = "bilder/startbild-reise.webp";
 
+/** Felder einer Hälfte des Figurenstreifens auf dem Weg (startbild-weg.css, --startbild-streifen). */
+const STREIFENFELDER = 48;
+/**
+ * Verstreute Figuren auf einer Hälfte des Streifens: Feld (Spalte), Reihe (0 hinten, 1 vorn) und
+ * FEN-Zeichen (groß Weiß, klein Schwarz). Etwa jedes fünfte Feld, gemischt, damit der Weg nach
+ * einer Partie aussieht, nicht nach einer Grundstellung (Wunsch des Autors, 27.11.2026).
+ */
+const WEGFIGUREN: readonly (readonly [number, 0 | 1, string])[] = [
+  [3, 0, "P"],
+  [7, 1, "n"],
+  [12, 0, "B"],
+  [16, 1, "p"],
+  [21, 0, "R"],
+  [26, 1, "q"],
+  [30, 0, "N"],
+  [35, 1, "b"],
+  [39, 0, "P"],
+  [44, 1, "r"],
+];
+/** Brettstil der Wegfiguren: das Brett vom Dachboden, mit dem die Reise beginnt. */
+const WEGSTIL: Brettstilkennung = "dachboden";
+
 /** Bewegung reduzieren eingestellt? */
 function stillGewuenscht(): boolean {
   return (
     typeof window.matchMedia === "function" &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
+}
+
+/** Eine Pixelfigur der Abenteuer-Bretter (brett/pixelfiguren.ts) auf einem Feld des Wegs. */
+function Wegfigur({ spalte, reihe, zeichen }: { spalte: number; reihe: number; zeichen: string }) {
+  const raster = figurenraster(zeichen);
+  if (!raster) return null;
+  const farben = figurfarben(WEGSTIL, zeichen === zeichen.toUpperCase());
+  const lage: CSSProperties = {
+    left: `calc(var(--startbild-feld) * ${spalte})`,
+    top: `calc(var(--startbild-feld) * ${reihe})`,
+  };
+  return (
+    <svg
+      className="startbild-wegfigur"
+      style={lage}
+      viewBox={`0 0 ${RASTERGROESSE} ${RASTERGROESSE}`}
+      shapeRendering="crispEdges"
+    >
+      {pixellaeufe(raster).map((lauf) => (
+        <rect
+          key={`${lauf.x}-${lauf.y}`}
+          x={lauf.x}
+          y={lauf.y}
+          width={lauf.laenge}
+          height={1}
+          fill={farben[lauf.klasse]}
+        />
+      ))}
+    </svg>
+  );
+}
+
+/** Der Figurenstreifen: zwei gleiche Hälften, damit das Laufen nahtlos von vorn beginnt. */
+function Wegfiguren() {
+  const streifen = { "--startbild-streifen": String(STREIFENFELDER) } as CSSProperties;
+  return (
+    <span className="startbild-wegfiguren" style={streifen}>
+      {[0, STREIFENFELDER].flatMap((versatz) =>
+        WEGFIGUREN.map(([spalte, reihe, zeichen]) => (
+          <Wegfigur
+            key={`${versatz + spalte}`}
+            spalte={versatz + spalte}
+            reihe={reihe}
+            zeichen={zeichen}
+          />
+        )),
+      )}
+    </span>
   );
 }
 
@@ -87,7 +163,15 @@ function usePanorama(bereit: boolean): string | null {
 }
 
 /** Held und Ambrose, sobald ihre Bögen geladen sind; sonst nichts (schlichte Fassung). */
-function Reisende({ figur, bilder }: { readonly figur: Heldfigur; readonly bilder: boolean }) {
+function Reisende({
+  figur,
+  bilder,
+  gehend,
+}: {
+  readonly figur: Heldfigur;
+  readonly bilder: boolean;
+  readonly gehend: boolean;
+}) {
   const gewaehlt = useFigurbogen(heldbogenpfad(figur), bilder);
   const ersatz = useFigurbogen(heldbogenpfad(ERSATZFIGUR), bilder);
   const ambrose = useFigurbogen(AMBROSE, bilder);
@@ -97,12 +181,12 @@ function Reisende({ figur, bilder }: { readonly figur: Heldfigur; readonly bilde
     <div className="startbild-reisende" data-testid="abenteuer-startbild-figuren">
       {ambrose && (
         <span className="startbild-geist" style={geist}>
-          <Figurrahmen bogen={ambrose} massstab={FIGURMASSSTAB} gehend />
+          <Figurrahmen bogen={ambrose} massstab={FIGURMASSSTAB} gehend={gehend} />
         </span>
       )}
       {held && (
         <span className="startbild-held">
-          <Figurrahmen bogen={held} massstab={FIGURMASSSTAB} gehend />
+          <Figurrahmen bogen={held} massstab={FIGURMASSSTAB} gehend={gehend} />
         </span>
       )}
     </div>
@@ -123,12 +207,14 @@ export function Startbild({
   readonly beiEnde: () => void;
 }) {
   const [still] = useState(stillGewuenscht);
+  const [fertig, setzeFertig] = useState(false);
   const ende = useRef(beiEnde);
   useEffect(() => {
     ende.current = beiEnde;
   }, [beiEnde]);
   useEffect(() => {
-    const zeit = setTimeout(() => ende.current(), still ? STARTBILD_STILL_MS : STARTBILD_MS);
+    // Kein Ende von selbst: Nach dem Ablauf steht das Bild, „Weiter“ blinkt (fertig).
+    const zeit = setTimeout(() => setzeFertig(true), still ? STARTBILD_STILL_MS : STARTBILD_MS);
     const taste = () => ende.current();
     window.addEventListener("keydown", taste);
     return () => {
@@ -140,9 +226,9 @@ export function Startbild({
   return (
     <button
       type="button"
-      className={`startbild ${still ? "startbild-still" : ""} ${panorama ? "startbild-mit-panorama" : ""}`}
+      className={`startbild ${still ? "startbild-still" : ""} ${panorama ? "startbild-mit-panorama" : ""} ${fertig ? "startbild-fertig" : ""}`}
       data-testid="abenteuer-startbild"
-      aria-label={t("abenteuer.startbild.ueberspringen")}
+      aria-label={t(fertig ? "abenteuer.startbild.weiter" : "abenteuer.startbild.ueberspringen")}
       onClick={() => ende.current()}
     >
       {panorama && (
@@ -157,7 +243,9 @@ export function Startbild({
         <span className="startbild-sterne" />
       </span>
       <span className="startbild-land" aria-hidden="true">
-        <span className="startbild-weg" />
+        <span className="startbild-weg">
+          <Wegfiguren />
+        </span>
         <Brett />
         <span className="startbild-schilder">
           {SCHILDER.map((ort, i) => (
@@ -166,15 +254,21 @@ export function Startbild({
             </span>
           ))}
         </span>
-        <Reisende figur={figur} bilder={bilder} />
+        <Reisende figur={figur} bilder={bilder} gehend={!fertig} />
       </span>
       <span className="startbild-titel">
         <span className="startbild-titelzeile">{t("abenteuer.titel")}</span>
         <span className="startbild-untertitel">{t("abenteuer.startbild.untertitel")}</span>
       </span>
-      <span className="startbild-hinweis" aria-hidden="true">
-        {t("abenteuer.startbild.ueberspringen")}
-      </span>
+      {fertig ? (
+        <span className="startbild-weiter" data-testid="abenteuer-startbild-weiter">
+          {t("abenteuer.startbild.weiter")}
+        </span>
+      ) : (
+        <span className="startbild-hinweis" aria-hidden="true">
+          {t("abenteuer.startbild.ueberspringen")}
+        </span>
+      )}
     </button>
   );
 }

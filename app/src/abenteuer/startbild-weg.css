@@ -1,0 +1,79 @@
+/**
+ * Weg des Startbilds (Startbild.tsx): zwei Reihen Felder im Muster des Bretts, die nach links
+ * laufen, während Held und Ambrose vorwärtsgehen, mit verstreuten Pixelschachfiguren darauf
+ * (Wunsch des Autors, 27.11.2026: „ein paar Figuren, über die sie laufen, nicht zu viel, nicht
+ * zu wenig“). Aus startbild.css ausgelagert, damit beide Dateien unter 400 Zeilen bleiben.
+ * Takt: Felder und Figuren laufen gleich schnell, zwei Felder in 0,6 s; ab .startbild-fertig
+ * stehen sie (Ende des Startbilds).
+ */
+
+/* Der Weg: zwei Reihen Felder im Muster des Bretts, die nach links laufen (der Held geht vorwärts). */
+.startbild-weg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 18%;
+  height: calc(var(--startbild-feld) * 2);
+  background-color: var(--spiel-pergament);
+  background-image: conic-gradient(
+    var(--spiel-pergament-tief) 0 25%,
+    transparent 0 50%,
+    var(--spiel-pergament-tief) 0 75%,
+    transparent 0
+  );
+  background-size: calc(var(--startbild-feld) * 2) calc(var(--startbild-feld) * 2);
+  box-shadow:
+    0 var(--spiel-pixel) 0 var(--spiel-gold-tief),
+    0 calc(var(--spiel-pixel) * -1) 0 var(--spiel-gold-tief);
+  opacity: 0;
+  animation:
+    startbild-weg-da 1.08s 2.16s steps(4) forwards,
+    startbild-weg-laeuft 0.6s 2.88s linear infinite;
+}
+
+/* Die Figuren: ein Streifen aus zwei gleichen Hälften (je STREIFENFELDER Felder in
+   Startbild.tsx), der um eine Hälfte nach links läuft und dann nahtlos von vorn beginnt. */
+.startbild-wegfiguren {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(var(--startbild-feld) * var(--startbild-streifen) * 2);
+  height: 100%;
+  animation: startbild-wegfiguren-laufen calc(0.3s * var(--startbild-streifen)) 2.88s linear
+    infinite;
+}
+
+.startbild-wegfigur {
+  position: absolute;
+  /* Größer als ein Feld, damit man sie erkennt; mittig auf dem Feld, Sockel auf dessen Unterkante. */
+  width: calc(var(--startbild-feld) * 1.7);
+  height: calc(var(--startbild-feld) * 1.7);
+  translate: -20.6% -41.2%;
+  filter: drop-shadow(1px 1px 0 rgb(0 0 0 / 35%));
+}
+
+.startbild-fertig :is(.startbild-weg, .startbild-wegfiguren) {
+  animation-play-state: paused;
+}
+
+.startbild-reisende .figurrahmen-gehend {
+  animation-duration: 0.72s;
+}
+
+@keyframes startbild-weg-da {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes startbild-weg-laeuft {
+  to {
+    background-position-x: calc(var(--startbild-feld) * -2);
+  }
+}
+
+@keyframes startbild-wegfiguren-laufen {
+  to {
+    translate: -50% 0;
+  }
+}

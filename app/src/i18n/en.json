@@ -75,6 +75,7 @@
   "abenteuer.platz.zuletzt": "last played {datum}",
   "abenteuer.startbild.untertitel": "A journey from town to town",
   "abenteuer.startbild.ueberspringen": "Tap to skip",
+  "abenteuer.startbild.weiter": "Continue",
   "abenteuer.aufgaben.keinAuftrag": "This round of tasks is no longer open.",
   "abenteuer.aufgaben.laedt": "Putting the tasks together …",
   "abenteuer.funkansage": "Over the radio: {zug}",

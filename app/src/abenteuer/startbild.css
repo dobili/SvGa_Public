@@ -2,10 +2,11 @@
  * Startbild des Schach-Abenteuers (anbindung/Startbild.tsx, Wunsch des Autors, 27.11.2026): Brett
  * in der Dämmerung, das zum Weg wird, Held und Ambrose ziehen los, Ortsschilder, Titel.
  *
- * Zeitplan (gesamt 7,8 s, STARTBILD_MS; doppelt so lang seit 27.11.2026, Wunsch des Autors): 0 bis
- * 1,1 s Brett erscheint, bis 2,4 s kippt es und streckt sich zum Weg (ab 1,8 s), ab 2,3 s gehen die
- * Figuren hinein, ab 2,4 s laufen die Felder des Wegs, ab 2,6 s ziehen die Schilder vorbei (alle
- * 0,8 s eins), ab 5,8 s der Titel, ab 7 s blendet alles aus.
+ * Zeitplan (gesamt 9,36 s, STARTBILD_MS; Wunsch des Autors 27.11.2026: doppelt so lang, dann noch
+ * um ein Fünftel langsamer): bis 2,9 s erscheint das Brett, kippt und streckt sich zum Weg (ab
+ * 2,2 s), ab 2,8 s gehen die Figuren hinein, ab 2,9 s laufen Weg und Schachfiguren darauf
+ * (startbild-weg.css), ab 3,1 s ziehen die Schilder vorbei (alle knapp 1 s eins), ab 7 s der
+ * Titel; ab 9,36 s steht alles (.startbild-fertig), „Weiter“ blinkt bis zum Tipp.
  * Farben aus spielfarben.css (Navy, Pergament, Gold); Pixelschrift für Titel und Schilder. Bei
  * „Bewegung reduzieren“ (.startbild-still) steht alles im Endbild still.
  * Mit Paket liegt dahinter das Panorama der Reise (unten, .startbild-mit-panorama).
@@ -34,7 +35,6 @@
   color: var(--spiel-creme);
   font-family: var(--spiel-pixelschrift);
   cursor: pointer;
-  animation: startbild-aus 7.8s ease-in forwards;
 }
 
 .startbild:focus-visible {
@@ -61,7 +61,7 @@
   border-radius: 50%;
   background: radial-gradient(circle, var(--spiel-gold) 0 34%, transparent 70%);
   opacity: 0.85;
-  animation: startbild-sonne 7.8s ease-out forwards;
+  animation: startbild-sonne 9.36s ease-out forwards;
 }
 
 /* Pixelsterne als Schatten eines Punktes, sie verblassen mit dem Morgen. */
@@ -82,37 +82,13 @@
     8vw 27vh var(--spiel-creme),
     66vw 30vh var(--spiel-creme),
     93vw 9vh var(--spiel-creme);
-  animation: startbild-sterne 7.8s linear forwards;
+  animation: startbild-sterne 9.36s linear forwards;
 }
 
 .startbild-land {
   inset: 65% 0 0;
   background: var(--spiel-gruen-tief);
   box-shadow: 0 calc(var(--spiel-pixel) * -1) 0 var(--spiel-gruen);
-}
-
-/* Der Weg: zwei Reihen Felder im Muster des Bretts, die nach links laufen (der Held geht vorwärts). */
-.startbild-weg {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 18%;
-  height: calc(var(--startbild-feld) * 2);
-  background-color: var(--spiel-pergament);
-  background-image: conic-gradient(
-    var(--spiel-pergament-tief) 0 25%,
-    transparent 0 50%,
-    var(--spiel-pergament-tief) 0 75%,
-    transparent 0
-  );
-  background-size: calc(var(--startbild-feld) * 2) calc(var(--startbild-feld) * 2);
-  box-shadow:
-    0 var(--spiel-pixel) 0 var(--spiel-gold-tief),
-    0 calc(var(--spiel-pixel) * -1) 0 var(--spiel-gold-tief);
-  opacity: 0;
-  animation:
-    startbild-weg-da 0.9s 1.8s steps(4) forwards,
-    startbild-weg-laeuft 0.5s 2.4s linear infinite;
 }
 
 /* Das Brett vom Dachboden: erscheint, kippt nach hinten und streckt sich zum Weg. */
@@ -129,7 +105,7 @@
     0 0 0 calc(var(--spiel-pixel) * 2) var(--spiel-navy-tief);
   transform-origin: 50% 100%;
   translate: -50% 0;
-  animation: startbild-brett 2.4s steps(12) forwards;
+  animation: startbild-brett 2.88s steps(12) forwards;
 }
 
 .startbild-brett > .startbild-feld-dunkel {
@@ -155,7 +131,7 @@
   box-shadow:
     0 0 0 var(--spiel-pixel) var(--spiel-gold-tief),
     0 0 0 calc(var(--spiel-pixel) * 2) var(--spiel-navy-tief);
-  animation: startbild-schild 2.4s linear forwards;
+  animation: startbild-schild 2.88s linear forwards;
 }
 
 .startbild-schild::after {
@@ -169,16 +145,16 @@
 }
 
 .startbild-schild-1 {
-  animation-delay: 2.6s;
+  animation-delay: 3.12s;
 }
 .startbild-schild-2 {
-  animation-delay: 3.4s;
+  animation-delay: 4.08s;
 }
 .startbild-schild-3 {
-  animation-delay: 4.2s;
+  animation-delay: 5.04s;
 }
 .startbild-schild-4 {
-  animation-delay: 5s;
+  animation-delay: 6s;
 }
 
 /* Held vorn, Ambrose halb durchsichtig dahinter und etwas höher (er schwebt). */
@@ -190,7 +166,7 @@
   align-items: flex-end;
   gap: 4px;
   translate: -60vw 0;
-  animation: startbild-reisende 2s 2.3s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+  animation: startbild-reisende 2.4s 2.76s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
 }
 
 .startbild-geist {
@@ -208,7 +184,7 @@
   padding: 0 16px;
   text-align: center;
   opacity: 0;
-  animation: startbild-titel 1s 5.8s steps(6) forwards;
+  animation: startbild-titel 1.2s 6.96s steps(6) forwards;
 }
 
 .startbild-titelzeile {
@@ -236,13 +212,33 @@
   animation: startbild-einblenden 0.4s 0.6s forwards;
 }
 
-@keyframes startbild-aus {
-  0%,
-  90% {
-    opacity: 1;
+/* Ende (7,8 s): Das Bild steht, „Weiter“ blinkt sanft in der Mitte, bis der Spieler tippt. */
+.startbild-weiter {
+  position: absolute;
+  left: 50%;
+  bottom: calc(env(safe-area-inset-bottom) + 5%);
+  translate: -50% 0;
+  padding: 0.35em 1.2em;
+  font-size: clamp(22px, 7vmin, 40px);
+  color: var(--spiel-gold);
+  background: var(--spiel-navy-tief);
+  box-shadow:
+    0 0 0 var(--spiel-pixel) var(--spiel-gold-tief),
+    0 0 0 calc(var(--spiel-pixel) * 2) var(--spiel-navy-tief);
+  animation: startbild-blinken 1.4s steps(2, jump-none) infinite alternate;
+}
+
+/* Quer reicht der Platz unter dem Weg nicht: „Weiter“ steht dann unter dem Untertitel. */
+@media (orientation: landscape) {
+  .startbild-weiter {
+    top: 42%;
+    bottom: auto;
   }
-  100% {
-    opacity: 0;
+}
+
+@keyframes startbild-blinken {
+  to {
+    opacity: 0.35;
   }
 }
 
@@ -271,18 +267,6 @@
   100% {
     opacity: 0;
     transform: perspective(300px) rotateX(80deg) scaleX(4);
-  }
-}
-
-@keyframes startbild-weg-da {
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes startbild-weg-laeuft {
-  to {
-    background-position-x: calc(var(--startbild-feld) * -2);
   }
 }
 
@@ -356,7 +340,7 @@
   image-rendering: pixelated;
   animation:
     startbild-einblenden-voll 0.5s steps(4) both,
-    startbild-schwenk 7.8s ease-in-out forwards;
+    startbild-schwenk 9.36s ease-in-out forwards;
 }
 
 .startbild-mit-panorama :is(.startbild-sonne, .startbild-sterne) {

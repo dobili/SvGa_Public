@@ -2,7 +2,7 @@
   "karte": "siliconBay.hafen",
   "datei": "karten/silicon-bay-hafen.json",
   "art": "aussen",
-  "beschreibung": "Der alte Hafen von Silicon Bay unterhalb der Terrasse des Campus; eine Stützmauer trägt die Terrasse, in der Mitte führt die Treppe in zwei Läufen herunter auf die Hafenstraße. Oben die alten Häuser: der Fischladen der Fischhalle, der Laden für Hafenbedarf, die Bäckerei, Ames leerer Kurzwarenladen mit dem Schild „Coming soon“ und dem Plakat „Bald geöffnet“ und gleich rechts der Treppe die Hafenmeisterei mit Schild und Flagge; daneben trocknen Netze über Fischkisten, am Ostende der Straße steht der Angelladen. Am Südrand der Straße Laternen in festen Abständen, am Kai ein Gemüsekarren mit Händlerin. Links das Fährhäuschen, davor am Kai die Küstenfähre, 18 Kacheln lang, sie liegt mit der Bordwand an der Kaimauer, die Gangway reicht auf den Kai. In der Mitte das kleine Fischerboot, ein Ruderboot mit Angel; davor der Arbeitsplatz der Fischer: ein gelber Portalkran, Kistenstapel, hölzerne Fischkisten, Trockengestelle mit Netzen, ein aufgelegtes Beiboot, Bretter und Fässer, die Hafenarbeiter zur Kaikante tragen. Bänke mit Blick aufs Wasser, Poller an der Kaikante; die Kaimauer fällt mit Leitern und Reifenfendern zum Wasser ab. Rechts der Steg der Inselfähre mit einem Motorboot und der rot-weiße Leuchtturm auf einer Mole, zu dessen Tür ein Weg um den Turm führt.",
+  "beschreibung": "Der alte Hafen von Silicon Bay unterhalb der Terrasse des Campus; eine Stützmauer trägt die Terrasse, in der Mitte führt die Treppe in zwei Läufen herunter auf die Hafenstraße. Oben die alten Häuser: der Fischladen der Fischhalle, der Laden für Hafenbedarf, die Bäckerei, Ames leerer Kurzwarenladen mit dem Schild „Coming soon“ und dem Plakat „Bald geöffnet“ und gleich rechts der Treppe die Hafenmeisterei mit Schild und Flagge; daneben trocknen Netze über Fischkisten, am Ostende der Straße steht der Angelladen. Am Südrand der Straße Laternen in festen Abständen, am Kai ein Gemüsekarren mit Händlerin. Links das Fährhäuschen, davor am Kai die Küstenfähre, 18 Kacheln lang, sie liegt mit der Bordwand an der Kaimauer, die Gangway reicht auf den Kai. In der Mitte das kleine Fischerboot, ein Ruderboot mit Angel; davor der Arbeitsplatz der Fischer: ein gelber Portalkran, Kistenstapel, hölzerne Fischkisten, Trockengestelle mit Netzen, ein aufgelegtes Beiboot, Bretter und Fässer, die Hafenarbeiter zur Kaikante tragen. Bänke mit Blick aufs Wasser, Poller an der Kaikante; die Kaimauer fällt mit Leitern und Reifenfendern zum Wasser ab. Rechts der Steg der Inselfähre mit einem Motorboot und der rot-weiße Leuchtturm auf einer Mole, zu dessen Tür ein Weg um den Turm führt. Erster Eindruck (27.11.2026): Auf den Flachdächern von Fisch, Ship Supply und Bakery stehen Klimageräte, Lüftung und Luken. Die Fährkasse am Fähranleger ist ein blaugraues Holzhäuschen mit Schalter, Fahrplan und Rettungsring; an der Hafenmeisterei steht ein Signalmast mit drei bunten Flaggen; der Bretterstapel liegt.",
   "boden": "pflaster",
   "wandart": "stein",
   "kante": "klippe",
@@ -248,8 +248,8 @@
       "feld": [12, 20]
     },
     {
-      "moebel": "sb8Faehrhaeuschen",
-      "feld": [2, 23]
+      "moebel": "sb27Faehrkasse",
+      "feld": [2, 25]
     },
     {
       "moebel": "sb18FaehreGemini",
@@ -521,11 +521,13 @@
     },
     {
       "moebel": "pd7Laden1",
-      "feld": [3, 8]
+      "feld": [3, 8],
+      "id": "fischladen"
     },
     {
       "moebel": "pd7Markt2",
-      "feld": [10, 7]
+      "feld": [10, 7],
+      "id": "hafenbedarf"
     },
     {
       "moebel": "sb9SchildComingSoon",
@@ -542,7 +544,7 @@
       "versatz": [0, 30]
     },
     {
-      "moebel": "cr8FahneWeiss",
+      "moebel": "sb27Signalmast",
       "feld": [44, 13]
     },
     {
@@ -872,7 +874,8 @@
     },
     {
       "moebel": "pd7Laden7",
-      "feld": [18, 8]
+      "feld": [18, 8],
+      "id": "baeckerei"
     },
     {
       "moebel": "pk9Netztrockner",
@@ -907,8 +910,8 @@
       "feld": [43, 22]
     },
     {
-      "moebel": "pd6Bretterstapel",
-      "feld": [16, 23]
+      "moebel": "cc7Bretterstapel",
+      "feld": [16, 24]
     },
     {
       "moebel": "sb5Fass",
@@ -945,6 +948,51 @@
     {
       "moebel": "iw5KistenB",
       "feld": [39, 24]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "fischladen",
+      "versatz": [-14, -44]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "fischladen",
+      "versatz": [22, -40]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "fischladen",
+      "versatz": [-2, -20]
+    },
+    {
+      "moebel": "sb27DachLueftung",
+      "auf": "hafenbedarf",
+      "versatz": [-18, -40]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "hafenbedarf",
+      "versatz": [32, -50]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "hafenbedarf",
+      "versatz": [26, -20]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "baeckerei",
+      "versatz": [-18, -44]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "baeckerei",
+      "versatz": [-2, -44]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "baeckerei",
+      "versatz": [12, -22]
     }
   ],
   "ausloeser": [

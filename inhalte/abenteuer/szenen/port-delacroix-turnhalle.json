@@ -3,7 +3,7 @@
   "datei": "karten/port-delacroix-turnhalle.json",
   "art": "innen",
   "musikquellen": ["remy"],
-  "beschreibung": "Die Turnhalle der Schule von Port Delacroix (22 × 16, R065: braucht außen das Hallenbild pd6Turnhalle), Ausweichquartier des Schachclubs nach dem Hurrikan (Szenen 63, 67, 69). Helle Wände mit hohen Fenstern, durch die der Winterregen läuft, ein heller Hallenboden mit den Linien des Spielfelds. Die Doppeltür liegt in der Mitte der Südwand, davor eine Matte. An der Nordwand der Lehrertisch, an dem Miss Odile beim Clubkampf sitzt, daneben ein Korb für Spenden, rechts das Plakat „Wir spielen weiter“ (bis das eigene Plakat kommt, ein Schulplakat). In der Nordwestecke zwei Regale mit geretteten Brettern und eine offene Kiste mit Figuren. Acht graue Klapptische in vier Reihen, links und rechts eines Mittelgangs, auf jedem ein Brett, je ein Stuhl davor und dahinter. In der Südwestecke Turnmatten, Basketbälle liegen herum; an der Südwand drei Holzbänke für Zuschauer, in der Nordostecke ein Stapel Kisten mit Spenden. An der Nordwand hängen zwei Basketballkörbe zwischen den Fenstern.",
+  "beschreibung": "Die Turnhalle der Schule von Port Delacroix (22 × 16, R065: braucht außen das Hallenbild pd6Turnhalle), Ausweichquartier des Schachclubs nach dem Hurrikan (Szenen 63, 67, 69). Helle Wände mit hohen Fenstern, durch die der Winterregen läuft, ein heller Hallenboden mit den Linien des Spielfelds. Die Doppeltür liegt in der Mitte der Südwand, davor eine Matte. An der Nordwand der Lehrertisch, an dem Miss Odile beim Clubkampf sitzt, daneben ein Korb für Spenden, rechts das Plakat „Wir spielen weiter“ (bis das eigene Plakat kommt, ein Schulplakat). In der Nordwestecke zwei Regale mit geretteten Brettern und eine offene Kiste mit Figuren. Acht graue Klapptische in vier Reihen, links und rechts eines Mittelgangs, auf jedem ein Brett, je ein Stuhl davor und dahinter. In der Südwestecke Turnmatten, Basketbälle liegen herum; an der Südwand drei Holzbänke für Zuschauer, in der Nordostecke ein Stapel Kisten mit Spenden. An der Nordwand hängt der Basketballkorb zwischen den Fenstern. Erster Eindruck (27.11.2026): Auf dem Hallenboden laufen die Linien eines Spielfelds: Außenlinie, Zone, Freiwurfkreis, Dreierlinie und halber Mittelkreis. An der Nordwand hängt ein Basketballkorb. Die beiden Regale in der Nordwestecke tragen Schachbretter, Figurenkästen und Schachuhren; der Kistenstapel steht unter dem rechten Fenster.",
   "wand": "hellgrau",
   "boden": "hallenboden",
   "raster": [
@@ -69,11 +69,11 @@
       "an_wand": true
     },
     {
-      "moebel": "pd6Brettregal",
+      "moebel": "pd27Schachregal",
       "feld": [1, 2]
     },
     {
-      "moebel": "pd6Brettregal",
+      "moebel": "pd27Schachregal",
       "feld": [3, 2]
     },
     {
@@ -285,11 +285,11 @@
     },
     {
       "moebel": "pd6Kistenstapel",
-      "feld": [19, 2]
+      "feld": [19, 3]
     },
     {
       "moebel": "pd6Kiste",
-      "feld": [20, 5]
+      "feld": [20, 6]
     },
     {
       "moebel": "pd6Kiste",
@@ -332,6 +332,10 @@
       "moebel": "rv5TuerSuedHell",
       "feld": [14, 15],
       "deckkraft": 75
+    },
+    {
+      "moebel": "pd27Feldlinien",
+      "feld": [1, 3]
     }
   ],
   "ausloeser": [

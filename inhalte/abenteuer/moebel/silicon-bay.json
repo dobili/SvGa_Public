@@ -987,7 +987,9 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Grey_Rail_Modular_Horizontal.png",
       "lauf": "waagrecht",
       "verbund": "gleis",
-      "varianten": {"senkrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png"},
+      "varianten": {
+        "senkrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png"
+      },
       "breite": 16,
       "hoehe": 32,
       "kollision": false,
@@ -999,7 +1001,9 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Example_Grey_Rail_Modular_Horizontal.png",
       "lauf": "waagrecht",
       "verbund": "gleis",
-      "varianten": {"senkrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png"},
+      "varianten": {
+        "senkrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png"
+      },
       "breite": 16,
       "hoehe": 32,
       "kollision": false,
@@ -3256,7 +3260,16 @@
       "zustand": "neu",
       "stil": "modern",
       "blick": "rechts",
-      "maske_fein": ["........", "........", "........", "........", "######..", "#####...", "#####...", "#####..."]
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "######..",
+        "#####...",
+        "#####...",
+        "#####..."
+      ]
     },
     "sb17SesselWeissLinks": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_210.png",
@@ -3267,7 +3280,214 @@
       "zustand": "neu",
       "stil": "modern",
       "blick": "links",
-      "maske_fein": ["........", "........", "........", "........", "..######", "...#####", "...#####", "...#####"]
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "..######",
+        "...#####",
+        "...#####",
+        "...#####"
+      ]
+    },
+    "sb27Serverschrank": {
+      "quelle": "spiel/eigene/serverschrank.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "geraet",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten",
+      "hinweis": "Serverschrank mit Lochblechtür, Einschüben, grünen und blauen Lämpchen und Kabeln statt Automatenfront (Kartenblick Sv1) (Gemini E1, 27.11.2026, werkzeuge/gemini_akt3_2711.py)",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ]
+    },
+    "sb27Loungesofa": {
+      "quelle": "spiel/eigene/loungesofa.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "sofa",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten",
+      "hinweis": "Loungesofa von vorn: graublauer Stoff, drei Sitz- und Rückenkissen, Armlehnen, dünne Beine (Kartenblick Ak2, L1) (Gemini E2, 27.11.2026, werkzeuge/gemini_akt3_2711.py)"
+    },
+    "sb27Fahrradstaender": {
+      "quelle": "spiel/eigene/fahrradstaender_glas.png",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "neu",
+      "stil": "modern",
+      "hinweis": "Fahrradständer mit Glasdach und vier Rädern statt Bretterschuppen auf dem Campus (Kartenblick C5) (Gemini E8, 27.11.2026, werkzeuge/gemini_akt3_2711.py)",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################"
+      ]
+    },
+    "sb27Weihnachtsbaum": {
+      "quelle": "spiel/eigene/weihnachtsbaum_gross.png",
+      "breite": 48,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "hinweis": "großer geschmückter Weihnachtsbaum mit Lichterkette und Stern im Holzkübel (Kartenblick S5) (Gemini E9, 27.11.2026, werkzeuge/gemini_akt3_2711.py)",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".....###....",
+        ".....###...."
+      ]
+    },
+    "sb27Faehrkasse": {
+      "quelle": "spiel/eigene/faehrkasse.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten",
+      "hinweis": "Fährkasse: blaugraues Holzhäuschen mit Schieferdach, Schalter, Fahrplan und Rettungsring (Kartenblick F7) (Gemini E10, 27.11.2026, werkzeuge/gemini_akt3_2711.py)"
+    },
+    "sb27Sitzinsel": {
+      "quelle": "spiel/eigene/sitzinsel.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "brunnen",
+      "zustand": "neu",
+      "stil": "modern",
+      "hinweis": "runde Sitzinsel aus Beton mit Holzauflage um ein Pflanzbeet mit kahlem Bäumchen (Kartenblick C6) (Gemini E11, 27.11.2026, werkzeuge/gemini_akt3_2711.py)",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "############",
+        ".##########.",
+        "..########..",
+        "...######..."
+      ]
+    },
+    "sb27Infostele": {
+      "quelle": "spiel/eigene/infostele.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schild",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten",
+      "hinweis": "digitale Infostele mit leuchtendem Lageplan (Kartenblick C6) (Gemini E12, 27.11.2026, werkzeuge/gemini_akt3_2711.py)",
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####"
+      ]
+    },
+    "sb27DachLueftung": {
+      "quelle": "spiel/eigene/dach_lueftung_gross.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "steht auf dem Flachdach; das Gebäude darunter sperrt",
+      "hinweis": "große Lüftungsanlage mit zwei Ventilatoren in Draufsicht für ein Flachdach (Kartenblick M20) (Gemini E16, 27.11.2026, werkzeuge/gemini_akt3_2711.py)"
+    },
+    "sb27DachPflanzkaesten": {
+      "quelle": "spiel/eigene/dach_pflanzkaesten.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "steht auf dem Flachdach; das Gebäude darunter sperrt",
+      "hinweis": "drei Pflanzkästen aus Holz mit immergrünen Kräutern für ein Flachdach (Kartenblick M20) (Gemini E17, 27.11.2026, werkzeuge/gemini_akt3_2711.py)"
+    },
+    "sb27DachSolar": {
+      "quelle": "spiel/eigene/dach_solarfeld.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "neu",
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "steht auf dem Flachdach; das Gebäude darunter sperrt",
+      "hinweis": "sechs Solarmodule in zwei Reihen in Draufsicht für ein Flachdach (Kartenblick M20) (Gemini E18, 27.11.2026, werkzeuge/gemini_akt3_2711.py)"
+    },
+    "sb27Signalmast": {
+      "quelle": "spiel/eigene/signalmast.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "mast",
+      "zustand": "gebraucht",
+      "stil": "maritim",
+      "hinweis": "Signalmast mit drei bunten Signalflaggen statt der weißen Fahne an der Hafenmeisterei (Kartenblick F8) (von Hand gezeichnet nach Gemini E13, 27.11.2026, werkzeuge/signalmast_2711.py)"
     }
   }
 }

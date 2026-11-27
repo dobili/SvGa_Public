@@ -2,7 +2,7 @@
   "karte": "desertSprings.antiquariat",
   "datei": "karten/desert-springs-antiquariat-leihgabe.json",
   "art": "innen",
-  "beschreibung": "Zustand: nach dem Finale in Capital Arena (abschiedGesehen) und wenn der Brief gelesen ist, liegt Hales Brief von 1866 als Leihgabe in einer eigenen Vitrine neben dem Lesetisch, weil Mr. Okoro ihn für die Besucher ausstellt (13_Wegenetz, Post-Game). Sonst wie die Grundkarte. Das Antiquariat von Mr. Okoro im alten Bahnhof von Desert Springs, 20 × 13 Kacheln, Dielen, Holzwand. An der Nordwand Bücherregale, ein Fenster und die alte Bahnhofsuhr, an den Seitenwänden schmale Regale; in der Mitte zwei Regalreihen und ein Lesetisch mit Lampe. Rechts der Tresen mit Mr. Okoro und eine Vitrine mit alten Fahrkarten, links Kisten mit Briefen, Zeitungsstapel und die Kellerluke. Tür in der Mitte der Südwand.",
+  "beschreibung": "Zustand: nach dem Finale in Capital Arena (abschiedGesehen) und wenn der Brief gelesen ist, liegt Hales Brief von 1866 als Leihgabe in einer eigenen Vitrine neben dem Lesetisch, weil Mr. Okoro ihn für die Besucher ausstellt (13_Wegenetz, Post-Game). Sonst wie die Grundkarte. Das Antiquariat von Mr. Okoro im alten Bahnhof von Desert Springs, 20 × 13 Kacheln, Dielen, Holzwand. An der Nordwand Bücherregale, ein Fenster und die alte Bahnhofsuhr, an den Seitenwänden schmale Regale; in der Mitte zwei Regalreihen und ein Lesetisch mit Lampe. Rechts der Tresen mit Mr. Okoro und eine Vitrine mit alten Fahrkarten, links Kisten mit Briefen, Zeitungsstapel und die Kellerluke. Tür in der Mitte der Südwand. Erster Eindruck (27.11.2026): Die alte Bahnhofsuhr ist groß, mit dunklem Rahmen. Unter dem Lesetisch liegt ein Teppich, die Lampe steht am Rand des Tisches, die Kasse auf dem Tresen. Die Vitrine mit den Fahrkarten steht an der Ostwand, der Kundenplatz vor dem Tresen ist frei; an der Südwand eine alte Wartebank des Bahnhofs von hinten. Die Seitenregale links sind beide dunkel. Die Vitrine mit Hales Brief steht unter der Uhr und verstellt kein Regal.",
   "wand": "holz",
   "boden": "holzDunkel",
   "raster": [
@@ -64,7 +64,7 @@
       "an_wand": true
     },
     {
-      "moebel": "cc6RegalSeiteHell",
+      "moebel": "cc6RegalSeiteDunkel",
       "feld": [1, 5]
     },
     {
@@ -100,7 +100,7 @@
       "moebel": "cc4Leselampe",
       "feld": [0, 0],
       "auf": "lesetisch",
-      "versatz": [6, 0]
+      "versatz": [10, 0]
     },
     {
       "moebel": "cc4StuhlVorn",
@@ -109,10 +109,10 @@
       "versatz": [8, 0]
     },
     {
-      "moebel": "mfc9Wanduhr",
+      "moebel": "rv5Bahnhofsuhr",
       "feld": [11, 1],
       "an_wand": true,
-      "versatz": [8, 6]
+      "versatz": [0, 2]
     },
     {
       "moebel": "iw8Theke4",
@@ -123,11 +123,11 @@
       "moebel": "cc4Kasse",
       "feld": [0, 0],
       "auf": "tresen",
-      "versatz": [16, 0]
+      "versatz": [22, -2]
     },
     {
       "moebel": "iw9VitrineFahrkarten",
-      "feld": [15, 8]
+      "feld": [17, 8]
     },
     {
       "moebel": "mf4Luke",
@@ -144,7 +144,7 @@
     },
     {
       "moebel": "sb5VitrineHale",
-      "feld": [12, 3]
+      "feld": [11, 3]
     },
     {
       "moebel": "cc6TuerSued",
@@ -157,6 +157,15 @@
       "feld": [11, 11],
       "versatz": [0, 25],
       "ebene": -2
+    },
+    {
+      "moebel": "rv5Teppich",
+      "feld": [9, 6],
+      "versatz": [0, 4]
+    },
+    {
+      "moebel": "mf11BahnsteigbankHinten",
+      "feld": [14, 10]
     }
   ],
   "ausloeser": [

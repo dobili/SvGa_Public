@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 36,
+ "nextobjectid": 38,
  "layers": [
   {
    "id": 1,
@@ -1248,7 +1248,7 @@
     },
     {
      "id": 16,
-     "name": "cc6RegalSeiteHell",
+     "name": "cc6RegalSeiteDunkel",
      "type": "moebel",
      "x": 16,
      "y": 80,
@@ -1434,7 +1434,7 @@
      "id": 24,
      "name": "cc4Leselampe",
      "type": "moebel",
-     "x": 174,
+     "x": 178,
      "y": 99,
      "width": 16,
      "height": 32,
@@ -1478,12 +1478,12 @@
     },
     {
      "id": 26,
-     "name": "mfc9Wanduhr",
+     "name": "rv5Bahnhofsuhr",
      "type": "moebel",
-     "x": 184,
-     "y": 22,
-     "width": 16,
-     "height": 16,
+     "x": 176,
+     "y": 18,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -1526,8 +1526,8 @@
      "id": 28,
      "name": "cc4Kasse",
      "type": "moebel",
-     "x": 264,
-     "y": 99,
+     "x": 270,
+     "y": 97,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1549,7 +1549,7 @@
      "id": 29,
      "name": "iw9VitrineFahrkarten",
      "type": "moebel",
-     "x": 240,
+     "x": 272,
      "y": 128,
      "width": 32,
      "height": 48,
@@ -1641,7 +1641,7 @@
      "id": 33,
      "name": "sb5VitrineHale",
      "type": "moebel",
-     "x": 192,
+     "x": 176,
      "y": 48,
      "width": 32,
      "height": 48,
@@ -1708,6 +1708,52 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      }
+     ]
+    },
+    {
+     "id": 36,
+     "name": "rv5Teppich",
+     "type": "moebel",
+     "x": 144,
+     "y": 100,
+     "width": 64,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 37,
+     "name": "mf11BahnsteigbankHinten",
+     "type": "moebel",
+     "x": 224,
+     "y": 160,
+     "width": 48,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

@@ -2,7 +2,7 @@
   "karte": "siliconBay.aussen",
   "datei": "karten/silicon-bay-aussen.json",
   "art": "aussen",
-  "beschreibung": "Silicon Bay, der Campus am Morgen: Glas, Licht und Bildschirme auf hellen Platten. Oben die Gebäudezeile: links der Konzernturm von Perfect Move, acht Geschosse und mit Abstand das höchste Haus, daneben ein Gästehaus, in der Mitte die Akademie, rechts das Hotel Bayview, ein altes Grandhotel mit grünem Kupferdach und Leuchtschrift, und ein Wohnhaus, dahinter ein Park mit Rasen, Bäumen und Büschen, zwischen Hotel und Wohnhaus ein Rasenstück mit zwei Bäumen; am Ostrand eine Werbetafel, auf der ZERO wirbt. Davor der Gehweg, der Boulevard mit der Straßenbahn, die links aus dem Bogen des Tunnels kommt (ein Betonbau quer über der Fahrbahn am Westrand, der Gehweg daneben bleibt frei, Gleis und Asphalt verschwinden im Dunkel) und rechts am Prellbock der Endhaltestelle hält (die Gleise liegen offen im Asphalt, dahinter endet die Fahrbahn), und der Gehweg Süd. Am Ostrand geht der Gehweg in den Plattenplatz über, der auf der Karte der Glasbrücke zum Stadtrand-Platz vor der Rampe weiterführt. Südlich des Boulevards die Ladenzeile mit den Fronten zum Platz: Fitnessstudio, Plattenladen, Modeladen, Spielzeugladen, Sportladen, Café, Musikladen, Eisdiele und ein kleiner Supermarkt, in der Mitte ein Durchgang. Auf dem Platz der Wochenmarkt mit Obst und Gemüse (Tiere gibt es keine, „die stören die Sensoren“; ein Roboterhund geht an der Leine), Marktfrau und Gemüsehändler, links das Innovation Lab als Gewächshaus aus Glas und der Infokiosk, dahinter der einzige Farbfleck der Stadt: Rosies Food-Truck mit Verkaufsklappe nach Süden und davor die einzige Holzbank, auf der Dash sitzt; dahinter der Baumplatz mit eigenem Steinboden, in seiner Mitte der Brunnen mit zwei Bänken, die zu ihm schauen; rechts der Kaffeekiosk in Bechergestalt, kleiner als die Läden, und ein Fahrradschuppen. An der Südkante die Terrasse mit Hecke und gläserner Brüstung über dem Hafen; nur in der Mitte führt ein gepflasterter Durchgang zur Treppe hinunter, die auf der Hafenkarte beginnt.",
+  "beschreibung": "Silicon Bay, der Campus am Morgen: Glas, Licht und Bildschirme auf hellen Platten. Oben die Gebäudezeile: links der Konzernturm von Perfect Move, acht Geschosse und mit Abstand das höchste Haus, daneben ein Gästehaus, in der Mitte die Akademie, rechts das Hotel Bayview, ein altes Grandhotel mit grünem Kupferdach und Leuchtschrift, und ein Wohnhaus, dahinter ein Park mit Rasen, Bäumen und Büschen, zwischen Hotel und Wohnhaus ein Rasenstück mit zwei Bäumen; am Ostrand eine Werbetafel, auf der ZERO wirbt. Davor der Gehweg, der Boulevard mit der Straßenbahn, die links aus dem Bogen des Tunnels kommt (ein Betonbau quer über der Fahrbahn am Westrand, der Gehweg daneben bleibt frei, Gleis und Asphalt verschwinden im Dunkel) und rechts am Prellbock der Endhaltestelle hält (die Gleise liegen offen im Asphalt, dahinter endet die Fahrbahn), und der Gehweg Süd. Am Ostrand geht der Gehweg in den Plattenplatz über, der auf der Karte der Glasbrücke zum Stadtrand-Platz vor der Rampe weiterführt. Südlich des Boulevards die Ladenzeile mit den Fronten zum Platz: Fitnessstudio, Plattenladen, Modeladen, Spielzeugladen, Sportladen, Café, Musikladen, Eisdiele und ein kleiner Supermarkt, in der Mitte ein Durchgang. Auf dem Platz der Wochenmarkt mit Obst und Gemüse (Tiere gibt es keine, „die stören die Sensoren“; ein Roboterhund geht an der Leine), Marktfrau und Gemüsehändler, links das Innovation Lab als Gewächshaus aus Glas und der Infokiosk, dahinter der einzige Farbfleck der Stadt: Rosies Food-Truck mit Verkaufsklappe nach Süden und davor die einzige Holzbank, auf der Dash sitzt; dahinter der Baumplatz mit eigenem Steinboden, in seiner Mitte der Brunnen mit zwei Bänken, die zu ihm schauen; rechts der Kaffeekiosk in Bechergestalt, kleiner als die Läden, und ein Fahrradschuppen. An der Südkante die Terrasse mit Hecke und gläserner Brüstung über dem Hafen; nur in der Mitte führt ein gepflasterter Durchgang zur Treppe hinunter, die auf der Hafenkarte beginnt. Erster Eindruck (27.11.2026): Auf den Flachdächern von Akademie, Gästehaus, Fitness, Coolies, Bim Bum, Music Store und dem kleinen Laden stehen Solarmodule, Lüftungsanlagen, Klimageräte, Dachluken und auf dem Music Store Pflanzkästen. Die Bäume im Park stehen bis auf zwei frei im Rasen, die Platzbäume haben eine Einfassung. Statt des Bretterschuppens steht im Südosten ein Fahrradständer mit Glasdach; die Osthälfte des Platzes gliedern zwei runde Sitzinseln, zwei Infostelen und Kübelpflanzen.",
   "boden": "platten",
   "wandart": "stein",
   "boeden": {
@@ -513,7 +513,8 @@
     },
     {
       "moebel": "sb8Condo52",
-      "feld": [15, 20]
+      "feld": [15, 20],
+      "id": "gaestehaus"
     },
     {
       "moebel": "cc8PrellbockQuerRechts",
@@ -581,7 +582,8 @@
     },
     {
       "moebel": "sb8LadenFitness",
-      "feld": [1, 39]
+      "feld": [1, 39],
+      "id": "fitness"
     },
     {
       "moebel": "sb8LadenGroove",
@@ -589,11 +591,13 @@
     },
     {
       "moebel": "sb8LadenCoolies",
-      "feld": [15, 39]
+      "feld": [15, 39],
+      "id": "coolies"
     },
     {
       "moebel": "sb8LadenBimbum",
-      "feld": [22, 39]
+      "feld": [22, 39],
+      "id": "bimbum"
     },
     {
       "moebel": "sb8LadenDanger",
@@ -605,7 +609,8 @@
     },
     {
       "moebel": "sb8LadenMusik",
-      "feld": [51, 39]
+      "feld": [51, 39],
+      "id": "musikladen"
     },
     {
       "moebel": "sb8LadenEis",
@@ -613,7 +618,8 @@
     },
     {
       "moebel": "sb8Markt3",
-      "feld": [65, 40]
+      "feld": [65, 40],
+      "id": "markt3"
     },
     {
       "moebel": "rv8Infokiosk",
@@ -624,8 +630,8 @@
       "feld": [64, 12]
     },
     {
-      "moebel": "sb5Faehrhaus",
-      "feld": [67, 61]
+      "moebel": "sb27Fahrradstaender",
+      "feld": [66, 62]
     },
     {
       "moebel": "cc4Hecke",
@@ -825,28 +831,34 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "sb5Baum",
-      "feld": [18, 6]
+      "moebel": "rvLaubbaum",
+      "feld": [18, 6],
+      "versatz": [-8, 0]
     },
     {
-      "moebel": "sb5Baum",
-      "feld": [24, 5]
+      "moebel": "rvLaubbaumDunkel",
+      "feld": [24, 5],
+      "versatz": [-8, 0]
     },
     {
-      "moebel": "sb5Baum",
-      "feld": [30, 6]
+      "moebel": "rvLaubbaum",
+      "feld": [30, 6],
+      "versatz": [-8, 0]
     },
     {
-      "moebel": "sb5Baum",
-      "feld": [36, 5]
+      "moebel": "rvLaubbaum",
+      "feld": [36, 5],
+      "versatz": [-8, 0]
     },
     {
-      "moebel": "sb5Baum",
-      "feld": [60, 5]
+      "moebel": "rvLaubbaumDunkel",
+      "feld": [60, 5],
+      "versatz": [-8, 0]
     },
     {
-      "moebel": "sb5Baum",
-      "feld": [66, 6]
+      "moebel": "rvLaubbaum",
+      "feld": [66, 6],
+      "versatz": [-8, 0]
     },
     {
       "moebel": "sb9TunnelportalFlach",
@@ -887,24 +899,28 @@
       "feld": [49, 60]
     },
     {
-      "moebel": "sb5Baum",
-      "feld": [21, 8]
+      "moebel": "rvLaubbaum",
+      "feld": [21, 8],
+      "versatz": [-8, 0]
     },
     {
       "moebel": "sb5Baum",
       "feld": [27, 8]
     },
     {
-      "moebel": "sb5Baum",
-      "feld": [33, 8]
+      "moebel": "rvLaubbaum",
+      "feld": [33, 8],
+      "versatz": [-8, 0]
     },
     {
-      "moebel": "sb5Baum",
-      "feld": [39, 8]
+      "moebel": "rvLaubbaum",
+      "feld": [39, 8],
+      "versatz": [-8, 0]
     },
     {
-      "moebel": "sb5Baum",
-      "feld": [17, 14]
+      "moebel": "rvLaubbaumDunkel",
+      "feld": [17, 14],
+      "versatz": [-8, 0]
     },
     {
       "moebel": "cc3Busch",
@@ -944,8 +960,9 @@
       "feld": [63, 55]
     },
     {
-      "moebel": "sb5Baum",
-      "feld": [60, 13]
+      "moebel": "rvLaubbaum",
+      "feld": [60, 13],
+      "versatz": [-8, 0]
     },
     {
       "moebel": "sb5Baum",
@@ -971,16 +988,157 @@
       "feld": [10, 65]
     },
     {
-      "moebel": "sb5Baum",
-      "feld": [68, 2]
+      "moebel": "rvLaubbaumDunkel",
+      "feld": [68, 2],
+      "versatz": [-8, 0]
     },
     {
-      "moebel": "sb5Baum",
-      "feld": [68, 8]
+      "moebel": "rvLaubbaum",
+      "feld": [68, 8],
+      "versatz": [-8, 0]
     },
     {
       "moebel": "wg4Busch",
       "feld": [70, 17]
+    },
+    {
+      "moebel": "sb27DachSolar",
+      "auf": "akademie",
+      "versatz": [-104, -110]
+    },
+    {
+      "moebel": "sb27DachSolar",
+      "auf": "akademie",
+      "versatz": [-48, -110]
+    },
+    {
+      "moebel": "sb27DachLueftung",
+      "auf": "akademie",
+      "versatz": [72, -100]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "akademie",
+      "versatz": [16, -86]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "akademie",
+      "versatz": [116, -126]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "akademie",
+      "versatz": [4, -128]
+    },
+    {
+      "moebel": "sb27DachSolar",
+      "auf": "akademie",
+      "versatz": [-104, -68]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "fitness",
+      "versatz": [-20, -46]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "fitness",
+      "versatz": [22, -40]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "fitness",
+      "versatz": [-8, -18]
+    },
+    {
+      "moebel": "sb27DachSolar",
+      "auf": "coolies",
+      "versatz": [-18, -34]
+    },
+    {
+      "moebel": "sb27DachSolar",
+      "auf": "coolies",
+      "versatz": [30, -34]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "coolies",
+      "versatz": [32, -14]
+    },
+    {
+      "moebel": "sb27DachLueftung",
+      "auf": "bimbum",
+      "versatz": [0, -32]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "bimbum",
+      "versatz": [-30, -16]
+    },
+    {
+      "moebel": "sb27DachPflanzkaesten",
+      "auf": "musikladen",
+      "versatz": [-18, -50]
+    },
+    {
+      "moebel": "sb27DachPflanzkaesten",
+      "auf": "musikladen",
+      "versatz": [18, -26]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "musikladen",
+      "versatz": [-22, -26]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "markt3",
+      "versatz": [-12, -42]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "markt3",
+      "versatz": [20, -38]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "markt3",
+      "versatz": [8, -20]
+    },
+    {
+      "moebel": "sb27Sitzinsel",
+      "feld": [65, 51]
+    },
+    {
+      "moebel": "sb27Sitzinsel",
+      "feld": [53, 62]
+    },
+    {
+      "moebel": "sb27Infostele",
+      "feld": [54, 49]
+    },
+    {
+      "moebel": "sb27Infostele",
+      "feld": [69, 49]
+    },
+    {
+      "moebel": "sb5KuebelBluete",
+      "feld": [61, 52]
+    },
+    {
+      "moebel": "sb5Kuebel",
+      "feld": [68, 57]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "gaestehaus",
+      "versatz": [8, -59]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "gaestehaus",
+      "versatz": [-24, -57]
     }
   ],
   "ausloeser": [

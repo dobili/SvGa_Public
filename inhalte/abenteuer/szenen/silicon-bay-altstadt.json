@@ -3,7 +3,7 @@
   "art": "aussen",
   "musikquellen": ["strassenmusiker"],
   "viertel": true,
-  "beschreibung": "Die Altstadt von Silicon Bay im Winter, ein Viertel westlich des Campus; es ist kalt und klar, Schnee liegt keiner (Glas und Kälte statt Schnee, RO21). Die Straße läuft von Ost nach West, mit Mittellinie und zwei Zebrastreifen an den Gassen; am nördlichen Gehweg Laternen in festen Abständen. Nördlich die Ladenzeile: Bäckerei, Polizeiwache, ein schmales Mietshaus, ein Wohnhaus, ein Laden, das Postamt, ein zweiter Laden, der Musikladen, ein Wohnhaus und die Metzgerei; dahinter Gärten mit Bäumen und zwei Gartenschuppen bis zur Hecke an der Nordgrenze. Die Ladenschilder sind englisch wie überall in Silicon Bay. Südlich hinter einer Hecke mit zwei Gassen die Häuser mit der Front zum Marktplatz: Angelladen, Wohnhaus, ein kleiner Garten, Eisenwarenladen, ein Laden, ein Garten mit Baum, der Kaffeekiosk in Form eines Bechers, ein Wohnhaus, die Eisdiele und ein Wohnhaus. Der Marktplatz hat einen Rand aus Steinplatten: zwei Stände voller Obst und Gemüse mit Händlerin und Händler, Bäume mit Baumscheiben, der Brunnen mit zwei Bänken, die zu ihm schauen, eine Kreidezeichnung, ein Straßenmusiker mit Gitarrenkoffer und im Osten ein geschmückter Weihnachtsbaum. Ganz im Süden der Park hinter einer Hecke mit drei Durchgängen, mit einem Weg aus Steinplatten, Bänken, Bäumen.",
+  "beschreibung": "Die Altstadt von Silicon Bay im Winter, ein Viertel westlich des Campus; es ist kalt und klar, Schnee liegt keiner (Glas und Kälte statt Schnee, RO21). Die Straße läuft von Ost nach West, mit Mittellinie und zwei Zebrastreifen an den Gassen; am nördlichen Gehweg Laternen in festen Abständen. Nördlich die Ladenzeile: Bäckerei, Polizeiwache, ein schmales Mietshaus, ein Wohnhaus, ein Laden, das Postamt, ein zweiter Laden, der Musikladen, ein Wohnhaus und die Metzgerei; dahinter Gärten mit Bäumen und zwei Gartenschuppen bis zur Hecke an der Nordgrenze. Die Ladenschilder sind englisch wie überall in Silicon Bay. Südlich hinter einer Hecke mit zwei Gassen die Häuser mit der Front zum Marktplatz: Angelladen, Wohnhaus, ein kleiner Garten, Eisenwarenladen, ein Laden, ein Garten mit Baum, der Kaffeekiosk in Form eines Bechers, ein Wohnhaus, die Eisdiele und ein Wohnhaus. Der Marktplatz hat einen Rand aus Steinplatten: zwei Stände voller Obst und Gemüse mit Händlerin und Händler, Bäume mit Baumscheiben, der Brunnen mit zwei Bänken, die zu ihm schauen, eine Kreidezeichnung, ein Straßenmusiker mit Gitarrenkoffer und im Osten ein geschmückter Weihnachtsbaum. Ganz im Süden der Park hinter einer Hecke mit drei Durchgängen, mit einem Weg aus Steinplatten, Bänken, Bäumen. Erster Eindruck (27.11.2026): Auf den Flachdächern der Altstadt stehen Klimageräte, Lüftungsanlagen, Dachluken, Rohre und Pflanzkästen. Der Weihnachtsbaum auf dem Platz ist groß, mit Lichterkette und Stern im Holzkübel. In den Gärten hinter den Häusern hängen an drei Stellen Wäscheleinen.",
   "boden": "pflaster",
   "wandart": "stein",
   "boeden": {
@@ -80,7 +80,8 @@
       "moebel": "sa8Polizei2",
       "feld": [8, 4],
       "massstab": 1.25,
-      "versatz": [0, 12]
+      "versatz": [0, 12],
+      "id": "polizei"
     },
     {
       "moebel": "rv8MietshausB",
@@ -93,7 +94,8 @@
     },
     {
       "moebel": "sa8LadenA",
-      "feld": [28, 12]
+      "feld": [28, 12],
+      "id": "ladenA"
     },
     {
       "moebel": "sa8Postamt3",
@@ -101,15 +103,18 @@
     },
     {
       "moebel": "sa8LadenB",
-      "feld": [43, 12]
+      "feld": [43, 12],
+      "id": "ladenB"
     },
     {
       "moebel": "sa8Musikladen",
-      "feld": [50, 8]
+      "feld": [50, 8],
+      "id": "musikladen"
     },
     {
       "moebel": "sa9WohnhausE",
-      "feld": [57, 8]
+      "feld": [57, 8],
+      "id": "wohnhausE"
     },
     {
       "moebel": "sa8Metzgerei",
@@ -126,11 +131,13 @@
     {
       "moebel": "sa8Eisenwaren",
       "feld": [21, 30],
-      "massstab": 1.25
+      "massstab": 1.25,
+      "id": "eisenwaren"
     },
     {
       "moebel": "sa8LadenD",
-      "feld": [31, 32]
+      "feld": [31, 32],
+      "id": "ladenD"
     },
     {
       "moebel": "rv5Kaffeekiosk",
@@ -138,11 +145,13 @@
     },
     {
       "moebel": "sa8WohnhausC",
-      "feld": [50, 28]
+      "feld": [50, 28],
+      "id": "wohnhausC"
     },
     {
       "moebel": "sa8Eisdiele",
-      "feld": [57, 32]
+      "feld": [57, 32],
+      "id": "eisdiele"
     },
     {
       "moebel": "sa8WohnhausD",
@@ -620,8 +629,8 @@
       "feld": [66, 42]
     },
     {
-      "moebel": "sa8Weihnachtsbaum",
-      "feld": [61, 43]
+      "moebel": "sb27Weihnachtsbaum",
+      "feld": [60, 42]
     },
     {
       "moebel": "sb8Kreidespringer",
@@ -889,6 +898,138 @@
     {
       "moebel": "wg4Busch",
       "feld": [42, 53]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "polizei",
+      "versatz": [-34, -120]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "polizei",
+      "versatz": [25, -115]
+    },
+    {
+      "moebel": "sb27DachLueftung",
+      "auf": "polizei",
+      "versatz": [4, -67]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "ladenA",
+      "versatz": [-22, -50]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "ladenA",
+      "versatz": [26, -52]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "ladenA",
+      "versatz": [12, -20]
+    },
+    {
+      "moebel": "sb27DachPflanzkaesten",
+      "auf": "ladenB",
+      "versatz": [-18, -52]
+    },
+    {
+      "moebel": "sb27DachPflanzkaesten",
+      "auf": "ladenB",
+      "versatz": [-18, -30]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "ladenB",
+      "versatz": [32, -14]
+    },
+    {
+      "moebel": "sb27DachLueftung",
+      "auf": "musikladen",
+      "versatz": [8, -68]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "musikladen",
+      "versatz": [-30, -48]
+    },
+    {
+      "moebel": "sb27DachPflanzkaesten",
+      "auf": "wohnhausE",
+      "versatz": [-2, -88]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "wohnhausE",
+      "versatz": [-20, -56]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "wohnhausE",
+      "versatz": [32, -58]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "eisenwaren",
+      "versatz": [-42, -70]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "eisenwaren",
+      "versatz": [40, -67]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "eisenwaren",
+      "versatz": [-2, -47]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "ladenD",
+      "versatz": [-28, -50]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "ladenD",
+      "versatz": [20, -30]
+    },
+    {
+      "moebel": "sb27DachPflanzkaesten",
+      "auf": "wohnhausC",
+      "versatz": [-18, -92]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "wohnhausC",
+      "versatz": [28, -86]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "wohnhausC",
+      "versatz": [10, -54]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "eisdiele",
+      "versatz": [20, -52]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "eisdiele",
+      "versatz": [-28, -50]
+    },
+    {
+      "moebel": "pd6Waescheleine",
+      "feld": [51, 3]
+    },
+    {
+      "moebel": "pd6Waescheleine",
+      "feld": [46, 4]
+    },
+    {
+      "moebel": "pd6Waescheleine",
+      "feld": [30, 3]
     }
   ],
   "ausloeser": [

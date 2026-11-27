@@ -2,7 +2,7 @@
   "karte": "desertSprings.aussen",
   "datei": "karten/desert-springs-aussen-meisterschaft.json",
   "art": "aussen",
-  "beschreibung": "Zustand: in Akt 4 (endeAkt3Gesehen) stehen drei Autos von Meisterschaftsfahrern auf dem Hof vor dem Motel und über dem Hof hängt das Banner der Meisterschaft zwischen zwei Laternen, weil Dot die Zimmer an Fahrer zur Meisterschaft vermietet (13_Wegenetz, Akt 4). Sonst wie die Grundkarte. Desert Springs an der Old Mother Road, am Rand des roten Canyons. Oben unter der roten Felswand die Bahnlinie auf ihrem Schotterbett, deren Gleis links und rechts bis zum Kartenrand läuft, mit einem langen Bahnsteig, daran der alte Bahnhof mit Veranda (darin das Antiquariat von Mr. Okoro); westlich der Wasserturm und das Diner, östlich die große Tankstelle mit Waschstraße auf einem Asphalthof mit Zufahrt von der Straße. Die Straße kommt von Westen (Highway), hat eine Mittellinie und biegt nach Süden zum Hof ab; der Gehweg läuft schräg um die Innenecke weiter, die Mittellinie bis an die Ecke. Südlich der Straße das Motel mit Leuchtschild, ein flacher Lehmputzbau mit vier bunten Zimmertüren, die Garage von Tomás (Club), zwei Wohncontainer, Wohnwagen, eine Brettershütte, eine Hütte und der Gemischtwarenladen; davor ein heller Hof mit Bänken. Ringsum roter Sand, Felsen, Saguaros und blühende Kakteen; nach Osten der Pfad zum Canyon. Von Osten kommt die alte Strecke von 1879 aus dem Felseinschnitt des Felsbogens und endet hinter dem Gemischtwarenladen an einem Prellbock.",
+  "beschreibung": "Zustand: in Akt 4 (endeAkt3Gesehen) stehen drei Autos von Meisterschaftsfahrern auf dem Hof vor dem Motel und über dem Hof hängt das Banner der Meisterschaft zwischen zwei Laternen, weil Dot die Zimmer an Fahrer zur Meisterschaft vermietet (13_Wegenetz, Akt 4). Sonst wie die Grundkarte. Desert Springs an der Old Mother Road, am Rand des roten Canyons. Oben unter der roten Felswand die Bahnlinie auf ihrem Schotterbett, deren Gleis links und rechts bis zum Kartenrand läuft, mit einem langen Bahnsteig, daran der alte Bahnhof mit Veranda (darin das Antiquariat von Mr. Okoro); westlich der Wasserturm und das Diner, östlich die große Tankstelle mit Waschstraße auf einem Asphalthof mit Zufahrt von der Straße. Die Straße kommt von Westen (Highway), hat eine Mittellinie und biegt nach Süden zum Hof ab; der Gehweg läuft schräg um die Innenecke weiter, die Mittellinie bis an die Ecke. Südlich der Straße das Motel mit Leuchtschild, ein flacher Lehmputzbau mit vier bunten Zimmertüren, die Garage von Tomás (Club), zwei Wohncontainer, Wohnwagen, eine Brettershütte, eine Hütte und der Gemischtwarenladen; davor ein heller Hof mit Bänken. Ringsum roter Sand, Felsen, Saguaros und blühende Kakteen; nach Osten der Pfad zum Canyon. Von Osten kommt die alte Strecke von 1879 aus dem Felseinschnitt des Felsbogens und endet hinter dem Gemischtwarenladen an einem Prellbock. Erster Eindruck (27.11.2026): Auf den Flachdächern von Diner, Tankstelle, Laden und Motel stehen Klimageräte, Lüftung, Luken, Rohre und Solarmodule; das Vordach über den Zapfsäulen bleibt frei. Die Felsen im Sand sind rote Wüstensteine ohne Gras. Der Hof vor Motel und Wohnwagen ist festgefahrener Schotter; ein Trampelpfad aus Schotter führt bis an den Ausgang zum Canyon.",
   "wand": "felsRot",
   "kante": "klippe",
   "fels": "rot",
@@ -49,10 +49,10 @@
     "..........................................psns..............",
     "..........................................psns..........fff.",
     "...qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq..........fff.",
-    "...qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq..............",
-    "...qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpppppppppp....",
-    "...qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqkkkkkkkkkkkk..",
-    "...qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqkkkkkkkkkkkk..",
+    "...kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkq..............",
+    "...kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkqpppppppppp....",
+    "...kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkqkkkkkkkkkkkkkk",
+    "...kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkqkkkkkkkkkkkkkk",
     "............................................................",
     "............................................................",
     "............................................................",
@@ -131,7 +131,8 @@
       "moebel": "ds8Gemischtwaren",
       "feld": [46, 20],
       "massstab": 1.2,
-      "versatz": [0, 3]
+      "versatz": [0, 3],
+      "id": "laden"
     },
     {
       "moebel": "by9HuetteKrebs",
@@ -501,7 +502,7 @@
       "feld": [50, 35]
     },
     {
-      "moebel": "wg4Felsgruppe",
+      "moebel": "gt21WuestensteinRotGross",
       "feld": [20, 35]
     },
     {
@@ -528,15 +529,15 @@
       "feld": [6, 13]
     },
     {
-      "moebel": "wg4Felsgruppe",
+      "moebel": "gt21WuestensteinRot",
       "feld": [5, 34]
     },
     {
-      "moebel": "wg4Felsgruppe",
+      "moebel": "gt21WuestensteinRotGross",
       "feld": [40, 34]
     },
     {
-      "moebel": "wg4Felsgruppe",
+      "moebel": "gt21WuestensteinRot",
       "feld": [24, 34]
     },
     {
@@ -600,6 +601,96 @@
       "feld": [7, 30],
       "versatz": [4, 0],
       "massstab": 0.75
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "diner",
+      "versatz": [-44, -71]
+    },
+    {
+      "moebel": "sb27DachLueftung",
+      "auf": "diner",
+      "versatz": [24, -57]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "diner",
+      "versatz": [-44, -35]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "diner",
+      "versatz": [52, -32]
+    },
+    {
+      "moebel": "sb27DachSolar",
+      "auf": "tankstelle",
+      "versatz": [-98, -65]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "tankstelle",
+      "versatz": [-100, -49]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "tankstelle",
+      "versatz": [-62, -49]
+    },
+    {
+      "moebel": "sb27DachLueftung",
+      "auf": "tankstelle",
+      "versatz": [88, -63]
+    },
+    {
+      "moebel": "sb27DachSolar",
+      "auf": "laden",
+      "versatz": [-38, -59]
+    },
+    {
+      "moebel": "sb27DachSolar",
+      "auf": "laden",
+      "versatz": [22, -59]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "laden",
+      "versatz": [-36, -32]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "laden",
+      "versatz": [40, -27]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "motel",
+      "versatz": [-72, -37]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "motel",
+      "versatz": [-8, -37]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "motel",
+      "versatz": [56, -37]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "motel",
+      "versatz": [-44, -39]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "motel",
+      "versatz": [86, -39]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "tankstelle",
+      "versatz": [68, -45]
     }
   ],
   "ausloeser": [

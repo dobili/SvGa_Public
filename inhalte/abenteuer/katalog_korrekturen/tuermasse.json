@@ -837,5 +837,13 @@
   "spiel/eigene/schuppen_braun_dach.png": {
     "rahmen": [11, 29, 34, 71],
     "herkunft": "gemessen"
+  },
+  "spiel/eigene/faehrkasse.png": {
+    "herkunft": "nicht messbar",
+    "grund": "Kassenhäuschen mit Schalter, die schmale Tür ist der Personaleingang ohne Innenraum (wie ein Kiosk mit Theke), im Bild geprüft 27.11.2026"
+  },
+  "spiel/eigene/fahrradstaender_glas.png": {
+    "herkunft": "nicht messbar",
+    "grund": "keine Tür im Bild (offener Unterstand mit Glasdach), im Bild geprüft 27.11.2026"
   }
 }

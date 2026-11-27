@@ -4,7 +4,7 @@
   "art": "innen",
   "musikquellen": ["remy"],
   "zustand_der_karte": "musikhausOffen",
-  "beschreibung": "Zustand: ab Szene 70 (musikhausOffen) steht am Kai das wieder aufgebaute Musikhaus statt der Ruine, weil der Club es nach dem Hurrikan gemeinsam neu errichtet hat. Das neue Musikhaus am Kai nach dem Wiederaufbau (Zustand ab Szene 70, `musikhausOffen`): Musik- und Schachclub Port Delacroix, seit 1889. Frisch gestrichene cremefarbene Wände, neue helle Dielen, zwei Fenster mit Blick aufs Hafenbecken. An der Nordwand links ein Regal mit Brettern und Figuren und Henris gestiftetes Klavier, in der Mitte das neue Schild „Musik und Schach, seit 1889“, rechts ein Notenregal; eine große Pflanze steht an der Ostwand. Vier Spieltische mit je einem Brett und zwei Stühlen stehen links und rechts, in der Mitte ein Teppich, auf dem Kinder sitzen. Die Tür liegt in der Mitte der Südwand, davor eine Matte; der Auslöser `schild` liegt links neben der Tür.",
+  "beschreibung": "Zustand: ab Szene 70 (musikhausOffen) steht am Kai das wieder aufgebaute Musikhaus statt der Ruine, weil der Club es nach dem Hurrikan gemeinsam neu errichtet hat. Das neue Musikhaus am Kai nach dem Wiederaufbau (Zustand ab Szene 70, `musikhausOffen`): Musik- und Schachclub Port Delacroix, seit 1889. Frisch gestrichene cremefarbene Wände, neue helle Dielen, ein Fenster mit Blick aufs Hafenbecken. An der Nordwand links ein Regal mit Brettern und Figuren und Henris gestiftetes Klavier, in der Mitte das neue Schild „Musik und Schach, seit 1889“, rechts ein Notenregal; eine große Pflanze steht an der Ostwand. Vier Spieltische mit je einem Brett und zwei Stühlen stehen links und rechts, in der Mitte ein Teppich, auf dem Kinder sitzen. Die Tür liegt in der Mitte der Südwand, davor eine Matte; der Auslöser `schild` liegt links neben der Tür. Erster Eindruck (27.11.2026): Links oben steht ein Regal mit Schachbrettern, Figurenkästen und Schachuhren; statt des rechten Fensters hängen Gitarre, Geige und Trompete an der Wand, vor dem Klavier steht ein Hocker.",
   "wand": "creme",
   "boden": "holzHell",
   "raster": [
@@ -30,11 +30,6 @@
       "an_wand": true
     },
     {
-      "moebel": "pd6Fenster",
-      "feld": [16, 1],
-      "an_wand": true
-    },
-    {
       "moebel": "pd6SchildMusikhaus",
       "feld": [8, 1],
       "an_wand": true,
@@ -45,7 +40,7 @@
       "feld": [5, 2]
     },
     {
-      "moebel": "pd6Regal",
+      "moebel": "pd27Schachregal",
       "feld": [1, 2]
     },
     {
@@ -180,6 +175,17 @@
       "feld": [10, 13],
       "an_wand": true,
       "deckkraft": 75
+    },
+    {
+      "moebel": "pd27Instrumentenwand",
+      "feld": [16, 1],
+      "an_wand": true,
+      "versatz": [0, 4]
+    },
+    {
+      "moebel": "cc4Hocker",
+      "feld": [5, 5],
+      "versatz": [8, 4]
     }
   ],
   "ausloeser": [

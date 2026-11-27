@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 26,
+ "nextobjectid": 30,
  "layers": [
   {
    "id": 1,
@@ -1158,7 +1158,7 @@
     },
     {
      "id": 18,
-     "name": "pd6Holzscheite",
+     "name": "pd27HolzscheiteInnen",
      "type": "moebel",
      "x": 192,
      "y": 144,
@@ -1278,7 +1278,7 @@
     },
     {
      "id": 23,
-     "name": "pd9Klavierhocker",
+     "name": "cc4Hocker",
      "type": "moebel",
      "x": 64,
      "y": 160,
@@ -1301,11 +1301,11 @@
     },
     {
      "id": 24,
-     "name": "pd9Spaene",
+     "name": "cc27SpaeneGross",
      "type": "moebel",
-     "x": 116,
+     "x": 112,
      "y": 100,
-     "width": 16,
+     "width": 32,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -1324,10 +1324,33 @@
     },
     {
      "id": 25,
-     "name": "pd9Spaene",
+     "name": "cc27SpaeneMittel",
      "type": "moebel",
-     "x": 176,
+     "x": 164,
      "y": 102,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 26,
+     "name": "cc27SpaeneKlein",
+     "type": "moebel",
+     "x": 100,
+     "y": 146,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -1342,6 +1365,75 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      }
+     ]
+    },
+    {
+     "id": 27,
+     "name": "cc27SpaeneKlein",
+     "type": "moebel",
+     "x": 144,
+     "y": 132,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 28,
+     "name": "pd6Bretterstapel",
+     "type": "moebel",
+     "x": 272,
+     "y": 128,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 168
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 29,
+     "name": "pd6Kanister",
+     "type": "moebel",
+     "x": 176,
+     "y": 144,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 168
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

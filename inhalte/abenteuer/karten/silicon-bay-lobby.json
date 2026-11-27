@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 33,
+ "nextobjectid": 34,
  "layers": [
   {
    "id": 1,
@@ -1545,11 +1545,11 @@
     },
     {
      "id": 22,
-     "name": "sb8Sofa",
+     "name": "sb27Loungesofa",
      "type": "moebel",
-     "x": 80,
+     "x": 72,
      "y": 112,
-     "width": 32,
+     "width": 48,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -1591,19 +1591,19 @@
     },
     {
      "id": 24,
-     "name": "pd6Couchtisch",
+     "name": "sb8Couchtisch",
      "type": "moebel",
      "x": 80,
-     "y": 144,
+     "y": 152,
      "width": 32,
-     "height": 32,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 168
+       "value": 160
       },
       {
        "name": "kollision",
@@ -1798,6 +1798,29 @@
        "name": "tiefe",
        "type": "int",
        "value": -1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 33,
+     "name": "sb8Statistik",
+     "type": "moebel",
+     "x": 320,
+     "y": 16,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
       },
       {
        "name": "kollision",

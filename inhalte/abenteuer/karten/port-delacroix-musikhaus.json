@@ -1438,7 +1438,7 @@
     },
     {
      "id": 26,
-     "name": "pd6Holzscheite",
+     "name": "pd27HolzscheiteInnen",
      "type": "moebel",
      "x": 64,
      "y": 48,
@@ -1673,19 +1673,19 @@
     },
     {
      "id": 36,
-     "name": "pd6Bretterstapel",
+     "name": "cc7Bretterstapel",
      "type": "moebel",
      "x": 112,
      "y": 144,
      "width": 32,
-     "height": 48,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 184
+       "value": 168
       },
       {
        "name": "kollision",

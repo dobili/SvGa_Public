@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 232,
+ "nextobjectid": 254,
  "layers": [
   {
    "id": 1,
@@ -17181,9 +17181,9 @@
      "name": "pd6HausGruen",
      "type": "moebel",
      "x": 1072,
-     "y": 752,
-     "width": 100,
-     "height": 80,
+     "y": 736,
+     "width": 120,
+     "height": 96,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -17200,12 +17200,12 @@
       {
        "name": "massstab",
        "type": "float",
-       "value": 1.25
+       "value": 1.5
       },
       {
        "name": "maske",
        "type": "string",
-       "value": "......./######./######./######./######."
+       "value": "......../#######./########/########/########/########"
       }
      ]
     },
@@ -18200,7 +18200,7 @@
     },
     {
      "id": 185,
-     "name": "rvLaubbaumDunkel",
+     "name": "rvLaubbaum",
      "type": "moebel",
      "x": 960,
      "y": 784,
@@ -18591,9 +18591,9 @@
     },
     {
      "id": 202,
-     "name": "rvLaubbaumDunkel",
+     "name": "rvLaubbaum",
      "type": "moebel",
-     "x": 1184,
+     "x": 1216,
      "y": 784,
      "width": 64,
      "height": 64,
@@ -19007,22 +19007,32 @@
      "id": 220,
      "name": "pd12Lastwagen",
      "type": "moebel",
-     "x": 544,
+     "x": 550,
      "y": 480,
-     "width": 48,
-     "height": 144,
+     "width": 36,
+     "height": 108,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 616
+       "value": 580
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "massstab",
+       "type": "float",
+       "value": 0.75
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": ".../##./##./##./##./##./##."
       }
      ]
     },
@@ -19286,6 +19296,512 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      }
+     ]
+    },
+    {
+     "id": 232,
+     "name": "mf27DachKlimageraet",
+     "type": "moebel",
+     "x": 1066,
+     "y": 176,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 281
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 233,
+     "name": "mf27DachLueftungsrohr",
+     "type": "moebel",
+     "x": 1110,
+     "y": 180,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 281
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 234,
+     "name": "mf27DachLuke",
+     "type": "moebel",
+     "x": 1086,
+     "y": 200,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 281
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 235,
+     "name": "mf27DachLuke",
+     "type": "moebel",
+     "x": 1148,
+     "y": 178,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 281
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 236,
+     "name": "mf27DachLueftungsrohr",
+     "type": "moebel",
+     "x": 1186,
+     "y": 196,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 281
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 237,
+     "name": "sb27DachLueftung",
+     "type": "moebel",
+     "x": 1070,
+     "y": 574,
+     "width": 48,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 697
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 238,
+     "name": "mf27DachLuke",
+     "type": "moebel",
+     "x": 1136,
+     "y": 580,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 697
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 239,
+     "name": "mf27DachLueftungsrohr",
+     "type": "moebel",
+     "x": 1130,
+     "y": 610,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 697
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 240,
+     "name": "mf27DachLueftungsrohr",
+     "type": "moebel",
+     "x": 110,
+     "y": 528,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 633
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 241,
+     "name": "mf27DachLueftungsrohr",
+     "type": "moebel",
+     "x": 126,
+     "y": 528,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 633
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 242,
+     "name": "mf27DachKlimageraet",
+     "type": "moebel",
+     "x": 132,
+     "y": 550,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 633
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 243,
+     "name": "mf27DachKlimageraet",
+     "type": "moebel",
+     "x": 654,
+     "y": 722,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 841
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 244,
+     "name": "mf27DachLuke",
+     "type": "moebel",
+     "x": 720,
+     "y": 726,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 841
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 245,
+     "name": "mf27DachLueftungsrohr",
+     "type": "moebel",
+     "x": 690,
+     "y": 754,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 841
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 246,
+     "name": "mf27DachLuke",
+     "type": "moebel",
+     "x": 792,
+     "y": 738,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 841
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 247,
+     "name": "mf27DachKlimageraet",
+     "type": "moebel",
+     "x": 762,
+     "y": 756,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 841
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 248,
+     "name": "mf27DachLueftungsrohr",
+     "type": "moebel",
+     "x": 1228,
+     "y": 596,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 697
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 249,
+     "name": "mf27DachKlimageraet",
+     "type": "moebel",
+     "x": 1218,
+     "y": 614,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 697
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 250,
+     "name": "sb27DachLueftung",
+     "type": "moebel",
+     "x": 286,
+     "y": 174,
+     "width": 48,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 393
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 251,
+     "name": "mf27DachLuke",
+     "type": "moebel",
+     "x": 326,
+     "y": 216,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 393
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 252,
+     "name": "mf27DachLueftungsrohr",
+     "type": "moebel",
+     "x": 280,
+     "y": 228,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 393
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 253,
+     "name": "mf27DachKlimageraet",
+     "type": "moebel",
+     "x": 316,
+     "y": 234,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 393
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       }
      ]
     }

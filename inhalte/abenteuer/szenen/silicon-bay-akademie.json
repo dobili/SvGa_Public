@@ -2,7 +2,7 @@
   "karte": "siliconBay.akademie",
   "datei": "karten/silicon-bay-akademie.json",
   "art": "innen",
-  "beschreibung": "Die Perfect Move Academy in Silicon Bay: hell, kühl und leise summend, alles Glas, Weiß und Bildschirm. Durch die gläserne Eingangstür im Süden kommt man ins Foyer mit grauen Fliesen: rechts der Empfangstisch mit Laptop, an dem die Empfangsdame Besucher begrüßt, links eine Sitzgruppe aus Sofa, zwei Stühlen und weißem Beistelltisch, zwei Kübelpflanzen und die Vitrine mit dem Glaspokal. Eine Glaswand aus Scheiben zwischen schmalen Pfosten auf einer Schwelle trennt Foyer und Büro vom Trainingssaal; durch sie sieht man die Schüler an ihren Bildschirmen. Im Saal stehen vier weiße Bildschirmtische in zwei Reihen mit Gang dazwischen, an jedem zwei Flachbildschirme, die nach Süden zu den Stühlen davor zeigen; an jedem Tisch sitzt ein Schüler mit dem Rücken zum Betrachter und spielt gegen die Maschine. An der Nordwand der Bildschirm mit der Rangliste der Schüler und eine Statistiktafel, zwei Fenster, die Stahltür zum Serverraum und der große Vortragsbildschirm mit zwei Stuhlreihen davor, dazwischen Platz für die Füße; in der Ecke Wasserspender, Getränke- und Kaffeeautomat, daneben zwei Sessel an einem Beistelltisch. Durch den Gang rollt ein Lieferroboter von Perfect Move, den die Akademie hier erprobt. An der Westwand filmt Nova sich mit dem Ringlicht. Im Südosten das Büro von Dr. Lin mit blauem Teppich, zum Saal hin verglast, vom Foyer durch ein Bücherregal als Raumteiler getrennt und daneben offen: ein weißer Schreibtisch, auf dem als einziges ein altes Holzbrett steht, Lin dahinter, ein Besucherstuhl davor, ein Bücherregal.",
+  "beschreibung": "Die Perfect Move Academy in Silicon Bay: hell, kühl und leise summend, alles Glas, Weiß und Bildschirm. Durch die gläserne Eingangstür im Süden kommt man ins Foyer mit grauem Steinboden: rechts der Empfangstisch mit Laptop, an dem die Empfangsdame Besucher begrüßt, links eine Sitzgruppe aus Loungesofa, zwei Stühlen und weißem Beistelltisch, zwei Kübelpflanzen und die Vitrine mit dem Glaspokal. Eine Glaswand aus Scheiben zwischen schmalen Pfosten auf einer Schwelle trennt Foyer und Büro vom Trainingssaal; durch sie sieht man die Schüler an ihren Bildschirmen. Im Saal stehen vier weiße Bildschirmtische in zwei Reihen mit Gang dazwischen, an jedem zwei Flachbildschirme, die nach Süden zu den Stühlen davor zeigen; an jedem Tisch sitzt ein Schüler mit dem Rücken zum Betrachter und spielt gegen die Maschine. An der Nordwand der Bildschirm mit der Rangliste der Schüler und eine Statistiktafel, einen weiteren Bildschirm, die Stahltür zum Serverraum und der große Vortragsbildschirm mit zwei Stuhlreihen davor, dazwischen Platz für die Füße; in der Ecke Wasserspender, Getränke- und Kaffeeautomat, daneben zwei Sessel an einem Beistelltisch. Durch den Gang rollt ein Lieferroboter von Perfect Move, den die Akademie hier erprobt. An der Westwand filmt Nova sich mit dem Ringlicht. Im Südosten das Büro von Dr. Lin mit blauem Teppich, zum Saal hin verglast, vom Foyer durch ein Bücherregal als Raumteiler getrennt und daneben offen: ein weißer Schreibtisch, auf dem als einziges ein altes Holzbrett steht, Lin dahinter, ein Besucherstuhl davor, ein Bücherregal. Erster Eindruck (27.11.2026): Das Foyer hat glatten grauen Steinboden. Die Sitzgruppe ist ein graublaues Loungesofa an der Westwand mit Tisch und zwei Stühlen davor. An der Nordwand, hinter der der Serverraum liegt, hängt statt der zwei Fenster ein weiterer Bildschirm.",
   "wand": "hellgrau",
   "boden": "fliesenWeiss",
   "zustand": ["neu", "gebraucht"],
@@ -36,16 +36,6 @@
     {
       "moebel": "sb8Statistik",
       "feld": [6, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "sb8Fenster",
-      "feld": [8, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "sb8Fenster",
-      "feld": [10, 1],
       "an_wand": true
     },
     {
@@ -237,8 +227,9 @@
       "feld": [23, 10]
     },
     {
-      "moebel": "sb8Sofa",
-      "feld": [2, 13]
+      "moebel": "sb27Loungesofa",
+      "feld": [1, 13],
+      "versatz": [8, 0]
     },
     {
       "moebel": "sb8Beistelltisch",
@@ -247,13 +238,13 @@
     },
     {
       "moebel": "sb8StuhlRechts",
-      "feld": [1, 14],
+      "feld": [1, 15],
       "zu": "couch",
       "versatz": [0, 9]
     },
     {
       "moebel": "sb8StuhlLinks",
-      "feld": [4, 14],
+      "feld": [4, 15],
       "zu": "couch",
       "versatz": [-4, 9],
       "vorn": true
@@ -417,6 +408,11 @@
       "feld": [9, 16],
       "versatz": [0, 8],
       "ebene": -2
+    },
+    {
+      "moebel": "sb5BildschirmC",
+      "feld": [9, 0],
+      "an_wand": true
     }
   ],
   "ausloeser": [
@@ -537,7 +533,7 @@
     }
   ],
   "boeden": {
-    "f": "fliesenGrau",
+    "f": "stein",
     "k": "teppichBlau"
   }
 }

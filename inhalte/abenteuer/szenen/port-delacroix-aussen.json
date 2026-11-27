@@ -12,7 +12,7 @@
     "e": "erde",
     "t": "schotter"
   },
-  "beschreibung": "Port Delacroix im nassen Winter (Regen und nasse Straßen, kein Schnee, RO21) nach dem Hurrikan, Hoffnung statt Trauer. Ganz oben das Meer mit Steinkante, darunter die Deichkrone als Erdweg vom Westrand (Ankunft von der Fähre) bis zum Kai, am Fuß der Krone Sandsäcke vom Sturm und der grüne Hang des Deichs; eine Rampe führt hinunter in die Stadt, eine zweite zum Kai. Im Westen das Gleis des Wüstenzugs mit Prellbock und der Bahnsteig mit Bank und Wegweiser. An der Rue du Port die Turnhalle der Schule, ein hoher Steinbau mit Flachdach, Bogenfenstern und niedrigem Anbau, der hinten bis an den Deich reicht (passend zum Innenraum, Regel 10.75), über der Glastür das Schild, an den Häusern lehnen Leitern, links ein rotes, rechts ein grünes Holzhaus, dazwischen der Gebäckwagen von Mrs. Arceneaux, östlich der Turnhalle ein Erdweg von der Deichrampe zur Straße, daneben die Baustelle mit Bagger hinter einem Bauzaun, Sturmschutt, Holz und einem umgestürzten Stamm, der Rohbau steht am Deichfuß hinter dem Haus, ein Baum, Pfützen auf Straße und Platz. Südlich der Straße der gepflasterte Platz mit Clubzelt und Notzelt, auf einer Kiste der Bläser, Kinder mit Ball; daneben am Kai das Musikhaus mit rostigem Blechdach, links und rechts des Eingangs ein Bauzaun mit blauer Plane. Am Kai Fässer, Kisten, Sandsäcke, Mr. Batiste mit Eimer und Seil, im Hafenbecken zwei Fischerboote und ein Ruderboot, ein Steg auf Pfählen; über das Hafenbecken führt an der Rue du Port eine schmale Holzbrücke zum Ostkai. Im Süden die Rue des Facteurs mit der Klavierwerkstatt Whitlock-Duval und zwei kleinen Holzhäusern, Gärten mit Wäscheleinen, am Ostkai ein kleines grünes Holzhaus zwischen den Bäumen; im Osten geht sie als Marschpfad zwischen Bäumen zum Bayou.",
+  "beschreibung": "Port Delacroix im nassen Winter (Regen und nasse Straßen, kein Schnee, RO21) nach dem Hurrikan, Hoffnung statt Trauer. Ganz oben das Meer mit Steinkante, darunter die Deichkrone als Erdweg vom Westrand (Ankunft von der Fähre) bis zum Kai, am Fuß der Krone Sandsäcke vom Sturm und der grüne Hang des Deichs; eine Rampe führt hinunter in die Stadt, eine zweite zum Kai. Im Westen das Gleis des Wüstenzugs mit Prellbock und der Bahnsteig mit Bank und Wegweiser. An der Rue du Port die Turnhalle der Schule, ein hoher Steinbau mit Flachdach, Bogenfenstern und niedrigem Anbau, der hinten bis an den Deich reicht (passend zum Innenraum, Regel 10.75), über der Glastür das Schild, an den Häusern lehnen Leitern, links ein rotes, rechts ein grünes Holzhaus, dazwischen der Gebäckwagen von Mrs. Arceneaux, östlich der Turnhalle ein Erdweg von der Deichrampe zur Straße, daneben die Baustelle mit Bagger hinter einem Bauzaun, Sturmschutt, Holz und einem umgestürzten Stamm, der Rohbau steht am Deichfuß hinter dem Haus, ein Baum, Pfützen auf Straße und Platz. Südlich der Straße der gepflasterte Platz mit Clubzelt und Notzelt, auf einer Kiste der Bläser, Kinder mit Ball; daneben am Kai das Musikhaus mit rostigem Blechdach, links und rechts des Eingangs ein Bauzaun mit blauer Plane. Am Kai Fässer, Kisten, Sandsäcke, Mr. Batiste mit Eimer und Seil, im Hafenbecken zwei Fischerboote und ein Ruderboot, ein Steg auf Pfählen; über das Hafenbecken führt an der Rue du Port eine schmale Holzbrücke zum Ostkai. Im Süden die Rue des Facteurs mit der Klavierwerkstatt Whitlock-Duval und zwei kleinen Holzhäusern, Gärten mit Wäscheleinen, am Ostkai ein kleines grünes Holzhaus zwischen den Bäumen; im Osten geht sie als Marschpfad zwischen Bäumen zum Bayou. Erster Eindruck (27.11.2026): Auf den Flachdächern von Turnhalle, Fisch, Tabak, Ship Supply, Bakery, Books, Music und dem Stadthaus stehen Klimageräte, Lüftung, Luken und Rohre. Der Lieferwagen auf dem Platz ist kleiner, das grüne Häuschen am Ostkai größer und im Maß der Nachbarn. Alle Laubbäume sind winterkahl.",
   "raster": [
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#",
     "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#",
@@ -581,8 +581,8 @@
     },
     {
       "moebel": "pd6HausGruen",
-      "feld": [67, 47],
-      "massstab": 1.25
+      "feld": [67, 46],
+      "massstab": 1.5
     },
     {
       "moebel": "pd6Zelt",
@@ -777,7 +777,7 @@
       "feld": [56, 49]
     },
     {
-      "moebel": "rvLaubbaumDunkel",
+      "moebel": "rvLaubbaum",
       "feld": [60, 49]
     },
     {
@@ -798,11 +798,13 @@
     },
     {
       "moebel": "pd7Laden1",
-      "feld": [66, 10]
+      "feld": [66, 10],
+      "id": "fischladen"
     },
     {
       "moebel": "pd7Laden4",
-      "feld": [71, 10]
+      "feld": [71, 10],
+      "id": "tabakladen"
     },
     {
       "moebel": "pd7Reihenhaus2",
@@ -818,15 +820,18 @@
     },
     {
       "moebel": "pd7Markt2",
-      "feld": [66, 35]
+      "feld": [66, 35],
+      "id": "hafenbedarf"
     },
     {
       "moebel": "pd7Stadthaus",
-      "feld": [73, 36]
+      "feld": [73, 36],
+      "id": "stadthaus"
     },
     {
       "moebel": "pd7Laden7",
-      "feld": [6, 32]
+      "feld": [6, 32],
+      "id": "baeckerei"
     },
     {
       "moebel": "pd10HausGruen",
@@ -834,19 +839,21 @@
     },
     {
       "moebel": "pd7Markt5",
-      "feld": [40, 44]
+      "feld": [40, 44],
+      "id": "buchladen"
     },
     {
       "moebel": "pd7Laden10",
-      "feld": [47, 45]
+      "feld": [47, 45],
+      "id": "musikladen"
     },
     {
       "moebel": "by9HuetteKrebs",
       "feld": [47, 14]
     },
     {
-      "moebel": "rvLaubbaumDunkel",
-      "feld": [74, 49]
+      "moebel": "rvLaubbaum",
+      "feld": [76, 49]
     },
     {
       "moebel": "pd9BootAb",
@@ -927,7 +934,9 @@
     },
     {
       "moebel": "pd12Lastwagen",
-      "feld": [34, 30]
+      "feld": [34, 30],
+      "massstab": 0.75,
+      "versatz": [6, 0]
     },
     {
       "moebel": "by6StegQuer10",
@@ -975,6 +984,116 @@
     {
       "moebel": "iw8Andreaskreuz",
       "feld": [0, 29]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "fischladen",
+      "versatz": [-14, -44]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "fischladen",
+      "versatz": [22, -40]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "fischladen",
+      "versatz": [-2, -20]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "tabakladen",
+      "versatz": [-20, -42]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "tabakladen",
+      "versatz": [18, -24]
+    },
+    {
+      "moebel": "sb27DachLueftung",
+      "auf": "hafenbedarf",
+      "versatz": [-18, -40]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "hafenbedarf",
+      "versatz": [32, -50]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "hafenbedarf",
+      "versatz": [26, -20]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "baeckerei",
+      "versatz": [-18, -44]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "baeckerei",
+      "versatz": [-2, -44]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "baeckerei",
+      "versatz": [12, -22]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "buchladen",
+      "versatz": [-26, -52]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "buchladen",
+      "versatz": [32, -48]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "buchladen",
+      "versatz": [2, -20]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "musikladen",
+      "versatz": [8, -42]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "musikladen",
+      "versatz": [-14, -24]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "stadthaus",
+      "versatz": [20, -40]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "stadthaus",
+      "versatz": [18, -22]
+    },
+    {
+      "moebel": "sb27DachLueftung",
+      "auf": "th",
+      "versatz": [-50, -91]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "th",
+      "versatz": [-26, -65]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "th",
+      "versatz": [-72, -53]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "th",
+      "versatz": [-28, -47]
     }
   ],
   "ausloeser": [

@@ -4,7 +4,7 @@
   "art": "innen",
   "wand": "hellgrau",
   "boden": "stein",
-  "beschreibung": "Der Serverraum hinter der Akademie (Variante A, nach dem Ortsdokument), 14 × 10: kalt, blaues Licht, das Rauschen der Lüfter. An der Nordwand stehen sechs Serverschränke lückenlos nebeneinander, in der Mitte eine zweite Reihe aus zwei Schränken mit freiem Gang dahinter. In der Nordostecke das Klimagerät, an der Ostwand ein Metallschrank mit Schubladen, in dem die Schummelgeräte liegen. An der Westwand ein Arbeitsplatz mit Bildschirmen und Stuhl. Die Glastür in der Südwand führt zurück in die Akademie. Rechts neben dem Klimagerät eine verschlossene Tür in die übrigen Räume der Akademie (R065).",
+  "beschreibung": "Der Serverraum hinter der Akademie (Variante A, nach dem Ortsdokument), 14 × 10: kalt, blaues Licht, das Rauschen der Lüfter. An der Nordwand stehen fünf Serverschränke lückenlos nebeneinander, in der Mitte eine zweite Reihe aus zwei Schränken mit freiem Gang dahinter. In der Nordostecke das Klimagerät, an der Ostwand ein Metallschrank mit Schubladen, in dem die Schummelgeräte liegen. An der Westwand ein Arbeitsplatz mit Bildschirmen und Stuhl. Die Glastür in der Südwand führt zurück in die Akademie. Rechts neben dem Klimagerät eine verschlossene Tür in die übrigen Räume der Akademie (R065). Erster Eindruck (27.11.2026): Die Serverschränke sind schwarze Racks mit Lochblechtür, Einschüben und grünen und blauen Lämpchen, fünf an der Nordwand, zwei in der Mitte. Der Arbeitsplatz steht eine Reihe tiefer vor der Westwand, nicht vor den Schränken.",
   "zustand": ["neu", "gebraucht"],
   "stil": ["modern", "japanisch"],
   "raster": [
@@ -21,15 +21,11 @@
   ],
   "objekte": [
     {
-      "moebel": "sb12Serverreihe",
-      "feld": [1, 1]
-    },
-    {
-      "moebel": "sb5ServerB",
+      "moebel": "sb27Serverschrank",
       "feld": [3, 5]
     },
     {
-      "moebel": "sb5ServerB",
+      "moebel": "sb27Serverschrank",
       "feld": [5, 5]
     },
     {
@@ -54,12 +50,12 @@
     },
     {
       "moebel": "sb5Messplatz",
-      "feld": [1, 3],
+      "feld": [1, 4],
       "id": "messplatz"
     },
     {
       "moebel": "sb8StuhlRuecken",
-      "feld": [1, 6],
+      "feld": [1, 7],
       "versatz": [4, -14]
     },
     {
@@ -78,6 +74,26 @@
       "moebel": "sb5Tuer",
       "feld": [13, 1],
       "an_wand": true
+    },
+    {
+      "moebel": "sb27Serverschrank",
+      "feld": [1, 1]
+    },
+    {
+      "moebel": "sb27Serverschrank",
+      "feld": [3, 1]
+    },
+    {
+      "moebel": "sb27Serverschrank",
+      "feld": [5, 1]
+    },
+    {
+      "moebel": "sb27Serverschrank",
+      "feld": [7, 1]
+    },
+    {
+      "moebel": "sb27Serverschrank",
+      "feld": [9, 1]
     }
   ],
   "ausloeser": [

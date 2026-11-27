@@ -485,13 +485,15 @@
     },
     {
       "moebel": "ws5TankstelleGross",
-      "feld": [108, 6]
+      "feld": [108, 6],
+      "id": "tankstelle"
     },
     {
       "moebel": "ws5Rasthaus",
       "feld": [133, 6],
       "versatz": [4, 0],
-      "massstab": 1.2
+      "massstab": 1.2,
+      "id": "rasthaus"
     },
     {
       "moebel": "ws5Imbiss",
@@ -1217,6 +1219,51 @@
     {
       "moebel": "wsgLaterneModern",
       "feld": [11, 13]
+    },
+    {
+      "moebel": "sb27DachSolar",
+      "auf": "tankstelle",
+      "versatz": [-98, -65]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "tankstelle",
+      "versatz": [-100, -49]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "tankstelle",
+      "versatz": [-62, -49]
+    },
+    {
+      "moebel": "sb27DachLueftung",
+      "auf": "tankstelle",
+      "versatz": [88, -63]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "tankstelle",
+      "versatz": [68, -45]
+    },
+    {
+      "moebel": "sb27DachLueftung",
+      "auf": "rasthaus",
+      "versatz": [-33, -55]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "rasthaus",
+      "versatz": [36, -66]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "rasthaus",
+      "versatz": [-32, -27]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "rasthaus",
+      "versatz": [47, -27]
     }
   ],
   "ausloeser": [

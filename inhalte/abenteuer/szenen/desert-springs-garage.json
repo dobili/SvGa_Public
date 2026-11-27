@@ -2,7 +2,7 @@
   "karte": "desertSprings.garage",
   "datei": "karten/desert-springs-garage.json",
   "art": "innen",
-  "beschreibung": "Die Garage von Tomás am Motel, Clubraum des Desert-Springs-Clubs, 14 × 11 Kacheln (passt nach R065 in die kleine Garage außen), Steinboden, helle Ziegelwand. An der Nordwand Werkbank, Werkzeugregal mit Miras Dosenpokal und zwei Fenster; links ein Auto in Reparatur vor dem Tor in der Südwand, daneben Ölfässer, in der Mitte der Clubtisch mit vier Stühlen, rechts der Reifenstapel mit dem Brett, an dem Mira trainiert, und ein Karton. Tür in der Mitte der Südwand, links davon das zweiflüglige Tor (zu, nur die Tür ist Ausgang).",
+  "beschreibung": "Die Garage von Tomás am Motel, Clubraum des Desert-Springs-Clubs, 14 × 11 Kacheln (passt nach R065 in die kleine Garage außen), Steinboden, helle Ziegelwand. An der Nordwand Werkbank, Werkzeugregal mit Miras Dosenpokal und zwei Fenster; links ein Auto in Reparatur vor dem Tor in der Südwand, daneben Ölfässer, in der Mitte der Clubtisch mit vier Stühlen, rechts der Reifenstapel mit dem Brett, an dem Mira trainiert, und ein Karton. Tür in der Mitte der Südwand, links davon das zweiflüglige Tor (zu, nur die Tür ist Ausgang). Erster Eindruck (27.11.2026): Neben dem Auto stehen zwei Ölfässer aus Stahl mit einem Ölfleck davor.",
   "wand": "backstein",
   "boden": "stein",
   "raster": [
@@ -103,7 +103,7 @@
       "feld": [1, 2]
     },
     {
-      "moebel": "pd6Kanister",
+      "moebel": "ds27Oelfaesser",
       "feld": [4, 7]
     },
     {
@@ -162,15 +162,7 @@
     }
   ],
   "zustand": ["gebraucht", "alt", "neu"],
-  "stil": [
-    "industrie",
-    "einfach",
-    "klassisch",
-    "modern",
-    "rustikal",
-    "laendlich",
-    "schule"
-  ],
+  "stil": ["industrie", "einfach", "klassisch", "modern", "rustikal", "laendlich", "schule"],
   "sperren": [
     [2, 9],
     [3, 9]

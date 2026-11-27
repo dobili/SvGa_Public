@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 18,
+ "nextobjectid": 22,
  "layers": [
   {
    "id": 1,
@@ -576,30 +576,7 @@
     },
     {
      "id": 6,
-     "name": "sb12Serverreihe",
-     "type": "moebel",
-     "x": 16,
-     "y": 16,
-     "width": 160,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 56
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 7,
-     "name": "sb5ServerB",
+     "name": "sb27Serverschrank",
      "type": "moebel",
      "x": 48,
      "y": 80,
@@ -621,8 +598,8 @@
      ]
     },
     {
-     "id": 8,
-     "name": "sb5ServerB",
+     "id": 7,
+     "name": "sb27Serverschrank",
      "type": "moebel",
      "x": 80,
      "y": 80,
@@ -644,7 +621,7 @@
      ]
     },
     {
-     "id": 9,
+     "id": 8,
      "name": "sb5Fussmatte",
      "type": "moebel",
      "x": 128,
@@ -667,7 +644,7 @@
      ]
     },
     {
-     "id": 10,
+     "id": 9,
      "name": "sb5Fussmatte",
      "type": "moebel",
      "x": 112,
@@ -690,7 +667,7 @@
      ]
     },
     {
-     "id": 11,
+     "id": 10,
      "name": "sb12Klimageraet",
      "type": "moebel",
      "x": 176,
@@ -713,7 +690,7 @@
      ]
     },
     {
-     "id": 12,
+     "id": 11,
      "name": "sb12Schubladenschrank",
      "type": "moebel",
      "x": 176,
@@ -736,11 +713,11 @@
      ]
     },
     {
-     "id": 13,
+     "id": 12,
      "name": "sb5Messplatz",
      "type": "moebel",
      "x": 16,
-     "y": 48,
+     "y": 64,
      "width": 32,
      "height": 48,
      "rotation": 0,
@@ -749,7 +726,30 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 88
+       "value": 104
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 13,
+     "name": "sb8StuhlRuecken",
+     "type": "moebel",
+     "x": 20,
+     "y": 98,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 122
       },
       {
        "name": "kollision",
@@ -760,24 +760,29 @@
     },
     {
      "id": 14,
-     "name": "sb8StuhlRuecken",
+     "name": "sb8GlastuerSued",
      "type": "moebel",
-     "x": 20,
-     "y": 82,
+     "x": 128,
+     "y": 144,
      "width": 16,
-     "height": 32,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 106
+       "value": 0
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": true
+       "value": false
+      },
+      {
+       "name": "deckkraft",
+       "type": "int",
+       "value": 75
       }
      ]
     },
@@ -785,7 +790,7 @@
      "id": 15,
      "name": "sb8GlastuerSued",
      "type": "moebel",
-     "x": 128,
+     "x": 112,
      "y": 144,
      "width": 16,
      "height": 16,
@@ -811,34 +816,6 @@
     },
     {
      "id": 16,
-     "name": "sb8GlastuerSued",
-     "type": "moebel",
-     "x": 112,
-     "y": 144,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      },
-      {
-       "name": "deckkraft",
-       "type": "int",
-       "value": 75
-      }
-     ]
-    },
-    {
-     "id": 17,
      "name": "sb5Tuer",
      "type": "moebel",
      "x": 208,
@@ -857,6 +834,121 @@
        "name": "kollision",
        "type": "bool",
        "value": false
+      }
+     ]
+    },
+    {
+     "id": 17,
+     "name": "sb27Serverschrank",
+     "type": "moebel",
+     "x": 16,
+     "y": 16,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 18,
+     "name": "sb27Serverschrank",
+     "type": "moebel",
+     "x": 48,
+     "y": 16,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 19,
+     "name": "sb27Serverschrank",
+     "type": "moebel",
+     "x": 80,
+     "y": 16,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 20,
+     "name": "sb27Serverschrank",
+     "type": "moebel",
+     "x": 112,
+     "y": 16,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 21,
+     "name": "sb27Serverschrank",
+     "type": "moebel",
+     "x": 144,
+     "y": 16,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

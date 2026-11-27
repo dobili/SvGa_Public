@@ -4,7 +4,7 @@
   "art": "innen",
   "wand": "hellgrau",
   "boden": "stein",
-  "beschreibung": "Variante C (reicher): Die Lobby von Perfect Move. An der Nordwand drei Aufzüge und drei Bildschirme mit den Kennzahlen der Firma. Mitten im Raum, mit Abstand zur Tür, eine kleine Ausstellung: die Hale-Vitrine zwischen zwei Sockeln mit Pokalen. Rechts der Empfangstresen mit dem Roboter dahinter, davor wartet eine Besuchergruppe mit Namensschildern. Links die Lounge auf gemustertem Teppich: oben das Sofa, darunter mittig ein runder Couchtisch, links und rechts davon zwei weiße Sessel, seitlich zum Tisch gedreht; ein Besucher sitzt auf dem Sofa. Pflanzen in den Ecken, Glastür in der Südwand.",
+  "beschreibung": "Variante C (reicher): Die Lobby von Perfect Move. An der Nordwand drei Aufzüge und drei Bildschirme mit den Kennzahlen der Firma. Mitten im Raum, mit Abstand zur Tür, eine kleine Ausstellung: die Hale-Vitrine zwischen zwei Sockeln mit Pokalen. Rechts der Empfangstresen mit dem Roboter dahinter, davor wartet eine Besuchergruppe mit Namensschildern. Links die Lounge auf gemustertem Teppich: oben das Loungesofa, darunter mittig ein runder Couchtisch, links und rechts davon zwei weiße Sessel, seitlich zum Tisch gedreht; ein Besucher sitzt auf dem Sofa. Pflanzen in den Ecken, Glastür in der Südwand. Erster Eindruck (27.11.2026): In der Lounge steht ein graublaues Loungesofa mit Kissen, davor ein niedriger Couchtisch; an der Nordwand hängen zwei Bildschirme und eine Tafel mit Kennzahlen.",
   "zustand": ["neu", "gebraucht"],
   "stil": ["modern", "klassisch", "japanisch", "einfach"],
   "raster": [
@@ -75,9 +75,10 @@
       "zu": "lobbytisch"
     },
     {
-      "moebel": "sb8Sofa",
-      "feld": [5, 7],
-      "id": "sofa"
+      "moebel": "sb27Loungesofa",
+      "feld": [4, 7],
+      "id": "sofa",
+      "versatz": [8, 0]
     },
     {
       "moebel": "sb17SesselWeissLinks",
@@ -85,9 +86,10 @@
       "zu": "lobbytisch"
     },
     {
-      "moebel": "pd6Couchtisch",
+      "moebel": "sb8Couchtisch",
       "feld": [5, 9],
-      "id": "lobbytisch"
+      "id": "lobbytisch",
+      "versatz": [0, 8]
     },
     {
       "moebel": "sb5Sockel",
@@ -130,6 +132,11 @@
       "feld": [13, 12],
       "versatz": [0, 8],
       "ebene": -2
+    },
+    {
+      "moebel": "sb8Statistik",
+      "feld": [20, 1],
+      "an_wand": true
     }
   ],
   "ausloeser": [

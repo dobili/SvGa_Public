@@ -155,12 +155,7 @@
       "zustand": "gebraucht",
       "blick": "unten",
       "stil": "industrie",
-      "tuer": [
-        [
-          4,
-          6
-        ]
-      ]
+      "tuer": [[4, 6]]
     },
     "ds6BahnhofAlt": {
       "quelle": "spiel/eigene/bahnhof_alt_veranda.png",
@@ -173,14 +168,8 @@
       "stil": "klassisch",
       "frei_unten": 1,
       "tuer": [
-        [
-          4,
-          7
-        ],
-        [
-          5,
-          7
-        ]
+        [4, 7],
+        [5, 7]
       ]
     },
     "ds6KisteBriefe": {
@@ -350,6 +339,16 @@
       "breite": 32,
       "hoehe": 16,
       "hinweis": "Rolltor der Garage von innen in der Südwand (Walze oben, Kette); außen hat die Garage ein Rolltor (ds6Garage), innen standen zwei Holztüren (Gemini K18, Schnittstelle 26.11.2026)"
+    },
+    "ds27Oelfaesser": {
+      "quelle": "spiel/eigene/oelfaesser.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "industrie",
+      "hinweis": "zwei Ölfässer aus Stahl, rot und blau, mit Ölfleck statt Weinfässern in der Werkstatt (Kartenblick G3, G7) (Gemini E7, 27.11.2026, werkzeuge/gemini_akt3_2711.py)"
     }
   }
 }

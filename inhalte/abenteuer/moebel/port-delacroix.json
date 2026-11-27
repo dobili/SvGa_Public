@@ -1143,7 +1143,10 @@
       "zustand": "kaputt",
       "stil": "rustikal",
       "blick": "unten",
-      "tuer": [[6, 10], [7, 10]],
+      "tuer": [
+        [6, 10],
+        [7, 10]
+      ],
       "beschreibung": "Musikhaus von Port Delacroix als Ruine vor dem Wiederaufbau (Gemini K6, 26.11.2026): Schindeldach mit Loch und Planen, vernagelte Fenster, schiefe Tür, Gras am Sockel; etwa 10 Kacheln breit, mittig auf 13"
     },
     "pd18MusikhausNeu": {
@@ -1155,7 +1158,10 @@
       "zustand": "neu",
       "stil": "rustikal",
       "blick": "unten",
-      "tuer": [[6, 10], [7, 10]],
+      "tuer": [
+        [6, 10],
+        [7, 10]
+      ],
       "beschreibung": "Musikhaus von Port Delacroix nach dem Wiederaufbau (Gemini K6, 26.11.2026): dunkles Schindeldach, leere Schildtafel, Holzfront mit Veranda, Doppeltür mittig; Gegenstück zu pd18MusikhausRuine"
     },
     "pd6MusikhausSolar": {
@@ -2717,8 +2723,68 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten",
-      "tuer": [[3, 16], [4, 16]],
+      "tuer": [
+        [3, 16],
+        [4, 16]
+      ],
       "beschreibung": "Turnhalle der Schule in Port Delacroix: Bild wie pd6Turnhalle, dazu die Türfelder vor der Glas-Doppeltür (Grundriss 13 × 8, Regel 10.74)"
+    },
+    "pd27HolzscheiteInnen": {
+      "quelle": "spiel/eigene/holzscheite_innen.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "hinweis": "Holzscheite auf einer Bohle, ohne Grasrand für Innenräume (Kartenblick H2, W2) (Gemini E3, 27.11.2026, werkzeuge/gemini_akt3_2711.py)"
+    },
+    "pd27Instrumentenwand": {
+      "quelle": "spiel/eigene/instrumentenwand.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "hinweis": "Gitarre, Geige mit Bogen und Trompete an Wandhaken (Kartenblick H6) (Gemini E5, 27.11.2026, werkzeuge/gemini_akt3_2711.py)",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand"
+    },
+    "pd27Schachregal": {
+      "quelle": "spiel/eigene/schachregal.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "regal",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten",
+      "hinweis": "Holzregal mit Schachbrettern, Figurenkästen und zwei Schachuhren statt Büchern (Kartenblick H9, T7) (Gemini E6, 27.11.2026, werkzeuge/gemini_akt3_2711.py)",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########"
+      ]
+    },
+    "pd27Feldlinien": {
+      "quelle": "spiel/eigene/turnhalle_feldlinien.png",
+      "breite": 320,
+      "hoehe": 192,
+      "kollision": false,
+      "art": "markierung",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "hinweis": "Spielfeldlinien der Turnhalle: Außenlinie eine halbe Kachel vor der Wand, Freiwurfkreis, Dreierlinie und halber Mittelkreis, mit PIL gezeichnet (Kartenblick T2, 27.11.2026)"
     }
   }
 }

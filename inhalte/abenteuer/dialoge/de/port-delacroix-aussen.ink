@@ -5,7 +5,8 @@
 // portDelacroix.wiederaufbau, Besuch 1: vier Häuser), 65 Batiste am Kai (Begegnung
 // portDelacroix.batiste, immun gegen Sprüche; beim ersten Sieg Zweite Chance und Bauernkompass statt
 // Pokerface, das keine eigene Wirkung hat), Gebäckstand von Mrs. Arceneaux (Laden
-// portDelacroix.gebaeckstand), Weiterreise mit dem Wüstenzug (wenn nadelPortDelacroix).
+// portDelacroix.gebaeckstand), Weiterreise mit dem Wüstenzug (wenn nadelPortDelacroix oder
+// clubkampfPortDelacroixGewertet).
 // Seit Akt 4 führt am Kai ein Luftboot in den Bayou (bayou, wenn musikhausOffen, bayou.ink).
 // Einstiege wie in orte.json: ankunft_zu_fuss, deich, bayou, batiste, arceneaux, brett_haus1 bis
 // brett_haus4, gebaeckstand, wuestenzug.
@@ -45,6 +46,9 @@ VAR nadelSummitCity = 0
 VAR angesehenBauzaun = false
 VAR abschiedPortDelacroixGesehen = false
 VAR tiefpunktGesehen = false
+// Aus port-delacroix-turnhalle.ink: Clubkampf gewertet (Sieg, Remis oder Notausgang nach drei
+// Niederlagen). Der Wüstenzug fährt auch ohne Nadel. Hier nur gelesen.
+VAR clubkampfPortDelacroixGewertet = false
 
 // ---------------------------------------------------------------- Ankunft und Wege
 
@@ -79,8 +83,8 @@ Zurück auf den Deichweg zur Fähre. #sprecher:erzaehler
 -> END
 
 === wuestenzug ===
-{nadelPortDelacroix > 0 and not abschiedPortDelacroixGesehen: -> abschied_mama}
-{nadelPortDelacroix > 0:
+{(nadelPortDelacroix > 0 or clubkampfPortDelacroixGewertet) and not abschiedPortDelacroixGesehen: -> abschied_mama}
+{nadelPortDelacroix > 0 or clubkampfPortDelacroixGewertet:
     Am Bahnhof wartet der Wüstenzug nach Westen. Hinter den Bergen liegt Desert Springs. #sprecher:erzaehler
 - else:
     Am Bahnhof steht ein Zug nach Westen. Erst willst du hier noch etwas zu Ende bringen. #sprecher:erzaehler

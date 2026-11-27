@@ -3481,7 +3481,7 @@
           "karte": "portDelacroix.aussen",
           "art": "uebergang",
           "dialog": "port-delacroix-aussen.wuestenzug",
-          "wenn": "nadelPortDelacroix",
+          "wenn": "nadelPortDelacroix oder clubkampfPortDelacroixGewertet",
           "ziel": {
             "karte": "wegDelacroixDesert.canyonpfad",
             "ausloeser": "zurueckDelacroix"

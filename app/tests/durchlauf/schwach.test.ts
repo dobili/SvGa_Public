@@ -36,6 +36,16 @@ describe("schwacher Spieler", () => {
     expect(arten[3]).toBeNull();
   });
 
+  it.each(["portDelacroix.clubkampf", "capitalArena.runde1"])(
+    "verliert %s dreimal (Notausgang Miss Odile, Nachspielregel der Vorrunde)",
+    (begegnung) => {
+      const s = new Schwaechling(ordner(), true);
+      const arten = ["a", "b", "c", "d"].map((id) => s.partie(id, `${begegnung}#${id}`).art);
+      expect(arten.slice(0, 3).every((a) => a !== null)).toBe(true);
+      expect(arten[3]).toBeNull();
+    },
+  );
+
   it("ohne Schalter spielt er normal", () => {
     expect(new Schwaechling(ordner(), false).partie("p1", "mapleFalls.rosa").art).toBeNull();
   });

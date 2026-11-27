@@ -6,6 +6,11 @@
 // (capitalArena.runde1 bis runde4); Ink zählt die Punkte aus den ausgang-Variablen (Sieg 1,
 // Remis ½). Weiter ab 2 von 4 (Balance, 15.11.2026: vorher 2,5); wer weniger hat, spielt die nicht
 // gewonnenen Runden noch einmal. Nach Runde 2 eine Pause ohne Brett (pause_nach_runde2, Befund Akt 4).
+// Nachspielregel (Balance-Messung 27.11.2026): Ein Leser mit 1200 braucht sonst oft sechs bis zehn
+// Partien für die Vorrunde. Nach der sechsten Niederlage genügen 1,5 Punkte; die Turnierleiterin
+// sagt es einmal an (ergebnis_eintragen). Die Niederlagen zählt eine Variable (vorrundeNiederlagen),
+// je Partie einmal: vorrundePartieLaeuft wird vor beginnePartie gesetzt und in der Rückmeldung
+// gelesen. Ein Abbruch zählt nicht.
 // Danach 105 Die Aussage am Pressetisch, 106 Halbfinale gegen Kade (freier Mentor-Zug, Stärkewechsel
 // über abgelenktAb), 107 Vor dem Finale, 108 Finale gegen Victor (keine Karten, R28). Keine Sprüche
 // im ganzen Turnier (S2). Einstiege wie in orte.json: turnierleiterin, lin, graham_hale, bea,
@@ -62,6 +67,12 @@ VAR halbfinaleDanachGesehen = false
 VAR ambroseImHalbfinaleGerufen = false
 VAR novaNachPartieGesehen = false
 VAR pauseNachRunde2Gesehen = false
+VAR vorrundePartieLaeuft = false
+VAR vorrundeNiederlagen = 0
+VAR nachspielregelGesagt = false
+
+// Nach so vielen Niederlagen in der Vorrunde gilt die Nachspielregel (Schwelle 1,5 statt 2).
+CONST NACHSPIEL_NACH_NIEDERLAGEN = 6
 
 === function punkt(ausgang) ===
 {
@@ -79,9 +90,19 @@ VAR pauseNachRunde2Gesehen = false
 === function vorrundenpunkte() ===
 ~ return punkt(ausgangCapitalArenaRunde1) + punkt(ausgangCapitalArenaRunde2) + punkt(ausgangCapitalArenaRunde3) + punkt(ausgangCapitalArenaRunde4)
 
-// Weiter ins Halbfinale ab so vielen Punkten (Sieg 1, Remis ½).
+// Weiter ins Halbfinale ab so vielen Punkten (Sieg 1, Remis ½); mit der Nachspielregel 1,5.
 === function vorrundenschwelle() ===
+{vorrundeNiederlagen >= NACHSPIEL_NACH_NIEDERLAGEN:
+    ~ return 1.5
+}
 ~ return 2
+
+// Die Schwelle als Text mit Komma („1,5“ statt „1.5“).
+=== function schwellentext() ===
+{vorrundeNiederlagen >= NACHSPIEL_NACH_NIEDERLAGEN:
+    ~ return "1,5"
+}
+~ return "2"
 
 === function punktetext() ===
 ~ temp p = vorrundenpunkte()
@@ -120,7 +141,7 @@ VAR pauseNachRunde2Gesehen = false
 
 === vorrunde_naechste ===
 {alleGespielt():
-    Du hast {punktetext()} von 4 Punkten. Für das Halbfinale brauchst du {vorrundenschwelle()}. #sprecher:turnierleiterin #stimmung:neutral
+    Du hast {punktetext()} von 4 Punkten. Für das Halbfinale brauchst du {schwellentext()}. #sprecher:turnierleiterin #stimmung:neutral
     Du darfst eine Runde, die du nicht gewonnen hast, noch einmal spielen. #sprecher:turnierleiterin #stimmung:neutral
 }
 {
@@ -145,6 +166,7 @@ VAR pauseNachRunde2Gesehen = false
 
 === runde1_spielen ===
 + [„Ich bin bereit.“]
+    ~ vorrundePartieLaeuft = true
     ~ beginnePartie("capitalArena.runde1")
     -> END
 + [„Noch einen Moment.“]
@@ -153,6 +175,7 @@ VAR pauseNachRunde2Gesehen = false
 
 === runde2_spielen ===
 + [„Ich bin bereit.“]
+    ~ vorrundePartieLaeuft = true
     ~ beginnePartie("capitalArena.runde2")
     -> END
 + [„Noch einen Moment.“]
@@ -183,6 +206,7 @@ Ich hab seit zwei Jahren keine Turnierpartie allein gespielt. Ich weiß nicht, w
 
 === runde3_spielen ===
 + [„Ich bin bereit.“]
+    ~ vorrundePartieLaeuft = true
     ~ beginnePartie("capitalArena.runde3")
     -> END
 + [„Noch einen Moment.“]
@@ -191,6 +215,7 @@ Ich hab seit zwei Jahren keine Turnierpartie allein gespielt. Ich weiß nicht, w
 
 === runde4_spielen ===
 + [„Ich bin bereit.“]
+    ~ vorrundePartieLaeuft = true
     ~ beginnePartie("capitalArena.runde4")
     -> END
 + [„Noch einen Moment.“]
@@ -700,7 +725,7 @@ Damit wiegt unsere Aussage doppelt so schwer. Ich reiche das heute noch nach –
 - vorrundeGeschafft:
     An der Tafel steht dein Name im Halbfinale. Darunter, mit Kreide: „Ehrlich gespielt.“ #sprecher:erzaehler
 - else:
-    An der Turniertafel steht dein Stand: {punktetext()} von 4 Punkten. Weiter geht es ab {vorrundenschwelle()}. #sprecher:erzaehler
+    An der Turniertafel steht dein Stand: {punktetext()} von 4 Punkten. Weiter geht es ab {schwellentext()}. #sprecher:erzaehler
 }
 -> END
 
@@ -751,9 +776,24 @@ Am Fanshop gibt es Schals und Anstecker der Meisterschaft. #sprecher:erzaehler
 // Gemeinsame Ansage der Turnierrunden (runde1_danach bis runde4_danach): das Ergebnis eintragen,
 // dann weiter wie beim Ansprechen der Turnierleiterin.
 === ergebnis_eintragen(runde, ausgang) ===
+{vorrundePartieLaeuft:
+    ~ vorrundePartieLaeuft = false
+    {ausgang == "niederlage":
+        ~ vorrundeNiederlagen = vorrundeNiederlagen + 1
+    }
+}
 {ausgang:
 - "sieg": {runde}: Sieg für dich. Ich trage es ein. #sprecher:turnierleiterin #stimmung:neutral
 - "remis": {runde}: Remis. Ein halber Punkt für jeden. #sprecher:turnierleiterin #stimmung:neutral
 - else: {runde}: verloren. {alleGespielt():Ich trage es ein.|Die Vorrunde ist noch nicht vorbei, jeder Punkt zählt.} #sprecher:turnierleiterin #stimmung:neutral
 }
+{vorrundeNiederlagen >= NACHSPIEL_NACH_NIEDERLAGEN and not nachspielregelGesagt: -> nachspielregel}
+-> turnierleiterin
+
+// Einmal, nach der sechsten Niederlage: Die Schwelle sinkt auf 1,5, mit Grund aus der Turnierordnung.
+=== nachspielregel ===
+~ nachspielregelGesagt = true
+Die Turnierleiterin blättert in einem dünnen Heft mit der Turnierordnung. #sprecher:erzaehler
+Sechs Partien verloren, und du sitzt immer noch am Brett. Dafür gibt es die Nachspielregel. #sprecher:turnierleiterin #stimmung:neutral
+Ab jetzt reichen dir anderthalb Punkte für das Halbfinale. #sprecher:turnierleiterin #stimmung:laechelt
 -> turnierleiterin

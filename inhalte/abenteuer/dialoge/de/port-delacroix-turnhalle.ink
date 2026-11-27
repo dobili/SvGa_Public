@@ -23,10 +23,20 @@
 // Variablen: reiheRemyBestanden, reiheLouBestanden, portDelacroixSimultanBestanden,
 // ausgangPortDelacroixClubkampf und nadelPortDelacroix setzt die Hülle (R42); bretterGesammelt
 // zählt port-delacroix-aussen.ink; die übrigen setzt diese Datei.
+//
+// Notausgang (Balance-Messung 27.11.2026): Miss Odile spielt ohne Karten weit über dem Leser; ein
+// Leser mit 1200 gewinnt je Versuch kaum eine Partie. Nach der dritten Niederlage ohne Nadel wertet
+// sie den Clubkampf als gespielt (odile_genug): keine Nadel, aber der Schritt der Hauptquest
+// (Ereignis Knoten clubkampf_gewertet, den auch Sieg und Remis erreichen) und der Wüstenzug öffnen
+// sich. Um die Nadel spielen geht danach weiter. Wie bei den Wegsperren (32_Wegsperren.md) zählt
+// eine Variable die Niederlagen, kein Besuchszähler; ein Abbruch zählt nicht.
 
 EXTERNAL beginnePartie(begegnung)
 EXTERNAL beginneAufgaben(runde)
 EXTERNAL gibKarte(kennung)
+
+// Nach so vielen Niederlagen ohne Nadel wertet Miss Odile den Clubkampf (Notausgang).
+CONST NOTAUSGANG_NIEDERLAGEN = 3
 
 // Die Figur hat den Helden angesprochen, nicht umgekehrt (App: regeln/ansprechen.ts, 25.11.2026).
 VAR angesprochen = false
@@ -59,6 +69,11 @@ VAR abschiedGesehen = false
 VAR musikhausOffen = false
 // Läuft eine Revanche um eine bessere Nadel? Dann reagiert odile_nach_revanche auf den Ausgang.
 VAR revanchePortDelacroix = false
+// Notausgang: Läuft gerade ein Clubkampf (gesetzt vor beginnePartie, gelesen in odile), wie oft
+// ohne Nadel verloren, und ist der Clubkampf gewertet (Sieg, Remis oder Notausgang)?
+VAR odileClubkampfSpielt = false
+VAR odileNiederlagen = 0
+VAR clubkampfPortDelacroixGewertet = false
 
 // ---------------------------------------------------------------- Der Vorwurf
 
@@ -138,12 +153,22 @@ Aus dem Zelt neben der Ruine kommt die Trompete. Sie spielt nur das Langsame. #s
 // ---------------------------------------------------------------- Miss Odile
 
 === odile ===
+~ temp neueNiederlage = false
+{odileClubkampfSpielt:
+    ~ odileClubkampfSpielt = false
+    {ausgangPortDelacroixClubkampf == "niederlage" and nadelPortDelacroix == 0:
+        ~ odileNiederlagen = odileNiederlagen + 1
+        ~ neueNiederlage = true
+    }
+}
 {
 - not tiefpunktGesehen: -> vorwurf
 - portDelacroixSimultanBestanden and not simultanGedankt: -> odile_nach_simultan
 - nadelPortDelacroix > clubkampfPortDelacroixNadel: -> odile_nach_partie
 - revanchePortDelacroix: -> odile_nach_revanche
 - ausgangPortDelacroixClubkampf == "niederlage" and not odileHandGegeben: -> odile_nach_partie
+- odileNiederlagen >= NOTAUSGANG_NIEDERLAGEN and not clubkampfPortDelacroixGewertet: -> odile_genug
+- neueNiederlage: -> odile_nach_niederlage
 - not brettersammelnBegonnen: -> odile_bretter
 - bretterGesammelt >= 4 and not leimAuftrag: -> odile_leim
 - else: -> odile_alltag
@@ -172,6 +197,8 @@ Den Geigenkasten gibt sie dir mit. #sprecher:erzaehler
 -> END
 
 === odile_alltag ===
+// Sicherung für alte Spielstände: Wer schon eine Nadel hat, hat den Clubkampf gespielt.
+{nadelPortDelacroix > 0 and not clubkampfPortDelacroixGewertet: -> clubkampf_gewertet ->}
 {~Bauern sind die Melodie. Die Figuren spielen nur dazu.|Hör auf den Takt der Stellung. Nicht auf den Lärm in der Halle.} #sprecher:odile #stimmung:laechelt
 + {reiheRemyBestanden and reiheLouBestanden and nadelPortDelacroix == 0} [„Ich möchte um die Nadel spielen.“]
     -> odile_clubkampf
@@ -212,6 +239,7 @@ Dann ist er fort, und du bist allein mit vierundsechzig Feldern. #sprecher:erzae
     // Erst hier gilt die Revanche als begonnen: Wer vorher „Noch nicht.“ sagt, bekommt danach
     // keine Reaktion auf eine alte Partie.
     ~ revanchePortDelacroix = nadelPortDelacroix > 0
+    ~ odileClubkampfSpielt = true
     ~ beginnePartie("portDelacroix.clubkampf")
     -> END
 + [„Noch nicht.“]
@@ -221,6 +249,7 @@ Dann ist er fort, und du bist allein mit vierundsechzig Feldern. #sprecher:erzae
 === odile_nach_partie ===
 ~ revanchePortDelacroix = false
 ~ clubkampfPortDelacroixNadel = nadelPortDelacroix
+{nadelPortDelacroix > 0 and not clubkampfPortDelacroixGewertet: -> clubkampf_gewertet ->}
 {
 - ausgangPortDelacroixClubkampf == "sieg" and not odileHandGegeben:
     Ein Plan. Dein erster. #sprecher:erzaehler
@@ -241,6 +270,45 @@ Dann ist er fort, und du bist allein mit vierundsechzig Feldern. #sprecher:erzae
 - else:
     Noch einmal, wenn du willst. Ich bin hier, bis das Musikhaus wieder steht. #sprecher:odile #stimmung:laechelt
 }
+-> END
+
+// Schritt 4 der Hauptquest portDelacroix.tiefpunkt wartet auf diesen Knoten (quests.json): Sieg
+// oder Remis (Nadel) oder der Notausgang (odile_genug). Er setzt nur die Marke und kehrt zurück.
+=== clubkampf_gewertet ===
+~ clubkampfPortDelacroixGewertet = true
+->->
+
+// Niederlage ohne Nadel nach der ersten (die erste beantwortet odile_hand): ein Satz zum Ausgang
+// und die nächste Partie, vor dem Notausgang.
+=== odile_nach_niederlage ===
+{odileNiederlagen == 2:
+    Miss Odile stellt die Figuren zurück, langsam, eine nach der anderen. #sprecher:erzaehler
+    Du hast schneller gespielt als beim ersten Mal. Das war nicht besser. #sprecher:odile #stimmung:nachdenklich
+- else:
+    Wieder meine Partie. Hör auf die Bauern, nicht auf die Uhr. #sprecher:odile #stimmung:nachdenklich
+}
++ [„Noch einmal.“]
+    ~ odileClubkampfSpielt = true
+    ~ beginnePartie("portDelacroix.clubkampf")
+    -> END
++ [„Nicht jetzt.“]
+    Gut. Eine Melodie übt man, bevor man sie spielt. #sprecher:odile #stimmung:laechelt
+    -> END
+
+// Notausgang nach der dritten Niederlage ohne Nadel (Balance-Messung 27.11.2026): Der Clubkampf
+// gilt als gespielt, eine Nadel gibt es nicht; um sie spielen bleibt offen (odile_alltag).
+=== odile_genug ===
+Miss Odile stellt die Figuren nicht wieder auf. Sie legt beide Hände flach neben das Brett. #sprecher:erzaehler
+Dreimal hast du gegen mich gespielt. Dreimal deine eigene Partie, ohne ein Wort aus dem Kasten. #sprecher:odile #stimmung:nachdenklich
+Dafür hat der Club diesen Kampf angesetzt. Nicht, um zu sehen, wer gewinnt. #sprecher:odile #stimmung:nachdenklich
+Ich schreibe ihn als gespielt ins Buch. Eine Nadel gibt es dafür nicht, die holt man am Brett. #sprecher:odile #stimmung:neutral
+-> clubkampf_gewertet ->
+{ambroseSprichtWieder and not abschiedGesehen:
+    Sie hat recht. Gegen sie zu verlieren ist eine Lektion. Keine Schande. #sprecher:ambrose #stimmung:still
+- else:
+    Aus dem Geigenkasten kommt kein Wort. Aber du hast das Gefühl, dass er zugehört hat. #sprecher:erzaehler
+}
+Der Zug nach Westen fährt auch ohne Nadel. Und das Brett hier bleibt aufgebaut, bis du um sie spielen willst. #sprecher:odile #stimmung:laechelt
 -> END
 
 // Kapitel 39: Sie steht auf, und die ganze Halle steht mit ihr. Remy nickt einmal.
@@ -447,6 +515,7 @@ Hör ihr zu, sie redet schnell. #sprecher:remy #stimmung:neutral
 }
 + {nadelPortDelacroix < 3} [„Noch einmal.“]
     ~ revanchePortDelacroix = true
+    ~ odileClubkampfSpielt = true
     ~ beginnePartie("portDelacroix.clubkampf")
     -> END
 + [„Nicht jetzt.“]

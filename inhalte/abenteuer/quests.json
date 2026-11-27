@@ -1739,9 +1739,12 @@
         {
           "text": "quest.tiefpunkt.schritt4",
           "ereignis": {
-            "art": "partie",
-            "begegnung": "portDelacroix.clubkampf",
-            "ausgang": ["sieg", "remis"]
+            "art": "dialog",
+            "knoten": "port-delacroix-turnhalle.clubkampf_gewertet"
+          },
+          "ziel": {
+            "karte": "portDelacroix.turnhalle",
+            "objekt": "odile"
           },
           "wirkungen": [
             {

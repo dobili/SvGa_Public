@@ -1,7 +1,8 @@
 /**
  * Der schwache Spieler des Spieler-Durchlaufs (DURCHLAUF_SPIELER=schwach): Er verliert jede Partie
  * und jede Aufgabenrunde beim ersten Versuch und spielt sie beim zweiten wie der gewöhnliche
- * Durchlauf. Die Wegsperre S17 verliert er so oft, bis der Notausgang aufgeht.
+ * Durchlauf. Die Wegsperre S17 und den Clubkampf gegen Miss Odile verliert er so oft, bis der
+ * Notausgang aufgeht, die Vorrunde bis zur Nachspielregel (sechs Niederlagen).
  *
  * Warum: Der gewöhnliche Durchlauf spielt stärker als ein Leser mit 1200 und verliert nie;
  * Niederlagen, Wiedereinstieg, Neuladen und Notausgänge kamen im Browser deshalb nie vor (Grenze
@@ -39,8 +40,16 @@ const RUNDENARTEN: readonly Rundenverlust[] = ["falsch", "zurueckAbbrechen", "ne
 /**
  * So viele Versuche verliert er je Begegnung (sonst einen). Wegsperre S17: Der dritte Fehlversuch
  * öffnet die Sperre (Notausgang, dialog/wegsperre-s17.test.ts); ein vierter wäre nie nötig.
+ * Miss Odile: Die dritte Niederlage ohne Nadel wertet den Clubkampf (Notausgang,
+ * dialog/odile-notausgang.test.ts). Vorrunde: Die Wiederholung beginnt mit Runde 1; drei
+ * Niederlagen dort und je eine in den Runden 2 bis 4 sind sechs, dann gilt die Nachspielregel mit
+ * 1,5 Punkten (dialog/vorrunde-nachspiel.test.ts).
  */
-const VERLUSTE: Readonly<Record<string, number>> = { "wegDesertSummit.testteam": 3 };
+const VERLUSTE: Readonly<Record<string, number>> = {
+  "wegDesertSummit.testteam": 3,
+  "portDelacroix.clubkampf": 3,
+  "capitalArena.runde1": 3,
+};
 /** Nach so vielen neuen Dialogzeilen lädt er mitten im Gespräch neu. */
 const DIALOG_NEULADEN_ALLE = 40;
 /** Nach einem Neuladen im Gespräch so viele Zeilen mehr bis zum nächsten. */

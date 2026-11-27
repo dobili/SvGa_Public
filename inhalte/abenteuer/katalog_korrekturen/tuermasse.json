@@ -829,5 +829,13 @@
   "spiel/eigene/stadthaus_weiss.png": {
     "rahmen": [65, 90, 84, 128],
     "herkunft": "von Hand"
+  },
+  "spiel/eigene/schuppen_rot_dach.png": {
+    "rahmen": [15, 46, 32, 71],
+    "herkunft": "von Hand"
+  },
+  "spiel/eigene/schuppen_braun_dach.png": {
+    "rahmen": [11, 29, 34, 71],
+    "herkunft": "gemessen"
   }
 }

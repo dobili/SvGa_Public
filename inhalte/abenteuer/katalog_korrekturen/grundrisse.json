@@ -11493,6 +11493,56 @@
     },
     "nur_pfad": true
   },
+  "spiel/eigene/schuppen_braun_dach.png": {
+    "grundriss": {
+      "form": "rechteck",
+      "breite": 3,
+      "tiefe": 2,
+      "geschosse": 1,
+      "tueren": [
+        {
+          "von": 2,
+          "bis": 2
+        }
+      ],
+      "fenster": {
+        "EG": [
+          {
+            "von": 3,
+            "bis": 3
+          }
+        ]
+      },
+      "hinweis": "Schuppen, Doppeltür mittig, kleines Fenster rechts",
+      "aufgang": null
+    },
+    "nur_pfad": true
+  },
+  "spiel/eigene/schuppen_rot_dach.png": {
+    "grundriss": {
+      "form": "rechteck",
+      "breite": 3,
+      "tiefe": 2,
+      "geschosse": 1,
+      "tueren": [
+        {
+          "von": 2,
+          "bis": 2
+        }
+      ],
+      "fenster": {
+        "EG": [
+          {
+            "von": 3,
+            "bis": 3
+          }
+        ]
+      },
+      "hinweis": "Schuppen, Doppeltür mittig, kleines Fenster rechts",
+      "aufgang": null
+    },
+    "nur_pfad": true
+  },
   "spiel/eigene/schuppen_rot.png": {
     "grundriss": {
       "form": "rechteck",

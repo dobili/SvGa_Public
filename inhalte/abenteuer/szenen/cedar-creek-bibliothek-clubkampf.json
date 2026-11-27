@@ -2,7 +2,7 @@
   "karte": "cedarCreek.bibliothek",
   "datei": "karten/cedar-creek-bibliothek-clubkampf.json",
   "art": "innen",
-  "beschreibung": "Zustand: Tag des Clubkampfs (teamAngekommen, die Cedar-Nadel ist noch nicht gewonnen). Der lange Schachtisch ist geräumt bis auf ein Brett in der Mitte, zwei Stühle für die Spieler und eine Leselampe. Davor stehen zwei Zuschauerstühle mit dem Rücken zum Betrachter; zwei Zuschauer warten schon. Die Leser sind heute nicht da.\n\nDer Lesesaal der Stadtbibliothek von Cedar Creek, ein Backsteinbau von 1890, an einem stillen Nachmittag: ein hoher, ruhiger Raum mit dunklen Dielen und hellgrauen Wänden. Durch ein Fenster in der Nordwand fällt schräges Licht. Es riecht nach Papier, Bohnerwachs und ein wenig nach Kaffee.\n\nMan kommt links durch den Vorraum herein, der unter dem Balkon des Eingangsbaus liegt: unten die Haustür, in seiner Rückwand die verschlossene Tür zum Treppenhaus in die oberen Stockwerke, rechts der Durchgang in den Saal.\n\nAn der Nordwand stehen hohe Bücherregale einer Serie, dazwischen ein Fenster, die Pinnwand mit dem Schild „Bitte flüstern“ und das niedrige Zeitungsregal mit den Zeitungen über Stangen. Oben rechts ist ein kleiner Bereich abgetrennt; man betritt ihn durch eine wandhohe Holztür in seiner Südwand, vom unteren Teil des Saals aus (R066); in der Mitte liegt ein Loch im Boden, durch das man auf die Kellertreppe ins Archiv sieht, mit einem Holzgeländer an der West-, Ost- und Südseite, an der Nordseite betritt man die Treppe (KARTENREGELN 10.89).\n\nIn der Mitte links der lange Tisch des Schachclubs aus zwei grünen Lesetischen, auf jedem zwei Bretter mit aufgebauten Figuren, oben und unten je vier gleiche Stühle mit Blick zum Tisch. Hier trifft sich der Club von Mrs. Okafor; Dex steht am linken Ende, Mae wartet unten, Mrs. Okafor am rechten Ende. Rechts daneben eine Reihe freistehender Bücherregale, darunter zwei Lesetische mit Leselampen und Stühlen. Der Saal ist nur so tief, wie das Haus außen erlaubt (R065); die Haustür liegt deshalb eine Reihe höher als die Südwand des Saals.\n\nGleich rechts neben dem Durchgang der Ausleihtresen mit der alten Kasse, im Treppenraum neben dem Loch der alte Globus auf einer Kommode, eine Stehlampe in der Südostecke, eine Pflanze im Vorraum. Eine Leserin trägt Bücher durch den Saal, ein Student sucht zwischen den Regalreihen, ein Rentner liest an den Lesetischen Zeitung. An der Westwand steht ein schmales Regal quer zum Raum.\n\nLaufwege: von der Haustür durch den Vorraum nach rechts in den Saal, links um den Schachtisch, rechts an den Lesetischen vorbei, an der Nordwand entlang zum Zeitungsregal; durch die Holztür rechts unten in den Bereich mit der Kellertreppe.",
+  "beschreibung": "Zustand: Tag des Clubkampfs (teamAngekommen, die Cedar-Nadel ist noch nicht gewonnen). Der lange Schachtisch ist geräumt bis auf ein Brett in der Mitte, zwei Stühle für die Spieler und eine Leselampe. Davor stehen zwei Zuschauerstühle mit dem Rücken zum Betrachter; zwei Zuschauer warten schon. Die Leser sind heute nicht da.\n\nDer Lesesaal der Stadtbibliothek von Cedar Creek, ein Backsteinbau von 1890, an einem stillen Nachmittag: ein hoher, ruhiger Raum mit dunklen Dielen und hellgrauen Wänden. Durch ein Fenster in der Nordwand fällt schräges Licht. Es riecht nach Papier, Bohnerwachs und ein wenig nach Kaffee.\n\nMan kommt links durch den Vorraum herein, der unter dem Balkon des Eingangsbaus liegt: unten die Haustür, in seiner Rückwand die verschlossene Tür zum Treppenhaus in die oberen Stockwerke, rechts der Durchgang in den Saal.\n\nAn der Nordwand stehen hohe Bücherregale einer Serie, dazwischen ein Fenster, die Pinnwand mit dem Schild „Bitte flüstern“ und das niedrige Zeitungsregal mit den Zeitungen über Stangen. Oben rechts ist ein kleiner Bereich abgetrennt; man betritt ihn durch eine wandhohe Holztür in seiner Südwand, vom unteren Teil des Saals aus (R066); in der Mitte liegt ein Loch im Boden, durch das man auf die Kellertreppe ins Archiv sieht, mit einem Holzgeländer an der West-, Ost- und Südseite, an der Nordseite betritt man die Treppe (KARTENREGELN 10.89).\n\nIn der Mitte links der lange Tisch des Schachclubs aus zwei grünen Lesetischen, auf jedem zwei Bretter mit aufgebauten Figuren, oben und unten je vier gleiche Stühle mit Blick zum Tisch. Hier trifft sich der Club von Mrs. Okafor; Dex steht am linken Ende, Mae wartet unten, Mrs. Okafor am rechten Ende. Rechts daneben eine Reihe freistehender Bücherregale, darunter zwei Lesetische mit Leselampen und Stühlen. Der Saal ist nur so tief, wie das Haus außen erlaubt (R065); die Haustür liegt deshalb eine Reihe höher als die Südwand des Saals.\n\nGleich rechts neben dem Durchgang der Ausleihtresen mit der alten Kasse, im Treppenraum neben dem Loch der alte Globus auf einer Kommode und an seiner Nordwand ein hohes Regal, am Ende des Flurs in der Südostecke eine Leseecke mit rotem Ohrensessel unter der Stehlampe, eine Pflanze im Vorraum. Eine Leserin trägt Bücher durch den Saal, ein Student sucht zwischen den Regalreihen, ein Rentner liest an den Lesetischen Zeitung. An der Westwand steht ein schmales Regal quer zum Raum.\n\nLaufwege: von der Haustür durch den Vorraum nach rechts in den Saal, links um den Schachtisch, rechts an den Lesetischen vorbei, an der Nordwand entlang zum Zeitungsregal; durch die Holztür rechts unten in den Bereich mit der Kellertreppe.",
   "wand": "hellgrau",
   "boden": "dielen",
   "raster": [
@@ -220,6 +220,14 @@
       "feld": [3, 11],
       "versatz": [-1, 7],
       "ebene": -2
+    },
+    {
+      "moebel": "cc27OhrensesselLinks",
+      "feld": [22, 10]
+    },
+    {
+      "moebel": "cc4RegalD",
+      "feld": [23, 1]
     }
   ],
   "ausloeser": [
@@ -273,8 +281,16 @@
     }
   ],
   "figuren": [
-    { "name": "coachBibliothek", "feld": [15, 4], "blick": "links" },
-    { "name": "samBibliothek", "feld": [14, 4], "blick": "links" },
+    {
+      "name": "coachBibliothek",
+      "feld": [15, 4],
+      "blick": "links"
+    },
+    {
+      "name": "samBibliothek",
+      "feld": [14, 4],
+      "blick": "links"
+    },
     {
       "name": "okafor",
       "feld": [13, 7],

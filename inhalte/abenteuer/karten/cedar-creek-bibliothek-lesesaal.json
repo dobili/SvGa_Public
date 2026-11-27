@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 59,
+ "nextobjectid": 61,
  "layers": [
   {
    "id": 1,
@@ -2255,19 +2255,19 @@
     },
     {
      "id": 54,
-     "name": "cc13MatteGruenLinks",
+     "name": "cc5Fussmatte",
      "type": "moebel",
-     "x": 128,
-     "y": 160,
+     "x": 47,
+     "y": 183,
      "width": 16,
-     "height": 32,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": -1
       },
       {
        "name": "kollision",
@@ -2278,7 +2278,53 @@
     },
     {
      "id": 55,
-     "name": "cc13MatteGruenRechts",
+     "name": "cc27OhrensesselLinks",
+     "type": "moebel",
+     "x": 352,
+     "y": 160,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 184
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 56,
+     "name": "cc4RegalD",
+     "type": "moebel",
+     "x": 368,
+     "y": 16,
+     "width": 32,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 56
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 57,
+     "name": "cc27SchlafsackGruen",
      "type": "moebel",
      "x": 144,
      "y": 160,
@@ -2300,8 +2346,8 @@
      ]
     },
     {
-     "id": 56,
-     "name": "cc13MatteGrauLinks",
+     "id": 58,
+     "name": "cc27SchlafsackGrau",
      "type": "moebel",
      "x": 176,
      "y": 160,
@@ -2323,13 +2369,13 @@
      ]
     },
     {
-     "id": 57,
-     "name": "cc13MatteGrauRechts",
+     "id": 59,
+     "name": "cc27Rucksack",
      "type": "moebel",
-     "x": 192,
-     "y": 160,
+     "x": 160,
+     "y": 166,
      "width": 16,
-     "height": 32,
+     "height": 16,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -2346,11 +2392,11 @@
      ]
     },
     {
-     "id": 58,
-     "name": "cc5Fussmatte",
+     "id": 60,
+     "name": "cc27Taschenlampe",
      "type": "moebel",
-     "x": 47,
-     "y": 183,
+     "x": 192,
+     "y": 174,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -2359,7 +2405,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": -1
+       "value": 1
       },
       {
        "name": "kollision",

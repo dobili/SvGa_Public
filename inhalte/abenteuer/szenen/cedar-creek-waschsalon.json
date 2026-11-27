@@ -2,7 +2,7 @@
   "karte": "cedarCreek.waschsalon",
   "datei": "karten/cedar-creek-waschsalon.json",
   "art": "innen",
-  "beschreibung": "Der Waschsalon von Mr. Boateng in Cedar Creek am Vormittag: ein heller, sauberer Raum mit weißen Fliesen und hellgrauen Wänden, in dem die Maschinen gleichmäßig brummen. Es riecht nach Waschpulver und warmer Wäsche.\n\nAn der Nordwand stehen vier gleiche Waschmaschinen lückenlos in einer Reihe, daneben zwei schmale Trockner derselben Bauart, in deren Bullaugen es warm glüht; auf dem linken Trockner klebt Mr. Boatengs Steckschachbrett mit der Stellung der Woche. Über den Trocknern hängt die Pinnwand mit Zetteln, einer davon: „Verloren: ein Turm“. Rechts davon ein Fenster, in der Nordostecke das Regal mit Waschmittel, Gläsern und einem Korb, an der Ostwand der Getränkeautomat, dessen Leuchtfläche in den Raum zeigt.\n\nIn der Mitte zwei Arbeitstische aus Edelstahl zum Zusammenlegen der Wäsche, daneben ein voller Wäschekorb; hier faltet Mr. Boateng. Links vorn an der Westwand eine Reihe orangefarbener Wartesitze, auf denen jemand ein Comicheft liegen gelassen hat und ein Mann Zeitung liest, daneben ein zweiter Korb. Pflanzen in der Nordwestecke und in der Südostecke. Eine Kundin wartet auf ihre Wäsche.\n\nLaufwege: von der Tür unten gerade nach oben an den Tischen vorbei zu den Trocknern und zur Pinnwand, links zu den Sitzen, rechts zum Automaten. Vor jedem Flügel der Eingangstür liegt innen eine Fußmatte (KARTENREGELN 10.86).",
+  "beschreibung": "Der Waschsalon von Mr. Boateng in Cedar Creek am Vormittag: ein heller, sauberer Raum mit weißen Fliesen und hellgrauen Wänden, in dem die Maschinen gleichmäßig brummen. Es riecht nach Waschpulver und warmer Wäsche.\n\nAn der Nordwand stehen vier gleiche Waschmaschinen lückenlos in einer Reihe, daneben zwei schmale Trockner derselben Bauart, in deren Bullaugen es warm glüht; auf dem linken Trockner klebt Mr. Boatengs Steckschachbrett mit der Stellung der Woche. Über den Trocknern hängt die Pinnwand mit Zetteln, einer davon: „Verloren: ein Turm“. Rechts davon ein Fenster mit hellem Metallrahmen, in der Nordostecke das Regal mit Waschmittel, Gläsern und einem Korb, an der Ostwand der Getränkeautomat, dessen Leuchtfläche in den Raum zeigt.\n\nIn der Mitte zwei Arbeitstische aus Edelstahl zum Zusammenlegen der Wäsche, daneben ein voller Wäschekorb; hier faltet Mr. Boateng, hinter dem rechten Tisch mit Blick in den Raum. Links vorn an der Westwand eine Reihe orangefarbener Wartesitze, auf denen jemand ein Comicheft liegen gelassen hat und ein Mann Zeitung liest, daneben ein zweiter Korb. Pflanzen in der Nordwestecke und in der Südostecke. Eine Kundin wartet auf ihre Wäsche.\n\nLaufwege: von der Tür unten gerade nach oben an den Tischen vorbei zu den Trocknern und zur Pinnwand, links zu den Sitzen, rechts zum Automaten. Vor jedem Flügel der Eingangstür liegt innen eine Fußmatte (KARTENREGELN 10.86).",
   "wand": "hellgrau",
   "boden": "fliesenWeiss",
   "raster": [
@@ -56,9 +56,11 @@
       "versatz": [0, 3]
     },
     {
-      "moebel": "wzFenster",
+      "moebel": "sb8Fenster",
       "feld": [9, 1],
-      "an_wand": true
+      "an_wand": true,
+      "versatz": [3, 6],
+      "massstab": 0.8
     },
     {
       "moebel": "cc4Waschmittelregal",
@@ -165,7 +167,7 @@
     {
       "name": "boateng",
       "feld": [10, 5],
-      "blick": "rechts"
+      "blick": "unten"
     }
   ],
   "belebung": [

@@ -854,8 +854,31 @@
      "name": "cc4StuhlHinten",
      "type": "moebel",
      "x": 176,
-     "y": 112,
+     "y": 96,
      "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 120
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 20,
+     "name": "mf14SchreibtischLeer",
+     "type": "moebel",
+     "x": 176,
+     "y": 112,
+     "width": 32,
      "height": 32,
      "rotation": 0,
      "visible": true,
@@ -873,34 +896,11 @@
      ]
     },
     {
-     "id": 20,
-     "name": "cc5Tisch",
-     "type": "moebel",
-     "x": 176,
-     "y": 128,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 152
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
      "id": 21,
      "name": "cc4Leselampe",
      "type": "moebel",
      "x": 189,
-     "y": 124,
+     "y": 108,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -909,7 +909,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 153
+       "value": 137
       },
       {
        "name": "kollision",
@@ -923,7 +923,7 @@
      "name": "cc12BuchOffen",
      "type": "moebel",
      "x": 178,
-     "y": 142,
+     "y": 126,
      "width": 12,
      "height": 8,
      "rotation": 0,
@@ -932,7 +932,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 153
+       "value": 137
       },
       {
        "name": "kollision",
@@ -946,7 +946,7 @@
      "name": "cc12Programmheft",
      "type": "moebel",
      "x": 183,
-     "y": 135,
+     "y": 119,
      "width": 8,
      "height": 8,
      "rotation": 0,
@@ -955,7 +955,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 153
+       "value": 137
       },
       {
        "name": "kollision",

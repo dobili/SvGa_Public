@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 30,
+ "nextobjectid": 32,
  "layers": [
   {
    "id": 1,
@@ -897,7 +897,7 @@
     },
     {
      "id": 14,
-     "name": "pd6Werkzeugschrank",
+     "name": "cc27RegalFiguren",
      "type": "moebel",
      "x": 128,
      "y": 16,
@@ -989,11 +989,11 @@
     },
     {
      "id": 18,
-     "name": "cc4Spaene",
+     "name": "cc27SpaeneGross",
      "type": "moebel",
      "x": 160,
-     "y": 144,
-     "width": 16,
+     "y": 138,
+     "width": 32,
      "height": 16,
      "rotation": 0,
      "visible": true,
@@ -1260,6 +1260,52 @@
        "name": "tiefe",
        "type": "int",
        "value": 121
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 30,
+     "name": "cc27SpaeneMittel",
+     "type": "moebel",
+     "x": 32,
+     "y": 68,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 31,
+     "name": "cc27SpaeneKlein",
+     "type": "moebel",
+     "x": 112,
+     "y": 144,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 1
       },
       {
        "name": "kollision",

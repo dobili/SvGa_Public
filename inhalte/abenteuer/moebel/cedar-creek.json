@@ -2938,12 +2938,7 @@
       "quelle": "spiel/eigene/pavillon_holztisch.png",
       "breite": 64,
       "hoehe": 32,
-      "platte": [
-        4,
-        10,
-        57,
-        25
-      ],
+      "platte": [4, 10, 57, 25],
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
@@ -2960,6 +2955,158 @@
         "###############."
       ],
       "hinweis": "Langer Holztisch des Schachclubs im Lesesaal (Kartenblick B1, 24.11.2026): vier Kacheln breit, Platz für zwei Bretter nebeneinander; dasselbe Bild wie der Tisch im Pavillon von Riverton"
+    },
+    "cc27SchuppenRot": {
+      "quelle": "spiel/eigene/schuppen_rot_dach.png",
+      "breite": 48,
+      "hoehe": 72,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich",
+      "hinweis": "roter Bretterschuppen mit grauem Schindeldach statt flachem Schwarz (Kartenblick C8) (Gemini C2, 27.11.2026, werkzeuge/gemini_cedar_2711.py)"
+    },
+    "cc27SchuppenBraun": {
+      "quelle": "spiel/eigene/schuppen_braun_dach.png",
+      "breite": 48,
+      "hoehe": 72,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "laendlich",
+      "hinweis": "brauner Bretterschuppen mit Schieferschindeln statt flachem Grau (Kartenblick C8) (Gemini C3, 27.11.2026, werkzeuge/gemini_cedar_2711.py)"
+    },
+    "cc27SchlafsackGruen": {
+      "quelle": "spiel/eigene/schlafsack_gruen.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "teppich",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Schlafsack grün mit Kissen von oben, für die Nacht im Lesesaal (Kartenblick B15) (Gemini C1, 27.11.2026, werkzeuge/gemini_cedar_2711.py)"
+    },
+    "cc27SchlafsackGrau": {
+      "quelle": "spiel/eigene/schlafsack_grau.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "teppich",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "Schlafsack grau mit Kissen von oben, für die Nacht im Lesesaal (Kartenblick B15) (Gemini C1, 27.11.2026, werkzeuge/gemini_cedar_2711.py)"
+    },
+    "cc27Rucksack": {
+      "quelle": "spiel/eigene/rucksack_rot.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "klein, liegt am Boden neben dem Schlafsack",
+      "hinweis": "kleiner roter Rucksack (Gemini C1, 27.11.2026, werkzeuge/gemini_cedar_2711.py)"
+    },
+    "cc27Taschenlampe": {
+      "quelle": "spiel/eigene/taschenlampe.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden",
+      "hinweis": "Taschenlampe am Boden (Gemini C1, 27.11.2026, werkzeuge/gemini_cedar_2711.py)"
+    },
+    "cc27SpaeneGross": {
+      "quelle": "spiel/eigene/spaene_gross.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden",
+      "hinweis": "helle Drechselspäne in Locken (Kartenblick D6) (Gemini C4, 27.11.2026, werkzeuge/gemini_cedar_2711.py)"
+    },
+    "cc27SpaeneMittel": {
+      "quelle": "spiel/eigene/spaene_mittel.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden",
+      "hinweis": "helle Drechselspäne in Locken (Kartenblick D6) (Gemini C4, 27.11.2026, werkzeuge/gemini_cedar_2711.py)"
+    },
+    "cc27SpaeneKlein": {
+      "quelle": "spiel/eigene/spaene_klein.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "liegt flach am Boden",
+      "hinweis": "helle Drechselspäne in Locken (Kartenblick D6) (Gemini C4, 27.11.2026, werkzeuge/gemini_cedar_2711.py)"
+    },
+    "cc27RegalFiguren": {
+      "quelle": "spiel/eigene/regal_figuren.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "regal",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "unten",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########"
+      ],
+      "hinweis": "niedriges Holzregal mit gedrechselten Schalen und halbfertigen Schachfiguren (Kartenblick D7) (Gemini C5, 27.11.2026, werkzeuge/gemini_cedar_2711.py)"
+    },
+    "cc27OhrensesselLinks": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_213.png",
+      "varianten": {
+        "rechts": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_217.png",
+        "unten": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_204.png"
+      },
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "sessel",
+      "blick": "links",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "..######",
+        "...#####",
+        "...####.",
+        "...#...."
+      ],
+      "hinweis": "roter Ohrensessel, Blick nach links, für die Leseecke am Ende des Flurs der Bibliothek (Kartenblick B8)"
     }
   }
 }

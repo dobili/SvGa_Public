@@ -172,6 +172,9 @@ export async function lasseRichtung(lauf: Lauf): Promise<void> {
   await lauf.cdp.send("Input.dispatchTouchEvent", { type: "touchEnd", touchPoints: [] });
 }
 
+/** Schlüssel des Steuerkreuzes in verdecktSeit. */
+const STEUERKREUZ = "Steuerkreuz";
+
 /** Klasse der Warteblende beim Warten auf eine Uhrzeit (oberwelt/useWarten.tsx). */
 const WARTEBLENDE = "abenteuer-warteblende";
 
@@ -195,12 +198,20 @@ export async function halteRichtung(lauf: Lauf, richtung: Richtung): Promise<boo
     // Die Warteblende („Die Zeit vergeht …“) deckt mit Absicht alles ab, bis die Uhr vorgerückt
     // ist (oberwelt/useWarten.tsx); der Spieler wartet sie ab, das ist kein Fund.
     if (mitte.verdeckt.includes(WARTEBLENDE)) return false;
-    lauf.messung.fund(
-      "steuerkreuz",
-      `Steuerkreuz „${KREUZKNOPF[richtung]}“ verdeckt von ${mitte.verdeckt}`,
-    );
+    // Wie bei tippe: kurz verdeckt ist kein Fund. Endet ein Gespräch und geht gleich die
+    // Tagebuchseite auf, steht das Steuerkreuz ein Bild lang da, bevor es weicht (Durchlauf
+    // 27.11.2026, zweimal im Clubraum nach dem Victor-Gespräch).
+    const seit = verdecktSeit.get(STEUERKREUZ) ?? Date.now();
+    verdecktSeit.set(STEUERKREUZ, seit);
+    if (Date.now() - seit > VERDECKT_MS) {
+      lauf.messung.fund(
+        "steuerkreuz",
+        `Steuerkreuz „${KREUZKNOPF[richtung]}“ verdeckt von ${mitte.verdeckt}`,
+      );
+    }
     return false;
   }
+  verdecktSeit.delete(STEUERKREUZ);
   await lauf.cdp.send("Input.dispatchTouchEvent", {
     type: "touchStart",
     touchPoints: [{ x: Math.round(mitte.x), y: Math.round(mitte.y) }],

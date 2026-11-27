@@ -50,6 +50,32 @@ const STAND_B = {
   spieluhr: MORGEN * MINUTEN_JE_STUNDE,
 };
 
+/** Zwei Stände auf derselben Karte an verschiedenen Feldern (zweiter Test). */
+const PARK_KIM = { ...STAND_B, held: { name: "Kim", figur: "held-0" }, begonnen: STAND_A.begonnen };
+const PARK_ALEX = {
+  ...STAND_B,
+  position: { karte: "mapleFalls.park", x: 40, y: 14, richtung: "rechts" },
+};
+
+/** Liest Name und Feld des gespielten Stands; läuft im Browser. */
+function gespielterStandImBrowser(): Promise<string> {
+  return new Promise<string>((fertig, fehler) => {
+    const anfrage = indexedDB.open("schach-von-grund-auf");
+    anfrage.onerror = () => fehler(anfrage.error);
+    anfrage.onsuccess = () => {
+      const db = anfrage.result;
+      const lesen = db.transaction("nutzerdaten", "readonly").objectStore("nutzerdaten");
+      const r = lesen.get("aktuell");
+      r.onsuccess = () => {
+        type Stand = { held: { name: string }; position: { x: number; y: number } };
+        const a = (r.result as { abenteuer?: Stand | null } | undefined)?.abenteuer;
+        db.close();
+        fertig(a ? `${a.held.name}@${a.position.x},${a.position.y}` : "keiner");
+      };
+    };
+  });
+}
+
 /** Legt einen ruhenden Platz in die Nutzerdaten (IndexedDB der App); läuft im Browser. */
 function legePlatzImBrowser(stand: object): Promise<boolean> {
   return new Promise<boolean>((fertig, fehler) => {
@@ -123,22 +149,27 @@ async function wechsleZu(seite: Page, name: string): Promise<void> {
   await expect(seite.getByTestId("abenteuer-welt")).toBeVisible({ timeout: FRIST_MS });
 }
 
+/** Spielt `stand` und legt `ruhend` als zweiten Platz an (bis er nach dem Neuladen noch da ist). */
+async function zweiPlaetze(seite: Page, stand: object, ruhend: object): Promise<void> {
+  await starteMitStand(seite, stand);
+  // Die App hält die Nutzerdaten im Speicher und schreibt sie beim nächsten Speichern ganz:
+  // Den ruhenden Platz liest sie erst nach dem Neuladen.
+  await expect
+    .poll(async () => {
+      await seite.evaluate(legePlatzImBrowser, ruhend);
+      await seite.reload();
+      await expect(seite.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: FRIST_MS });
+      return seite.evaluate(zahlDerRuhendenPlaetze);
+    })
+    .toBe(1);
+}
+
 test("Platzwechsel mitten im Spiel: nichts vom alten Stand bleibt sichtbar (27.11.2026)", async ({
   page,
 }) => {
   test.slow();
   const funde = beobachte(page);
-  await starteMitStand(page, STAND_A);
-  // Die App hält die Nutzerdaten im Speicher und schreibt sie beim nächsten Speichern ganz:
-  // Den ruhenden Platz liest sie erst nach dem Neuladen (bis er nach dem Neuladen noch da ist).
-  await expect
-    .poll(async () => {
-      await page.evaluate(legePlatzImBrowser, STAND_B);
-      await page.reload();
-      await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: FRIST_MS });
-      return page.evaluate(zahlDerRuhendenPlaetze);
-    })
-    .toBe(1);
+  await zweiPlaetze(page, STAND_A, STAND_B);
   const a = await weltbild(page);
   expect(a.stunde).toBe(String(NACHT));
   expect(a.gefolge).toBe("juno");
@@ -154,4 +185,24 @@ test("Platzwechsel mitten im Spiel: nichts vom alten Stand bleibt sichtbar (27.1
   await wechsleZu(page, "Kim");
   expect(await weltbild(page)).toEqual(a);
   expect(funde).toEqual([]);
+});
+
+test("Anderer Tab lädt einen anderen Stand auf derselben Karte: dieser Tab gibt ab (27.11.2026)", async ({
+  page,
+  context,
+}) => {
+  test.slow();
+  await zweiPlaetze(page, PARK_KIM, PARK_ALEX);
+  await expect.poll(() => page.evaluate(gespielterStandImBrowser)).toBe("Kim@25,14");
+  // Ein zweiter Tab (ohne Hauptmenü gleich in der Welt mit Kim) lädt Alex.
+  const zweite = await context.newPage();
+  await zweite.goto("/app/#abenteuer");
+  await expect(zweite.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: FRIST_MS });
+  await wechsleZu(zweite, "Alex");
+  // Der erste Tab spielt nicht mit fremdem Stand weiter, und sein Abbau schreibt Kims Feld
+  // nicht in Alex' Stand (useWeltladen.ts, sichereSitzung).
+  await expect(page.getByTestId("abenteuer-hauptmenue")).toBeVisible({ timeout: FRIST_MS });
+  await zweite.waitForTimeout(1000);
+  expect(await zweite.evaluate(gespielterStandImBrowser)).toBe("Alex@40,14");
+  await zweite.close();
 });

@@ -82,6 +82,16 @@ test.afterAll(() => beendeSpielerDesProzesses());
 /** Startkarte: Name eintragen, Spiel herunterladen, „Spielen“. Zählt die Ladezeit des Pakets. */
 async function bedieneStart(lauf: Lauf, lage: Lage): Promise<void> {
   const seite = lauf.seite;
+  // Startbild und Hauptmenü (27.11.2026): wegtippen, dann den zuletzt gespielten Stand fortsetzen.
+  if (lage.kennungen.includes("abenteuer-startbild")) {
+    await tippe(lauf, seite.getByTestId("abenteuer-startbild"), "Startbild überspringen");
+    return;
+  }
+  if (lage.kennungen.includes("abenteuer-fortsetzen")) {
+    await tippe(lauf, seite.getByTestId("abenteuer-fortsetzen"), "Hauptmenü „Fortsetzen“");
+    await seite.waitForTimeout(500);
+    return;
+  }
   const name = seite.getByTestId("abenteuer-start").getByTestId("abenteuer-name");
   if ((await name.isVisible().catch(() => false)) && (await name.inputValue()) === "") {
     await name.fill(HELDNAME);

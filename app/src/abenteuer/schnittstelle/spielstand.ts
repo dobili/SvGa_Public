@@ -21,6 +21,7 @@ export type Heldfigur = "held-0" | "heldin-0";
 import type { Aufgabenauftrag, Aufgabenergebnis, Rundenstand } from "./aufgaben";
 import type { Kartenbesitz, Kartenspiel } from "./karten";
 import type { Nadelstufe, Partieergebnis } from "./partie";
+import type { Partie } from "../../spiel/partie";
 
 /** Version dieses Spielstandformats; wächst unabhängig von SCHEMA_VERSION der App. */
 export const ABENTEUER_VERSION = 1;
@@ -277,4 +278,20 @@ export interface Abenteuerstand {
    * jede höchstens einmal je Schritt auf ihn zugeht. Fehlt in älteren Ständen.
    */
   readonly ansprachen?: readonly string[];
+}
+
+/**
+ * Ein ruhender Speicherplatz (Wunsch des Autors, 27.11.2026: beliebig viele Spielstände, ein
+ * Hauptmenü zum Fortsetzen, Laden und Löschen). Der gespielte Stand liegt wie bisher im Feld
+ * `abenteuer` der Nutzerdaten, damit Oberwelt, Partie und Sicherung nichts davon merken; die
+ * übrigen ruhen im Feld `abenteuerplaetze` (anbindung/speicherplaetze.ts). Kennung eines Platzes
+ * ist der Beginn seines Spielstands (`begonnen`, ISO, je Platz verschieden).
+ */
+export interface Ruheplatz {
+  readonly stand: Abenteuerstand;
+  /**
+   * Die offene Partie der App, die zu diesem Stand gehörte, als er ruhen ging (die App hält nur
+   * eine laufende Partie); null ohne. Beim Laden des Platzes kommt sie zurück.
+   */
+  readonly laufend: Partie | null;
 }

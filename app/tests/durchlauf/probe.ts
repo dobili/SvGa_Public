@@ -16,6 +16,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { chromium, devices, expect, type Browser, type Page } from "@playwright/test";
 import { schreibeStandImBrowser, starteMitStand } from "../e2e/abenteuer-affe";
+import { ohneHauptmenue } from "../e2e/abenteuer-paket";
 import { geraet } from "../e2e/abenteuer-quer";
 import type { Lauf } from "./eingabe";
 import { liesLage } from "./lage";
@@ -150,6 +151,8 @@ export async function schliesseDialog(lauf: Lauf): Promise<string> {
  */
 export async function zurueckAufKarte(seite: Page, stand: Abenteuerstand): Promise<void> {
   await expect.poll(() => seite.evaluate(schreibeStandImBrowser, stand)).toBe(true);
+  // Ein anderer Stand als vorher: ohne Hauptmenü gleich in die Welt (seit 27.11.2026).
+  await ohneHauptmenue(seite);
   await seite.reload();
   await seite.goto("/app/#abenteuer");
   await expect(seite.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: 40000 });

@@ -1,0 +1,216 @@
+/*
+ * Hauptmenü und Ladeliste des Schach-Abenteuers (anbindung/Hauptmenue.tsx, 27.11.2026).
+ *
+ * Eine Spalte heller Pixelknöpfe auf dem Navy der Welt, der Titel in der Pixelschrift und Gold;
+ * „Fortsetzen“ groß mit Figur und Stand. Quer gehalten (niedrige Höhe) stehen Titel und Knöpfe
+ * nebeneinander, damit nichts unter dem Rand verschwindet. Die Liste rollt in sich.
+ * Farben aus spielfarben.css (docs/spiel/30, Abschnitt 4).
+ */
+.abenteuer-hauptmenue {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) * 1.5);
+  box-sizing: border-box;
+  width: min(100%, 30rem);
+  max-height: 100dvh;
+  margin: 0 auto;
+  padding: calc(env(safe-area-inset-top) + var(--raster) * 7) 16px
+    calc(env(safe-area-inset-bottom) + var(--raster) * 2);
+  overflow-y: auto;
+  color: var(--spiel-creme);
+  /* Eigene Schicht, damit der Grund (::before) über der Fläche der Ansicht und unter den Knöpfen liegt. */
+  isolation: isolate;
+}
+
+/* Grund über den ganzen Bildschirm: Nacht über dem Weg wie im Startbild. */
+.abenteuer-hauptmenue::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    var(--spiel-navy-tief) 0%,
+    var(--spiel-navy) 55%,
+    var(--spiel-blau-tief) 100%
+  );
+}
+
+.abenteuer-hauptmenue-titel,
+.abenteuer-ladeliste h2 {
+  margin: 0 0 var(--raster);
+  color: var(--spiel-gold);
+  font-family: var(--spiel-pixelschrift);
+  font-size: clamp(28px, 9vmin, 48px);
+  line-height: 1.05;
+  text-align: center;
+  text-shadow: var(--spiel-pixel) var(--spiel-pixel) 0 var(--spiel-navy-tief);
+}
+
+.abenteuer-ladeliste h2 {
+  font-size: clamp(22px, 7vmin, 34px);
+}
+
+.abenteuer-ladeliste h2:focus {
+  outline: none;
+}
+
+.abenteuer-hauptmenue-hinweis {
+  margin: 0;
+  text-align: center;
+  font-size: var(--groesse-klein, 14px);
+  opacity: 0.85;
+}
+
+/* Fortsetzen: Figur links, drei Zeilen rechts. */
+.abenteuer-fortsetzen {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 1.5);
+  padding: var(--raster) calc(var(--raster) * 2);
+  text-align: left;
+}
+
+.abenteuer-fortsetzen strong {
+  font-family: var(--spiel-pixelschrift);
+  font-size: 1.3em;
+}
+
+/* Figur aus ihrem Bogen (anbindung/Figurrahmen.tsx), auch im Startbild. */
+.figurrahmen {
+  display: block;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+}
+
+.figurrahmen-gehend {
+  animation: figurrahmen-gehen 0.6s steps(6) infinite;
+}
+
+@keyframes figurrahmen-gehen {
+  from {
+    background-position: var(--figur-x0) var(--figur-y);
+  }
+  to {
+    background-position: var(--figur-x1) var(--figur-y);
+  }
+}
+
+.abenteuer-platzbild {
+  display: flex;
+  flex-shrink: 0;
+  align-items: flex-end;
+  justify-content: center;
+  min-width: 32px;
+}
+
+.abenteuer-platz-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.abenteuer-platzliste {
+  display: flex;
+  flex-direction: column;
+  /* Abstand über den doppelten Pixelrahmen (2 × --spiel-pixel) hinaus. */
+  gap: calc(var(--raster) * 2.5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Ein Spielstand: helle Karte wie die Fenster des Spiels. */
+.abenteuer-platz {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: var(--raster) calc(var(--raster) * 1.5);
+  padding: var(--raster) calc(var(--raster) * 1.5);
+  background: var(--spiel-creme);
+  color: var(--spiel-navy);
+  box-shadow:
+    0 0 0 var(--spiel-pixel) var(--spiel-gold-tief),
+    0 0 0 calc(var(--spiel-pixel) * 2) var(--spiel-navy-tief);
+}
+
+.abenteuer-platz[data-aktiv="true"] {
+  background: var(--spiel-pergament);
+}
+
+.abenteuer-platz-leise {
+  color: var(--spiel-text-leise);
+  font-size: var(--groesse-klein, 14px);
+}
+
+.abenteuer-platz-knoepfe,
+.abenteuer-platz-frage {
+  display: flex;
+  flex-wrap: wrap;
+  grid-column: 1 / -1;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.abenteuer-platz-knoepfe > button {
+  flex: 1 1 8rem;
+}
+
+.abenteuer-platz-frage {
+  margin: 0;
+}
+
+.abenteuer-platz-status {
+  min-height: 1lh;
+  margin: 0;
+  text-align: center;
+}
+
+.abenteuer-platz-status:empty {
+  min-height: 0;
+}
+
+/* Quer gehalten: Titel links, Knöpfe rechts; die Liste nutzt die ganze Breite in zwei Spalten. */
+@media (orientation: landscape) and (max-height: 500px) {
+  .abenteuer-hauptmenue:not(.abenteuer-ladeliste) {
+    display: grid;
+    grid-template-columns: 1fr minmax(16rem, 22rem);
+    align-content: center;
+    column-gap: calc(var(--raster) * 3);
+    width: min(100%, 52rem);
+    padding-top: calc(env(safe-area-inset-top) + var(--raster) * 2);
+    padding-left: calc(env(safe-area-inset-left) + 16px);
+    padding-right: calc(env(safe-area-inset-right) + 56px);
+  }
+
+  .abenteuer-hauptmenue:not(.abenteuer-ladeliste) > :is(h1, p) {
+    grid-column: 1;
+  }
+
+  .abenteuer-hauptmenue:not(.abenteuer-ladeliste) > h1 {
+    grid-row: 1 / span 3;
+    align-self: end;
+  }
+
+  .abenteuer-hauptmenue:not(.abenteuer-ladeliste) > p {
+    grid-row: 4 / span 2;
+    align-self: start;
+  }
+
+  .abenteuer-hauptmenue:not(.abenteuer-ladeliste) > button {
+    grid-column: 2;
+  }
+
+  .abenteuer-ladeliste {
+    width: min(100%, 52rem);
+    padding-top: calc(env(safe-area-inset-top) + var(--raster) * 2);
+    padding-right: calc(env(safe-area-inset-right) + 56px);
+  }
+
+  .abenteuer-platzliste {
+    display: grid;
+    padding: var(--spiel-pixel);
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  }
+}

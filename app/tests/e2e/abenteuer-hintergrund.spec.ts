@@ -13,7 +13,7 @@
  */
 import { expect, test, type Page } from "@playwright/test";
 import { beobachte, GRUNDSTAND, schreibeStandImBrowser, starteMitStand } from "./abenteuer-affe";
-import { PAKET_FRIST_MS, warteAufHintergrund } from "./abenteuer-paket";
+import { ohneHauptmenue, PAKET_FRIST_MS, warteAufHintergrund } from "./abenteuer-paket";
 import { starteImBrowser, warteAufOffline } from "./hilfen";
 import { gibNetzFrei, netzGesperrtFuerWorker, sperreNetz } from "./offlinehilfen";
 
@@ -122,6 +122,8 @@ test("Maia im Hintergrund: Neuladen mitten im Laden, keine losen Fehler, danach 
   await expect.poll(() => page.evaluate(schreibeStandImBrowser, GRUNDSTAND)).toBe(true);
   await page.reload();
   await page.goto("/app/#abenteuer");
+  // Der Test prüft das Nachladen, nicht den Einstieg: gleich in die Welt (seit 27.11.2026).
+  await ohneHauptmenue(page);
   await page.getByTestId("abenteuer-start").getByTestId("abenteuer-laden").click();
   // Sobald Geräusche und Maia nachladen, neu laden (das Spielpaket ist dann schon da).
   await expect

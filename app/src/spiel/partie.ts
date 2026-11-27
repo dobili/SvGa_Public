@@ -121,6 +121,12 @@ export interface Partieeinstellung {
    */
   readonly abenteuer?: {
     readonly kennung: string;
+    /**
+     * Speicherplatz des Abenteuers, zu dem die Partie gehört: Beginn seines Spielstands
+     * (Abenteuerstand.begonnen, seit 27.11.2026, beliebig viele Spielstände). Tagebuch und
+     * Rückweg zählen so nur die Partien des eigenen Platzes; fehlt bei älteren Partien.
+     */
+    readonly spielstand?: string;
     readonly zeitnotBis?: number;
     /**
      * Stärkewechsel mitten in der Partie (Halbfinale des Abenteuers, Konzern-Junior ohne Gerät):

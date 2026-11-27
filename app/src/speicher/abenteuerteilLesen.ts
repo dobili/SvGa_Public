@@ -63,6 +63,7 @@ function formteil(roh: Record<string, unknown>): Partial<Abenteuerteil> {
   if (buchbruch) teil.buchbruch = buchbruch;
   if (typeof roh.kulisse === "string") teil.kulisse = roh.kulisse;
   if (typeof roh.portraet === "string") teil.portraet = roh.portraet;
+  if (typeof roh.spielstand === "string") teil.spielstand = roh.spielstand;
   const vorgeschichte = textliste(roh.vorgeschichte);
   if (vorgeschichte) teil.vorgeschichte = vorgeschichte;
   const kurzform = kurzformAus(roh.kurzform);

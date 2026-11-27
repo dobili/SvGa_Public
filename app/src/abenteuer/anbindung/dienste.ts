@@ -7,14 +7,15 @@
  * Hülle (AbenteuerAnsicht.tsx) als Hook, weil Navigation und Maia-Stand Hooks sind.
  * Abhängigkeiten: speicher/speicher.ts, speicher/partien.ts, spiel/partie.ts,
  * app/navigationsKontext.ts, einstellungen/maiastand.ts, paket/paketlader.ts, anbindung/maiapflicht.ts,
- * anbindung/partiestart.ts, anbindung/partieergebnis.ts, regeln/gegnerstaerke.ts, daten/laden.ts.
+ * anbindung/partiestart.ts, anbindung/partieergebnis.ts, regeln/gegnerstaerke.ts, daten/laden.ts,
+ * anbindung/speicherplaetze.ts (Platz einer Partie).
  */
 import { useMemo } from "react";
 import { ladeKapitel } from "../../daten/laden";
 import { useNavigation } from "../../app/navigationsKontext";
 import { findePartie, mitLaufender } from "../../speicher/partien";
 import { aendere, speicherzustand, useSpeicher } from "../../speicher/speicher";
-import { neuePartie } from "../../spiel/partie";
+import { neuePartie, type Partie } from "../../spiel/partie";
 import { varianteVon } from "../../spiel/varianten/alle";
 import { aktuelleWertung } from "../../spiel/wertung";
 import { useMaiaBereit } from "../../ui/komponenten/einstellungen/maiastand";
@@ -36,6 +37,7 @@ import { sucheKipppunkt, type Bewerter } from "./kipppunkt";
 import { mitMaiaPflicht } from "./maiapflicht";
 import { partieeinstellungAus } from "./partiestart";
 import { partieergebnisAus } from "./partieergebnis";
+import { platzkennung } from "./speicherplaetze";
 import { mitFremderEroeffnung, mitVorratsstellung } from "./vorratsstellung";
 
 /** Rechenzeit und Tiefe je Stellung bei der Kipppunktsuche (klein, damit das Angebot schnell kommt). */
@@ -108,9 +110,17 @@ async function legePartieAn(auftrag: Partieauftrag, mitMaia: boolean): Promise<s
   const aufgeloest = ausVorrat ? await mitAufgeloesterStellung(ausVorrat) : null;
   if (!aufgeloest) return null;
   // Der Name im Profil ist ein Textschlüssel; die Partie zeigt den Namen in der Sprache des Lesers.
+  // Die Partie trägt ihren Speicherplatz (speicherplaetze.ts), damit Tagebuch und Rückweg die
+  // Partien mehrerer Spielstände trennen.
+  const grund = partieeinstellungAus(aufgeloest, mitMaia);
+  const platz = standJetzt();
   const einstellung = {
-    ...partieeinstellungAus(aufgeloest, mitMaia),
+    ...grund,
     botName: tSpiel(auftrag.profil.name),
+    abenteuer:
+      grund.abenteuer && platz
+        ? { ...grund.abenteuer, spielstand: platzkennung(platz) }
+        : grund.abenteuer,
   };
   const partie = neuePartie(einstellung, neueKennung(), new Date().toISOString());
   if (!partie) return null;
@@ -122,14 +132,21 @@ async function legePartieAn(auftrag: Partieauftrag, mitMaia: boolean): Promise<s
   return partie.id;
 }
 
-/** Die beendete Partie einer Begegnung, wo immer die App sie hält (laufend oder in der Liste). */
+/**
+ * Die beendete Partie einer Begegnung, wo immer die App sie hält (laufend oder in der Liste).
+ * Nur Partien des gespielten Speicherplatzes (oder ältere ohne Platzangabe): Dieselbe Begegnung
+ * kann in einem anderen Spielstand schon gespielt sein (speicherplaetze.ts).
+ */
 function findeAbenteuerpartie(kennung: string) {
-  const spiel = speicherzustand().daten.spiel;
+  const { spiel, abenteuer } = speicherzustand().daten;
+  const passt = (p: Partie) =>
+    p.einstellung.abenteuer?.kennung === kennung &&
+    (p.einstellung.abenteuer.spielstand === undefined ||
+      abenteuer === null ||
+      p.einstellung.abenteuer.spielstand === platzkennung(abenteuer));
   const laufend = spiel.laufend;
-  if (laufend?.einstellung.abenteuer?.kennung === kennung) return laufend;
-  return (
-    spiel.partien.find((e) => e.partie.einstellung.abenteuer?.kennung === kennung)?.partie ?? null
-  );
+  if (laufend && passt(laufend)) return laufend;
+  return spiel.partien.find((e) => passt(e.partie))?.partie ?? null;
 }
 
 /** Baut die Dienste; stabil, solange Navigation und Maia-Stand gleich bleiben. */

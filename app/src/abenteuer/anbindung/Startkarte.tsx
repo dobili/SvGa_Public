@@ -1,7 +1,8 @@
 /**
  * Startkarte des Abenteuers und Namensfeld (ausgelagert aus AbenteuerAnsicht.tsx, 22.11.2026).
  *
- * Die Startkarte lädt das Paket oder beginnt das Spiel; vor dem ersten Start wählt der Leser
+ * Die Startkarte lädt das Paket oder beginnt ein neues Spiel (aus dem Hauptmenü „Neues Spiel“,
+ * Hauptmenue.tsx, oder beim allerersten Start ohne Spielstand); vor dem Start wählt der Leser
  * seinen Namen (Dokument 02: Name wählbar, Dialoge geschlechtsneutral), die Figur (Held oder
  * Heldin) und den Rivalen (Victor oder Victoria; Wunsch des Autors, 22.11.2026; Heldwahl.tsx). Figur und Rivale gelten für das ganze Spiel (Wunsch des Autors,
  * 24.11.2026: nicht mehr im Spielmenü änderbar). Das Namensfeld nutzt auch das Spielmenü.
@@ -52,6 +53,7 @@ export function Startkarte({
   beiRivalin,
   beiLaden,
   beiStart,
+  beiZurueck,
 }: {
   zustand: Paketzustand;
   /**
@@ -71,6 +73,8 @@ export function Startkarte({
   beiRivalin: (rivalin: boolean) => void;
   beiLaden: () => void;
   beiStart: () => void;
+  /** Zurück ins Hauptmenü (Neues Spiel, wenn es schon Spielstände gibt); fehlt sonst. */
+  beiZurueck?: () => void;
 }) {
   const laedt = zustand.art === "laedt";
   return (
@@ -121,6 +125,16 @@ export function Startkarte({
           disabled={laedt}
         >
           {laedt ? t("abenteuer.laedt", { mb: mbText(zustand.gesamt) }) : t("abenteuer.laden")}
+        </button>
+      )}
+      {beiZurueck && (
+        <button
+          type="button"
+          className="knopf-zweit"
+          data-testid="abenteuer-neu-zurueck"
+          onClick={beiZurueck}
+        >
+          {t("abenteuer.neu.zurueck")}
         </button>
       )}
     </section>

@@ -170,8 +170,8 @@ interface Knopf {
   readonly text: string;
 }
 
-/** Knöpfe, die ein Affe nicht drücken soll: Paket löschen, Spielstand löschen, Testhilfe. */
-const VERBOTEN = /Spielpaket vom Gerät löschen|Ja, von vorn/;
+/** Knöpfe, die ein Affe nicht drücken soll: Paket löschen, Spielstand löschen (Ladeliste), Testhilfe. */
+const VERBOTEN = /Spielpaket vom Gerät löschen|Ja, löschen/;
 
 /** Alle sichtbaren, freien Knöpfe, die oben liegen (der Finger träfe sie wirklich). */
 export async function sichtbareKnoepfe(seite: Page): Promise<Knopf[]> {

@@ -2,16 +2,22 @@
  * Die Hülle des Abenteuers in der App: Zusatzansicht „abenteuer“ (app/zusatzansichten.ts), im
  * Vollbild ohne Kopfzeile und Leiste der App (Entscheidung D1 des Autors, 07.11.2026).
  *
- * Rolle im Gesamtbild: Dieser kleine Teil gehört zum Kern der App. Er zeigt die Startkarte
- * (Paket laden, Spielstand anlegen), lädt das eigentliche Spiel erst dann als eigenen Baustein
+ * Rolle im Gesamtbild: Dieser kleine Teil gehört zum Kern der App. Er zeigt beim Start das
+ * Startbild (Startbild.tsx) und das Hauptmenü mit den Speicherplätzen (Hauptmenue.tsx, Wunsch des
+ * Autors, 27.11.2026), sonst die Startkarte (Paket laden, neues Spiel anlegen), lädt das
+ * eigentliche Spiel erst dann als eigenen Baustein
  * (dynamischer Import von modul/abenteuer.tsx → assets/abenteuer-*.js, nicht vorab geladen) und
  * übergibt ihm die Dienste der App (anbindung/dienste.ts). Das Spielmenü (Knopf oben rechts) ist
- * der einzige Rückweg in die App: „Zurück zur App“, dazu Paket löschen, den Namen des Helden
- * ändern und neu beginnen (Schritt 8g; Spielmenue.tsx). Beim ersten Start wählt der Leser Namen,
+ * der Rückweg in die App: „Zurück zur App“, dazu Paket löschen, den Namen des Helden ändern und
+ * „Hauptmenü“ (Schritt 8g; Spielmenue.tsx). Bei einem neuen Spiel wählt der Leser Namen,
  * Figur und Rivalen (Startkarte.tsx; Dokument 02: Name wählbar, Dialoge geschlechtsneutral); alles
  * bleibt lokal. Figur und Rivale gelten danach für das ganze Spiel (Wunsch des Autors, 24.11.2026).
- * Abhängigkeiten: anbindung/dienste.ts, regeln/spielstand.ts, schnittstelle/modul.ts, i18n,
- * paket/paketlader.ts (Löschen), app/blattstapel.ts (Zurück-Taste schließt das Menü).
+ * Einstieg (27.11.2026): Ein neuer Start der App zeigt Startbild und Hauptmenü; der Rückweg aus
+ * Partie, Runde und Besprechung und ein Neuladen im selben Tab führen gleich in die Welt
+ * (spielsitzung.ts). Den Reiter „Abenteuer“ der App öffnet diese Ansicht.
+ * Abhängigkeiten: anbindung/dienste.ts, usePaketzustand.ts, regeln/spielstand.ts, schnittstelle/modul.ts, i18n,
+ * paket/paketlader.ts (Löschen), app/blattstapel.ts (Zurück-Taste schließt das Menü),
+ * useSpeicherplaetze.ts, spielsitzung.ts, Hauptmenue.tsx, Startbild.tsx.
  * Bedienung mit dem Daumen (docs/spiel/30): Die Ansicht trägt data-steuerkreuz (rechts oder links,
  * Wahl im Spielmenü); bedienung.css legt danach Steuerkreuz, Aktionsknopf, Leiste und Menüknopf.
  */
@@ -29,17 +35,31 @@ import { useEinstellungen } from "../../app/einstellungen";
 import { usePixelrahmen } from "./pixelrahmen";
 import { loeschePaket } from "../paket/paketlader";
 import { leererAbenteuerstand } from "../regeln/spielstand";
-import type { Abenteuermodul } from "../schnittstelle/modul";
-import type { Paketzustand } from "../schnittstelle/paket";
+import type { Abenteuermodul, Appdienste } from "../schnittstelle/modul";
 import { useAbenteuerton } from "../ton/useAbenteuerton";
 import { useAktton } from "../paket/aktton";
-import { aktualisierePaketzustand, useAbenteuerstand, useAppdienste } from "./dienste";
+import { useAbenteuerstand, useAppdienste } from "./dienste";
 import { Spielmenue } from "./Spielmenue";
 import { NAME_HOECHSTENS, Startkarte } from "./Startkarte";
-import type { Heldfigur } from "../schnittstelle/spielstand";
+import type { Abenteuerstand, Heldfigur } from "../schnittstelle/spielstand";
 import { ERSATZFIGUR } from "../regeln/heldfigur";
 import { mitRivalwahl, rivalinGewaehlt } from "../regeln/rivalform";
 import { Ladestand } from "./Ladestand";
+import { Hauptmenue } from "./Hauptmenue";
+import { Startbild } from "./Startbild";
+import { platzkennung } from "./speicherplaetze";
+import {
+  beendeSitzung,
+  merkeSitzung,
+  ohneHauptmenue,
+  sitzungsplatz,
+  startbildErlaubt,
+} from "./spielsitzung";
+import { useSpeicherplaetze, type Speicherplaetze } from "./useSpeicherplaetze";
+import { usePaketzustand, type Paketlage } from "./usePaketzustand";
+
+/** Die Oberwelt aus dem geladenen Baustein. */
+type Oberweltbaustein = ComponentType<{ readonly wert: string | null }>;
 
 /** Der geladene Baustein, einmal je Seite. */
 let modulVorrat: Promise<Abenteuermodul> | null = null;
@@ -49,28 +69,134 @@ function ladeModul(): Promise<Abenteuermodul> {
   return modulVorrat;
 }
 
-/** Die Zusatzansicht: Startkarte oder, wenn Paket und Spielstand da sind, die Oberwelt. */
+/**
+ * Was die Ansicht zeigt: „einstieg“ (Paket und Speicher werden geprüft, Startkarte), „menue“
+ * (Hauptmenü), „neu“ (Startkarte mit Wahl für ein neues Spiel), „welt“ (die Oberwelt).
+ */
+type Ansicht = "einstieg" | "menue" | "neu" | "welt";
+
+/** Lief das Startbild in dieser Seite schon? Dann nicht noch einmal (Hauptmenü → App → zurück). */
+let startbildGelaufen = false;
+
+/** Soll beim Öffnen der Ansicht das Startbild laufen? Nur beim Start, nicht beim Rückweg ins Spiel. */
+function startbildFaellig(): boolean {
+  return !startbildGelaufen && sitzungsplatz() === null && !ohneHauptmenue() && startbildErlaubt();
+}
+
+/** Ein neuer Spielstand aus der Wahl auf der Startkarte; Eingangswertung wie beim ersten Start. */
+function neuerStand(
+  dienste: Appdienste,
+  name: string,
+  figur: Heldfigur,
+  rivalin: boolean,
+): Abenteuerstand {
+  // Die Eingangswertung ist fest, wenn die App genug gewertete Partien hat (Architektur,
+  // Abschnitt 4), sonst läuft sie noch mit.
+  const spiel = speicherzustand().daten.spiel;
+  const fest = spiel.wertung.length >= ANFANGSPARTIEN;
+  const neu = leererAbenteuerstand(new Date(), name, dienste.wertung(), fest, figur);
+  return mitRivalwahl(neu, rivalin);
+}
+
+/** Was die Ansicht nach einem Wechsel zeigt: Hauptmenü, ohne Spielstände die Wahl für ein neues. */
+function ohneWelt(plaetze: number): Ansicht {
+  return plaetze > 0 ? "menue" : "neu";
+}
+
+/**
+ * Ansicht und Weg in die Welt: Einstieg nach der Prüfung von Paket und Speicher, Öffnen der Welt
+ * mit einem Platz, Rückkehr ins Hauptmenü, wenn ein anderer Tab den Stand wechselt.
+ */
+function useEinstieg(
+  dienste: Appdienste,
+  stand: Abenteuerstand | null,
+  paket: Paketlage,
+  plaetze: Speicherplaetze,
+) {
+  const [wahl, setzeAnsicht] = useState<Ansicht>("einstieg");
+  const [Oberwelt, setzeOberwelt] = useState<Oberweltbaustein | null>(null);
+  // Der Platz, mit dem diese Ansicht in die Welt ging.
+  const [eingetreten, setzeEingetreten] = useState<string | null>(null);
+  // Läuft das Öffnen der Welt schon (der Einstieg ruft es nur einmal)?
+  const oeffnet = useRef(false);
+  const anzahl = plaetze.plaetze.length;
+
+  // Ein Fehler beim Laden des Spielbausteins oder beim Löschen des Pakets (etwa ein fehlender
+  // Baustein nach einem Update) zeigt die Fehlerkarte statt still nichts zu tun (Affentest).
+  const meldeLadefehler = (fehler: unknown) => {
+    console.warn("Schach-Abenteuer: Laden fehlgeschlagen", fehler);
+    oeffnet.current = false;
+    setzeAnsicht("einstieg");
+    paket.setzeZustand({ art: "fehler", grund: "unbekannt" });
+  };
+
+  /** Geht mit dem gespielten Platz in die Welt: Baustein laden, Sitzung merken. */
+  const oeffneWelt = (kennung: string) => {
+    oeffnet.current = true;
+    merkeSitzung(kennung);
+    void ladeModul()
+      .then((modul) => {
+        modul.verbinde(dienste);
+        oeffnet.current = false;
+        setzeOberwelt(() => modul.Oberwelt);
+        setzeEingetreten(kennung);
+        setzeAnsicht("welt");
+      })
+      .catch(meldeLadefehler);
+  };
+
+  // Einstieg, sobald Paket und Speicher bereit sind: zurück in die Welt (Rückweg aus Partie und
+  // Runde, Neuladen im selben Tab, Testschalter), sonst Hauptmenü oder, ohne Spielstand, die Wahl
+  // für das erste Spiel (abgeleitet, unten).
+  const bereit = wahl === "einstieg" && paket.geprueft && paket.da && plaetze.bereit;
+  const zurueckInDieWelt =
+    stand !== null && (ohneHauptmenue() || sitzungsplatz() === platzkennung(stand));
+  useEffect(() => {
+    if (bereit && zurueckInDieWelt && stand && !oeffnet.current) oeffneWelt(platzkennung(stand));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bereit, zurueckInDieWelt, stand]);
+
+  // Hat ein anderer Tab einen anderen Stand geladen oder diesen gelöscht, zurück ins Hauptmenü:
+  // sonst spielte dieser Tab plötzlich mit fremdem Stand weiter.
+  const fremd = wahl === "welt" && (stand === null || platzkennung(stand) !== eingetreten);
+  useEffect(() => {
+    if (fremd) beendeSitzung();
+  }, [fremd]);
+  const ansicht: Ansicht = (bereit && !zurueckInDieWelt) || fremd ? ohneWelt(anzahl) : wahl;
+
+  /** Zurück ins Hauptmenü (Spielmenü); der Stand ist schon gespeichert. */
+  const zumHauptmenue = () => {
+    beendeSitzung();
+    setzeEingetreten(null);
+    setzeAnsicht(ohneWelt(anzahl));
+  };
+  return { ansicht, setzeAnsicht, Oberwelt, oeffneWelt, meldeLadefehler, zumHauptmenue };
+}
+
+/** Die Zusatzansicht: Startbild, Hauptmenü, Startkarte oder, mit Paket und Spielstand, die Oberwelt. */
 export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
   const dienste = useAppdienste();
   const { zurueck } = useNavigation();
   const stand = useAbenteuerstand();
-  const [zustand, setzeZustand] = useState<Paketzustand>({ art: "fehlt" });
-  const [geprueft, setzeGeprueft] = useState(false);
-  const [Oberwelt, setzeOberwelt] = useState<ComponentType<{
-    readonly wert: string | null;
-  }> | null>(null);
-  const [offen, setzeOffen] = useState(false);
+  const plaetze = useSpeicherplaetze();
+  const paket = usePaketzustand(dienste, stand);
+  const einstieg = useEinstieg(dienste, stand, paket, plaetze);
+  const { ansicht, setzeAnsicht, Oberwelt } = einstieg;
   const [menue, setzeMenue] = useState(false);
+  const [startbild, setzeStartbild] = useState(startbildFaellig);
   const pixelrahmen = usePixelrahmen();
   // Steuerkreuz rechts oder links (docs/spiel/30): bedienung.css legt danach die Knöpfe.
   const { abenteuersteuerkreuz } = useEinstellungen();
-  // Name des Helden vor dem ersten Start; leer heißt „Du“.
+  // Wahl für ein neues Spiel; ein leerer Name heißt „Du“.
   const [neuerName, setzeNeuenNamen] = useState("");
   const [neueFigur, setzeNeueFigur] = useState<Heldfigur>(ERSATZFIGUR);
   const [neueRivalin, setzeNeueRivalin] = useState(false);
   // Musik und Geräusche des Abenteuers (ton/): Einstellungen anwenden, beim Verlassen ausblenden.
   useAbenteuerton();
   useAktton(stand?.handlung.akt ?? 1); // Ton des Akts im Hintergrund (paket/aktton.ts)
+  useEffect(() => {
+    if (startbild) startbildGelaufen = true;
+  }, [startbild]);
 
   /** Ein eingegebener Name, bereinigt; leer → „Du“. */
   const bereinigt = (name: string) =>
@@ -83,114 +209,37 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
     setzeMenue(false);
   };
 
-  /** Beginnt von vorn: Spielstand weg, zurück zur Startkarte mit Namenswahl (Paket bleibt). */
-  const beginneNeu = () => {
-    void dienste.loescheStand().then(() => {
-      setzeMenue(false);
-      setzeOffen(false);
-    });
+  /** Neues Spiel aus der Startkarte: neuer Platz, der bisherige ruht. */
+  const starteNeu = () => {
+    const neu = neuerStand(dienste, bereinigt(neuerName), neueFigur, neueRivalin);
+    void plaetze.beginne(neu).then(einstieg.oeffneWelt, einstieg.meldeLadefehler);
   };
 
-  useEffect(() => {
-    let aktiv = true;
-    // Ohne Cache-Speicher (gesperrte Website-Daten) gilt das Paket als fehlend; das Laden meldet
-    // dann seinen Fehler auf der Startkarte, statt dass die Prüfung ewig läuft.
-    void aktualisierePaketzustand()
-      .catch((): Paketzustand => ({ art: "fehlt" }))
-      .then((z) => {
-        if (!aktiv) return;
-        setzeZustand(z);
-        setzeGeprueft(true);
-      });
-    return () => {
-      aktiv = false;
-    };
-  }, []);
-
-  // Wer schon einen Spielstand und das Paket hat, landet gleich in der Welt (Rückweg aus Partie
-  // und Aufgabenrunde); die Startkarte sieht nur, wer neu beginnt oder das Paket laden muss.
-  const automatisch = useRef(false);
-  useEffect(() => {
-    const paketDa = zustand.art === "vorhanden" || zustand.art === "veraltet";
-    if (!paketDa || !stand || offen || automatisch.current) return;
-    automatisch.current = true;
-    void ladeModul()
-      .then((modul) => {
-        modul.verbinde(dienste);
-        setzeOberwelt(() => modul.Oberwelt);
-        setzeOffen(true);
-      })
-      .catch((fehler: unknown) => {
-        // Fehlt ein Baustein (etwa nach einem Update), zeigt die Startkarte den Fehler.
-        console.warn("Schach-Abenteuer: Laden fehlgeschlagen", fehler);
-        automatisch.current = false;
-        setzeZustand({ art: "fehler", grund: "unbekannt" });
-      });
-  }, [zustand, stand, offen, dienste]);
-
-  // Ein Fehler beim Laden des Spielbausteins oder beim Löschen des Pakets (etwa ein fehlender
-  // Baustein nach einem Update) zeigt die Fehlerkarte statt still nichts zu tun (Affentest).
-  const meldeLadefehler = (fehler: unknown) => {
-    console.warn("Schach-Abenteuer: Laden fehlgeschlagen", fehler);
-    automatisch.current = false;
-    setzeZustand({ art: "fehler", grund: "unbekannt" });
+  /** Fortsetzen oder Laden eines Platzes aus dem Hauptmenü. */
+  const setzeFort = (kennung: string) => {
+    void plaetze.lade(kennung).then(() => einstieg.oeffneWelt(kennung), einstieg.meldeLadefehler);
   };
 
-  const lade = () => {
-    setzeZustand({ art: "laedt", geladen: 0, gesamt: 1 });
-    dienste
-      .ladePaket((geladen, gesamt) => setzeZustand({ art: "laedt", geladen, gesamt }))
-      .then(() => aktualisierePaketzustand().then(setzeZustand))
-      .catch(() => {
-        const online = typeof navigator === "undefined" || navigator.onLine;
-        setzeZustand({ art: "fehler", grund: online ? "unbekannt" : "ohneNetz" });
-      });
-  };
-
-  // Neue Version des Spiels auf dem Server (Wunsch des Autors, 19.11.2026): mit Spielstand gleich
-  // laden; danach führt der Weg wie gewohnt in die Welt. Ohne Netz bleibt das alte Paket.
-  const aktualisiert = useRef(false);
-  useEffect(() => {
-    if (zustand.art !== "fehlt" || !zustand.neuerStand || !stand || aktualisiert.current) return;
-    aktualisiert.current = true;
-    lade();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [zustand, stand]);
-
-  const starte = () => {
-    if (!stand) {
-      // Erster Start: Spielstand anlegen; die Eingangswertung ist fest, wenn die App genug
-      // gewertete Partien hat (Architektur, Abschnitt 4), sonst läuft sie noch mit.
-      const spiel = speicherzustand().daten.spiel;
-      const fest = spiel.wertung.length >= ANFANGSPARTIEN;
-      const neu = leererAbenteuerstand(
-        new Date(),
-        bereinigt(neuerName),
-        dienste.wertung(),
-        fest,
-        neueFigur,
-      );
-      void dienste.schreibeStand(mitRivalwahl(neu, neueRivalin));
-    }
-    void ladeModul()
-      .then((modul) => {
-        modul.verbinde(dienste);
-        setzeOberwelt(() => modul.Oberwelt);
-        setzeOffen(true);
-      })
-      .catch(meldeLadefehler);
+  const zurApp = () => {
+    beendeSitzung();
+    zurueck();
   };
 
   const loesche = () => {
     void loeschePaket()
       .then(() => {
         setzeMenue(false);
-        setzeOffen(false);
-        setzeZustand({ art: "fehlt" });
+        setzeAnsicht("einstieg");
+        paket.setzeZustand({ art: "fehlt" });
       })
-      .catch(meldeLadefehler);
+      .catch(einstieg.meldeLadefehler);
   };
 
+  const inWelt = ansicht === "welt" && Oberwelt !== null && stand !== null;
+  const imMenue = ansicht === "menue" && paket.da;
+  // Startkarte mit Wahl: neues Spiel oder erster Start ohne Spielstand. Vor dem Einstieg mit
+  // Spielstand (Paket fehlt noch) führt „Spielen“ in ihn.
+  const neu = ansicht === "neu" || (ansicht === "einstieg" && !stand);
   return (
     <div
       className={`bildschirm bildschirm-abenteuer ${pixelrahmen?.klasse ?? ""}`}
@@ -198,42 +247,76 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
       data-steuerkreuz={abenteuersteuerkreuz}
       data-testid="abenteuer"
     >
-      <button
-        type="button"
-        className="abenteuer-menueknopf"
-        aria-label={t("abenteuer.menue")}
-        data-testid="abenteuer-menueknopf"
-        onClick={() => setzeMenue(true)}
-      >
-        ☰
-      </button>
-      {offen && Oberwelt && stand ? (
-        <Oberwelt wert={wert} />
+      {/* Im Hauptmenü stehen Einstellungen und der Weg zur App als eigene Knöpfe. */}
+      {!imMenue && (
+        <button
+          type="button"
+          className="abenteuer-menueknopf"
+          aria-label={t("abenteuer.menue")}
+          data-testid="abenteuer-menueknopf"
+          onClick={() => setzeMenue(true)}
+        >
+          ☰
+        </button>
+      )}
+      {inWelt ? (
+        <Oberwelt key={platzkennung(stand)} wert={wert} />
+      ) : imMenue ? (
+        <Hauptmenue
+          plaetze={plaetze.plaetze}
+          bilder={paket.da}
+          wege={{
+            beiFortsetzen: setzeFort,
+            beiNeu: () => setzeAnsicht("neu"),
+            beiLoeschen: (kennung) => void plaetze.loesche(kennung),
+            beiEinstellungen: () => setzeMenue(true),
+            beiZurApp: zurApp,
+          }}
+        />
       ) : (
         <Startkarte
-          zustand={zustand}
-          geprueft={geprueft}
-          name={stand ? null : neuerName}
+          zustand={paket.zustand}
+          geprueft={paket.geprueft}
+          name={neu ? neuerName : null}
           beiName={setzeNeuenNamen}
           figur={neueFigur}
           beiFigur={setzeNeueFigur}
           rivalin={neueRivalin}
           beiRivalin={setzeNeueRivalin}
-          beiLaden={lade}
-          beiStart={starte}
+          beiLaden={paket.lade}
+          beiStart={neu || !stand ? starteNeu : () => einstieg.oeffneWelt(platzkennung(stand))}
+          beiZurueck={
+            ansicht === "neu" && plaetze.plaetze.length > 0
+              ? () => setzeAnsicht("menue")
+              : undefined
+          }
         />
       )}
       <Ladestand />
       {menue && (
         <Spielmenue
-          heldname={stand?.held.name ?? null}
+          heldname={inWelt ? stand.held.name : null}
           figur={stand?.held.figur ?? ERSATZFIGUR}
           rivalin={rivalinGewaehlt(stand?.dialogvariablen ?? {})}
           beiSchliessen={() => setzeMenue(false)}
-          beiZurueck={zurueck}
+          beiZurueck={zurApp}
           beiName={benenneUm}
-          beiNeuBeginnen={beginneNeu}
+          beiHauptmenue={
+            inWelt
+              ? () => {
+                  setzeMenue(false);
+                  einstieg.zumHauptmenue();
+                }
+              : undefined
+          }
           beiLoeschen={loesche}
+        />
+      )}
+      {startbild && (
+        <Startbild
+          figur={plaetze.plaetze[0]?.stand.held.figur ?? ERSATZFIGUR}
+          bilder={paket.da}
+          beiEnde={() => setzeStartbild(false)}
         />
       )}
     </div>

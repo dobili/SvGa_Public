@@ -111,7 +111,7 @@ function liesLageImBrowser(): Lage {
       ? "aufgaben"
       : da("abenteuer-welt")
         ? "welt"
-        : da("abenteuer-start")
+        : da("abenteuer-start") || da("abenteuer-hauptmenue") || da("abenteuer-startbild")
           ? "start"
           : da("abenteuer")
             ? "abenteuer"

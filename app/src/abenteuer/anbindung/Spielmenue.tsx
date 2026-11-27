@@ -1,9 +1,11 @@
 /**
  * Das Spielmenü des Abenteuers (ausgelagert aus AbenteuerAnsicht.tsx, 22.11.2026): der einzige
- * Rückweg in die App, dazu der Name des Helden, neu beginnen, Einstellungen und Paket löschen
- * (Schritt 8g). Held oder Heldin und Rivale oder Rivalin stehen hier nur noch zur Ansicht: Beides
- * wählt der Leser beim Start und behält es für das ganze Spiel (Wunsch des Autors, 24.11.2026);
- * neu wählen geht nur über „Neu beginnen“.
+ * Rückweg in die App, dazu der Name des Helden, der Weg ins Hauptmenü, Einstellungen und Paket
+ * löschen (Schritt 8g). Held oder Heldin und Rivale oder Rivalin stehen hier nur noch zur Ansicht:
+ * Beides wählt der Leser beim Start und behält es für das ganze Spiel (Wunsch des Autors,
+ * 24.11.2026); neu wählen geht über ein neues Spiel im Hauptmenü. „Von vorn beginnen“ (löschte den
+ * einen Spielstand) ist seit den Speicherplätzen (27.11.2026) der Punkt „Hauptmenü“: Dort beginnt
+ * ein neues Spiel auf einem neuen Platz, und Löschen geht in der Ladeliste.
  * Abhängigkeiten: app/blattstapel.ts (Zurück-Taste schließt das Menü), i18n, Startkarte.tsx
  * (Namensfeld), Menueeinstellungen.tsx.
  */
@@ -25,7 +27,7 @@ function wahlsatz(figur: Heldfigur, rivalin: boolean): string {
   });
 }
 
-/** Das Spielmenü: Rückweg in die App, Name, Wahl beim Start (nur Ansicht), neu beginnen, Warten, Steuerkreuz, Ton, Paket löschen. */
+/** Das Spielmenü: Rückweg in die App, Name, Wahl beim Start (nur Ansicht), Hauptmenü, Warten, Steuerkreuz, Ton, Paket löschen. */
 export function Spielmenue({
   heldname,
   figur,
@@ -33,7 +35,7 @@ export function Spielmenue({
   beiSchliessen,
   beiZurueck,
   beiName,
-  beiNeuBeginnen,
+  beiHauptmenue,
   beiLoeschen,
 }: {
   /** Aktueller Name des Helden; null ohne Spielstand. */
@@ -45,12 +47,12 @@ export function Spielmenue({
   beiSchliessen: () => void;
   beiZurueck: () => void;
   beiName: (name: string) => void;
-  beiNeuBeginnen: () => void;
+  /** Zurück ins Hauptmenü (nur in der Welt); der Stand ist schon gespeichert. */
+  beiHauptmenue?: () => void;
   beiLoeschen: () => void;
 }) {
   useZurueckSchliesst(true, beiSchliessen);
   const [name, setzeName] = useState(heldname ?? "");
-  const [neuFrage, setzeNeuFrage] = useState(false);
   return (
     <section
       className="abenteuer-menue"
@@ -77,19 +79,14 @@ export function Spielmenue({
             </button>
           )}
           <p data-testid="abenteuer-wahlanzeige">{wahlsatz(figur, rivalin)}</p>
-          {neuFrage ? (
-            <p className="abenteuer-neu-frage">
-              {t("abenteuer.neuBeginnenFrage")}
-              <button type="button" className="knopf-zweit" onClick={beiNeuBeginnen}>
-                {t("abenteuer.neuBeginnenJa")}
-              </button>
-              <button type="button" className="knopf-zweit" onClick={() => setzeNeuFrage(false)}>
-                {t("abenteuer.neuBeginnenNein")}
-              </button>
-            </p>
-          ) : (
-            <button type="button" className="knopf-zweit" onClick={() => setzeNeuFrage(true)}>
-              {t("abenteuer.neuBeginnen")}
+          {beiHauptmenue && (
+            <button
+              type="button"
+              className="knopf-zweit"
+              data-testid="abenteuer-zum-hauptmenue"
+              onClick={beiHauptmenue}
+            >
+              {t("abenteuer.hauptmenue")}
             </button>
           )}
         </>

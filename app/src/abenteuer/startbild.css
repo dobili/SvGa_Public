@@ -1,0 +1,401 @@
+/*
+ * Startbild des Schach-Abenteuers (anbindung/Startbild.tsx, Wunsch des Autors, 27.11.2026): Brett
+ * in der Dämmerung, das zum Weg wird, Held und Ambrose ziehen los, Ortsschilder, Titel.
+ *
+ * Zeitplan (gesamt 3,9 s, STARTBILD_MS): 0 bis 0,9 s Brett erscheint, 0,9 bis 1,6 s kippt es und
+ * streckt sich zum Weg, ab 1,2 s laufen die Felder des Wegs, ab 1,3 s gehen die Figuren hinein, ab
+ * 1,5 s ziehen die Schilder vorbei, ab 2,2 s der Titel, ab 3,5 s blendet alles aus.
+ * Farben aus spielfarben.css (Navy, Pergament, Gold); Pixelschrift für Titel und Schilder. Bei
+ * „Bewegung reduzieren“ (.startbild-still) steht alles im Endbild still.
+ * Mit Paket liegt dahinter das Panorama der Reise (unten, .startbild-mit-panorama).
+ * Rolle im Gesamtbild: liegt über Startkarte und Hauptmenü (z-index über dem Menüknopf).
+ */
+.startbild {
+  --startbild-feld: clamp(14px, 5vmin, 34px);
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  /* Grundfarbe unter dem Verlauf: für Kontrastprüfungen und falls der Verlauf fehlt. */
+  background-color: var(--spiel-navy);
+  background-image: linear-gradient(
+    180deg,
+    var(--spiel-navy-tief) 0%,
+    var(--spiel-navy) 45%,
+    var(--spiel-blau-tief) 70%
+  );
+  color: var(--spiel-creme);
+  font-family: var(--spiel-pixelschrift);
+  cursor: pointer;
+  animation: startbild-aus 3.9s ease-in forwards;
+}
+
+.startbild:focus-visible {
+  outline: 3px solid var(--spiel-gold);
+  outline-offset: -3px;
+}
+
+.startbild > span {
+  position: absolute;
+  display: block;
+}
+
+.startbild-himmel {
+  inset: 0 0 35%;
+}
+
+/* Die Sonne geht hinter dem Weg auf: der Morgen der Abreise. */
+.startbild-sonne {
+  position: absolute;
+  left: 62%;
+  bottom: -18%;
+  width: 40vmin;
+  height: 40vmin;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--spiel-gold) 0 34%, transparent 70%);
+  opacity: 0.85;
+  animation: startbild-sonne 3.9s ease-out forwards;
+}
+
+/* Pixelsterne als Schatten eines Punktes, sie verblassen mit dem Morgen. */
+.startbild-sterne {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 3px;
+  background: var(--spiel-creme);
+  box-shadow:
+    12vw 8vh var(--spiel-creme),
+    27vw 18vh var(--spiel-creme),
+    41vw 6vh var(--spiel-creme),
+    58vw 14vh var(--spiel-creme),
+    73vw 5vh var(--spiel-creme),
+    88vw 20vh var(--spiel-creme),
+    8vw 27vh var(--spiel-creme),
+    66vw 30vh var(--spiel-creme),
+    93vw 9vh var(--spiel-creme);
+  animation: startbild-sterne 3.9s linear forwards;
+}
+
+.startbild-land {
+  inset: 65% 0 0;
+  background: var(--spiel-gruen-tief);
+  box-shadow: 0 calc(var(--spiel-pixel) * -1) 0 var(--spiel-gruen);
+}
+
+/* Der Weg: zwei Reihen Felder im Muster des Bretts, die nach links laufen (der Held geht vorwärts). */
+.startbild-weg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 18%;
+  height: calc(var(--startbild-feld) * 2);
+  background-color: var(--spiel-pergament);
+  background-image: conic-gradient(
+    var(--spiel-pergament-tief) 0 25%,
+    transparent 0 50%,
+    var(--spiel-pergament-tief) 0 75%,
+    transparent 0
+  );
+  background-size: calc(var(--startbild-feld) * 2) calc(var(--startbild-feld) * 2);
+  box-shadow:
+    0 var(--spiel-pixel) 0 var(--spiel-gold-tief),
+    0 calc(var(--spiel-pixel) * -1) 0 var(--spiel-gold-tief);
+  opacity: 0;
+  animation:
+    startbild-weg-da 0.7s 0.9s steps(4) forwards,
+    startbild-weg-laeuft 0.5s 1.2s linear infinite;
+}
+
+/* Das Brett vom Dachboden: erscheint, kippt nach hinten und streckt sich zum Weg. */
+.startbild-brett {
+  position: absolute;
+  left: 50%;
+  bottom: calc(82% - var(--startbild-feld) * 2);
+  display: grid;
+  grid-template-columns: repeat(8, var(--startbild-feld));
+  grid-auto-rows: var(--startbild-feld);
+  background: var(--spiel-pergament);
+  box-shadow:
+    0 0 0 var(--spiel-pixel) var(--spiel-gold-tief),
+    0 0 0 calc(var(--spiel-pixel) * 2) var(--spiel-navy-tief);
+  transform-origin: 50% 100%;
+  translate: -50% 0;
+  animation: startbild-brett 1.6s steps(12) forwards;
+}
+
+.startbild-brett > .startbild-feld-dunkel {
+  background: var(--spiel-pergament-tief);
+}
+
+/* Ortsschilder: ein Brett am Pfahl, von rechts nach links am Weg vorbei. */
+.startbild-schilder {
+  position: absolute;
+  inset: 0;
+}
+
+/* Die Schilder stehen am Wegrand hinter den Reisenden: Brett über dem Weg, Pfahl bis an ihn. */
+.startbild-schild {
+  position: absolute;
+  left: 100%;
+  bottom: calc(82% + var(--startbild-feld) * 1.4);
+  padding: 0.3em 0.6em;
+  background: var(--spiel-pergament);
+  color: var(--spiel-navy);
+  font-size: clamp(12px, 3.6vmin, 22px);
+  white-space: nowrap;
+  box-shadow:
+    0 0 0 var(--spiel-pixel) var(--spiel-gold-tief),
+    0 0 0 calc(var(--spiel-pixel) * 2) var(--spiel-navy-tief);
+  animation: startbild-schild 1.6s linear forwards;
+}
+
+.startbild-schild::after {
+  content: "";
+  position: absolute;
+  left: calc(50% - var(--spiel-pixel));
+  top: 100%;
+  width: calc(var(--spiel-pixel) * 2);
+  height: calc(var(--startbild-feld) * 1.4);
+  background: var(--spiel-gold-tief);
+}
+
+.startbild-schild-1 {
+  animation-delay: 1.4s;
+}
+.startbild-schild-2 {
+  animation-delay: 1.85s;
+}
+.startbild-schild-3 {
+  animation-delay: 2.3s;
+}
+.startbild-schild-4 {
+  animation-delay: 2.75s;
+}
+
+/* Held vorn, Ambrose halb durchsichtig dahinter und etwas höher (er schwebt). */
+.startbild-reisende {
+  position: absolute;
+  left: 0;
+  bottom: calc(82% - var(--startbild-feld) * 1.2);
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  translate: -60vw 0;
+  animation: startbild-reisende 1.4s 1.3s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+}
+
+.startbild-geist {
+  animation: startbild-schweben 1.2s ease-in-out infinite alternate;
+}
+
+.startbild > .startbild-titel {
+  left: 0;
+  right: 0;
+  top: 16%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0 16px;
+  text-align: center;
+  opacity: 0;
+  animation: startbild-titel 0.8s 2.2s steps(6) forwards;
+}
+
+.startbild-titelzeile {
+  color: var(--spiel-gold);
+  font-size: clamp(26px, 9vw, 64px);
+  line-height: 1;
+  text-shadow:
+    var(--spiel-pixel) var(--spiel-pixel) 0 var(--spiel-navy-tief),
+    calc(var(--spiel-pixel) * 2) calc(var(--spiel-pixel) * 2) 0 var(--spiel-gold-tief);
+}
+
+.startbild-untertitel {
+  font-size: clamp(14px, 4vmin, 24px);
+}
+
+.startbild-hinweis {
+  left: 0;
+  right: 0;
+  bottom: calc(env(safe-area-inset-bottom) + 12px);
+  text-align: center;
+  font-family: var(--schrift-text, sans-serif);
+  font-size: 13px;
+  color: var(--spiel-creme);
+  opacity: 0;
+  animation: startbild-einblenden 0.4s 0.6s forwards;
+}
+
+@keyframes startbild-aus {
+  0%,
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes startbild-sonne {
+  from {
+    translate: 0 30%;
+    opacity: 0.3;
+  }
+}
+
+@keyframes startbild-sterne {
+  to {
+    opacity: 0.15;
+  }
+}
+
+@keyframes startbild-brett {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  45% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: perspective(300px) rotateX(80deg) scaleX(4);
+  }
+}
+
+@keyframes startbild-weg-da {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes startbild-weg-laeuft {
+  to {
+    background-position-x: calc(var(--startbild-feld) * -2);
+  }
+}
+
+@keyframes startbild-schild {
+  to {
+    left: -40%;
+  }
+}
+
+@keyframes startbild-reisende {
+  to {
+    translate: 30vw 0;
+  }
+}
+
+@keyframes startbild-schweben {
+  to {
+    translate: 0 -8px;
+  }
+}
+
+@keyframes startbild-titel {
+  from {
+    opacity: 0;
+    translate: 0 -12px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes startbild-einblenden {
+  to {
+    opacity: 0.8;
+  }
+}
+
+/* Bewegung reduzieren: das Endbild, still (Weg liegt, Figuren stehen, Titel steht). */
+.startbild-still,
+.startbild-still * {
+  animation: none !important;
+}
+
+.startbild-still .startbild-brett {
+  display: none;
+}
+
+.startbild-still :is(.startbild-weg, .startbild-titel, .startbild-hinweis) {
+  opacity: 1;
+}
+
+.startbild-still .startbild-reisende {
+  translate: 30vw 0;
+}
+
+.startbild-still .startbild-schild-4 {
+  left: 62%;
+}
+
+/*
+ * Mit Panorama der Reise (bilder/startbild-reise.webp im Paket): Es füllt die Höhe und schwenkt
+ * von Maple Falls bis zur Arena; Himmel und Land des Startbilds treten zurück, der Weg liegt auf
+ * dem Wiesenstreifen im unteren Viertel des Bildes.
+ */
+.startbild-panorama {
+  inset: 0;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: 0% 50%;
+  image-rendering: pixelated;
+  animation:
+    startbild-einblenden-voll 0.5s steps(4) both,
+    startbild-schwenk 3.9s ease-in-out forwards;
+}
+
+.startbild-mit-panorama :is(.startbild-sonne, .startbild-sterne) {
+  display: none;
+}
+
+.startbild-mit-panorama .startbild-land {
+  inset: 75% 0 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.startbild-mit-panorama .startbild-weg {
+  top: 22%;
+}
+
+.startbild-mit-panorama .startbild-schild {
+  bottom: calc(78% + var(--startbild-feld) * 1.4);
+}
+
+.startbild-mit-panorama .startbild-reisende {
+  bottom: calc(78% - var(--startbild-feld) * 1.2);
+}
+
+.startbild-mit-panorama .startbild-brett {
+  bottom: calc(78% - var(--startbild-feld) * 2);
+}
+
+@keyframes startbild-schwenk {
+  to {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes startbild-einblenden-voll {
+  from {
+    opacity: 0;
+  }
+}
+
+.startbild-still .startbild-panorama {
+  background-position: 100% 50%;
+}

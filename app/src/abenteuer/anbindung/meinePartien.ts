@@ -38,6 +38,17 @@ function halbzuegeVon(p: Spielstand["partien"][number]["partie"]): number {
 }
 
 /**
+ * Gehört die Partie zu diesem Spieldurchlauf? Mit Platzangabe (seit 27.11.2026, mehrere
+ * Spielstände, speicherplaetze.ts) genau dann, wenn sie der Beginn ist; ältere Partien ohne Angabe,
+ * wenn sie danach begannen. Ohne `seit` alle.
+ */
+function imDurchlauf(p: Spielstand["partien"][number]["partie"], seit: string | null): boolean {
+  if (seit === null) return true;
+  const platz = p.einstellung.abenteuer?.spielstand;
+  return platz !== undefined ? platz === seit : p.begonnen >= seit;
+}
+
+/**
  * Die beendeten Partien des Abenteuers, neueste zuerst.
  *
  * Warum nur beendete: Die laufende Partie setzt der Leser über „Weiterspielen“ fort; hier geht es
@@ -58,7 +69,7 @@ export function meinePartien(
 ): Partiezeile[] {
   return spiel.partien
     .map((e) => e.partie)
-    .filter((p) => p.einstellung.abenteuer && p.ende && (seit === null || p.begonnen >= seit))
+    .filter((p) => p.einstellung.abenteuer && p.ende && imDurchlauf(p, seit))
     .slice(0, hoechstens)
     .map((p) => ({
       id: p.id,

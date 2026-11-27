@@ -28,10 +28,33 @@ const TESTSCHALTER_OHNE_MAIA = "__abenteuerOhneMaia";
  * und in weiteren Tabs (addInitScript am Kontext), und sofort in der offenen Seite. Das echte
  * Spiel lädt Maia immer; ohne Maia spielt der Bot wie vor dem Ende des Ladens.
  */
-export async function ohneMaiaImHintergrund(seite: Page): Promise<void> {
+export async function ohneMaiaImHintergrund(
+  seite: Page,
+  { mitHauptmenue = false }: { readonly mitHauptmenue?: boolean } = {},
+): Promise<void> {
   const setze = (name: string) => Reflect.set(window, name, true);
   await seite.context().addInitScript(setze, TESTSCHALTER_OHNE_MAIA);
   await seite.evaluate(setze, TESTSCHALTER_OHNE_MAIA);
+  // Wer Maia abschaltet, testet das Spiel, nicht den Einstieg (Hauptmenü, 27.11.2026).
+  if (!mitHauptmenue) await ohneHauptmenue(seite);
+}
+
+/** Wie TESTSCHALTER_OHNE_HAUPTMENUE in anbindung/spielsitzung.ts. */
+const TESTSCHALTER_OHNE_HAUPTMENUE = "__abenteuerOhneHauptmenue";
+
+/**
+ * Ein vorhandener Spielstand führt gleich in die Welt, ohne Startbild und Hauptmenü (seit
+ * 27.11.2026), für alle Seiten des Tests, auch nach Neuladen. Ein schon laufendes Startbild wird
+ * weggetippt. Die meisten Tests prüfen das Spiel, nicht den Einstieg; abenteuer-hauptmenue.spec.ts
+ * prüft den Einstieg ohne diesen Schalter.
+ */
+export async function ohneHauptmenue(seite: Page): Promise<void> {
+  const setze = (name: string) => {
+    Reflect.set(window, name, true);
+    document.querySelector<HTMLElement>("[data-testid='abenteuer-startbild']")?.click();
+  };
+  await seite.context().addInitScript(setze, TESTSCHALTER_OHNE_HAUPTMENUE);
+  await seite.evaluate(setze, TESTSCHALTER_OHNE_HAUPTMENUE);
 }
 
 /** Wie MERKER_AUTORGERAET in autor/autorgeraet.ts, mit der Vorsilbe aus app/merker.ts. */
@@ -54,15 +77,20 @@ export async function alsAutorgeraet(seite: Page): Promise<void> {
  * die Zeit des Tests um die Paketfrist. Eingabe: Seite und optional der Knopf (Vorgabe: der
  * Knopf „abenteuer-laden“). Das Gerät gilt als Gerät des Autors (alsAutorgeraet, für die
  * Testleiste). Ohne `mitMaia` lädt Maia nicht im Hintergrund (ohneMaiaImHintergrund);
- * mit `mitMaia` wie im echten Spiel, und der Test wartet auch darauf.
+ * mit `mitMaia` wie im echten Spiel, und der Test wartet auch darauf. Ohne `mitHauptmenue` führt
+ * ein vorhandener Spielstand gleich in die Welt (ohneHauptmenue).
  */
 export async function ladeAbenteuerpaket(
   seite: Page,
   knopf?: Locator,
-  { mitMaia = false }: { readonly mitMaia?: boolean } = {},
+  {
+    mitMaia = false,
+    mitHauptmenue = false,
+  }: { readonly mitMaia?: boolean; readonly mitHauptmenue?: boolean } = {},
 ): Promise<void> {
   test.info().setTimeout(test.info().timeout + PAKET_FRIST_MS);
-  if (!mitMaia) await ohneMaiaImHintergrund(seite);
+  if (!mitMaia) await ohneMaiaImHintergrund(seite, { mitHauptmenue });
+  else if (!mitHauptmenue) await ohneHauptmenue(seite);
   await alsAutorgeraet(seite);
   await (knopf ?? seite.getByTestId("abenteuer-laden")).click();
   const balken = seite.locator(".abenteuer-fortschritt");

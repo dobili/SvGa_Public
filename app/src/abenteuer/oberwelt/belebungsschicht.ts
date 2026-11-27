@@ -122,15 +122,14 @@ export function ladeBelebungsbilder(
     if (v.typ === "statist") {
       const pfad = statistenbild(v);
       const adresse = bilder[pfad];
-      if (adresse && !szene.textures.exists(statistenbogen(pfad))) {
-        ladeFigurbogen(szene, statistenbogen(pfad), adresse);
-      }
+      // Auch schon geladene Bögen: der Texturspeicher überspringt sie (texturanbindung.ts).
+      if (adresse) ladeFigurbogen(szene, statistenbogen(pfad), adresse);
       continue;
     }
     const art = tierartVon(v.name, v.bild);
     const adresse = art ? bilder[tierpfad(art)] : undefined;
     const masse = art ? TIERBILDER[art] : undefined;
-    if (!art || !adresse || !masse || szene.textures.exists(tierbogen(art))) continue;
+    if (!art || !adresse || !masse) continue;
     szene.load.spritesheet(tierbogen(art), adresse, {
       frameWidth: masse.breite,
       frameHeight: masse.hoehe,

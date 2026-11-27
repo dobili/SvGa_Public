@@ -769,6 +769,16 @@ Profil › Einstellungen › Fehler melden.
       seit Mitte November mehr Belohnungen dazukamen (Widerspruch genügt). Fühlt sich das Sparen
       in Akt 3 und 4 noch gut an?
       **Antwort:** „N2742 ok“ oder was hängt oder zu teuer wirkt.
+- [ ] N2743. **Schnellerer Kartenwechsel, ein Spiel für die ganze Oberwelt (27.11.2026):** Beim
+      Wechsel von Karte zu Karte wird nicht mehr das ganze Spiel neu aufgebaut, nur die Karte;
+      Figuren, Kacheln und Bilder, die schon da waren, bleiben geladen. Am Rechner war die neue
+      Karte etwa doppelt so schnell da (gedrosselt wie ein schwaches Handy 1,8 s → 0,8 s), und der
+      Held läuft sofort flüssig. Bitte auf dem iPhone in Maple Falls ein paar Mal Haus, Park und
+      Clubraum wechseln, dann eine Partie spielen und zurück in die Stadt: Kommt jede Karte schnell
+      und richtig (Hintergrund, Figuren, Winterfarben), stockt oder flackert etwas, oder bleibt ein
+      Bild der alten Karte stehen? Nach längerem Spielen (eine halbe Stunde) bitte darauf achten,
+      ob Safari die Seite neu lädt (Speicher).
+      **Antwort:** „N2743 ok“ oder welche Karte falsch oder langsam kam.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

@@ -1,7 +1,8 @@
 /**
  * Welt laden und Phaser starten, je Karte des Spielstands: erster Besuch eines Ortes (W2), Quest-
  * Ereignis „Karte betreten“, Tönung, Laterne und Fahrrad; beim Verlassen Position und Spielzeit
- * sichern und Phaser beenden.
+ * sichern und die Karte abbauen. Das Phaser-Spiel bleibt über alle Karten dasselbe
+ * (oberweltspiel.ts); beim Verlassen der Oberwelt schläft es.
  *
  * Rolle im Gesamtbild: Ausgelagert aus oberwelt/Oberwelt.tsx (Aufteilen, Schritt 6). Arbeitet auf
  * dem gemeinsamen Kern (kern.ts); was beim Betreten noch geschehen soll (Ergebnisse melden, die auf
@@ -18,11 +19,12 @@ import { istTeilchenart } from "./teilchen";
 import { tonregie } from "../ton/tonregie";
 import { ladeNachbarmusikVorab } from "../ton/vorabladen";
 import { useEffect, useState, type RefObject } from "react";
+import type Phaser from "phaser";
 import { variablenAusBesitz, variablenNachBesuch } from "../regeln/dialogvariablen";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
 import { fehlertext } from "../texte/texte";
 import { szeneAus, type Oberweltkern } from "./kern";
-import { beendeOberwelt, starteOberwelt } from "./oberweltspiel";
+import { legeSchlafen, raeumeKarteAb, zeigeKarte } from "./oberweltspiel";
 import { KACHEL, type Ausloesertreffer } from "./szene";
 import { phase, stundeJetzt } from "../regeln/spieluhr";
 import { toenungJetzt } from "./uhrtoenung";
@@ -82,7 +84,10 @@ function merkeAbbau(k: Oberweltkern, karte: string): void {
   if (figuren) merkeAufstellung({ karte, figuren });
 }
 
-/** Startet Phaser für eine geladene Welt. */
+/**
+ * Zeigt eine geladene Welt im Phaser-Spiel der Oberwelt. Ausgabe: Abmelden der Hörer, die diese
+ * Karte am Spiel angemeldet hat (das Spiel lebt länger als die Karte).
+ */
 function starteSpiel(
   k: Oberweltkern,
   a: Weltanschluss,
@@ -90,9 +95,9 @@ function starteSpiel(
   stand: Abenteuerstand,
   moebel: Readonly<Record<string, Sperrangabe>>,
   vorher: Aufstellung | null,
-) {
+): () => void {
   const rahmen = a.rahmen.current;
-  if (!rahmen) return;
+  if (!rahmen) return () => undefined;
   const uebergaenge = w.ort.ausloeser
     .filter((x) => x.art === "uebergang" && (!x.karte || x.karte === w.kennung))
     .map((x) => x.name);
@@ -119,55 +124,60 @@ function starteSpiel(
   );
   // Musik lädt erst beim Abspielen; die der Nachbarkarten schon jetzt (ton/vorabladen.ts).
   void ladeNachbarmusikVorab(w.kennung, w.karte, tonregie.hoerbar);
-  const spiel = starteOberwelt(rahmen, {
-    karte: w.karte,
-    kachelbild: w.kachelbild,
-    heldbild: w.heldbild,
-    figurbild: w.figurbild,
-    heldfigur: w.heldfigur,
-    figurenbilder: w.figurenbilder,
-    begleiter: w.begleiter,
-    figurstandbilder: w.figurstandbilder,
-    geister: w.geister,
-    moebel: w.moebel,
-    hintergrund: w.hintergrund,
-    belebungsbilder: w.belebungsbilder,
-    toenung,
-    // Statisten nach der Spieluhr (regeln/spieluhr.ts), nur beim Aufbau der Karte.
-    stunde: stundeJetzt(stand),
-    // Teilchen der Karte aus orte.json (T8); Winterkarten haben Schnee.
-    teilchen: istTeilchenart(eintrag?.teilchen) ? eintrag.teilchen : null,
-    // Wer hereinkommt, hinausgeht oder wartet (auftrittsschicht.ts).
-    auftritt: auftrittFuer(w, vorher),
-    laterne: stand.gegenstaende.includes(LATERNE),
-    jahreszeit: w.jahreszeit,
-    kachelsatz: KACHELSATZ,
-    start,
-    // Übergänge dieser Karte: Sie wechseln erst beim Gehen in den Durchgang (R060).
-    uebergaenge,
-    // Fahrrad (docs/spiel/08, W3): doppeltes Tempo draußen.
-    tempofaktor: !w.innen && stand.gegenstaende.includes(FAHRRAD) ? FAHRRAD_TEMPO : 1,
-    // Rennen draußen zu Fuß (Wunsch des Autors, 21.11.2026; gangart.ts).
-    rennenErlaubt: !w.innen && !stand.gegenstaende.includes(FAHRRAD),
-    // Figuren innen größer (Wunsch des Autors, 20.11.2026; weltmassstab.ts).
-    figurfaktor: w.innen ? INNEN_FIGURFAKTOR : 1,
-    melder: {
-      beiAusloeser: a.beiTreffer,
-      beiKachel: (x, y) => {
-        if (a.kachelanzeige.current) a.kachelanzeige.current.textContent = `${x},${y}`;
-        tonregie.heldBei(x, y);
-      },
-      // An der Welt: Hinweise und Meldungen legen sich an den Rand fern vom Helden (CSS).
-      beiHeldhaelfte: (h) => a.kachelanzeige.current?.parentElement?.setAttribute("data-held", h),
-    },
-  });
-  k.spiel.current = spiel;
   // Für Prüfungen: Stunde und aufgestellte Statisten an der Welt (Spieluhr, belebungsschicht.ts).
+  // Der Hörer kommt vor den Start der Szene: Liegt alles im Texturspeicher, meldet sie sofort.
   const welt = rahmen.parentElement;
   welt?.setAttribute("data-stunde", String(stundeJetzt(stand)));
-  spiel.events.on(BELEBUNG_EREIGNIS, (namen: string[]) =>
-    welt?.setAttribute("data-statisten", namen.join(",")),
+  const statisten = (namen: string[]) => welt?.setAttribute("data-statisten", namen.join(","));
+  const anmelden = (s: Phaser.Game) => s.events.on(BELEBUNG_EREIGNIS, statisten);
+  const spiel = zeigeKarte(
+    rahmen,
+    {
+      karte: w.karte,
+      kachelbild: w.kachelbild,
+      heldbild: w.heldbild,
+      figurbild: w.figurbild,
+      heldfigur: w.heldfigur,
+      figurenbilder: w.figurenbilder,
+      begleiter: w.begleiter,
+      figurstandbilder: w.figurstandbilder,
+      geister: w.geister,
+      moebel: w.moebel,
+      hintergrund: w.hintergrund,
+      belebungsbilder: w.belebungsbilder,
+      toenung,
+      // Statisten nach der Spieluhr (regeln/spieluhr.ts), nur beim Aufbau der Karte.
+      stunde: stundeJetzt(stand),
+      // Teilchen der Karte aus orte.json (T8); Winterkarten haben Schnee.
+      teilchen: istTeilchenart(eintrag?.teilchen) ? eintrag.teilchen : null,
+      // Wer hereinkommt, hinausgeht oder wartet (auftrittsschicht.ts).
+      auftritt: auftrittFuer(w, vorher),
+      laterne: stand.gegenstaende.includes(LATERNE),
+      jahreszeit: w.jahreszeit,
+      kachelsatz: KACHELSATZ,
+      start,
+      // Übergänge dieser Karte: Sie wechseln erst beim Gehen in den Durchgang (R060).
+      uebergaenge,
+      // Fahrrad (docs/spiel/08, W3): doppeltes Tempo draußen.
+      tempofaktor: !w.innen && stand.gegenstaende.includes(FAHRRAD) ? FAHRRAD_TEMPO : 1,
+      // Rennen draußen zu Fuß (Wunsch des Autors, 21.11.2026; gangart.ts).
+      rennenErlaubt: !w.innen && !stand.gegenstaende.includes(FAHRRAD),
+      // Figuren innen größer (Wunsch des Autors, 20.11.2026; weltmassstab.ts).
+      figurfaktor: w.innen ? INNEN_FIGURFAKTOR : 1,
+      melder: {
+        beiAusloeser: a.beiTreffer,
+        beiKachel: (x, y) => {
+          if (a.kachelanzeige.current) a.kachelanzeige.current.textContent = `${x},${y}`;
+          tonregie.heldBei(x, y);
+        },
+        // An der Welt: Hinweise und Meldungen legen sich an den Rand fern vom Helden (CSS).
+        beiHeldhaelfte: (h) => a.kachelanzeige.current?.parentElement?.setAttribute("data-held", h),
+      },
+    },
+    anmelden,
   );
+  k.spiel.current = spiel;
+  return () => spiel.events.off(BELEBUNG_EREIGNIS, statisten);
 }
 
 /** Beim Verlassen einer Karte: Position, Spielzeit (gesamt und je Ort) und Zeitpunkt sichern. */
@@ -193,8 +203,8 @@ function sichereSitzung(k: Oberweltkern, karte: string, begonnen: number): void 
 
 /**
  * Lädt die Welt zur Karte des Spielstands; gibt einen Ladefehler zurück (oder null).
- * Beispiel: Kartenwechsel von „mapleFalls.aussen“ nach „mapleFalls.club“ beendet Phaser, sichert
- * die Spielzeit in Maple Falls und startet die neue Karte.
+ * Beispiel: Kartenwechsel von „mapleFalls.aussen“ nach „mapleFalls.club“ baut die Szene ab, sichert
+ * die Spielzeit in Maple Falls und startet die Szene der neuen Karte im selben Spiel.
  */
 export function useWeltladen(k: Oberweltkern, a: Weltanschluss): string | null {
   const [fehler, setzeFehler] = useState<string | null>(null);
@@ -204,6 +214,7 @@ export function useWeltladen(k: Oberweltkern, a: Weltanschluss): string | null {
     const stand = k.stand;
     if (!stand || !karte) return;
     let aktiv = true;
+    let abmelden: (() => void) | null = null;
     // Beginn dieser Sitzung in der Welt, für die Spielzeit im Spielstand.
     let begonnen = Date.now();
     // Geht die App in den Hintergrund (Handy weggelegt, App gewechselt), sichern wir die Position
@@ -231,7 +242,7 @@ export function useWeltladen(k: Oberweltkern, a: Weltanschluss): string | null {
         // Karte betreten (Quests), dann Ergebnisse, die auf die Welt gewartet haben.
         k.melde({ art: "ort", karte: w.kennung }, w);
         a.beiWelt(w);
-        starteSpiel(k, a, w, stand, moebel, vorher);
+        abmelden = starteSpiel(k, a, w, stand, moebel, vorher);
       })
       .catch((f: unknown) => setzeFehler(fehlertext(f)));
     return () => {
@@ -239,7 +250,8 @@ export function useWeltladen(k: Oberweltkern, a: Weltanschluss): string | null {
       document.removeEventListener("visibilitychange", beiSichtwechsel);
       sichereSitzung(k, karte, begonnen);
       merkeAbbau(k, karte);
-      if (k.spiel.current) beendeOberwelt(k.spiel.current);
+      abmelden?.();
+      if (k.spiel.current) raeumeKarteAb(k.spiel.current);
       k.spiel.current = null;
     };
     // Nur die Karte zählt: Ein Kartenwechsel baut die Welt neu auf, alles andere nicht; dazu das
@@ -247,5 +259,10 @@ export function useWeltladen(k: Oberweltkern, a: Weltanschluss): string | null {
     // von Held oder Heldin im Spielmenü (neuer Bogen auf derselben Karte).
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [karte, k.aufbau, figur]);
+  // Die Oberwelt verlässt den Bildschirm (Partie, Startkarte): das Spiel schläft, statt zu enden.
+  // Nach dem Effekt oben angemeldet, damit dessen Abbau (Position sichern) vorher läuft.
+  useEffect(() => {
+    return legeSchlafen;
+  }, []);
   return fehler;
 }

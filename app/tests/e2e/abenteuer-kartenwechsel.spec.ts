@@ -56,18 +56,21 @@ function beobachteWechsel(): void {
   const wechsel: { ms: number; kachel: string }[] = [];
   (window as unknown as { __wechsel: typeof wechsel }).__wechsel = wechsel;
   let weg: number | null = null;
-  let leinwand: Element | null = null;
+  // Seit dem 26.11.2026 bleibt die Leinwand über alle Karten dieselbe (oberweltspiel.ts); eine neue
+  // Karte erkennt man an der Nummer ihrer Szene (data-szene).
+  let szene: string | null = null;
   new MutationObserver(() => {
     const kreuz = document.querySelector(".abenteuer-steuerkreuz button");
     const bild = document.querySelector(".abenteuer-welt canvas");
-    if (!kreuz && weg === null && leinwand) weg = performance.now();
-    if (kreuz && bild && weg !== null && bild !== leinwand) {
+    const nummer = bild?.getAttribute("data-szene") ?? null;
+    if (!kreuz && weg === null && szene) weg = performance.now();
+    if (kreuz && bild && weg !== null && nummer !== szene) {
       const kachel = document.querySelector("[data-testid='abenteuer-kachel']")?.textContent;
       wechsel.push({ ms: Math.round(performance.now() - weg), kachel: kachel ?? "" });
       weg = null;
     }
-    if (kreuz && bild) leinwand = bild;
-  }).observe(document, { subtree: true, childList: true });
+    if (kreuz && bild) szene = nummer;
+  }).observe(document, { subtree: true, childList: true, attributes: true });
 }
 
 /** Bilder je Sekunde und längstes Bild über eine Dauer; läuft im Browser. */

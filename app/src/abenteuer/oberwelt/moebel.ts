@@ -158,11 +158,15 @@ export function bildquelle(
   return { pfad: `moebel/${name}.png`, schluessel: `moebel:${name}` };
 }
 
-/** Lädt die Bilder der Möbel in eine Szene, jeden Bogen nur einmal. */
+/**
+ * Lädt die Bilder der Möbel in eine Szene, jeden Bogen nur einmal. Auch schon geladene Bilder gehen
+ * an den Lader: Der Texturspeicher (texturanbindung.ts) überspringt sie dort und merkt sich, dass
+ * diese Karte sie braucht (sonst verdrängte er sie als unbenutzt).
+ */
 export function ladeMoebelbilder(szene: Phaser.Scene, moebel: readonly Moebel[]): void {
   const geladen = new Set<string>();
   for (const m of moebel) {
-    if (geladen.has(m.schluessel) || szene.textures.exists(m.schluessel)) continue;
+    if (geladen.has(m.schluessel)) continue;
     geladen.add(m.schluessel);
     szene.load.image(m.schluessel, m.adresse);
   }

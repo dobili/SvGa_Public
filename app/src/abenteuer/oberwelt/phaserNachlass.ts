@@ -1,7 +1,9 @@
 /**
  * Räumt auf, was Phaser beim Beenden eines Spiels im Dokument zurücklässt.
  *
- * Warum: Jede Karte startet ein eigenes Phaser-Spiel (oberweltspiel.ts). Phaser 4 hängt beim Start
+ * Warum: Bis zum 26.11.2026 startete jede Karte ein eigenes Phaser-Spiel; seitdem gibt es eines je
+ * Sitzung in der Oberwelt (oberweltspiel.ts), das nach dem Verlassen und einer Ruhezeit endet und
+ * beim nächsten Besuch neu startet. Der Baustein bleibt dafür nötig. Phaser 4 hängt beim Start
  * (Game.start → VisibilityHandler) einen namenlosen Hörer „visibilitychange“ an das Dokument und
  * setzt window.onblur/onfocus; beim Beenden (game.destroy) nimmt es beides nicht zurück. Die
  * Ausdauerprüfung (tests/e2e/abenteuer-ausdauer.spec.ts, 19.11.2026) fand so nach 28 Kartenwechseln

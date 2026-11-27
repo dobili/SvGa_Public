@@ -8,6 +8,8 @@
  * (TimeStep.smoothDelta). Genau dann sind die Bilder lang (Texturen laden, Aufbau, langsames Handy),
  * und die Welt lief entsprechend langsamer, statt aufzuholen: bei 30 Bildern je Sekunde mit halbem
  * Tempo, vier Sekunden lang. Messung in tests/e2e/abenteuer-zeitlupe.spec.ts.
+ * Seit dem 26.11.2026 bleibt das Spiel über den Kartenwechsel bestehen (oberweltspiel.ts); die
+ * Einstellung gilt weiter für den ersten Start und nach dem Schlaf (Takt geweckt, Zeit zurückgesetzt).
  * Abhängigkeiten: phaser (nur der Typ).
  */
 import type Phaser from "phaser";

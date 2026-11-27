@@ -56,6 +56,7 @@ import { liesBelebung, type Belebung, type Feld } from "./belebung";
 import { Belebungsschicht, ladeBelebungsbilder } from "./belebungsschicht";
 import { aufgestellteFiguren, richteAuftritteEin, type Auftrittsschicht } from "./auftrittsschicht";
 import type { Szenendaten } from "./szenentypen";
+import { bindeLader, mitAdresse } from "./texturanbindung";
 export type { Ausloesertreffer, Melder, Szenendaten } from "./szenentypen";
 export type Richtung = Weltposition["richtung"];
 
@@ -64,6 +65,7 @@ export const KACHEL = 16;
 const TEMPO = 56;
 const EBENEN = ["boden", "waende", "objekte"] as const;
 const AUSLOESER_EBENE = "ausloeser";
+const KACHELRAHMEN = { frameWidth: KACHEL, frameHeight: KACHEL };
 
 /** Tiefe des Hintergrundbilds: unter Möbeln an der Wand (Tiefe 0) und allem anderen. */
 const HINTERGRUND_TIEFE = -1;
@@ -111,12 +113,10 @@ export class Oberweltszene extends Phaser.Scene {
   }
 
   preload(): void {
-    this.load.image("kacheln", this.daten.kachelbild);
-    this.load.spritesheet("held", this.daten.heldbild, { frameWidth: KACHEL, frameHeight: KACHEL });
-    this.load.spritesheet("figur", this.daten.figurbild, {
-      frameWidth: KACHEL,
-      frameHeight: KACHEL,
-    });
+    bindeLader(this); // Bilder, die das Spiel schon hat, bleiben (texturanbindung.ts)
+    this.load.image(mitAdresse("kacheln", this.daten.kachelbild), this.daten.kachelbild);
+    this.load.spritesheet("held", this.daten.heldbild, KACHELRAHMEN);
+    this.load.spritesheet("figur", this.daten.figurbild, KACHELRAHMEN);
     if (this.daten.heldfigur) ladeFigurbogen(this, HELDFIGUR, this.daten.heldfigur);
     for (const [name, adresse] of Object.entries(this.daten.figurenbilder ?? {})) {
       ladeFigurbogen(this, `figur:${name}`, adresse);
@@ -124,7 +124,8 @@ export class Oberweltszene extends Phaser.Scene {
     ladeMoebelbilder(this, this.daten.moebel ?? []);
     this.belebung = liesBelebung(this.daten.karte);
     ladeBelebungsbilder(this, this.belebung, this.daten.belebungsbilder ?? {});
-    if (this.daten.hintergrund) this.load.image("hintergrund", this.daten.hintergrund);
+    const hintergrund = this.daten.hintergrund;
+    if (hintergrund) this.load.image(mitAdresse("hintergrund", hintergrund), hintergrund);
   }
 
   create(): void {
@@ -133,7 +134,8 @@ export class Oberweltszene extends Phaser.Scene {
       data: this.daten.karte,
     });
     const karte = this.make.tilemap({ key: "karte" });
-    const kacheln = karte.addTilesetImage(this.daten.kachelsatz, "kacheln");
+    const kachelbild = mitAdresse("kacheln", this.daten.kachelbild);
+    const kacheln = karte.addTilesetImage(this.daten.kachelsatz, kachelbild);
     if (!kacheln) throw new Error(`Kachelsatz ${this.daten.kachelsatz} fehlt in der Karte`);
     const feste: Phaser.Tilemaps.TilemapLayer[] = [];
     for (const name of EBENEN) {
@@ -144,9 +146,8 @@ export class Oberweltszene extends Phaser.Scene {
       if (this.daten.hintergrund) ebene.setVisible(false);
       feste.push(ebene);
     }
-    if (this.daten.hintergrund) {
-      this.add.image(0, 0, "hintergrund").setOrigin(0, 0).setDepth(HINTERGRUND_TIEFE);
-    }
+    const bild = this.daten.hintergrund && mitAdresse("hintergrund", this.daten.hintergrund);
+    if (bild) this.add.image(0, 0, bild).setOrigin(0, 0).setDepth(HINTERGRUND_TIEFE);
     const { x, y } = this.daten.start;
     const echt = Boolean(this.daten.heldfigur);
     const held = this.physics.add.sprite(

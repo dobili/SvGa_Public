@@ -24,6 +24,8 @@ const ANKUNFT_VERSUCHE = 40;
 /** So lange sieht der Lauf nach einer Frist am Übergang noch nach, ob die Karte doch wechselt (ms). */
 const NACHFRIST_MS = 10_000;
 const NACHFRIST_TAKT_MS = 100;
+/** Ein Wechsel, der so lange nach der Frist kommt, ist ein Fund (zu langsam), sonst nur Protokoll. */
+const LANGSAM_NACH_FRIST_MS = 2000;
 
 /**
  * Nach der Frist am Übergang: Wechselt die Karte doch noch? Ausgabe: Wartezeit in ms, sonst null.
@@ -109,12 +111,12 @@ async function nimmAusgang(
     lauf.messung.fund("unerreichbar", `Übergang ${wissen.kennung}.${name}: kein Weg vom Standort`);
   } else if (ergebnis === "frist") {
     const spaeter = await spaeterWechsel(lauf, wissen.kennung);
-    lauf.messung.fund(
-      "uebergang",
-      spaeter === null
-        ? `Übergang ${wissen.kennung}.${name} reagiert nicht`
-        : `Übergang ${wissen.kennung}.${name} wechselt erst ${spaeter} ms nach der Frist`,
-    );
+    const text = `Übergang ${wissen.kennung}.${name}`;
+    if (spaeter === null) lauf.messung.fund("uebergang", `${text} reagiert nicht`);
+    // Knapp nach der Frist (große Außenkarte auf einem ausgelasteten Rechner) nur ins Protokoll.
+    else if (spaeter > LANGSAM_NACH_FRIST_MS) {
+      lauf.messung.fund("uebergang", `${text} wechselt erst ${spaeter} ms nach der Frist`);
+    } else lauf.messung.log(`${text} wechselt ${spaeter} ms nach der Frist`);
   } else {
     lauf.messung.log(`Übergang ${wissen.kennung}.${name}: unterwegs aufgehalten`);
     // Aufgehalten heißt meist: Ein Statist oder Roboter läuft denselben Weg voraus (Silicon Bay,

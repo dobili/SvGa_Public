@@ -88,10 +88,12 @@ describe("Touren", () => {
     expect(tourFuerAnsicht({ bildschirm: "lizenzen" })).toBeNull();
   });
 
-  it("beginnt die Haupttour mit der Begrüßung und zeigt alle fünf Bereiche der Leiste", () => {
+  it("beginnt die Haupttour mit der Begrüßung und zeigt alle Reiter der Leiste", () => {
     const ziele = TOUREN.haupt.schritte.map((s) => s.ziel);
     expect(ziele[0]).toBeNull();
-    for (const bereich of ["buch", "training", "spielen", "nachschlagen", "einstellungen"]) {
+    // Fünf Bereiche und der Reiter „Abenteuer“ (27.11.2026).
+    const reiter = ["buch", "training", "spielen", "abenteuer", "nachschlagen", "einstellungen"];
+    for (const bereich of reiter) {
       expect(ziele).toContain(`leiste-${bereich}`);
     }
   });

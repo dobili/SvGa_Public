@@ -79,6 +79,7 @@
     width: calc(var(--schiene) + env(safe-area-inset-left));
     max-width: none;
     margin: 0;
+    grid-auto-flow: row;
     grid-template-columns: 1fr;
     grid-auto-rows: min-content;
     align-content: start;
@@ -93,6 +94,19 @@
   .leiste-knopf {
     min-height: 64px;
     padding: var(--raster) 0;
+  }
+
+  /* Sechs Reiter (seit 27.11.2026) brauchen in der Schiene 432 px; quer auf dem Handy ist das
+     Fenster oft nur 360 px hoch. Dann rücken die Reiter zusammen (gemessen 6 × 56 px). */
+  @media (max-height: 440px) {
+    .leiste {
+      gap: 0;
+    }
+
+    .leiste-knopf {
+      min-height: 0;
+      padding: 6px 0;
+    }
   }
 
   .leiste-knopf[aria-current="page"]::before {

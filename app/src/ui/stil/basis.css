@@ -476,7 +476,11 @@ a.knopf-zweit {
   bottom: 0;
   z-index: 10;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  /* Eine Spalte je Reiter, gleich breit, aber nie schmaler als ihr Wort samt Rand: Mit dem sechsten
+     Reiter „Abenteuer“ (27.11.2026) wären gleiche Spalten bei 320 Pixeln 53 px breit, „Nachschlagen“
+     braucht 70. So bekommt es etwas mehr, und kein Wort läuft in das nächste. */
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(max-content, 1fr);
   max-width: 640px;
   margin: 0 auto;
   min-height: var(--leiste-hoehe);
@@ -489,14 +493,28 @@ a.knopf-zweit {
   position: relative;
   border: none;
   background: none;
-  padding: 10px 0 8px;
+  /* Seitlich 4 px: Zwischen zwei Wörtern bleiben so immer mindestens 8 px (Spalten oben). */
+  padding: 10px 4px 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3px;
   /* Fest wie die Tab-Leiste auf dem iPhone: „Nachschlagen“ passt sonst bei 360 Pixeln nicht. */
   font-size: 12px;
+  white-space: nowrap;
   color: var(--text-leise);
+}
+
+/* Unter 300 Pixeln (ein Handy mit Browser-Zoom 200 %) passt kein Wort mehr unter sein Symbol
+   (Messung 27.11.2026: Spalten von 30 bis 34 px). Dann nur Symbole; Name bleibt als aria-label. */
+@media (max-width: 299px) {
+  .leiste-knopf {
+    padding-inline: 0;
+  }
+
+  .leiste-knopf > span {
+    display: none;
+  }
 }
 
 .leiste-knopf[aria-current="page"] {

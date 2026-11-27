@@ -63,7 +63,8 @@ test("erster Start: Startwahl, einmal; „Erst einmal umsehen“ ist der Rundgan
   await expect(page.getByTestId("tour-angebot")).toHaveCount(0);
   const karte = tourkarte(page);
   await expect(karte.getByRole("heading", { name: "Rundgang durch die App" })).toBeVisible();
-  await expect(karte.getByText("Schritt 1 von 8")).toBeVisible();
+  // Acht Schritte und seit 27.11.2026 einer zum Reiter „Abenteuer“.
+  await expect(karte.getByText("Schritt 1 von 9")).toBeVisible();
   await expect(karte).toBeFocused();
   await karte.getByRole("button", { name: "Weiter" }).click();
   // Schritt 2 zeigt den Bereich Buch der Leiste mit goldenem Rahmen, die Karte steht oben.
@@ -71,8 +72,8 @@ test("erster Start: Startwahl, einmal; „Erst einmal umsehen“ ist der Rundgan
   await expect(page.locator(".tour-rahmen")).toBeVisible();
   await expect(page.locator(".tour-karte-oben")).toBeVisible();
   await karte.getByRole("button", { name: "Zurück" }).click();
-  await expect(karte.getByText("Schritt 1 von 8")).toBeVisible();
-  expect(await bisZumEnde(page)).toHaveLength(8);
+  await expect(karte.getByText("Schritt 1 von 9")).toBeVisible();
+  expect(await bisZumEnde(page)).toHaveLength(9);
   // Die Frage kommt nicht wieder, die Haupttour gilt als gesehen.
   await page.reload();
   await expect(page.getByRole("heading", { name: "Buch" })).toBeVisible();
@@ -208,7 +209,8 @@ test("Einstellungen: Symbol aus blendet es überall aus, der Rundgang bleibt err
   await page.getByRole("button", { name: "Erst einmal umsehen" }).click();
   const karte = tourkarte(page);
   // Ohne Symbol steht der Schritt dazu in der Mitte statt am Ziel.
-  for (let i = 0; i < 6; i += 1) await karte.getByRole("button", { name: "Weiter" }).click();
+  // Sieben Schritte bis dahin, seit 27.11.2026 mit dem Reiter „Abenteuer“.
+  for (let i = 0; i < 7; i += 1) await karte.getByRole("button", { name: "Weiter" }).click();
   await expect(karte).toContainText("Dieses Symbol steht oben rechts");
   await expect(page.locator(".tour-karte-mitte")).toBeVisible();
   await page.keyboard.press("Escape");

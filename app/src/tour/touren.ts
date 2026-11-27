@@ -99,6 +99,8 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ziel("leiste-buch", "tour.haupt.buch"),
     ziel("leiste-training", "tour.haupt.training"),
     ziel("leiste-spielen", "tour.haupt.spielen"),
+    // Reiter „Abenteuer“ (27.11.2026); fehlt er (Fassung für die Leser), entfällt der Schritt.
+    ziel("leiste-abenteuer", "tour.haupt.abenteuer"),
     ziel("leiste-nachschlagen", "tour.haupt.nachschlagen"),
     ziel("leiste-einstellungen", "tour.haupt.einstellungen"),
     ziel("tour-symbol", "tour.haupt.symbol", true),

@@ -57,7 +57,7 @@ VAR held = "Du"
 === victor_wartet ===
 ~ victorSaloonGetroffen = true
 {rivale} stellt Figuren auf, nimmt sie wieder weg, stellt sie neu auf. #sprecher:erzaehler
-Mir fehlt noch etwas. Ambrose muss doch seinen letzten Zug irgendwo aufgeschrieben haben. #sprecher:victor #stimmung:nachdenklich
+Mir fehlt noch etwas. Whitlock muss doch seinen letzten Zug irgendwo aufgeschrieben haben. #sprecher:victor #stimmung:nachdenklich
 Hinter dem Tresen. Der Postreiter hat hier unten gewartet. #sprecher:ambrose #stimmung:fern
 -> END
 

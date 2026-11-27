@@ -153,7 +153,7 @@ Genug für heute. Morgen wieder, gleich nach dem Frühstück. #sprecher:ward #st
 Am dritten Abend, auf dem Weg hinunter, gehen in der Stadt die Lichter an. #sprecher:erzaehler
 * [„Die Fernpartie. Das ist auch ein Endspiel.“]
 - Ein Turm gegen zwei Springer. Und Bauern. #sprecher:ambrose #stimmung:nachdenklich
-Ich habe seit New York darauf gestarrt. #sprecher:ambrose #stimmung:nachdenklich
+Ich habe hundertsechzig Jahre lang darauf gestarrt. #sprecher:ambrose #stimmung:nachdenklich
 * [„Kannst du es gewinnen?“]
 - Er antwortet nicht gleich. #sprecher:erzaehler #pause:2
 Ich weiß es nicht. Ich konnte Angriffe. #sprecher:ambrose #stimmung:bitter
@@ -305,7 +305,7 @@ Ich habe es ihr nicht gesagt. #sprecher:ward #stimmung:nachdenklich
 * [„Sie ist unten. In der Stadt.“]
 - Ich weiß. Sie steckt die Hände noch immer in die Ärmel. #sprecher:ward #stimmung:neutral
 Ich werde es ihr sagen, bevor ihr fahrt. #sprecher:ward #stimmung:neutral
-Es ist dreißig Jahre zu spät. Aber man macht manche Züge trotzdem noch. #sprecher:ward #stimmung:nachdenklich
+Es ist sechsundzwanzig Jahre zu spät. Aber man macht manche Züge trotzdem noch. #sprecher:ward #stimmung:nachdenklich
 -> ward_heft
 
 === ward_heft ===
@@ -398,7 +398,7 @@ Draußen ruft der Mann im grauen Anzug, dann rennende Schritte auf dem Pfad. Auf
 Ward hebt den schwarzen König auf und stellt ihn zurück. #sprecher:erzaehler #pause
 {rv_Er} spielt, als wäre {rv_er} nicht da. #sprecher:ward #stimmung:nachdenklich
 * [„{rv_Er} hat die Brücke gesehen. {rv_Er} wusste es.“]
-- Natürlich wusste {rv_er} es. {rv_Er} ist {rivalin:die Begabteste|der Begabteste}, den ich in zwanzig Jahren hier oben hatte. #sprecher:ward #stimmung:nachdenklich
+- Natürlich wusste {rv_er} es. {rv_Er} ist {rivalin:die Begabteste, die|der Begabteste, den} ich in zwanzig Jahren hier oben hatte. #sprecher:ward #stimmung:nachdenklich
 {rv_Er} hat sich selbst nicht geglaubt. Jemand hat {rv_ihm} sehr gründlich beigebracht, sich nicht zu glauben. #sprecher:ward #stimmung:bitter
 Worauf wartest du? Ich bin vierundsechzig. #sprecher:ward #stimmung:nachdenklich
 Ich renne keinem mehr nach. #sprecher:ward #stimmung:nachdenklich

@@ -186,7 +186,7 @@ Am Ufer steht eine Bühne mit zwei Fahnen, schwarz und weiß. Davor eine lange T
     ~ abeVorgestellt = true
     Abe Lindgren, Leuchtturmwärter. Heute bin ich auch Schiedsrichter. #sprecher:abe #stimmung:laechelt
 }
-Weltschachtag! Der 20. Juli, seit 1924. Heute spielt das ganze Ufer. #sprecher:abe #stimmung:laechelt
+Weltschachtag! Am 20. Juli 1924 wurde der Weltschachbund gegründet, und heute spielt das ganze Ufer. #sprecher:abe #stimmung:laechelt
 Fünf Bretter, fünf Gegner, und du gehst von Brett zu Brett. Wie die großen Meister. #sprecher:abe #stimmung:laechelt
 An jedem Brett steht schon eine Stellung, in der du besser stehst. Jetzt musst du es nur noch nach Hause bringen. #sprecher:abe #stimmung:laechelt
 -> weltschachtag_angebot

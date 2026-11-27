@@ -105,7 +105,7 @@ Aber er zieht trotzdem. #sprecher:kira #stimmung:laechelt
 // oder Remis; Dokument 10, Abschnitt 3a: Münzen, Funde, ein Extra; der Fund ist Kiras Falke, das
 // Extra die Partie am Varianten-Tisch in Crossroads).
 === kira_angebot ===
-Mit Uhr? Ohne. Die Uhr ist für Leute, die es eilig haben. #sprecher:kira #stimmung:froh
+Mit Uhr? Heute ohne. Die Uhr ist für Leute, die es eilig haben. #sprecher:kira #stimmung:froh
 Sie schiebt dir den Falken und den Bison hin. Deine kommen aufs Brett, wenn du sie einsetzt. #sprecher:erzaehler
 ~ beginnePartie("hochebene.falkeUndBison")
 -> END
@@ -114,7 +114,9 @@ Sie schiebt dir den Falken und den Bison hin. Deine kommen aufs Brett, wenn du s
 === kira_danach ===
 {ausgangHochebeneFalkeUndBison:
 - "sieg":
-    Kira starrt aufs Brett und lacht dann laut. Du hast meinen Bison gefangen. Das schafft sonst nur meine Oma. #sprecher:kira #stimmung:lacht
+    // Lektorat 27.11.2026: Der Erzählsatz stand in Kiras Sprechzeile.
+    Kira starrt aufs Brett und lacht dann laut. #sprecher:erzaehler
+    Du hast meinen Bison gefangen. Das schafft sonst nur meine Oma. #sprecher:kira #stimmung:lacht
     {not abschiedGesehen:
         Man lernt sie, habe ich gesagt. Du hast sie gelernt. #sprecher:ambrose #stimmung:froh
     }

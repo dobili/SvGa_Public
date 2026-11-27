@@ -370,7 +370,7 @@ Der Tisch steht noch da, wenn du wieder magst. #sprecher:ambrose #stimmung:laech
     -> END
 }
 ~ postkarteGefunden = true
-Neben den Regalen steht ein Drehständer mit Postkarten. Auf einer sind alle Städte zugleich: Maple Falls, die Brücke von Cedar Creek, der Pavillon, die Werkhallen, die Glasbrücke, das Musikhaus, der Canyon, die Seilbahn. #sprecher:erzaehler
+Neben den Regalen steht ein Drehständer mit Postkarten. Auf einer sind alle Städte zugleich: Maple Falls, die Bibliothek von Cedar Creek, der Pavillon, die Werkhallen, die Glasbrücke, das Musikhaus, der Canyon, die Seilbahn. #sprecher:erzaehler
 Wir waren überall! Die kommt ins Tagebuch. #sprecher:juno #stimmung:froh
 Ganz hinten, auf die letzte Seite. #sprecher:juno #stimmung:froh
 ~ gibFund("postkarteStaedte")

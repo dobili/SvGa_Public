@@ -964,7 +964,7 @@ Und ich dachte, ich sei am Brett waghalsig gewesen. #sprecher:ambrose #stimmung:
 Telegrafenmasten. Sieh an, ein Stück von meiner Welt, das stehen geblieben ist. #sprecher:ambrose #stimmung:laechelt
 Über solche Drähte liefen Nachrichten schneller als jedes Pferd. Wir hielten es für Zauberei. #sprecher:ambrose #stimmung:nachdenklich
 * [Heute geht das ohne Draht. #gedanke]
-    Ich weiß, ich weiß. Der Telegraf ohne Draht. Lasst einem alten Mann seine Masten. #sprecher:ambrose #stimmung:lacht
+    Ich weiß, ich weiß. Der Telegraf ohne Draht. Lass einem alten Mann seine Masten. #sprecher:ambrose #stimmung:lacht
 * [Da liegt ein alter Planwagen. #gedanke]
     Mit so einem zog man nach Westen, Woche um Woche. Jedes Rad war ein Gebet. #sprecher:ambrose #stimmung:nachdenklich
 * [Du bist stiller als sonst. #gedanke]

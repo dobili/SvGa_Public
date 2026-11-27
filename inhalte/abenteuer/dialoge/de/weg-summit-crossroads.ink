@@ -90,6 +90,7 @@ So sieht das aus. Das Brett aus der Station hab ich dabei. Eine Partie, bevor Ol
     Bumm! Und weg ist mein König. Du hast vorher gezählt, das hab ich gesehen. #sprecher:bell #stimmung:lacht
     {not geysirSinterGegeben:
         ~ geysirSinterGegeben = true
+        Sie drückt dir ein Stück weißen Sinter in die Hand. #sprecher:erzaehler
         Der ist vom Rand des Beckens. Noch warm. Für dich. #sprecher:bell #stimmung:froh
         ~ gibFund("geysirSinter")
     }

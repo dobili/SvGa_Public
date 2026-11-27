@@ -238,7 +238,7 @@ Der Drache kommt aufs Brett, wenn eine Figur von der Grundreihe zum ersten Mal z
     Mein Drache war schneller. Er ist immer schneller, wenn man ihn zu früh holt. #sprecher:sol #stimmung:laechelt
 }
 {not abschiedGesehen:
-    Ein Drache auf dem Brett. Zu meiner Zeit hätte man mich dafür aus dem Kaffeehaus geworfen. Herrlich. #sprecher:ambrose #stimmung:lacht
+    Du hast gegen einen Drachen gespielt. Das hätte mir im Kaffeehaus keiner geglaubt. #sprecher:ambrose #stimmung:lacht
 }
 + [„Noch eine Partie.“]
     ~ beginnePartie("summitCity.drachenfest")

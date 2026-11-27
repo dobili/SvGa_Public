@@ -214,8 +214,8 @@ Die waren nie das Schöne. #sprecher:ambrose #stimmung:laechelt
 Du hast mir das gezeigt. Ein Kind, das einen König hält wie einen Suppenlöffel. #sprecher:ambrose #stimmung:lacht
 * [„Danke.“]
 - Wofür? #sprecher:ambrose #stimmung:ueberrascht
-* {zugerratenTurm} [„Für Was hängt? Für den Turm heute.“]
-* {not zugerratenTurm} [„Für Was hängt? Für heute.“]
+* {zugerratenTurm} [„Für ‚Was hängt?‘ und für den Turm heute.“]
+* {not zugerratenTurm} [„Für ‚Was hängt?‘ und für heute.“]
 - Das war das Geringste. Das weiß jeder. #sprecher:ambrose #stimmung:lacht
 -> abschied_verbeugung
 

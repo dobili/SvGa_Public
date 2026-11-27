@@ -161,7 +161,7 @@ An der Hüttenwand hängt eine Schiefertafel: „Drei Stellungen. Erst rechnen, 
     Die Bäume sind so dick, dass zehn Leute sie nicht umfassen. Die Rinde ist rot, weich und tief gefurcht. #sprecher:erzaehler #geraeusch:wald_tief #musik:wald.orgelpunkt
     {not abschiedGesehen:
         Diese sind älter. Älter als die in Cedar Creek, älter als ich, als das Land, als das Spiel. #sprecher:ambrose #stimmung:ueberrascht
-        Ich nehme zurück, was ich damals gesagt habe. Das hier ist jemand in meinem Alter. #sprecher:ambrose #stimmung:lachtOhneSpott
+        Ich nehme zurück, was ich damals gesagt habe. Die Zedern waren Kinder. #sprecher:ambrose #stimmung:lachtOhneSpott
     }
     -> END
 }

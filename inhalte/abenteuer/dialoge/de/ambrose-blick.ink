@@ -584,7 +584,7 @@ Der Schornstein raucht kaum, und nirgends dreht sich ein Rad. Sie fährt wie von
 
 === blick_wegSiliconDelacroix_deich_zypressen ===
 {ambroseFehlt(): -> END}
-Zypressen im Wasser und ein Deich aus Erde. Diese Luft kenne ich, {held}. Sie ist dick und süß. #sprecher:ambrose #stimmung:fern
+Zypressen im Wasser und ein Deich aus Erde. So sah das Land aus, in dem ich Kind war, {held}. #sprecher:ambrose #stimmung:fern
 Den Deich haben wir jeden Frühling angesehen wie einen Gegner, der einen Plan hat. #sprecher:ambrose #stimmung:nachdenklich
 * [Hat er gehalten? #gedanke]
     Meistens. Und wenn nicht, hat die ganze Stadt geschaufelt, der Bankier neben dem Fischer. #sprecher:ambrose #stimmung:nachdenklich

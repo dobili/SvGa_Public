@@ -91,7 +91,7 @@ Na, traust du dich? #sprecher:buck #stimmung:laechelt
     {versoehnungGesehen and not abschiedGesehen: Das war beinahe fein. #sprecher:ambrose #stimmung:laechelt}
     ~ gibKarte("grossesMaul")
 }
-Schnell und gut. Das gibt's hier draußen selten, noch eine Runde? #sprecher:buck #stimmung:laechelt
+Schnell und gut. Das gibt's hier draußen selten – noch eine Runde? #sprecher:buck #stimmung:laechelt
 + [„Noch eine.“]
     ~ beginnePartie("desertSprings.buck")
     -> END
@@ -150,8 +150,8 @@ Eine Minute später: „Landesmeisterschaft im Sommer. Nova spielt auch.“ #spr
 „Mein Vater hat mir einen Trainer besorgt. Er ist kein Mensch.“ #sprecher:erzaehler
 Der letzte Satz gefällt dir nicht. #sprecher:erzaehler #pause
 Die Glasschachtel von dem Jungen mit den Zahlen. Sie liegt in deinem Rucksack. #sprecher:ambrose #stimmung:nachdenklich #musik:motel.nacht
-Gib es ihm zurück, wenn du ihn siehst. #sprecher:ambrose #stimmung:nachdenklich
-Ich brauche es nicht mehr. #sprecher:ambrose #stimmung:still
+Gib sie ihm zurück, wenn du ihn siehst. #sprecher:ambrose #stimmung:nachdenklich
+Ich brauche sie nicht mehr. #sprecher:ambrose #stimmung:still
 * [„Sicher?“]
 - Nein. Aber ich hoffe es. #sprecher:ambrose #stimmung:lachtOhneSpott
 Und ich habe es geprüft, so gut ich kann. #sprecher:ambrose #stimmung:lachtOhneSpott

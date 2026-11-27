@@ -125,7 +125,7 @@ Am Abend probierst du etwas vor dem Spiegel. Ein Gesicht, ein „Hm“. #spreche
 Nein. #sprecher:ambrose #stimmung:streng
 * [„Bei Dash hat es …“]
 // Lektorat 19.11.2026: Die Zeit-Hinweise laufen auch im Clubkampf; Ambrose flüstert nur über die Uhr.
-- Am Brett eines Clubs flüstert man nur, über die Uhr, nie über Züge. Im Park redet man. #sprecher:ambrose #stimmung:streng
+- Im Park redet man. Am Brett eines Clubs schweigt man. #sprecher:ambrose #stimmung:streng
 Im Park spielt man um eine Limonade. Im Club um die Ehre des anderen. #sprecher:ambrose #stimmung:nachdenklich
 Wer ihn dort stört, nimmt ihm nicht die Zeit. Er nimmt ihm die Partie weg. #sprecher:ambrose #stimmung:nachdenklich
 Und die gehört euch beiden. #sprecher:ambrose #stimmung:nachdenklich

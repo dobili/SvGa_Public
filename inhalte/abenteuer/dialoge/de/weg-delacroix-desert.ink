@@ -23,6 +23,7 @@ VAR wegDelacroixDesertTafelBestanden = false
 VAR hollowayGetroffen = false
 VAR miraSteinGesehen = false
 VAR versoehnungGesehen = false
+VAR umschlagGeoeffnet = false
 VAR eidechsenhautGefunden = false
 VAR nietenCanyonGefunden = false
 VAR gefundenNietenkopf = false
@@ -186,7 +187,8 @@ Das ist das, wofür der Verlierer zum Telegrafenamt läuft. #sprecher:ambrose #s
 - Ich dich auch. Und ich war die ganze Zeit drei Schritte neben dir. #sprecher:ambrose #stimmung:lachtOhneSpott
 Das ist das Dümmste daran. #sprecher:ambrose #stimmung:lachtOhneSpott
 Die Sonne berührt den Rand der Welt. #sprecher:erzaehler #licht:nacht #uhr:20
-* [„Erzähl mir von 1866.“]
+// Lektorat 27.11.2026: Das Jahr 1866 kennt {held} nur aus dem Postsack in Ironwood (Nebenquest).
+* [{umschlagGeoeffnet:„Erzähl mir von 1866.“|„Erzähl mir von deiner Reise nach Norden.“}]
 - Er nickt, als hätte er darauf gewartet. #sprecher:erzaehler #musik:tiefer_streicher
 -> erzaehlung_1866
 
@@ -209,8 +211,10 @@ Das Brett stand auf dem Stuhl neben dem Bett. #sprecher:ambrose #stimmung:bitter
 Sein Zug hat mich dort noch erreicht. Ich habe geantwortet. #sprecher:ambrose #stimmung:nachdenklich
 Wie, das erzähle ich dir ein andermal. #sprecher:ambrose #stimmung:nachdenklich
 Ich bin nicht angekommen. Darum warte ich noch. #sprecher:ambrose #stimmung:traurig #musik:aus #erinnerung:aus #pause:3
-Du denkst an einen leeren Umschlag in einem Postsack. An eine senkrechte Schrift. #sprecher:erzaehler
-Sie sind aneinander vorbeigefahren. #sprecher:erzaehler
+{umschlagGeoeffnet:
+    Du denkst an einen leeren Umschlag in einem Postsack. An eine senkrechte Schrift. #sprecher:erzaehler
+    Sie sind aneinander vorbeigefahren. #sprecher:erzaehler
+}
 -> versoehnung_lektion
 
 === versoehnung_lektion ===

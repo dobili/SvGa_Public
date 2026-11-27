@@ -190,7 +190,7 @@ Okay, okay. Du bist schneller, als du aussiehst – noch mal? #sprecher:nia #sti
     -> END
 
 === nia_nach_niederlage ===
-Board tragen! War nur Spaß, noch eine Runde? #sprecher:nia #stimmung:lacht
+Board tragen! War nur Spaß – noch eine Runde? #sprecher:nia #stimmung:lacht
 {faehrsteinGesehen and not abschiedGesehen: Drei Minuten. So lange brauchte ein Gentleman, um den Hut abzulegen. #sprecher:ambrose #stimmung:laechelt}
 + [„Revanche.“]
     -> nia_duell
@@ -201,7 +201,7 @@ Board tragen! War nur Spaß, noch eine Runde? #sprecher:nia #stimmung:lacht
 // vorteil. Vorher ging es in nia_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === nia_nach_remis ===
-Unentschieden! Keiner trägt das Board, noch eine Runde? #sprecher:nia #stimmung:laechelt
+Unentschieden! Keiner trägt das Board – noch eine Runde? #sprecher:nia #stimmung:laechelt
 + [„Revanche.“]
     -> nia_duell
 + [„Nicht jetzt.“]

@@ -91,7 +91,7 @@ Zurück auf den Deichweg zur Fähre. #sprecher:erzaehler
 === abschied_mama ===
 ~ abschiedPortDelacroixGesehen = true
 Am Bahnhof steht der Wüstenzug nach Westen. Mama bleibt hier; das Notzelt braucht sie noch zwei Wochen. #sprecher:erzaehler
-Fahr, {held}. In sechs Monaten bist du weiter gekommen als ich in fünfundzwanzig Jahren. #sprecher:mutter #stimmung:laechelt
+Fahr, {held}. In sechs Monaten bist du weitergekommen als ich in fünfundzwanzig Jahren. #sprecher:mutter #stimmung:laechelt
 Ich hole dich ein. #sprecher:mutter #stimmung:laechelt
 * [Mama umarmen]
 - Sie riecht nach Desinfektionsmittel und Meer. #sprecher:erzaehler

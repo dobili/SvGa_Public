@@ -210,7 +210,7 @@ Aber ich weiß jetzt, dass ich sie am falschen Ort gesucht habe. #sprecher:ambro
 === werkbank ===
 {
 - not leimAuftrag:
-    Eine alte Werkbank voller Späne. Henri arbeitet hier. #sprecher:erzaehler
+    Eine alte Werkbank voller Späne. {henriGetroffen:Henri arbeitet hier.|Hier arbeitet jemand jeden Tag.} #sprecher:erzaehler
     Du hast keinen Grund, sie anzufassen. #sprecher:erzaehler
     -> END
 - flashbackWerkstattBestanden and not claireErzaehlt: -> werkbank_nach_flashback
@@ -318,10 +318,10 @@ Und deren Tochter. Bis zu einer alten Frau, die es sechzig Jahre abgestaubt hat.
 - fotoAmbroseGesehen:
     Das ovale Foto: ein junger Mann im Rock mit hohem Kragen, vor ihm ein Schachbrett. Er kann es kaum erwarten, dass das Stillsitzen vorbei ist. #sprecher:erzaehler
 - angesehenFotoWand:
-    Das Foto hängt schief. Henri weiß sicher, wer darauf ist. #sprecher:erzaehler
+    Das Foto hängt schief. {henriGetroffen:Henri weiß sicher, wer darauf ist.|Der Klavierbauer weiß sicher, wer darauf ist.} #sprecher:erzaehler
 - else:
     ~ angesehenFotoWand = true
-    An der Wand hängt ein altes Foto in einem ovalen Rahmen, braun und blass. Henri weiß sicher, wer darauf ist. #sprecher:erzaehler
+    An der Wand hängt ein altes Foto in einem ovalen Rahmen, braun und blass. {henriGetroffen:Henri weiß sicher, wer darauf ist.|Der Klavierbauer weiß sicher, wer darauf ist.} #sprecher:erzaehler
 }
 -> END
 
@@ -331,5 +331,5 @@ Und deren Tochter. Bis zu einer alten Frau, die es sechzig Jahre abgestaubt hat.
     -> END
 }
 ~ angesehenLaptop = true
-Célestes Laptop, zwischen Hobelspänen. Auf dem Bildschirm Tonspuren in bunten Streifen, daneben ein Zettel: „Nicht anfassen. Ich weiß, wo alles ist.“ #sprecher:erzaehler
+Ein Laptop zwischen Hobelspänen. Auf dem Bildschirm Tonspuren in bunten Streifen, daneben ein Zettel: „Nicht anfassen. Ich weiß, wo alles ist.“ #sprecher:erzaehler
 -> END

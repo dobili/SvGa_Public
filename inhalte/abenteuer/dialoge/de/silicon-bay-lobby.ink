@@ -114,7 +114,7 @@ Die Rohdaten liegen im Serverraum. Theo kennt den Weg, frag ihn. #sprecher:victo
 -> END
 
 === victor_alltag ===
-{~Mein Vater hat gefragt, ob du gut bist, und ich hab „ja“ gesagt. Er hat nichts mehr gefragt.|Ich hab dir bei Dash zugesehen, du lachst beim Spielen. Das hab ich nie gemessen.|Pass auf Nova auf. Sie hat keine Wahl, glaube ich.} #sprecher:victor #stimmung:laechelt
+{~Mein Vater hat gefragt, ob du gut bist, und ich hab „ja“ gesagt. Er hat nichts mehr gefragt.|Ich hab dir bei Dash zugesehen: Du lachst beim Spielen. Das hab ich nie gemessen.|Pass auf Nova auf. Sie hat keine Wahl, glaube ich.} #sprecher:victor #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Empfangsroboter

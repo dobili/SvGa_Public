@@ -142,7 +142,7 @@ Puls bei hundertsechzig, Partie gewonnen. Guter Tag. #sprecher:joggerin #stimmun
 // vorteil. Vorher ging es in joggerin_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === joggerin_nach_remis ===
-Remis. Gleicher Puls, gleiche Zeit, noch eine Runde? #sprecher:joggerin #stimmung:laechelt
+Remis. Gleicher Puls, gleiche Zeit – noch eine Runde? #sprecher:joggerin #stimmung:laechelt
 + [„Noch einmal.“]
     ~ beginnePartie("wegIronwoodSilicon.joggerin")
     -> END

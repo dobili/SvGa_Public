@@ -200,7 +200,7 @@ An jedem Brett steht schon eine Stellung, in der du besser stehst. Jetzt musst d
     -> END
 
 === weltschachtag_nochmal ===
-Nicht ganz. Ein Vorteil ist wie ein Fisch an der Angel: Man muss ihn noch an Land ziehen, noch eine Runde? #sprecher:abe #stimmung:laechelt
+Nicht ganz. Ein Vorteil ist wie ein Fisch an der Angel: Man muss ihn noch an Land ziehen – noch eine Runde? #sprecher:abe #stimmung:laechelt
 -> weltschachtag_angebot
 
 === weltschachtag_abschluss ===

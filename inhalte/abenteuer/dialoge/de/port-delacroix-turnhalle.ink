@@ -329,7 +329,7 @@ Erst zu Miss Odile. Sie hat dein Brett. #sprecher:remy #stimmung:bitter
     {~Das Stück zur Eröffnung ist fast fertig. Ich spiele es jeden Dienstag ein bisschen anders.|Du hast das Schild gerade aufgehängt, ich habe nachgemessen. Gerade genug.|Drinnen klingt die Trompete besser als in der Turnhalle. Das Holz singt mit.} #sprecher:remy #stimmung:laechelt
     -> END
 }
-{~Willst du hören, was ich zur Eröffnung des Musikhauses spiele? Es ist noch nicht fertig.|Du spielst wie jemand, der was verloren hat. Ich weiß, wie das ist, der Sturm hat meine Trompete auch fast genommen.|Komm zur Eröffnung. Ich spiele, du hängst das Schild auf.} #sprecher:remy #stimmung:laechelt
+{~Willst du hören, was ich zur Eröffnung des Musikhauses spiele? Es ist noch nicht fertig.|Du spielst wie jemand, der was verloren hat. Ich weiß, wie das ist: Der Sturm hat meine Trompete auch fast genommen.|Komm zur Eröffnung. Ich spiele, du hängst das Schild auf.} #sprecher:remy #stimmung:laechelt
 -> END
 
 // ---------------------------------------------------------------- Lou

@@ -114,7 +114,7 @@ Bist du Lauries Kind? #sprecher:bigJoe #stimmung:ueberrascht #musik:aus #pause:3
 - Laura. #sprecher:bigJoe #stimmung:nachdenklich
 Sein großes Gesicht wird froh und traurig zugleich. #sprecher:erzaehler
 Ja. Hier hieß sie Laurie. #sprecher:bigJoe #stimmung:laechelt #musik:karte
-Er heißt Big Joe. Er sagt es wie einen Dienstgrad. #sprecher:erzaehler
+Er stellt sich als Big Joe vor. Er sagt es wie einen Dienstgrad. #sprecher:erzaehler
 Kranführer, dreißig Jahre, und ebenso lange der Club. #sprecher:erzaehler
 Steckt sie noch die Hände in die Ärmel? Wenn sie nachdenkt? #sprecher:bigJoe #stimmung:laechelt
 * [„Ja.“]
@@ -459,7 +459,7 @@ Du schreibst ja in mein Heft. #sprecher:mutter #stimmung:ueberrascht
 // kauft, und gibt die Faktorenwaage.
 === mama_karte ===
 ~ lernkarteFaktorenwaage = true
-Damengambit. Ein Bauer weg, dafür Zeit und das Zentrum. #sprecher:mutter #stimmung:nachdenklich #brett:damengambit
+Damengambit. Ein Bauer angeboten, dafür Zeit und das Zentrum. #sprecher:mutter #stimmung:nachdenklich #brett:damengambit
 Wer nur die Figuren zählt, versteht das nie. #sprecher:mutter #stimmung:nachdenklich
 {hatKarteFaktorenwaage:
     Aber das weißt du ja längst. Du hast sogar die Karte dafür. #sprecher:mutter #stimmung:laechelt

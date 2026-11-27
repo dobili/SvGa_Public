@@ -70,7 +70,7 @@ Ich bin zu alt für Rätsel. #sprecher:teague #stimmung:laechelt
 // Klangplan S37: Beim Absender fällt auch das Ticken weg; mindestens fünf Sekunden Stille,
 // nicht füllen. Danach Ambroses Thema auf dem Cello (`ambrose.cello`).
 ~ umschlagGeoeffnet = true
-Mr. Teague bricht das Wachs mit dem Daumennagel. Es zerfällt zu Krümeln. #sprecher:erzaehler #klang:wachs
+Mr. Teague löst das Wachs mit dem Daumennagel, ganz vorsichtig. Es zerfällt zu Krümeln. #sprecher:erzaehler #klang:wachs
 Briefe, gebündelt mit Schnur. Rechnungen. #sprecher:erzaehler
 Eine Postkarte mit einem Dampfschiff. #sprecher:erzaehler
 Zuunterst ein Umschlag aus dickem, gelblichem Papier. Die Schrift ist klein und senkrecht, wie mit dem Lineal gezogen. #sprecher:erzaehler #bild:umschlag_hale

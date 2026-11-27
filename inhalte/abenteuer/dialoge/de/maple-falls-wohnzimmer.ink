@@ -432,10 +432,12 @@ Frag nicht. Bitte, nicht heute. #sprecher:mutter #stimmung:verschlossen
 Dann ist sie an der Tür, und die Tür ist zu. Der Wagen springt an und rollt die Einfahrt hinunter – Nachtschicht. #sprecher:erzaehler #klang:wagen
 Deine Mutter hat Angst. Vor einer Stadt, das ist selten. #sprecher:ambrose #stimmung:nachdenklich #musik:mapleFalls.klavier
 Vor Menschen hat man Angst, vor Schulden, vor dem Zahnarzt. Aber vor einer Stadt. #sprecher:ambrose #stimmung:nachdenklich
-* [„Sie hat nur gesagt: nicht zum Turnier.“]
+// Lektorat 27.11.2026: Mama sagt „Nicht Ironwood.“, nicht „nicht zum Turnier“. Die Unterscheidung
+// des Advokaten ist deshalb: Nein zur Stadt, nicht Nein zum Turnier.
+* [„Sie hat Nein zu Ironwood gesagt. Nicht zum Turnier.“]
 * [Den Zettel umdrehen]
-    Du drehst ihn um. Nein zum Zettel, denkst du. #sprecher:erzaehler
-    Nein zum Turnier. #sprecher:erzaehler
+    Du drehst ihn um. Nein zu Ironwood, denkst du. #sprecher:erzaehler
+    Nicht Nein zum Turnier. #sprecher:erzaehler
 - Nicht zum Turnier, sagst du. Das ist eine Unterscheidung, die Advokaten machen. #sprecher:ambrose #stimmung:laechelt
 Er klingt nicht tadelnd. Er klingt neugierig. #sprecher:erzaehler
 Zum ersten Mal seit Riverton interessiert ihn etwas mehr als die Tische. #sprecher:erzaehler

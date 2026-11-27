@@ -305,7 +305,7 @@ Der Wind zieht durch. Bei uns hätten die Herren ihre Hüte auf die Notizzettel 
 === blick_riverton_schuppen_plane ===
 {ambroseFehlt(): -> END}
 Ein Schuppen voller Dinge, die jemand irgendwann reparieren wollte. #sprecher:ambrose #stimmung:nachdenklich
-Unter jeder Plane liegt ein guter Vorsatz. Das war 1866 nicht anders. #sprecher:ambrose #stimmung:laechelt
+Unter jeder Plane liegt ein guter Vorsatz. Das war zu meiner Zeit nicht anders. #sprecher:ambrose #stimmung:laechelt
 * [So eine Ecke haben wir auch. #gedanke]
     In jedem Haus gibt es eine. Bei uns war es der Platz unter der Treppe. #sprecher:ambrose #stimmung:laechelt
 * [Was hast du nie repariert? #gedanke]

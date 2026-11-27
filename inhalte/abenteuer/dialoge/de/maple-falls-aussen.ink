@@ -116,7 +116,7 @@ Du hast die Hand schon an der Schultür, da ruft jemand von der Bushaltestelle n
     Das Rad steht bereit. Der Zug wartet nicht. #sprecher:juno #stimmung:laechelt
 - else:
     ~ junoFahrradGesehen = true
-    Am Samstag steht das grüne Fahrrad vor der Tür. Juno sitzt schon auf dem Gepäckträger. #sprecher:erzaehler #klang:fahrradklingel
+    Das grüne Fahrrad steht vor der Tür. Juno sitzt schon auf dem Gepäckträger. #sprecher:erzaehler #klang:fahrradklingel
     Ich frag gar nicht. Ich komm einfach mit. #sprecher:juno #stimmung:froh
     Bis Riverton nimmt uns der Zug mit, Räder dürfen mit. Ab da immer am Kanal entlang, bis Ironwood. #sprecher:juno #stimmung:froh
 }
@@ -299,7 +299,7 @@ Sie sagt „hat“. Nicht mehr „spielt“. #sprecher:erzaehler #pause
 // Stufe D (nach Akt 2): ein kleiner Tisch zwischen den Stühlen, darauf ein Schachbrett. Sie lernt
 // es von Owen. Endet warm.
 === calloway_d ===
-Zwischen den beiden Stühlen steht ein kleiner Tisch, darauf ein Schachbrett. Owen erklärt. #sprecher:erzaehler
+Zwischen den beiden Stühlen steht ein kleiner Tisch, darauf ein Schachbrett. Owen, der Junge von gegenüber, erklärt. #sprecher:erzaehler
 Mrs. Calloway runzelt die Stirn. #sprecher:erzaehler
 Der Springer, sagt der Junge, springt immer auf die andere Farbe. Stimmt das? #sprecher:calloway #stimmung:nachdenklich #brett:springerfarbe
 * [„Das stimmt. Immer.“]

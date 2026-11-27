@@ -179,7 +179,8 @@ Und Tausende Nieten, runde Köpfe in geraden Reihen. #sprecher:erzaehler
     }
     -> END
 }
-Wer baut so etwas? #sprecher:juno #stimmung:ueberrascht
+// Lektorat 27.11.2026: Nach den Nieten kennt Juno den Erbauer schon als „J. H.“.
+{nietenkopfGefunden:Dieser J. H. Wer baut so etwas?|Wer baut so etwas?} #sprecher:juno #stimmung:ueberrascht
 * [„Jemand, der nichts dem Zufall überlässt.“]
 - Du weißt nicht, warum du das sagst. Ambrose ist sehr still. #sprecher:erzaehler #pause
 Dann redet er von etwas ganz anderem, ein wenig zu schnell. #sprecher:erzaehler

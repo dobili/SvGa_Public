@@ -779,6 +779,28 @@ Profil › Einstellungen › Fehler melden.
       Bild der alten Karte stehen? Nach längerem Spielen (eine halbe Stunde) bitte darauf achten,
       ob Safari die Seite neu lädt (Speicher).
       **Antwort:** „N2743 ok“ oder welche Karte falsch oder langsam kam.
+- [ ] N2744. **Hauptmenü, Spielstände und Startbild (27.11.2026):** Abenteuer neu öffnen (App ganz
+      schließen oder neuer Tab). Erst läuft das Startbild (knapp 4 s; Tippen überspringt es): Ein
+      Schachbrett wird zum Weg, Held und Ambrose ziehen los, Ortsschilder ziehen vorbei, dahinter
+      schwenkt ein gemaltes Panorama (Gemini) von Maple Falls bis zur Arena, am Ende steht der
+      Titel. Danach kommt das Hauptmenü mit „Fortsetzen“ (Figur, Name, Akt, Ort, Spielzeit), „Neues
+      Spiel“, „Spielstand laden“, „Einstellungen“ und „Zurück zur App“. Dein bisheriger Spielstand
+      ist der erste Platz. Bitte ein zweites Spiel beginnen, über ☰ → „Hauptmenü“ zurückgehen, in
+      „Spielstand laden“ zwischen beiden wechseln und einen davon löschen (mit Rückfrage). Nach
+      einer Partie und nach dem Neuladen bleibst du in der Welt; nur ein neuer Start zeigt wieder
+      das Hauptmenü. „Von vorn beginnen“ gibt es nicht mehr, ein neues Spiel löscht nichts. Gefallen
+      dir Startbild, Panorama und Länge? Schon umgesetzt, Widerspruch genügt.
+      **Antwort:** „N2744 ok“ oder was am Menü, Laden oder Startbild nicht passt.
+- [ ] N2745. **Reiter „Abenteuer“ in der Leiste unten (27.11.2026):** Unten steht jetzt hinter
+      „Spielen“ ein sechster Reiter „Abenteuer“ mit einer Landkarte. Alle sechs Wörter bleiben
+      stehen; „Nachschlagen“ bekommt dafür etwas mehr Platz, die übrigen Spalten sind gleich breit
+      (unter 300 Pixeln Breite nur Symbole). Bitte auf dem Handy prüfen: Ist alles lesbar, berührt
+      sich nichts? Tippe auf „Abenteuer“: Das Spiel öffnet sich im Vollbild mit Startbild und
+      Hauptmenü (ohne Paket zuerst „Spiel herunterladen“). Die Zurück-Taste, „Zurück zur App“ im
+      Hauptmenü und im Menü ☰ führen zurück zu dem Bildschirm, von dem du kamst. Schon umgesetzt,
+      Widerspruch genügt. Offen: Soll der Reiter auch in der Fassung für die Leser (1.0) erscheinen?
+      Dort fehlt er bis zu deiner Antwort.
+      **Antwort:** „N2745 ok“, und zur Leserfassung „ja“ oder „nein“.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

@@ -37,7 +37,7 @@ technischen Konzept; hier nur die Kurzfassung und alles, was danach dazukam.
 - **Fehler mit Buchbezug (Konzept docs/KONZEPT_FEHLER_BUCHBEZUG.md, vom Autor freigegeben):**
   Nebenbefund behoben (Fehlererkennung bekommt die ganze Widerlegung, kein Fehlalarm bei
   normalem Abtausch); Warum-Zeilen W2–W10 auf den Karten der Zeitleiste mit „Üben“;
-  Erkennungsschicht F1–F10 und W1 (analyse/findekategorien*.ts, warumfalle.ts). Einbau der
+  Erkennungsschicht F1–F10 und W1 (analyse/findekategorien\*.ts, warumfalle.ts). Einbau der
   Findezeilen, Messlauf und Startseiten-Empfehlung folgen in der nächsten Version.
 
 ## 7.11.2026 – Version 0.3.52: Linienknöpfe in der Zugfolgenleiste
@@ -4209,7 +4209,7 @@ Der Autor hat X, S, R, W und U durchgesehen. Angenommen wie empfohlen, mit diese
       zurücknehmen kann, spielt stärker, als er ist; Lichess und chess.com werten solche Partien aus
       demselben Grund nicht.
       **Schon umgesetzt in 0.2.47 (Nachtest N244): Partien mit Rücknahme zählen nicht. Widerspruch
-      genügt.**
+      genügt.\*\*
 
 - [x] S10. **Ausschnitte der Kurve:** letzte 10, 25 oder 50 Partien; 1 Woche, 4 Wochen, 3 Monate,
       halbes Jahr, 1 Jahr; Vorgabe „letzte 25 Partien“. Bei den Zeiträumen liegt jede Partie an
@@ -4357,7 +4357,7 @@ Der Autor hat X, S, R, W und U durchgesehen. Angenommen wie empfohlen, mit diese
       im Schach halbe Temperatur, bei über 30 legalen Zügen ein Drittel mehr, je eigenem Fehler
       unter den letzten drei Zügen ein Viertel mehr, Tagesform 0,75 bis 1,25 je Partie. Die
       Fehlerprofile bleiben. Wege 4 und 5 sind seit 0.2.46 die blinden Flecken und der Spielstil.
-      Widerspruch genügt.**
+      Widerspruch genügt.\*\*
 
 - [x] R5. **Erklärungen im Rückblick:** Die Karte erklärt Fehler mit den sechs Fehlerarten der
       Engine (Drohung, hängende Figur, Gabel, gefährliche Linie, Motiv der Antwort, Schlagreflex,
@@ -7868,7 +7868,7 @@ ausschaltbar; dazu Plan C mit einer gemeinsamen Neumessung, alles mit den zehn M
 - **Neuling auf acht** (Wunsch des Autors): vier Kandidaten für die zwei fehlenden Universellen
   (Emma, Opa Kurt, Frau Schulz, Lotte; `engine/botkandidaten-neuling.ts`), die Neumessung wählt.
 - **Neumessung** (`app/messplan/`, `skripte/messe-planc.sh`, zehn Chats): zwei Durchgänge, ohne
-  und mit Maia (Kürzel „*“), je Anker 1m bis 10m (40 Partien, Tiefe 18) und alle Bots, Gruppen
+  und mit Maia (Kürzel „\*“), je Anker 1m bis 10m (40 Partien, Tiefe 18) und alle Bots, Gruppen
   und Kandidaten gegen die zwei Nm-Stufen um ihre Zahl (12 Partien); zusammen 5408 Partien.
   Weichen die Zahlen mit und ohne Maia je Bot um höchstens 65 voneinander ab, gilt ein Satz,
   sonst zwei.
@@ -8128,3 +8128,5 @@ geändertes Verhalten; nach jedem Schritt alle Prüfungen (Vitest, Build, Playwr
 - RO51 (stehen statt sitzen im Tagesablauf): vom Autor abgelehnt (24.11.2026, „nicht realistisch,
   dass Leute ständig neben Sitzgelegenheiten stehen“). Die Figuren sitzen wieder; ohne Sitzbild
   stehen sie übergangsweise neben dem Möbel. Die Sitzbilder kommen in die Bildmappe.
+
+- **Reiter „Abenteuer“ (Wunsch des Autors, 27.11.2026):** Das Spiel hat in der Leiste unten einen sechsten Reiter „Abenteuer“ mit Landkarte hinter „Spielen“. Er öffnet das Spiel im Vollbild über dem offenen Bildschirm, Zurück führt dorthin zurück. Damit alle sechs Wörter stehen bleiben (gemessen: „Nachschlagen“ 70 px gegen 53 bis 65 px bei gleich breiten Spalten auf 320 bis 390 Pixeln), ist jede Spalte mindestens so breit wie ihr Wort. Unter 300 Pixeln stehen nur Symbole, in der Leserfassung fehlt der Reiter bis zur Entscheidung des Autors.

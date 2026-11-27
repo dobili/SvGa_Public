@@ -121,7 +121,10 @@ export function Startanimation({ aus = false }: { readonly aus?: boolean }) {
     document.addEventListener("visibilitychange", beiWechsel);
     return () => document.removeEventListener("visibilitychange", beiWechsel);
   }, []);
-  if (!lauf) return null;
+  // `aus` kann erst nach dem ersten Bild wahr werden (Einstieg über /app/#abenteuer: die
+  // Zusatzansicht meldet sich nachträglich an); dann verschwindet die Animation sofort, sonst
+  // lagen goldener Springer und Startbild des Abenteuers übereinander (27.11.2026).
+  if (!lauf || aus) return null;
   return (
     <button
       type="button"

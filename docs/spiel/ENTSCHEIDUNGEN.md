@@ -1591,3 +1591,5 @@ Browserprüfung der Sperren S16 und S17 mit echt gespielten kurzen Partien (Fabl
 - Vorladen der Nachbarkarten bleibt vorerst aus: Daten und Bilddateien kommen schon aus dem
   Speicher, das Hochladen der Texturen gilt je Phaser-Spiel; es lohnt erst, wenn ein Phaser-Spiel
   über alle Karten bestehen bleibt (eigenes Paket, empfohlen).
+
+  27.11.2026 (Wunsch des Autors): Das Abenteuer hat beliebig viele Spielstände und ein Hauptmenü (Fortsetzen, Neues Spiel, Laden, Löschen mit Rückfrage, Einstellungen, Zurück zur App). Der gespielte Stand bleibt im Feld `abenteuer`, die übrigen ruhen mit ihrer offenen Partie in `abenteuerplaetze`, und Partien tragen ihren Platz. Ein neuer Start zeigt ein Startbild der Reise (Brett wird Weg, Held und Ambrose, Ortsschilder, Gemini-Panorama, ohne Paket schlicht); Rückweg aus der Partie und Neuladen führen gleich in die Welt. „Von vorn beginnen“ wurde zu „Hauptmenü“.

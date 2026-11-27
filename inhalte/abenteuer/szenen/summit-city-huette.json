@@ -2,7 +2,7 @@
   "karte": "summitCity.huette",
   "datei": "karten/summit-city-huette.json",
   "art": "innen",
-  "beschreibung": "Wards Hütte, eine Stunde über Summit City: eine Blockhütte mit Holzwänden und ruhigen Dielen, es riecht nach Holzrauch und Tee. An der Nordwand der steinerne Kamin mit Feuer und Holzstapeln links und rechts, links ein Bücherregal; sonst sind die Wände leer, es hängt nur ein Thermometer (Auslöser `pokal`, Bild fehlt noch). Vor dem Kamin auf dem Teppich ein runder Tisch mit Wards altem Holzbrett und der Teekanne (Auslöser `teekanne` an der Tischkante), die zwei Ohrensessel stehen links und rechts direkt am Tisch (Regel 10.79); dazu Leselampe und Stehlampe. Links und rechts der Tür zwei Clubtische direkt an ihren Stühlen, an denen Kit und Haraldsen gegen zwei sitzende Clubmitglieder spielen; an der Ostwand zwei Regale und eine Kommode. Die Hütte ist innen so flach wie außen (R065), deshalb stehen die Clubtische gleich am Eingang. Die Tür liegt in der Südwand.",
+  "beschreibung": "Wards Hütte, eine Stunde über Summit City: eine Blockhütte mit Holzwänden und ruhigen Dielen, es riecht nach Holzrauch und Tee. An der Nordwand der steinerne Kamin mit Feuer und Holzstapeln links und rechts, links ein Bücherregal; sonst sind die Wände leer, es hängt nur ein Thermometer (Auslöser `pokal`, Bild fehlt noch). Vor dem Kamin auf dem Teppich ein runder Tisch mit Wards altem Holzbrett und der Teekanne (Auslöser `teekanne` an der Tischkante), die zwei Ohrensessel stehen links und rechts direkt am Tisch (Regel 10.79); dazu Leselampe und Stehlampe. Links und rechts der Tür zwei Clubtische direkt an ihren Stühlen, an denen Kit und Haraldsen gegen zwei sitzende Clubmitglieder spielen; an der Ostwand zwei Regale und eine Kommode. Die Hütte ist innen so flach wie außen (R065), deshalb stehen die Clubtische gleich am Eingang. Die Tür liegt in der Südwand. Erster Eindruck (27.11.2026): Die beiden Ohrensessel am Kamin sind dunkelgrün.",
   "wand": "holz",
   "boden": "dielen",
   "zustand": ["neu", "gebraucht", "alt"],
@@ -59,7 +59,7 @@
       "feld": [7, 5]
     },
     {
-      "moebel": "sc15OhrensesselBlickRechts",
+      "moebel": "sc27OhrensesselBlickRechts",
       "feld": [6, 5],
       "zu": "ward"
     },
@@ -74,7 +74,7 @@
       "versatz": [0, 5]
     },
     {
-      "moebel": "sc15OhrensesselBlickLinks",
+      "moebel": "sc27OhrensesselBlickLinks",
       "feld": [10, 5],
       "zu": "ward"
     },

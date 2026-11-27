@@ -2,7 +2,7 @@
   "karte": "jahrmarkt.festplatz",
   "art": "aussen",
   "musikquellen": ["geigerin", "gitarrist"],
-  "beschreibung": "Am Abend: Der festgetretene Platz mit Strohballen, hinten ein durchgehender Holzzaun, vorn ein Holzzaun, vorn der Torbogen „Summer Fair“. Oben in der Mitte das Riesenrad mit Kartenhäuschen und Warteschlange, links das Karussell, rechts die Bühne mit Gerüst, Lautsprechern und zwei Tribünen davor, die zur Bühne schauen, auf der Bühne die Country-Band mit Sängerin, Gitarre und Fiedel. In der Mitte der Schachautomat, rechts daneben der Zuckerwattewagen mit rosa-weißer Markise, Zuckerwatte auf Stäbchen und Trommel. die Losbude mit Glücksrad an der Rückwand und rot-weißem Stoffdach (auf dem Tresen ein Teddy und ein Pokal als Gewinne), die Dosenbude als Marktstand mit gestreifter Markise (auf dem Tresen eine Dosenpyramide und ein Ball zum Werfen), Honigstand, Süßigkeiten, Limonade, Hot Dogs und Eiswagen, an jedem Stand jemand, der verkauft. Zwei Lichterketten zwischen Holzmasten über den Gängen, drei Flutlichtmasten. Auf dem festgetretenen Erdplatz sind einzelne Grasinseln stehen geblieben.",
+  "beschreibung": "Am Abend: Der festgetretene Platz mit Strohballen, hinten ein durchgehender Holzzaun, vorn ein Holzzaun, vorn der Torbogen „Summer Fair“. Oben in der Mitte das Riesenrad mit Kartenhäuschen und Warteschlange, links das Karussell, rechts die Bühne mit Gerüst, Lautsprechern und zwei Tribünen davor, die zur Bühne schauen, auf der Bühne die Country-Band mit Sängerin, Gitarre und Fiedel. In der Mitte der Schachautomat, rechts daneben der Zuckerwattewagen mit rosa-weißer Markise, Zuckerwatte auf Stäbchen und Trommel. die Losbude mit Glücksrad an der Rückwand und rot-weißem Stoffdach (auf dem Tresen ein Teddy und ein Pokal als Gewinne), die Dosenbude als Marktstand mit gestreifter Markise (auf dem Tresen eine Dosenpyramide und ein Ball zum Werfen), Honigstand, Süßigkeiten, Limonade, Hot Dogs und Eiswagen, an jedem Stand jemand, der verkauft. Zwei Lichterketten zwischen Holzmasten über den Gängen, drei Flutlichtmasten. Auf dem festgetretenen Erdplatz sind einzelne Grasinseln stehen geblieben. Erster Eindruck (27.11.2026): Der Hotdog-Stand ist ein Karren von vorn mit rot-weißem Schirm wie die Buden daneben, nicht mehr ein Wagen von oben.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -139,8 +139,8 @@
       "feld": [19, 20]
     },
     {
-      "moebel": "cr10HotdogwagenVorn",
-      "feld": [29, 20]
+      "moebel": "ca27Hotdogkarren",
+      "feld": [29, 22]
     },
     {
       "moebel": "cr10EiswagenVorn",

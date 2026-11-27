@@ -2,7 +2,7 @@
   "karte": "capitalArena.ubahnhof",
   "datei": "karten/capital-arena-ubahnhof.json",
   "art": "innen",
-  "beschreibung": "Der stillgelegte U-Bahnhof unter der Innenstadt von Capital in der Nacht der Kreidespringer (Dokument 15, 2.14). Weiße Fliesen, oben an der Wand Graffiti und alte Plakate, dahinter das Gleis mit einem abgestellten Zug voller Graffiti, vom Bahnsteig durch ein Geländer getrennt. Auf dem Bahnsteig zwei große Pfeiler, Bänke an den Enden, in der Mitte drei Klapptische mit Brettern für das Blitzturnier, ein Springer aus Kreide auf den Fliesen. Unten führt die Treppe hinauf zum Rollgitter, davor zwei alte Drehkreuze.",
+  "beschreibung": "Der stillgelegte U-Bahnhof unter der Innenstadt von Capital in der Nacht der Kreidespringer (Dokument 15, 2.14). Weiße Fliesen, oben an der Wand Graffiti und alte Plakate, dahinter das Gleis mit einem abgestellten Zug voller Graffiti, vom Bahnsteig durch ein Geländer getrennt. Auf dem Bahnsteig zwei große Pfeiler, Bänke an den Enden, in der Mitte drei Klapptische mit Brettern für das Blitzturnier, ein Springer aus Kreide auf den Fliesen. Unten führt die Treppe hinauf zum Rollgitter, davor zwei alte Drehkreuze. Erster Eindruck (27.11.2026): Auf den Fliesen liegen alte Zeitungen, Pappbecher und Laub, unten rechts eine Pfütze. Die Blitzspieler sitzen auf gestapelten Flaschenkästen.",
   "wand": "hellgrau",
   "boden": "fliesenWeiss",
   "boeden": {
@@ -324,28 +324,48 @@
       "vorn": true
     },
     {
-      "moebel": "ca9Hocker",
+      "moebel": "ca27Bierkastenhocker",
       "feld": [9, 12]
     },
     {
-      "moebel": "ca9Hocker",
+      "moebel": "ca27Bierkastenhocker",
       "feld": [12, 12]
     },
     {
-      "moebel": "ca9Hocker",
+      "moebel": "ca27Bierkastenhocker",
       "feld": [16, 12]
     },
     {
-      "moebel": "ca9Hocker",
+      "moebel": "ca27Bierkastenhocker",
       "feld": [19, 12]
     },
     {
-      "moebel": "ca9Hocker",
+      "moebel": "ca27Bierkastenhocker",
       "feld": [23, 12]
     },
     {
-      "moebel": "ca9Hocker",
+      "moebel": "ca27Bierkastenhocker",
       "feld": [26, 12]
+    },
+    {
+      "moebel": "ca27Muell",
+      "feld": [3, 15]
+    },
+    {
+      "moebel": "ca27Muell",
+      "feld": [27, 16]
+    },
+    {
+      "moebel": "ca27Muell",
+      "feld": [13, 9]
+    },
+    {
+      "moebel": "ca27Muell",
+      "feld": [31, 12]
+    },
+    {
+      "moebel": "rv9PfuetzeKlein",
+      "feld": [24, 17]
     }
   ],
   "ausloeser": [

@@ -12,7 +12,7 @@
     "t": "stein",
     "l": "platten"
   },
-  "beschreibung": "Die Innenstadt von Capital an einem Sommertag: dicht an dicht Wohnhäuser, Kaufhäuser, Läden, Post, Stadthaus und Bürohaus in drei Reihen. Oben eine schmale Gasse vor der ersten Häuserreihe, in der Mitte eine Allee mit Asphalt und Gehwegen, im Süden eine Fußgängerstraße, die im Westen zur Arena führt. Zwei Quergassen verbinden alles. Unten in der Mitte liegt ein Platz aus grauem Stein mit Kaffeekiosk in Becherform, Bushaltestelle, Bänken und zwei Bäumen; in seiner Mitte führen der alte Abgang zum stillgelegten U-Bahnhof unter einem Schild „Subway“, verschlossen mit einem Rollgitter samt Kette und Schloss; daneben ein Springer aus Kreide auf dem Pflaster und ein Aufsteller „Bald“. Links des Platzes drei Hochhäuser und ein schmales Wohnhaus, rechts ein großes Bürohaus. Am Nordrand der Allee wartet ein gelbes Taxi, sein Fahrer lehnt am Heck.",
+  "beschreibung": "Die Innenstadt von Capital an einem Sommertag: dicht an dicht Wohnhäuser, Kaufhäuser, Läden, Post, Stadthaus und Bürohaus in drei Reihen. Oben eine schmale Gasse vor der ersten Häuserreihe, in der Mitte eine Allee mit Asphalt und Gehwegen, im Süden eine Fußgängerstraße, die im Westen zur Arena führt. Zwei Quergassen verbinden alles. Unten in der Mitte liegt ein Platz aus grauem Stein mit Kaffeekiosk in Becherform, Bushaltestelle, Bänken und zwei Bäumen; in seiner Mitte führen der alte Abgang zum stillgelegten U-Bahnhof unter einem Schild „Subway“, verschlossen mit einem Rollgitter samt Kette und Schloss; daneben ein Springer aus Kreide auf dem Pflaster und ein Aufsteller „Bald“. Links des Platzes drei Hochhäuser und ein schmales Wohnhaus, rechts ein großes Bürohaus. Am Nordrand der Allee wartet ein gelbes Taxi, sein Fahrer lehnt am Heck. Erster Eindruck (27.11.2026): Auf den Flachdächern der Kaufhäuser und Läden Klimageräte, Luken, Lüftungen, Solarmodule und Pflanzkästen; auf dem Platz zwei Bistrotische mit Stühlen.",
   "raster": [
     "################################################################################",
     "#llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll#",
@@ -167,11 +167,13 @@
     },
     {
       "moebel": "ca8Kaufhaus2",
-      "feld": [9, 2]
+      "feld": [9, 2],
+      "id": "kaufhausElektro"
     },
     {
       "moebel": "ca8Wohnhaus5_1",
-      "feld": [16, 3]
+      "feld": [16, 3],
+      "id": "wohnhausBlau"
     },
     {
       "moebel": "ca9Wohnhaus",
@@ -179,7 +181,8 @@
     },
     {
       "moebel": "ca8Kaufhaus6",
-      "feld": [33, 2]
+      "feld": [33, 2],
+      "id": "kaufhausVariety"
     },
     {
       "moebel": "ca8Wohnhaus9B",
@@ -187,7 +190,8 @@
     },
     {
       "moebel": "ca8Laden4",
-      "feld": [46, 6]
+      "feld": [46, 6],
+      "id": "ladenTabak"
     },
     {
       "moebel": "ca8Reihenhaus3",
@@ -195,15 +199,18 @@
     },
     {
       "moebel": "ca8Kaufhaus3",
-      "feld": [56, 2]
+      "feld": [56, 2],
+      "id": "kaufhausSport"
     },
     {
       "moebel": "ca8Wohnhaus5_3",
-      "feld": [63, 3]
+      "feld": [63, 3],
+      "id": "wohnhausGelb"
     },
     {
       "moebel": "ca8Laden8",
-      "feld": [69, 6]
+      "feld": [69, 6],
+      "id": "ladenSchuhe"
     },
     {
       "moebel": "ca8Reihenhaus2",
@@ -215,11 +222,13 @@
     },
     {
       "moebel": "ca8Kaufhaus1",
-      "feld": [6, 20]
+      "feld": [6, 20],
+      "id": "kaufhausDept"
     },
     {
       "moebel": "ca8Kaufhaus5",
-      "feld": [13, 20]
+      "feld": [13, 20],
+      "id": "kaufhausGalerie"
     },
     {
       "moebel": "ca8Reihenhaus2",
@@ -235,11 +244,13 @@
     },
     {
       "moebel": "ca8Laden10",
-      "feld": [48, 24]
+      "feld": [48, 24],
+      "id": "ladenUhren"
     },
     {
       "moebel": "ca8Kaufhaus4",
-      "feld": [56, 20]
+      "feld": [56, 20],
+      "id": "kaufhausHome"
     },
     {
       "moebel": "ca8Wohnhaus9B",
@@ -247,7 +258,8 @@
     },
     {
       "moebel": "ca8Markt1",
-      "feld": [69, 23]
+      "feld": [69, 23],
+      "id": "marktDeli"
     },
     {
       "moebel": "ca8Reihenhaus3",
@@ -277,7 +289,8 @@
     },
     {
       "moebel": "ca10Buero",
-      "feld": [57, 38]
+      "feld": [57, 38],
+      "id": "buero"
     },
     {
       "moebel": "ci8Gitter",
@@ -399,6 +412,254 @@
       "moebel": "ci15Taxi",
       "feld": [68, 32],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "sb27DachSolar",
+      "auf": "kaufhausVariety",
+      "versatz": [-22, -69]
+    },
+    {
+      "moebel": "sb27DachSolar",
+      "auf": "kaufhausVariety",
+      "versatz": [24, -69]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "kaufhausVariety",
+      "versatz": [-26, -45]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "kaufhausVariety",
+      "versatz": [32, -43]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "ladenTabak",
+      "versatz": [-12, -42]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "ladenTabak",
+      "versatz": [20, -40]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "ladenTabak",
+      "versatz": [8, -14]
+    },
+    {
+      "moebel": "sb27DachLueftung",
+      "auf": "kaufhausSport",
+      "versatz": [-18, -65]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "kaufhausSport",
+      "versatz": [26, -79]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "kaufhausSport",
+      "versatz": [-18, -43]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "kaufhausSport",
+      "versatz": [32, -47]
+    },
+    {
+      "moebel": "sb27DachPflanzkaesten",
+      "auf": "ladenSchuhe",
+      "versatz": [-2, -42]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "ladenSchuhe",
+      "versatz": [0, -16]
+    },
+    {
+      "moebel": "sb27DachLueftung",
+      "auf": "kaufhausDept",
+      "versatz": [-18, -65]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "kaufhausDept",
+      "versatz": [26, -79]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "kaufhausDept",
+      "versatz": [-18, -43]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "kaufhausDept",
+      "versatz": [32, -47]
+    },
+    {
+      "moebel": "sb27DachPflanzkaesten",
+      "auf": "kaufhausGalerie",
+      "versatz": [-20, -83]
+    },
+    {
+      "moebel": "sb27DachPflanzkaesten",
+      "auf": "kaufhausGalerie",
+      "versatz": [-20, -63]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "kaufhausGalerie",
+      "versatz": [22, -77]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "kaufhausGalerie",
+      "versatz": [34, -47]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "kaufhausGalerie",
+      "versatz": [12, -45]
+    },
+    {
+      "moebel": "sb27DachSolar",
+      "auf": "ladenUhren",
+      "versatz": [-2, -30]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "ladenUhren",
+      "versatz": [24, -14]
+    },
+    {
+      "moebel": "sb27DachSolar",
+      "auf": "kaufhausHome",
+      "versatz": [-22, -69]
+    },
+    {
+      "moebel": "sb27DachSolar",
+      "auf": "kaufhausHome",
+      "versatz": [24, -69]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "kaufhausHome",
+      "versatz": [-26, -45]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "kaufhausHome",
+      "versatz": [32, -43]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "marktDeli",
+      "versatz": [-26, -54]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "marktDeli",
+      "versatz": [20, -54]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "marktDeli",
+      "versatz": [-12, -22]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "marktDeli",
+      "versatz": [38, -20]
+    },
+    {
+      "moebel": "ca27Cafetisch",
+      "feld": [31, 47]
+    },
+    {
+      "moebel": "ca27Cafetisch",
+      "feld": [45, 47]
+    },
+    {
+      "moebel": "sb27DachLueftung",
+      "auf": "buero",
+      "versatz": [-48, -110]
+    },
+    {
+      "moebel": "sb27DachLueftung",
+      "auf": "buero",
+      "versatz": [22, -110]
+    },
+    {
+      "moebel": "sb27DachSolar",
+      "auf": "buero",
+      "versatz": [86, -112]
+    },
+    {
+      "moebel": "sb27DachSolar",
+      "auf": "buero",
+      "versatz": [86, -76]
+    },
+    {
+      "moebel": "sb27DachSolar",
+      "auf": "buero",
+      "versatz": [-48, -74]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "buero",
+      "versatz": [14, -82]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "buero",
+      "versatz": [-120, -100]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "buero",
+      "versatz": [-104, -66]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "wohnhausBlau",
+      "versatz": [-20, -73]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "wohnhausBlau",
+      "versatz": [22, -67]
+    },
+    {
+      "moebel": "sb27DachPflanzkaesten",
+      "auf": "wohnhausGelb",
+      "versatz": [-14, -75]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "wohnhausGelb",
+      "versatz": [30, -63]
+    },
+    {
+      "moebel": "sb27DachSolar",
+      "auf": "kaufhausElektro",
+      "versatz": [24, -61]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "kaufhausElektro",
+      "versatz": [-26, -45]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "kaufhausElektro",
+      "versatz": [32, -43]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "kaufhausElektro",
+      "versatz": [-28, -69]
     }
   ],
   "ausloeser": [

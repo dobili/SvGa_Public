@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 22,
+ "nextobjectid": 19,
  "layers": [
   {
    "id": 1,
@@ -697,11 +697,11 @@
     },
     {
      "id": 10,
-     "name": "sc9RegalBergsport",
+     "name": "sc27RegalSeile",
      "type": "moebel",
      "x": 64,
      "y": 16,
-     "width": 32,
+     "width": 48,
      "height": 48,
      "rotation": 0,
      "visible": true,
@@ -720,30 +720,7 @@
     },
     {
      "id": 11,
-     "name": "pg7SeilHaken",
-     "type": "moebel",
-     "x": 96,
-     "y": 16,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 0
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 12,
-     "name": "sc9RegalBergsport",
+     "name": "sc27RegalSchuhe",
      "type": "moebel",
      "x": 112,
      "y": 16,
@@ -765,7 +742,7 @@
      ]
     },
     {
-     "id": 13,
+     "id": 12,
      "name": "ccWeltkarte",
      "type": "moebel",
      "x": 144,
@@ -788,8 +765,8 @@
      ]
     },
     {
-     "id": 14,
-     "name": "sc9RegalBergsport",
+     "id": 13,
+     "name": "sc27RegalSchuhe",
      "type": "moebel",
      "x": 176,
      "y": 16,
@@ -807,12 +784,27 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "spiegeln",
+       "type": "bool",
+       "value": true
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../../##"
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": "......../......../......../......../......../......../......../......../########/########/########/########"
       }
      ]
     },
     {
-     "id": 15,
-     "name": "sc9Kartenstaender",
+     "id": 14,
+     "name": "sc27Kartenstaender",
      "type": "moebel",
      "x": 192,
      "y": 80,
@@ -834,7 +826,7 @@
      ]
     },
     {
-     "id": 16,
+     "id": 15,
      "name": "cc5Tisch",
      "type": "moebel",
      "x": 96,
@@ -857,7 +849,7 @@
      ]
     },
     {
-     "id": 17,
+     "id": 16,
      "name": "sc9Wanderkarte",
      "type": "moebel",
      "x": 104,
@@ -880,11 +872,11 @@
      ]
     },
     {
-     "id": 18,
+     "id": 17,
      "name": "scRucksack",
      "type": "moebel",
-     "x": 144,
-     "y": 96,
+     "x": 192,
+     "y": 112,
      "width": 16,
      "height": 32,
      "rotation": 0,
@@ -893,7 +885,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 120
+       "value": 136
       },
       {
        "name": "kollision",
@@ -903,53 +895,7 @@
      ]
     },
     {
-     "id": 19,
-     "name": "scRucksackRot",
-     "type": "moebel",
-     "x": 160,
-     "y": 96,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 120
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 20,
-     "name": "pdSeil",
-     "type": "moebel",
-     "x": 64,
-     "y": 96,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 21,
+     "id": 18,
      "name": "cc4PflanzeK",
      "type": "moebel",
      "x": 16,

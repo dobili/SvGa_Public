@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 43,
+ "nextobjectid": 42,
  "layers": [
   {
    "id": 1,
@@ -1383,7 +1383,7 @@
     },
     {
      "id": 14,
-     "name": "rvBahnsteigbank",
+     "name": "sc27BankHolz",
      "type": "moebel",
      "x": 32,
      "y": 160,
@@ -1406,7 +1406,7 @@
     },
     {
      "id": 15,
-     "name": "rvBahnsteigbank",
+     "name": "sc27BankHolz",
      "type": "moebel",
      "x": 160,
      "y": 160,
@@ -1659,29 +1659,6 @@
     },
     {
      "id": 26,
-     "name": "scRucksackRot",
-     "type": "moebel",
-     "x": 160,
-     "y": 208,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 232
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 27,
      "name": "sc16Seilrad",
      "type": "moebel",
      "x": 208,
@@ -1704,7 +1681,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 27,
      "name": "rv8GlastuerNord",
      "type": "moebel",
      "x": 128,
@@ -1727,7 +1704,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 28,
      "name": "sc16GelaenderEcke",
      "type": "moebel",
      "x": 40,
@@ -1765,7 +1742,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 29,
      "name": "sc16Gelaender",
      "type": "moebel",
      "x": 84,
@@ -1788,7 +1765,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 30,
      "name": "sc16Gelaender",
      "type": "moebel",
      "x": 132,
@@ -1811,7 +1788,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 31,
      "name": "sc16Gelaender",
      "type": "moebel",
      "x": 180,
@@ -1834,7 +1811,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 32,
      "name": "sc16GelaenderEcke",
      "type": "moebel",
      "x": 224,
@@ -1857,7 +1834,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 33,
      "name": "sc16Wolkenmeer",
      "type": "moebel",
      "x": 0,
@@ -1880,7 +1857,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 34,
      "name": "sc16Wolkenmeer",
      "type": "moebel",
      "x": 64,
@@ -1903,7 +1880,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 35,
      "name": "sc16Wolkenmeer",
      "type": "moebel",
      "x": 128,
@@ -1926,7 +1903,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 36,
      "name": "sc16Wolkenmeer",
      "type": "moebel",
      "x": 192,
@@ -1949,7 +1926,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 37,
      "name": "sc16WolkenmeerRandOben",
      "type": "moebel",
      "x": 256,
@@ -1972,7 +1949,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 38,
      "name": "sc16WolkenmeerRandLinks",
      "type": "moebel",
      "x": 0,
@@ -1995,7 +1972,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 39,
      "name": "sc16WolkenmeerRandRechts",
      "type": "moebel",
      "x": 272,
@@ -2018,8 +1995,8 @@
      ]
     },
     {
-     "id": 41,
-     "name": "rvBahnsteigbank",
+     "id": 40,
+     "name": "sc27BankHolz",
      "type": "moebel",
      "x": 48,
      "y": 208,
@@ -2041,8 +2018,8 @@
      ]
     },
     {
-     "id": 42,
-     "name": "rvBahnsteigbank",
+     "id": 41,
+     "name": "sc27BankHolz",
      "type": "moebel",
      "x": 112,
      "y": 208,

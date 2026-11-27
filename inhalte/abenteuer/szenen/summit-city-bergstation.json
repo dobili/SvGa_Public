@@ -2,7 +2,7 @@
   "karte": "summitCity.bergstation",
   "datei": "karten/summit-city-bergstation.json",
   "art": "innen",
-  "beschreibung": "Die Bergstation der Seilbahn über den Wolken (Szene 88), 18 × 19 (die Halle acht Reihen tief, R065): hinten die offene Aussichtsplattform, vorn die Halle aus Holz und Glas, kühl und hell. Die Plattform aus Stein liegt nördlich hinter der Halle, drei Reihen tief und fünfzehn Felder breit; an ihrer Kante läuft ein Stahlgeländer mit zwei Ecken, deren Pfosten bis an die Hallenwand reichen. Dahinter und daneben nichts als das Wolkenmeer. Victor steht dort am Geländer, wo er in Szene 88 sitzt; über ihm sperrt eine halbe Kachel (fein), damit sich niemand an ihm vorbei auf das leere Westende zwängt (Durchlassprüfung, 19.11.2026), die geraden Geländerteile sitzen so hoch wie die Ecken; rechts am Geländer der Auslöser „aussicht“. Eine gläserne Doppeltür in der Mitte der Nordwand der Halle führt hinaus. In der Nordwand links zwei und rechts ein Fensterband, hinter denen Wolken und Gipfel stehen; davor zwei Bänke, links neben der Tür eine Pflanze. Rechts die steinerne Bucht der Gondel: Hinten steht das große Seilrad auf seinem Stahlgestell vor dem Glastor, durch das das Seil hinausläuft, darunter hängt die Gondel; mit ihr fährt man auch zurück ins Tal. Vorn links der Fahrkartenschalter mit Glas und Kasse und Schalterbeamtem, daneben der Fahrplan; der Kaffeeautomat steht an der Westwand neben dem Fenster, die Schließfächer vorn mit einer Kachel Abstand zur Gondelbucht (Spieler-Durchlauf 18.11.2026: vorher kam man kaum zur Seilbahn zurück). In der Mitte der Halle zwei Wartebänke, unter der linken liegt die Murmeltierpfeife (Fund davor); Rucksäcke von Wanderern liegen herum.",
+  "beschreibung": "Die Bergstation der Seilbahn über den Wolken (Szene 88), 18 × 19 (die Halle acht Reihen tief, R065): hinten die offene Aussichtsplattform, vorn die Halle aus Holz und Glas, kühl und hell. Die Plattform aus Stein liegt nördlich hinter der Halle, drei Reihen tief und fünfzehn Felder breit; an ihrer Kante läuft ein Stahlgeländer mit zwei Ecken, deren Pfosten bis an die Hallenwand reichen. Dahinter und daneben nichts als das Wolkenmeer. Victor steht dort am Geländer, wo er in Szene 88 sitzt; über ihm sperrt eine halbe Kachel (fein), damit sich niemand an ihm vorbei auf das leere Westende zwängt (Durchlassprüfung, 19.11.2026), die geraden Geländerteile sitzen so hoch wie die Ecken; rechts am Geländer der Auslöser „aussicht“. Eine gläserne Doppeltür in der Mitte der Nordwand der Halle führt hinaus. In der Nordwand links zwei und rechts ein Fensterband, hinter denen Wolken und Gipfel stehen; davor zwei Bänke, links neben der Tür eine Pflanze. Rechts die steinerne Bucht der Gondel: Hinten steht das große Seilrad auf seinem Stahlgestell vor dem Glastor, durch das das Seil hinausläuft, darunter hängt die Gondel; mit ihr fährt man auch zurück ins Tal. Vorn links der Fahrkartenschalter mit Glas und Kasse und Schalterbeamtem, daneben der Fahrplan; der Kaffeeautomat steht an der Westwand neben dem Fenster, die Schließfächer vorn mit einer Kachel Abstand zur Gondelbucht (Spieler-Durchlauf 18.11.2026: vorher kam man kaum zur Seilbahn zurück). In der Mitte der Halle zwei Wartebänke, unter der linken liegt die Murmeltierpfeife (Fund davor); Rucksäcke von Wanderern liegen herum. Erster Eindruck (27.11.2026): Die Bänke sind helle Holzbänke auf Stahlbeinen, wie es zur neuen Station passt; ein einzelner Rucksack lehnt an der Bank.",
   "wand": "hellgrau",
   "boden": "dielen",
   "zustand": ["neu", "gebraucht"],
@@ -54,11 +54,11 @@
       "id": "gondeltor"
     },
     {
-      "moebel": "rvBahnsteigbank",
+      "moebel": "sc27BankHolz",
       "feld": [2, 10]
     },
     {
-      "moebel": "rvBahnsteigbank",
+      "moebel": "sc27BankHolz",
       "feld": [10, 10]
     },
     {
@@ -106,10 +106,6 @@
     {
       "moebel": "scRucksack",
       "feld": [6, 13]
-    },
-    {
-      "moebel": "scRucksackRot",
-      "feld": [10, 13]
     },
     {
       "moebel": "sc16Seilrad",
@@ -176,11 +172,11 @@
       "feld": [17, 4]
     },
     {
-      "moebel": "rvBahnsteigbank",
+      "moebel": "sc27BankHolz",
       "feld": [3, 13]
     },
     {
-      "moebel": "rvBahnsteigbank",
+      "moebel": "sc27BankHolz",
       "feld": [7, 13]
     }
   ],

@@ -2774,7 +2774,10 @@
       "stil": "klassisch",
       "blick": "unten",
       "gebaeude": true,
-      "tuer": [[1, 8], [2, 8]],
+      "tuer": [
+        [1, 8],
+        [2, 8]
+      ],
       "hinweis": "Stadthaus streng von vorn: Fachwerk über Backstein, Doppeltür, Blumenkästen; noch in keiner Karte (Gemini K15, neu über die Schnittstelle 26.11.2026, 6 × 8 Kacheln)"
     },
     "ca21StadthausBackstein": {
@@ -2815,6 +2818,154 @@
       "gebaeude": true,
       "tuer": [[2, 8]],
       "hinweis": "Stadthaus streng von vorn: ockerfarbener Backstein, zwei gestreifte Markisen, Kamin; noch in keiner Karte (Gemini K15, neu über die Schnittstelle 26.11.2026, 6 × 8 Kacheln)"
+    },
+    "ca27TribuenePublikum": {
+      "quelle": "spiel/eigene/tribuene_publikum.png",
+      "lauf": "waagrecht",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "unten",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################"
+      ],
+      "hinweis": "Holztribüne mit sieben sitzenden Zuschauern, zwei halten Schals in Marine und Gold (Kartenblick H3) (Gemini F1, 27.11.2026, werkzeuge/gemini_akt4_2711.py)"
+    },
+    "ca27Kordel": {
+      "quelle": "spiel/eigene/kordelabsperrung.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "absperrung",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "unten",
+      "hinweis": "Absperrung aus drei Messingpfosten mit roter Samtkordel (Kartenblick H5) (Gemini F2, 27.11.2026, werkzeuge/gemini_akt4_2711.py)",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "..###..###..",
+        "#....##....#",
+        "##...##...##"
+      ]
+    },
+    "ca27TurniertafelGross": {
+      "quelle": "spiel/eigene/turniertafel_gross.png",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "tafel",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "blick": "unten",
+      "blickziel": true,
+      "hinweis": "große Turniertafel mit Paarungen in Kreide und goldenem Springer statt kleiner Schultafel (Kartenblick H8) (Gemini F3, 27.11.2026, werkzeuge/gemini_akt4_2711.py)"
+    },
+    "ca27FanshopTresen": {
+      "quelle": "spiel/eigene/fanshop_tresen.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "theke",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten",
+      "hinweis": "Fanshop als Holztresen mit Schals und Mützen vor einer Warenwand mit Trikots in Marine und Gold, ohne Zeltdach (Kartenblick H2) (Gemini F4, 27.11.2026, werkzeuge/gemini_akt4_2711.py)",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "...##########...",
+        "################",
+        "#.############.#",
+        "#.############.#",
+        "################",
+        "#.####.....###.#",
+        "#.##.........#.#",
+        "#.############.#",
+        "##############.#",
+        "##############.#",
+        ".#############..",
+        "..############.."
+      ]
+    },
+    "ca27Hotdogkarren": {
+      "quelle": "spiel/eigene/hotdogkarren.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "strassenmoebel",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten",
+      "hinweis": "Hotdog-Karren von vorn mit rot-weißem Schirm, Grill und Senf, passend zum Limonadenkarren (Kartenblick A10) (Gemini F5, 27.11.2026, werkzeuge/gemini_akt4_2711.py)",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "..#########.",
+        "###########.",
+        "###########.",
+        "###########.",
+        ".##########.",
+        "..########.."
+      ]
+    },
+    "ca27Muell": {
+      "quelle": "spiel/eigene/muell_zeitungen.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "alt",
+      "stil": "modern",
+      "begehbar": true,
+      "begehbar_grund": "flacher Abfall am Boden",
+      "hinweis": "zerknüllte Zeitungen, Pappbecher und Laub auf dem Boden des stillgelegten U-Bahnhofs (Kartenblick U3) (Gemini F6, 27.11.2026, werkzeuge/gemini_akt4_2711.py)"
+    },
+    "ca27Bierkastenhocker": {
+      "quelle": "spiel/eigene/bierkasten_hocker.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "bank",
+      "zustand": "alt",
+      "stil": "modern",
+      "blick": "unten",
+      "maske_fein": ["....", ".##.", ".##.", "...."],
+      "hinweis": "zwei gestapelte Flaschenkästen als Hocker statt grauer Klötze (Kartenblick U8) (Gemini F12, 27.11.2026, werkzeuge/gemini_akt4_2711.py)"
+    },
+    "ca27Cafetisch": {
+      "quelle": "spiel/eigene/cafe_tisch.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "unten",
+      "hinweis": "Bistrotisch mit zwei Stühlen vor dem Café (Kartenblick A8) (Gemini F14, 27.11.2026, werkzeuge/gemini_akt4_2711.py)"
     }
   }
 }

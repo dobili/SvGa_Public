@@ -2,18 +2,11 @@
   "karte": "summitCity.bergladen",
   "datei": "karten/summit-city-bergladen.json",
   "art": "innen",
-  "beschreibung": "Der Bergladen von Summit City: Holzwände, alte Dielen, es riecht nach Leder und Seil. Links die Theke mit der Kasse, dahinter die Ladenhilfe. An der Nordwand drei Regale mit aufgerollten Seilen, Karabinern und Laternen, dazwischen ein Seil am Haken und eine große Landkarte. In der Mitte der Kartentisch mit einer aufgefalteten Wanderkarte, davor Rucksäcke und ein Seil, rechts der Ständer mit Seilbahn- und Wanderkarten. Die Tür liegt in der Südwand.",
+  "beschreibung": "Der Bergladen von Summit City: Holzwände, alte Dielen, es riecht nach Leder und Seil. Links die Theke mit der Kasse, dahinter die Ladenhilfe. An der Nordwand drei Regale mit aufgerollten Seilen, Karabinern und Laternen, dazwischen ein Seil am Haken und eine große Landkarte. In der Mitte der Kartentisch mit einer aufgefalteten Wanderkarte, davor Rucksäcke und ein Seil, rechts der Ständer mit Seilbahn- und Wanderkarten. Die Tür liegt in der Südwand. Erster Eindruck (27.11.2026): An der Nordwand ein breites Regal mit Kletterhelmen, Karabinern und Seilen und zwei Regale mit Wanderschuhen, Socken und Laternen; rechts ein Drahtständer mit Wanderkarten, ein Rucksack an der Ostwand. Der Laufweg zwischen Tür, Kartentisch und Theke ist frei.",
   "wand": "holz",
   "boden": "dielen",
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": [
-    "klassisch",
-    "laendlich",
-    "natur",
-    "modern",
-    "rustikal",
-    "industrie"
-  ],
+  "stil": ["klassisch", "laendlich", "natur", "modern", "rustikal", "industrie"],
   "raster": [
     "##############",
     "##############",
@@ -51,16 +44,11 @@
       "versatz": [4, 0]
     },
     {
-      "moebel": "sc9RegalBergsport",
+      "moebel": "sc27RegalSeile",
       "feld": [4, 1]
     },
     {
-      "moebel": "pg7SeilHaken",
-      "feld": [6, 1],
-      "an_wand": true
-    },
-    {
-      "moebel": "sc9RegalBergsport",
+      "moebel": "sc27RegalSchuhe",
       "feld": [7, 1]
     },
     {
@@ -69,11 +57,12 @@
       "an_wand": true
     },
     {
-      "moebel": "sc9RegalBergsport",
-      "feld": [11, 1]
+      "moebel": "sc27RegalSchuhe",
+      "feld": [11, 1],
+      "spiegeln": true
     },
     {
-      "moebel": "sc9Kartenstaender",
+      "moebel": "sc27Kartenstaender",
       "feld": [12, 5]
     },
     {
@@ -89,15 +78,7 @@
     },
     {
       "moebel": "scRucksack",
-      "feld": [9, 6]
-    },
-    {
-      "moebel": "scRucksackRot",
-      "feld": [10, 6]
-    },
-    {
-      "moebel": "pdSeil",
-      "feld": [4, 6]
+      "feld": [12, 7]
     },
     {
       "moebel": "cc4PflanzeK",

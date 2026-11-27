@@ -2,7 +2,7 @@
   "karte": "summitCity.aussen",
   "datei": "karten/summit-city-aussen.json",
   "art": "aussen",
-  "beschreibung": "Summit City im Sommer: eine Bergstadt auf einer Alm, im Norden die Gipfelwand als Felswand mit Kante. Die Bergstraße kommt am Südrand an und führt als Pflasterweg zum Marktplatz mit dem Drachenbrunnen, auf dem das Sommerfest vorbereitet wird. Im Westen Wards Hütte, eine schlichte Blockhütte mit gemauertem Kamin, und der Bergladen in einer Blockhütte mit grünem Dach und dem Holzschild „BERGLADEN“ am Giebel, darüber die Gipfelfelsen mit einer in den Fels geschlagenen Treppe, auf denen Sol steht. Im Nordosten die Talstation der Seilbahn, das Seil läuft über den Mast bis in die Gipfelwand. Ein Erdweg führt vom Platz nach Südosten zu Weg 8 und zum Geysirbecken. Ferienhütten als Blockhütten mit Schindel-, Grün- und Schieferdach, Schutzhütte (Blockhütte mit offener Tür) und Bergwacht (Blockhütte mit grünem Dach, am Giebel das Holzschild „BERGWACHT“ mit rotem Kreuz), zwischen den Häusern Pinien, Wacholder, Felsbrocken und Blumen, Murmeltiere und Ziegen. Gepflasterter Marktplatz mit zwei Ständen und Wimpeln, Ferienhütten am Hüttenweg im Westen und Osten, Holzhacker bei den Westhütten, Blumen und eine Bank im Osten. Westen und Osten säumt Pinienwald; die Bergstraße kommt als Asphalt am Südrand an, im Süden verbindet eine Gasse Hof, Schuppen, Hütte und Kiosk (ein Marktstand mit Lagerschuppen, am Querbalken das Holzschild „KIOSK“).",
+  "beschreibung": "Summit City im Sommer: eine Bergstadt auf einer Alm, im Norden die Gipfelwand als Felswand mit Kante. Die Bergstraße kommt am Südrand an und führt als Pflasterweg zum Marktplatz mit dem Drachenbrunnen, auf dem das Sommerfest vorbereitet wird. Im Westen Wards Hütte, eine schlichte Blockhütte mit gemauertem Kamin, und der Bergladen in einer Blockhütte mit grünem Dach und dem Holzschild „BERGLADEN“ am Giebel, darüber die Gipfelfelsen mit einer in den Fels geschlagenen Treppe, auf denen Sol steht. Im Nordosten die Talstation der Seilbahn, das Seil läuft über den Mast bis in die Gipfelwand. Ein Erdweg führt vom Platz nach Südosten zu Weg 8 und zum Geysirbecken. Ferienhütten als Blockhütten mit Schindel-, Grün- und Schieferdach, Schutzhütte (Blockhütte mit offener Tür) und Bergwacht (Blockhütte mit grünem Dach, am Giebel das Holzschild „BERGWACHT“ mit rotem Kreuz), zwischen den Häusern Pinien, Wacholder, Felsbrocken und Blumen, Murmeltiere und Ziegen. Gepflasterter Marktplatz mit zwei Ständen und Wimpeln, Ferienhütten am Hüttenweg im Westen und Osten, Holzhacker bei den Westhütten, Blumen und eine Bank im Osten. Westen und Osten säumt Pinienwald; die Bergstraße kommt als Asphalt am Südrand an, im Süden verbindet eine Gasse Hof, Schuppen, Hütte und Kiosk (ein Marktstand mit Lagerschuppen, am Querbalken das Holzschild „KIOSK“). Erster Eindruck (27.11.2026): Die Wimpelketten hängen quer über dem Platz zwischen den Laternen; am Nordrand des Platzes steht eine kleine Festbühne im Aufbau mit Leiter und Brettern, davor zwei Biertische mit Bank. Auf der Alm wachsen Wildblumen statt Blumenkästen, zwischen den Gipfelfelsen flache Latschenkiefern.",
   "wand": "fels",
   "boden": "gras",
   "boeden": {
@@ -117,23 +117,15 @@
     },
     {
       "moebel": "sc7Wimpel6",
-      "feld": [27, 27]
+      "feld": [28, 29]
     },
     {
       "moebel": "sc7Wimpel6",
-      "feld": [39, 27]
+      "feld": [34, 29]
     },
     {
       "moebel": "wds6Holzstapel",
       "feld": [14, 24]
-    },
-    {
-      "moebel": "scRucksack",
-      "feld": [25, 26]
-    },
-    {
-      "moebel": "scRucksackRot",
-      "feld": [26, 26]
     },
     {
       "moebel": "wg6StandGross",
@@ -345,7 +337,7 @@
       "feld": [44, 56]
     },
     {
-      "moebel": "blumenbusch",
+      "moebel": "wg4Wildblumen",
       "feld": [53, 44]
     },
     {
@@ -393,11 +385,11 @@
       "feld": [9, 53]
     },
     {
-      "moebel": "blumenbusch",
+      "moebel": "wc5Wildblumen",
       "feld": [53, 38]
     },
     {
-      "moebel": "blumenbusch",
+      "moebel": "wg4Wildblumen",
       "feld": [16, 55]
     },
     {
@@ -429,7 +421,7 @@
       "feld": [31, 44]
     },
     {
-      "moebel": "blumenbusch",
+      "moebel": "wc5Wildblumen",
       "feld": [47, 38]
     },
     {
@@ -441,7 +433,7 @@
       "feld": [12, 16]
     },
     {
-      "moebel": "blumenbusch",
+      "moebel": "wg4Wildblumen",
       "feld": [44, 20]
     },
     {
@@ -583,6 +575,38 @@
     {
       "moebel": "gc10Hocker",
       "feld": [40, 33]
+    },
+    {
+      "moebel": "sc7Wimpel6",
+      "feld": [40, 29]
+    },
+    {
+      "moebel": "sc27Festbuehne",
+      "feld": [37, 24]
+    },
+    {
+      "moebel": "sc27Bierbank",
+      "feld": [30, 26]
+    },
+    {
+      "moebel": "sc27Bierbank",
+      "feld": [42, 26]
+    },
+    {
+      "moebel": "sc27Latschenkiefer",
+      "feld": [2, 7]
+    },
+    {
+      "moebel": "sc27Latschenkiefer",
+      "feld": [11, 7]
+    },
+    {
+      "moebel": "sc27Latschenkiefer",
+      "feld": [15, 5]
+    },
+    {
+      "moebel": "sc27Latschenkiefer",
+      "feld": [22, 10]
     }
   ],
   "ausloeser": [

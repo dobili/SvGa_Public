@@ -2,9 +2,7 @@
   "karte": "capitalArena.aussen",
   "datei": "karten/capital-arena-aussen.json",
   "art": "aussen",
-  "musikquellen": [
-    "strassenmusiker"
-  ],
+  "musikquellen": ["strassenmusiker"],
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -14,7 +12,7 @@
     "t": "stein",
     "l": "platten"
   },
-  "beschreibung": "Die Capital Arena an einem langen Sommerabend (Szenen 103 und 109), mitten in der Stadt. Der historische Prachtbau mit Kuppeln und Glasdach steht in der Mitte, eine breite Freitreppe führt zum Eingang; dort oben sitzt {held} nach dem Finale. Links und rechts der Treppe wehen Fahnen, auf dem gepflasterten Vorplatz plätschert ein Brunnen in der Achse der Treppe, links ein Hotdog-Wagen, rechts ein Limonadenwagen, Bänke und Laternen. Links der Arena zwei Häuserreihen an einer Querstraße: Post, Kaufhaus, Wohnhäuser, dahinter die Feuerwache und ein Hochhaus; rechts eine Wache, ein Kaufhaus, Wohnhaus und Laden, dahinter das große Polizeirevier. Südlich des Platzes eine Reihe Läden, Märkte, Eisenwarenhandlungen und Stadthäuser mit zwei Gassen hinunter zur Fußgängerstraße am Südrand. Am Westrand kommt der Weg vom Leuchtturm an. Ein Zebrastreifen führt in der Achse von Brunnen und Freitreppe über die Straße, ein Polizist regelt dort den Verkehr; am Limonadenwagen steht die Verkäuferin (Gutachten 15.11.2026). Vor der Fassade liegt ein Plattenvorplatz mit zwei Rasenfeldern neben der Freitreppe; zwischen Treppe und Fahrbahn läuft ein Gehweg.",
+  "beschreibung": "Die Capital Arena an einem langen Sommerabend (Szenen 103 und 109), mitten in der Stadt. Der historische Prachtbau mit Kuppeln und Glasdach steht in der Mitte, eine breite Freitreppe führt zum Eingang; dort oben sitzt {held} nach dem Finale. Links und rechts der Treppe wehen Fahnen, auf dem gepflasterten Vorplatz plätschert ein Brunnen in der Achse der Treppe, links ein Hotdog-Wagen, rechts ein Limonadenwagen, Bänke und Laternen. Links der Arena zwei Häuserreihen an einer Querstraße: Post, Kaufhaus, Wohnhäuser, dahinter die Feuerwache und ein Hochhaus; rechts eine Wache, ein Kaufhaus, Wohnhaus und Laden, dahinter das große Polizeirevier. Südlich des Platzes eine Reihe Läden, Märkte, Eisenwarenhandlungen und Stadthäuser mit zwei Gassen hinunter zur Fußgängerstraße am Südrand. Am Westrand kommt der Weg vom Leuchtturm an. Ein Zebrastreifen führt in der Achse von Brunnen und Freitreppe über die Straße, ein Polizist regelt dort den Verkehr; am Limonadenwagen steht die Verkäuferin (Gutachten 15.11.2026). Vor der Fassade liegt ein Plattenvorplatz mit zwei Rasenfeldern neben der Freitreppe; zwischen Treppe und Fahrbahn läuft ein Gehweg. Erster Eindruck (27.11.2026): Über dem Säulenportal hängt das blaue Banner der Landesmeisterschaft. Hinter der Arena stehen Nadelbäume in Reihe, auf den Flachdächern der Läden Klimageräte, Luken, Lüftungen, Solarmodule und Pflanzkästen. Der Hotdog-Karren steht von vorn mit rot-weißem Schirm wie der Limonadenkarren gegenüber. Vor dem Hochhaus und dem Revier Bänke und Baumscheiben.",
   "raster": [
     "################################################################################",
     "#llllllllllllllllllllllll.............................lllllllllllllllllllllllll#",
@@ -160,7 +158,8 @@
     },
     {
       "moebel": "ca7Arena",
-      "feld": [27, 1]
+      "feld": [27, 1],
+      "id": "arena"
     },
     {
       "moebel": "ca7Fahne",
@@ -175,8 +174,8 @@
       "feld": [37, 39]
     },
     {
-      "moebel": "ca12Hotdogwagen",
-      "feld": [6, 39]
+      "moebel": "ca27Hotdogkarren",
+      "feld": [6, 40]
     },
     {
       "moebel": "ca7Limonadenwagen",
@@ -232,7 +231,8 @@
     },
     {
       "moebel": "ca8Kaufhaus1",
-      "feld": [9, 2]
+      "feld": [9, 2],
+      "id": "kaufhausNW"
     },
     {
       "moebel": "ca8Wohnhaus9",
@@ -256,7 +256,8 @@
     },
     {
       "moebel": "ca8Kaufhaus3",
-      "feld": [61, 2]
+      "feld": [61, 2],
+      "id": "kaufhausNO"
     },
     {
       "moebel": "ca8Wohnhaus5_2",
@@ -264,7 +265,8 @@
     },
     {
       "moebel": "ca8Laden1",
-      "feld": [74, 6]
+      "feld": [74, 6],
+      "id": "ladenNO"
     },
     {
       "moebel": "ca10Polizei",
@@ -276,16 +278,19 @@
     },
     {
       "moebel": "ca8Markt2",
-      "feld": [1, 48]
+      "feld": [1, 48],
+      "id": "marktCoffee"
     },
     {
       "moebel": "ca8Eisenwaren",
       "feld": [9, 46],
-      "massstab": 1.25
+      "massstab": 1.25,
+      "id": "eisenwaren"
     },
     {
       "moebel": "ca8Markt6",
-      "feld": [21, 48]
+      "feld": [21, 48],
+      "id": "marktApotheke"
     },
     {
       "moebel": "ca8Stadthaus45",
@@ -293,16 +298,19 @@
     },
     {
       "moebel": "ca8Laden2",
-      "feld": [45, 49]
+      "feld": [45, 49],
+      "id": "ladenMode"
     },
     {
       "moebel": "ca10Cafe",
       "feld": [34, 46],
-      "massstab": 1.25
+      "massstab": 1.25,
+      "id": "cafe"
     },
     {
       "moebel": "ca8Markt9",
-      "feld": [50, 48]
+      "feld": [50, 48],
+      "id": "marktSpiel"
     },
     {
       "moebel": "ca8Stadthaus44",
@@ -310,11 +318,13 @@
     },
     {
       "moebel": "ca8Markt11",
-      "feld": [66, 48]
+      "feld": [66, 48],
+      "id": "marktBuch"
     },
     {
       "moebel": "ca8Laden5",
-      "feld": [73, 49]
+      "feld": [73, 49],
+      "id": "ladenMusik"
     },
     {
       "moebel": "ca9BeetBaum",
@@ -347,6 +357,236 @@
     {
       "moebel": "ca7Blumenbeet",
       "feld": [46, 32]
+    },
+    {
+      "moebel": "sb27DachSolar",
+      "auf": "kaufhausNW",
+      "versatz": [-22, -69]
+    },
+    {
+      "moebel": "sb27DachSolar",
+      "auf": "kaufhausNW",
+      "versatz": [24, -69]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "kaufhausNW",
+      "versatz": [-26, -45]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "kaufhausNW",
+      "versatz": [32, -43]
+    },
+    {
+      "moebel": "sb27DachLueftung",
+      "auf": "kaufhausNO",
+      "versatz": [-18, -65]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "kaufhausNO",
+      "versatz": [26, -79]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "kaufhausNO",
+      "versatz": [-18, -43]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "kaufhausNO",
+      "versatz": [32, -47]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "ladenNO",
+      "versatz": [-12, -42]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "ladenNO",
+      "versatz": [20, -40]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "ladenNO",
+      "versatz": [8, -14]
+    },
+    {
+      "moebel": "sb27DachPflanzkaesten",
+      "auf": "marktCoffee",
+      "versatz": [-20, -54]
+    },
+    {
+      "moebel": "sb27DachPflanzkaesten",
+      "auf": "marktCoffee",
+      "versatz": [-20, -34]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "marktCoffee",
+      "versatz": [26, -50]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "marktCoffee",
+      "versatz": [32, -22]
+    },
+    {
+      "moebel": "sb27DachLueftung",
+      "auf": "eisenwaren",
+      "versatz": [-36, -56]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "eisenwaren",
+      "versatz": [33, -67]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "eisenwaren",
+      "versatz": [3, -37]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "eisenwaren",
+      "versatz": [48, -35]
+    },
+    {
+      "moebel": "sb27DachSolar",
+      "auf": "marktApotheke",
+      "versatz": [-22, -40]
+    },
+    {
+      "moebel": "sb27DachSolar",
+      "auf": "marktApotheke",
+      "versatz": [24, -40]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "marktApotheke",
+      "versatz": [-18, -20]
+    },
+    {
+      "moebel": "sb27DachPflanzkaesten",
+      "auf": "cafe",
+      "versatz": [-41, -72]
+    },
+    {
+      "moebel": "sb27DachPflanzkaesten",
+      "auf": "cafe",
+      "versatz": [26, -72]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "cafe",
+      "versatz": [-47, -30]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "cafe",
+      "versatz": [36, -32]
+    },
+    {
+      "moebel": "sb27DachPflanzkaesten",
+      "auf": "ladenMode",
+      "versatz": [-2, -42]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "ladenMode",
+      "versatz": [0, -16]
+    },
+    {
+      "moebel": "sb27DachLueftung",
+      "auf": "marktSpiel",
+      "versatz": [-20, -38]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "marktSpiel",
+      "versatz": [22, -52]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "marktSpiel",
+      "versatz": [20, -22]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "marktBuch",
+      "versatz": [-26, -54]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "marktBuch",
+      "versatz": [20, -54]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "marktBuch",
+      "versatz": [-12, -22]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "marktBuch",
+      "versatz": [38, -20]
+    },
+    {
+      "moebel": "sb27DachSolar",
+      "auf": "ladenMusik",
+      "versatz": [-2, -30]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "ladenMusik",
+      "versatz": [24, -14]
+    },
+    {
+      "moebel": "ca7Nadelbaum",
+      "feld": [25, 2]
+    },
+    {
+      "moebel": "ca7Nadelbaum",
+      "feld": [25, 6]
+    },
+    {
+      "moebel": "ca7Nadelbaum",
+      "feld": [25, 10]
+    },
+    {
+      "moebel": "ca7Nadelbaum",
+      "feld": [52, 2]
+    },
+    {
+      "moebel": "ca7Nadelbaum",
+      "feld": [52, 6]
+    },
+    {
+      "moebel": "ca7Nadelbaum",
+      "feld": [52, 10]
+    },
+    {
+      "moebel": "ca7Bank",
+      "feld": [19, 33],
+      "versatz": [6, 8],
+      "massstab": 0.75
+    },
+    {
+      "moebel": "ca9BeetBaum",
+      "feld": [71, 32]
+    },
+    {
+      "moebel": "ca7Bank",
+      "feld": [73, 33],
+      "versatz": [6, 8],
+      "massstab": 0.75
+    },
+    {
+      "moebel": "ca7Banner",
+      "auf": "arena",
+      "versatz": [0, 64]
     }
   ],
   "ausloeser": [

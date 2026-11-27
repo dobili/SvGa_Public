@@ -6,7 +6,7 @@
   "kante": "klippe",
   "fels": "rot",
   "klippenhoehe": 4,
-  "beschreibung": "Zustand: Nach Pruitts Geschichte und der Laterne (Sperre S11) ist die Goldmine offen; die Bretter mit dem roten Kreuz sind vom Stolleneingang genommen, das Gleis führt ins Dunkel. Ghost Town am Mittag, 56 × 40: Die Front Street aus hellem Staub läuft von West nach Ost, an ihrer Nordseite der Bretterweg vor Laden, Schmiede, Saloon, Sheriffbüro und Prüfamt mit falschen Fassaden; dahinter Stage & Mail, Barbier, zwei verfallene Hütten, Wasserturm und Windrad, darüber die rote Bruchkante mit dem offenen Stollen der Goldmine und einer Lore auf einem Gleisrest. Der Weg zur Mine zweigt zwischen Saloon und Sheriff ab. Südlich der Straße Hotel, Mietstall mit Anbindebalken und Tränke und der Bestatter, mit ihren Türen zur Gasse dahinter; ein Planwagen, Heu und eine alte Tränke im Westen. Im Südosten der Friedhof im Holzzaun mit offenem Tor, Kreuze, Grabsteine, ein offenes Grab; ganz am Ostrand, wo der Zaun steht, der niedrige Stein ohne Namen mit dem eingeritzten Brett (Szene 98). Hinter dem Prüfamt hört der Bretterweg auf: Auf seiner Kante sitzt man nachts und sieht über den Friedhof in die Sterne (Szene 101). Am Ortsausgang im Osten die Haltestelle. Am Ortseingang stehen zwei Pfosten, das Schild dazwischen fehlt: Die Stadt kommt ohne Schild.",
+  "beschreibung": "Zustand: Nach Pruitts Geschichte und der Laterne (Sperre S11) ist die Goldmine offen; die Bretter mit dem roten Kreuz sind vom Stolleneingang genommen, das Gleis führt ins Dunkel. Ghost Town am Mittag, 56 × 40: Die Front Street aus hellem Staub läuft von West nach Ost, an ihrer Nordseite der Bretterweg vor Laden, Schmiede, Saloon, Sheriffbüro und Prüfamt mit falschen Fassaden; dahinter Stage & Mail, Barbier, zwei verfallene Hütten, Wasserturm und Windrad, darüber die rote Bruchkante mit dem offenen Stollen der Goldmine und einer Lore auf einem Gleisrest. Der Weg zur Mine zweigt zwischen Saloon und Sheriff ab. Südlich der Straße Hotel, Mietstall mit Anbindebalken und Tränke und der Bestatter, mit ihren Türen zur Gasse dahinter; ein Planwagen, Heu und eine alte Tränke im Westen. Im Südosten der Friedhof im Holzzaun mit offenem Tor, Kreuze, Grabsteine, ein offenes Grab; ganz am Ostrand, wo der Zaun steht, der niedrige Stein ohne Namen mit dem eingeritzten Brett (Szene 98). Hinter dem Prüfamt hört der Bretterweg auf: Auf seiner Kante sitzt man nachts und sieht über den Friedhof in die Sterne (Szene 101). Am Ortsausgang im Osten die Haltestelle. Am Ortseingang stehen zwei Pfosten, das Schild dazwischen fehlt: Die Stadt kommt ohne Schild. Erster Eindruck (27.11.2026): Der Friedhofszaun ist aus grauem, altem Holz; die alte Tränke im Westen ist versandet und trocken, nur die am Mietstall hat Wasser für das Pferd.",
   "boden": "sandRot",
   "wandart": "sandRot",
   "boeden": {
@@ -129,132 +129,132 @@
       "feld": [31, 5]
     },
     {
-      "moebel": "gt7ZaunUM",
+      "moebel": "gt27HolzZaunUM",
       "feld": [41, 37],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunUM",
+      "moebel": "gt27HolzZaunUM",
       "feld": [42, 37],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunUM",
+      "moebel": "gt27HolzZaunUM",
       "feld": [43, 37],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunUM",
+      "moebel": "gt27HolzZaunUM",
       "feld": [44, 37],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunUM",
+      "moebel": "gt27HolzZaunUM",
       "feld": [45, 37],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunUM",
+      "moebel": "gt27HolzZaunUM",
       "feld": [46, 37],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunOM",
+      "moebel": "gt27HolzZaunOM",
       "feld": [46, 29],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunUM",
+      "moebel": "gt27HolzZaunUM",
       "feld": [47, 37],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunOM",
+      "moebel": "gt27HolzZaunOM",
       "feld": [47, 29],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunUM",
+      "moebel": "gt27HolzZaunUM",
       "feld": [48, 37],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunOM",
+      "moebel": "gt27HolzZaunOM",
       "feld": [48, 29],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunUM",
+      "moebel": "gt27HolzZaunUM",
       "feld": [49, 37],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunOM",
+      "moebel": "gt27HolzZaunOM",
       "feld": [49, 29],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunUM",
+      "moebel": "gt27HolzZaunUM",
       "feld": [50, 37],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunOM",
+      "moebel": "gt27HolzZaunOM",
       "feld": [50, 29],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunUM",
+      "moebel": "gt27HolzZaunUM",
       "feld": [51, 37],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunOM",
+      "moebel": "gt27HolzZaunOM",
       "feld": [51, 29],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunUR",
+      "moebel": "gt27HolzZaunUR",
       "feld": [52, 37],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunOR",
+      "moebel": "gt27HolzZaunOR",
       "feld": [52, 29],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunMR",
+      "moebel": "gt27HolzZaunMR",
       "feld": [52, 30],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunMR",
+      "moebel": "gt27HolzZaunMR",
       "feld": [52, 31],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunMR",
+      "moebel": "gt27HolzZaunMR",
       "feld": [52, 32],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunMR",
+      "moebel": "gt27HolzZaunMR",
       "feld": [52, 33],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunMR",
+      "moebel": "gt27HolzZaunMR",
       "feld": [52, 34],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunMR",
+      "moebel": "gt27HolzZaunMR",
       "feld": [52, 35],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunMR",
+      "moebel": "gt27HolzZaunMR",
       "feld": [52, 36],
       "bauteil_ok": true
     },
@@ -427,62 +427,62 @@
       "feld": [18, 8]
     },
     {
-      "moebel": "gt7ZaunOL",
+      "moebel": "gt27HolzZaunOL",
       "feld": [40, 29],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunOM",
+      "moebel": "gt27HolzZaunOM",
       "feld": [41, 29],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunEndeLinks",
+      "moebel": "gt27HolzZaunEndeLinks",
       "feld": [42, 29],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunEndeRechts",
+      "moebel": "gt27HolzZaunEndeRechts",
       "feld": [45, 29],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunUL",
+      "moebel": "gt27HolzZaunUL",
       "feld": [40, 37],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunML",
+      "moebel": "gt27HolzZaunML",
       "feld": [40, 30],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunML",
+      "moebel": "gt27HolzZaunML",
       "feld": [40, 31],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunML",
+      "moebel": "gt27HolzZaunML",
       "feld": [40, 32],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunML",
+      "moebel": "gt27HolzZaunML",
       "feld": [40, 33],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunML",
+      "moebel": "gt27HolzZaunML",
       "feld": [40, 34],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunML",
+      "moebel": "gt27HolzZaunML",
       "feld": [40, 35],
       "bauteil_ok": true
     },
     {
-      "moebel": "gt7ZaunML",
+      "moebel": "gt27HolzZaunML",
       "feld": [40, 36],
       "bauteil_ok": true
     },
@@ -499,7 +499,7 @@
       "feld": [2, 27]
     },
     {
-      "moebel": "gt10Traenke",
+      "moebel": "gt27TraenkeTrocken",
       "feld": [5, 26]
     },
     {

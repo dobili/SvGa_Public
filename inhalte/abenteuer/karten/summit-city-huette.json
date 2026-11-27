@@ -1019,7 +1019,7 @@
     },
     {
      "id": 21,
-     "name": "sc15OhrensesselBlickRechts",
+     "name": "sc27OhrensesselBlickRechts",
      "type": "moebel",
      "x": 96,
      "y": 80,
@@ -1088,7 +1088,7 @@
     },
     {
      "id": 24,
-     "name": "sc15OhrensesselBlickLinks",
+     "name": "sc27OhrensesselBlickLinks",
      "type": "moebel",
      "x": 160,
      "y": 80,

@@ -754,7 +754,190 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "hinweis": "Holztisch mit Brett und rotem Drachen in der Mitte (Drachenschach am Brunnen, M2 26.11.); Maske wie der Klapptisch",
-      "maske_fein": ["........", "........", "........", "........", "########", "########", "########", "##....##"]
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "##....##"
+      ]
+    },
+    "sc27Latschenkiefer": {
+      "quelle": "spiel/eigene/latschenkiefer.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "busch",
+      "zustand": "neu",
+      "stil": "natur",
+      "hinweis": "flache Latschenkiefer mit Stein am Fuß für die Gipfelfelsen (Kartenblick M4) (Gemini F8, 27.11.2026, werkzeuge/gemini_akt4_2711.py)",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        ".######."
+      ]
+    },
+    "sc27RegalSeile": {
+      "quelle": "spiel/eigene/bergregal_seile.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "regal",
+      "zustand": "neu",
+      "stil": "rustikal",
+      "blick": "unten",
+      "hinweis": "Bergsportregal mit Kletterhelmen, Karabinern und Seilen, mit Licht und Schatten (Kartenblick B1) (Gemini F9, 27.11.2026, werkzeuge/gemini_akt4_2711.py)",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "############",
+        "############"
+      ]
+    },
+    "sc27RegalSchuhe": {
+      "quelle": "spiel/eigene/bergregal_schuhe.png",
+      "breite": 32,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "regal",
+      "zustand": "neu",
+      "stil": "rustikal",
+      "blick": "unten",
+      "hinweis": "Bergsportregal mit Wanderschuhen, Socken und Laternen (Kartenblick B1) (Gemini F10, 27.11.2026, werkzeuge/gemini_akt4_2711.py)",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########"
+      ]
+    },
+    "sc27Kartenstaender": {
+      "quelle": "spiel/eigene/kartenstaender_wander.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "regal",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "####", ".##."],
+      "hinweis": "Drahtständer mit gefalteten Wanderkarten statt sechs Rechtecken (Kartenblick B1) (Gemini F11, 27.11.2026, werkzeuge/gemini_akt4_2711.py)"
+    },
+    "sc27BankHolz": {
+      "quelle": "spiel/eigene/holzbank_hell.png",
+      "breite": 48,
+      "hoehe": 16,
+      "kollision": true,
+      "art": "bank",
+      "maske_fein": ["............", "############", "############", ".#...#....#."],
+      "zustand": "neu",
+      "stil": "modern",
+      "hinweis": "helle Holzbank auf Stahlbeinen für die neue Bergstation statt rostiger Bahnsteigbank (Kartenblick T4) (Gemini F13, 27.11.2026, werkzeuge/gemini_akt4_2711.py)"
+    },
+    "sc27Festbuehne": {
+      "quelle": "spiel/eigene/festbuehne_aufbau.png",
+      "breite": 64,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "buehne",
+      "zustand": "neu",
+      "stil": "rustikal",
+      "hinweis": "kleine Festbühne im Aufbau mit Leiter, Werkzeugkiste und Brettern (Kartenblick M12) (Gemini F15, 27.11.2026, werkzeuge/gemini_akt4_2711.py)"
+    },
+    "sc27Bierbank": {
+      "quelle": "spiel/eigene/bierbank_garnitur.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "neu",
+      "stil": "rustikal",
+      "blick": "unten",
+      "hinweis": "Biertisch mit Bank für das Sommerfest (Kartenblick M12) (Gemini F16, 27.11.2026, werkzeuge/gemini_akt4_2711.py)",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        ".##########.",
+        "############",
+        "############",
+        ".#........#."
+      ]
+    },
+    "sc27OhrensesselBlickRechts": {
+      "quelle": "spiel/eigene/ohrensessel_gruen_rechts.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "sessel",
+      "blick": "rechts",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "######..",
+        "#####...",
+        ".####...",
+        "....#..."
+      ],
+      "varianten": {
+        "links": "spiel/eigene/ohrensessel_gruen_links.png",
+        "unten": "spiel/eigene/ohrensessel_gruen_unten.png"
+      },
+      "hinweis": "Ohrensessel dunkelgrün statt bonbonrosa (Kartenblick K4) (umgefärbt, 27.11.2026, werkzeuge/gemini_akt4_2711.py)"
+    },
+    "sc27OhrensesselBlickLinks": {
+      "quelle": "spiel/eigene/ohrensessel_gruen_links.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "sessel",
+      "blick": "links",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "..######",
+        "...#####",
+        "...####.",
+        "...#...."
+      ],
+      "varianten": {
+        "rechts": "spiel/eigene/ohrensessel_gruen_rechts.png",
+        "unten": "spiel/eigene/ohrensessel_gruen_unten.png"
+      },
+      "hinweis": "Ohrensessel dunkelgrün statt bonbonrosa (Kartenblick K4) (umgefärbt, 27.11.2026, werkzeuge/gemini_akt4_2711.py)"
     }
   }
 }

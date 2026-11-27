@@ -1,7 +1,7 @@
 {
   "karte": "crossroads.aussen",
   "art": "aussen",
-  "beschreibung": "Silberner Diner-Wagen mit gewölbtem Dach und asphaltiertem Vorplatz und das eingezäunte Feld mit dem Erdweg zum Jahrmarkt, die große Tankstelle mit Waschanlage und einer Dieselsäule für Lastwagen. Der Highway hat Mittellinie und Bordsteine, Vorplätze und Parkplatz haben Einfahrten. Südwestlich der Parkplatz mit markierten Buchten, Bus und Autos stehen quer in ihren Buchten und zeigen Front oder Heck: Werksbus, zwei Sattelzüge in eigenen Buchten mit Trennlinie, ein Imbisswagen, der gelbe Schulbus von Coach Delgado und zwei Autos, alle von vorn oder hinten gesehen; daneben der Rastplatz mit langen Picknicktischen, Mülleimer und Laterne. Südöstlich ein Motel aus rissigem Lehmputz mit flachem Dach und vier bunten Zimmertüren, die Werkstatt als Wellblechschuppen, der Eisenwarenladen und die kleine Kapelle mit eingezäuntem Friedhof. Hinter der Tankstelle der Wohnwagen des Tankwarts, östlich das Farmhaus des Rinderzüchters. Im Osten das geschlossene Viehgatter vor der Alten Minenstraße (S13), dahinter Rinder auf dem Asphalt. Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, Fernbus-Haltestelle mit Gehweg am Highway West. Ein Erdweg hinter der Tankstelle führt zu Hühnerstall, Schuppen und den beiden Wohnwagen, ein Pflasterweg vom Vorplatz zum Farmhaus, ein Trampelpfad über die Weide zum Scheunentor.",
+  "beschreibung": "Silberner Diner-Wagen mit gewölbtem Dach und asphaltiertem Vorplatz und das eingezäunte Feld mit dem Erdweg zum Jahrmarkt, die große Tankstelle mit Waschanlage und einer Dieselsäule für Lastwagen. Der Highway hat Mittellinie und Bordsteine, Vorplätze und Parkplatz haben Einfahrten. Südwestlich der Parkplatz mit markierten Buchten, Bus und Autos stehen quer in ihren Buchten und zeigen Front oder Heck: Werksbus, zwei Sattelzüge in eigenen Buchten mit Trennlinie, ein Imbisswagen, der gelbe Schulbus von Coach Delgado und zwei Autos, alle von vorn oder hinten gesehen; daneben der Rastplatz mit langen Picknicktischen, Mülleimer und Laterne. Südöstlich ein Motel aus rissigem Lehmputz mit flachem Dach und vier bunten Zimmertüren, die Werkstatt als Wellblechschuppen, der Eisenwarenladen und die kleine Kapelle mit eingezäuntem Friedhof. Hinter der Tankstelle der Wohnwagen des Tankwarts, östlich das Farmhaus des Rinderzüchters. Im Osten das geschlossene Viehgatter vor der Alten Minenstraße (S13), dahinter Rinder auf dem Asphalt. Wegweiser mit allen Städten, Schild „Crossroads – Diner + Gas“ vor der Raststätte, Fernbus-Haltestelle mit Gehweg am Highway West. Ein Erdweg hinter der Tankstelle führt zu Hühnerstall, Schuppen und den beiden Wohnwagen, ein Pflasterweg vom Vorplatz zum Farmhaus, ein Trampelpfad über die Weide zum Scheunentor. Erster Eindruck (27.11.2026): Auf dem weißen Dach der Tankstelle Solarmodule, eine Lüftung, ein Klimagerät und eine Luke, auf dem Motel zwei Klimageräte. Die Wildblumen wachsen neben, nicht mehr auf dem Asphalt.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -72,11 +72,13 @@
     },
     {
       "moebel": "ws5TankstelleGross",
-      "feld": [36, 8]
+      "feld": [36, 8],
+      "id": "tankstelle"
     },
     {
       "moebel": "wds6Motelzeile",
-      "feld": [44, 26]
+      "feld": [44, 26],
+      "id": "motel"
     },
     {
       "moebel": "cr7WegweiserStaedte",
@@ -343,7 +345,7 @@
     },
     {
       "moebel": "wg4Wildblumen",
-      "feld": [42, 25]
+      "feld": [42, 26]
     },
     {
       "moebel": "wg4BlumeGelb",
@@ -376,10 +378,6 @@
     {
       "moebel": "wg4Wildblumen",
       "feld": [33, 16]
-    },
-    {
-      "moebel": "wg4Wildblumen",
-      "feld": [52, 25]
     },
     {
       "moebel": "wg4GrasB",
@@ -976,6 +974,46 @@
       "moebel": "fz11SchulbusAb",
       "feld": [23, 28],
       "bauteil_ok": true
+    },
+    {
+      "moebel": "sb27DachSolar",
+      "auf": "tankstelle",
+      "versatz": [-98, -65]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "tankstelle",
+      "versatz": [-100, -49]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "tankstelle",
+      "versatz": [-62, -49]
+    },
+    {
+      "moebel": "sb27DachLueftung",
+      "auf": "tankstelle",
+      "versatz": [88, -63]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "tankstelle",
+      "versatz": [68, -45]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "motel",
+      "versatz": [-72, -37]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "motel",
+      "versatz": [6, -33]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "motel",
+      "versatz": [64, -37]
     }
   ],
   "ausloeser": [
@@ -1277,6 +1315,15 @@
     }
   ],
   "zustand": ["neu", "gebraucht", "alt"],
-  "stil": ["einfach", "klassisch", "modern", "rustikal", "laendlich", "natur", "landhaus", "industrie"],
+  "stil": [
+    "einfach",
+    "klassisch",
+    "modern",
+    "rustikal",
+    "laendlich",
+    "natur",
+    "landhaus",
+    "industrie"
+  ],
   "datei": "karten/crossroads-aussen.json"
 }

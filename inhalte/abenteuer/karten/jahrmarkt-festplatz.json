@@ -6720,19 +6720,19 @@
     },
     {
      "id": 55,
-     "name": "cr10HotdogwagenVorn",
+     "name": "ca27Hotdogkarren",
      "type": "moebel",
      "x": 464,
-     "y": 320,
+     "y": 352,
      "width": 48,
-     "height": 96,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 408
+       "value": 392
       },
       {
        "name": "kollision",

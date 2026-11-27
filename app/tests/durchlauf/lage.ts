@@ -287,3 +287,38 @@ export function signatur(stand: Abenteuerstand): string {
     stand.clubs,
   ]);
 }
+
+/** Ausrollen nach dem Loslassen: Takt und Höchstdauer (ms), gleiche Lesungen in Folge. */
+const AUSROLL_TAKT_MS = 100;
+const AUSROLL_MS = 1500;
+const AUSROLL_GLEICH = 3;
+
+/** Kachel des Helden und Nummer der Szene (zählt bei jedem Kartenwechsel hoch); läuft im Browser. */
+function kachelUndSzene(): string {
+  const kachel = document.querySelector("[data-testid='abenteuer-kachel']")?.textContent ?? "";
+  const szene = document.querySelector(".abenteuer-welt canvas")?.getAttribute("data-szene");
+  const kreuz = document.querySelector(".abenteuer-steuerkreuz") !== null;
+  return `${kachel}|${szene ?? ""}|${kreuz}`;
+}
+
+/**
+ * Die Kachel, auf der der Held nach dem Loslassen zum Stehen kommt, oder null, wenn dabei die Karte
+ * wechselte oder das Steuerkreuz verschwand (Ziel vor einem Durchgang, Fenster). Warum: Unter Last
+ * rollt er nach dem Ziel noch eine Kachel weiter; las der Gang ihn im Vorbeirollen auf der Tür,
+ * galt er als „da“, stand dann daneben und drückte gegen die Wand (Garagentür Desert Springs, Held
+ * auf 21,29 statt 22,29, Durchlauf 27.11.2026: „reagiert nicht“).
+ */
+export async function ausgerollt(seite: Page): Promise<string | null> {
+  const anfang = await seite.evaluate(kachelUndSzene);
+  const szene = anfang.split("|")[1];
+  let letzte = anfang;
+  let gleich = 1;
+  for (let ms = 0; ms < AUSROLL_MS && gleich < AUSROLL_GLEICH; ms += AUSROLL_TAKT_MS) {
+    await seite.waitForTimeout(AUSROLL_TAKT_MS);
+    const jetzt = await seite.evaluate(kachelUndSzene);
+    gleich = jetzt === letzte ? gleich + 1 : 1;
+    letzte = jetzt;
+  }
+  const [kachel = "", nun, kreuz] = letzte.split("|");
+  return nun === szene && kreuz === "true" ? kachel : null;
+}

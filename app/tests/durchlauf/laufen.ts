@@ -10,7 +10,7 @@
  */
 import { kuerzesterWeg, type Kachelort } from "../../src/abenteuer/oberwelt/uebergangslauf";
 import { halteRichtung, lasseRichtung, type Lauf, type Richtung } from "./eingabe";
-import { feldAus, liesLage } from "./lage";
+import { ausgerollt, feldAus, liesLage } from "./lage";
 import type { Kartenwissen } from "./welt";
 
 /** Versatz je Richtung. */
@@ -40,7 +40,6 @@ const PLAETZE_VERSUCHEN = 3;
 const AKTION_WARTEN = 6;
 /** So lange drückt der Held höchstens in einen Durchgang (ms). */
 const DURCHGANG_MS = 2500;
-
 /** Richtung von einem Feld zum Nachbarfeld, oder null. */
 export function richtungZu(von: Kachelort, nach: Kachelort): Richtung | null {
   return (
@@ -226,7 +225,15 @@ export async function geheZu(
     const lage = await liesLage(lauf.seite);
     const hier = feldAus(lage.kachel);
     if (!hier || !lage.kreuz || lage.dialog) return "fenster";
-    if (ziele.some((z) => z.x === hier.x && z.y === hier.y)) return "da";
+    const auf = (f: Kachelort) => ziele.some((z) => z.x === f.x && z.y === f.y);
+    if (auf(hier)) {
+      // Erst ausrollen lassen; über das Ziel hinausgerollt: von dort neu planen.
+      const steht = await ausgerollt(lauf.seite);
+      if (steht === null) return "fenster";
+      const feld = feldAus(steht);
+      if (feld && auf(feld)) return "da";
+      continue;
+    }
     const weg = sucheWeg(wissen, hier, ziele, gesperrt);
     if (!weg) return gesperrt.size > 0 ? "aufgehalten" : "keinWeg";
     const { richtung, kacheln } = geradesStueck(weg);
@@ -360,10 +367,12 @@ export async function geheDurch(
   if (gang !== "da") return gang;
   const lage = await liesLage(lauf.seite);
   const feld = felder.find((f) => `${f.x},${f.y}` === lage.kachel);
+  // Neben der Tür (doch noch weitergerollt) ist kein „reagiert nicht“: später noch einmal.
+  if (!feld) return "aufgehalten";
   // Kam der Held auf diesem Feld an, zählt der Durchgang erst nach kurzem Stillstand (RUHEBILDER).
   if (vorher === lage.kachel) await lauf.seite.waitForTimeout(RUHE_MS);
   let ergebnis = "frist";
-  for (const richtung of (feld?.durchgang ?? []) as Richtung[]) {
+  for (const richtung of (feld.durchgang ?? []) as Richtung[]) {
     const beginn = Date.now();
     if (!(await halteRichtung(lauf, richtung))) return "fenster";
     ergebnis = await lauf.seite

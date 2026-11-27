@@ -830,6 +830,22 @@ Profil › Einstellungen › Fehler melden.
       Flachdach des Diners stehen Klimagerät, Luke und Lüftungsrohr. Wege und Gespräche sind wie
       vorher.
       **Antwort:** „N2770 ok“ oder Karte und was stört.
+- [ ] N2790. **Cedar Creek aufgeräumt, außen (27.11.2026):** Im Ort ankommen und umsehen: Hinter den
+      beiden roten Holzhäusern unten liegen Gärten mit Holzzaun, Wäscheleine, Gemüse- und
+      Blumenbeet, Sonnenblumen und einem Obstbaum; auf der Wiese Wildblumen, Felsen und Büsche. Auf
+      dem Flachdach des Waschsalons stehen Klimagerät, Dachluke und Lüftungsrohre. Der rote Schuppen
+      neben dem Fernrohr und der braune Schuppen unten rechts haben Schindeldächer (vorher flach).
+      Das Fernrohr (am Sternennacht-Abend) ist so groß wie ein Mensch. Wirkt der Ort belebter, und
+      stört etwas beim Laufen?
+      **Antwort:** „N2790 ok“ oder was stört.
+- [ ] N2791. **Cedar Creek aufgeräumt, innen (27.11.2026):** Bibliothek: am Ende des Flurs rechts
+      unten eine Leseecke mit rotem Ohrensessel unter der Stehlampe, im Treppenraum ein Regal. Nacht
+      im Lesesaal: vor dem Schachtisch zwei Schlafsäcke mit Kissen, ein Rucksack und eine
+      Taschenlampe (vorher zwei Matten). Archiv: ein grüner Lesetisch statt des kleinen runden
+      Tischchens. Drechslerei: ein Holzregal mit Schalen und halbfertigen Schachfiguren statt des
+      orangen Werkzeugschranks, helle Späne in Locken. Waschsalon: Fenster mit hellem Metallrahmen,
+      Mr. Boateng schaut in den Raum. Schon umgesetzt, Widerspruch genügt.
+      **Antwort:** „N2791 ok“ oder Raum und was stört.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

@@ -282,7 +282,7 @@ Dann ist er fort, und du bist allein mit vierundsechzig Feldern. #sprecher:erzae
 // und die nächste Partie, vor dem Notausgang.
 === odile_nach_niederlage ===
 {odileNiederlagen == 2:
-    Miss Odile stellt die Figuren zurück, langsam, eine nach der anderen. #sprecher:erzaehler
+    Miss Odile stellt die Figuren zurück, langsam, eine nach der anderen. #sprecher:erzaehler #schwenk:odile
     Du hast schneller gespielt als beim ersten Mal. Das war nicht besser. #sprecher:odile #stimmung:nachdenklich
 - else:
     Wieder meine Partie. Hör auf die Bauern, nicht auf die Uhr. #sprecher:odile #stimmung:nachdenklich
@@ -298,13 +298,13 @@ Dann ist er fort, und du bist allein mit vierundsechzig Feldern. #sprecher:erzae
 // Notausgang nach der dritten Niederlage ohne Nadel (Balance-Messung 27.11.2026): Der Clubkampf
 // gilt als gespielt, eine Nadel gibt es nicht; um sie spielen bleibt offen (odile_alltag).
 === odile_genug ===
-Miss Odile stellt die Figuren nicht wieder auf. Sie legt beide Hände flach neben das Brett. #sprecher:erzaehler
+Miss Odile stellt die Figuren nicht wieder auf. Sie legt beide Hände flach neben das Brett. #sprecher:erzaehler #schwenk:odile
 Dreimal hast du gegen mich gespielt. Dreimal deine eigene Partie, ohne ein Wort aus dem Kasten. #sprecher:odile #stimmung:nachdenklich
 Dafür hat der Club diesen Kampf angesetzt. Nicht, um zu sehen, wer gewinnt. #sprecher:odile #stimmung:nachdenklich
 Ich schreibe ihn als gespielt ins Buch. Eine Nadel gibt es dafür nicht, die holt man am Brett. #sprecher:odile #stimmung:neutral
 -> clubkampf_gewertet ->
 {ambroseSprichtWieder and not abschiedGesehen:
-    Sie hat recht. Gegen sie zu verlieren ist eine Lektion. Keine Schande. #sprecher:ambrose #stimmung:still
+    Sie hat recht. Gegen sie zu verlieren lehrt dich etwas. Keine Schande. #sprecher:ambrose #stimmung:still
 - else:
     Aus dem Geigenkasten kommt kein Wort. Aber du hast das Gefühl, dass er zugehört hat. #sprecher:erzaehler
 }

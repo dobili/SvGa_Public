@@ -793,7 +793,7 @@ Am Fanshop gibt es Schals und Anstecker der Meisterschaft. #sprecher:erzaehler
 // Einmal, nach der sechsten Niederlage: Die Schwelle sinkt auf 1,5, mit Grund aus der Turnierordnung.
 === nachspielregel ===
 ~ nachspielregelGesagt = true
-Die Turnierleiterin blättert in einem dünnen Heft mit der Turnierordnung. #sprecher:erzaehler
+Die Turnierleiterin blättert in einem dünnen Heft mit der Turnierordnung. #sprecher:erzaehler #schwenk:turnierleiterin
 Sechs Partien verloren, und du sitzt immer noch am Brett. Dafür gibt es die Nachspielregel. #sprecher:turnierleiterin #stimmung:neutral
 Ab jetzt reichen dir anderthalb Punkte für das Halbfinale. #sprecher:turnierleiterin #stimmung:laechelt
 -> turnierleiterin

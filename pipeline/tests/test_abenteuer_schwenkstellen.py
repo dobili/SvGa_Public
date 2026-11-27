@@ -12,7 +12,7 @@ import json
 from pipeline.abenteuer.schwenkstellen import DATEN, GEPRUEFT, Kartenobjekte, aufloesbar, stellen
 
 # Vorschläge und Stellen ohne Ziel in allen Dialogen (--alle), Stand 26.11.2026; darf nur sinken.
-OBERGRENZE_ALLE = 335
+OBERGRENZE_ALLE = 334
 
 
 def test_jeder_schwenk_trifft_ein_ziel():

@@ -1,3 +1,20 @@
+Stand: 27.11.2026, abends (Haupt-Chat, Schach-Abenteuer): **Hauptmenü, Reiter, Phaser-Umbau auf beta (aae82299, Gate n87); Qualitätsrunde des Nachmittags in Gate n89.**
+
+- Auf beta: ein Phaser-Spiel für die ganze Oberwelt (Kartenwechsel 1 bis 3 ms statt 200 bis 350 ms),
+  Reiter „Abenteuer“ in der Leiste, Hauptmenü mit beliebig vielen Spielständen, Startbild der Reise.
+- Startbild nach drei Wünschen des Autors: gut 9 s, Schachfiguren auf dem Weg, stehendes Ende mit
+  blinkendem „Weiter“ (startbild.css, startbild-weg.css).
+- Lektorat des ganzen Spieltexts (35 Ink-Dateien), Fragen Q27-2 bis Q27-4.
+- Grafik aller vier Akte nach dem Kartenblick (erster Eindruck; Gemini C1–C5, D1–D9, E1–E18,
+  F1–F16; Katalogeinträge …27), Testpunkte N2770 bis N2821.
+- Spieler-Durchläufe aller Akte: vier Fehler um Spielstände und „Weiter“ behoben (N2750 bis N2753).
+- Balance: Mira nach „Atme“ (Fehler), Ausweg bei Odile, Nachspielregel der Vorrunde (N2780 bis
+  N2782), Wirtschaft je Akt (gesamtsimulation-aktkasse.cjs), Frage Q27-5 (Münzen in Akt 1 und 2).
+- Name des Spiels: Recherche, Empfehlung „Gambit Road“, Frage Q27-1 (nicht umgesetzt).
+
+**Nächster Schritt:** Gate n89 grün → beta; Lieferung Zurück-Taste Ladeliste und Garagentür Desert
+Springs zusammenführen (N2754); Antworten des Autors zu Q27 und den Testpunkten. Nichts nach `main`.
+
 Stand: 26.11.2026, abends (Haupt-Chat, Schach-Abenteuer): **Auftritte, Gemini-Schnittstelle, Lieferung 26.11. auf beta (0cd5f676, Gate n84 grün).**
 
 - Figuren kommen sichtbar herein und gehen sichtbar hinaus (regeln/auftritt.ts, orte.json

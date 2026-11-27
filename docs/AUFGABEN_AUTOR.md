@@ -780,7 +780,7 @@ Profil › Einstellungen › Fehler melden.
       ob Safari die Seite neu lädt (Speicher).
       **Antwort:** „N2743 ok“ oder welche Karte falsch oder langsam kam.
 - [ ] N2744. **Hauptmenü, Spielstände und Startbild (27.11.2026):** Abenteuer neu öffnen (App ganz
-      schließen oder neuer Tab). Erst läuft das Startbild (knapp 4 s; Tippen überspringt es): Ein
+      schließen oder neuer Tab). Erst läuft das Startbild (knapp 8 s, auf deinen Wunsch doppelt so lang wie der erste Entwurf; Tippen überspringt es): Ein
       Schachbrett wird zum Weg, Held und Ambrose ziehen los, Ortsschilder ziehen vorbei, dahinter
       schwenkt ein gemaltes Panorama (Gemini) von Maple Falls bis zur Arena, am Ende steht der
       Titel. Danach kommt das Hauptmenü mit „Fortsetzen“ (Figur, Name, Akt, Ort, Spielzeit), „Neues

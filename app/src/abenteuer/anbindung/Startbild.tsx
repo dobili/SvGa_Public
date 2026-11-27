@@ -31,7 +31,9 @@ import { paketdateiAlsAdresseOderNull } from "../paket/paketlader";
 import "../startbild.css";
 
 /** Dauer mit Bewegung und still (ms), passend zu den Keyframes in startbild.css. */
-const STARTBILD_MS = 3900;
+// Doppelt so lang wie der erste Entwurf (3,9 s), Wunsch des Autors 27.11.2026: „zack, ist es weg“;
+// überspringen geht mit einem Tipp oder einer Taste.
+const STARTBILD_MS = 7800;
 const STARTBILD_STILL_MS = 1800;
 /** Felder des Bretts in einer Reihe. */
 const BRETTREIHE = 8;

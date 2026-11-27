@@ -874,6 +874,28 @@ Profil › Einstellungen › Fehler melden.
       Partie, in der du es sagst. Bitte prüfen: Clubkampf, „Atme“ sagen, verlieren, „Noch mal.“ –
       spielt Mira in der Revanche wieder wie vor dem „Atme“? Schon umgesetzt, Widerspruch genügt.
       **Antwort:** „N2780 ok“ oder eine Notiz.
+- [ ] N2810. **Silicon Bay und Desert Springs aufgeräumt (27.11.2026):** Auf den Flachdächern stehen
+      jetzt Klimageräte, Lüftungsanlagen, Luken und Rohre, auf manchen Solarmodule oder
+      Pflanzkästen. Im Park von Silicon Bay stehen die Bäume frei im Rasen (zwei haben noch ihre
+      Steineinfassung), auf dem Platz im Südosten runde Sitzinseln, Infostelen und ein
+      Fahrradständer mit Glasdach. In der Altstadt steht ein großer Weihnachtsbaum, hinter den
+      Häusern hängt Wäsche. Am Hafen gibt es eine kleine Fährkasse und an der Hafenmeisterei einen
+      Mast mit bunten Flaggen. Im Serverraum stehen schwarze Serverschränke mit Lämpchen statt
+      Automatenfronten, in Lobby und Akademie ein graublaues Sofa. In Desert Springs liegen rote
+      Wüstensteine ohne Gras, der Hof vor dem Motel ist Schotter, ein Schotterpfad führt zum Canyon.
+      Im Antiquariat hängt eine große Bahnhofsuhr, an der Südwand steht eine alte Wartebank; in der
+      Garage stehen Ölfässer aus Stahl. Wirkt das stimmig, stört etwas?
+      **Antwort:** „N2810 ok“ oder was stört.
+- [ ] N2811. **Port Delacroix aufgeräumt (27.11.2026):** Auf den Flachdächern (Turnhalle, Läden am
+      Kai, Books, Music) stehen Klimageräte und Luken. Der weiße Lieferwagen ist kleiner, das grüne
+      Häuschen am Ostkai so groß wie seine Nachbarn, alle Laubbäume sind winterkahl. Im neuen
+      Musikhaus steht links ein Regal mit Schachbrettern und Schachuhren, rechts an der Wand hängen
+      Gitarre, Geige und Trompete statt des zweiten Fensters, vor dem Klavier steht ein Hocker. In
+      der Klavierwerkstatt liegen Späne um Hobelbank und Sägebock, dazu ein hoher Bretterstapel und
+      ein Leimkanister. Die Turnhalle hat Spielfeldlinien über die ganze Halle, die Regale tragen
+      Schachbretter statt Bücher. In der Ruine des Musikhauses liegen die Holzscheite ohne Grasrand.
+      Passt das, und soll im neuen Musikhaus das zweite Fenster zurück?
+      **Antwort:** „N2811 ok“, „Fenster zurück“ oder was stört.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

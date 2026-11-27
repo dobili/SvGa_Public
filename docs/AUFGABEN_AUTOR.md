@@ -896,6 +896,24 @@ Profil › Einstellungen › Fehler melden.
       Schachbretter statt Bücher. In der Ruine des Musikhauses liegen die Holzscheite ohne Grasrand.
       Passt das, und soll im neuen Musikhaus das zweite Fenster zurück?
       **Antwort:** „N2811 ok“, „Fenster zurück“ oder was stört.
+- [ ] N2820. **Finale in der Capital Arena (27.11.2026):** Draußen hängt über dem Säulenportal das
+      blaue Banner „Landesmeisterschaft“, hinter der Arena stehen Nadelbäume, auf den Flachdächern
+      der Läden Klimageräte, Lüftungen und Solarmodule, und links auf dem Platz steht ein Hotdog-
+      Karren von vorn wie der Limonadenkarren rechts. In der Halle sitzen auf allen vier Tribünen
+      Zuschauer, eine rote Kordel trennt sie vom Spielfeld, die große Tafel zeigt Paarungen, der
+      Fanshop ist ein Tresen mit Trikots statt einer Marktbude, der Reporter steht am Pressetisch.
+      Wirkt das wie ein Finale? Kommst du weiter überall hin (Tür zur Halle, Turniertafel,
+      Pressetisch, Fanshop, Finaltisch)?
+      **Antwort:** „N2820 ok“ oder was stört.
+- [ ] N2821. **Summit City, Ghost Town, U-Bahnhof (27.11.2026):** In Summit City hängen die Wimpel
+      quer über dem Platz, am Nordrand steht eine Festbühne im Aufbau mit zwei Biertischen, auf der
+      Alm wachsen Wildblumen statt Blumenkästen und zwischen den Gipfelfelsen flache Latschen. Im
+      Bergladen stehen Regale mit Helmen, Seilen und Wanderschuhen, in der Bergstation helle
+      Holzbänke, bei Ward dunkelgrüne Ohrensessel. In Ghost Town ist der Friedhofszaun aus altem
+      Holz, die Tränke im Westen trocken, die Saloontreppe verwittert. Im stillgelegten U-Bahnhof
+      liegen Zeitungen und Laub, die Blitzspieler sitzen auf Flaschenkästen. Passt das, wirkt noch
+      etwas fremd?
+      **Antwort:** „N2821 ok“ oder was stört.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

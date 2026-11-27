@@ -29,6 +29,7 @@ import { ohneAbwesende } from "../../src/abenteuer/regeln/abwesenheit";
 import { erfuellt } from "../../src/abenteuer/regeln/bedingung";
 import { variablenAusBesitz } from "../../src/abenteuer/regeln/dialogvariablen";
 import { ohneFigurenNachBedingung } from "../../src/abenteuer/regeln/figurbedingung";
+import { begleiterFuer, type Ortsbegleiter } from "../../src/abenteuer/regeln/gefolge";
 import { karteNachUhr } from "./uhrwelt";
 import type { Abenteuerstand } from "../../src/abenteuer/schnittstelle/spielstand";
 
@@ -65,6 +66,8 @@ export interface Ausloeserregel {
 /** Eine Figur aus orte.json. */
 export interface Figurregel {
   readonly kennung: string;
+  /** Textschlüssel des Namens, „figur.juno.name“: Der Kurzname zählt für die Begleiter. */
+  readonly name?: string;
   readonly dialog: string;
   readonly wenn?: string;
   readonly gegner?: string;
@@ -86,6 +89,8 @@ export interface Ort {
   readonly karten: readonly Karteneintrag[];
   readonly figuren: readonly Figurregel[];
   readonly ausloeser: readonly Ausloeserregel[];
+  /** Begleiter des Orts mit Bedingung (regeln/gefolge.ts). */
+  readonly begleiter?: readonly Ortsbegleiter[];
 }
 
 /** Ein Questschritt und eine Quest aus quests.json. */
@@ -194,6 +199,30 @@ export interface Kartenwissen {
 }
 
 /**
+ * Die Karte ohne Figuren, die gerade begleiten, wie ohneBegleiter in oberwelt/gefolgedaten.ts:
+ * Juno am Ortsschild geht mit; der Durchlauf suchte sie dort („kein Aktionsknopf“, 27.11.2026).
+ */
+function ohneBegleiter(
+  karte: Tiledkarte,
+  ort: Ort,
+  variablen: Record<string, unknown>,
+): Tiledkarte {
+  const begleiter = ort.art === "erinnerung" ? [] : begleiterFuer(ort.begleiter, variablen);
+  if (!begleiter.length) return karte;
+  const begleitet = (o: { readonly name?: string; readonly type?: string }): boolean => {
+    if (!o.name || (o.type !== "figur" && o.type !== "statist")) return false;
+    const figur = ort.figuren.find((f) => f.kennung === `${ort.kennung}.${o.name}`);
+    return begleiter.includes(figur?.name?.split(".")[1] ?? o.name);
+  };
+  return {
+    ...karte,
+    layers: karte.layers.map((e) =>
+      e.objects ? { ...e, objects: e.objects.filter((o) => !begleitet(o)) } : e,
+    ),
+  };
+}
+
+/**
  * Das Kartenwissen zur Karte `kennung` für diesen Spielstand: Fassung nach den Zuständen, ohne
  * Figuren, deren Bedingung nicht gilt, mit Durchgängen wie in der Szene.
  * Wirft, wenn die Karte in orte.json fehlt.
@@ -209,7 +238,11 @@ export function kartenwissen(
   const datei = kartenfassung(fund.karte, variablen).datei;
   const karte = karteNachUhr(
     ohneFigurenNachBedingung(
-      ohneAbwesende(lies<Tiledkarte>(datei), stand.dialogvariablen),
+      ohneBegleiter(
+        ohneAbwesende(lies<Tiledkarte>(datei), stand.dialogvariablen),
+        fund.ort,
+        variablen,
+      ),
       (name) => figurFuer(fund.ort, name)?.wenn,
       variablen,
     ),

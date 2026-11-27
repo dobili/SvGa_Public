@@ -867,6 +867,13 @@ Profil › Einstellungen › Fehler melden.
       Landstraße zwischen Maple Falls und Cedar Creek hat der braune Schuppen ein Schindeldach.
       Passt das so?
       **Antwort:** „N2801 ok“ oder was stört.
+- [ ] N2780. **Mira nach „Atme“ in der Revanche (27.11.2026):** Wer im Clubkampf von Desert Springs
+      „Mira. Atme.“ sagt, spielt gegen eine Mira, die für den Rest dieser Partie stärker und ruhiger
+      wird. Bisher blieb das für jede weitere Partie gegen sie: Nach einer Niederlage war Mira in
+      jeder Revanche vom ersten Zug an eine Stufe stärker (etwa 300 Elo). Jetzt gilt es nur in der
+      Partie, in der du es sagst. Bitte prüfen: Clubkampf, „Atme“ sagen, verlieren, „Noch mal.“ –
+      spielt Mira in der Revanche wieder wie vor dem „Atme“? Schon umgesetzt, Widerspruch genügt.
+      **Antwort:** „N2780 ok“ oder eine Notiz.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,
@@ -2688,3 +2695,11 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       jetzt außerdem „hundertsechzig Jahre lang“ statt „seit New York“ auf das Brett gestarrt; der
       Romantext (akt4_teil1) sagt noch „seit New York“. Soll der Roman angeglichen werden?
       **Antwort:** „so lassen“ oder die Zahl; zum Roman „ja“ oder „nein“.
+- [ ] Q27-5. **Münzen in Akt 1 und 2:** Die Messung zeigt: Wer sparsam spielt, hat nach Maple Falls
+      alles gekauft, Cedar Creek hat keinen Laden und Riverton ist billig; so kommt man mit etwa 470
+      Münzen nach Ironwood, und Münzen sind in Akt 1 und 2 kaum etwas wert. Wer verschwenderisch
+      spielt, ist ab Akt 2 fast immer bei null, hängt aber nirgends fest. Empfehlung: ein kleiner
+      Stand in Cedar Creek (etwa Flohmarkt oder Bibliotheksbasar mit einer Schachuhr, einem Buch
+      oder einem Glücksbringer) und eine dauerhafte Karte mittlerer Stufe schon in Riverton oder
+      Ironwood. Noch nicht umgesetzt, weil es neue Gegenstände und Texte braucht.
+      **Antwort:** „ja“, „so lassen“ oder eine Idee für den Stand.

@@ -75,6 +75,24 @@ function legePlatzImBrowser(stand: object): Promise<boolean> {
   });
 }
 
+/** Zahl der ruhenden Plätze in den Nutzerdaten; läuft im Browser. */
+function zahlDerRuhendenPlaetze(): Promise<number> {
+  return new Promise<number>((fertig, fehler) => {
+    const anfrage = indexedDB.open("schach-von-grund-auf");
+    anfrage.onerror = () => fehler(anfrage.error);
+    anfrage.onsuccess = () => {
+      const db = anfrage.result;
+      const lesen = db.transaction("nutzerdaten", "readonly").objectStore("nutzerdaten");
+      const r = lesen.get("aktuell");
+      r.onsuccess = () => {
+        const d = r.result as { abenteuerplaetze?: unknown[] } | undefined;
+        db.close();
+        fertig(d?.abenteuerplaetze?.length ?? 0);
+      };
+    };
+  });
+}
+
 /** Was von der Welt sichtbar ist: Feld des Helden, Statisten, Stunde, Tönung, Begleiter, Fassung der Karte. */
 async function weltbild(seite: Page): Promise<Record<string, string | null>> {
   const welt = seite.getByTestId("abenteuer-welt");
@@ -111,7 +129,16 @@ test("Platzwechsel mitten im Spiel: nichts vom alten Stand bleibt sichtbar (27.1
   test.slow();
   const funde = beobachte(page);
   await starteMitStand(page, STAND_A);
-  await expect.poll(() => page.evaluate(legePlatzImBrowser, STAND_B)).toBe(true);
+  // Die App hält die Nutzerdaten im Speicher und schreibt sie beim nächsten Speichern ganz:
+  // Den ruhenden Platz liest sie erst nach dem Neuladen (bis er nach dem Neuladen noch da ist).
+  await expect
+    .poll(async () => {
+      await page.evaluate(legePlatzImBrowser, STAND_B);
+      await page.reload();
+      await expect(page.locator(".abenteuer-welt canvas")).toBeVisible({ timeout: FRIST_MS });
+      return page.evaluate(zahlDerRuhendenPlaetze);
+    })
+    .toBe(1);
   const a = await weltbild(page);
   expect(a.stunde).toBe(String(NACHT));
   expect(a.gefolge).toBe("juno");

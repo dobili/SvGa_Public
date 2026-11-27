@@ -4,7 +4,8 @@
 //
 // Der sparsame Spieler sammelt jede dauerhafte Karte einmal, sobald danach noch RUECKLAGE Münzen
 // bleiben, und kauft die Gegenstände, ohne die der Weg der Zeitachse nicht ginge (WEG_GEGENSTAENDE).
-// Der verschwenderische kauft mit `kaufe` alles, was er bezahlen kann.
+// Der verschwenderische kauft mit `kaufe` alles, was er bezahlen kann; der normale liegt dazwischen
+// (`kaufeNormal`).
 "use strict";
 
 const RUECKLAGE = 50;
@@ -46,6 +47,36 @@ function sammle(welt, sp, ware) {
   kaufe(welt, sp, ware);
 }
 
+/** Rücklage des normalen Spielers bei Gegenständen, die der Weg nicht braucht (Fahrrad, Tasche). */
+const RUECKLAGE_GEGENSTAND = 100;
+/** Rücklage des normalen Spielers bei dauerhaften Karten. */
+const RUECKLAGE_NORMAL = 20;
+
+/**
+ * Normal (Balance 27.11.2026): kauft jede dauerhafte Karte, sobald danach RUECKLAGE_NORMAL bleibt,
+ * hält eine Verbrauchskarte für den nächsten Clubkampf bereit (kauft eine, wenn er keine hat) und
+ * gönnt sich einen Gegenstand, wenn danach RUECKLAGE_GEGENSTAND bleibt. Beispiel: 130 Münzen im
+ * Eisenwarenladen → Fahrrad für 120 nicht (10 blieben), Laterne für 60 ja (Weg), „Was droht?“ ja.
+ */
+function kaufeNormal(welt, sp, ware) {
+  if (WEG_GEGENSTAENDE.includes(ware.kennung)) return kaufe(welt, sp, ware);
+  const karte = welt.karten[ware.kennung];
+  const rest = sp.muenzen - ware.preis;
+  if (ware.art === "gegenstand") {
+    if (rest >= RUECKLAGE_GEGENSTAND) kaufe(welt, sp, ware);
+    return;
+  }
+  if (karte?.art === "dauerhaft") {
+    if (rest >= RUECKLAGE_NORMAL) kaufe(welt, sp, ware);
+    return;
+  }
+  const verbrauch = Object.entries(sp.karten).some(
+    ([k, n]) => n > 0 && welt.karten[k]?.art === "verbrauch",
+  );
+  if (karte?.art === "verbrauch" && karte.stufe !== "stark" && !verbrauch)
+    kaufe(welt, sp, ware);
+}
+
 /**
  * Sparsam mit Monatskarte: Dauerhafte Karten, die in einem früheren Laden nicht reichten, holt er
  * nach, sobald das Geld reicht (mit der Bahn zurück, wie die Rückkehr der Simulation). Beispiel:
@@ -71,4 +102,11 @@ function billigsteLeichte(welt, sp) {
     .sort((a, b) => a.preis - b.preis)[0];
 }
 
-module.exports = { nimmKarte, kaufe, sammle, holeKartenNach, billigsteLeichte };
+module.exports = {
+  nimmKarte,
+  kaufe,
+  kaufeNormal,
+  sammle,
+  holeKartenNach,
+  billigsteLeichte,
+};

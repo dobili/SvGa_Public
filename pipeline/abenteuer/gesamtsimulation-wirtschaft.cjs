@@ -10,7 +10,10 @@
 // auch später aus einem früheren Laden; Verbrauchskarten und Gegenstände kauft er nicht auf
 // Vorrat, außer denen, ohne die der Weg der Zeitachse nicht ginge (WEG_GEGENSTAENDE; Einkauf in
 // gesamtsimulation-einkauf.cjs). Der verschwenderische kauft in jedem Laden alles, was er bezahlen
-// kann, und spielt im Clubkampf immer seine stärkste Karte.
+// kann, und spielt im Clubkampf immer seine stärkste Karte. Der normale (seit 27.11.2026) liegt
+// dazwischen: dauerhafte Karten mit kleiner Rücklage, eine Verbrauchskarte auf Vorrat, Gegenstände
+// mit großer Rücklage (kaufeNormal); im Clubkampf ab dem zweiten Versuch seine stärkste Karte.
+// Je Spieler zeigt eine Kasse je Akt Anfang, Einnahmen, Ausgaben und Ende (gesamtsimulation-aktkasse.cjs).
 //
 // Annahmen (Auftrag mittel-1, 09.11.2026): Sieg gegen den Clubchef ohne Karte 40 %, mit leichter
 // Karte 50 %, mit mittlerer 60 %, mit starker 75 %. Nadel nach R17: ohne Karte Gold, mit leichten
@@ -20,34 +23,29 @@
 const {
   nimmKarte,
   kaufe,
+  kaufeNormal,
   sammle,
   holeKartenNach,
   billigsteLeichte,
 } = require("./gesamtsimulation-einkauf.cjs");
+const {
+  akt,
+  betreteOrt,
+  beginneEpilog,
+  verbucheEinnahme,
+  kassentabelle,
+  spanne,
+} = require("./gesamtsimulation-aktkasse.cjs");
 
 const WIEDERHOLUNGEN = 200;
 const SIEG = { keine: 0.4, leicht: 0.5, mittel: 0.6, stark: 0.75 };
 const RANG = { leicht: 1, mittel: 2, stark: 3 };
 const VERSUCHE_OHNE_KARTE = 2;
+/** Der normale Spieler versucht es einmal ohne Karte. */
+const VERSUCHE_OHNE_KARTE_NORMAL = 1;
+const SPIELER = ["sparsam", "normal", "verschwenderisch"];
 const REST_HOECHSTENS = 400;
 const HOECHSTENS_VERSUCHE = 30;
-const AKT = {
-  mapleFalls: 1,
-  wegMapleCedar: 1,
-  cedarCreek: 1,
-  wegCedarRiverton: 2,
-  riverton: 2,
-  erinnerungLondon: 2,
-  wegRivertonIronwood: 2,
-  ironwood: 2,
-  wegIronwoodSilicon: 3,
-  siliconBay: 3,
-  wegSiliconDelacroix: 3,
-  portDelacroix: 3,
-  wegDelacroixDesert: 3,
-  desertSprings: 3,
-};
-const akt = (ort) => AKT[ort] || 4;
 
 /**
  * Zufall mit festem Startwert (lineare Kongruenz), je Spieler und Durchlauf neu. Exakt modulo 2^31
@@ -87,6 +85,7 @@ function karteFuerVersuch(welt, sp, versuch) {
     ([k, n]) => n > 0 && welt.karten[k],
   );
   if (sp.art === "sparsam" && versuch < VERSUCHE_OHNE_KARTE) return null;
+  if (sp.art === "normal" && versuch < VERSUCHE_OHNE_KARTE_NORMAL) return null;
   // Sparsam: nur leichte, dauerhafte zuerst; verschwenderisch: die stärkste, bei gleicher Stufe dauerhafte.
   const dauerhaft = (k) => (welt.karten[k].art === "dauerhaft" ? 0 : 1);
   const passend = besitz
@@ -142,6 +141,7 @@ function spiele(welt, zeitachse, art, saat, ersteNadel) {
       // Ankunft und Abreise gelten für den ersten Aufenthalt; spätere Rückwege zählen nicht.
       if (aktuell && aktuell.abreise === undefined) abreise(welt, sp, aktuell);
       sp.hier = e.ort;
+      betreteOrt(sp, e.ort);
       const bekannt = sp.orte.find((o) => o.ort === e.ort);
       aktuell = bekannt || {
         ort: e.ort,
@@ -149,20 +149,24 @@ function spiele(welt, zeitachse, art, saat, ersteNadel) {
         bezahlbar: bezahlbar(welt, sp, e.ort),
       };
       if (!bekannt) sp.orte.push(aktuell);
-    } else if (e.art === "abspann") sp.amAbspann = sp.muenzen;
-    else if (e.art === "muenzen") zahleOderVerdiene(sp, e);
+    } else if (e.art === "abspann") {
+      sp.amAbspann = sp.muenzen;
+      beginneEpilog(sp);
+    } else if (e.art === "muenzen") zahleOderVerdiene(sp, e);
     else if (e.art === "karte") nimmKarte(sp, e.karte);
     else if (e.art === "laden") {
       sp.laedenBesucht.add(e.laden);
       const angebot = welt.laeden.find((l) => l.kennung === e.laden).angebot;
-      for (const w of angebot)
-        art === "verschwenderisch" ? kaufe(welt, sp, w) : sammle(welt, sp, w);
+      const einkauf =
+        { verschwenderisch: kaufe, normal: kaufeNormal }[art] || sammle;
+      for (const w of angebot) einkauf(welt, sp, w);
       if (art === "sparsam") holeKartenNach(welt, sp);
     } else if (e.art === "clubkampf") {
       const erlaubt = welt.kartenErlaubt[e.begegnung] !== false;
       const c = clubkampf(welt, sp, e.begegnung, zufall, erlaubt);
       sp.clubs.push(c);
       if (c.nadel) sp.muenzen += ersteNadel;
+      if (c.nadel) verbucheEinnahme(sp, ersteNadel, "nadel");
     }
   }
   if (aktuell && aktuell.abreise === undefined) abreise(welt, sp, aktuell);
@@ -178,6 +182,7 @@ function spiele(welt, zeitachse, art, saat, ersteNadel) {
 function zahleOderVerdiene(sp, e) {
   if (e.anzahl < 0 && sp.muenzen + e.anzahl < 0) sp.fahrtenOhneGeld++;
   else sp.muenzen += e.anzahl;
+  if (e.anzahl > 0) verbucheEinnahme(sp, e.anzahl, e.quelle);
 }
 
 function bezahlbar(welt, sp, ort) {
@@ -197,10 +202,6 @@ function abreise(welt, sp, ort) {
 // ---------------------------------------------------------------- Bericht
 
 const NADELNAME = ["keine", "Bronze", "Silber", "Gold"];
-const spanne = (werte) =>
-  Math.min(...werte) === Math.max(...werte)
-    ? `${werte[0]}`
-    : `${Math.min(...werte)}–${Math.max(...werte)}`;
 const anteil = (n, von) => `${Math.round((100 * n) / von)} %`;
 
 /** Clubkämpfe eines Spielers über alle Durchläufe und Wiederholungen zusammengefasst. */
@@ -288,7 +289,7 @@ function warenAkt4NichtGekauft(welt, sp) {
 function berichtWirtschaft(welt, zeitachsen, ersteNadel) {
   const zeilen = ["# Wirtschaft", ""];
   const ziele = [];
-  for (const art of ["sparsam", "verschwenderisch"]) {
+  for (const art of SPIELER) {
     const erste = zeitachsen.map((z, i) =>
       spiele(welt, z, art, 1000 * (i + 1), ersteNadel),
     );
@@ -304,6 +305,10 @@ function berichtWirtschaft(welt, zeitachsen, ersteNadel) {
       ...ortstabelle(welt, erste),
       "",
       ...clubtabelle(stat),
+      "",
+      "Kasse je Akt:",
+      "",
+      ...kassentabelle(erste),
       "",
     );
     if (art === "sparsam") {
@@ -332,6 +337,10 @@ function berichtWirtschaft(welt, zeitachsen, ersteNadel) {
       const fehlt = erste.map((sp) => dauerhafteNichtGekauft(welt, sp).length);
       ziele.push(
         `- Dauerhafte Karten, die der sparsame Spieler nie kaufen konnte: ${spanne(fehlt)}`,
+      );
+    } else if (art === "normal") {
+      ziele.push(
+        `- Münzen des normalen Spielers beim Abspann: ${spanne(erste.map((sp) => sp.amAbspann ?? sp.muenzen))}, am Ende: ${spanne(erste.map((sp) => sp.muenzen))}`,
       );
     } else {
       ziele.push(

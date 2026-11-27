@@ -155,7 +155,7 @@ Langsam ist auch eine Geschwindigkeit. Noch einmal? #sprecher:harlan #stimmung:l
 // vorteil. Vorher ging es in harlan_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === harlan_nach_remis ===
-Unentschieden. Der Zug ist pünktlich, aber nicht schneller, noch einmal? #sprecher:harlan #stimmung:laechelt
+Unentschieden. Der Zug ist pünktlich, aber nicht schneller – noch einmal? #sprecher:harlan #stimmung:laechelt
 + [„Noch einmal.“]
     ~ beginnePartie("riverton.harlan")
     -> END

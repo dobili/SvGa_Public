@@ -112,7 +112,7 @@ Am Wegweiser „Riverton, 3 Meilen“ hängt eine Holztafel mit drei Diagrammen:
 ~ quinnGetroffen = true
 {not gueterzugGesehen: -> gueterzug ->}
 An einer Bude neben den Gleisen sitzt ein Mann in Uniform. Auf einer Kiste ein Brett und eine Uhr mit zwei Zifferblättern. #sprecher:erzaehler
-Pause. Zwanzig Minuten, dann kommt der Elfuhrsieben, wer will? #sprecher:schaffner #stimmung:laechelt
+Pause. Zwanzig Minuten, dann kommt der Elfuhrsieben – wer will? #sprecher:schaffner #stimmung:laechelt
 Ich! #sprecher:juno #stimmung:froh
 Juno spielt, als würde das Haus brennen. Sie verliert einen Läufer, einen Turm, und wirft vor Lachen den König selbst um. #sprecher:erzaehler
 Ich hab die Zeit gewonnen. Mein Läufer ist trotzdem beleidigt. #sprecher:juno #stimmung:froh
@@ -176,7 +176,7 @@ Ihr habt keinen. #sprecher:erzaehler
 -> END
 
 === quinn_nach_niederlage ===
-Verspätung. Das passiert den Besten, noch einmal? #sprecher:schaffner #stimmung:laechelt
+Verspätung. Das passiert den Besten – noch einmal? #sprecher:schaffner #stimmung:laechelt
 {not abschiedGesehen:
     Lass dich nicht hetzen. #sprecher:ambrose #stimmung:nachdenklich
 }
@@ -190,7 +190,7 @@ Verspätung. Das passiert den Besten, noch einmal? #sprecher:schaffner #stimmung
 // vorteil. Vorher ging es in quinn_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === quinn_nach_remis ===
-Pünktlich, aber nicht vorn. Remis, noch einmal? #sprecher:schaffner #stimmung:laechelt
+Pünktlich, aber nicht vorn. Remis – noch einmal? #sprecher:schaffner #stimmung:laechelt
 + [„Revanche.“]
     ~ beginnePartie("wegCedarRiverton.schaffner")
     -> END

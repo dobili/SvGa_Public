@@ -181,7 +181,7 @@ Nia stellt die Figuren auf ihr Board, so schnell, dass du kaum hinsiehst. #sprec
 -> END
 
 === nia_nach_sieg ===
-Okay, okay. Du bist schneller, als du aussiehst, noch mal? #sprecher:nia #stimmung:ueberrascht
+Okay, okay. Du bist schneller, als du aussiehst – noch mal? #sprecher:nia #stimmung:ueberrascht
 {faehrsteinGesehen and not abschiedGesehen: Schnell war sie. Du warst da. #sprecher:ambrose #stimmung:laechelt}
 + [„Noch eine.“]
     -> nia_duell
@@ -463,7 +463,7 @@ Man weiß ja nie. #sprecher:ada #stimmung:laechelt
 ~ faehrsteinGesehen = true
 // Gutachten K1.12: Ambroses erster Satz seit dem Aufbruch, mit Porträt und Pause, vor dem Stein.
 Hier ist es schöner. #sprecher:ambrose #stimmung:still
-Es ist das Erste, was er seit dem Aufbruch sagt. #sprecher:erzaehler #pause:2
+Seit dem Aufbruch hat er kaum ein Wort gesagt. #sprecher:erzaehler #pause:2
 Wo das Ufer flach ist, liegt ein großer Stein im Gras. Darin sind Linien eingeritzt, acht mal acht. #sprecher:erzaehler
 Daneben sitzt ein alter Mann auf einem Klappstuhl. Die Angel hängt im Wasser, der Eimer ist leer. #sprecher:erzaehler
 Mein Großvater hat hier Leute übergesetzt. Als es die Brücke noch nicht gab. #sprecher:silas #stimmung:nachdenklich

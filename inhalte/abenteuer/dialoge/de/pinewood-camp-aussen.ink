@@ -348,7 +348,7 @@ Der Wald gewinnt oft. Willst du es noch einmal versuchen? #sprecher:hollis #stim
 // vorteil. Vorher ging es in hollis_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === hollis_nach_remis ===
-Remis. Diesmal hat der Wald keinen von uns gewinnen lassen, noch einmal? #sprecher:hollis #stimmung:laechelt
+Remis. Diesmal hat der Wald keinen von uns gewinnen lassen – noch einmal? #sprecher:hollis #stimmung:laechelt
 + [„Revanche.“]
     ~ beginnePartie("pinewoodCamp.hollis")
     -> END

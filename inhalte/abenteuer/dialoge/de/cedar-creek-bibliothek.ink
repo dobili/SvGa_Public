@@ -211,7 +211,7 @@ Du guckst schon den ganzen Tag so. #sprecher:juno #stimmung:laechelt
 -> END
 
 === okafor_nach_niederlage ===
-Diesmal nicht. Aber du hast lange gehalten, noch einmal? #sprecher:okafor #stimmung:laechelt
+Diesmal nicht. Aber du hast lange gehalten – noch einmal? #sprecher:okafor #stimmung:laechelt
 // Ambrose nach dem verlorenen Clubkampf (schwacher Spieler im Durchlauf, 19.11.2026: vorher
 // sprach nur der Clubchef). Nach dem Abschied schweigt er.
 {not abschiedGesehen:

@@ -207,7 +207,7 @@ Noch eine? Aber diesmal von vorn, mit allen Figuren. #sprecher:skaterJo #stimmun
 // vorteil. Vorher ging es in jo_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === jo_nach_remis ===
-Unentschieden! Das zählt nicht, noch eine? #sprecher:skaterJo #stimmung:laechelt
+Unentschieden! Das zählt nicht – noch eine? #sprecher:skaterJo #stimmung:laechelt
 + [„Revanche.“]
     -> jo_duell
 + [„Gleich.“]
@@ -278,7 +278,7 @@ Sie lacht, kurz und rau, und wirft dir die leere Flasche zu. #sprecher:erzaehler
 
 === kiosk ===
 {patelGetroffen:
-    {~Na, wieder da? Frische Karten sind da, und Limo, falls Jo wieder gewonnen hat.|Willkommen zurück. Für Münzen gibt es hier fast alles, nur keine Siege.} #sprecher:patel #stimmung:laechelt
+    {~Na, wieder da? Frische Karten sind da, und Limo, falls Jo wieder Durst hat.|Willkommen zurück. Für Münzen gibt es hier fast alles, nur keine Siege.} #sprecher:patel #stimmung:laechelt
 - else:
     ~ patelGetroffen = true
     Ein kleiner Verkaufswagen mit bunter Markise. Hinter der Klappe sortiert ein Mann Zeitschriften. #sprecher:erzaehler

@@ -260,7 +260,8 @@ Später, denkst du. Aber nicht mehr lange. #sprecher:erzaehler
 // Lektorat 19.11.2026: Ohne den Moment „Lass mich“ (Partie früher gewonnen) spricht Ambrose nur von
 // dem, was er gesehen hat; nach einem Remis hat {held} niemanden geschlagen.
 {clubkampfZaehlGesagt:Ich hätte dich die Partie gekostet.|Ich habe heute ein Loch in ihrer Königsstellung gesehen. Ich habe geschwiegen.} #sprecher:ambrose #stimmung:bitter
-* [„Hast du aber nicht.“]
+// Lektorat 27.11.2026: „Hast du aber nicht.“ widersprach der Fassung „Ich habe geschwiegen.“
+* [{clubkampfZaehlGesagt:„Hast du aber nicht.“|„Gut, dass du geschwiegen hast.“}]
 * [„Ich hab gezählt. Wie du es mir beigebracht hast.“]
 - {clubkampfZaehlGesagt:Weil du gefragt hast. Ich hätte nicht gefragt. Ich habe nie gefragt.|Weil du gezählt hast. Ich hätte nicht gezählt. Ich habe nie gezählt.} #sprecher:ambrose #stimmung:nachdenklich
 {clubkampfZaehlGesagt:Ein Loch in einer Königsstellung, und ich bin wieder siebenundzwanzig und will, dass die Treppe klatscht.|Früher hätte ich den Turm hineingeworfen, damit die Treppe klatscht.} #sprecher:ambrose #stimmung:bitter
@@ -349,7 +350,7 @@ Noch eine Runde, während die Fische schlafen? #sprecher:rosa #stimmung:laechelt
     -> END
 
 === rosa_nach_niederlage ===
-Gezappelt. Der Vorteil ist weggeschwommen, noch mal? #sprecher:rosa #stimmung:laechelt
+Gezappelt. Der Vorteil ist weggeschwommen – noch mal? #sprecher:rosa #stimmung:laechelt
 Ruhig, ruhig. Der König läuft nicht weg. #sprecher:rosa #stimmung:laechelt
 + [„Revanche.“]
     -> rosa_duell
@@ -360,7 +361,7 @@ Ruhig, ruhig. Der König läuft nicht weg. #sprecher:rosa #stimmung:laechelt
 // vorteil. Vorher ging es in rosa_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === rosa_nach_remis ===
-Gehalten, aber nicht ausgebaut. Remis, noch mal? #sprecher:rosa #stimmung:laechelt
+Gehalten, aber nicht ausgebaut. Remis – noch mal? #sprecher:rosa #stimmung:laechelt
 + [„Revanche.“]
     -> rosa_duell
 + [„Nicht jetzt.“]
@@ -442,7 +443,7 @@ Erst auf dem Weg zum Steg, zwischen den Zedernhecken, hörst du Ambrose wieder. 
 // Lektorat 19.11.2026: Nach dem Gespräch mit Kettering zurück zu den Wahlen, ohne die Einleitung.
 // Lektorat 20.11.2026 (Story-Bibel, Ablauf Akt 1: „Der Bus … bleibt für die Rückfahrt“): Die
 // Vorhut schläft erst im Lesesaal; vorher fährt der Bus ohne {held}.
-{not nachtImLesesaal and not endeAkt1Gesehen: Heute fährt er ohne dich. Ihr seid die Vorhut. #sprecher:erzaehler}
+{not nachtImLesesaal and not endeAkt1Gesehen: Du fährst noch nicht mit. Ihr seid die Vorhut. #sprecher:erzaehler}
 - (wahl)
 + {nachtImLesesaal or endeAkt1Gesehen} [Nach Maple Falls fahren]
     Der Bus rollt die Landstraße entlang. Hinter dir werden die Zedern kleiner. #sprecher:erzaehler
@@ -534,7 +535,15 @@ Ich hab im Bus geschlafen. Mit dem Kopf auf dem Schachkoffer, der ist hart. #spr
 * [„Wir haben auf Matten geschlafen. Zwischen den Regalen.“]
     Zwischen Büchern? Da wär ich nie eingeschlafen. #sprecher:sam #stimmung:lacht
     Doch. Wär ich. #sprecher:sam #stimmung:lacht
-- Clubkampf am Vormittag. Bis dahin: Kopf frei, Figuren sortiert. #sprecher:coachDelgado #stimmung:froh #klang:pfiff
+// Lektorat 27.11.2026: Wer am Morgen zuerst zu Mrs. Okafor geht, hat den Clubkampf schon gespielt,
+// wenn der Bus kommt (okafor_clubkampf wartet nicht auf das Team). Dann kein „Clubkampf am Vormittag“.
+-
+{nadelCedarCreek > 0:
+    Ihr habt schon gespielt? Ohne Pfiff? #sprecher:coachDelgado #stimmung:laechelt #klang:pfiff
+    Dann zeigst du mir die Partie in der Bibliothek. Zug für Zug. #sprecher:coachDelgado #stimmung:froh
+- else:
+    Clubkampf am Vormittag. Bis dahin: Kopf frei, Figuren sortiert. #sprecher:coachDelgado #stimmung:froh #klang:pfiff
+}
 Der Bus wartet bis heute Abend. Mr. Kettering fährt uns zurück. #sprecher:coachDelgado #stimmung:neutral
 ~ teamAngekommen = true
 Der Coach und Sam gehen voraus zur Bibliothek. #sprecher:erzaehler #gehe:coachCedar>bibliothekTuer;samCedar>bibliothekTuer

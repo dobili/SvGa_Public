@@ -103,7 +103,7 @@ Die Nadel holt man gegen mich. #sprecher:coachDelgado #stimmung:laechelt
 * [„Was muss ich tun?“]
     Erst die Aufgaben von Sam und Juno. Dann eine Partie gegen mich. #sprecher:coachDelgado #stimmung:neutral
 - Das ist hier Gesetz, und ich bin die Polizei. #sprecher:coachDelgado #stimmung:froh #klang:pfiff
-Am Fenster sitzt ein Junge, die Füße auf dem Stuhl. Er hat die ganze Zeit zugehört, ohne herzusehen, das ist Sam. #sprecher:erzaehler #schwenk:sam
+Am Fenster sitzt ein Junge, die Füße auf dem Stuhl. Er hat die ganze Zeit zugehört, ohne herzusehen. Das ist Sam. #sprecher:erzaehler #schwenk:sam
 // Lektorat 19.11.2026: Wer das Brett schon angesehen hat (ansehen-maple-falls), liest es nicht zweimal.
 {angesehenBrettOhneDame:Der Radiergummi steht noch auf d8. #sprecher:erzaehler}
 {not angesehenBrettOhneDame:Auf einem der Bretter fehlt die schwarze Dame. An ihrer Stelle steht ein Radiergummi. #sprecher:erzaehler}

@@ -111,7 +111,7 @@ Zu langsam an der Zapfsäule! Noch mal? #sprecher:buck #stimmung:lacht
 // vorteil. Vorher ging es in buck_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === buck_nach_remis ===
-Unentschieden! Volltanken reicht nicht, du musst auch losfahren, noch mal? #sprecher:buck #stimmung:laechelt
+Unentschieden! Volltanken reicht nicht, du musst auch losfahren – noch mal? #sprecher:buck #stimmung:laechelt
 + [„Revanche.“]
     ~ beginnePartie("desertSprings.buck")
     -> END

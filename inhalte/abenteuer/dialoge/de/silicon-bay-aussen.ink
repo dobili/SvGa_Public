@@ -155,7 +155,7 @@ Es ist, als spielte man neben einem Radio. Du hast zugehört. #sprecher:erzaehle
 // vorteil. Vorher ging es in dash_nach_sieg mit „gewonnen“ und Karte (schwacher Spieler im
 // Spieler-Durchlauf, 19.11.2026).
 === dash_nach_remis ===
-Remis! Dann zahlt jeder seinen Burrito selbst, noch eine? #sprecher:dash #stimmung:laechelt
+Remis! Dann zahlt jeder seinen Burrito selbst – noch eine? #sprecher:dash #stimmung:laechelt
 + [„Revanche.“]
     ~ beginnePartie("siliconBay.dash")
     -> END

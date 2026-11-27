@@ -12,6 +12,7 @@
  */
 import { expect, test, type Page } from "@playwright/test";
 import { beobachte, EINLEITUNG_GESEHEN, GRUNDSTAND, starteMitStand } from "./abenteuer-affe";
+import { ladeAbenteuerpaket } from "./abenteuer-paket";
 
 const FRIST_MS = 40000;
 const MINUTEN_JE_STUNDE = 60;
@@ -204,5 +205,53 @@ test("Anderer Tab lädt einen anderen Stand auf derselben Karte: dieser Tab gibt
   await expect(page.getByTestId("abenteuer-hauptmenue")).toBeVisible({ timeout: FRIST_MS });
   await zweite.waitForTimeout(1000);
   expect(await zweite.evaluate(gespielterStandImBrowser)).toBe("Alex@40,14");
+  await zweite.close();
+});
+
+/**
+ * Gesicherter Stapel der App (app/stapelMerker.ts, Merker svga.stapel): Spielen, Abenteuer und
+ * darüber eine Aufgabenrunde, die es nicht mehr gibt. So steht die App nach einem Neustart in
+ * einer Ansicht des Abenteuers, ohne Spielsitzung im neuen Tab.
+ */
+function stapelMitRunde(): string {
+  return JSON.stringify({
+    format: 1,
+    zeit: Date.now(),
+    stapel: {
+      bereich: "spielen",
+      ansichten: [
+        { bildschirm: "spielen" },
+        { bildschirm: "zusatz", kennung: "abenteuer" },
+        { bildschirm: "zusatz", kennung: "abenteuer-aufgaben", wert: "weg" },
+      ],
+    },
+  });
+}
+
+test("„Weiter“ nach einem Neustart in einer Runde führt in die Welt, nicht ins Hauptmenü (27.11.2026)", async ({
+  page,
+  context,
+}) => {
+  test.slow();
+  // Ohne den Springer der App, auch in weiteren Tabs (wie abenteuer-hauptmenue.spec.ts).
+  await context.addInitScript(() => {
+    window.sessionStorage.setItem("svga.startanimation.sitzung", "ja");
+  });
+  await page.goto("/app/#abenteuer");
+  await page.getByTestId("abenteuer-startbild").click();
+  await ladeAbenteuerpaket(page, undefined, { mitHauptmenue: true });
+  await page.getByTestId("abenteuer-name").fill("Kim");
+  await page.getByTestId("abenteuer-spielen").click();
+  await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: FRIST_MS });
+  // Neustart der App (neuer Tab, leerer Sitzungsspeicher) mitten in der Runde.
+  const zweite = await context.newPage();
+  await zweite.addInitScript((stapel) => {
+    window.localStorage.setItem("svga.stapel", stapel);
+  }, stapelMitRunde());
+  await zweite.goto("/app/");
+  await zweite.getByTestId("abenteuer-aufgaben-zurueck").click({ timeout: FRIST_MS });
+  await expect(zweite.getByTestId("abenteuer-welt")).toBeVisible({ timeout: FRIST_MS });
+  await expect(zweite.getByTestId("abenteuer-hauptmenue")).toHaveCount(0);
+  await expect(zweite.getByTestId("abenteuer-startbild")).toHaveCount(0);
   await zweite.close();
 });

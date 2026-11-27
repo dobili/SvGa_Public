@@ -817,6 +817,19 @@ Profil › Einstellungen › Fehler melden.
       stehen, bis du auf das blinkende „Weiter“ tippst (hoch unter dem Weg, quer unter dem
       Untertitel). Vorher überspringt ein Tipp wie bisher. Passen Tempo, Figuren und „Weiter“?
       **Antwort:** „N2761 ok“ oder was anders sein soll.
+- [ ] N2770. **Maple Falls aufgeräumt für den ersten Eindruck (27.11.2026):** (1) Küche im Whitlock-
+      Haus: In der rechten Arbeitsplatte sitzt ein Spülbecken; die Stehlampe steht links neben den
+      gelben Sesseln, nicht mehr zwischen Sessel und Fernseher. (2) Dein Zimmer: Am Kopfende des
+      Betts steht ein kleiner Nachttisch mit Lampe, die große rote Kommode ist weg. (3) Dachboden:
+      Statt der neuen Stehlampe liegt ein alter Koffer da, dazu ein Spinnennetz in der Ecke links
+      oben, eine Holztruhe und ein alter Karton unten. (4) Diner: Schachbrettfliesen und in der
+      Mitte ein zweiter Tisch mit zwei Stühlen. (5) Clubraum: In den unteren Ecken stehen dieselben
+      Pflanzen wie oben, keine Palmen. (6) Park: Am alten Steg ist das Wasser überall gleich blau,
+      die Seerosen haben keine Kästchen mehr, die Bänke sind echte Parkbänke mit Eisenseiten (auch
+      die von Mr. Abernathy), die Laterne steht am Gehweg statt im Baum. (7) Birch Lane: Auf dem
+      Flachdach des Diners stehen Klimagerät, Luke und Lüftungsrohr. Wege und Gespräche sind wie
+      vorher.
+      **Antwort:** „N2770 ok“ oder Karte und was stört.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

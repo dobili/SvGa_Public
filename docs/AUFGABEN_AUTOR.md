@@ -846,6 +846,27 @@ Profil › Einstellungen › Fehler melden.
       orangen Werkzeugschranks, helle Späne in Locken. Waschsalon: Fenster mit hellem Metallrahmen,
       Mr. Boateng schaut in den Raum. Schon umgesetzt, Widerspruch genügt.
       **Antwort:** „N2791 ok“ oder Raum und was stört.
+- [ ] N2800. **Riverton aufgeräumt (27.11.2026):** Am Bahnsteig hinter dem Bahnhof stehen grüne
+      Bänke mit Blick aufs Gleis und zwei blaue Schilder „RIVERTON“; das rote Pumpenhaus am
+      Wasserturm hat ein Schindeldach. Im Park haben die sechs Bildschirmtische ein dunkles
+      Metallgestell, eine bläulich leuchtende Platte und graue Bänke mit Beinen statt weißer
+      Rechtecke. Auf den Flachdächern von Groove, Handyladen, Café und Albescus Werkstatt stehen
+      Klimageräte, Luken und Rohre. In der Bahnhofshalle hat Pops einen echten Kioskstand mit
+      Vitrine, Kasse und Zeitungen, im Westen steht eine Schließfachwand. Im Pavillon ist die Tafel
+      für Elias Odum eine Bronzetafel mit Porträt; nach Perfect Move hängt deren Schild am Geländer.
+      Im Schuppen hängt eine Lochwand mit Werkzeug, in Slicks Wohnwagen liegt ein abgetretener
+      Läufer. Wirkt Riverton fertig und stimmig, stört etwas?
+      **Antwort:** „N2800 ok“ oder was stört.
+- [ ] N2801. **Ironwood, Kanalweg und Landstraße aufgeräumt (27.11.2026):** In Ironwood stehen auf
+      den Flachdächern der Wohnblocks, der Kneipe und des Eisenwarenladens Klimageräte, Luken und
+      Rohre; südlich der Gleise liegen zwei Gemüsebeete mit Kohl statt Fässern auf der Wiese. Im
+      Museum stehen zwei pralle Postsäcke auf einem Holzsockel, in der Umkleide zwei Duschkabinen
+      mit Vorhang, in Mamas Zimmer hängt das Partieformular von 2001 in einem dunklen Holzrahmen. Am
+      Kanalweg stehen die beiden Schornsteine direkt hinter der Werkhalle, die Birken am Rastplatz
+      stehen versetzt; an der Brücke ist der Treidelpfad durchgehend drei Kacheln breit. Auf der
+      Landstraße zwischen Maple Falls und Cedar Creek hat der braune Schuppen ein Schindeldach.
+      Passt das so?
+      **Antwort:** „N2801 ok“ oder was stört.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

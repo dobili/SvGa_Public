@@ -2,7 +2,7 @@
   "karte": "riverton.bahnhofshalle",
   "datei": "karten/riverton-bahnhofshalle-plakat.json",
   "art": "innen",
-  "beschreibung": "Zustand: in Akt 4 (nach der Nadel von Desert Springs): Über dem Kiosk hängt das Plakat der Landesmeisterschaft in der Hauptstadt; Slicks Brett liegt weiter auf der Bank. Die Bahnhofshalle von Riverton: Backsteinwände, Steinboden, hohe Bogenfenster. Durch die gläserne Doppeltür im Süden kommt man vom Vorplatz herein, gegenüber in der Nordwand die gläserne Doppeltür zum Bahnsteig, daneben die Schaffnerin. In der Nordwand links drei Schalterfenster für Fahrkarten mit Ablage, in der Mitte die große Bahnhofsuhr, der Abfahrtsmonitor und der Netzplan, die Automaten rechts. An der Ostwand der Kiosk von Pops als ein Stand: drei Zeitungshalter, davor Pops, vor ihm der gläserne Tresen. In der Nordwand rechts Getränke- und Kaffeeautomat nebeneinander, an der Westwand die Schließfächer. In der Mitte zwischen vier Säulen die Wartezone mit orangefarbenen Bänken in drei Reihen, in der Mitte ein Gang zur Tür, neben einer Bank ein vergessener Koffer; an den Säulen und neben dem Eingang Pflanzen in Vasen. Im Westen zwei Zweierbänke, links neben dem Kiosk eine Sackkarre mit Gepäck.",
+  "beschreibung": "Zustand: in Akt 4 (nach der Nadel von Desert Springs): Über dem Kiosk hängt das Plakat der Landesmeisterschaft in der Hauptstadt; Slicks Brett liegt weiter auf der Bank. Die Bahnhofshalle von Riverton: Backsteinwände, Steinboden, hohe Bogenfenster. Durch die gläserne Doppeltür im Süden kommt man vom Vorplatz herein, gegenüber in der Nordwand die gläserne Doppeltür zum Bahnsteig, daneben die Schaffnerin. In der Nordwand links drei Schalterfenster für Fahrkarten mit Ablage, in der Mitte die große Bahnhofsuhr, der Abfahrtsmonitor und der Netzplan, die Automaten rechts. An der Ostwand der Kiosk von Pops als ein Stand: drei Zeitungshalter, davor Pops, vor ihm der Kioskstand mit gläserner Vitrine voller Süßigkeiten, Kasse und Zeitungen. In der Nordwand rechts Getränke- und Kaffeeautomat nebeneinander, im Westen eine Schließfachwand mit neun Fächern. In der Mitte zwischen vier Säulen die Wartezone mit orangefarbenen Bänken in drei Reihen, in der Mitte ein Gang zur Tür, neben einer Bank ein vergessener Koffer, bei den Zweierbänken ein roter Rucksack; an den Säulen und neben dem Eingang Pflanzen in Vasen. Im Westen zwei Zweierbänke, links neben dem Kiosk eine Sackkarre mit Gepäck.",
   "wand": "backstein",
   "boden": "stein",
   "raster": [
@@ -66,16 +66,8 @@
       "versatz": [0, -6]
     },
     {
-      "moebel": "mf8GlasthekeLinks",
+      "moebel": "rv27Kioskstand",
       "feld": [22, 12]
-    },
-    {
-      "moebel": "mf8GlasthekeMitte",
-      "feld": [23, 12]
-    },
-    {
-      "moebel": "mf8GlasthekeRechts",
-      "feld": [24, 12]
     },
     {
       "moebel": "rv8Rollkoffer",
@@ -159,8 +151,8 @@
       "feld": [19, 12]
     },
     {
-      "moebel": "rv8Rollkoffer",
-      "feld": [6, 11]
+      "moebel": "cc27Rucksack",
+      "feld": [6, 12]
     },
     {
       "moebel": "rv8GlastuerSued",
@@ -198,12 +190,8 @@
       "feld": [12, 11]
     },
     {
-      "moebel": "rv14SpindLinks",
-      "feld": [1, 6]
-    },
-    {
-      "moebel": "rv14SpindRechts",
-      "feld": [3, 6]
+      "moebel": "rv27Schliessfaecher",
+      "feld": [1, 5]
     },
     {
       "moebel": "mf4Fussmatte",

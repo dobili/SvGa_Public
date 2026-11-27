@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 43,
+ "nextobjectid": 42,
  "layers": [
   {
    "id": 1,
@@ -1662,12 +1662,12 @@
     },
     {
      "id": 26,
-     "name": "iw5Postsack",
+     "name": "iw27Postsaecke",
      "type": "moebel",
      "x": 192,
-     "y": 176,
-     "width": 16,
-     "height": 16,
+     "y": 160,
+     "width": 32,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -1685,29 +1685,6 @@
     },
     {
      "id": 27,
-     "name": "iw5Postsack",
-     "type": "moebel",
-     "x": 208,
-     "y": 176,
-     "width": 16,
-     "height": 16,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 184
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 28,
      "name": "iw9FotoBrueckeA",
      "type": "moebel",
      "x": 240,
@@ -1730,7 +1707,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 28,
      "name": "iw9FotoWerkA",
      "type": "moebel",
      "x": 272,
@@ -1753,7 +1730,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 29,
      "name": "iw9FotoArbeiterA",
      "type": "moebel",
      "x": 304,
@@ -1776,7 +1753,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 30,
      "name": "iw8Infotafel",
      "type": "moebel",
      "x": 336,
@@ -1799,7 +1776,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 31,
      "name": "iw8Pflanze",
      "type": "moebel",
      "x": 240,
@@ -1822,7 +1799,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 32,
      "name": "iw9VitrineMuetze",
      "type": "moebel",
      "x": 288,
@@ -1845,7 +1822,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 33,
      "name": "iw8Pflanze",
      "type": "moebel",
      "x": 320,
@@ -1868,7 +1845,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 34,
      "name": "iw8Museumsbank",
      "type": "moebel",
      "x": 288,
@@ -1891,7 +1868,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 35,
      "name": "iw9VitrineWerkzeug",
      "type": "moebel",
      "x": 240,
@@ -1914,7 +1891,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 36,
      "name": "iw9VitrineGlasfunke",
      "type": "moebel",
      "x": 272,
@@ -1937,7 +1914,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 37,
      "name": "iw8Schaukasten3",
      "type": "moebel",
      "x": 304,
@@ -1960,7 +1937,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 38,
      "name": "cc6TuerSued",
      "type": "moebel",
      "x": 112,
@@ -1988,7 +1965,7 @@
      ]
     },
     {
-     "id": 40,
+     "id": 39,
      "name": "cc5Fussmatte",
      "type": "moebel",
      "x": 112,
@@ -2011,7 +1988,7 @@
      ]
     },
     {
-     "id": 41,
+     "id": 40,
      "name": "cc6TuerSued",
      "type": "moebel",
      "x": 128,
@@ -2039,7 +2016,7 @@
      ]
     },
     {
-     "id": 42,
+     "id": 41,
      "name": "cc5Fussmatte",
      "type": "moebel",
      "x": 128,

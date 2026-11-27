@@ -21692,8 +21692,8 @@
      "id": 51,
      "name": "iw5Schornstein",
      "type": "moebel",
-     "x": 48,
-     "y": 0,
+     "x": 80,
+     "y": 64,
      "width": 32,
      "height": 127,
      "rotation": 0,
@@ -21702,7 +21702,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 119
+       "value": 183
       },
       {
        "name": "kollision",
@@ -21716,7 +21716,7 @@
      "name": "iw5Schornstein",
      "type": "moebel",
      "x": 160,
-     "y": 0,
+     "y": 48,
      "width": 32,
      "height": 127,
      "rotation": 0,
@@ -21725,7 +21725,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 119
+       "value": 167
       },
       {
        "name": "kollision",
@@ -28016,8 +28016,8 @@
      "id": 324,
      "name": "wr5Pappel",
      "type": "moebel",
-     "x": 208,
-     "y": 2720,
+     "x": 224,
+     "y": 2656,
      "width": 48,
      "height": 80,
      "rotation": 0,
@@ -28026,7 +28026,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 2792
+       "value": 2728
       },
       {
        "name": "kollision",
@@ -28039,8 +28039,8 @@
      "id": 325,
      "name": "wr5Pappel",
      "type": "moebel",
-     "x": 208,
-     "y": 2784,
+     "x": 192,
+     "y": 2752,
      "width": 48,
      "height": 80,
      "rotation": 0,
@@ -28049,7 +28049,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 2856
+       "value": 2824
       },
       {
        "name": "kollision",
@@ -28062,7 +28062,7 @@
      "id": 326,
      "name": "wr5Pappel",
      "type": "moebel",
-     "x": 208,
+     "x": 224,
      "y": 2848,
      "width": 48,
      "height": 80,
@@ -28085,8 +28085,8 @@
      "id": 327,
      "name": "wr5Pappel",
      "type": "moebel",
-     "x": 208,
-     "y": 2912,
+     "x": 192,
+     "y": 2944,
      "width": 48,
      "height": 80,
      "rotation": 0,
@@ -28095,7 +28095,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 2984
+       "value": 3016
       },
       {
        "name": "kollision",

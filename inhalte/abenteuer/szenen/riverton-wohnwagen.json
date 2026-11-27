@@ -2,7 +2,7 @@
   "karte": "riverton.wohnwagen",
   "datei": "karten/riverton-wohnwagen.json",
   "art": "innen",
-  "beschreibung": "Slicks Wohnwagen am Westende des Riverside-Parks (Szene 37), eng wie ein echter kleiner Wohnwagen: die Tür in der Längsseite, alles in einem Raum von gut sechs Metern, innen 12 × 6 Kacheln wie der Wagen außen (R065). Im Heck das Querbett über die ganze Breite mit einem Brett voller Figuren, darüber ein schmales Wandbord mit Slicks Pokalen aus gebogenen Limodosen. Daneben die abgeschlossene Nasszelle mit schmaler Holztür (Mini-Toilette und Dusche dahinter, Rückmeldung R109). Die Kuriertasche steht in der Ecke bei der Sitzecke. Gegenüber der Tür die Küchenzeile: Kühlschrank, Arbeitsplatte mit Spüle und ein kleiner freistehender Herd mit vier Kochplatten (RO34). Im Bug unter dem Fenster die Sitzecke, zwei Bänke um einen niedrigen Holztisch, an dem Slick in Szene 37 sitzt. Vor dem Bett ein abgetretener Teppich.",
+  "beschreibung": "Slicks Wohnwagen am Westende des Riverside-Parks (Szene 37), eng wie ein echter kleiner Wohnwagen: die Tür in der Längsseite, alles in einem Raum von gut sechs Metern, innen 12 × 6 Kacheln wie der Wagen außen (R065). Im Heck das Querbett über die ganze Breite mit einem Brett voller Figuren, darüber ein schmales Wandbord mit Slicks Pokalen aus gebogenen Limodosen. Daneben die abgeschlossene Nasszelle mit schmaler Holztür (Mini-Toilette und Dusche dahinter, Rückmeldung R109). Die Kuriertasche steht in der Ecke bei der Sitzecke. Gegenüber der Tür die Küchenzeile: Kühlschrank, Arbeitsplatte mit Spüle und ein kleiner freistehender Herd mit vier Kochplatten (RO34). Im Bug unter dem Fenster die Sitzecke, zwei Bänke um einen niedrigen Holztisch, an dem Slick in Szene 37 sitzt. Vor dem Bett ein abgetretener Teppich. Erster Eindruck (27.11.2026): Vor dem Bett liegt ein abgetretener Läufer mit Fransen und ausgeblichener Mitte.",
   "wand": "creme",
   "boden": "holzHell",
   "raster": [
@@ -104,8 +104,8 @@
       "ebene": -2
     },
     {
-      "moebel": "rv5Teppich",
-      "feld": [2, 5]
+      "moebel": "rv27Laeufer",
+      "feld": [3, 4]
     }
   ],
   "ausloeser": [

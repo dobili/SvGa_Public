@@ -2,7 +2,7 @@
   "karte": "ironwood.umkleide",
   "datei": "karten/ironwood-umkleide.json",
   "art": "innen",
-  "beschreibung": "Die Umkleide des Werks (Runde 8), 14 × 12 (passt nach R065 in den Bau außen), graue Fliesen. An der Nordwand vier gleiche Spinde in einer Reihe, gleich daneben der hohe Metallschrank als Doppelspind mit dem Schließfach, dann Wandspiegel über dem Handwaschbecken. In der Nordostecke die Duschen: zwei Kabinen mit Brause auf weißen Fliesen, jede Kabine mit Tür und Trennwand. In der Mitte zwei Umkleidebänke ohne Lehne, eine dritte Bank vor der Trennwand, an der Westwand Haken mit Jacke und Schutzhelm, an der Tür ein Mülleimer, eine Pflanze in der Südostecke. Die Tür liegt in der Südwand.",
+  "beschreibung": "Die Umkleide des Werks (Runde 8), 14 × 12 (passt nach R065 in den Bau außen), graue Fliesen. An der Nordwand vier gleiche Spinde in einer Reihe, gleich daneben der hohe Metallschrank als Doppelspind mit dem Schließfach, dann Wandspiegel über dem Handwaschbecken. In der Nordostecke die Duschen: zwei Kabinen mit Brause auf weißen Fliesen, jede Kabine mit Tür und Trennwand. In der Mitte zwei Umkleidebänke ohne Lehne, eine dritte Bank vor der Trennwand, an der Westwand Haken mit Jacke und Schutzhelm, an der Tür ein Mülleimer, eine Pflanze in der Südostecke. Die Tür liegt in der Südwand. Erster Eindruck (27.11.2026): Die Duschen sind zwei Kabinen mit Trennwand und halb offenem Vorhang an der Nordwand, davor der geflieste Nassbereich.",
   "wand": "hellgrau",
   "boden": "fliesenGrau",
   "boeden": {
@@ -54,27 +54,8 @@
       "feld": [7, 3]
     },
     {
-      "moebel": "iw8Duschkabine",
-      "feld": [8, 2]
-    },
-    {
-      "moebel": "iw8DuschkabineB",
-      "feld": [10, 2]
-    },
-    {
-      "moebel": "iw8Kabinentuer",
-      "feld": [8, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw8KabinentuerB",
-      "feld": [10, 5],
-      "bauteil_ok": true
-    },
-    {
-      "moebel": "iw8Trennwand",
-      "feld": [12, 2],
-      "bauteil_ok": true
+      "moebel": "iw27Duschkabinen",
+      "feld": [9, 1]
     },
     {
       "moebel": "iw9UmkleidebankWaagrecht",
@@ -111,11 +92,6 @@
       "feld": [4, 9],
       "versatz": [0, 25],
       "ebene": -2
-    },
-    {
-      "moebel": "iw8Trennwand",
-      "feld": [12, 5],
-      "bauteil_ok": true
     }
   ],
   "ausloeser": [

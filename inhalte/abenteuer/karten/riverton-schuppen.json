@@ -402,12 +402,12 @@
     },
     {
      "id": 5,
-     "name": "rv8Werkzeugbord",
+     "name": "rv27Lochwand",
      "type": "moebel",
      "x": 16,
-     "y": 30,
+     "y": 12,
      "width": 48,
-     "height": 16,
+     "height": 32,
      "rotation": 0,
      "visible": true,
      "properties": [

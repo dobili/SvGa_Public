@@ -2,7 +2,7 @@
   "karte": "ironwood.mamasZimmer",
   "datei": "karten/ironwood-mamas-zimmer.json",
   "art": "innen",
-  "beschreibung": "Wohnküche und Mamas Zimmer (Variante B, Runde 8), 14 × 13 Kacheln (passt nach R065 ins schmale Reihenhaus außen). Küche mit weißen Fliesen: Kühlschrank, Herd und Theke mit Spüle an der Nordwand unter dem Fenster; ein Küchenschrank und ein weißer Garderobenschrank an der Westwand, eine Pflanze neben der Tür, runder Tisch mit Obstschale und zwei Stühlen für Mama und Oma Ruth. Mamas Zimmer mit hellem Holzboden: lila Bett unter dem Fenster, Rahmen mit dem Partieformular von 2001, Kleiderschrank an der Nordwand, Schreibtisch mit Stuhl und Lampe, runder Teppich. Karg, aber bewohnt.",
+  "beschreibung": "Wohnküche und Mamas Zimmer (Variante B, Runde 8), 14 × 13 Kacheln (passt nach R065 ins schmale Reihenhaus außen). Küche mit weißen Fliesen: Kühlschrank, Herd und Theke mit Spüle an der Nordwand unter dem Fenster; ein Küchenschrank und ein weißer Garderobenschrank an der Westwand, eine Pflanze neben der Tür, runder Tisch mit Obstschale und zwei Stühlen für Mama und Oma Ruth. Mamas Zimmer mit hellem Holzboden: lila Bett unter dem Fenster, Rahmen mit dem Partieformular von 2001, Kleiderschrank an der Nordwand, Schreibtisch mit Stuhl und Lampe, runder Teppich. Karg, aber bewohnt. Erster Eindruck (27.11.2026): Das Partieformular von 2001 hängt in einem dunklen Holzrahmen über dem Bett.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -98,7 +98,7 @@
       "id": "bett"
     },
     {
-      "moebel": "iw8Partieformular",
+      "moebel": "iw27Partieformular",
       "feld": [10, 1],
       "an_wand": true,
       "id": "rahmen2001",

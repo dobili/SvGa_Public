@@ -1046,7 +1046,10 @@
       "ende": "nord",
       "verbund": "gleis",
       "stelle": "ende",
-      "varianten": {"west": "spiel/eigene/prellbock_stahl_links.png", "ost": "spiel/eigene/prellbock_stahl_rechts.png"},
+      "varianten": {
+        "west": "spiel/eigene/prellbock_stahl_links.png",
+        "ost": "spiel/eigene/prellbock_stahl_rechts.png"
+      },
       "breite": 32,
       "hoehe": 32,
       "kollision": true,
@@ -1080,7 +1083,9 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_424.png",
       "lauf": "waagrecht",
       "ende": "ost",
-      "varianten": {"west": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_523.png"},
+      "varianten": {
+        "west": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_523.png"
+      },
       "breite": 48,
       "hoehe": 48,
       "kollision": true,
@@ -1106,7 +1111,9 @@
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_523.png",
       "lauf": "waagrecht",
       "ende": "west",
-      "varianten": {"ost": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_424.png"},
+      "varianten": {
+        "ost": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_424.png"
+      },
       "breite": 48,
       "hoehe": 48,
       "kollision": true,
@@ -1387,7 +1394,9 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Grey_Rail_Modular_Horizontal.png",
       "lauf": "waagrecht",
       "verbund": "gleis",
-      "varianten": {"senkrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png"},
+      "varianten": {
+        "senkrecht": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Brown_Rail_Modular_Vertical.png"
+      },
       "breite": 16,
       "hoehe": 32,
       "kollision": true,
@@ -1489,7 +1498,10 @@
       "blick": "unten",
       "zustand": "alt",
       "stil": "industrie",
-      "tuer": [[7, 10], [8, 10]],
+      "tuer": [
+        [7, 10],
+        [8, 10]
+      ],
       "beschreibung": "Werkskantine Ironwood: Holzhalle mit rostigem Blechdach (Bild wie wr5Fabrikhalle), gedacht für massstab 1.7 (Grundriss dann 22 × 8,5, passend zum Innenraum 34 × 16, Regel 10.75); tuer nennt die Felder vor den Stufen im ungeskalierten Bild, die Prüfung rechnet den Maßstab ein"
     },
     "iw18KantineBreit": {
@@ -1501,7 +1513,10 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "industrie",
-      "tuer": [[10, 17], [11, 17]],
+      "tuer": [
+        [10, 17],
+        [11, 17]
+      ],
       "beschreibung": "Werkskantine Ironwood (Gemini B30/G8, 25.11.2026): lange, niedrige Backsteinhalle mit flachem Blechdach, zwei Schornsteinen und Lüftungskasten, sechs hohen Werksfenstern und einer gläsernen Doppeltür genau in der Mitte unter einem Vordach; ersetzt die 1,7-fach vergrößerte Holzhalle iw17Kantinenhalle (RO37 Nr. 8) in derselben Fläche (22 × 17 Kacheln, Innenraum 34 × 16, Regel 10.75)"
     },
     "iw18BahnhofMuseum": {
@@ -1513,8 +1528,68 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "tuer": [[4, 9], [5, 9]],
+      "tuer": [
+        [4, 9],
+        [5, 9]
+      ],
       "beschreibung": "Alter Bahnhof aus dunklem Backstein mit Uhrgiebel, heute Heimatmuseum von Ironwood (Gemini B31/G9, 25.11.2026): Schieferdach, Rundbogenfenster, hölzerne Doppeltür mit Rundbogen in der Mitte, zwei alte Laternen und eine schmale Bank an der Front; ersetzt in Ironwood den Bahnhof mit Veranda (ds6BahnhofAlt, bleibt in Desert Springs)"
+    },
+    "iw27Postsaecke": {
+      "quelle": "spiel/eigene/postsaecke.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "kiste",
+      "zustand": "alt",
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########"
+      ],
+      "hinweis": "zwei Postsäcke von 1866 auf einem Holzsockel (Kartenblick Mu4) (Gemini D6, 27.11.2026, werkzeuge/gemini_riverton_2711.py)"
+    },
+    "iw27Duschkabinen": {
+      "quelle": "spiel/eigene/duschkabinen.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "dusche",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "industrie",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "############",
+        "############"
+      ],
+      "hinweis": "zwei Duschkabinen mit Trennwand und Vorhang (Kartenblick U1) (Gemini D8, 27.11.2026, werkzeuge/gemini_riverton_2711.py)"
+    },
+    "iw27Partieformular": {
+      "quelle": "spiel/eigene/partieformular_rahmen.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "bild",
+      "zustand": "alt",
+      "stil": "klassisch",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand",
+      "hinweis": "Partieformular von 2001 im dunklen Holzrahmen (Kartenblick M1) (Gemini D9, 27.11.2026, werkzeuge/gemini_riverton_2711.py)"
     }
   }
 }

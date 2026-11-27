@@ -1,7 +1,7 @@
 {
   "karte": "wegRivertonIronwood.kanalweg",
   "art": "aussen",
-  "beschreibung": "Kanalweg (Runde 8, überarbeitet nach dem Gutachten): gerader Kanal mit Steinufer, acht Reihen Wasser für Frachtkähne, der befestigte Treidelpfad liegt direkt an der Kaimauer, Poller in gleichem Abstand; derselbe Kanal läuft auf der Eisenbrücke weiter. Im Norden die Fabrik: eine flache, alte Werkhalle mit Wellblechdach und Anbau, dahinter zwei Schornsteine, Hof mit Containern und Fässern, Zaun und Tor zum Pfad; die Hofmauer im Süden ist die freie Wand, an der eine Sprayerin Noors Schachfiguren (Turm, Springer) sprüht. Die Werkstraße mit Mittellinie und Gehweg mit der Haltestelle ohne Bus (Schild, Bank, Mülleimer) und der Rätseltafel. Ein Frachtkahn liegt längs an der Kaimauer. Obstwiese mit Picknicktisch, vier umzäunte Kleingärten, jeder anders. An der Kreuzung führt eine eiserne Brücke mit Durchfahrt über den Seitenarm (sieben Reihen) nach Lockport. Hof von Mr. Dale mit Hühnerhof, Farmhaus, Scheune und Silo am Hofplatz, vier umzäunte Äcker mit Weg zum Pfad. Rastanleger mit Steg, Ruderboot und Bank, Birkenreihe am Pfad; das Ostufer ist bewachsene Böschung.",
+  "beschreibung": "Kanalweg (Runde 8, überarbeitet nach dem Gutachten): gerader Kanal mit Steinufer, acht Reihen Wasser für Frachtkähne, der befestigte Treidelpfad liegt direkt an der Kaimauer, Poller in gleichem Abstand; derselbe Kanal läuft auf der Eisenbrücke weiter. Im Norden die Fabrik: eine flache, alte Werkhalle mit Wellblechdach und Anbau, dahinter zwei Schornsteine, Hof mit Containern und Fässern, Zaun und Tor zum Pfad; die Hofmauer im Süden ist die freie Wand, an der eine Sprayerin Noors Schachfiguren (Turm, Springer) sprüht. Die Werkstraße mit Mittellinie und Gehweg mit der Haltestelle ohne Bus (Schild, Bank, Mülleimer) und der Rätseltafel. Ein Frachtkahn liegt längs an der Kaimauer. Obstwiese mit Picknicktisch, vier umzäunte Kleingärten, jeder anders. An der Kreuzung führt eine eiserne Brücke mit Durchfahrt über den Seitenarm (sieben Reihen) nach Lockport. Hof von Mr. Dale mit Hühnerhof, Farmhaus, Scheune und Silo am Hofplatz, vier umzäunte Äcker mit Weg zum Pfad. Rastanleger mit Steg, Ruderboot und Bank, Birkenreihe am Pfad; das Ostufer ist bewachsene Böschung. Erster Eindruck (27.11.2026): Die beiden Schornsteine stehen direkt hinter der Werkhalle. Die vier Birken am Pfad stehen mit Abstand und seitlich versetzt.",
   "boden": "gras",
   "wandart": "gras",
   "boeden": {
@@ -328,11 +328,11 @@
     },
     {
       "moebel": "iw5Schornstein",
-      "feld": [3, 0]
+      "feld": [5, 4]
     },
     {
       "moebel": "iw5Schornstein",
-      "feld": [10, 0]
+      "feld": [10, 3]
     },
     {
       "moebel": "wr14ZaunSenkrecht",
@@ -1651,19 +1651,19 @@
     },
     {
       "moebel": "wr5Pappel",
-      "feld": [13, 170]
+      "feld": [14, 166]
     },
     {
       "moebel": "wr5Pappel",
-      "feld": [13, 174]
+      "feld": [12, 172]
     },
     {
       "moebel": "wr5Pappel",
-      "feld": [13, 178]
+      "feld": [14, 178]
     },
     {
       "moebel": "wr5Pappel",
-      "feld": [13, 182]
+      "feld": [12, 184]
     },
     {
       "moebel": "wg4LaubbaumB",

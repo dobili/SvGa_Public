@@ -89,6 +89,7 @@ AUSNAHMEN: dict[str, str] = {
     "wds6Spieltisch": "Tisch unter einem Sonnenschirm; die Höhe ist der Schirm",
     "rv9Bildschirmtisch": "Perfect-Move-Tisch mit hohem Bildschirm (Absicht: Kiosk, kein Tisch)",
     "rv9BildschirmtischKaputt": "wie rv9Bildschirmtisch, umgestürzt",
+    "rv27Bildschirmtisch": "Tisch mit vier Bänken (Gemini D1); die Bildhöhe ist die ganze Sitzgruppe",
     "cc4Hobelbank": "Hobelbank mit Werkzeugwand dahinter; die Höhe ist die Wand",
     "cc4Werktisch": "Werktisch mit Werkzeugwand dahinter; die Höhe ist die Wand",
     "pd9Werkbank": "Werkbank mit Werkzeugwand dahinter; die Höhe ist die Wand",

@@ -3113,8 +3113,8 @@
      "id": 60,
      "name": "sb5SchildPerfectMove",
      "type": "moebel",
-     "x": 164,
-     "y": 47,
+     "x": 80,
+     "y": 70,
      "width": 88,
      "height": 16,
      "rotation": 0,
@@ -3123,7 +3123,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 55
+       "value": 78
       },
       {
        "name": "kollision",
@@ -3134,7 +3134,7 @@
     },
     {
      "id": 61,
-     "name": "rv9Bildschirmtisch",
+     "name": "rv27Bildschirmtisch",
      "type": "moebel",
      "x": 48,
      "y": 112,
@@ -3157,7 +3157,7 @@
     },
     {
      "id": 62,
-     "name": "rv9Bildschirmtisch",
+     "name": "rv27Bildschirmtisch",
      "type": "moebel",
      "x": 48,
      "y": 176,
@@ -3180,7 +3180,7 @@
     },
     {
      "id": 63,
-     "name": "rv9Bildschirmtisch",
+     "name": "rv27Bildschirmtisch",
      "type": "moebel",
      "x": 48,
      "y": 240,
@@ -3203,7 +3203,7 @@
     },
     {
      "id": 64,
-     "name": "rv9Bildschirmtisch",
+     "name": "rv27Bildschirmtisch",
      "type": "moebel",
      "x": 320,
      "y": 112,
@@ -3226,7 +3226,7 @@
     },
     {
      "id": 65,
-     "name": "rv9Bildschirmtisch",
+     "name": "rv27Bildschirmtisch",
      "type": "moebel",
      "x": 320,
      "y": 176,
@@ -3249,7 +3249,7 @@
     },
     {
      "id": 66,
-     "name": "rv9Bildschirmtisch",
+     "name": "rv27Bildschirmtisch",
      "type": "moebel",
      "x": 320,
      "y": 240,
@@ -3456,7 +3456,7 @@
     },
     {
      "id": 75,
-     "name": "cr8InfotafelDach",
+     "name": "rv27Gedenktafel",
      "type": "moebel",
      "x": 192,
      "y": 64,

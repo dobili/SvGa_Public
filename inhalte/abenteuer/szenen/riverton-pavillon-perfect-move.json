@@ -2,7 +2,7 @@
   "karte": "riverton.pavillon",
   "datei": "karten/riverton-pavillon-perfect-move.json",
   "art": "innen",
-  "beschreibung": "Zustand: nach Szene 37 (slickAbschiedGesehen): Statt der langen Holztische stehen links und rechts je drei Bildschirmtische von Perfect Move: weiße Tische, deren Platte ein Bildschirm mit Schachbrett ist, mit Bänken ringsum; an der Südwand stehen noch die Kartons der Lieferung, an den Seitengeländern zwei Rechnerschränke für die Tische, die großen Figuren liegen weggeräumt in den Truhen, links am nördlichen Geländer hängt das Schild von Perfect Move; die Gedenktafel für Elias Odum unter ihrem kleinen Holzdach steht noch; Slick und der Club sind nicht mehr hier, ein Techniker und eine Trainerin von Perfect Move richten den Raum ein. Parkpavillon von Riverton, Slicks Club (Szenen 29 bis 37): ein offener achteckiger Pavillon mit Dielenboden unter einem Dach, ringsum ein weißes Metallgeländer, das an den vier schrägen Seiten gerade unter 45° durchläuft, mit einem Pfosten an jeder Ecke; die Dielen enden genau am Geländer, dahinter Wiese; der Fluss liegt gleich hinter dem Pavillon (am Nordrand der Karte zwei Reihen Wasser), sein Wind zieht hindurch (RO36, 17.11.2026, Achteck auf Wunsch des Autors). In der Mitte ist ein großes Schachbrett in den Boden eingelassen, acht mal acht Platten aus hellem Marmor und dunklem Holz in einem Rahmen aus Stein, rundherum ein Laufweg, damit man die großen Figuren tragen kann. Die Figuren liegen in zwei Holztruhen südlich des Bretts. Am nördlichen Geländer steht die Gedenktafel für Elias Odum unter einem kleinen Holzdach, daneben zwei lange Bänke für Zuschauer mit Blick aufs Brett. Links und rechts je zwei lange Tische aus zwei hellen Platten, auf jeder Platte ein Brett, an jedem Brett ein Stuhl davor und dahinter. Vor dem Eingang ein Tischchen mit einem Limonadenglas, Pflanzen an den Ecken des Laufwegs, unten der Eingang, eine Lücke im Geländer mit Fußmatte. Das große Bodenbrett in der Mitte ist mit Teppich abgedeckt: Perfect Move braucht es nicht mehr (Rückmeldung R130).",
+  "beschreibung": "Zustand: nach Szene 37 (slickAbschiedGesehen): Statt der langen Holztische stehen links und rechts je drei Bildschirmtische von Perfect Move: weiße Tische, deren Platte ein Bildschirm mit Schachbrett ist, mit Bänken ringsum; an der Südwand stehen noch die Kartons der Lieferung, an den Seitengeländern zwei Rechnerschränke für die Tische, die großen Figuren liegen weggeräumt in den Truhen, links am nördlichen Geländer hängt das Schild von Perfect Move; die Gedenktafel für Elias Odum unter ihrem kleinen Holzdach steht noch; Slick und der Club sind nicht mehr hier, ein Techniker und eine Trainerin von Perfect Move richten den Raum ein. Parkpavillon von Riverton, Slicks Club (Szenen 29 bis 37): ein offener achteckiger Pavillon mit Dielenboden unter einem Dach, ringsum ein weißes Metallgeländer, das an den vier schrägen Seiten gerade unter 45° durchläuft, mit einem Pfosten an jeder Ecke; die Dielen enden genau am Geländer, dahinter Wiese; der Fluss liegt gleich hinter dem Pavillon (am Nordrand der Karte zwei Reihen Wasser), sein Wind zieht hindurch (RO36, 17.11.2026, Achteck auf Wunsch des Autors). In der Mitte ist ein großes Schachbrett in den Boden eingelassen, acht mal acht Platten aus hellem Marmor und dunklem Holz in einem Rahmen aus Stein, rundherum ein Laufweg, damit man die großen Figuren tragen kann. Die Figuren liegen in zwei Holztruhen südlich des Bretts. Am nördlichen Geländer steht die Gedenktafel für Elias Odum unter einem kleinen Holzdach, daneben zwei lange Bänke für Zuschauer mit Blick aufs Brett. Links und rechts je zwei lange Tische aus zwei hellen Platten, auf jeder Platte ein Brett, an jedem Brett ein Stuhl davor und dahinter. Vor dem Eingang ein Tischchen mit einem Limonadenglas, Pflanzen an den Ecken des Laufwegs, unten der Eingang, eine Lücke im Geländer mit Fußmatte. Das große Bodenbrett in der Mitte ist mit Teppich abgedeckt: Perfect Move braucht es nicht mehr (Rückmeldung R130). Erster Eindruck (27.11.2026): Die Gedenktafel ist eine Bronzetafel mit Porträtrelief. Das Schild „PERFECT MOVE“ hängt links am nördlichen Geländer. Die Bildschirmtische haben ein dunkles Metallgestell und graue Bänke mit Beinen.",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -369,37 +369,37 @@
     },
     {
       "moebel": "sb5SchildPerfectMove",
-      "feld": [10, 2],
-      "versatz": [4, 15],
+      "feld": [5, 4],
+      "versatz": [0, 6],
       "vorn": true
     },
     {
-      "moebel": "rv9Bildschirmtisch",
+      "moebel": "rv27Bildschirmtisch",
       "feld": [3, 7],
       "id": "t1"
     },
     {
-      "moebel": "rv9Bildschirmtisch",
+      "moebel": "rv27Bildschirmtisch",
       "feld": [3, 11],
       "id": "t2"
     },
     {
-      "moebel": "rv9Bildschirmtisch",
+      "moebel": "rv27Bildschirmtisch",
       "feld": [3, 15],
       "id": "t3"
     },
     {
-      "moebel": "rv9Bildschirmtisch",
+      "moebel": "rv27Bildschirmtisch",
       "feld": [20, 7],
       "id": "t4"
     },
     {
-      "moebel": "rv9Bildschirmtisch",
+      "moebel": "rv27Bildschirmtisch",
       "feld": [20, 11],
       "id": "t5"
     },
     {
-      "moebel": "rv9Bildschirmtisch",
+      "moebel": "rv27Bildschirmtisch",
       "feld": [20, 15],
       "id": "t6"
     },
@@ -436,7 +436,7 @@
       "feld": [17, 18]
     },
     {
-      "moebel": "cr8InfotafelDach",
+      "moebel": "rv27Gedenktafel",
       "feld": [12, 4],
       "id": "gruendungstafel"
     },

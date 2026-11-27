@@ -3433,6 +3433,144 @@
       "zustand": "gebraucht",
       "stil": "modern",
       "beschreibung": "Gerades weißes Metallgeländer am Südrand des Pavillons, unten Wiese statt Dielen (LimeZus Fence_2, schraegzaun.py)"
+    },
+    "rv27Bildschirmtisch": {
+      "quelle": "spiel/eigene/bildschirmtisch_park.png",
+      "breite": 48,
+      "hoehe": 48,
+      "platte": [3, 12, 58, 26],
+      "plaetze": [16, 48],
+      "kollision": true,
+      "art": "tisch",
+      "zustand": "neu",
+      "stil": "modern",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "..########..",
+        "...#....#..."
+      ],
+      "hinweis": "Bildschirmtisch mit dunklem Metallgestell, Bänken mit Beinen und Schatten, Platte leuchtet bläulich (Kartenblick R2, R24, P11) (Gemini D1, 27.11.2026, werkzeuge/gemini_riverton_2711.py)"
+    },
+    "rv27Gedenktafel": {
+      "quelle": "spiel/eigene/gedenktafel_odum.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "alt",
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        ".#....#."
+      ],
+      "hinweis": "Gedenktafel für Elias Odum: Bronzetafel mit Porträtrelief unter einem kleinen Holzdach (Kartenblick P4) (Gemini D2, 27.11.2026, werkzeuge/gemini_riverton_2711.py)"
+    },
+    "rv27Lochwand": {
+      "quelle": "spiel/eigene/lochwand_werkzeug.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "regal",
+      "zustand": "gebraucht",
+      "stil": "rustikal",
+      "blick": "keine",
+      "befestigung": "wand",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand",
+      "hinweis": "Lochwand mit Säge, Hammer, Zange, Schraubenziehern, Seil und Pinsel (Kartenblick S2) (Gemini D3, 27.11.2026, werkzeuge/gemini_riverton_2711.py)"
+    },
+    "rv27Laeufer": {
+      "quelle": "spiel/eigene/laeufer_abgetreten.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "teppich",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "hinweis": "abgetretener Läufer mit Fransen und ausgeblichener Mitte (Kartenblick V2) (Gemini D4, 27.11.2026, werkzeuge/gemini_riverton_2711.py)"
+    },
+    "rv27Schliessfaecher": {
+      "quelle": "spiel/eigene/schliessfaecher.png",
+      "breite": 48,
+      "hoehe": 48,
+      "kollision": true,
+      "art": "schrank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "############",
+        "############"
+      ],
+      "hinweis": "Schließfachwand mit neun Fächern (Kartenblick H3) (Gemini D5, 27.11.2026, werkzeuge/gemini_riverton_2711.py)"
+    },
+    "rv27Kioskstand": {
+      "quelle": "spiel/eigene/kioskstand.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "theke",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        ".##########.",
+        ".##########.",
+        ".##########.",
+        "............"
+      ],
+      "hinweis": "Kioskstand mit Glasvitrine voller Süßigkeiten, Kasse und Zeitungen (Kartenblick H1) (Gemini D7, 27.11.2026, werkzeuge/gemini_riverton_2711.py)"
+    },
+    "rv27Stationsschild": {
+      "quelle": "spiel/eigene/schild_riverton.png",
+      "breite": 48,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schild",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "##........##",
+        "##........##",
+        "............"
+      ],
+      "hinweis": "Stationsschild „RIVERTON“ am Bahnsteig (Kartenblick R5), gezeichnet wie das Schild von Cedar Creek (werkzeuge/gemini_riverton_2711.py)"
     }
   }
 }

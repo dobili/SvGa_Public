@@ -13,7 +13,7 @@
     "g": "stein",
     "h": "wasser"
   },
-  "beschreibung": "Riverton an einem Herbsttag, auf dem Pflaster stehen noch Pfützen. Ganz oben die Bahnlinie mit Schotter und einer Hecke am Bahnzaun. Vom Westrand kommt der Fußweg vom Bahndamm an zwei Laternen vorbei und biegt in einem Bogen auf den Vorplatz. Darüber steht der Bahnhof aus rotem Backstein mit dem Uhrturm und dem Bogenportal, links das kleine Stellwerk, rechts der Güterschuppen mit dem Holzstapel daneben, ganz rechts der Wasserturm mit dem kleinen Pumpenhaus daneben, aus dem früher die Dampfloks Wasser nahmen; ein Trampelpfad führt vom Gehweg hin. Auf dem gepflasterten Vorplatz ein Brunnen, der Wegweiser, Laternen, der achteckige Infokiosk mit dem „i“ und das Wartehäuschen der Buslinie. Die Ladenschilder sind englisch wie überall im Land. Die Water Street läuft quer durch die Stadt, mit Mittellinie und Randlinien, Gehwege rundherum, ein Zebrastreifen führt vom Vorplatz zum Markt; von ihr zweigt eine kurze Straße nach Süden zur Brücke ab, daneben die Einfahrt zum Lagerhof. Südlich der Straße die Häuser mit der Front zum Fluss: zwei schmale Reihenhäuser, der Handyladen mit Leuchtschild, der Markt mit zwei Ständen unter Markisen voller Obst- und Gemüsekörbe, ein Obstkarren und ein Pommeskarren, an jedem ein Verkäufer, die Bäckerei mit rotem Ziegeldach, das Café mit gestreifter Markise und zwei Lagerschuppen am Kai. Davor die Uferpromenade mit Bank und Laternen. Der Ashford River fließt vom West- zum Ostrand; die Brücke mit Gehwegen führt genau über das Wasser hinüber in den Riverside-Park. Dort am Uferweg ganz im Westen Slicks Wohnwagen, Albescus Werkstatt und der Schuppen mit Vorhängeschloss, auf der Wiese die sechs Bildschirmtische (weiße Tische, deren Platte ein Bildschirm mit Schachbrett ist), der Pavillon aus Holz mit Platz davor, das Pegelhaus und Bäume. Im Osten öffnet sich das Kanalbecken, der Kanal läuft nach Süden aus der Karte, daneben der Treidelpfad. Kartenblick Welle 2 (24.11.2026): Hinter dem Pavillon ist das Südufer als Landzunge vorgezogen, sodass rings um den Pavillon Wiese liegt. Im Lagerhof stehen zwei verschiedene Hallen und die Kisten in Gruppen mit einem Fass.",
+  "beschreibung": "Riverton an einem Herbsttag, auf dem Pflaster stehen noch Pfützen. Ganz oben die Bahnlinie mit Schotter und einer Hecke am Bahnzaun. Vom Westrand kommt der Fußweg vom Bahndamm an zwei Laternen vorbei und biegt in einem Bogen auf den Vorplatz. Darüber steht der Bahnhof aus rotem Backstein mit dem Uhrturm und dem Bogenportal, links das kleine Stellwerk, rechts der Güterschuppen mit dem Holzstapel daneben, ganz rechts der Wasserturm mit dem kleinen Pumpenhaus daneben, aus dem früher die Dampfloks Wasser nahmen; ein Trampelpfad führt vom Gehweg hin. Auf dem gepflasterten Vorplatz ein Brunnen, der Wegweiser, Laternen, der achteckige Infokiosk mit dem „i“ und das Wartehäuschen der Buslinie. Die Ladenschilder sind englisch wie überall im Land. Die Water Street läuft quer durch die Stadt, mit Mittellinie und Randlinien, Gehwege rundherum, ein Zebrastreifen führt vom Vorplatz zum Markt; von ihr zweigt eine kurze Straße nach Süden zur Brücke ab, daneben die Einfahrt zum Lagerhof. Südlich der Straße die Häuser mit der Front zum Fluss: zwei schmale Reihenhäuser, der Handyladen mit Leuchtschild, der Markt mit zwei Ständen unter Markisen voller Obst- und Gemüsekörbe, ein Obstkarren und ein Pommeskarren, an jedem ein Verkäufer, die Bäckerei mit rotem Ziegeldach, das Café mit gestreifter Markise und zwei Lagerschuppen am Kai. Davor die Uferpromenade mit Bank und Laternen. Der Ashford River fließt vom West- zum Ostrand; die Brücke mit Gehwegen führt genau über das Wasser hinüber in den Riverside-Park. Dort am Uferweg ganz im Westen Slicks Wohnwagen, Albescus Werkstatt und der Schuppen mit Vorhängeschloss, auf der Wiese die sechs Bildschirmtische (weiße Tische, deren Platte ein Bildschirm mit Schachbrett ist), der Pavillon aus Holz mit Platz davor, das Pegelhaus und Bäume. Im Osten öffnet sich das Kanalbecken, der Kanal läuft nach Süden aus der Karte, daneben der Treidelpfad. Kartenblick Welle 2 (24.11.2026): Hinter dem Pavillon ist das Südufer als Landzunge vorgezogen, sodass rings um den Pavillon Wiese liegt. Im Lagerhof stehen zwei verschiedene Hallen und die Kisten in Gruppen mit einem Fass. Erster Eindruck (27.11.2026): Am Bahnsteig stehen links und rechts des Bahnhofs grüne Bänke mit Blick aufs Gleis, zwei blaue Stationsschilder „RIVERTON“. Das Pumpenhaus am Wasserturm ist ein roter Schuppen mit Schindeldach. Die sechs Bildschirmtische haben ein dunkles Metallgestell, eine bläulich leuchtende Platte und graue Bänke mit Beinen. Auf den Flachdächern von Groove, Handyladen, Café und Albescus Werkstatt stehen Klimageräte, Dachluken und Lüftungsrohre. Die Pfützen sind halb durchsichtig, das Pflaster scheint durch. Vor dem Wohnwagen blühen Wildblumen, an der Laterne am Uferweg steht ein Busch.",
   "raster": [
     "########################################################################",
     "#tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt#",
@@ -486,14 +486,6 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "rv8Bahnsteigbank",
-      "feld": [21, 4]
-    },
-    {
-      "moebel": "rv8Bahnsteigbank",
-      "feld": [50, 4]
-    },
-    {
       "moebel": "rv8Bahnhof",
       "feld": [25, 3]
     },
@@ -572,7 +564,8 @@
     },
     {
       "moebel": "sa8LadenD",
-      "feld": [8, 13]
+      "feld": [8, 13],
+      "id": "groove"
     },
     {
       "moebel": "wg4Busch",
@@ -592,7 +585,8 @@
     },
     {
       "moebel": "rv5Handyladen",
-      "feld": [8, 28]
+      "feld": [8, 28],
+      "id": "handyladen"
     },
     {
       "moebel": "rv5Marktstand",
@@ -612,7 +606,8 @@
       "moebel": "rv5Cafe",
       "feld": [40, 26],
       "massstab": 1.2,
-      "versatz": [0, 3]
+      "versatz": [0, 3],
+      "id": "cafe"
     },
     {
       "moebel": "rv8KorbAepfel",
@@ -1092,7 +1087,8 @@
     },
     {
       "moebel": "rv5Werkstatt",
-      "feld": [9, 48]
+      "feld": [9, 48],
+      "id": "werkstatt"
     },
     {
       "moebel": "rvPavillonAchteck",
@@ -1158,32 +1154,32 @@
       "feld": [68, 51]
     },
     {
-      "moebel": "rv9Bildschirmtisch",
+      "moebel": "rv27Bildschirmtisch",
       "feld": [23, 47],
       "id": "bt1"
     },
     {
-      "moebel": "rv9Bildschirmtisch",
+      "moebel": "rv27Bildschirmtisch",
       "feld": [27, 47],
       "id": "bt2"
     },
     {
-      "moebel": "rv9Bildschirmtisch",
+      "moebel": "rv27Bildschirmtisch",
       "feld": [31, 47],
       "id": "bt3"
     },
     {
-      "moebel": "rv9Bildschirmtisch",
+      "moebel": "rv27Bildschirmtisch",
       "feld": [23, 50],
       "id": "bt4"
     },
     {
-      "moebel": "rv9Bildschirmtisch",
+      "moebel": "rv27Bildschirmtisch",
       "feld": [27, 50],
       "id": "bt5"
     },
     {
-      "moebel": "rv9Bildschirmtisch",
+      "moebel": "rv27Bildschirmtisch",
       "feld": [31, 50],
       "id": "bt6"
     },
@@ -1208,22 +1204,26 @@
     },
     {
       "moebel": "rv9PfuetzeGross",
-      "feld": [39, 20]
+      "feld": [39, 20],
+      "deckkraft": 50
     },
     {
       "moebel": "rv9PfuetzeKlein",
-      "feld": [26, 20]
+      "feld": [26, 20],
+      "deckkraft": 50
     },
     {
       "moebel": "rv9PfuetzeKlein",
-      "feld": [45, 21]
+      "feld": [45, 21],
+      "deckkraft": 50
     },
     {
       "moebel": "rv9PfuetzeKlein",
-      "feld": [4, 37]
+      "feld": [4, 37],
+      "deckkraft": 50
     },
     {
-      "moebel": "rv14Pumpenhaus",
+      "moebel": "cc27SchuppenRot",
       "feld": [67, 8],
       "versatz": [0, 8]
     },
@@ -1255,6 +1255,89 @@
     {
       "moebel": "ri8Klapphocker",
       "feld": [13, 54]
+    },
+    {
+      "moebel": "cc11BankHintenGruen",
+      "feld": [20, 5],
+      "massstab": 0.7,
+      "versatz": [7, 0]
+    },
+    {
+      "moebel": "rv27Stationsschild",
+      "feld": [20, 3]
+    },
+    {
+      "moebel": "cc11BankHintenGruen",
+      "feld": [49, 5],
+      "massstab": 0.7,
+      "versatz": [7, 0]
+    },
+    {
+      "moebel": "rv27Stationsschild",
+      "feld": [48, 3]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "groove",
+      "versatz": [-20, -40]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "groove",
+      "versatz": [28, -60]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "groove",
+      "versatz": [24, -30]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "handyladen",
+      "versatz": [-14, -52]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "handyladen",
+      "versatz": [16, -50]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "cafe",
+      "versatz": [-36, -56]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "cafe",
+      "versatz": [30, -72]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "cafe",
+      "versatz": [36, -44]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "cafe",
+      "versatz": [-2, -76]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "werkstatt",
+      "versatz": [-14, -26]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "werkstatt",
+      "versatz": [16, -34]
+    },
+    {
+      "moebel": "mf4Busch",
+      "feld": [13, 46]
+    },
+    {
+      "moebel": "wc5Wildblumen",
+      "feld": [6, 52]
     }
   ],
   "ausloeser": [

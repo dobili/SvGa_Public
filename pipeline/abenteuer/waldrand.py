@@ -36,6 +36,8 @@ ABSCHLUSS = {"baum", "busch", "hecke", "feldfrucht", "wasser", "pflanze"}
 AUSNAHMEN: dict[tuple[str, str], str] = {
     ("summit-city-aussen", "Rand Nord"): "Gipfelwand: grauer Fels bis zum Bildrand, kein Rasen",
     ("summit-city-aussen", "Rand West ab (0, 0)"): "Nordwestecke: Seitenkante, Fels statt Rasen",
+    ("ironwood-aussen", "Rand Süd bei (52, 55)"): "Kohl im kleinen Gartenbeet, kein Acker",
+    ("ironwood-aussen", "Rand Süd bei (56, 55)"): "Kohl im kleinen Gartenbeet, kein Acker",
 }
 
 Feld = tuple[int, int]

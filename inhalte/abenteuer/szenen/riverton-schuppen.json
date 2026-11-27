@@ -2,7 +2,7 @@
   "karte": "riverton.schuppen",
   "datei": "karten/riverton-schuppen.json",
   "art": "innen",
-  "beschreibung": "Der Schuppen hinter der Werkstatt ist halb Holzlager. Holzwände, staubiger Betonboden. An der Nordwand ein Wandbord mit Haken für Werkzeug, darunter die orange Werkzeugkiste, daneben die Werkbank und ein Stapel aufrecht gestellter Bretter. Das grüne Fahrrad steht links unter einer Plane, nur das Hinterrad schaut hervor. Rechts zwei hohe Gestelle voller Brennholz und eine leere Farbdose, vorn an der Westwand ein alter Reifen.",
+  "beschreibung": "Der Schuppen hinter der Werkstatt ist halb Holzlager. Holzwände, staubiger Betonboden. An der Nordwand ein Wandbord mit Haken für Werkzeug, darunter die orange Werkzeugkiste, daneben die Werkbank und ein Stapel aufrecht gestellter Bretter. Das grüne Fahrrad steht links unter einer Plane, nur das Hinterrad schaut hervor. Rechts zwei hohe Gestelle voller Brennholz und eine leere Farbdose, vorn an der Westwand ein alter Reifen. Erster Eindruck (27.11.2026): Statt des leeren Wandbords hängt über der Werkzeugkiste eine Lochwand mit Säge, Hammer, Zange, Schraubenziehern, Seil und Pinsel.",
   "wand": "holz",
   "boden": "stein",
   "raster": [
@@ -18,10 +18,10 @@
   ],
   "objekte": [
     {
-      "moebel": "rv8Werkzeugbord",
+      "moebel": "rv27Lochwand",
       "feld": [1, 1],
       "an_wand": true,
-      "versatz": [0, 14],
+      "versatz": [0, -4],
       "bauteil_ok": true
     },
     {

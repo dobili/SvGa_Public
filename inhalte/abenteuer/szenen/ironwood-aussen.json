@@ -2,7 +2,7 @@
   "karte": "ironwood.aussen",
   "datei": "karten/ironwood-aussen.json",
   "art": "aussen",
-  "beschreibung": "Ironwood außen (Variante C als Hauptfassung, Runde 8 nach den Notizen des Autors): Der Kanal am Westrand ist acht Felder breit mit Steinufer, Poller am Kai in gleichem Abstand, die Hauptstraße quert ihn auf einer Straßenbrücke mit Gehwegen. Hauptstraße und Seitenstraße sind durchgehend mit Pflaster eingefasst, die Seitenstraße beginnt in voller Breite an der Kaipromenade und mündet direkt in die Hauptstraße. Im Werk die Kantine in einer langen, niedrigen Backsteinhalle mit Blechdach und gläserner Doppeltür in der Mitte (Gemini-Bild B30, 22 Kacheln breit, damit der Innenraum hineinpasst, Regel 10.75), eine gepflasterte Stufe führt vom Werkhof zur Tür; der Umkleidecontainer steht links davon unter den Schornsteinen, Container und Fässer im Werkhof, ein durchgehender Zaun mit Endpfosten am Tor. Der Markt hat Waren auf jedem Stand, der Platz reicht bis an die Promenade, eine Hecke fasst ihn ein. Die Kapelle St. Barbara (Schutzpatronin der Hütten- und Bergleute) hat einen Weg und einen kleinen Friedhof mit Zaun. Die Gleise enden im Westen am Prellbock quer zum Gleis beim alten Bahnhof und enden auch im Osten an zwei Prellböcken vor der Hecke am Stadtrand (Abstellgleise des Güterbahnhofs; zum Steinbruch führt nur der Steinbruchweg, der Stein kam früher per Laster); der Übergang ist ins Gleis eingelassen. Laternen an der Promenade stehen oben in gleichem Abstand. Runde 8, zweite Prüfung: Straßen mit Markierung, der alte Bahnhof aus Backstein mit Uhrgiebel (Gemini-Bild B31) steht direkt am Bahnsteig vor den Prellböcken, mit Laternen, Bank und Gepäckkarre; in ihm ist das Heimatmuseum, die Doppeltür liegt mittig am Bahnsteig (das graue Stadthaus daneben ist ein Wohnhaus); in den Schrebergärten am Erdweg steht ein Geräteschuppen, im Übergang Bohlen statt Schienen, eine Hecke um den Markt, eine Schranke im Werkstor, am Übergang das Haus des Schrankenwärters (ein Stellwerk aus Backstein mit Walmdach und Außentreppe, R055); der Absperrbock im Südosten sperrt den Erdweg zum stillgelegten Steinbruch.",
+  "beschreibung": "Ironwood außen (Variante C als Hauptfassung, Runde 8 nach den Notizen des Autors): Der Kanal am Westrand ist acht Felder breit mit Steinufer, Poller am Kai in gleichem Abstand, die Hauptstraße quert ihn auf einer Straßenbrücke mit Gehwegen. Hauptstraße und Seitenstraße sind durchgehend mit Pflaster eingefasst, die Seitenstraße beginnt in voller Breite an der Kaipromenade und mündet direkt in die Hauptstraße. Im Werk die Kantine in einer langen, niedrigen Backsteinhalle mit Blechdach und gläserner Doppeltür in der Mitte (Gemini-Bild B30, 22 Kacheln breit, damit der Innenraum hineinpasst, Regel 10.75), eine gepflasterte Stufe führt vom Werkhof zur Tür; der Umkleidecontainer steht links davon unter den Schornsteinen, Container und Fässer im Werkhof, ein durchgehender Zaun mit Endpfosten am Tor. Der Markt hat Waren auf jedem Stand, der Platz reicht bis an die Promenade, eine Hecke fasst ihn ein. Die Kapelle St. Barbara (Schutzpatronin der Hütten- und Bergleute) hat einen Weg und einen kleinen Friedhof mit Zaun. Die Gleise enden im Westen am Prellbock quer zum Gleis beim alten Bahnhof und enden auch im Osten an zwei Prellböcken vor der Hecke am Stadtrand (Abstellgleise des Güterbahnhofs; zum Steinbruch führt nur der Steinbruchweg, der Stein kam früher per Laster); der Übergang ist ins Gleis eingelassen. Laternen an der Promenade stehen oben in gleichem Abstand. Runde 8, zweite Prüfung: Straßen mit Markierung, der alte Bahnhof aus Backstein mit Uhrgiebel (Gemini-Bild B31) steht direkt am Bahnsteig vor den Prellböcken, mit Laternen, Bank und Gepäckkarre; in ihm ist das Heimatmuseum, die Doppeltür liegt mittig am Bahnsteig (das graue Stadthaus daneben ist ein Wohnhaus); in den Schrebergärten am Erdweg steht ein Geräteschuppen, im Übergang Bohlen statt Schienen, eine Hecke um den Markt, eine Schranke im Werkstor, am Übergang das Haus des Schrankenwärters (ein Stellwerk aus Backstein mit Walmdach und Außentreppe, R055); der Absperrbock im Südosten sperrt den Erdweg zum stillgelegten Steinbruch. Erster Eindruck (27.11.2026): Auf den Flachdächern der beiden Wohnblocks im Norden, der Kneipe, des grauen Blocks im Süden, des Eisenwarenladens und der Werkstatt stehen Klimageräte, Dachluken und Lüftungsrohre. In den Kleingärten südlich der Gleise liegen zwei Gemüsebeete mit Kohl statt Fässern auf der Wiese.",
   "boden": "gras",
   "wandart": "hecke",
   "boeden": {
@@ -88,11 +88,13 @@
     },
     {
       "moebel": "iw5StadthausBlau",
-      "feld": [12, 0]
+      "feld": [12, 0],
+      "id": "blockBlau"
     },
     {
       "moebel": "iw5StadthausGelb",
-      "feld": [18, 0]
+      "feld": [18, 0],
+      "id": "blockGelb"
     },
     {
       "moebel": "iw5ReihenhausHoch",
@@ -186,7 +188,8 @@
     },
     {
       "moebel": "iw5StadthausGrau",
-      "feld": [21, 35]
+      "feld": [21, 35],
+      "id": "blockSued"
     },
     {
       "moebel": "iw5Kirche",
@@ -360,15 +363,11 @@
       "feld": [38, 54]
     },
     {
-      "moebel": "iwFassGross",
+      "moebel": "mf4Gemuesebeet",
       "feld": [56, 55]
     },
     {
-      "moebel": "iwFassGross",
-      "feld": [58, 56]
-    },
-    {
-      "moebel": "iwFassGross",
+      "moebel": "mf4Gemuesebeet",
       "feld": [52, 55]
     },
     {
@@ -383,7 +382,8 @@
     },
     {
       "moebel": "iw8Werkstatt",
-      "feld": [31, 38]
+      "feld": [31, 38],
+      "id": "werkstatt"
     },
     {
       "moebel": "cc5Poller",
@@ -1463,6 +1463,117 @@
     {
       "moebel": "rv8Koffer",
       "feld": [16, 50]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "blockBlau",
+      "versatz": [-18, -66]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "blockBlau",
+      "versatz": [24, -74]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "blockGelb",
+      "versatz": [20, -66]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "blockGelb",
+      "versatz": [-24, -72]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "blockGelb",
+      "versatz": [-8, -72]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "kneipe",
+      "versatz": [14, -66]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "kneipe",
+      "versatz": [-24, -70]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "blockSued",
+      "versatz": [-20, -68]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "blockSued",
+      "versatz": [16, -62]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "eisenwaren",
+      "versatz": [-34, -60]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "eisenwaren",
+      "versatz": [30, -40]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "eisenwaren",
+      "versatz": [36, -66]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "eisenwaren",
+      "versatz": [-10, -36]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "werkstatt",
+      "versatz": [-12, -22]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "werkstatt",
+      "versatz": [12, -18]
+    },
+    {
+      "moebel": "wr5Kohl",
+      "feld": [52, 55],
+      "versatz": [8, 6],
+      "massstab": 0.75
+    },
+    {
+      "moebel": "wr5Kohl",
+      "feld": [52, 56],
+      "versatz": [8, 6],
+      "massstab": 0.75
+    },
+    {
+      "moebel": "wr5Kohl",
+      "feld": [52, 57],
+      "versatz": [8, 6],
+      "massstab": 0.75
+    },
+    {
+      "moebel": "wr5Kohl",
+      "feld": [56, 55],
+      "versatz": [8, 6],
+      "massstab": 0.75
+    },
+    {
+      "moebel": "wr5Kohl",
+      "feld": [56, 56],
+      "versatz": [8, 6],
+      "massstab": 0.75
+    },
+    {
+      "moebel": "wr5Kohl",
+      "feld": [56, 57],
+      "versatz": [8, 6],
+      "massstab": 0.75
     }
   ],
   "ausloeser": [

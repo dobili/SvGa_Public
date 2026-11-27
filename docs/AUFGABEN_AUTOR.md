@@ -826,6 +826,12 @@ Profil › Einstellungen › Fehler melden.
       ins Hauptmenü wechseln und nicht mit fremdem Stand weiterspielen; der Held im zweiten Tab soll
       dort stehen, wo er in seinem Stand stand.
       **Antwort:** „N2753 ok“ oder was passierte.
+- [ ] N2754. **Zurück-Taste in der Ladeliste (27.11.2026):** Im Hauptmenü des Abenteuers „Spielstand
+      laden“ öffnen und die Zurück-Taste des Handys drücken (oder am iPhone vom Rand wischen): Du
+      bist wieder im Hauptmenü, nicht in der App. In der Ladeliste bei einem Stand „Löschen“ tippen
+      und dann Zurück: Die Rückfrage schließt wie mit „Nein“, die Liste bleibt. Erst Zurück im
+      Hauptmenü verlässt das Abenteuer. Schon umgesetzt, Widerspruch genügt.
+      **Antwort:** „N2754 ok“ oder wo du gelandet bist.
 - [ ] N2760. **Lektorat des ganzen Spieltexts (27.11.2026):** Alle vier Akte und die Nebenpfade
       wurden gelesen und kleine Fehler behoben, ohne neue Szenen (Logik, Namen vor der Vorstellung,
       Wiederholungen, Satzbau, ein Schachfehler beim Damengambit). Stichproben: In Cedar Creek

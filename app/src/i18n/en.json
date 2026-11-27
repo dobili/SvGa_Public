@@ -72,7 +72,7 @@
   "abenteuer.platz.nadeln": "{anzahl} club pins",
   "abenteuer.platz.nadelnEins": "1 club pin",
   "abenteuer.platz.nadelnNull": "No club pin yet",
-  "abenteuer.platz.zuletzt": "last played {datum}",
+  "abenteuer.platz.zuletzt": "last played on {datum}",
   "abenteuer.startbild.untertitel": "A journey from town to town",
   "abenteuer.startbild.ueberspringen": "Tap to skip",
   "abenteuer.startbild.weiter": "Continue",

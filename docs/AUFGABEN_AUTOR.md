@@ -801,6 +801,31 @@ Profil › Einstellungen › Fehler melden.
       Widerspruch genügt. Offen: Soll der Reiter auch in der Fassung für die Leser (1.0) erscheinen?
       Dort fehlt er bis zu deiner Antwort.
       **Antwort:** „N2745 ok“, und zur Leserfassung „ja“ oder „nein“.
+- [ ] N2750. **Zwei Spielstände abwechselnd (27.11.2026):** Lege im Hauptmenü ein zweites Spiel an
+      und spiele es ein paar Minuten, etwa bis ins Haus. Dann ☰ → „Hauptmenü“ → „Spielstand laden“ →
+      den ersten Stand. Bleibt vom zweiten Stand etwas sichtbar (Uhrzeit, Licht, Juno als
+      Begleiterin, Figuren, die plötzlich hereinkommen, Münzen, Musik)? Danach zurück zum zweiten:
+      Steht der Held dort, wo du ihn verlassen hast? Behoben wurden dafür drei Fehler, bei denen ein
+      Stand Teile des anderen überschreiben konnte. Schon umgesetzt, Widerspruch genügt.
+      **Antwort:** „N2750 ok“ oder was vom anderen Stand übrig blieb.
+- [ ] N2751. **„Weiter“ nach der Partie führt in die Welt (27.11.2026):** Beginne im Abenteuer eine
+      Partie. Schließe die App ganz (aus der Liste der offenen Apps wischen) und öffne sie wieder:
+      Sie zeigt die Partie. Spiele sie zu Ende oder gib auf und tippe „Weiter“. Du solltest gleich
+      in der Welt mit dem Ergebnis stehen, nicht im Hauptmenü und ohne Startbild. Bis heute landete
+      man dort im Hauptmenü. Schon umgesetzt, Widerspruch genügt.
+      **Antwort:** „N2751 ok“ oder wo du gelandet bist.
+- [ ] N2752. **Hinweis zur Wahl von Figur und Rivale (27.11.2026):** Im Spielmenü ☰ steht jetzt:
+      „Anders wählen kannst du in einem neuen Spiel (Hauptmenü, „Neues Spiel“); dieses bleibt
+      gespeichert.“ Auf der Startkarte eines neuen Spiels: „Die Wahl gilt für das ganze Spiel.
+      Anders wählen kannst du später in einem weiteren Spiel (Hauptmenü, „Neues Spiel“).“ Bisher
+      hieß es „wenn du von vorn beginnst“, und diesen Knopf gibt es seit dem Hauptmenü nicht mehr.
+      Schon umgesetzt, Widerspruch genügt.
+      **Antwort:** „N2752 ok“ oder ein besserer Satz.
+- [ ] N2753. **Zwei Tabs, zwei Spielstände (27.11.2026, am Rechner):** Öffne das Abenteuer in zwei
+      Browser-Tabs. Lade im zweiten Tab im Hauptmenü einen anderen Spielstand. Der erste Tab soll
+      ins Hauptmenü wechseln und nicht mit fremdem Stand weiterspielen; der Held im zweiten Tab soll
+      dort stehen, wo er in seinem Stand stand.
+      **Antwort:** „N2753 ok“ oder was passierte.
 - [ ] N2760. **Lektorat des ganzen Spieltexts (27.11.2026):** Alle vier Akte und die Nebenpfade
       wurden gelesen und kleine Fehler behoben, ohne neue Szenen (Logik, Namen vor der Vorstellung,
       Wiederholungen, Satzbau, ein Schachfehler beim Damengambit). Stichproben: In Cedar Creek

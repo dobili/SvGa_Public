@@ -2932,7 +2932,8 @@
       "art": "lampe",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "maske_fein": ["....", "....", "....", "....", "####", ".##.", ".##.", "...."]
+      "maske_fein": ["....", "....", "....", "....", "####", ".##.", ".##.", "...."],
+      "sichtbar_breite": 12
     },
     "mf7Obstkorb": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_49.png",
@@ -5083,7 +5084,9 @@
       "breite": 16,
       "hoehe": 32,
       "kollision": true,
-      "vordergrund": {"ab": 1},
+      "vordergrund": {
+        "ab": 1
+      },
       "art": "bank",
       "blick": "rechts",
       "zustand": "gebraucht",
@@ -5095,7 +5098,9 @@
       "breite": 16,
       "hoehe": 32,
       "kollision": true,
-      "vordergrund": {"ab": 1},
+      "vordergrund": {
+        "ab": 1
+      },
       "art": "bank",
       "blick": "links",
       "zustand": "gebraucht",
@@ -5870,6 +5875,129 @@
         "...................."
       ],
       "hinweis": "Wartehäuschen von hinten: Glasrückwand mit Rahmen, Bank innen durch das Glas, Blechdach, auf seiner Betonplatte; offen nach Norden zur Straße; ersetzt mf6Haltestelle im Park; in Cedar Creek stünde der Held an Start und Haltestelle hinter dem höheren Dach (Gemini K21, zweite Fassung, Schnittstelle 26.11.2026)"
+    },
+    "mf27SpueleWeiss": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_141.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "geraet",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "modern",
+      "sichtbar_breite": 24,
+      "beschreibung": "Weißes Spülbecken mit Wasserhahn, Einsatz für die Arbeitsplatte (Küche Whitlock-Haus, Kartenblick W1)",
+      "begehbar": true,
+      "begehbar_grund": "Einsatz in der Arbeitsplatte; die Arbeitsplatte darunter sperrt"
+    },
+    "mf27Nachttisch": {
+      "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_300.png",
+      "breite": 16,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "schrank",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "sichtbar_breite": 15,
+      "maske_fein": ["....", "....", "....", "....", "####", "####", "####", "...."],
+      "beschreibung": "Kleiner Nachttisch aus hellem Holz mit zwei Schubladen, von vorn (Zimmer des Helden, neben dem Bett; Kartenblick Z2)"
+    },
+    "mf27Seerose1": {
+      "quelle": "spiel/eigene/seerose_frei_1.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand",
+      "untergrund": "wasser",
+      "beschreibung": "Seerosenblatt ohne eigenes Wasserquadrat (Wasser des Ausgangsbilds freigestellt, Teich im Park Maple Falls)"
+    },
+    "mf27Seerose2": {
+      "quelle": "spiel/eigene/seerose_frei_2.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand",
+      "untergrund": "wasser",
+      "beschreibung": "Seerosenblatt ohne eigenes Wasserquadrat (Wasser des Ausgangsbilds freigestellt, Teich im Park Maple Falls)"
+    },
+    "mf27Seerose3": {
+      "quelle": "spiel/eigene/seerose_frei_3.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "pflanze",
+      "zustand": "neu",
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "liegt im Wasser, dort läuft niemand",
+      "untergrund": "wasser",
+      "beschreibung": "Seerosenblatt ohne eigenes Wasserquadrat (Wasser des Ausgangsbilds freigestellt, Teich im Park Maple Falls)"
+    },
+    "mf27Parkbank": {
+      "quelle": "spiel/eigene/parkbank_holz.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "bank",
+      "blick": "unten",
+      "zustand": "neu",
+      "stil": "klassisch",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        ".######."
+      ],
+      "beschreibung": "Parkbank aus Holzlatten mit Seitenteilen aus Gusseisen, von vorn (Gemini 26.11.2026, statt der Bank, die wie eine Palette aussah; Kartenblick A8, P9)"
+    },
+    "mf27DachKlimageraet": {
+      "quelle": "spiel/eigene/dach_klimageraet.png",
+      "breite": 32,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "beschreibung": "Klimagerät in Draufsicht für ein Flachdach (Gemini K16, Diner Maple Falls)",
+      "begehbar": true,
+      "begehbar_grund": "steht auf dem Flachdach; das Gebäude darunter sperrt"
+    },
+    "mf27DachLuke": {
+      "quelle": "spiel/eigene/dach_luke.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "beschreibung": "Dachluke aus Metall in Draufsicht für ein Flachdach (Gemini K16, Diner Maple Falls)",
+      "begehbar": true,
+      "begehbar_grund": "steht auf dem Flachdach; das Gebäude darunter sperrt"
+    },
+    "mf27DachLueftungsrohr": {
+      "quelle": "spiel/eigene/dach_lueftungsrohr.png",
+      "breite": 16,
+      "hoehe": 16,
+      "kollision": false,
+      "art": "deko",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "beschreibung": "Lüftungsrohr mit Haube in Draufsicht für ein Flachdach (Gemini K16, Diner Maple Falls)",
+      "begehbar": true,
+      "begehbar_grund": "steht auf dem Flachdach; das Gebäude darunter sperrt"
     }
   }
 }

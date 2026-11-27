@@ -1126,57 +1126,6 @@
     },
     {
      "id": 24,
-     "name": "mf8Kommode",
-     "type": "moebel",
-     "x": 208,
-     "y": 102,
-     "width": 32,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 126
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      },
-      {
-       "name": "maske",
-       "type": "string",
-       "value": "##/.."
-      }
-     ]
-    },
-    {
-     "id": 25,
-     "name": "mf7Tischlampe",
-     "type": "moebel",
-     "x": 216,
-     "y": 89,
-     "width": 16,
-     "height": 32,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 127
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": false
-      }
-     ]
-    },
-    {
-     "id": 26,
      "name": "mf3BrettKlein",
      "type": "moebel",
      "x": 218,
@@ -1199,7 +1148,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 25,
      "name": "mf2Kleiderschrank",
      "type": "moebel",
      "x": 80,
@@ -1222,7 +1171,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 26,
      "name": "mf4KartonStapel",
      "type": "moebel",
      "x": 160,
@@ -1245,7 +1194,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 27,
      "name": "bkDielen",
      "type": "moebel",
      "x": 16,
@@ -1273,7 +1222,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 28,
      "name": "bkDielen",
      "type": "moebel",
      "x": 32,
@@ -1301,7 +1250,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 29,
      "name": "gt7ZaunMR",
      "type": "moebel",
      "x": 32,
@@ -1334,7 +1283,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 30,
      "name": "gt7ZaunMR",
      "type": "moebel",
      "x": 32,
@@ -1357,7 +1306,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 31,
      "name": "mf15GelaenderEckeLinks",
      "type": "moebel",
      "x": 16,
@@ -1380,7 +1329,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 32,
      "name": "sd6RelingCObenRechts",
      "type": "moebel",
      "x": 32,
@@ -1403,7 +1352,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 33,
      "name": "sd6RelingCOben",
      "type": "moebel",
      "x": 24,
@@ -1426,7 +1375,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 34,
      "name": "mf15GelaenderPfostenRechts",
      "type": "moebel",
      "x": 43,
@@ -1459,7 +1408,7 @@
      ]
     },
     {
-     "id": 37,
+     "id": 35,
      "name": "mf15TreppeLochZimmer",
      "type": "moebel",
      "x": 17,
@@ -1497,7 +1446,7 @@
      ]
     },
     {
-     "id": 38,
+     "id": 36,
      "name": "mf15TreppeLochZimmer",
      "type": "moebel",
      "x": 17,
@@ -1535,7 +1484,7 @@
      ]
     },
     {
-     "id": 39,
+     "id": 37,
      "name": "treppeZumBetrachter",
      "type": "moebel",
      "x": 16,
@@ -1574,6 +1523,52 @@
        "name": "maske_fein",
        "type": "string",
        "value": "......../......../......../......../.......#/.......#/.......#/.......#/########/########/####.###/########"
+      }
+     ]
+    },
+    {
+     "id": 38,
+     "name": "mf27Nachttisch",
+     "type": "moebel",
+     "x": 224,
+     "y": 98,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 122
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 39,
+     "name": "mf7Tischlampe",
+     "type": "moebel",
+     "x": 224,
+     "y": 85,
+     "width": 16,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 123
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       }
      ]
     }

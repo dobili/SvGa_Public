@@ -27,7 +27,7 @@ def test_innenfaktor_wie_in_der_app():
 
 def test_parkbank_des_autors_ist_verkleinert():
     park = p.lade_szenen()["maple-falls-park"]
-    baenke = [o for o in park["objekte"] if o.get("moebel") == "mfBank"]
+    baenke = [o for o in park["objekte"] if o.get("moebel") == "mf27Parkbank"]
     assert baenke and all(o.get("massstab") == 0.75 for o in baenke)
 
 

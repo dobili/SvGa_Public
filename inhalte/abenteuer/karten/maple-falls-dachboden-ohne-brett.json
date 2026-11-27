@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 37,
+ "nextobjectid": 40,
  "layers": [
   {
    "id": 1,
@@ -859,29 +859,6 @@
     },
     {
      "id": 18,
-     "name": "mf2Stehlampe",
-     "type": "moebel",
-     "x": 160,
-     "y": 64,
-     "width": 16,
-     "height": 48,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "tiefe",
-       "type": "int",
-       "value": 104
-      },
-      {
-       "name": "kollision",
-       "type": "bool",
-       "value": true
-      }
-     ]
-    },
-    {
-     "id": 19,
      "name": "mf7Truhe",
      "type": "moebel",
      "x": 176,
@@ -904,7 +881,7 @@
      ]
     },
     {
-     "id": 20,
+     "id": 19,
      "name": "mf7Truhe",
      "type": "moebel",
      "x": 144,
@@ -927,7 +904,7 @@
      ]
     },
     {
-     "id": 21,
+     "id": 20,
      "name": "mf7Teddy",
      "type": "moebel",
      "x": 152,
@@ -950,7 +927,7 @@
      ]
     },
     {
-     "id": 22,
+     "id": 21,
      "name": "mf12KartonAltHoch",
      "type": "moebel",
      "x": 16,
@@ -973,7 +950,7 @@
      ]
     },
     {
-     "id": 23,
+     "id": 22,
      "name": "mf2Zeitungsstapel",
      "type": "moebel",
      "x": 48,
@@ -1001,7 +978,7 @@
      ]
     },
     {
-     "id": 24,
+     "id": 23,
      "name": "mf12Hutschachtel",
      "type": "moebel",
      "x": 80,
@@ -1024,7 +1001,7 @@
      ]
     },
     {
-     "id": 25,
+     "id": 24,
      "name": "mf2Standspiegel",
      "type": "moebel",
      "x": 16,
@@ -1047,7 +1024,7 @@
      ]
     },
     {
-     "id": 26,
+     "id": 25,
      "name": "cc4KisteLeer",
      "type": "moebel",
      "x": 64,
@@ -1070,7 +1047,7 @@
      ]
     },
     {
-     "id": 27,
+     "id": 26,
      "name": "mf12SchaukelstuhlVorn",
      "type": "moebel",
      "x": 178,
@@ -1093,7 +1070,7 @@
      ]
     },
     {
-     "id": 28,
+     "id": 27,
      "name": "mf15GelaenderEckeLinks",
      "type": "moebel",
      "x": 16,
@@ -1116,7 +1093,7 @@
      ]
     },
     {
-     "id": 29,
+     "id": 28,
      "name": "sd6RelingCObenRechts",
      "type": "moebel",
      "x": 32,
@@ -1139,7 +1116,7 @@
      ]
     },
     {
-     "id": 30,
+     "id": 29,
      "name": "sd6RelingCSeiteRechts",
      "type": "moebel",
      "x": 32,
@@ -1172,7 +1149,7 @@
      ]
     },
     {
-     "id": 31,
+     "id": 30,
      "name": "sd6RelingCSeiteRechts",
      "type": "moebel",
      "x": 32,
@@ -1205,7 +1182,7 @@
      ]
     },
     {
-     "id": 32,
+     "id": 31,
      "name": "bkDielen",
      "type": "moebel",
      "x": 16,
@@ -1228,7 +1205,7 @@
      ]
     },
     {
-     "id": 33,
+     "id": 32,
      "name": "bkDielen",
      "type": "moebel",
      "x": 32,
@@ -1251,7 +1228,7 @@
      ]
     },
     {
-     "id": 34,
+     "id": 33,
      "name": "mf15GelaenderPfostenRechts",
      "type": "moebel",
      "x": 43,
@@ -1284,7 +1261,7 @@
      ]
     },
     {
-     "id": 35,
+     "id": 34,
      "name": "sd6RelingCOben",
      "type": "moebel",
      "x": 23,
@@ -1307,7 +1284,7 @@
      ]
     },
     {
-     "id": 36,
+     "id": 35,
      "name": "treppeZumBetrachter",
      "type": "moebel",
      "x": 16,
@@ -1336,6 +1313,98 @@
        "name": "deckkraft",
        "type": "int",
        "value": 25
+      }
+     ]
+    },
+    {
+     "id": 36,
+     "name": "rv8Koffer",
+     "type": "moebel",
+     "x": 160,
+     "y": 80,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 88
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 37,
+     "name": "gt14Spinnennetz",
+     "type": "moebel",
+     "x": 16,
+     "y": 19,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 0
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 38,
+     "name": "rv8Truhe",
+     "type": "moebel",
+     "x": 112,
+     "y": 128,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 39,
+     "name": "mf12KartonAltHoch",
+     "type": "moebel",
+     "x": 176,
+     "y": 128,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 152
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
       }
      ]
     }

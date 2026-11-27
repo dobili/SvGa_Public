@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 44,
+ "nextobjectid": 45,
  "layers": [
   {
    "id": 1,
@@ -1181,8 +1181,8 @@
      "id": 17,
      "name": "wzStehlampe",
      "type": "moebel",
-     "x": 144,
-     "y": 64,
+     "x": 80,
+     "y": 80,
      "width": 16,
      "height": 48,
      "rotation": 0,
@@ -1191,12 +1191,17 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 104
+       "value": 120
       },
       {
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "./#/."
       }
      ]
     },
@@ -1910,6 +1915,29 @@
        "name": "deckkraft",
        "type": "int",
        "value": 50
+      }
+     ]
+    },
+    {
+     "id": 44,
+     "name": "mf27SpueleWeiss",
+     "type": "moebel",
+     "x": 240,
+     "y": 37,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 63
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       }
      ]
     }

@@ -476,7 +476,7 @@
       "vorn": true
     },
     {
-      "moebel": "mfBank",
+      "moebel": "mf27Parkbank",
       "feld": [55, 22],
       "vorn": true,
       "versatz": [4, 8],
@@ -661,7 +661,7 @@
       "feld": [55, 40]
     },
     {
-      "moebel": "mfBank",
+      "moebel": "mf27Parkbank",
       "feld": [50, 32],
       "versatz": [4, 8],
       "massstab": 0.75
@@ -688,15 +688,7 @@
       "feld": [31, 6],
       "massstab": 1.6,
       "versatz": [-1, -15],
-      "maske": [
-        "........",
-        "........",
-        "........",
-        "..######",
-        "..######",
-        "....###.",
-        "........"
-      ]
+      "maske": ["........", "........", "........", "..######", "..######", "....###.", "........"]
     },
     {
       "moebel": "mf4ZaunEckeLinks",
@@ -851,7 +843,7 @@
       "feld": [47, 29]
     },
     {
-      "moebel": "mfBank",
+      "moebel": "mf27Parkbank",
       "feld": [54, 32],
       "versatz": [4, 8],
       "massstab": 0.75
@@ -941,15 +933,7 @@
       "feld": [57, 33],
       "massstab": 1.6,
       "versatz": [-16, -12],
-      "maske": [
-        "........",
-        "........",
-        "........",
-        ".#######",
-        ".#######",
-        ".#######",
-        "........"
-      ]
+      "maske": ["........", "........", "........", ".#######", ".#######", ".#######", "........"]
     },
     {
       "moebel": "mf4BaumGruen",
@@ -1216,6 +1200,29 @@
     {
       "moebel": "mf4ZaunMitte",
       "feld": [24, 29]
+    },
+    {
+      "moebel": "mf4BaumRot",
+      "feld": [38, 33]
+    },
+    {
+      "moebel": "mf4Busch",
+      "feld": [23, 31]
+    },
+    {
+      "moebel": "mf27DachKlimageraet",
+      "auf": "diner",
+      "versatz": [-34, -40]
+    },
+    {
+      "moebel": "mf27DachLuke",
+      "auf": "diner",
+      "versatz": [26, -50]
+    },
+    {
+      "moebel": "mf27DachLueftungsrohr",
+      "auf": "diner",
+      "versatz": [46, -30]
     }
   ],
   "ausloeser": [

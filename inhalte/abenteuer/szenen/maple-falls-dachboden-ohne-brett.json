@@ -4,7 +4,7 @@
   "art": "innen",
   "zustand": ["alt", "gebraucht"],
   "stil": ["klassisch", "rustikal"],
-  "beschreibung": "Zustand: ab Szene 4 (ersterAbendGesehen) steht der runde Tisch unter dem Fenster leer, weil der Held das alte Brett mit hinuntergenommen hat; es liegt seitdem auf dem Schreibtisch im Zimmer des Helden (mapleFalls.zimmer). Der Dachboden des Whitlock-Hauses voll mit altem Hausrat (Roman Kap. 2). An der Westwand, ein Stück vor der Südwand, das Loch im Boden mit Geländer an der Nord- und Ostseite, durch das die steile Treppe aus dem Obergeschoss heraufkommt (KARTENREGELN 10.76 und 10.89); man steigt an seinem Südrand aus, genau dort beginnt das Spiel: Der Held hat eben die Holzkiste heraufgetragen. Sie steht jetzt bei den anderen weiter nördlich, die Holzkiste, klein genug zum Tragen, mit der steilen Schrift „Whitlock – nicht wegwerfen“, die der Held am ersten Tag heraufgetragen hat (Roman Kap. 1); darüber ein Waldbild. Mitten in der Stirnwand das runde Giebelfenster; sein Licht fällt als Kegel auf den verblichenen Teppich und den niedrigen runden Tisch direkt darunter, auf dem unter einer hellen, staubfreien Decke das alte Brett liegt, eine Ecke mit zwei Figuren schaut heraus, zwei Stühle daneben. Im Lichtkegel tanzt der Staub (Teilchen staub). Rechts an der Stirnwand der Bauernschrank und ein Bücherregal voller vergilbter Bücher, davor eine Stehlampe. An Ost- und Südwand zwei mit Tüchern abgedeckte Truhen, auf einer sitzt ein Teddy, ein Kistenstapel, ein alter hoher Karton an der Westwand, links die Zeitungen von 1961, die kleine gestreifte Hutschachtel und der Standspiegel. In der Südostecke steht der alte Schaukelstuhl aus dem Roman. Aufgang (KARTENREGELN 10.76 und 10.89, Karteneditor des Autors 16.11.2026): eine Holztreppe an der Westwand hinter der Haustür, die nach Norden ansteigt und oben im Halbdunkel unter der Decke verschwindet; im Obergeschoss kommt man am Nordrand eines Lochs im Boden in der Nordwestecke heraus (darunter schimmert die Treppe, Geländer an der Süd- und Ostseite). Die Treppe zum Dachboden liegt im Obergeschoss weiter südlich an der Westwand und steigt nach Süden; auf dem Dachboden kommt man am Südrand eines Lochs an der Westwand heraus (Geländer an der Nord- und Ostseite).",
+  "beschreibung": "Zustand: ab Szene 4 (ersterAbendGesehen) steht der runde Tisch unter dem Fenster leer, weil der Held das alte Brett mit hinuntergenommen hat; es liegt seitdem auf dem Schreibtisch im Zimmer des Helden (mapleFalls.zimmer). Der Dachboden des Whitlock-Hauses voll mit altem Hausrat (Roman Kap. 2). An der Westwand, ein Stück vor der Südwand, das Loch im Boden mit Geländer an der Nord- und Ostseite, durch das die steile Treppe aus dem Obergeschoss heraufkommt (KARTENREGELN 10.76 und 10.89); man steigt an seinem Südrand aus, genau dort beginnt das Spiel: Der Held hat eben die Holzkiste heraufgetragen. Sie steht jetzt bei den anderen weiter nördlich, die Holzkiste, klein genug zum Tragen, mit der steilen Schrift „Whitlock – nicht wegwerfen“, die der Held am ersten Tag heraufgetragen hat (Roman Kap. 1); darüber ein Waldbild. Mitten in der Stirnwand das runde Giebelfenster; sein Licht fällt als Kegel auf den verblichenen Teppich und den niedrigen runden Tisch direkt darunter, auf dem unter einer hellen, staubfreien Decke das alte Brett liegt, eine Ecke mit zwei Figuren schaut heraus, zwei Stühle daneben. Im Lichtkegel tanzt der Staub (Teilchen staub). Rechts an der Stirnwand der Bauernschrank und ein Bücherregal voller vergilbter Bücher, davor ein alter Koffer; in der Ecke über dem Spiegel ein Spinnennetz, an der Südwand eine Holztruhe und ein alter Karton (27.11.2026, Kartenblick D2, D9). An Ost- und Südwand zwei mit Tüchern abgedeckte Truhen, auf einer sitzt ein Teddy, ein Kistenstapel, ein alter hoher Karton an der Westwand, links die Zeitungen von 1961, die kleine gestreifte Hutschachtel und der Standspiegel. In der Südostecke steht der alte Schaukelstuhl aus dem Roman. Aufgang (KARTENREGELN 10.76 und 10.89, Karteneditor des Autors 16.11.2026): eine Holztreppe an der Westwand hinter der Haustür, die nach Norden ansteigt und oben im Halbdunkel unter der Decke verschwindet; im Obergeschoss kommt man am Nordrand eines Lochs im Boden in der Nordwestecke heraus (darunter schimmert die Treppe, Geländer an der Süd- und Ostseite). Die Treppe zum Dachboden liegt im Obergeschoss weiter südlich an der Westwand und steigt nach Süden; auf dem Dachboden kommt man am Südrand eines Lochs an der Westwand heraus (Geländer an der Nord- und Ostseite).",
   "wand": "holz",
   "boden": "dielen",
   "raster": [
@@ -20,7 +20,13 @@
     "#............#",
     "##############"
   ],
-  "figuren": [{ "name": "lilyDachboden", "feld": [4, 8], "blick": "rechts" }],
+  "figuren": [
+    {
+      "name": "lilyDachboden",
+      "feld": [4, 8],
+      "blick": "rechts"
+    }
+  ],
   "objekte": [
     {
       "moebel": "mf12FensterRund",
@@ -64,10 +70,6 @@
       "feld": [9, 5],
       "zu": "tisch",
       "versatz": [0, 5]
-    },
-    {
-      "moebel": "mf2Stehlampe",
-      "feld": [10, 4]
     },
     {
       "moebel": "mf7Truhe",
@@ -164,6 +166,25 @@
       "ebene": -138,
       "deckkraft": 25,
       "kollision": false
+    },
+    {
+      "moebel": "rv8Koffer",
+      "feld": [10, 5]
+    },
+    {
+      "moebel": "gt14Spinnennetz",
+      "feld": [1, 1],
+      "an_wand": true,
+      "versatz": [0, 3]
+    },
+    {
+      "moebel": "rv8Truhe",
+      "feld": [7, 8]
+    },
+    {
+      "moebel": "mf12KartonAltHoch",
+      "feld": [11, 9],
+      "versatz": [0, -16]
     }
   ],
   "ausloeser": [

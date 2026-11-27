@@ -4698,7 +4698,7 @@
      "name": "mf13PlakatZaehlen",
      "type": "moebel",
      "x": 272,
-     "y": 22,
+     "y": 18,
      "width": 32,
      "height": 24,
      "rotation": 0,
@@ -4879,19 +4879,19 @@
     },
     {
      "id": 163,
-     "name": "mf4Palme",
+     "name": "mf7PflanzeHoch",
      "type": "moebel",
      "x": 16,
-     "y": 192,
-     "width": 32,
-     "height": 32,
+     "y": 186,
+     "width": 16,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 216
+       "value": 226
       },
       {
        "name": "kollision",
@@ -4902,19 +4902,19 @@
     },
     {
      "id": 164,
-     "name": "mf4Palme",
+     "name": "mf7PflanzeHoch",
      "type": "moebel",
-     "x": 368,
-     "y": 192,
-     "width": 32,
-     "height": 32,
+     "x": 384,
+     "y": 186,
+     "width": 16,
+     "height": 48,
      "rotation": 0,
      "visible": true,
      "properties": [
       {
        "name": "tiefe",
        "type": "int",
-       "value": 216
+       "value": 226
       },
       {
        "name": "kollision",

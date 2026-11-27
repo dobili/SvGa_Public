@@ -590,7 +590,7 @@
       "moebel": "mf13PlakatZaehlen",
       "feld": [17, 1],
       "an_wand": true,
-      "versatz": [0, 6]
+      "versatz": [0, 2]
     },
     {
       "moebel": "mf13Urkunde",
@@ -628,12 +628,14 @@
       "feld": [24, 3]
     },
     {
-      "moebel": "mf4Palme",
-      "feld": [1, 12]
+      "moebel": "mf7PflanzeHoch",
+      "feld": [1, 11],
+      "versatz": [0, 10]
     },
     {
-      "moebel": "mf4Palme",
-      "feld": [23, 12]
+      "moebel": "mf7PflanzeHoch",
+      "feld": [24, 11],
+      "versatz": [0, 10]
     },
     {
       "moebel": "mfc9BankWest",

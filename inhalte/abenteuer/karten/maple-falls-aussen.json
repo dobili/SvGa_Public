@@ -11,7 +11,7 @@
  "tilewidth": 16,
  "tileheight": 16,
  "nextlayerid": 5,
- "nextobjectid": 288,
+ "nextobjectid": 293,
  "layers": [
   {
    "id": 1,
@@ -11048,7 +11048,7 @@
     },
     {
      "id": 117,
-     "name": "mfBank",
+     "name": "mf27Parkbank",
      "type": "moebel",
      "x": 884,
      "y": 360,
@@ -12042,7 +12042,7 @@
     },
     {
      "id": 160,
-     "name": "mfBank",
+     "name": "mf27Parkbank",
      "type": "moebel",
      "x": 804,
      "y": 520,
@@ -13074,7 +13074,7 @@
     },
     {
      "id": 204,
-     "name": "mfBank",
+     "name": "mf27Parkbank",
      "type": "moebel",
      "x": 868,
      "y": 520,
@@ -15106,6 +15106,121 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      }
+     ]
+    },
+    {
+     "id": 288,
+     "name": "mf4BaumRot",
+     "type": "moebel",
+     "x": 608,
+     "y": 528,
+     "width": 48,
+     "height": 48,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 568
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 289,
+     "name": "mf4Busch",
+     "type": "moebel",
+     "x": 368,
+     "y": 496,
+     "width": 32,
+     "height": 32,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 520
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": true
+      }
+     ]
+    },
+    {
+     "id": 290,
+     "name": "mf27DachKlimageraet",
+     "type": "moebel",
+     "x": 494,
+     "y": 254,
+     "width": 32,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 361
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 291,
+     "name": "mf27DachLuke",
+     "type": "moebel",
+     "x": 562,
+     "y": 244,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 361
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
+      }
+     ]
+    },
+    {
+     "id": 292,
+     "name": "mf27DachLueftungsrohr",
+     "type": "moebel",
+     "x": 582,
+     "y": 264,
+     "width": 16,
+     "height": 16,
+     "rotation": 0,
+     "visible": true,
+     "properties": [
+      {
+       "name": "tiefe",
+       "type": "int",
+       "value": 361
+      },
+      {
+       "name": "kollision",
+       "type": "bool",
+       "value": false
       }
      ]
     }

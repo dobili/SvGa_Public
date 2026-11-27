@@ -18,7 +18,7 @@
   },
   "raster": [
     "####~~~~~~ee###################~~###########",
-    "#....~~~~~ee...################~~###########",
+    "#...~~~~~~ee...################~~###########",
     "#...~hh~~~hh~~~################~~###########",
     "#...~hh~~~hh~~~################~~###########",
     "#....hh~~~hh~~~~~~~~~~~~~~~~~~~~~~~........#",
@@ -82,14 +82,14 @@
       "feld": [12, 5]
     },
     {
-      "moebel": "mfBank",
+      "moebel": "mf27Parkbank",
       "feld": [3, 11],
       "id": "bank",
       "versatz": [4, 8],
       "massstab": 0.75
     },
     {
-      "moebel": "mfBank",
+      "moebel": "mf27Parkbank",
       "feld": [1, 11],
       "versatz": [4, 8],
       "massstab": 0.75
@@ -132,7 +132,7 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [38, 10],
+      "feld": [38, 12],
       "vorn": true
     },
     {
@@ -179,15 +179,15 @@
       "feld": [29, 22]
     },
     {
-      "moebel": "mf6Seerose1",
+      "moebel": "mf27Seerose1",
       "feld": [24, 27]
     },
     {
-      "moebel": "mf6Seerose2",
+      "moebel": "mf27Seerose2",
       "feld": [26, 26]
     },
     {
-      "moebel": "mf6Seerose3",
+      "moebel": "mf27Seerose3",
       "feld": [26, 28]
     },
     {
@@ -244,28 +244,20 @@
       "versatz": [8, 0]
     },
     {
-      "moebel": "bkWasserRandW",
-      "feld": [4, 2]
+      "moebel": "mf4BaumRot",
+      "feld": [30, 26]
     },
     {
-      "moebel": "bkWasserRandW",
-      "feld": [4, 1]
+      "moebel": "mf4Busch",
+      "feld": [38, 29]
     },
     {
-      "moebel": "bkWasserRandW",
-      "feld": [4, 0]
+      "moebel": "mf6Busch",
+      "feld": [33, 25]
     },
     {
-      "moebel": "bkWasserRot",
-      "feld": [5, 0]
-    },
-    {
-      "moebel": "bkWasserRot",
-      "feld": [5, 1]
-    },
-    {
-      "moebel": "bkWasserRot",
-      "feld": [5, 2]
+      "moebel": "mf9Trinkbrunnen",
+      "feld": [10, 18]
     }
   ],
   "ausloeser": [
@@ -327,7 +319,11 @@
     }
   ],
   "figuren": [
-    { "name": "junoLandstrasse", "feld": [41, 14], "blick": "links" },
+    {
+      "name": "junoLandstrasse",
+      "feld": [41, 14],
+      "blick": "links"
+    },
     {
       "name": "prattSteg",
       "feld": [7, 6]

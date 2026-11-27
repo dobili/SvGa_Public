@@ -6,7 +6,8 @@
  * (key in AbenteuerAnsicht.tsx). Vom alten Stand darf danach nichts sichtbar bleiben: weder
  * Begleiter noch Uhrzeit, Licht, Karte oder Name. Geprüft wird, dass die Welt nach dem Wechsel
  * genauso aussieht wie nach einem frischen Laden desselben Stands (Neuladen im selben Tab).
- * Stand A: nachts auf der Landstraße mit Juno als Begleiterin; Stand B: morgens im Park, allein.
+ * Stand A: nachts auf der Landstraße mit Juno als Begleiterin; Stand B: morgens im Park, allein,
+ * mit der Heldin (anderer Figurbogen im selben Phaser-Spiel).
  * Abhängigkeiten: abenteuer-affe.ts (Stand einspielen), abenteuer-paket.ts.
  */
 import { expect, test, type Page } from "@playwright/test";
@@ -45,7 +46,7 @@ const STAND_B = {
   ...GRUNDSTAND,
   begonnen: "2026-11-20T05:00:00.000Z",
   zuletztGespielt: "2026-11-26T08:00:00.000Z",
-  held: { name: "Alex", figur: "held-0" },
+  held: { name: "Alex", figur: "heldin-0" },
   spieluhr: MORGEN * MINUTEN_JE_STUNDE,
 };
 

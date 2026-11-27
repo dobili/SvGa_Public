@@ -320,12 +320,18 @@ function warteAufWechselImBrowser(a: { kachel: string; fristMs: number }): Promi
   return new Promise((fertig) => {
     const beginn = performance.now();
     const bild = document.querySelector(".abenteuer-welt canvas");
+    // Seit dem 26.11.2026 bleibt die Leinwand über Kartenwechsel dieselbe (oberweltspiel.ts); jede
+    // neue Szene zählt data-szene hoch. Ohne diese Zahl galt ein Wechsel auf dasselbe Feld der
+    // neuen Karte (Treppe 2,4 → 2,4) als „reagiert nicht“ (Durchlauf 27.11.2026).
+    const szene = bild?.getAttribute("data-szene") ?? null;
     const takt = () => {
       const kachel = document.querySelector("[data-testid='abenteuer-kachel']")?.textContent ?? "";
+      const leinwand = document.querySelector(".abenteuer-welt canvas");
       let grund: string | null = null;
       if (document.querySelector("[data-testid='abenteuer-dialog']")) grund = "fenster";
       // Die neue Karte lädt: Das Steuerkreuz verschwindet, dann wechselt das Bild.
-      else if (document.querySelector(".abenteuer-welt canvas") !== bild) grund = "karte";
+      else if (leinwand !== bild) grund = "karte";
+      else if (leinwand?.getAttribute("data-szene") !== szene) grund = "karte";
       else if (document.querySelector(".abenteuer-steuerkreuz") === null) grund = "karte";
       else if (kachel !== a.kachel) grund = "versetzt";
       else if (performance.now() - beginn > a.fristMs) grund = "frist";

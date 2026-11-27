@@ -21,6 +21,24 @@ const WELT_FRIST_MS = 40_000;
 const SPEICHER_MS = 400;
 /** So oft (je 100 ms) sieht der Schritt nach der Ankunftskachel der neuen Karte. */
 const ANKUNFT_VERSUCHE = 40;
+/** So lange sieht der Lauf nach einer Frist am Übergang noch nach, ob die Karte doch wechselt (ms). */
+const NACHFRIST_MS = 10_000;
+const NACHFRIST_TAKT_MS = 100;
+
+/**
+ * Nach der Frist am Übergang: Wechselt die Karte doch noch? Ausgabe: Wartezeit in ms, sonst null.
+ * Warum: „reagiert nicht“ und „wechselt erst spät“ sind verschiedene Befunde (Durchlauf
+ * 27.11.2026: drei Fristen, jedes Mal stand der Held eine Sekunde später auf der neuen Karte).
+ */
+async function spaeterWechsel(lauf: Lauf, karte: string): Promise<number | null> {
+  const beginn = Date.now();
+  while (Date.now() - beginn < NACHFRIST_MS) {
+    const jetzt = await liesStand(lauf.seite).catch(() => null);
+    if (jetzt && jetzt.position.karte !== karte) return Date.now() - beginn;
+    await lauf.seite.waitForTimeout(NACHFRIST_TAKT_MS);
+  }
+  return null;
+}
 
 /**
  * Wartet, bis die Welt wieder steht (Steuerkreuz und Kachel) oder ein Fenster offen ist; zählt die
@@ -90,7 +108,13 @@ async function nimmAusgang(
   if (ergebnis === "keinWeg") {
     lauf.messung.fund("unerreichbar", `Übergang ${wissen.kennung}.${name}: kein Weg vom Standort`);
   } else if (ergebnis === "frist") {
-    lauf.messung.fund("uebergang", `Übergang ${wissen.kennung}.${name} reagiert nicht`);
+    const spaeter = await spaeterWechsel(lauf, wissen.kennung);
+    lauf.messung.fund(
+      "uebergang",
+      spaeter === null
+        ? `Übergang ${wissen.kennung}.${name} reagiert nicht`
+        : `Übergang ${wissen.kennung}.${name} wechselt erst ${spaeter} ms nach der Frist`,
+    );
   } else {
     lauf.messung.log(`Übergang ${wissen.kennung}.${name}: unterwegs aufgehalten`);
     // Aufgehalten heißt meist: Ein Statist oder Roboter läuft denselben Weg voraus (Silicon Bay,

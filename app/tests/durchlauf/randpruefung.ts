@@ -57,8 +57,12 @@ function pruefeImBrowser(): Befund {
   };
   const name = (e: Element) =>
     e.getAttribute("data-testid") ?? e.getAttribute("aria-label") ?? e.className.toString();
+  // Das Startbild des Abenteuers (27.11.2026) liegt als ein großer Knopf über allem, wie ein
+  // Fenster: Dass Menüknopf und Startkarte darunter verdeckt sind, ist gewollt.
   const offen = [
-    ...document.querySelectorAll("[role='dialog'], [role='status'], [role='alertdialog']"),
+    ...document.querySelectorAll(
+      "[role='dialog'], [role='status'], [role='alertdialog'], [data-testid='abenteuer-startbild']",
+    ),
   ].filter(sichtbar);
   const fenster = offen.map(name).sort().join("+");
   // Liegt ein Fenster über der Welt, zählen nur seine Knöpfe: Was dahinter liegt, darf verdeckt sein.

@@ -162,8 +162,9 @@ Deshalb lernst du es. Nicht ich. #sprecher:ambrose #stimmung:still
 -> END
 
 === ward_victor_fort ===
-Er ist noch nicht zurück. Du weißt, wohin er gelaufen ist. #sprecher:ward #stimmung:neutral
-Ohne ihn spielen wir nicht. Ich will, dass er zusieht. #sprecher:ward #stimmung:nachdenklich
+// Lektorat 27.11.2026: feste Pronomen für {rivale} (Story-Bibel 5.2a).
+{rv_Er} ist noch nicht zurück. Du weißt, wohin {rv_er} gelaufen ist. #sprecher:ward #stimmung:neutral
+Ohne {rv_ihn} spielen wir nicht. Ich will, dass {rv_er} zusieht. #sprecher:ward #stimmung:nachdenklich
 -> END
 
 === ward_clubkampf ===

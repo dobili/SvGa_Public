@@ -116,7 +116,7 @@ Du hast die Hand schon an der Schultür, da ruft jemand von der Bushaltestelle n
     Das Rad steht bereit. Der Zug wartet nicht. #sprecher:juno #stimmung:laechelt
 - else:
     ~ junoFahrradGesehen = true
-    Das grüne Fahrrad steht vor der Tür. Juno sitzt schon auf dem Gepäckträger. #sprecher:erzaehler #klang:fahrradklingel
+    Juno sitzt schon auf dem Gepäckträger des grünen Fahrrads. #sprecher:erzaehler #klang:fahrradklingel
     Ich frag gar nicht. Ich komm einfach mit. #sprecher:juno #stimmung:froh
     Bis Riverton nimmt uns der Zug mit, Räder dürfen mit. Ab da immer am Kanal entlang, bis Ironwood. #sprecher:juno #stimmung:froh
 }
@@ -391,7 +391,7 @@ Delgado hat gefragt. Und ich hatte samstags eh nichts vor. #sprecher:carla #stim
 === lily_lektion_danach ===
 {springerLilyBestanden: -> lily}
 Lily schiebt das Plastikpferd über den Gehweg. Es hüpft mal zwei Felder, mal drei. #sprecher:erzaehler
-Hüpft der jetzt gerade oder schief? Zeig's mir nochmal, ja? #sprecher:lily #stimmung:nachdenklich
+Hüpft der jetzt gerade oder schief? Zeig's mir noch mal, ja? #sprecher:lily #stimmung:nachdenklich
 // Vorher endete das Gespräch mit der Frage, ohne Wahl (rueckmeldung.cjs, 19.11.2026).
 + [„Noch einmal.“]
     ~ beginneAufgaben("mapleFalls.springerLily")

@@ -407,7 +407,7 @@ Datenpunkt 19870. Danke. #sprecher:zoe #stimmung:laechelt
 
 === testteam_bruecke_genug ===
 Zoe sieht auf ihr Tablet und zuckt mit den Schultern. #sprecher:erzaehler
-Drei Datenpunkte von derselben Person. Mehr will das Programm nicht, geh durch. #sprecher:zoe #stimmung:nachdenklich
+Drei Datenpunkte von derselben Person. Mehr will das Programm nicht – geh durch. #sprecher:zoe #stimmung:nachdenklich
 -> testteam_bruecke_offen
 
 === testteam_bruecke_durch ===

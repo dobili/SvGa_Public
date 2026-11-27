@@ -379,7 +379,7 @@ Datenpunkt 4113. Danke. #sprecher:zoe #stimmung:laechelt
 // Notausgang: Niemand bleibt an der Hauptgeschichte hängen (13_Wegenetz.md, Grundsatz 1).
 === testteam_wald_genug ===
 Imani klappt das Tablet zu. #sprecher:erzaehler
-Drei Datenpunkte von derselben Person. Mehr will das Programm nicht, geh durch. #sprecher:imani #stimmung:nachdenklich
+Drei Datenpunkte von derselben Person. Mehr will das Programm nicht – geh durch. #sprecher:imani #stimmung:nachdenklich
 -> testteam_wald_offen
 
 === testteam_wald_durch ===

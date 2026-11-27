@@ -5,7 +5,8 @@
  * Geprüft: Startbild beim Start, per Tipp weg; erstes Spiel ohne Hauptmenü (keine Plätze), danach
  * über das Spielmenü ins Hauptmenü; zweites Spiel auf neuem Platz; Ladeliste mit beiden, Laden
  * des ersten; Neuladen bleibt in der Welt (Sitzung des Tabs); ein neuer Tab beginnt im Hauptmenü;
- * Löschen mit Rückfrage.
+ * Löschen mit Rückfrage; Zurück-Taste (Spieler-Durchlauf 27.11.2026): in der Rückfrage „Nein“,
+ * in der Ladeliste ins Hauptmenü, erst im Hauptmenü aus dem Abenteuer.
  * Mit HAUPTMENUE_FOTOS=ORDNER legt der Test Bildschirmfotos für den Autor ab (nur lokal, mit Paket).
  */
 import { expect, test, type Page } from "@playwright/test";
@@ -113,6 +114,25 @@ test("Hauptmenü: Startbild, zwei Spielstände, laden, neu laden, neuer Tab, lö
   await expect(plaetze).toHaveCount(1);
   await expect(plaetze.first()).toContainText("Kim");
   await expect(page.getByRole("status")).toContainText("gelöscht");
+
+  // Zurück-Taste: schließt zuerst die Rückfrage, dann die Ladeliste, erst dann das Abenteuer.
+  await plaetze.first().getByTestId("abenteuer-platz-loeschen").click();
+  await expect(page.getByTestId("abenteuer-platz-frage")).toBeVisible();
+  await page.goBack();
+  await expect(page.getByTestId("abenteuer-platz-frage")).toHaveCount(0);
+  await expect(plaetze).toHaveCount(1);
+  await page.goBack();
+  await expect(page.getByTestId("abenteuer-ladeliste")).toHaveCount(0);
+  await expect(page.getByTestId("abenteuer-hauptmenue")).toBeVisible();
+  // Noch einmal über den Knopf hinein und hinaus: der Verlauf bleibt stimmig.
+  await page.getByTestId("abenteuer-ladeliste-knopf").click();
+  await page.getByTestId("abenteuer-ladeliste-zurueck").click();
+  await expect(page.getByTestId("abenteuer-hauptmenue")).toBeVisible();
+  await page.waitForTimeout(500);
+  await expect(page.getByTestId("abenteuer-hauptmenue")).toBeVisible();
+  await page.goBack();
+  await expect(page.getByTestId("abenteuer-hauptmenue")).toHaveCount(0);
+  await expect(page.getByTestId("abenteuer")).toHaveCount(0);
 });
 
 test("Hauptmenü quer und Startbild in Standbildern (nur mit HAUPTMENUE_FOTOS)", async ({

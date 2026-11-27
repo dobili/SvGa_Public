@@ -10,9 +10,13 @@
  * Bedienung wie die übrigen Fenster des Spiels: Pixelknöpfe, hoch und quer (hauptmenue.css), für
  * Bildschirmleser eine Region mit Überschrift, die Rückfrage als Warnung, die Bestätigung des
  * Löschens als Statusmeldung.
- * Abhängigkeiten: speicherplaetze.ts (Platzzeile), platztext.ts, Figurrahmen.tsx, i18n, regeln/heldfigur.ts.
+ * Zurück-Taste wie in den übrigen Fenstern des Spiels (app/blattstapel.ts, Spieler-Durchlauf
+ * 27.11.2026: in der Ladeliste verließ sie das ganze Abenteuer): In der Löschrückfrage heißt sie
+ * „Nein“, in der Ladeliste führt sie ins Hauptmenü; erst im Hauptmenü verlässt sie das Abenteuer.
+ * Abhängigkeiten: app/blattstapel.ts, speicherplaetze.ts (Platzzeile), platztext.ts, Figurrahmen.tsx, i18n, regeln/heldfigur.ts.
  */
 import { useEffect, useRef, useState } from "react";
+import { useZurueckSchliesst } from "../../app/blattstapel";
 import { t } from "../../i18n/sprache";
 import { ERSATZFIGUR, heldbogenpfad } from "../regeln/heldfigur";
 import type { Abenteuerstand } from "../schnittstelle/spielstand";
@@ -71,6 +75,8 @@ function Platzeintrag({
 }) {
   const { stand } = zeile;
   const name = stand.held.name;
+  // Zurück-Taste bei offener Rückfrage wie „Nein“ (meldet sich nach der Liste an, schließt zuerst).
+  useZurueckSchliesst(frage, () => beiFrage(false));
   return (
     <li className="abenteuer-platz" data-testid="abenteuer-platz" data-aktiv={zeile.aktiv}>
       <Heldbild stand={stand} bilder={bilder} massstab={FIGUR_KLEIN} />
@@ -144,6 +150,8 @@ function Ladeliste({
     setzeGeloescht(true);
     wege.beiLoeschen(kennung);
   };
+  // Zurück-Taste wie der Knopf „Zurück“: ins Hauptmenü, nicht aus dem Abenteuer.
+  useZurueckSchliesst(true, beiZurueck);
   const titel = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
     titel.current?.focus();

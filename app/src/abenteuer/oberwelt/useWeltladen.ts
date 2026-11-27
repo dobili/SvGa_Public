@@ -79,9 +79,9 @@ function auftrittFuer(w: Weltdaten, vorher: Aufstellung | null) {
 }
 
 /** Beim Abbau: Wer sichtbar stand und wo, für die Auftritte beim nächsten Aufbau dieser Karte. */
-function merkeAbbau(k: Oberweltkern, karte: string): void {
+function merkeAbbau(k: Oberweltkern, karte: string, platz: string): void {
   const figuren = szeneAus(k.spiel)?.aufstellung();
-  if (figuren) merkeAufstellung({ karte, figuren });
+  if (figuren) merkeAufstellung({ karte, figuren }, platz);
 }
 
 /**
@@ -180,11 +180,17 @@ function starteSpiel(
   return () => spiel.events.off(BELEBUNG_EREIGNIS, statisten);
 }
 
-/** Beim Verlassen einer Karte: Position, Spielzeit (gesamt und je Ort) und Zeitpunkt sichern. */
-function sichereSitzung(k: Oberweltkern, karte: string, begonnen: number): void {
+/**
+ * Beim Verlassen einer Karte: Position, Spielzeit (gesamt und je Ort) und Zeitpunkt sichern.
+ * Sonderfall: Gilt inzwischen ein anderer Spielstand (anderer Platz, etwa im Hauptmenü eines
+ * anderen Tabs geladen, 27.11.2026), sichert der Abbau nichts: Sonst bekäme dieser Stand Feld und
+ * Spielzeit des Helden aus dem alten, wenn beide auf derselben Karte stehen.
+ */
+function sichereSitzung(k: Oberweltkern, karte: string, begonnen: number, platz: string): void {
   const szene = szeneAus(k.spiel);
   const aktuell = k.dienste.liesStand();
   if (!szene || !aktuell || aktuell.position.karte !== karte) return;
+  if (aktuell.begonnen !== platz) return;
   const position = { ...szene.position(), karte };
   const sekunden = Math.round((Date.now() - begonnen) / MS_JE_SEKUNDE);
   const ort = karte.split(".")[0] ?? "";
@@ -222,7 +228,7 @@ export function useWeltladen(k: Oberweltkern, a: Weltanschluss): string | null {
     // danach wieder am Eingang der Karte (Spieltest „einstieg“, 15.11.2026).
     const beiSichtwechsel = () => {
       if (document.visibilityState !== "hidden") return;
-      sichereSitzung(k, karte, begonnen);
+      sichereSitzung(k, karte, begonnen, stand.begonnen);
       begonnen = Date.now();
     };
     document.addEventListener("visibilitychange", beiSichtwechsel);
@@ -233,7 +239,8 @@ export function useWeltladen(k: Oberweltkern, a: Weltanschluss): string | null {
       .then((d) => d.moebel)
       .catch(() => ({}));
     // Wer beim letzten Abbau dieser Karte stand (auftrittsgedaechtnis.ts), für die Auftritte.
-    const vorher = gemerkteAufstellung();
+    // Nur vom selben Spielstand (Platz = Beginn, anbindung/speicherplaetze.ts).
+    const vorher = gemerkteAufstellung(stand.begonnen);
     Promise.all([ladeWelt(karte, stand.held.figur, variablen, stand, vorher), moebelliste])
       .then(([w, moebel]) => {
         if (!aktiv || !a.rahmen.current) return;
@@ -248,8 +255,8 @@ export function useWeltladen(k: Oberweltkern, a: Weltanschluss): string | null {
     return () => {
       aktiv = false;
       document.removeEventListener("visibilitychange", beiSichtwechsel);
-      sichereSitzung(k, karte, begonnen);
-      merkeAbbau(k, karte);
+      sichereSitzung(k, karte, begonnen, stand.begonnen);
+      merkeAbbau(k, karte, stand.begonnen);
       abmelden?.();
       if (k.spiel.current) raeumeKarteAb(k.spiel.current);
       k.spiel.current = null;

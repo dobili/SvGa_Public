@@ -134,4 +134,12 @@ describe("Gedächtnis der Auftritte", () => {
     vergissAufstellung();
     expect(gemerkteAufstellung()).toBeNull();
   });
+
+  it("gilt nur für den Spielstand, auf dem sie gemerkt wurde (Hauptmenü, 27.11.2026)", () => {
+    vergissAufstellung();
+    merkeAufstellung(vorDemClubkampf, "2026-11-08T05:00:00.000Z");
+    expect(gemerkteAufstellung("2026-11-20T05:00:00.000Z")).toBeNull();
+    expect(gemerkteAufstellung("2026-11-08T05:00:00.000Z")).toBe(vorDemClubkampf);
+    vergissAufstellung();
+  });
 });

@@ -4,6 +4,25 @@ Jede Entscheidung zum Spiel steht hier, damit spätere Sitzungen (auch mit Opus)
 können. Neueste Einträge oben. Offene Fragen stehen unten in „Offen“; der Autor antwortet über
 die Entscheidungsseite (Claude-Artefakt „Schach-Abenteuer Entscheidungen“) oder im Chat.
 
+## 26.11.2026 – Wirtschaft und Archivquest: Langläufe der Gesamtsimulation wieder grün
+
+- **Archiv 1858 hing (Spielfehler):** Seit Mrs. Okafor im Archiv steht (25.11., Anwesenheit),
+  spielt ihr Gespräch denselben Kartondialog wie der Karton. Wer sie zuerst ansprach, hörte die
+  Erzählung von 1858, ohne dass der Schritt „Karton öffnen“ (Auslöser `karton1858`) eintrat;
+  danach wartete die Hauptquest auf eine Erzählung, die nie wieder kommt, und die Erinnerung New
+  York (setzt die Quest voraus) begann nie. Gefunden vom eiligen Prüfspieler (ambrose-danach,
+  Startwert 1), der in Orten mit Hauptquest nur Figuren anspricht. Jetzt ist der Schritt der
+  Knoten `cedar-creek-archiv.karton_1858` (beide Wege führen hinein), mit Zielpfeil auf den Karton.
+  Ink und Texte unverändert. Spielstände, die schon hängen, bleiben hängen (Beta).
+- **Wirtschaft (Empfehlung nach Regel 9, schon umgesetzt, Widerspruch genügt):** Elf späte
+  dauerhafte Karten kosten je 20 Münzen mehr (Dokument 11, Abschnitt 11); der sparsame Spieler
+  endet mit 310 bis 360 statt 530 bis 580 Münzen. Ursache waren neue Belohnungen seit dem 15.11.
+- **Auswertung ehrlicher und wiederholbar:** Ink-Zufall aus dem Startwert statt der Uhrzeit;
+  der abgelehnte Lastkahn kostet nichts; nach Abspann und Epilog höchstens 3000 Schritte Erkundung;
+  der sparsame Spieler zahlt Laterne und Monatskarte, mit denen die Simulation verdient, und holt
+  mit der Monatskarte Karten aus früheren Läden nach; Zeitbudget der Tests nur noch Sicherheitsnetz
+  (900 s), die Wirtschaft meldet „Zeitbudget erreicht“. Die Grenze „höchstens 400“ bleibt.
+
 ## 26.11.2026 – Kameraschwenk zu dem, was der Text beschreibt; Ankunft zu Fuß auf der Zielkarte
 
 - **Wunsch des Autors:** Beschreibt ein Erzähltext beim Betreten eines Orts, was dort zu sehen ist,

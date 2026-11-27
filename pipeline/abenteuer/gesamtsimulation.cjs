@@ -14,8 +14,7 @@
 // --ersatz: bekannte Figuren ohne Karte, die ersatzweise auf die Karte ihrer Dialogdatei gesetzt
 //   werden (nur für den Test, bis die Karten sie haben).
 // --wirtschaft: statt des Berichts die Auswertung der Wirtschaft je Ort für einen sparsamen und
-//   einen verschwenderischen Spieler (gesamtsimulation-wirtschaft.cjs); --startwerte 1,2,3,4 legt
-//   die Durchläufe fest.
+//   einen verschwenderischen Spieler (gesamtsimulation-wirtschaft.cjs); --startwerte 1,2,3,4.
 //
 // Ausgabe: hängende und nie begonnene Quests, nie erreichte Knoten, Figuren ohne Karte, nie
 // besuchte Orte. Rückgabewert 1, wenn eine Hauptquest nicht fertig wird, eine begonnene Quest
@@ -48,6 +47,7 @@ const {
   RUHE_ENDE,
   gilt,
   neueVersuche,
+  fertigErkundet,
 } = require("./gesamtsimulation-regeln.cjs");
 const { dialog, wendeFolgenAn } = require("./gesamtsimulation-dialoge.cjs");
 const { berichtWirtschaft } = require("./gesamtsimulation-wirtschaft.cjs");
@@ -339,7 +339,7 @@ function erkunde(welt, st, frist, ab = 0, bis = null) {
     const vorher = st.karte;
     const wege = besucheKarte(welt, st);
     if (st.karte === vorher) waehleWeg(welt, st, wege, schritt);
-    if (!nachSchritt(st)) return false;
+    if (!nachSchritt(st) || fertigErkundet(welt, st)) return false;
     if (bis && bis(st)) return true;
   }
   st.meldungen.add("Zeitbudget erreicht (der Lauf ist nicht zu Ende gekommen)");
@@ -358,6 +358,7 @@ function wirtschaft(welt, arg) {
     const frist = Date.now() + arg.sekunden * 1000;
     erkunde(welt, st, frist);
     rueckkehr(welt, st, frist, SCHRITTE);
+    if (Date.now() > frist) console.log(`Zeitbudget erreicht (Startwert ${startwert})`);
     zeitachsen.push(st.zeitachse);
   }
   console.log(berichtWirtschaft(welt, zeitachsen, MUENZEN_ERSTE_NADEL));

@@ -51,6 +51,8 @@ const RUHE_NEUER_VERSUCH = 61;
 const RUHE_TAKT = 150;
 const RUHE_NAECHSTES_GEBIET = 400;
 const RUHE_ENDE = 1500;
+/** So viele Schritte erkundet der gründliche Spieler noch, wenn Abspann und Epilog vorbei sind. */
+const SCHRITTE_NACH_DEM_ENDE = 2 * RUHE_ENDE;
 
 // ---------------------------------------------------------------- Aufruf und Daten
 
@@ -224,6 +226,37 @@ function verdiene(st, anzahl, quelle) {
 }
 
 /**
+ * Ob die Erkundung zu Ende ist, weil die Geschichte erzählt ist: Abspann gesehen, jede Hauptquest
+ * fertig, und seitdem SCHRITTE_NACH_DEM_ENDE Schritte. Danach übernimmt die Rückkehr die offenen
+ * Nebenquests (gesamtsimulation-rueckkehr.cjs).
+ * Warum: In der fertigen Welt kommt die Ruhe oft nicht zustande (Tagesabläufe und Ausgänge
+ * wechseln), und der Spieler irrte zwischen den alten Orten umher, bis die Uhr ablief. Startwert 2
+ * lief nach dem Epilog 17 000 Schritte (mehr als die Hälfte des Laufs, Zeitbudget im Gate, 26.11.2026);
+ * Startwert 1 kommt nach 1 600 Schritten von selbst zur Ruhe und bleibt unverändert.
+ */
+function fertigErkundet(welt, st) {
+  if (!st.abspann) return false;
+  if (!welt.quests.every((q) => !q.haupt || st.staende.some((s) => s.k === q.kennung && s.fertig)))
+    return false;
+  st.schritteNachDemEnde = (st.schritteNachDemEnde || 0) + 1;
+  return st.schritteNachDemEnde > SCHRITTE_NACH_DEM_ENDE;
+}
+
+/**
+ * Nimmt Zahlungen zurück (Stellen in der Zeitachse, absteigend entfernt), etwa den Fahrpreis des
+ * Lastkahns, wenn die Simulation die Reise danach ablehnt (reiseErlaubtFuer in gesamtsimulation.cjs).
+ * Warum: Ein Mensch, der nicht fahren will, wählt „Hierbleiben“. Die Simulation zahlte sonst bei
+ * jedem Ansprechen und blieb doch in Lockport: Startwert 2 zahlte 150 Fahrten (750 Münzen), und der
+ * Rest des sparsamen Spielers hing an diesem Umherirren statt an den Preisen (26.11.2026).
+ */
+function storniere(st, stellen = []) {
+  for (const i of [...stellen].sort((a, b) => b - a)) {
+    st.muenzen -= st.zeitachse[i].anzahl;
+    st.zeitachse.splice(i, 1);
+  }
+}
+
+/**
  * Ob `wenn` (Bedingung, bedingung.cjs) gilt; Besitz zählt mit wie in der App.
  * Mit `merker` (Map, nur solange sich der Stand nicht ändert, etwa in einer Wegsuche) werden die
  * Variablen einmal zusammengesetzt und die Antworten gemerkt: Das sparte die meiste Rechenzeit.
@@ -322,6 +355,8 @@ module.exports = {
   variablenname,
   besitzvariablen,
   verdiene,
+  storniere,
+  fertigErkundet,
   zufall,
   naechsteSaat,
   gilt,

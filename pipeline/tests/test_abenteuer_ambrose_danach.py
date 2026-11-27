@@ -25,7 +25,9 @@ BEOBACHTER = ORDNER / "ambrose-danach-beobachter.cjs"
 LAUNISCH = ORDNER / "ambrose-danach-launisch.cjs"
 REGELN = ORDNER / "gesamtsimulation-regeln.cjs"
 INKJS = HAUPTORDNER / "app" / "node_modules" / "inkjs"
-ZEITBUDGET_SEKUNDEN = 300
+# Nur ein Sicherheitsnetz je Spieler: Der Lauf endet nach Schritten; unter Last reichten 300
+# Sekunden nicht immer (26.11.2026).
+ZEITBUDGET_SEKUNDEN = 900
 SPIELER = ("gruendlich", "eilig")
 # Knoten der Hauptquests: Der launische Spieler darf sie nie liegen lassen.
 HAUPTKNOTEN = (

@@ -87,6 +87,18 @@
       "zustand": "alt",
       "stil": "industrie",
       "beschreibung": "Prellbock aus Holz für die Feldbahn (eigenes Bild, prellbock_stahl.py): Bock und Balken aus Holz mit zwei Puffern, ohne Signal; Gleis senkrecht, endet oben (Querauftrag m, 10.11.2026)."
+    },
+    "n21GoldaderWand": {
+      "quelle": "spiel/eigene/goldader_wand_stollen.png",
+      "breite": 64,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "fels",
+      "zustand": "alt",
+      "stil": "natur",
+      "begehbar": true,
+      "begehbar_grund": "Teil der Stollenwand, an der Wand gesetzt",
+      "hinweis": "Goldader als Stück der Stollenwand (Fels in den Farben von felsStollen umgefärbt), an der Wand der Goldkammer; ersetzt die zwei Felsbrocken mit Goldstrich (n7Goldader) (Gemini K30, Schnittstelle 26.11.2026)"
     }
   }
 }

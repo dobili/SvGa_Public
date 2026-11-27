@@ -446,9 +446,12 @@
         {
           "text": "quest.archiv1858.schritt2",
           "ereignis": {
-            "art": "ort",
+            "art": "dialog",
+            "knoten": "cedar-creek-archiv.karton_1858"
+          },
+          "ziel": {
             "karte": "cedarCreek.archiv",
-            "ausloeser": "karton1858"
+            "objekt": "karton1858"
           }
         },
         {

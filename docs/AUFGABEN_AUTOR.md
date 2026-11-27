@@ -751,6 +751,24 @@ Profil › Einstellungen › Fehler melden.
       (2) Auf dem iPhone in Safari (nicht als installierte App) eine Partie beginnen und den
       ersten Zug machen: Das Brett springt nicht mehr nach oben, es steht vom ersten Zug an still.
       **Antwort:** „N2740 ok“ oder was springt oder stockt.
+- [ ] N2741. **Weitere Gemini-Bilder auf den Karten (27.11.2026):** Pinewood: vier der acht
+      Hütten sind neu (zwei mit Veranda und Bank, zwei mit roter Tür und Steinkamin). Capital
+      Innenstadt: ein dunkles Backsteinhaus mit grauer Markise, streng von vorn, ohne Schrift.
+      Park Maple Falls: das Wartehäuschen von hinten mit Glasrückwand und Bank. Bergstraße: ein
+      Viehgitter quer über die Straße. Seeufer: das Fährhaus mit Uhr im Giebel. Ghost Town: rote
+      Steine und Kieshaufen ohne Grasbüschel. Goldmine: die Goldader als Teil der Stollenwand.
+      Laden in Ghost Town: das Fenster ist vernagelt. Nicht eingebaut (Widerspruch genügt): die
+      neue Kegelbahn (zeigt modernes Bowling mit zehn Kegeln), der Bildschirmtisch (zu klein
+      gezeichnet), die Kellertreppe (muss zur Treppe im Archiv passen).
+      **Antwort:** „N2741 ok“ oder Ort und was nicht passt.
+- [ ] N2742. **Archiv in Cedar Creek und Preise (27.11.2026):** Im Archiv zuerst Mrs. Okafor
+      ansprechen, nicht den Karton, dann den Karton öffnen und die Erzählung von 1858 hören. Die
+      Quest „Ein Name im Archiv“ ist danach abgeschlossen, und das Programmheft führt zur
+      Erinnerung New York; früher blieb sie hängen. Außerdem kosten elf späte Werkzeugkarten je
+      20 Münzen mehr (etwa Elementarmatt im Fanshop 150, Erkennungsbild in Crossroads 180), weil
+      seit Mitte November mehr Belohnungen dazukamen (Widerspruch genügt). Fühlt sich das Sparen
+      in Akt 3 und 4 noch gut an?
+      **Antwort:** „N2742 ok“ oder was hängt oder zu teuer wirkt.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

@@ -373,15 +373,10 @@
       "vorn": true
     },
     {
-      "moebel": "n7Goldader",
-      "feld": [31, 5],
-      "an_wand": true
-    },
-    {
-      "moebel": "n7Goldader",
-      "feld": [33, 5],
+      "moebel": "n21GoldaderWand",
+      "feld": [31, 3],
       "an_wand": true,
-      "spiegeln": true
+      "versatz": [0, 8]
     },
     {
       "moebel": "wdsGeroell",

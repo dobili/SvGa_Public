@@ -286,3 +286,44 @@ Ergebnis der Auswertung (Startwerte 1 und 2): Der sparsame Spieler endet mit 320
 (vor RO11 350, ohne neue Preise 560) und kauft weiter jede dauerhafte Karte; Silber, eine leichte
 Karte vor jedem Clubkampf und starke Karten erst ab Akt 3 bleiben erfüllt; der verschwenderische
 kann in Akt 4 weiter Waren nicht kaufen.
+
+## 11. Preise nach den Belohnungen vom 25.11. und eine ehrlichere Auswertung (26.11.2026)
+
+Warum: Die Wirtschaftsauswertung verfehlte „Rest am Ende höchstens 400“ (Startwert 1: 405 bis 610,
+je nach Last des Rechners). Drei Ursachen:
+
+1. **Uhr statt Schritte.** Die Simulation endet nach Schritten (Ruhe, Rückkehr); das Zeitbudget
+   des Tests (240 Sekunden) kappte den Lauf aber, sobald andere Läufe parallel rechneten, und der
+   Rest hing an der Last. Dazu würfelte Ink wechselnde Sätze mit der Uhrzeit. Jetzt ist der Lauf
+   bei gleichem Startwert immer gleich; das Zeitbudget ist nur noch ein Sicherheitsnetz (900 s),
+   und der Test schlägt fehl, wenn es greift.
+2. **Fehler der Auswertung.** Die Simulation zahlte den Lastkahn auch, wenn sie danach nicht
+   fuhr (Startwert 2: 150 Fahrten, 750 Münzen), und irrte nach dem Epilog zwischen den alten Orten
+   umher (17 000 Schritte). Laterne und Monatskarte bekam sie geschenkt und verdiente mit ihnen
+   (Steinbruch, Goldmine, Rückkehr mit der Bahn), der sparsame Spieler zahlte sie nie. Jetzt kauft
+   er sie, und mit der Monatskarte holt er Karten nach, die in einem früheren Laden nicht reichten.
+3. **Echte Balance.** Seit dem 15.11. kamen Belohnungen dazu (Regelvarianten am 25.11. je 25,
+   Testteam, Kreidenacht und andere). Mit den Korrekturen aus 1 und 2 blieben dem sparsamen
+   Spieler am Ende noch 530 bis 580 Münzen. Wie in Abschnitt 10: Statt Belohnungen zu kürzen,
+   kosten die späten dauerhaften Karten je 20 Münzen mehr.
+
+| Karte                 | Laden                   | Preis vorher | Preis jetzt |
+| --------------------- | ----------------------- | ------------ | ----------- |
+| Sieben Warnsignale    | Silicon Bay (Foodtruck) | 140          | 160         |
+| Taktikspürnase        | Silicon Bay (Foodtruck) | 120          | 140         |
+| Schwache Felder       | Port Delacroix (Gebäck) | 90           | 110         |
+| Figurenplatz          | Port Delacroix (Gebäck) | 100          | 120         |
+| Goldene Angriffsregel | Desert Springs (Okoro)  | 140          | 160         |
+| Endspielkompass       | Summit City (Bergladen) | 60           | 80          |
+| Opposition            | Summit City (Bergladen) | 110          | 130         |
+| Schlüsselfelder       | Summit City (Bergladen) | 150          | 170         |
+| Turmregel             | Summit City (Bergladen) | 80           | 100         |
+| Erkennungsbild        | Crossroads (Darlene)    | 160          | 180         |
+| Elementarmatt         | Capital Arena (Fanshop) | 130          | 150         |
+
+Ergebnis der Auswertung (Startwerte 1, 2 und 3): Der sparsame Spieler endet mit 310 bis 360
+Münzen (beim Abspann 130 bis 180; den Rest bringen Nebenquests danach) und kauft jede dauerhafte
+Karte; Silber, eine leichte Karte vor jedem Clubkampf und starke Karten erst ab Akt 3 bleiben
+erfüllt; der verschwenderische kann in Akt 4 fünf Waren nicht kaufen. Planfinder und Phasenblick
+bleiben bei 120 und 90: Der sparsame Spieler bekommt sie aus den Lektionen, eine Erhöhung änderte
+nichts.

@@ -37,8 +37,10 @@
       "feld": [4, 1]
     },
     {
-      "moebel": "es7Fenster",
+      "moebel": "gt21FensterVernagelt",
       "feld": [6, 1],
+      "massstab": 0.75,
+      "versatz": [4, 6],
       "an_wand": true
     },
     {

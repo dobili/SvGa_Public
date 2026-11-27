@@ -21,7 +21,10 @@ HAUPTORDNER = Path(__file__).resolve().parents[2]
 SKRIPT = HAUPTORDNER / "pipeline" / "abenteuer" / "gesamtsimulation.cjs"
 INKJS = HAUPTORDNER / "app" / "node_modules" / "inkjs"
 STARTWERT = 1
-ZEITBUDGET_SEKUNDEN = 240
+# Nur ein Sicherheitsnetz: Die Simulation endet nach Schritten (Ruhe, Rückkehr), nicht nach der Uhr.
+# Mit 240 Sekunden kappte die Uhr den Lauf, sobald parallel andere Läufe rechneten, und der Rest
+# des sparsamen Spielers schwankte mit der Last (405 bis 610, Befund vom 26.11.2026).
+ZEITBUDGET_SEKUNDEN = 900
 
 
 def _lauf() -> subprocess.CompletedProcess[str]:
@@ -94,6 +97,7 @@ def test_wirtschaft_ziele():
         timeout=ZEITBUDGET_SEKUNDEN + 120,
         check=False,
     )
+    assert "Zeitbudget erreicht" not in lauf.stdout, lauf.stdout
     ziele = lauf.stdout.split("## Ziele", 1)[-1]
     assert "Sparsamer Spieler mindestens Silber (in 95 % der Läufe): ja" in ziele, lauf.stdout
     assert "Vor jedem Clubkampf eine leichte Karte im Besitz oder kaufbar: ja" in ziele, lauf.stdout

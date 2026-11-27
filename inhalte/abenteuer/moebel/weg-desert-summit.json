@@ -986,6 +986,19 @@
       "stil": "natur",
       "maske_fein": ["........", "........", "........", "........", "........", "........", "...##...", "...##..."],
       "hinweis": "Holzwegweiser mit zwei leeren Pfeilen, Pfosten in nackter Erde (kein Grasfuß) für Sand und Erde der Hochebene und Bergstraße; steht 8 Pixel links versetzt, damit der Pfosten auf der Kachel des alten Wegweisers bleibt (Gemini K28, Schnittstelle 26.11.2026)"
+    },
+    "wds21Viehgitter": {
+      "quelle": "spiel/eigene/viehgitter_quer.png",
+      "breite": 16,
+      "hoehe": 48,
+      "kollision": false,
+      "art": "boden",
+      "zustand": "gebraucht",
+      "stil": "laendlich",
+      "blick": "keine",
+      "begehbar": true,
+      "begehbar_grund": "Stahlstäbe flach im Asphalt, Autos und Wanderer gehen darüber",
+      "hinweis": "Viehgitter quer über die Straße West–Ost: Stahlstäbe über der Grube, Betonkanten oben und unten, flach (Gemini K23, zweite Fassung, Schnittstelle 26.11.2026, um 90 Grad gedreht)"
     }
   }
 }

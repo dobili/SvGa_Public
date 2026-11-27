@@ -21,7 +21,9 @@ Teile:
 - `gesamtsimulation-dialoge.cjs`, `-rueckkehr.cjs`, `-sammlung.cjs`: Dialoge, Rückwege, Funde.
 - `gesamtsimulation-bericht.cjs`: der Bericht.
 - `gesamtsimulation-wirtschaft.cjs` (`--wirtschaft`): Münzen je Ort für einen sparsamen und einen
-  verschwenderischen Spieler.
+  verschwenderischen Spieler; was sie kaufen, steht in `gesamtsimulation-einkauf.cjs`.
+- Wiederholbar: Gleicher Startwert, gleicher Lauf (auch der Ink-Zufall kommt aus dem Startwert).
+  Der Lauf endet nach Schritten; `--sekunden` ist nur ein Sicherheitsnetz.
 - `gesamtsimulation-chaos.cjs`, `-chaoslauf.cjs`: ein Spieler, der alles in falscher Reihenfolge
   versucht.
 - `bedingung.cjs`: dieselben Bedingungen wie `regeln/bedingung.ts`.

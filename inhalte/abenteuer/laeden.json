@@ -150,12 +150,12 @@
         {
           "art": "karte",
           "kennung": "warnsignale",
-          "preis": 140
+          "preis": 160
         },
         {
           "art": "karte",
           "kennung": "taktikspuernase",
-          "preis": 120
+          "preis": 140
         }
       ]
     },
@@ -182,12 +182,12 @@
         {
           "art": "karte",
           "kennung": "schwacheFelder",
-          "preis": 90
+          "preis": 110
         },
         {
           "art": "karte",
           "kennung": "figurenplatz",
-          "preis": 100
+          "preis": 120
         }
       ]
     },
@@ -214,7 +214,7 @@
         {
           "art": "karte",
           "kennung": "angriffsregel",
-          "preis": 140
+          "preis": 160
         },
         {
           "art": "karte",
@@ -256,7 +256,7 @@
         {
           "art": "karte",
           "kennung": "elementarmatt",
-          "preis": 130
+          "preis": 150
         }
       ]
     },
@@ -278,7 +278,7 @@
         {
           "art": "karte",
           "kennung": "endspielkompass",
-          "preis": 60
+          "preis": 80
         },
         {
           "art": "gegenstand",
@@ -288,17 +288,17 @@
         {
           "art": "karte",
           "kennung": "opposition",
-          "preis": 110
+          "preis": 130
         },
         {
           "art": "karte",
           "kennung": "schluesselfelder",
-          "preis": 150
+          "preis": 170
         },
         {
           "art": "karte",
           "kennung": "turmregel",
-          "preis": 80
+          "preis": 100
         }
       ]
     },
@@ -355,7 +355,7 @@
         {
           "art": "karte",
           "kennung": "erkennungsbild",
-          "preis": 160
+          "preis": 180
         },
         {
           "art": "karte",

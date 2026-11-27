@@ -85,13 +85,13 @@
       "versatz": [0, -8]
     },
     {
-      "moebel": "ld14BlockhuetteGruen",
-      "feld": [39, 4],
+      "moebel": "pw21BlockhuetteVeranda",
+      "feld": [39, 3],
       "versatz": [0, -13]
     },
     {
-      "moebel": "ld14BlockhuetteKamin",
-      "feld": [45, 4],
+      "moebel": "pw21BlockhuetteRot",
+      "feld": [45, 3],
       "versatz": [0, -8]
     },
     {
@@ -182,8 +182,8 @@
       "versatz": [0, -7]
     },
     {
-      "moebel": "ld14BlockhuetteKamin",
-      "feld": [3, 19],
+      "moebel": "pw21BlockhuetteRot",
+      "feld": [3, 18],
       "versatz": [0, -8]
     },
     {
@@ -191,8 +191,8 @@
       "feld": [18, 20]
     },
     {
-      "moebel": "ld14BlockhuetteGruen",
-      "feld": [2, 26],
+      "moebel": "pw21BlockhuetteVeranda",
+      "feld": [2, 25],
       "versatz": [0, -13]
     },
     {

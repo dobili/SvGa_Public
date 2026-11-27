@@ -574,6 +574,18 @@
       "begehbar": true,
       "begehbar_grund": "liegt im Wasser, dort läuft niemand",
       "hinweis": "Seefähre mit offenem Autodeck, Reling und Steuerhaus, Bug nach Osten (Gemini 15.11.2026)"
+    },
+    "gc21FaehrhausUhr": {
+      "quelle": "spiel/eigene/faehrhaus_uhr.png",
+      "breite": 80,
+      "hoehe": 96,
+      "kollision": true,
+      "art": "gebaeude",
+      "blick": "unten",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "tuer": [[3, 6]],
+      "hinweis": "hölzernes Fährhaus auf Pfählen mit Fahrkartenschalter, Rettungsring und runder weißer Uhr im Giebel, wie die Beschreibung des Seeufers; ersetzt dort gcFaehrhausHolz (Gemini K24, Schnittstelle 26.11.2026)"
     }
   }
 }

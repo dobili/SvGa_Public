@@ -20,6 +20,7 @@ const {
   besitzvariablen,
   melde,
   verdiene,
+  storniere,
   zufall,
   gilt,
   betrete,
@@ -33,6 +34,8 @@ const AUSGAENGE = ["abgebrochen", "niederlage", "remis", "sieg"];
 const WAHLEN_JE_DIALOG = 60;
 /** So viele Rückmeldungen nacheinander (eine neue Partie aus der Rückmeldung zählt weiter). */
 const RUECKMELDUNGEN_HINTEREINANDER = 2;
+/** Ink-Startwerte liegen unter 100 (inkjs, StoryState). */
+const INK_SAAT_GRENZE = 100;
 
 // ---------------------------------------------------------------- Dialoge
 
@@ -69,8 +72,11 @@ function geschichte(welt, st, datei) {
     st.zeitachse.push({ art: "karte", karte: k });
   });
   // Fahrpreis (regeln/muenzen.ts, bezahle): nur wenn es reicht; der Dialog fragt vorher `muenzen` ab.
+  // Fahrten merkt sich der Dialog: Lehnt die Simulation die Reise danach ab, zahlt sie nichts.
   binde("zahle", (n) => {
-    if (n >= 1 && st.muenzen >= n) verdiene(st, -n, "fahrt");
+    if (n < 1 || st.muenzen < n) return;
+    verdiene(st, -n, "fahrt");
+    st.folgen.fahrten = [...(st.folgen.fahrten || []), st.zeitachse.length - 1];
   });
   // Partieformen der Runde 6 (Gedächtnisstellung, Simultan): wie eine Aufgabenrunde nach dem Dialog.
   for (const f of ["beginneGedaechtnis", "beginneSimultan"]) {
@@ -100,6 +106,10 @@ function dialog(welt, st, knoten) {
   }
   const s = geschichte(welt, st, datei);
   s.ResetState();
+  // Ink würfelt wechselnde Sätze ({~…}, RANDOM) mit der Uhrzeit; hier aus Stand und Dialogzähler,
+  // ohne Zufall der Wahlen zu verbrauchen: Gleiche Startwerte enden gleich (26.11.2026).
+  st.inkDialoge = (st.inkDialoge || 0) + 1;
+  s.state.storySeed = (st.saat + st.inkDialoge) % INK_SAAT_GRENZE;
   st.folgen = { huelle: {}, knoten, zeilen: 0, wahlen: 0 };
   // Nur Variablen, die es in dieser Datei gibt: Ink wirft sonst bei jeder fremden Variable einen
   // Fehler, und das Fangen kostete die meiste Rechenzeit der Simulation (Profil, 14.11.2026).
@@ -309,6 +319,7 @@ function kaufeEin(st, laden) {
 function wendeFolgenAn(welt, st, f, uebergang, reiseErlaubt, tiefe = 0) {
   // Nach dem Neuladen ist der Dialog weg: kein Übergang, keine Partie, kein Laden.
   if (f.neugeladen) return;
+  if (f.abspann && !st.abspann) st.zeitachse.push({ art: "abspann" });
   if (f.abspann) st.abspann = true;
   const laden = welt.laeden.find((l) => l.kennung === f.laden);
   if (laden) st.zeitachse.push({ art: "laden", laden: laden.kennung });
@@ -317,6 +328,7 @@ function wendeFolgenAn(welt, st, f, uebergang, reiseErlaubt, tiefe = 0) {
     for (const w of laden ? laden.angebot : [])
       if (w.art === "gegenstand") st.besitz.add(w.kennung);
   let ziel = f.reise && reiseErlaubt(f.reise.karte) ? f.reise : null;
+  if (f.reise && !ziel) storniere(st, f.fahrten);
   if (uebergang && gilt(st, uebergang.wenn)) ziel = uebergang.ziel;
   const ergebnis = spieleFolge(welt, st, f);
   if (ziel) betrete(welt, st, ziel.karte);

@@ -809,5 +809,25 @@
   "spiel/serene/serene_77.png": {
     "rahmen": [31, 31, 49, 47],
     "herkunft": "von Hand"
+  },
+  "spiel/eigene/blockhuette_rot.png": {
+    "rahmen": [16, 67, 37, 94],
+    "herkunft": "von Hand"
+  },
+  "spiel/eigene/blockhuette_veranda.png": {
+    "rahmen": [22, 58, 38, 78],
+    "herkunft": "von Hand"
+  },
+  "spiel/eigene/faehrhaus_uhr.png": {
+    "rahmen": [53, 61, 66, 81],
+    "herkunft": "von Hand"
+  },
+  "spiel/eigene/stadthaus_backstein.png": {
+    "rahmen": [12, 94, 33, 128],
+    "herkunft": "von Hand"
+  },
+  "spiel/eigene/stadthaus_weiss.png": {
+    "rahmen": [65, 90, 84, 128],
+    "herkunft": "von Hand"
   }
 }

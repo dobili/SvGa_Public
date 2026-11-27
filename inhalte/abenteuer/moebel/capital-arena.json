@@ -2763,6 +2763,58 @@
       "blick": "oben",
       "lauf": "waagrecht",
       "hinweis": "dieselbe Tür, mittlerer Flügel offen (Gemini 15.11.2026)"
+    },
+    "ca21StadthausFachwerk": {
+      "quelle": "spiel/eigene/stadthaus_fachwerk.png",
+      "breite": 96,
+      "hoehe": 128,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten",
+      "gebaeude": true,
+      "tuer": [[1, 8], [2, 8]],
+      "hinweis": "Stadthaus streng von vorn: Fachwerk über Backstein, Doppeltür, Blumenkästen; noch in keiner Karte (Gemini K15, neu über die Schnittstelle 26.11.2026, 6 × 8 Kacheln)"
+    },
+    "ca21StadthausBackstein": {
+      "quelle": "spiel/eigene/stadthaus_backstein.png",
+      "breite": 96,
+      "hoehe": 128,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten",
+      "gebaeude": true,
+      "tuer": [[1, 8]],
+      "hinweis": "Stadthaus streng von vorn: dunkler Backstein, Laden mit grauer Markise, ohne Schrift (Gemini K15, neu über die Schnittstelle 26.11.2026, 6 × 8 Kacheln)"
+    },
+    "ca21StadthausWeiss": {
+      "quelle": "spiel/eigene/stadthaus_weiss.png",
+      "breite": 96,
+      "hoehe": 128,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten",
+      "gebaeude": true,
+      "tuer": [[4, 8]],
+      "hinweis": "Stadthaus streng von vorn: weißer Putz mit Holzbalken, leeres Ladenschild; noch in keiner Karte (an der Stelle von ca8Wohnhaus9B (63, 20) stand der Held neben dem niedrigeren Dach zugleich vor und hinter den Nachbarn, heldtiefe) (Gemini K15, neu über die Schnittstelle 26.11.2026, 6 × 8 Kacheln)"
+    },
+    "ca21StadthausOcker": {
+      "quelle": "spiel/eigene/stadthaus_ocker.png",
+      "breite": 96,
+      "hoehe": 128,
+      "kollision": true,
+      "art": "gebaeude",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "unten",
+      "gebaeude": true,
+      "tuer": [[2, 8]],
+      "hinweis": "Stadthaus streng von vorn: ockerfarbener Backstein, zwei gestreifte Markisen, Kamin; noch in keiner Karte (Gemini K15, neu über die Schnittstelle 26.11.2026, 6 × 8 Kacheln)"
     }
   }
 }

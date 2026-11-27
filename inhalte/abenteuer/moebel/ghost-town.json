@@ -1268,6 +1268,52 @@
       "zustand": "alt",
       "stil": "rustikal",
       "beschreibung": "Leeres, verstaubtes Holzregal mit Spinnweben; in der verlassenen Stadt steht es leer (Gemini K31, Schnittstelle 26.11.2026, statt des Käseregals gt14RegalLeer)."
+    },
+    "gt21WuestensteinRot": {
+      "quelle": "spiel/eigene/wuestenstein_rot.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stein",
+      "zustand": "alt",
+      "stil": "natur",
+      "maske_fein": ["........", "........", "........", "........", ".######.", ".######.", ".######.", "........"],
+      "hinweis": "roter Wüstenstein ohne Grasfuß für roten Sand; ersetzt die Felsgruppe mit Grasbüscheln (gt7Felsgruppe) in Ghost Town (Gemini K27, Schnittstelle 26.11.2026)"
+    },
+    "gt21WuestensteinRotGross": {
+      "quelle": "spiel/eigene/wuestenstein_rot_gross.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stein",
+      "zustand": "alt",
+      "stil": "natur",
+      "maske_fein": ["........", "........", "........", "........", ".######.", ".######.", ".######.", "........"],
+      "hinweis": "zwei rote Wüstensteine ohne Grasfuß (Gemini K27, Schnittstelle 26.11.2026)"
+    },
+    "gt21Kieshaufen": {
+      "quelle": "spiel/eigene/kieshaufen.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "stein",
+      "zustand": "alt",
+      "stil": "natur",
+      "maske_fein": ["........", "........", "........", "........", ".######.", ".######.", ".######.", "........"],
+      "hinweis": "grauer Kieshaufen ohne Grasfuß, Abraum der Mine (Gemini K27, Schnittstelle 26.11.2026)"
+    },
+    "gt21FensterVernagelt": {
+      "quelle": "spiel/eigene/fenster_vernagelt.png",
+      "breite": 32,
+      "hoehe": 32,
+      "kollision": false,
+      "art": "fenster",
+      "zustand": "verwittert",
+      "blick": "unten",
+      "stil": "rustikal",
+      "begehbar": true,
+      "begehbar_grund": "hängt an der Wand",
+      "hinweis": "blindes Fenster, mit Brettern vernagelt, für den seit 1866 verlassenen Laden in Ghost Town; ersetzt dort das helle Glasfenster (Gemini K31, Schnittstelle 26.11.2026)"
     }
   }
 }

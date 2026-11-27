@@ -6,21 +6,29 @@
 // Straßensiegen, Runden, Quests und Funden, Läden, Karten, erste Clubkämpfe). Auf ihr spielen zwei
 // Spieler: der sparsame kauft eine leichte Karte erst, wenn der Clubkampf ohne Karte zweimal
 // verloren ist. Außerdem sammelt er jede dauerhafte Karte einmal, sobald er sie mit einer
-// Rücklage von RUECKLAGE Münzen bezahlen kann (der Autor wünscht viele Karten); Verbrauchskarten
-// und Gegenstände kauft er nicht auf Vorrat. Der verschwenderische kauft in jedem Laden alles, was
-// er bezahlen kann, und spielt im Clubkampf immer seine stärkste Karte.
+// Rücklage von RUECKLAGE Münzen bezahlen kann (der Autor wünscht viele Karten), mit Monatskarte
+// auch später aus einem früheren Laden; Verbrauchskarten und Gegenstände kauft er nicht auf
+// Vorrat, außer denen, ohne die der Weg der Zeitachse nicht ginge (WEG_GEGENSTAENDE; Einkauf in
+// gesamtsimulation-einkauf.cjs). Der verschwenderische kauft in jedem Laden alles, was er bezahlen
+// kann, und spielt im Clubkampf immer seine stärkste Karte.
 //
 // Annahmen (Auftrag mittel-1, 09.11.2026): Sieg gegen den Clubchef ohne Karte 40 %, mit leichter
 // Karte 50 %, mit mittlerer 60 %, mit starker 75 %. Nadel nach R17: ohne Karte Gold, mit leichten
 // Karten Silber, mit mittlerer oder starker Bronze. Die erste Nadel eines Clubs bringt 50 Münzen.
 // Jeder Clubkampf wird WIEDERHOLUNGEN-mal ausgewürfelt (Zufall mit festem Startwert).
 "use strict";
+const {
+  nimmKarte,
+  kaufe,
+  sammle,
+  holeKartenNach,
+  billigsteLeichte,
+} = require("./gesamtsimulation-einkauf.cjs");
 
 const WIEDERHOLUNGEN = 200;
 const SIEG = { keine: 0.4, leicht: 0.5, mittel: 0.6, stark: 0.75 };
 const RANG = { leicht: 1, mittel: 2, stark: 3 };
 const VERSUCHE_OHNE_KARTE = 2;
-const RUECKLAGE = 50;
 const REST_HOECHSTENS = 400;
 const HOECHSTENS_VERSUCHE = 30;
 const AKT = {
@@ -71,45 +79,6 @@ function neuerSpieler(art) {
     fahrtenOhneGeld: 0,
     hier: null,
   };
-}
-
-function nimmKarte(sp, kennung) {
-  sp.karten[kennung] = (sp.karten[kennung] || 0) + 1;
-}
-
-/** Kauft eine Ware, wenn bezahlbar und (dauerhafte Karte, Gegenstand) noch nicht vorhanden. */
-function kaufe(welt, sp, ware) {
-  const karte = welt.karten[ware.kennung];
-  const schonDa =
-    (ware.art === "gegenstand" || karte?.art === "dauerhaft") &&
-    sp.karten[ware.kennung];
-  if (schonDa || sp.muenzen < ware.preis) return false;
-  sp.muenzen -= ware.preis;
-  nimmKarte(sp, ware.kennung);
-  sp.kaeufe.push({ kennung: ware.kennung, ort: sp.hier });
-  return true;
-}
-
-/** Sparsam: dauerhafte Karten einmal, nur wenn danach noch die Rücklage bleibt. */
-function sammle(welt, sp, ware) {
-  if (
-    welt.karten[ware.kennung]?.art !== "dauerhaft" ||
-    sp.muenzen - ware.preis < RUECKLAGE
-  )
-    return;
-  kaufe(welt, sp, ware);
-}
-
-/** Billigste leichte Karte in den bisher besuchten Läden (die der sparsame Spieler kaufen würde). */
-function billigsteLeichte(welt, sp) {
-  const waren = [...sp.laedenBesucht].flatMap(
-    (l) => welt.laeden.find((x) => x.kennung === l).angebot,
-  );
-  return waren
-    .filter(
-      (w) => w.art === "karte" && welt.karten[w.kennung]?.stufe === "leicht",
-    )
-    .sort((a, b) => a.preis - b.preis)[0];
 }
 
 /** Die Karte, die der Spieler in diesem Versuch spielt (verbraucht sie, wenn nötig), oder null. */
@@ -180,13 +149,15 @@ function spiele(welt, zeitachse, art, saat, ersteNadel) {
         bezahlbar: bezahlbar(welt, sp, e.ort),
       };
       if (!bekannt) sp.orte.push(aktuell);
-    } else if (e.art === "muenzen") zahleOderVerdiene(sp, e);
+    } else if (e.art === "abspann") sp.amAbspann = sp.muenzen;
+    else if (e.art === "muenzen") zahleOderVerdiene(sp, e);
     else if (e.art === "karte") nimmKarte(sp, e.karte);
     else if (e.art === "laden") {
       sp.laedenBesucht.add(e.laden);
       const angebot = welt.laeden.find((l) => l.kennung === e.laden).angebot;
       for (const w of angebot)
         art === "verschwenderisch" ? kaufe(welt, sp, w) : sammle(welt, sp, w);
+      if (art === "sparsam") holeKartenNach(welt, sp);
     } else if (e.art === "clubkampf") {
       const erlaubt = welt.kartenErlaubt[e.begegnung] !== false;
       const c = clubkampf(welt, sp, e.begegnung, zufall, erlaubt);
@@ -351,6 +322,9 @@ function berichtWirtschaft(welt, zeitachsen, ersteNadel) {
       const rest = erste.map((sp) => sp.muenzen);
       ziele.push(
         `- Münzen des sparsamen Spielers am Ende: ${spanne(rest)} (Ziel etwa 100 bis 300)`,
+      );
+      ziele.push(
+        `- davon beim Abspann: ${spanne(erste.map((sp) => sp.amAbspann ?? sp.muenzen))}`,
       );
       ziele.push(
         `- Rest am Ende höchstens ${REST_HOECHSTENS}: ${Math.max(...rest) <= REST_HOECHSTENS ? "ja" : "NEIN"}`,

@@ -5837,6 +5837,39 @@
       "stil": "klassisch",
       "maske_fein": ["........", "........", "########", "########"],
       "hinweis": "dasselbe Tor geschlossen (Gemini B23); noch in keiner Karte"
+    },
+    "mf21Wartehaeuschen": {
+      "quelle": "spiel/eigene/wartehaeuschen_glas.png",
+      "breite": 80,
+      "hoehe": 80,
+      "kollision": true,
+      "art": "strassenmoebel",
+      "zustand": "neu",
+      "stil": "modern",
+      "blick": "oben",
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "##################..",
+        "##################..",
+        "##################..",
+        "##################..",
+        "##################..",
+        "##################..",
+        "....................",
+        "...................."
+      ],
+      "hinweis": "Wartehäuschen von hinten: Glasrückwand mit Rahmen, Bank innen durch das Glas, Blechdach, auf seiner Betonplatte; offen nach Norden zur Straße; ersetzt mf6Haltestelle im Park; in Cedar Creek stünde der Held an Start und Haltestelle hinter dem höheren Dach (Gemini K21, zweite Fassung, Schnittstelle 26.11.2026)"
     }
   }
 }

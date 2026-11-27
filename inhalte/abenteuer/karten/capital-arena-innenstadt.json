@@ -15934,12 +15934,12 @@
     },
     {
      "id": 60,
-     "name": "ca8Wohnhaus9",
+     "name": "ca21StadthausBackstein",
      "type": "moebel",
      "x": 672,
-     "y": 320,
+     "y": 384,
      "width": 96,
-     "height": 192,
+     "height": 128,
      "rotation": 0,
      "visible": true,
      "properties": [

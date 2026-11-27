@@ -8995,12 +8995,12 @@
     },
     {
      "id": 41,
-     "name": "ld14BlockhuetteGruen",
+     "name": "pw21BlockhuetteVeranda",
      "type": "moebel",
      "x": 624,
-     "y": 51,
+     "y": 35,
      "width": 80,
-     "height": 80,
+     "height": 96,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -9018,12 +9018,12 @@
     },
     {
      "id": 42,
-     "name": "ld14BlockhuetteKamin",
+     "name": "pw21BlockhuetteRot",
      "type": "moebel",
      "x": 720,
-     "y": 56,
+     "y": 40,
      "width": 80,
-     "height": 80,
+     "height": 96,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -9498,12 +9498,12 @@
     },
     {
      "id": 62,
-     "name": "ld14BlockhuetteKamin",
+     "name": "pw21BlockhuetteRot",
      "type": "moebel",
      "x": 48,
-     "y": 296,
+     "y": 280,
      "width": 80,
-     "height": 80,
+     "height": 96,
      "rotation": 0,
      "visible": true,
      "properties": [
@@ -9544,12 +9544,12 @@
     },
     {
      "id": 64,
-     "name": "ld14BlockhuetteGruen",
+     "name": "pw21BlockhuetteVeranda",
      "type": "moebel",
      "x": 32,
-     "y": 403,
+     "y": 387,
      "width": 80,
-     "height": 80,
+     "height": 96,
      "rotation": 0,
      "visible": true,
      "properties": [

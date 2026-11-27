@@ -1646,6 +1646,10 @@
     {
       "moebel": "wds6Schranke",
       "feld": [29, 74]
+    },
+    {
+      "moebel": "wds21Viehgitter",
+      "feld": [34, 120]
     }
   ],
   "ausloeser": [

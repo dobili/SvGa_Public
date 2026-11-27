@@ -11,7 +11,8 @@
  *   PROBE_STAND=/tmp/akt4.json PROBE_KARTE=portDelacroix.musikhaus \
  *   PROBE_VARIABLEN='{"musikhausOffen":true}' CHROMIUM_PFAD=… \
  *   npx playwright test --config playwright.durchlauf.config.ts ansprechprobe
- * Nur einzelne Dinge: PROBE_DING=ward,kit (etwa mit PROBE_STUNDE=18 in Summit City). Führt ein
+ * Nur einzelne Dinge: PROBE_DING=ward,kit (etwa mit PROBE_STUNDE=18 in Summit City), auch
+ * Übergänge ohne Dialog (PROBE_DING=dinerTuer: geht hin und drückt in den Durchgang). Führt ein
  * Ding von der Karte fort (Gondel, Tür), bleiben die übrigen ungeprüft und werden so gemeldet.
  * Ergebnis: eine Zeile je Ding im Testbericht; der Test scheitert, wenn ein Ding ohne Knopf bleibt.
  * Abhängigkeiten: probe.ts, welt.ts, laufen.ts, eingabe.ts, lage.ts.
@@ -49,8 +50,11 @@ test("Ansprechprobe einer Karte", async () => {
   console.log(`Start auf ${start.kachel}, Karte aufgebaut um ${stunde ?? "?"} Uhr`);
   for (const ding of reihenfolge(wissen.dinge)) {
     // Auch Gegenstände mit Dialog (Pizzakarton im Wohnzimmer, Erstspieler-Durchgang 20.11.2026).
-    if (!ding.figur && !ding.regel?.dialog) continue;
-    if (NUR.size > 0 && !NUR.has(ding.name)) continue;
+    // Ausdrücklich genannte Dinge immer, auch Übergänge ohne Dialog: So prüft die Probe eine Tür,
+    // die der Durchlauf als „reagiert nicht“ meldete (Diner-Tür Maple Falls, 27.11.2026).
+    const genannt = NUR.has(ding.name);
+    if (!ding.figur && !ding.regel?.dialog && !genannt) continue;
+    if (NUR.size > 0 && !genannt) continue;
     // Ein Übergang mit Dialog hat keinen Aktionsknopf: Er fragt, wenn man in den Durchgang geht
     // (Glasbrücke „weiterSilicon“). Eine Reise zählt wie ein geöffnetes Fenster.
     const uebergang = ding.regel?.art === "uebergang";
@@ -72,9 +76,12 @@ test("Ansprechprobe einer Karte", async () => {
       ohne.push(`${ding.name}: ${ergebnis}`);
       await seite.screenshot({ path: join(ordner, `${ding.name}.png`) });
     }
-    console.log(`${KARTE}.${ding.name} ${JSON.stringify(ding.felder)}: ${ergebnis} ${text}`);
+    // Wohin der Gang führte: Bei einem Übergang belegt erst die neue Karte, dass er auslöste.
+    const nachher = (await liesStand(seite)).position;
+    const ziel = nachher.karte === KARTE ? "" : ` → ${nachher.karte} ${nachher.x},${nachher.y}`;
+    console.log(`${KARTE}.${ding.name} ${JSON.stringify(ding.felder)}: ${ergebnis}${ziel} ${text}`);
     // Nach einer Reise (Dialog am Übergang) zurück auf die Karte der Probe.
-    if ((await liesStand(seite)).position.karte !== KARTE) await zurueckAufKarte(seite, stand);
+    if (nachher.karte !== KARTE) await zurueckAufKarte(seite, stand);
   }
   console.log(`Bilder und Protokoll: ${ordner}`);
   await browser.close();

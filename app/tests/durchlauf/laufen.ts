@@ -221,14 +221,19 @@ export async function geheZu(
   ziele: readonly Kachelort[],
 ): Promise<Gang> {
   const gesperrt = new Set<string>();
+  let szene: string | undefined;
   for (let umweg = 0; umweg <= MAX_UMWEGE; umweg++) {
     const lage = await liesLage(lauf.seite);
     const hier = feldAus(lage.kachel);
     if (!hier || !lage.kreuz || lage.dialog) return "fenster";
+    // Neue Szene (Tür im Vorbeigehen ausgelöst): Die Kachel gehört schon zur neuen Karte, das
+    // Kartenwissen nicht mehr (Diner-Tür Maple Falls: Held auf 5,11 im Diner, 27.11.2026).
+    szene ??= lage.szene;
+    if (lage.szene !== szene) return "fenster";
     const auf = (f: Kachelort) => ziele.some((z) => z.x === f.x && z.y === f.y);
     if (auf(hier)) {
       // Erst ausrollen lassen; über das Ziel hinausgerollt: von dort neu planen.
-      const steht = await ausgerollt(lauf.seite);
+      const steht = await ausgerollt(lauf.seite, szene);
       if (steht === null) return "fenster";
       const feld = feldAus(steht);
       if (feld && auf(feld)) return "da";
@@ -322,15 +327,18 @@ export async function geheAn(
   return "ohneAktion";
 }
 
+/** Kachel und Szene vor dem Drücken in den Durchgang, Frist in ms. */
+type Wechselfrage = { kachel: string; szene: string; fristMs: number };
+
 /** Wartet im Browser, bis ein Fenster aufgeht oder die Welt neu lädt; liest nur die Anzeige. */
-function warteAufWechselImBrowser(a: { kachel: string; fristMs: number }): Promise<string> {
+function warteAufWechselImBrowser(a: Wechselfrage): Promise<string> {
   return new Promise((fertig) => {
     const beginn = performance.now();
     const bild = document.querySelector(".abenteuer-welt canvas");
     // Seit dem 26.11.2026 bleibt die Leinwand über Kartenwechsel dieselbe (oberweltspiel.ts); jede
-    // neue Szene zählt data-szene hoch. Ohne diese Zahl galt ein Wechsel auf dasselbe Feld der
-    // neuen Karte (Treppe 2,4 → 2,4) als „reagiert nicht“ (Durchlauf 27.11.2026).
-    const szene = bild?.getAttribute("data-szene") ?? null;
+    // neue Szene zählt data-szene hoch (Lage.szene vor dem Drücken: ein Wechsel kurz davor zählt
+    // mit). Ohne sie galt Treppe 2,4 → 2,4 als „reagiert nicht“ (Durchlauf 27.11.2026).
+    const szene = a.szene;
     const takt = () => {
       const kachel = document.querySelector("[data-testid='abenteuer-kachel']")?.textContent ?? "";
       const leinwand = document.querySelector(".abenteuer-welt canvas");
@@ -338,7 +346,7 @@ function warteAufWechselImBrowser(a: { kachel: string; fristMs: number }): Promi
       if (document.querySelector("[data-testid='abenteuer-dialog']")) grund = "fenster";
       // Die neue Karte lädt: Das Steuerkreuz verschwindet, dann wechselt das Bild.
       else if (leinwand !== bild) grund = "karte";
-      else if (leinwand?.getAttribute("data-szene") !== szene) grund = "karte";
+      else if ((leinwand?.getAttribute("data-szene") ?? "") !== szene) grund = "karte";
       else if (document.querySelector(".abenteuer-steuerkreuz") === null) grund = "karte";
       else if (kachel !== a.kachel) grund = "versetzt";
       else if (performance.now() - beginn > a.fristMs) grund = "frist";
@@ -362,10 +370,13 @@ export async function geheDurch(
   name: string,
 ): Promise<Gang | "karte" | "versetzt" | "frist"> {
   const felder = wissen.ausloeser.filter((a) => a.name === name && a.typ === "ausloeser");
-  const vorher = (await liesLage(lauf.seite)).kachel;
+  const anfang = await liesLage(lauf.seite);
+  const vorher = anfang.kachel;
   const gang = await geheZu(lauf, wissen, felder);
   if (gang !== "da") return gang;
   const lage = await liesLage(lauf.seite);
+  // Gleich nach dem Ankommen ausgelöst: Die Kachel gehört schon zur neuen Karte.
+  if (lage.szene !== anfang.szene) return "karte";
   const feld = felder.find((f) => `${f.x},${f.y}` === lage.kachel);
   // Neben der Tür (doch noch weitergerollt) ist kein „reagiert nicht“: später noch einmal.
   if (!feld) return "aufgehalten";
@@ -376,7 +387,7 @@ export async function geheDurch(
     const beginn = Date.now();
     if (!(await halteRichtung(lauf, richtung))) return "fenster";
     ergebnis = await lauf.seite
-      .evaluate(warteAufWechselImBrowser, { kachel: lage.kachel, fristMs: DURCHGANG_MS })
+      .evaluate(warteAufWechselImBrowser, { ...lage, fristMs: DURCHGANG_MS })
       .catch(() => "karte");
     await lasseRichtung(lauf);
     lauf.messung.jetzt.laufMs += Date.now() - beginn;

@@ -47,6 +47,12 @@ export interface Lage {
   readonly aktion: string | null;
   /** Das Steuerkreuz ist zu sehen. */
   readonly kreuz: boolean;
+  /**
+   * Nummer der Szene (data-szene der Leinwand, zählt bei jedem Kartenwechsel hoch), sonst leer.
+   * Warum: Die Leinwand bleibt über Kartenwechsel dieselbe; nur diese Zahl zeigt, dass die Kachel
+   * schon zur neuen Karte gehört (Diner-Tür Maple Falls: Held auf 5,11 im Diner, 27.11.2026).
+   */
+  readonly szene: string;
   readonly fassung: string | null;
   readonly breite: number;
   readonly hoehe: number;
@@ -126,6 +132,7 @@ function liesLageImBrowser(): Lage {
     kachel: document.querySelector("[data-testid='abenteuer-kachel']")?.textContent ?? "",
     aktion: aktion && !aktion.hidden && sichtbar(aktion) ? (aktion.textContent ?? "") : null,
     kreuz: kreuz !== null && sichtbar(kreuz),
+    szene: document.querySelector(".abenteuer-welt canvas")?.getAttribute("data-szene") ?? "",
     fassung: welt?.dataset.fassung ?? null,
     breite: innerWidth,
     hoehe: innerHeight,
@@ -154,6 +161,7 @@ const LEERE_LAGE: Lage = {
   kachel: "",
   aktion: null,
   kreuz: false,
+  szene: "",
   fassung: null,
   breite: 0,
   hoehe: 0,
@@ -303,14 +311,16 @@ function kachelUndSzene(): string {
 
 /**
  * Die Kachel, auf der der Held nach dem Loslassen zum Stehen kommt, oder null, wenn dabei die Karte
- * wechselte oder das Steuerkreuz verschwand (Ziel vor einem Durchgang, Fenster). Warum: Unter Last
+ * wechselte oder das Steuerkreuz verschwand (Ziel vor einem Durchgang, Fenster). `szeneVorher`:
+ * die Szene, in der der Gang begann (Lage.szene). Warum: Unter Last
  * rollt er nach dem Ziel noch eine Kachel weiter; las der Gang ihn im Vorbeirollen auf der Tür,
  * galt er als „da“, stand dann daneben und drückte gegen die Wand (Garagentür Desert Springs, Held
  * auf 21,29 statt 22,29, Durchlauf 27.11.2026: „reagiert nicht“).
  */
-export async function ausgerollt(seite: Page): Promise<string | null> {
+export async function ausgerollt(seite: Page, szeneVorher?: string): Promise<string | null> {
   const anfang = await seite.evaluate(kachelUndSzene);
-  const szene = anfang.split("|")[1];
+  // Mit `szeneVorher` zählt auch ein Wechsel vor der ersten Lesung (Tür schon ausgelöst).
+  const szene = szeneVorher ?? anfang.split("|")[1];
   let letzte = anfang;
   let gleich = 1;
   for (let ms = 0; ms < AUSROLL_MS && gleich < AUSROLL_GLEICH; ms += AUSROLL_TAKT_MS) {

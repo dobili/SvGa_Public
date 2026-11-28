@@ -1,6 +1,6 @@
 """Plausibilität der erkannten Bauteile: Verdachtsmuster melden und bekannte Irrtümer nachbessern.
 
-Warum: Die Erkennung (bauteilerkennung.py, Gemini) irrt bei Treppenabsätzen am ehesten: An der
+Warum: Eine Bauteilliste irrt bei Treppenabsätzen am ehesten: An der
 Schule las sie die Vorderkante des Absatzes als dritte Treppe (Stapel vom 28.11.2026), genau den
 Fehler, den der Autor gemeldet hatte. ``verdacht`` zeigt solche Muster auf dem Bogen
 (bauteil_bogen.py), ``nachbessern`` wandelt das sichere Muster beim Speichern der Vorschläge um.

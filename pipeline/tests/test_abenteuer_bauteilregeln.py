@@ -1,18 +1,15 @@
-"""Tests für pipeline/abenteuer/bauteilregeln.py und bauteilerkennung.py (Regel 10.95, Bauteile):
+"""Tests für pipeline/abenteuer/bauteilregeln.py (Regel 10.95, Bauteile):
 Körper sperrt seinen Grundriss, Dach verdeckt nur, Treppen begehbar mit Wangen, Absatz mit Mauer vorn,
-Tür als Zugang, Bodenebene für Stege, Umrechnung der Gemini-Rahmen, Auswahl zusammengesetzter Bilder,
+Tür als Zugang, Bodenebene für Stege,
 von Hand geht vor Gemini. Beispiel ist die Schule (mf4Schule), an der Treppen und Mauer vertauscht waren.
 """
 
-import json
 
-from pipeline.abenteuer.bauteilerkennung import bauteile_aus_antwort, umrechnen, zusammengesetzt
 from pipeline.abenteuer.bauteilpruefung import nachbessern, verdacht
 from pipeline.abenteuer.bauteilregeln import (
     ableiten,
     katalogfelder,
     koerper,
-    lade_bauteile,
     liegt_an,
     pixelklassen,
     richtung,
@@ -118,39 +115,6 @@ def test_pixelklassen_und_katalogfelder():
 
 def test_zellen_nach_mitte():
     assert zellen([0, 0, 8, 4]) == {(0, 0), (1, 0)}
-
-
-def test_umrechnen_der_gemini_rahmen():
-    assert umrechnen([500, 0, 1000, 250], 384, 368) == [0, 184, 96, 368]
-    assert umrechnen([10, 10, 10, 20], 100, 100) is None
-
-
-def test_bauteile_aus_antwort_liest_json_und_ueberspringt_unbekannte_typen():
-    text = json.dumps({"bauteile": [
-        {"typ": "treppe", "box_2d": [0, 0, 500, 500], "richtung": "links"},
-        {"typ": "kamin", "box_2d": [0, 0, 500, 500]},
-    ]})  # fmt: skip
-    antwort = {"candidates": [{"content": {"parts": [{"text": text}]}}]}
-    assert bauteile_aus_antwort(antwort, {"breite": 64, "hoehe": 32}) == [
-        {"typ": "treppe", "rahmen": [0, 0, 32, 16], "richtung": "links"}
-    ]
-
-
-def test_zusammengesetzt():
-    assert zusammengesetzt("mf4Schule", {"art": "gebaeude", "breite": 384, "hoehe": 368})
-    assert zusammengesetzt("n6Marktstand", {"art": "stand", "breite": 80, "hoehe": 80})
-    assert not zusammengesetzt("mf4Laterne", {"art": "lampe", "breite": 16, "hoehe": 64})
-    assert not zusammengesetzt("hausTuer", {"art": "tuer", "breite": 48, "hoehe": 48})
-
-
-def test_von_hand_geht_vor_gemini(tmp_path):
-    hand, gemini = tmp_path / "hand.json", tmp_path / "gemini.json"
-    hand.write_text(json.dumps({"a": {"bauteile": [], "geprueft": "von Hand"}}), "utf-8")
-    gemini.write_text(
-        json.dumps({"a": {"bauteile": [1], "geprueft": "gemini"}, "b": {"bauteile": []}}), "utf-8"
-    )
-    assert lade_bauteile(hand, gemini)["a"]["geprueft"] == "von Hand"
-    assert "b" in lade_bauteile(hand, gemini)
 
 
 def test_flachdach_und_hohe_fassade_sind_koerper():

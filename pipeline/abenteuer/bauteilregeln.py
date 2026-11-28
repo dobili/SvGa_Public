@@ -7,8 +7,8 @@ und Mauer vertauscht: Die gestreiften Seiten des Treppenabsatzes sind Treppen, d
 eine Mauer.
 
 Eingabe je Katalogeintrag: Bauteile mit Typ und Rahmen in Bildpixeln [x0, y0, x1, y1] (Ende
-ausschließlich), von Hand in ``katalog_korrekturen/bauteile.json`` oder als Vorschlag von Gemini in
-``bauteile_gemini.json`` (bauteilerkennung.py); von Hand geht immer vor. Regeln (Blick von oben-vorn):
+ausschließlich), in ``katalog_korrekturen/bauteile.json``, von Claude am vergrößerten Bild bestimmt
+(Regel 7a: Gemini nur für Bilderzeugung). Regeln (Blick von oben-vorn):
 
 - **Körper:** Wand oder Sockel mit einem Dach darüber (oder auf gleicher Höhe, Flachdach) ist ein
   Gebäudekörper, ebenso eine Wand ab zwei Kacheln Höhe ohne Dach (Fassade). Er sperrt seinen
@@ -45,7 +45,6 @@ Zelle = tuple[int, int]
 Rahmen = list[int]
 KORREKTUREN = ORDNER.parent / "katalog_korrekturen"
 HANDDATEI = KORREKTUREN / "bauteile.json"
-GEMINIDATEI = KORREKTUREN / "bauteile_gemini.json"
 TYPEN = {
     "dach", "wand", "sockel", "fenster", "tuer", "treppe", "absatz", "veranda", "gelaender", "saeule",
     "markise", "schild", "schornstein", "zaun", "mauer", "pflanze", "steg", "bruecke", "sonstiges",
@@ -88,12 +87,12 @@ def lade_json(pfad: Path) -> dict:
     return json.loads(pfad.read_text(encoding="utf-8")) if pfad.is_file() else {}
 
 
-def lade_bauteile(hand: Path = HANDDATEI, gemini: Path = GEMINIDATEI) -> dict[str, dict]:
-    """Alle Bauteillisten; ein Eintrag von Hand ersetzt den Vorschlag von Gemini ganz.
+def lade_bauteile(hand: Path = HANDDATEI) -> dict[str, dict]:
+    """Alle Bauteillisten aus bauteile.json, von Claude am Bild bestimmt (Regel 7a: kein Gemini).
 
-    Beispiel: mf4Schule in beiden Dateien → die Fassung aus bauteile.json.
+    Beispiel: mf4Schule → Absatz mit zwei Seitentreppen und Mauer an der Vorderkante.
     """
-    return {**lade_json(gemini), **lade_json(hand)}
+    return lade_json(hand)
 
 
 def zellen(rahmen: Rahmen) -> set[Zelle]:

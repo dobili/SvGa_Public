@@ -1,7 +1,7 @@
 """Kontaktbögen der Bauteile: je Eintrag das Bild mit beschrifteten Bauteilrahmen und die abgeleitete
 Kollision daneben (Regel 10.95, bauteilregeln.py).
 
-Warum: Ob Gemini (oder die Hand) Treppe, Mauer und Veranda richtig erkannt hat, sieht man nur am Bild
+Warum: Ob Treppe, Mauer und Veranda richtig bestimmt sind, sieht man nur am Bild
 (Anlass: Treppen und Mauer der Schule vertauscht, 28.11.2026). Links das Bild mit farbigen Rahmen je
 Typ und Namen, rechts die Ableitung: rot Sperre, grün begehbar oder Held davor, gelb verdeckt (Held
 dahinter), blaue Linie die Sortierlinie, weiß gestrichelt die Zugänge der Türen. Ablage nur lokal

@@ -109,8 +109,11 @@ Du kommst auch rein. Wie schreibt man dich? #sprecher:juno #stimmung:laechelt
 // `wenn` nach dem Dialog mit den neuen Variablen (oberwelt/useDialogende.ts).
 === schultuer ===
 {junoGetroffen or clubBeigetreten: -> END}
-Du hast die Hand schon an der Schultür, da ruft jemand von der Bushaltestelle nebenan. Du drehst dich um. #sprecher:erzaehler
+// Wunsch des Autors (28.11.2026): Juno kommt herüber, die Kamera zeigt zuerst, wer ruft.
+Du hast die Hand schon an der Schultür, da ruft jemand von der Bushaltestelle nebenan. #sprecher:erzaehler #schwenk:juno
+Du drehst dich um. #sprecher:erzaehler #schwenk:held #gehe:juno>held
 ~ junoAnDerSchultuer = true
+~ angesprochen = true
 -> juno_trifft
 
 // Aufbruch nach Ironwood (vorher im Wohnzimmer, Anwesenheit 25.11.2026): Juno wartet mit dem Rad

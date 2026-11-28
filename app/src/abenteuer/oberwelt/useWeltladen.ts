@@ -8,7 +8,8 @@
  * dem gemeinsamen Kern (kern.ts); was beim Betreten noch geschehen soll (Ergebnisse melden, die auf
  * die Welt gewartet haben), gibt die Oberwelt als `beiWelt` mit.
  * Abhängigkeiten: oberwelt/weltdaten.ts, oberwelt/oberweltspiel.ts, oberwelt/toenung.ts,
- * oberwelt/einschluss.ts (Schutz vor dem Einschluss beim Laden).
+ * oberwelt/einschluss.ts (Schutz vor dem Einschluss beim Laden), oberwelt/sicherungswunsch.ts
+ * (Stand von jetzt für „Speichern“ im Spielmenü).
  */
 import { liesPaketJson } from "../paket/paketlader";
 import { geraeuschquellenAus } from "../ton/geraeuschraum";
@@ -33,6 +34,7 @@ import { figurennamen, KACHELSATZ, ladeWelt, type Weltdaten } from "./weltdaten"
 import { auftrittsplan, type Aufstellung } from "../regeln/auftritt";
 import { gemerkteAufstellung, merkeAufstellung } from "./auftrittsgedaechtnis";
 import { INNEN_FIGURFAKTOR } from "./weltmassstab";
+import { meldeStandquelle } from "./sicherungswunsch";
 
 /** Gegenstand für den Lichtkreis auf dunklen Karten (Sperren S4, S9, S11, S14). */
 const LATERNE = "laterne";
@@ -187,14 +189,28 @@ function starteSpiel(
  * Spielzeit des Helden aus dem alten, wenn beide auf derselben Karte stehen.
  */
 function sichereSitzung(k: Oberweltkern, karte: string, begonnen: number, platz: string): void {
+  const stand = standMitSitzung(k, karte, begonnen, platz);
+  if (stand) void k.dienste.schreibeStand(stand);
+}
+
+/**
+ * Der Stand mit Position, Spielzeit und Zeitpunkt von jetzt, ohne ihn zu schreiben (auch für eine
+ * Sicherung des Lesers, sicherungswunsch.ts); null ohne Szene oder bei anderem Platz.
+ */
+function standMitSitzung(
+  k: Oberweltkern,
+  karte: string,
+  begonnen: number,
+  platz: string,
+): Abenteuerstand | null {
   const szene = szeneAus(k.spiel);
   const aktuell = k.dienste.liesStand();
-  if (!szene || !aktuell || aktuell.position.karte !== karte) return;
-  if (aktuell.begonnen !== platz) return;
+  if (!szene || !aktuell || aktuell.position.karte !== karte) return null;
+  if (aktuell.begonnen !== platz) return null;
   const position = { ...szene.position(), karte };
   const sekunden = Math.round((Date.now() - begonnen) / MS_JE_SEKUNDE);
   const ort = karte.split(".")[0] ?? "";
-  void k.dienste.schreibeStand({
+  return {
     ...aktuell,
     position,
     spielzeitSekunden: aktuell.spielzeitSekunden + sekunden,
@@ -204,7 +220,7 @@ function sichereSitzung(k: Oberweltkern, karte: string, begonnen: number, platz:
       ...aktuell.spielzeitJeOrt,
       [ort]: (aktuell.spielzeitJeOrt[ort] ?? 0) + sekunden,
     },
-  });
+  };
 }
 
 /**
@@ -232,6 +248,13 @@ export function useWeltladen(k: Oberweltkern, a: Weltanschluss): string | null {
       begonnen = Date.now();
     };
     document.addEventListener("visibilitychange", beiSichtwechsel);
+    // Speichern im Spielmenü: der Stand von jetzt; er wird gleich geschrieben, die Spielzeit zählt
+    // danach von vorn (sicherungswunsch.ts).
+    meldeStandquelle(() => {
+      const jetzt = standMitSitzung(k, karte, begonnen, stand.begonnen);
+      if (jetzt) begonnen = Date.now();
+      return jetzt;
+    });
     // Zustände der Karte dürfen auch nach Besitz fragen (hatLaterne, Runde 8).
     const variablen = { ...stand.dialogvariablen, ...variablenAusBesitz(stand) };
     // Möbelliste für den Schutz vor dem Einschluss; fehlt sie, zählen nur die Wände.
@@ -255,6 +278,7 @@ export function useWeltladen(k: Oberweltkern, a: Weltanschluss): string | null {
     return () => {
       aktiv = false;
       document.removeEventListener("visibilitychange", beiSichtwechsel);
+      meldeStandquelle(null);
       sichereSitzung(k, karte, begonnen, stand.begonnen);
       merkeAbbau(k, karte, stand.begonnen);
       abmelden?.();

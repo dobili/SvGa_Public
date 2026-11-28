@@ -57,6 +57,20 @@ export async function ohneHauptmenue(seite: Page): Promise<void> {
   await seite.evaluate(setze, TESTSCHALTER_OHNE_HAUPTMENUE);
 }
 
+/** Wie TESTSCHALTER_RIVALIN in anbindung/rivalzufall.ts. */
+const TESTSCHALTER_RIVALIN = "__abenteuerRivalin";
+
+/**
+ * Legt den Rivalen eines neuen Spiels fest, statt ihn auszulosen (seit 28.11.2026): true heißt
+ * Rivalin Victoria, false Rivale Victor; für alle Seiten des Tests, auch nach Neuladen. Die Tests
+ * sollen nicht vom Zufall abhängen.
+ */
+export async function mitRivale(seite: Page, rivalin: boolean): Promise<void> {
+  const setze = ([name, wert]: readonly [string, boolean]) => Reflect.set(window, name, wert);
+  await seite.context().addInitScript(setze, [TESTSCHALTER_RIVALIN, rivalin] as const);
+  await seite.evaluate(setze, [TESTSCHALTER_RIVALIN, rivalin] as const);
+}
+
 /** Wie MERKER_AUTORGERAET in autor/autorgeraet.ts, mit der Vorsilbe aus app/merker.ts. */
 const MERKER_AUTORGERAET = "svga.autorgeraet";
 
@@ -78,7 +92,8 @@ export async function alsAutorgeraet(seite: Page): Promise<void> {
  * Knopf „abenteuer-laden“). Das Gerät gilt als Gerät des Autors (alsAutorgeraet, für die
  * Testleiste). Ohne `mitMaia` lädt Maia nicht im Hintergrund (ohneMaiaImHintergrund);
  * mit `mitMaia` wie im echten Spiel, und der Test wartet auch darauf. Ohne `mitHauptmenue` führt
- * ein vorhandener Spielstand gleich in die Welt (ohneHauptmenue).
+ * ein vorhandener Spielstand gleich in die Welt (ohneHauptmenue). Der Rivale eines neuen Spiels ist
+ * Victor (mitRivale), damit kein Test vom Zufall abhängt.
  */
 export async function ladeAbenteuerpaket(
   seite: Page,
@@ -92,6 +107,8 @@ export async function ladeAbenteuerpaket(
   if (!mitMaia) await ohneMaiaImHintergrund(seite, { mitHauptmenue });
   else if (!mitHauptmenue) await ohneHauptmenue(seite);
   await alsAutorgeraet(seite);
+  // Ein neues Spiel hat in den Tests Rivale Victor, außer ein Test wählt mitRivale(seite, true).
+  await mitRivale(seite, false);
   await (knopf ?? seite.getByTestId("abenteuer-laden")).click();
   const balken = seite.locator(".abenteuer-fortschritt");
   // Aus dem Cache kann das Laden schon vorbei sein, bevor der Balken zu sehen ist.

@@ -7,13 +7,20 @@
  * des ersten; Neuladen bleibt in der Welt (Sitzung des Tabs); ein neuer Tab beginnt im Hauptmenü;
  * Löschen mit Rückfrage; Zurück-Taste (Spieler-Durchlauf 27.11.2026): in der Rückfrage „Nein“,
  * in der Ladeliste ins Hauptmenü, erst im Hauptmenü aus dem Abenteuer. Titelmusik (28.11.2026):
- * unter Startbild, Wahl und Hauptmenü das Stück „titel“, in der Welt die Musik der Karte.
+ * unter Startbild, Wahl und Hauptmenü das Stück „titel“, in der Welt die Musik der Karte. Dazu
+ * (28.11.2026) Speichern und Laden einer Sicherung über das Spielmenü, Löschen mit Rückfrage,
+ * gesperrtes Speichern im Gespräch, kein Namensfeld mehr im Spielmenü.
  * Mit HAUPTMENUE_FOTOS=ORDNER legt der Test Bildschirmfotos für den Autor ab (nur lokal, mit Paket).
  */
 import { expect, test, type Page } from "@playwright/test";
 import { mkdirSync } from "node:fs";
 import { join } from "node:path";
-import { liesSpeicherImBrowser } from "./abenteuer-affe";
+import {
+  EINLEITUNG_GESEHEN,
+  GRUNDSTAND,
+  liesSpeicherImBrowser,
+  starteMitStand,
+} from "./abenteuer-affe";
 import { ladeAbenteuerpaket } from "./abenteuer-paket";
 
 const FOTOS = process.env.HAUPTMENUE_FOTOS;
@@ -32,6 +39,37 @@ async function foto(seite: Page, name: string): Promise<void> {
 async function ohneSpringer(seite: Page): Promise<void> {
   await seite.context().addInitScript(() => {
     window.sessionStorage.setItem("svga.startanimation.sitzung", "ja");
+  });
+}
+
+/** Ein Stand vor dem Haus in Maple Falls, freie Welt ohne Gespräch (wie in abenteuer-spieluhr.spec.ts). */
+const WELTSTAND = {
+  ...GRUNDSTAND,
+  position: { karte: "mapleFalls.aussen", x: 3, y: 24, richtung: "unten" },
+  dialogvariablen: {
+    ...EINLEITUNG_GESEHEN,
+    hinweisSteuerkreuz: true,
+    hinweisAktion: true,
+    muenzenErklaert: true,
+  },
+};
+
+/** Zahl der Sicherungen im Speicher des Browsers (Feld abenteuersicherungen). */
+function zaehleSicherungen(): Promise<number> {
+  return new Promise((fertig, fehler) => {
+    const anfrage = indexedDB.open("schach-von-grund-auf");
+    anfrage.onerror = () => fehler(anfrage.error);
+    anfrage.onsuccess = () => {
+      const lesen = anfrage.result
+        .transaction("nutzerdaten", "readonly")
+        .objectStore("nutzerdaten");
+      const r = lesen.get("aktuell");
+      r.onsuccess = () => {
+        const daten = r.result as { abenteuersicherungen?: unknown[] } | undefined;
+        fertig(daten?.abenteuersicherungen?.length ?? 0);
+      };
+      r.onerror = () => fehler(r.error);
+    };
   });
 }
 
@@ -114,7 +152,7 @@ test("Hauptmenü: Startbild, zwei Spielstände, laden, neu laden, neuer Tab, lö
   await page.getByTestId("abenteuer-platz-loeschen-ja").click();
   await expect(plaetze).toHaveCount(1);
   await expect(plaetze.first()).toContainText("Kim");
-  await expect(page.getByRole("status")).toContainText("gelöscht");
+  await expect(page.locator(".abenteuer-platz-status")).toContainText("gelöscht");
 
   // Zurück-Taste: schließt zuerst die Rückfrage, dann die Ladeliste, erst dann das Abenteuer.
   await plaetze.first().getByTestId("abenteuer-platz-loeschen").click();
@@ -200,4 +238,55 @@ test("Hauptmenü quer und Startbild in Standbildern (nur mit HAUPTMENUE_FOTOS)",
   await still.getByTestId("abenteuer-startbild").waitFor();
   await still.waitForTimeout(500);
   await foto(still, "startbild-still");
+});
+
+test("Speichern und Laden: Sicherung im Spielmenü, laden und löschen in der Ladeliste (28.11.2026)", async ({
+  page,
+}) => {
+  test.slow();
+  await starteMitStand(page, WELTSTAND);
+  await page.getByTestId("abenteuer-menueknopf").click();
+  const menue = page.getByTestId("abenteuer-menue");
+  // Der Name steht nur zur Ansicht da (nur beim Start wählbar), der Rivale gar nicht.
+  await expect(menue.getByTestId("abenteuer-name")).toHaveCount(0);
+  await expect(menue.getByTestId("abenteuer-wahlanzeige")).not.toContainText("Vict");
+  // In der freien Welt: Speichern legt eine Sicherung an und bestätigt es.
+  const speichern = menue.getByTestId("abenteuer-speichern");
+  await expect(speichern).toBeEnabled({ timeout: 10000 });
+  await speichern.click();
+  await expect(menue.getByTestId("abenteuer-sichern-status")).toHaveText("Gespeichert.");
+  await expect.poll(() => page.evaluate(zaehleSicherungen)).toBe(1);
+  await foto(page, "spielmenue-gespeichert");
+
+  // „Laden“ öffnet die Ladeliste; unter dem Spielstand steht die Sicherung.
+  await menue.getByTestId("abenteuer-menue-laden").click();
+  await expect(page.getByTestId("abenteuer-ladeliste")).toBeVisible();
+  const sicherung = page.getByTestId("abenteuer-sicherung");
+  await expect(sicherung).toHaveCount(1);
+  await expect(sicherung).toContainText("Gesichert am");
+  await foto(page, "ladeliste-sicherung");
+  // Seit der Sicherung nur gelaufen, nichts gewonnen: Laden ohne Rückfrage, zurück in die Welt.
+  await sicherung.getByTestId("abenteuer-sicherung-laden").click();
+  await expect(page.getByTestId("abenteuer-sicherung-frage")).toHaveCount(0);
+  await expect(page.getByTestId("abenteuer-welt")).toBeVisible({ timeout: 40000 });
+  await expect
+    .poll(async () => (await page.evaluate(liesSpeicherImBrowser)).abenteuer?.position)
+    .toMatchObject({ karte: "mapleFalls.aussen" });
+
+  // Löschen mit Rückfrage; die Zurück-Taste heißt dort „Nein“.
+  await page.getByTestId("abenteuer-menueknopf").click();
+  await page.getByTestId("abenteuer-menue-laden").click();
+  await sicherung.getByTestId("abenteuer-sicherung-loeschen").click();
+  await expect(page.getByTestId("abenteuer-sicherung-frage")).toContainText("löschen?");
+  await page.goBack();
+  await expect(page.getByTestId("abenteuer-sicherung-frage")).toHaveCount(0);
+  await expect(sicherung).toHaveCount(1);
+  await sicherung.getByTestId("abenteuer-sicherung-loeschen").click();
+  await page.getByTestId("abenteuer-sicherung-loeschen-ja").click();
+  await expect(sicherung).toHaveCount(0);
+  await expect(page.locator(".abenteuer-platz-status")).toContainText("Sicherung gelöscht");
+  await expect.poll(() => page.evaluate(zaehleSicherungen)).toBe(0);
+  // Zurück-Taste in der Ladeliste: ins Hauptmenü.
+  await page.goBack();
+  await expect(page.getByTestId("abenteuer-hauptmenue")).toBeVisible();
 });

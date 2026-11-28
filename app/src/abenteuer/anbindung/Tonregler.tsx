@@ -18,7 +18,7 @@ const HOECHSTENS = 100;
 
 /** Regler für Musik und Geräusche, Stummschalter und „Geräusche als Text“ im Spielmenü (T1, T2). */
 export function Tonregler() {
-  const { ton, abenteuerton } = useEinstellungen();
+  const { abenteuerton } = useEinstellungen();
   const setze = (teil: Partial<typeof abenteuerton>) =>
     aendereEinstellungen({ abenteuerton: { ...abenteuerton, ...teil } });
   const regler = (art: "musik" | "geraeusche") => (
@@ -59,7 +59,6 @@ export function Tonregler() {
         />
         {t("abenteuer.ton.untertitel")}
       </label>
-      {ton !== "an" && <p className="abenteuer-ton-hinweis">{t("abenteuer.ton.appTonAus")}</p>}
       <Ladestandzeile />
       <Aktton />
     </fieldset>

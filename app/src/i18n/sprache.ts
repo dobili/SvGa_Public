@@ -244,6 +244,17 @@ export function datumText(datum: Date): string {
   return datum.toLocaleDateString(GEBIETSSCHEMA[aktuelleSprache] ?? "de-DE");
 }
 
+/**
+ * Eine Uhrzeit im Format der Sprache, Stunde und Minute, etwa „14:05“ oder „02:05 PM“ (Sicherungen
+ * im Schach-Abenteuer, 28.11.2026: mehrere an einem Tag).
+ */
+export function uhrzeitText(datum: Date): string {
+  return datum.toLocaleTimeString(GEBIETSSCHEMA[aktuelleSprache] ?? "de-DE", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+}
+
 /** Figurenbuchstaben je Sprache für die Notation (Konzept Abschnitt 6.5). */
 const FIGURENBUCHSTABEN: Readonly<Record<string, Readonly<Record<string, string>>>> = {
   de: { K: "K", Q: "D", R: "T", B: "L", N: "S" },

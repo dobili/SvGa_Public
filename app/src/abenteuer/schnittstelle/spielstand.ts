@@ -295,3 +295,18 @@ export interface Ruheplatz {
    */
   readonly laufend: Partie | null;
 }
+
+/**
+ * Eine Sicherung, die der Leser selbst angelegt hat (Wunsch des Autors, 28.11.2026: „selbst
+ * speichern und laden außerhalb von Partien“): eine Kopie des Spielstands seines Platzes zu einem
+ * Zeitpunkt. Der Platz speichert danach wie immer von selbst weiter; die Sicherung bleibt, bis der
+ * Leser sie lädt oder löscht (anbindung/sicherungen.ts). Ohne offene Partie: Sicherungen entstehen
+ * nur in der freien Welt, die Partie der App gehört nie dazu.
+ */
+export interface Sicherung {
+  /** Kennung des Platzes (Beginn seines Stands, anbindung/speicherplaetze.ts). */
+  readonly platz: string;
+  /** Zeitpunkt der Sicherung (ISO), je Platz verschieden; zugleich ihre Kennung. */
+  readonly gesichert: string;
+  readonly stand: Abenteuerstand;
+}

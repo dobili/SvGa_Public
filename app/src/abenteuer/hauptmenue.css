@@ -214,3 +214,23 @@
     grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
   }
 }
+
+/* Sicherungen unter ihrem Spielstand (Sicherungsliste.tsx, 28.11.2026): über die ganze Breite des
+   Eintrags, eingerückt mit einer Linie links, damit sie sichtbar zu ihrem Spiel gehören. */
+.abenteuer-sicherungen {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1 / -1;
+  gap: var(--raster);
+  margin: 0;
+  padding: 0 0 0 calc(var(--raster) * 1.5);
+  list-style: none;
+  border-left: var(--spiel-pixel) solid var(--spiel-navy);
+}
+
+.abenteuer-sicherung,
+.abenteuer-sicherung-zeile {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) / 2);
+}

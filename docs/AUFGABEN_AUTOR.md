@@ -1012,14 +1012,44 @@ Profil › Einstellungen › Fehler melden.
       Schluss das Glockenspiel-Aha. Die Musik läuft beim Übergang vom Startbild ins Hauptmenü
       ohne Neubeginn weiter; bei „Fortsetzen“, „Laden“ oder „Spielen“ blendet sie in 1 s aus,
       dann kommt die Musik der Karte. Zurück im Hauptmenü kommt das Titelstück wieder. Es gilt
-      dein Regler „Musik“ und der Stummschalter; wie im ganzen Spiel braucht es den Ton der App
-      (Einstellungen). Ohne geladenes Spiel (allererster Start) bleibt es still; die Musik
+      dein Regler „Musik“ und der Stummschalter des Abenteuers; auf deinen Wunsch klingt das
+      Abenteuer von Anfang an, auch wenn der Ton der App aus ist. Ohne geladenes Spiel (allererster Start) bleibt es still; die Musik
       gehört bewusst nicht in die App selbst, sondern wie alle Musik ins Spielpaket. Startet die
       App direkt im Abenteuer (Neuladen), beginnt die Musik mit dem ersten Tipp, das verlangt der
       Browser. Bitte zweimal starten: über den Reiter „Abenteuer“ und nach dem Schließen der
       App. Passt das Stück zum Startbild, setzt es zur rechten Zeit ein, ist der Übergang ins
       Spiel weich?
       **Antwort:** „N2843 ok“ oder was stört (etwa ein anderes Stück oder lauter/leiser).
+- [ ] N2840. **Selbst speichern und laden (28.11.2026, dein Wunsch):** Im Spielmenü der Welt
+      gibt es jetzt „Speichern“ und „Laden“, schon umgesetzt, Widerspruch genügt. „Speichern“
+      legt eine Sicherung des Stands von genau jetzt an (mit der Stelle, an der dein Held steht)
+      und meldet „Gespeichert.“; das Spiel speichert danach wie bisher von selbst weiter. Es geht
+      nur in der freien Welt, nicht im Gespräch, während einer Partie oder Rätselrunde (dann ist
+      der Knopf grau, und ein Satz sagt warum): Die App hält nur eine laufende Partie, eine
+      Sicherung mitten darin hätte sie verdoppelt oder Züge verloren. Je Spiel bleiben höchstens
+      10 Sicherungen, bei der elften fällt die älteste weg, und die Meldung sagt es. Eine
+      Sicherung ist klein (etwa 30 bis 40 KB am Ende des Spiels). „Laden“ öffnet die Ladeliste:
+      Unter jedem Spielstand stehen seine Sicherungen („Gesichert am 28.11.2026, 14:05“ mit Akt,
+      Ort, Spielzeit), je mit „Laden“ und „Löschen“. Laden fragt nur nach, wenn seit der letzten
+      Sicherung etwas Neues passiert ist („Was du seit der Sicherung vom … gespielt hast, geht
+      verloren“); bloßes Herumlaufen zählt nicht. Löschen fragt immer nach; die Zurück-Taste heißt
+      in jeder Rückfrage „Nein“. Löschst du einen ganzen Spielstand, fallen seine Sicherungen mit
+      weg (die Rückfrage sagt es). Bitte draußen speichern, ein Stück weiterspielen (etwa eine
+      Rätselrunde lösen), dann eine Sicherung laden: Stehst du wieder an der gesicherten Stelle?
+      **Antwort:** „N2840 ok“ oder was stört.
+- [ ] N2841. **Rivale oder Rivalin per Zufall (28.11.2026, dein Wunsch):** Beim Start eines
+      neuen Spiels wählst du nur noch Name und Held oder Heldin; ob Victor oder Victoria dein
+      Gegenüber ist, entscheidet der Zufall (halb und halb), schon umgesetzt. Das Spielmenü nennt
+      nur dich („Du spielst als Kim (Heldin)“), der Rivale bleibt eine Überraschung bis zur
+      ersten Begegnung. Bitte zwei oder drei neue Spiele beginnen und bis zur ersten Begegnung
+      spielen: Kommen beide vor?
+      **Antwort:** „N2841 ok“ oder was stört.
+- [ ] N2842. **Name nur beim Start (28.11.2026, dein Wunsch):** Den Namen deines Helden gibst du
+      nur noch beim Start eines neuen Spiels ein; das Namensfeld und „Namen speichern“ im
+      Spielmenü sind weg, schon umgesetzt. Sonst ließ sich der Name nirgends ändern (Tagebuch und
+      Einstellungen zeigen ihn nur). Das Spielmenü zeigt ihn weiter an. Bitte das Spielmenü
+      öffnen: Steht dein Name da, und gibt es kein Eingabefeld mehr?
+      **Antwort:** „N2842 ok“ oder was stört.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

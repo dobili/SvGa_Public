@@ -38,7 +38,7 @@ export function rivalformen(rivalin: boolean): Rivalformen {
 }
 
 /**
- * Der Spielstand mit der Wahl Rivale oder Rivalin (Startkarte und Spielmenü).
+ * Der Spielstand mit Rivale oder Rivalin (beim Spielbeginn ausgelost, anbindung/rivalzufall.ts).
  * Beispiel: mitRivalwahl(stand, true).dialogvariablen.rivalin → true.
  */
 export function mitRivalwahl(stand: Abenteuerstand, rivalin: boolean): Abenteuerstand {

@@ -3,16 +3,18 @@
  *
  * Die Startkarte lädt das Paket oder beginnt ein neues Spiel (aus dem Hauptmenü „Neues Spiel“,
  * Hauptmenue.tsx, oder beim allerersten Start ohne Spielstand); vor dem Start wählt der Leser
- * seinen Namen (Dokument 02: Name wählbar, Dialoge geschlechtsneutral), die Figur (Held oder
- * Heldin) und den Rivalen (Victor oder Victoria; Wunsch des Autors, 22.11.2026; Heldwahl.tsx). Figur und Rivale gelten für das ganze Spiel (Wunsch des Autors,
- * 24.11.2026: nicht mehr im Spielmenü änderbar). Das Namensfeld nutzt auch das Spielmenü.
+ * seinen Namen (Dokument 02: Name wählbar, Dialoge geschlechtsneutral) und die Figur (Held oder
+ * Heldin; Wunsch des Autors, 22.11.2026; Heldwahl.tsx). Name und Figur gelten für das ganze Spiel
+ * (Wunsch des Autors, 24.11.2026 für die Figur, 28.11.2026 für den Namen: nur einmal beim Start).
+ * Den Rivalen (Victor oder Victoria) wählt der Leser nicht mehr; er wird beim Start ausgelost
+ * (rivalzufall.ts, Wunsch des Autors, 28.11.2026).
  * Abhängigkeiten: i18n, groesse.ts, Heldwahl.tsx, schnittstelle/paket.ts.
  */
 import { t } from "../../i18n/sprache";
 import type { Paketzustand } from "../schnittstelle/paket";
 import type { Heldfigur } from "../schnittstelle/spielstand";
 import { groessentext, mbText } from "./groesse";
-import { Heldwahl, Rivalwahl } from "./Heldwahl";
+import { Heldwahl } from "./Heldwahl";
 import { Schriftzug } from "./Schriftzug";
 
 /** Längster Name des Helden (passt in die Dialogzeile). */
@@ -50,8 +52,6 @@ export function Startkarte({
   beiName,
   figur,
   beiFigur,
-  rivalin,
-  beiRivalin,
   beiLaden,
   beiStart,
   beiZurueck,
@@ -69,9 +69,6 @@ export function Startkarte({
   /** Gewählte Figur (Held oder Heldin), nur vor dem ersten Start. */
   figur: Heldfigur;
   beiFigur: (figur: Heldfigur) => void;
-  /** Rivalin Victoria statt Rivale Victor (nach der Heldenwahl). */
-  rivalin: boolean;
-  beiRivalin: (rivalin: boolean) => void;
   beiLaden: () => void;
   beiStart: () => void;
   /** Zurück ins Hauptmenü (Neues Spiel, wenn es schon Spielstände gibt); fehlt sonst. */
@@ -104,7 +101,6 @@ export function Startkarte({
         <>
           <Namensfeld name={name} beiAenderung={beiName} />
           <Heldwahl figur={figur} beiWahl={beiFigur} />
-          <Rivalwahl rivalin={rivalin} beiWahl={beiRivalin} />
           <p data-testid="abenteuer-wahlfest">{t("abenteuer.wahlFest")}</p>
         </>
       )}

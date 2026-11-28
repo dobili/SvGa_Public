@@ -4,26 +4,29 @@
  * Speicherstände löscht.“
  *
  * Aufbau: Titel, groß „Fortsetzen“ mit dem zuletzt gespielten Stand (Figur, Name, Akt, Ort,
- * Spielzeit), darunter „Neues Spiel“ (führt in die Wahl von Name, Held oder Heldin und Rivale oder
- * Rivalin, Startkarte.tsx), „Spielstand laden“ (Ladeliste mit Laden und Löschen, Löschen mit
- * Rückfrage), „Einstellungen“ (das Spielmenü mit Ton, Steuerkreuz und Paket) und „Zurück zur App“.
+ * Spielzeit), darunter „Neues Spiel“ (führt in die Wahl von Name und Held oder Heldin; der Rivale
+ * wird ausgelost, Startkarte.tsx), „Spielstand laden“ (Ladeliste mit Laden und Löschen, Löschen mit
+ * Rückfrage; unter jedem Spielstand seine Sicherungen, Sicherungsliste.tsx, 28.11.2026), „Einstellungen“ (das Spielmenü mit Ton, Steuerkreuz und Paket) und „Zurück zur App“.
  * Bedienung wie die übrigen Fenster des Spiels: Pixelknöpfe, hoch und quer (hauptmenue.css), für
  * Bildschirmleser eine Region mit Überschrift, die Rückfrage als Warnung, die Bestätigung des
  * Löschens als Statusmeldung.
  * Zurück-Taste wie in den übrigen Fenstern des Spiels (app/blattstapel.ts, Spieler-Durchlauf
  * 27.11.2026: in der Ladeliste verließ sie das ganze Abenteuer): In der Löschrückfrage heißt sie
  * „Nein“, in der Ladeliste führt sie ins Hauptmenü; erst im Hauptmenü verlässt sie das Abenteuer.
- * Abhängigkeiten: app/blattstapel.ts, speicherplaetze.ts (Platzzeile), platztext.ts, Figurrahmen.tsx, i18n, regeln/heldfigur.ts.
+ * Abhängigkeiten: app/blattstapel.ts, speicherplaetze.ts (Platzzeile), platztext.ts, Figurrahmen.tsx, i18n, regeln/heldfigur.ts,
+ * Sicherungsliste.tsx, sicherungen.ts.
  */
 import { useEffect, useRef, useState } from "react";
 import { useZurueckSchliesst } from "../../app/blattstapel";
-import { t } from "../../i18n/sprache";
+import { t, tZahl } from "../../i18n/sprache";
 import { ERSATZFIGUR, heldbogenpfad } from "../regeln/heldfigur";
-import type { Abenteuerstand } from "../schnittstelle/spielstand";
+import type { Abenteuerstand, Sicherung } from "../schnittstelle/spielstand";
 import { Figurrahmen } from "./Figurrahmen";
 import { useFigurbogen } from "./useFigurbogen";
 import { akttext, nadeltext, orttext, platzzeile, zuletzttext } from "./platztext";
 import type { Platzzeile } from "./speicherplaetze";
+import { sicherungenDes } from "./sicherungen";
+import { Sicherungsliste, type Sicherungswege } from "./Sicherungsliste";
 import "../hauptmenue.css";
 import { Schriftzug } from "./Schriftzug";
 
@@ -51,8 +54,8 @@ function Heldbild({
   );
 }
 
-/** Was das Hauptmenü auslösen kann. */
-export interface Hauptmenuewege {
+/** Was das Hauptmenü auslösen kann (dazu Laden und Löschen der Sicherungen). */
+export interface Hauptmenuewege extends Sicherungswege {
   readonly beiFortsetzen: (kennung: string) => void;
   readonly beiNeu: () => void;
   readonly beiLoeschen: (kennung: string) => void;
@@ -63,12 +66,15 @@ export interface Hauptmenuewege {
 /** Ein Eintrag der Ladeliste mit Laden, Löschen und der Rückfrage. */
 function Platzeintrag({
   zeile,
+  sicherungen,
   bilder,
   frage,
   beiFrage,
   wege,
 }: {
   readonly zeile: Platzzeile;
+  /** Die Sicherungen dieses Platzes, neueste zuerst. */
+  readonly sicherungen: readonly Sicherung[];
   readonly bilder: boolean;
   readonly frage: boolean;
   readonly beiFrage: (offen: boolean) => void;
@@ -115,6 +121,8 @@ function Platzeintrag({
             akt: akttext(stand.handlung.akt),
             ort: orttext(stand),
           })}
+          {sicherungen.length > 0 &&
+            ` ${tZahl("abenteuer.ladeliste.frageSicherungen", sicherungen.length, { anzahl: sicherungen.length })}`}
           <button
             type="button"
             className="knopf-gefahr"
@@ -128,6 +136,7 @@ function Platzeintrag({
           </button>
         </p>
       )}
+      <Sicherungsliste stand={stand} sicherungen={sicherungen} wege={wege} />
     </li>
   );
 }
@@ -135,21 +144,27 @@ function Platzeintrag({
 /** Die Ladeliste: alle Spielstände, der gespielte zuerst. */
 function Ladeliste({
   plaetze,
+  sicherungen,
   bilder,
   wege,
   beiZurueck,
 }: {
   readonly plaetze: readonly Platzzeile[];
+  readonly sicherungen: readonly Sicherung[];
   readonly bilder: boolean;
   readonly wege: Hauptmenuewege;
   readonly beiZurueck: () => void;
 }) {
   const [frage, setzeFrage] = useState<string | null>(null);
-  const [geloescht, setzeGeloescht] = useState(false);
+  const [geloescht, setzeGeloescht] = useState<"platz" | "sicherung" | null>(null);
   const loesche = (kennung: string) => {
     setzeFrage(null);
-    setzeGeloescht(true);
+    setzeGeloescht("platz");
     wege.beiLoeschen(kennung);
+  };
+  const loescheSicherung = (platz: string, gesichert: string) => {
+    setzeGeloescht("sicherung");
+    wege.beiSicherungLoeschen(platz, gesichert);
   };
   // Zurück-Taste wie der Knopf „Zurück“: ins Hauptmenü, nicht aus dem Abenteuer.
   useZurueckSchliesst(true, beiZurueck);
@@ -167,17 +182,19 @@ function Ladeliste({
         {t("abenteuer.ladeliste.titel")}
       </h2>
       <p className="abenteuer-platz-status" role="status">
-        {geloescht ? t("abenteuer.ladeliste.geloescht") : ""}
+        {geloescht === "platz" && t("abenteuer.ladeliste.geloescht")}
+        {geloescht === "sicherung" && t("abenteuer.sicherung.geloescht")}
       </p>
       <ul className="abenteuer-platzliste">
         {plaetze.map((zeile) => (
           <Platzeintrag
             key={zeile.kennung}
             zeile={zeile}
+            sicherungen={sicherungenDes({ abenteuersicherungen: sicherungen }, zeile.kennung)}
             bilder={bilder}
             frage={frage === zeile.kennung}
             beiFrage={(offen) => setzeFrage(offen ? zeile.kennung : null)}
-            wege={{ ...wege, beiLoeschen: loesche }}
+            wege={{ ...wege, beiLoeschen: loesche, beiSicherungLoeschen: loescheSicherung }}
           />
         ))}
       </ul>
@@ -194,19 +211,24 @@ function Ladeliste({
 }
 
 /**
- * Das Hauptmenü. Eingaben: alle Plätze (der erste ist der fortsetzbare), ob Paketbilder geladen
- * werden dürfen, die Wege. Ohne Plätze fehlen „Fortsetzen“ und „Spielstand laden“.
+ * Das Hauptmenü. Eingaben: alle Plätze (der erste ist der fortsetzbare), alle Sicherungen, ob es
+ * gleich mit der Ladeliste aufgeht („Laden“ im Spielmenü), ob Paketbilder geladen werden dürfen,
+ * die Wege. Ohne Plätze fehlen „Fortsetzen“ und „Spielstand laden“.
  */
 export function Hauptmenue({
   plaetze,
+  sicherungen,
+  mitListe = false,
   bilder,
   wege,
 }: {
   readonly plaetze: readonly Platzzeile[];
+  readonly sicherungen: readonly Sicherung[];
+  readonly mitListe?: boolean;
   readonly bilder: boolean;
   readonly wege: Hauptmenuewege;
 }) {
-  const [liste, setzeListe] = useState(false);
+  const [liste, setzeListe] = useState(mitListe);
   const erster = plaetze[0] ?? null;
   // Ohne Plätze (alle gelöscht) zurück aus der leeren Liste.
   const listeOffen = liste && plaetze.length > 0;
@@ -214,6 +236,7 @@ export function Hauptmenue({
     return (
       <Ladeliste
         plaetze={plaetze}
+        sicherungen={sicherungen}
         bilder={bilder}
         wege={wege}
         beiZurueck={() => setzeListe(false)}

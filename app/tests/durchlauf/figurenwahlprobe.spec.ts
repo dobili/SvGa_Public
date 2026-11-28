@@ -16,7 +16,7 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { chromium, devices, expect, test, type Page } from "@playwright/test";
 import { starteMitStand } from "../e2e/abenteuer-affe";
-import { ladeAbenteuerpaket } from "../e2e/abenteuer-paket";
+import { ladeAbenteuerpaket, mitRivale } from "../e2e/abenteuer-paket";
 import { starteImBrowser } from "../e2e/hilfen";
 import { standAus } from "./simstand";
 import { ladeSpieldaten } from "./welt";
@@ -88,7 +88,8 @@ test("Heldin und Rivalin: Wahl, Welt und Porträts fallen sauber auf den Ersatz"
   await ladeAbenteuerpaket(seite);
   await expect(seite.getByTestId("abenteuer-spielen")).toBeVisible({ timeout: 30000 });
   await seite.getByTestId("abenteuer-figur-heldin-0").click();
-  await seite.getByTestId("abenteuer-rivale-victoria").click();
+  // Den Rivalen wählt seit dem 28.11.2026 niemand mehr (ausgelost); die Probe legt ihn fest.
+  await mitRivale(seite, true);
   await seite.waitForTimeout(WARTEN_MS);
   await seite.screenshot({ path: join(ORDNER, "wahl.png"), fullPage: true });
   await kontext.close();

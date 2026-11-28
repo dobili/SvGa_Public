@@ -6,7 +6,7 @@
  *
  * Warum ein eigener Baustein: Die Ansicht sagt nur, ob ein Menü zu sehen ist; was klingt, bleibt
  * Sache der Tonregie (ton/tonregie.ts `titelAn`, `titelAus`). Lautstärke, Stummschalter und der
- * allgemeine Ton der App gelten wie überall (ton/useAbenteuerton.ts). Autoplay: Der Browser spielt
+ * eigene Stummschalter des Abenteuers gelten wie überall (ton/useAbenteuerton.ts; der Ton der App zählt seit 28.11.2026 nicht mehr). Autoplay: Der Browser spielt
  * erst nach einer Berührung (app/ton.ts `entsperreTon`); der Tipp auf den Reiter „Abenteuer“ zählt
  * schon, sonst beginnt die Musik mit dem ersten Tipp. Ohne Paket (allererster Start) bleibt es
  * still; ist es geladen, versucht der Baustein das Stück neu.

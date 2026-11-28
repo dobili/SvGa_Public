@@ -34,7 +34,8 @@
  * - Format 11: dazu „abenteuer“, der Spielstand des Schach-Abenteuers (app/src/abenteuer/,
  *   Entscheidung A3 des Autors, 07.11.2026). Format 10 ist eine Teilmenge: Fehlt das Feld, gibt
  *   es keinen Spielstand (null). Der Stand hat eine eigene Version (abenteuer/regeln/spielstand.ts).
- *   Seit 27.11.2026 ruhen weitere Spielstände in „abenteuerplaetze“ (abenteuerplaetzeLesen.ts).
+ *   Seit 27.11.2026 ruhen weitere Spielstände in „abenteuerplaetze“ (abenteuerplaetzeLesen.ts),
+ *   seit 28.11.2026 liegen Sicherungen des Lesers in „abenteuersicherungen“.
  * Abhängigkeiten: speicher/stufenskala.ts, training/trainer (Kennungen der Trainer), training/wiederholung (Karten),
  * training/fehlerdatenbank (Fehler), training/lernsammlung (Sammlung), training/variationen*
  * (Varianten), speicher/partien.ts.
@@ -54,8 +55,8 @@ import { planstandTextAus, rateverlaufAus, type Rateverlauf } from "./trainerver
 import type { Variation } from "../training/variationen";
 import { variationenAus } from "../training/variationenLesen";
 import { abenteuerstandAus } from "../abenteuer/regeln/spielstand";
-import type { Abenteuerstand, Ruheplatz } from "../abenteuer/schnittstelle/spielstand";
-import { abenteuerplaetzeAus } from "./abenteuerplaetzeLesen";
+import type { Abenteuerstand, Ruheplatz, Sicherung } from "../abenteuer/schnittstelle/spielstand";
+import { abenteuerplaetzeAus, abenteuersicherungenAus } from "./abenteuerplaetzeLesen";
 
 /** Aktuelle Version des Formats. Jede Änderung am Aufbau erhöht sie und ergänzt wandleUm. */
 export const SCHEMA_VERSION = 11;
@@ -267,6 +268,8 @@ export interface Nutzerdaten extends Gamifizierungsdaten {
   readonly abenteuer: Abenteuerstand | null;
   /** Die übrigen Spielstände des Abenteuers (Hauptmenü, 27.11.2026); zusätzliches Feld. */
   readonly abenteuerplaetze: readonly Ruheplatz[];
+  /** Sicherungen des Lesers je Platz (anbindung/sicherungen.ts, 28.11.2026); zusätzliches Feld. */
+  readonly abenteuersicherungen: readonly Sicherung[];
 }
 
 /** Ergebnis einer Prüfung: umgewandelte Daten oder ein Grund für den Leser. */
@@ -298,6 +301,7 @@ export function leereDaten(jetzt: Date): Nutzerdaten {
     variationen: [],
     abenteuer: null,
     abenteuerplaetze: [],
+    abenteuersicherungen: [],
     ...LEERE_GAMIFIZIERUNG,
   };
 }
@@ -422,6 +426,7 @@ function aktuellesFormatAus(roh: Roh, jetzt: Date): Nutzerdaten {
     variationen: variationenAus(roh.variationen),
     abenteuer: abenteuerstandAus(roh.abenteuer),
     abenteuerplaetze: abenteuerplaetzeAus(roh.abenteuerplaetze),
+    abenteuersicherungen: abenteuersicherungenAus(roh.abenteuersicherungen),
     ...gamifizierungAus(roh),
   };
 }

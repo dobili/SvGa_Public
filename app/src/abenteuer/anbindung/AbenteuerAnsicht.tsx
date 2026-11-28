@@ -8,10 +8,11 @@
  * eigentliche Spiel erst dann als eigenen Baustein
  * (dynamischer Import von modul/abenteuer.tsx → assets/abenteuer-*.js, nicht vorab geladen) und
  * übergibt ihm die Dienste der App (anbindung/dienste.ts). Das Spielmenü (Knopf oben rechts) ist
- * der Rückweg in die App: „Zurück zur App“, dazu Paket löschen, den Namen des Helden ändern und
- * „Hauptmenü“ (Schritt 8g; Spielmenue.tsx). Bei einem neuen Spiel wählt der Leser Namen,
- * Figur und Rivalen (Startkarte.tsx; Dokument 02: Name wählbar, Dialoge geschlechtsneutral); alles
- * bleibt lokal. Figur und Rivale gelten danach für das ganze Spiel (Wunsch des Autors, 24.11.2026).
+ * der Rückweg in die App: „Zurück zur App“, dazu Paket löschen, Speichern und Laden (Sicherungen,
+ * 28.11.2026) und „Hauptmenü“ (Schritt 8g; Spielmenue.tsx). Bei einem neuen Spiel wählt der Leser
+ * Namen und Figur (Startkarte.tsx; Dokument 02: Name wählbar, Dialoge geschlechtsneutral); der
+ * Rivale wird ausgelost (rivalzufall.ts); alles bleibt lokal. Name, Figur und Rivale gelten danach
+ * für das ganze Spiel (Wunsch des Autors, 24.11.2026 und 28.11.2026).
  * Einstieg (27.11.2026): Ein neuer Start der App zeigt Startbild und Hauptmenü; der Rückweg aus
  * Partie, Runde und Besprechung und ein Neuladen im selben Tab führen gleich in die Welt
  * (spielsitzung.ts). Den Reiter „Abenteuer“ der App öffnet diese Ansicht.
@@ -45,7 +46,8 @@ import { Spielmenue } from "./Spielmenue";
 import { NAME_HOECHSTENS, Startkarte } from "./Startkarte";
 import type { Abenteuerstand, Heldfigur } from "../schnittstelle/spielstand";
 import { ERSATZFIGUR } from "../regeln/heldfigur";
-import { mitRivalwahl, rivalinGewaehlt } from "../regeln/rivalform";
+import { mitRivalwahl } from "../regeln/rivalform";
+import { zufallsrivalin } from "./rivalzufall";
 import { Ladestand } from "./Ladestand";
 import { Hauptmenue } from "./Hauptmenue";
 import { Startbild } from "./Startbild";
@@ -85,19 +87,17 @@ function startbildFaellig(): boolean {
   return !startbildGelaufen && sitzungsplatz() === null && !ohneHauptmenue() && startbildErlaubt();
 }
 
-/** Ein neuer Spielstand aus der Wahl auf der Startkarte; Eingangswertung wie beim ersten Start. */
-function neuerStand(
-  dienste: Appdienste,
-  name: string,
-  figur: Heldfigur,
-  rivalin: boolean,
-): Abenteuerstand {
+/**
+ * Ein neuer Spielstand aus der Wahl auf der Startkarte; Eingangswertung wie beim ersten Start,
+ * der Rivale ausgelost (rivalzufall.ts).
+ */
+function neuerStand(dienste: Appdienste, name: string, figur: Heldfigur): Abenteuerstand {
   // Die Eingangswertung ist fest, wenn die App genug gewertete Partien hat (Architektur,
   // Abschnitt 4), sonst läuft sie noch mit.
   const spiel = speicherzustand().daten.spiel;
   const fest = spiel.wertung.length >= ANFANGSPARTIEN;
   const neu = leererAbenteuerstand(new Date(), name, dienste.wertung(), fest, figur);
-  return mitRivalwahl(neu, rivalin);
+  return mitRivalwahl(neu, zufallsrivalin());
 }
 
 /** Was die Ansicht nach einem Wechsel zeigt: Hauptmenü, ohne Spielstände die Wahl für ein neues. */
@@ -192,7 +192,8 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
   // Wahl für ein neues Spiel; ein leerer Name heißt „Du“.
   const [neuerName, setzeNeuenNamen] = useState("");
   const [neueFigur, setzeNeueFigur] = useState<Heldfigur>(ERSATZFIGUR);
-  const [neueRivalin, setzeNeueRivalin] = useState(false);
+  // Öffnet das Hauptmenü gleich mit der Ladeliste („Laden“ im Spielmenü)?
+  const [listeZuerst, setzeListeZuerst] = useState(false);
   // Musik und Geräusche des Abenteuers (ton/): Einstellungen anwenden, beim Verlassen ausblenden.
   useAbenteuerton();
   useAktton(stand?.handlung.akt ?? 1); // Ton des Akts im Hintergrund (paket/aktton.ts)
@@ -204,22 +205,31 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
   const bereinigt = (name: string) =>
     name.trim().slice(0, NAME_HOECHSTENS) || t("abenteuer.heldname");
 
-  /** Benennt den Helden um (Spielmenü). */
-  const benenneUm = (name: string) => {
-    if (!stand) return;
-    void dienste.schreibeStand({ ...stand, held: { ...stand.held, name: bereinigt(name) } });
-    setzeMenue(false);
-  };
-
   /** Neues Spiel aus der Startkarte: neuer Platz, der bisherige ruht. */
   const starteNeu = () => {
-    const neu = neuerStand(dienste, bereinigt(neuerName), neueFigur, neueRivalin);
+    const neu = neuerStand(dienste, bereinigt(neuerName), neueFigur);
     void plaetze.beginne(neu).then(einstieg.oeffneWelt, einstieg.meldeLadefehler);
   };
 
   /** Fortsetzen oder Laden eines Platzes aus dem Hauptmenü. */
   const setzeFort = (kennung: string) => {
+    setzeListeZuerst(false);
     void plaetze.lade(kennung).then(() => einstieg.oeffneWelt(kennung), einstieg.meldeLadefehler);
+  };
+
+  /** Lädt eine Sicherung aus der Ladeliste und geht mit ihrem Platz in die Welt. */
+  const ladeSicherung = (platz: string, gesichert: string) => {
+    setzeListeZuerst(false);
+    void plaetze
+      .ladeSicherung(platz, gesichert)
+      .then(() => einstieg.oeffneWelt(platz), einstieg.meldeLadefehler);
+  };
+
+  /** Aus der Welt ins Hauptmenü, mit oder ohne offene Ladeliste (Spielmenü). */
+  const verlasseWelt = (mitListe: boolean) => {
+    setzeMenue(false);
+    setzeListeZuerst(mitListe);
+    einstieg.zumHauptmenue();
   };
 
   const zurApp = () => {
@@ -268,10 +278,18 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
       ) : imMenue ? (
         <Hauptmenue
           plaetze={plaetze.plaetze}
+          sicherungen={plaetze.sicherungen}
+          mitListe={listeZuerst}
           bilder={paket.da}
           wege={{
             beiFortsetzen: setzeFort,
-            beiNeu: () => setzeAnsicht("neu"),
+            beiSicherung: ladeSicherung,
+            beiSicherungLoeschen: (platz, gesichert) =>
+              void plaetze.loescheSicherung(platz, gesichert),
+            beiNeu: () => {
+              setzeListeZuerst(false);
+              setzeAnsicht("neu");
+            },
             beiLoeschen: (kennung) => void plaetze.loesche(kennung),
             beiEinstellungen: () => setzeMenue(true),
             beiZurApp: zurApp,
@@ -285,8 +303,6 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
           beiName={setzeNeuenNamen}
           figur={neueFigur}
           beiFigur={setzeNeueFigur}
-          rivalin={neueRivalin}
-          beiRivalin={setzeNeueRivalin}
           beiLaden={paket.lade}
           beiStart={neu || !stand ? starteNeu : () => einstieg.oeffneWelt(platzkennung(stand))}
           beiZurueck={
@@ -299,20 +315,12 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
       <Ladestand />
       {menue && (
         <Spielmenue
-          heldname={inWelt ? stand.held.name : null}
-          figur={stand?.held.figur ?? ERSATZFIGUR}
-          rivalin={rivalinGewaehlt(stand?.dialogvariablen ?? {})}
+          stand={inWelt ? stand : null}
           beiSchliessen={() => setzeMenue(false)}
           beiZurueck={zurApp}
-          beiName={benenneUm}
-          beiHauptmenue={
-            inWelt
-              ? () => {
-                  setzeMenue(false);
-                  einstieg.zumHauptmenue();
-                }
-              : undefined
-          }
+          beiSpeichern={plaetze.sichere}
+          beiLaden={() => verlasseWelt(true)}
+          beiHauptmenue={() => verlasseWelt(false)}
           beiLoeschen={loesche}
         />
       )}

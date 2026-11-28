@@ -126,6 +126,7 @@ describe("Format 1", () => {
         // Format 11: kein Spielstand des Abenteuers.
         abenteuer: null,
         abenteuerplaetze: [],
+        abenteuersicherungen: [],
         // Format 7: Felder der Gamifizierung leer, das Tagesprotokoll aus den Datumsangaben
         // nachgetragen (die Übung hat kein gültiges Datum und zählt nicht).
         ...LEERE_GAMIFIZIERUNG,

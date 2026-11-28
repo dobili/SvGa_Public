@@ -1,8 +1,8 @@
 /**
- * Wahl der Figuren beim Spielbeginn: Held oder Heldin, Rivale Victor oder Rivalin Victoria (Wunsch
- * des Autors, 22.11.2026), je mit Vorschaubild (Standbild nach unten aus dem Bogen im Paket). Die
- * Wahl gilt für das ganze Spiel; das Spielmenü zeigt sie nur noch an (Wunsch des Autors,
- * 24.11.2026).
+ * Wahl der Figur beim Spielbeginn: Held oder Heldin (Wunsch des Autors, 22.11.2026), je mit
+ * Vorschaubild (Standbild nach unten aus dem Bogen im Paket). Die Wahl gilt für das ganze Spiel;
+ * das Spielmenü zeigt sie nur noch an (Wunsch des Autors, 24.11.2026). Den Rivalen (Victor oder
+ * Victoria) wählte der Leser hier bis zum 28.11.2026; seitdem wird er ausgelost (rivalzufall.ts).
  *
  * Warum ein eigenes Bild statt Phaser: Die Startkarte gehört zum Kern der App und lädt den
  * Spielbaustein mit Phaser erst nach dem Start; das Vorschaubild schneidet deshalb das Standbild
@@ -146,34 +146,6 @@ export function Heldwahl({
       wahlen={HELDWAHLEN}
       gewaehlt={HELDFIGUREN.indexOf(figur)}
       beiWahl={(i) => beiWahl(HELDFIGUREN[i] ?? figur)}
-    />
-  );
-}
-
-/** Rivale und Rivalin; die Bögen von Victoria folgen (bis dahin Platzhalter). */
-const RIVALWAHLEN: readonly Wahl[] = [
-  { bogen: "victor", text: "abenteuer.rivale.victor", testid: "abenteuer-rivale-victor" },
-  { bogen: "victoria", text: "abenteuer.rivale.victoria", testid: "abenteuer-rivale-victoria" },
-];
-
-/**
- * Die Wahl Rivale Victor oder Rivalin Victoria (nach der Heldenwahl). Eingaben: ob die Rivalin
- * gewählt ist und was bei einer Wahl geschieht.
- */
-export function Rivalwahl({
-  rivalin,
-  beiWahl,
-}: {
-  rivalin: boolean;
-  beiWahl: (rivalin: boolean) => void;
-}) {
-  return (
-    <Figurwahl
-      frage="abenteuer.rivaleFrage"
-      testid="abenteuer-rivalwahl"
-      wahlen={RIVALWAHLEN}
-      gewaehlt={rivalin ? 1 : 0}
-      beiWahl={(i) => beiWahl(i === 1)}
     />
   );
 }

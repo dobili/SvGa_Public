@@ -5,8 +5,13 @@
  * Tastatur (Pfeile), die die Szene wie das Steuerkreuz behandelt.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { EINLEITUNG_GESEHEN, GRUNDSTAND, starteMitStand } from "./abenteuer-affe";
-import { ladeAbenteuerpaket, PAKET_FRIST_MS } from "./abenteuer-paket";
+import {
+  EINLEITUNG_GESEHEN,
+  GRUNDSTAND,
+  liesSpeicherImBrowser,
+  starteMitStand,
+} from "./abenteuer-affe";
+import { ladeAbenteuerpaket, mitRivale, PAKET_FRIST_MS } from "./abenteuer-paket";
 
 /**
  * Ein Spielstand oben auf dem Dachboden, wie ein neues Spiel bis zum 19.11.2026 begann: Seitdem
@@ -72,9 +77,9 @@ test("vom Dachboden in die erste Partie und zurück", async ({ page }) => {
   await starteMitStand(page, DACHBODENSTAND);
   await expect(page.getByTestId("abenteuer-welt")).toBeVisible();
   await page.getByTestId("abenteuer-menueknopf").click();
-  await expect(page.getByTestId("abenteuer-menue").getByTestId("abenteuer-name")).toHaveValue(
-    "Kim",
-  );
+  // Der Name steht nur noch zur Ansicht da (Wunsch des Autors, 28.11.2026: nur beim Start).
+  await expect(page.getByTestId("abenteuer-wahlanzeige")).toContainText("Kim");
+  await expect(page.getByTestId("abenteuer-menue").getByTestId("abenteuer-name")).toHaveCount(0);
   // Musik und Geräusche (T1, T2): Regler und Stummschalter; stumm sperrt die Regler. Es gibt noch
   // keine Tondatei, das Spiel läuft trotzdem (fehlende Dateien bleiben still).
   const ton = page.getByTestId("abenteuer-ton");
@@ -309,9 +314,10 @@ test("Einstieg: Einleitung vor dem Haus, mit Mama hinein, Auftrag für den Dachb
     "aria-pressed",
     "true",
   );
-  // Danach Rivale Victor oder Rivalin Victoria (22.11.2026); vorgewählt ist Victor.
-  await expect(page.getByTestId("abenteuer-rivale-victor")).toHaveAttribute("aria-pressed", "true");
-  await page.getByTestId("abenteuer-rivale-victoria").click();
+  // Den Rivalen wählt niemand mehr, er wird ausgelost (Wunsch des Autors, 28.11.2026); der Test
+  // legt die Rivalin über den Testschalter fest.
+  await expect(page.getByTestId("abenteuer-rivalwahl")).toHaveCount(0);
+  await mitRivale(page, true);
   await expect(page.getByTestId("abenteuer-wahlfest")).toContainText("ganze Spiel");
   await page.getByTestId("abenteuer-spielen").click();
   await expect(page.getByTestId("abenteuer-welt")).toBeVisible();
@@ -328,17 +334,18 @@ test("Einstieg: Einleitung vor dem Haus, mit Mama hinein, Auftrag für den Dachb
   await expect(page.getByTestId("abenteuer-tagebuch")).toContainText("Einzug an der Birch Lane");
   await expect(page.getByTestId("abenteuer-tagebuch")).toContainText("Dachboden");
   await page.getByRole("button", { name: "Schließen" }).click();
-  // Im Spielmenü steht der gewählte Name.
+  // Im Spielmenü stehen Name und Figur nur zur Ansicht (Wunsch des Autors, 24.11.2026 und
+  // 28.11.2026): Die Wahl beim Start gilt für das ganze Spiel. Der Rivale bleibt eine Überraschung.
   await page.getByTestId("abenteuer-menueknopf").click();
-  await expect(page.getByTestId("abenteuer-menue").getByTestId("abenteuer-name")).toHaveValue(
-    "Kim",
-  );
-  // Figur und Rivale stehen im Spielmenü nur zur Ansicht (Wunsch des Autors, 24.11.2026): Die Wahl
-  // beim Start gilt für das ganze Spiel.
   const menue = page.getByTestId("abenteuer-menue");
+  await expect(menue.getByTestId("abenteuer-wahlanzeige")).toContainText("Kim");
   await expect(menue.getByTestId("abenteuer-wahlanzeige")).toContainText("Heldin");
-  await expect(menue.getByTestId("abenteuer-wahlanzeige")).toContainText("Rivalin Victoria");
+  await expect(menue.getByTestId("abenteuer-wahlanzeige")).not.toContainText("Vict");
+  await expect(menue.getByTestId("abenteuer-name")).toHaveCount(0);
   await expect(menue.getByTestId("abenteuer-heldwahl")).toHaveCount(0);
   await expect(menue.getByTestId("abenteuer-rivalwahl")).toHaveCount(0);
+  await expect
+    .poll(async () => (await page.evaluate(liesSpeicherImBrowser)).abenteuer?.dialogvariablen)
+    .toMatchObject({ rivalin: true });
   await expect(page.getByTestId("abenteuer-welt")).toBeVisible();
 });

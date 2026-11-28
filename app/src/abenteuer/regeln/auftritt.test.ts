@@ -1,6 +1,7 @@
 /** Tests für regeln/auftritt.ts: wer beim Neuaufbau einer Karte hereinkommt, hinausgeht oder wartet. */
 import { describe, expect, it } from "vitest";
 import {
+  aufstellungsstunde,
   auftrittsplan,
   eingangsfeld,
   gehendeFiguren,
@@ -141,5 +142,19 @@ describe("Gedächtnis der Auftritte", () => {
     expect(gemerkteAufstellung("2026-11-20T05:00:00.000Z")).toBeNull();
     expect(gemerkteAufstellung("2026-11-08T05:00:00.000Z")).toBe(vorDemClubkampf);
     vergissAufstellung();
+  });
+});
+
+describe("aufstellungsstunde (Befund des Autors, 28.11.2026: Coach nach der Partie fort)", () => {
+  it("auf derselben Karte gilt die Stunde des letzten Aufbaus, auch nach #uhr:abend", () => {
+    const um15 = { ...vorDemClubkampf, stunde: 15 };
+    expect(aufstellungsstunde(um15, CLUBRAUM, 19)).toBe(15);
+  });
+
+  it("andere Karte, nichts gemerkt (Neuladen, Warten) oder ohne Stunde: die Uhr jetzt", () => {
+    const um15 = { ...vorDemClubkampf, stunde: 15 };
+    expect(aufstellungsstunde(um15, "mapleFalls.park", 19)).toBe(19);
+    expect(aufstellungsstunde(null, CLUBRAUM, 19)).toBe(19);
+    expect(aufstellungsstunde(vorDemClubkampf, CLUBRAUM, 19)).toBe(19);
   });
 });

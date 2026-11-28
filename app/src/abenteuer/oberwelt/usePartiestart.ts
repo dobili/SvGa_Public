@@ -60,6 +60,8 @@ export interface Partien {
   readonly gibOffenePartieAuf: () => void;
   /** Ein gelesenes Partieergebnis als Quest-Ereignis, sobald die Welt da ist. */
   readonly meldeErgebnis: (w: Weltdaten) => void;
+  /** Der Rückweg liest und wertet das Ergebnis noch aus; solange wartet die Welt (useWeltladen.ts). */
+  readonly rueckwegOffen: boolean;
   readonly gegnername: (e: Partieergebnis) => string;
 }
 
@@ -97,53 +99,68 @@ function zeigeGemerkteKarte(
   if (karte.wiedereinstieg) sucheKipppunkt(k, karte.ergebnis.kennung, setzen.kipppunkt);
 }
 
-/** Rückweg: Eine offene Partie ist beendet → Ergebnis in den Stand, Kipppunkt suchen. */
-function useRueckwegDerPartie(
-  k: Oberweltkern,
-  setzen: {
-    readonly ergebnis: (e: Partieergebnis) => void;
-    /** Nur zeigen (gemerkte Karte nach dem Neuladen), nicht melden. */
-    readonly zeige: (e: Partieergebnis) => void;
-    readonly offen: (kennung: string) => void;
-    readonly nadel: (n: Nadelstufe | null) => void;
-    readonly kipppunkt: (k: Kipppunkt | "suche" | null) => void;
-    readonly vorherigeKarten: (karten: Partiekarten | null) => void;
-  },
-): void {
-  useEffect(() => {
-    const kennung = k.stand?.laufendePartie;
-    if (!kennung) {
-      zeigeGemerkteKarte(k, setzen);
+/** Was der Rückweg der Partie setzt (Zustände von usePartiestart). */
+export interface Rueckwegsetzer {
+  readonly ergebnis: (e: Partieergebnis) => void;
+  /** Nur zeigen (gemerkte Karte nach dem Neuladen), nicht melden. */
+  readonly zeige: (e: Partieergebnis) => void;
+  readonly offen: (kennung: string) => void;
+  readonly nadel: (n: Nadelstufe | null) => void;
+  readonly kipppunkt: (k: Kipppunkt | "suche" | null) => void;
+  readonly vorherigeKarten: (karten: Partiekarten | null) => void;
+  /** Ausgewertet (oder ohne Ergebnis, oder gescheitert): Die Welt darf laden. */
+  readonly fertig: () => void;
+}
+
+/**
+ * Rückweg: Eine offene Partie ist beendet → Ergebnis in den Stand, Kipppunkt suchen; danach
+ * `fertig` (die Welt lädt erst mit dem neuen Stand, useWeltladen.ts). Ausgabe: die Auswertung,
+ * oder null ohne laufende Partie (dann zeigt sie nur eine gemerkte Ergebniskarte).
+ * Beispiel: Clubkampf gewonnen → Stand mit nadelMapleFalls 1 geschrieben, dann `fertig`.
+ */
+export function werteRueckwegAus(k: Oberweltkern, setzen: Rueckwegsetzer): Promise<void> | null {
+  const kennung = k.stand?.laufendePartie;
+  if (!kennung) {
+    zeigeGemerkteKarte(k, setzen);
+    return null;
+  }
+  const auswertung = k.dienste.liesErgebnis(kennung).then((e) => {
+    const aktuell = k.standRef.current;
+    if (!aktuell) return;
+    if (!e) {
+      setzen.offen(kennung);
       return;
     }
-    void k.dienste.liesErgebnis(kennung).then((e) => {
-      const aktuell = k.standRef.current;
-      if (!aktuell) return;
-      if (!e) {
-        setzen.offen(kennung);
-        return;
-      }
-      setzen.ergebnis(e);
-      // Steigerung des Kampfthemas je Sieg (Klangplan A0.1, ton/mischregie.ts).
-      tonregie.ergebnis(e.ausgang === "sieg");
-      void ladeSpieldaten().then((daten) => {
-        const r = standNachPartie(k.standRef.current ?? aktuell, e, daten);
-        setzen.nadel(r.nadel);
-        setzen.vorherigeKarten(aktuell.partiekarten);
-        const wiedereinstieg = wiedereinstiegMoeglich(e, r.begegnung, daten, aktuell);
-        if (wiedereinstieg) sucheKipppunkt(k, kennung, setzen.kipppunkt);
-        // Die Karte bleibt im Stand, bis „Weiter“ sie schließt (R6: übersteht das Neuladen).
-        const karten = aktuell.partiekarten;
-        const karte = {
-          art: "partie",
-          ergebnis: e,
-          nadel: r.nadel,
-          karten,
-          wiedereinstieg,
-        } as const;
-        k.schreibe({ ...r.stand, ergebniskarte: karte });
-      });
+    setzen.ergebnis(e);
+    // Steigerung des Kampfthemas je Sieg (Klangplan A0.1, ton/mischregie.ts).
+    tonregie.ergebnis(e.ausgang === "sieg");
+    return ladeSpieldaten().then((daten) => {
+      const r = standNachPartie(k.standRef.current ?? aktuell, e, daten);
+      setzen.nadel(r.nadel);
+      setzen.vorherigeKarten(aktuell.partiekarten);
+      const wiedereinstieg = wiedereinstiegMoeglich(e, r.begegnung, daten, aktuell);
+      if (wiedereinstieg) sucheKipppunkt(k, kennung, setzen.kipppunkt);
+      // Die Karte bleibt im Stand, bis „Weiter“ sie schließt (R6: übersteht das Neuladen).
+      const karten = aktuell.partiekarten;
+      const karte = {
+        art: "partie",
+        ergebnis: e,
+        nadel: r.nadel,
+        karten,
+        wiedereinstieg,
+      } as const;
+      k.schreibe({ ...r.stand, ergebniskarte: karte });
     });
+  });
+  // Erst mit dem neuen Stand baut die Welt auf (Nadel, Figuren, Fassung der Karte); auch ohne
+  // Ergebnis oder nach einem Fehler, sonst bliebe sie leer.
+  return auswertung.finally(setzen.fertig);
+}
+
+/** Der Rückweg einmal beim Aufbau der Oberwelt (werteRueckwegAus). */
+function useRueckwegDerPartie(k: Oberweltkern, setzen: Rueckwegsetzer): void {
+  useEffect(() => {
+    void werteRueckwegAus(k, setzen);
     // Nur beim Aufbau; der Spielstand ändert sich danach nur noch durch die Oberwelt.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -164,7 +181,9 @@ export function usePartiestart(k: Oberweltkern): Partien {
   const vorherigeKarten = useRef<Partiekarten | null>(null);
   // Ein gelesenes Partieergebnis, das noch auf die Welt wartet (Quest-Ereignis „partie“).
   const offenesErgebnis = useRef<Partieergebnis | null>(null);
+  const [rueckwegOffen, setzeRueckwegOffen] = useState(() => Boolean(k.stand?.laufendePartie));
   useRueckwegDerPartie(k, {
+    fertig: () => setzeRueckwegOffen(false),
     ergebnis: (e) => {
       setzeErgebnis(e);
       offenesErgebnis.current = e;
@@ -194,6 +213,7 @@ export function usePartiestart(k: Oberweltkern): Partien {
     void k.dienste.schreibeStand(p.stand).then(() => k.dienste.startePartie(p.auftrag));
   };
   return {
+    rueckwegOffen,
     deckwahl,
     brichDeckwahlAb: () => setzeDeckwahl(null),
     ergebnis,

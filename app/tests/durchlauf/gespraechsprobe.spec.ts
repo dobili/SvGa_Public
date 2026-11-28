@@ -15,6 +15,8 @@ import { join } from "node:path";
 import { expect, test } from "@playwright/test";
 import { begleiter } from "./blickprobe";
 import { tippe } from "./eingabe";
+import { bedieneFenster, neuesFenstergedaechtnis } from "./fenster";
+import { spielePartie } from "./partie";
 import { geheAn } from "./laufen";
 import { liesLage, liesStand } from "./lage";
 import { KARTE, PROBE_MS, STAND, starteProbe } from "./probe";
@@ -23,8 +25,16 @@ import { kartenwissen } from "./welt";
 const DING = process.env.PROBE_DING ?? "";
 const FOTOS = process.env.GESPRAECH_FOTOS ?? "";
 const FORMAT = process.env.PROBE_FORMAT === "quer" ? "quer" : "hoch";
-/** Höchstens so viele Schritte durch das Gespräch. */
-const SCHRITTE = 40;
+/** GESPRAECH_ALLE=1: jede Zeile fotografieren, nicht nur die von Ambrose (Auftritte, 28.11.2026). */
+const ALLE = process.env.GESPRAECH_ALLE === "1";
+/**
+ * GESPRAECH_PARTIEN=1: Partien, die das Gespräch startet, spielen (partie.ts), Fenster bedienen
+ * (Deckwahl, Ergebniskarte) und das Gespräch danach weiterführen, etwa Clubkampf → Hale und
+ * {rivale} kommen herein → Partie gegen {rivale} → Nachgespräch (Auftritte, 28.11.2026).
+ */
+const PARTIEN = process.env.GESPRAECH_PARTIEN === "1";
+/** Höchstens so viele Schritte durch das Gespräch (mit Partien mehr). */
+const SCHRITTE = PARTIEN ? 160 : 40;
 const EINBLENDEN_MS = 700;
 const KURZ_MS = 300;
 
@@ -45,14 +55,21 @@ test("Gesprächsprobe: Ambrose flüstert neben dem Helden", async () => {
     await tippe(lauf, seite.getByTestId("abenteuer-aktion"), "Aktionsknopf");
   }
   const zeilen: string[] = [];
+  const g = neuesFenstergedaechtnis();
   for (let i = 0, foto = 0; i < SCHRITTE; i++) {
     await seite.waitForTimeout(EINBLENDEN_MS);
     const lage = await liesLage(seite);
+    if (PARTIEN && lage.bild === "partie") {
+      const partie = await spielePartie(lauf, g);
+      console.log(`  Partie ${partie?.kennung ?? "?"}: ${partie?.ausgang ?? "?"}`);
+      continue;
+    }
+    if (!lage.dialog && PARTIEN && (await bedieneFenster(lauf, lage, g))) continue;
     if (!lage.dialog) break;
     console.log(`  ${lage.dialog.sprecher}: ${lage.dialog.text.slice(0, 50)}`);
     const fluestert = await seite.getByTestId("abenteuer-fluestern").isVisible();
     const gedanke = (await seite.locator("[data-gedanke='ja']").count()) > 0;
-    if (lage.dialog.sprecher.startsWith("Ambrose") || gedanke) {
+    if (ALLE || lage.dialog.sprecher.startsWith("Ambrose") || gedanke) {
       const geist = await begleiter(seite);
       const name = `${DING}-${FORMAT}-${++foto}`;
       await seite.screenshot({ path: join(FOTOS || ordner, `${name}.png`) });

@@ -16,6 +16,7 @@
  */
 import Phaser from "phaser";
 import { eingangsfeld, type Auftrittsfeld, type Auftrittsplan } from "../regeln/auftritt";
+import type { Sichtfeld } from "../regeln/sichtsperre";
 import {
   AUFTRITT,
   BLENDE_MS,
@@ -173,12 +174,20 @@ export function richteAuftritteEin(
   return schicht;
 }
 
+/** Was die Szene beim Abbau über ihre Figuren weiß (auftrittsgedaechtnis.ts). */
+export interface Szenenaufstellung {
+  readonly figuren: Map<string, Auftrittsfeld>;
+  /** Bildausschnitt der Kamera in Kacheln (regeln/sichtsperre.ts). */
+  readonly sicht: Sichtfeld;
+}
+
 /**
  * Wer auf der Karte sichtbar steht und wo (für das Gedächtnis der Auftritte, beim Abbau der Szene):
  * das Feld des Auslösers, der nach einem `#gehe` mitrückt (fuehrungsschicht.ts). Wartende und
- * Hinausgegangene zählen nicht. Beispiel: Hale nach seinem `#gehe` auf 18,5.
+ * Hinausgegangene zählen nicht. Dazu der Bildausschnitt für die Sichtsperre.
+ * Beispiel: Hale nach seinem `#gehe` auf 18,5.
  */
-export function aufgestellteFiguren(z: Fuehrungszugang | null): Map<string, Auftrittsfeld> | null {
+export function aufgestellteFiguren(z: Fuehrungszugang | null): Szenenaufstellung | null {
   if (!z) return null;
   const figuren = new Map<string, Auftrittsfeld>();
   for (const a of z.ausloeser) {
@@ -188,5 +197,12 @@ export function aufgestellteFiguren(z: Fuehrungszugang | null): Map<string, Auft
     if (figur.getData(AUFTRITT) === "wartet") continue;
     figuren.set(a.name, { x: a.x, y: a.y });
   }
-  return figuren;
+  const blick = z.szene.cameras.main.worldView;
+  const sicht = {
+    x: blick.x / z.kachel,
+    y: blick.y / z.kachel,
+    breite: blick.width / z.kachel,
+    hoehe: blick.height / z.kachel,
+  };
+  return { figuren, sicht };
 }

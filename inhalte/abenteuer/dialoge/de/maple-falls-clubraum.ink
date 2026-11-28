@@ -185,7 +185,7 @@ Mach es besser als ich. #sprecher:ambrose #stimmung:lacht
 Sie steckt dir die Nadel an. Selbst, etwas schief. #sprecher:erzaehler #klang:fanfare
 {heimwegNadelGesehen:Eine Stufe besser als die alte. So macht man das.|Viertes Brett. Samstag spielen wir in Cedar Creek.} #sprecher:coachDelgado #stimmung:laechelt #musik:karte
 {not heimwegNadelGesehen:
-    Juno umarmt dich so heftig, dass das Tagebuch auf den Boden fällt. #sprecher:erzaehler
+    Juno umarmt dich so heftig, dass das Tagebuch auf den Boden fällt. #sprecher:erzaehler #gehe:junoClub>held
     {samVersoehnt:Ich hab's dir gesagt.|Nicht schlecht. Für ein viertes Brett.} #sprecher:sam #stimmung:froh
 }
 // Den Mentor-Zug gibt es erst nach dem Clubkampf von Cedar Creek (Roman und Story-Bibel,
@@ -483,15 +483,15 @@ Und ein Matt in eins, das hab ich selbst gefunden. #sprecher:juno #stimmung:laec
 Ein schwarzer Wagen hält vor der Schule. Ein Mann steigt aus, ein Telefon am Ohr, ein zweites in der Hand. #sprecher:erzaehler #pause #musik:aus #klang:wagen
 Dann steht er in der Tür und kommt herein, hinter ihm {rivalin:ein Mädchen|ein Junge}. #sprecher:erzaehler #gehe:haleClub>18,5;victorClub>9,3
 Coach Delgado hat die Trainingsjacke bis oben zugezogen. #sprecher:erzaehler
-Der Mann gibt jedem die Hand, auch dir. Er hat ein freundliches, müdes Gesicht. #sprecher:erzaehler
+Der Mann gibt jedem die Hand, auch dir. Er hat ein freundliches, müdes Gesicht. #sprecher:erzaehler #gehe:haleClub>held
 Ein Programm, das nie krank wird und nie die Geduld verliert. Perfect Move. #sprecher:grahamHale #stimmung:laechelt
 Schach für die Zukunft. #sprecher:grahamHale #stimmung:laechelt
 Was kostet das? #sprecher:coachDelgado #stimmung:nachdenklich
 Für Pilotschulen zunächst nichts. #sprecher:grahamHale #stimmung:laechelt
-Am Fenster steht {rivalin:ein Mädchen|ein Junge}, ein Tablet unter dem Arm. {rv_Er} hat sich nicht gesetzt. #sprecher:erzaehler
+Am Fenster steht {rivalin:ein Mädchen|ein Junge}, ein Tablet unter dem Arm. {rv_Er} hat sich nicht gesetzt. #sprecher:erzaehler #schwenk:9,3
 {rv_Er} sieht auf deine Nadel. #sprecher:erzaehler
 {rivale} Hale. Zeig mal, was eine Nadel hier wert ist. #sprecher:victor #stimmung:kalt #musik:victor
-In deiner Tasche bricht Ambrose mitten im Satz ab. #sprecher:erzaehler #klang:hale #pause:3
+In deiner Tasche bricht Ambrose mitten im Satz ab. #sprecher:erzaehler #klang:hale #pause:3 #schwenk:held
 -> victor_wartet
 
 === victor_wartet ===

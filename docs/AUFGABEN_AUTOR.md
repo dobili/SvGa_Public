@@ -1067,6 +1067,28 @@ Profil › Einstellungen › Fehler melden.
       Gespräch lesen, dann zu Juno an der Haltestelle. Stimmt die Reihenfolge, bleibt der Held
       nach beiden Gesprächen, wo er stand, klingt der Ruf über die Straße natürlich?
       **Antwort:** „N2844 ok“ oder was stört.
+- [ ] N2845. **Hale und {rivale} kommen nach dem Clubkampf herein, der Coach bleibt da (28.11.2026,
+      dein Fehlerbericht mit Foto):** Nach dem Sieg gegen Coach Delgado sprach Graham Hale, aber
+      weder er noch {rivale} (noch Mr. Pratt) waren im Clubraum zu sehen. Ursache: Nach jeder
+      Partie baute das Spiel die Welt auf, bevor das Ergebnis im Spielstand war, also ohne die neue
+      Nadel. Ohne Nadel gibt es Hale, {rivale} und Pratt im Clubraum nicht; ihr „kommt herein“ fand
+      niemanden. Jetzt wartet die Welt nach Partien und Aufgabenrunden, bis das Ergebnis
+      eingetragen ist (überall im Spiel). Zweitens der Coach nach der Partie gegen {rivale}: Mitten
+      in der Szene stellt Pratts Heimweg die Uhr auf den Abend, und der Neuaufbau nach der Partie
+      schickte den Coach nach ihrem Tagesablauf in den Park. Die Spieluhr stand während der Partie
+      schon still (sie läuft nur in der freien Welt); jetzt gilt zusätzlich: Solange du auf
+      derselben Karte bleibst, stellt ein Neuaufbau (nach Partie, Runde oder Gespräch) die Figuren
+      nach der Stunde des letzten Aufbaus auf, erst beim Kartenwechsel oder Warten nach der neuen
+      Uhrzeit; Licht und Tönung folgen trotzdem der Uhr. Drittens, deine allgemeine Regel: Wer
+      gerade im Bild steht, springt nie und verschwindet nie durch einen Neuaufbau (Tagesablauf,
+      Ende einer Festhaltung durch die Geschichte, Bedingung). Fällt er aus der Aufstellung, geht
+      er sichtbar durch die nächste Tür hinaus; hätte er woanders stehen sollen, bleibt er, bis du
+      ihn nicht mehr siehst. Wer außerhalb des Bildes steht, darf springen. Schon umgesetzt,
+      Widerspruch genügt. Bitte: Clubkampf gewinnen, dann ansehen: Pratt kommt und geht, Hale und
+      {rivale} kommen durch die Tür herein und stellen sich hin (Hale zum Coach, {rivale} ans
+      Fenster); nach der Partie gegen {rivale} stehen Coach, Hale und {rivale} noch da, und nach dem
+      Nachgespräch gehen Hale und {rivale} durch die Tür hinaus.
+      **Antwort:** „N2845 ok“ oder was stört.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

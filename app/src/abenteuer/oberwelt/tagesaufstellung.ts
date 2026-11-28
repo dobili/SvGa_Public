@@ -33,7 +33,8 @@ export function ladeTagesablaeufe(): Promise<Tagesablaeufe> {
 
 /**
  * Die Karte nach Uhr und Geschichte. Eingaben: geladene Karte (Bedingungen schon angewandt),
- * Kennung, Ort, Spielstand, Spieldaten, Dialogvariablen und Abläufe.
+ * Kennung, Ort, Spielstand, Spieldaten, Dialogvariablen, Abläufe und die Stunde der Aufstellung
+ * (Vorgabe: die Uhr des Stands; auf derselben Karte die des letzten Aufbaus, regeln/auftritt.ts).
  * Beispiel: Maple Falls außen um 23 Uhr: Carla sitzt im Park statt vor ihrem Haus, außer ein
  * Questschritt braucht sie dort.
  */
@@ -45,6 +46,7 @@ export function nachUhr<T extends object>(
   daten: Spieldaten,
   variablen: Readonly<Record<string, unknown>>,
   ablaeufe: Tagesablaeufe,
+  stunde: number = stundeJetzt(stand),
 ): T {
   const zuordnung = personenDerFiguren(ort.figuren, ablaeufe);
   // Regel 1: Ziele laufender Schritte und der erste Schritt jeder noch nicht begonnenen
@@ -59,7 +61,7 @@ export function nachUhr<T extends object>(
   const fest = festgehaltene(ort.figuren, zuordnung, ziele, variablen);
   return nachTagesablauf(karte, {
     karte: kennung,
-    stunde: stundeJetzt(stand),
+    stunde,
     zuordnung,
     fest,
     fort: fortgeschickte(ort.figuren, zuordnung, variablen),

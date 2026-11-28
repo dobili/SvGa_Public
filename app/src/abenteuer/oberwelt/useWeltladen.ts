@@ -31,6 +31,7 @@ import { phase, stundeJetzt } from "../regeln/spieluhr";
 import { toenungJetzt } from "./uhrtoenung";
 import { BELEBUNG_EREIGNIS } from "./belebungsschicht";
 import { figurennamen, KACHELSATZ, ladeWelt, type Weltdaten } from "./weltdaten";
+import { figurobjekte } from "../regeln/sichtsperre";
 import { auftrittsplan, type Aufstellung } from "../regeln/auftritt";
 import { gemerkteAufstellung, merkeAufstellung } from "./auftrittsgedaechtnis";
 import { INNEN_FIGURFAKTOR } from "./weltmassstab";
@@ -52,6 +53,13 @@ export interface Weltanschluss {
   readonly beiTreffer: (t: Ausloesertreffer | null) => void;
   /** Die Welt ist da: Ergebnisse melden, die auf sie gewartet haben. */
   readonly beiWelt: (w: Weltdaten) => void;
+  /**
+   * Der Rückweg einer Partie oder Runde ist ausgewertet (usePartiestart.ts, useAufgabenrunde.ts).
+   * Vorher lädt die Welt nicht: Sie stünde sonst mit den Variablen von vor der Partie da (Befund
+   * des Autors, 28.11.2026: Nach dem Clubkampf fehlten Hale, {rivale} und Pratt im Clubraum, weil
+   * die Karte ohne die neue Nadel aufgebaut war; ihr `#gehe` fand niemanden).
+   */
+  readonly bereit: boolean;
 }
 
 /** Erster Besuch eines Ortes (W2): merken, Dialogvariable `besucht<Ort>` für den Bus. */
@@ -80,10 +88,16 @@ function auftrittFuer(w: Weltdaten, vorher: Aufstellung | null) {
   return { plan: auftrittsplan(vorher, w.kennung, lage), von: w.auftritt.von };
 }
 
-/** Beim Abbau: Wer sichtbar stand und wo, für die Auftritte beim nächsten Aufbau dieser Karte. */
-function merkeAbbau(k: Oberweltkern, karte: string, platz: string): void {
-  const figuren = szeneAus(k.spiel)?.aufstellung();
-  if (figuren) merkeAufstellung({ karte, figuren }, platz);
+/**
+ * Beim Abbau: Wer sichtbar stand und wo, für die Auftritte beim nächsten Aufbau dieser Karte, und
+ * nach welcher Stunde (regeln/auftritt.ts, aufstellungsstunde), dazu Bildausschnitt und Objekte der
+ * Figuren für die Sichtsperre (regeln/sichtsperre.ts); ohne geladene Welt nichts.
+ */
+function merkeAbbau(k: Oberweltkern, karte: string, platz: string, w: Weltdaten | null): void {
+  const szene = szeneAus(k.spiel)?.aufstellung();
+  if (!szene || !w) return;
+  const objekte = new Map(figurobjekte(w.karte).map((o) => [String(o.name), o]));
+  merkeAufstellung({ karte, ...szene, stunde: w.stunde, objekte }, platz);
 }
 
 /**
@@ -129,7 +143,7 @@ function starteSpiel(
   // Für Prüfungen: Stunde und aufgestellte Statisten an der Welt (Spieluhr, belebungsschicht.ts).
   // Der Hörer kommt vor den Start der Szene: Liegt alles im Texturspeicher, meldet sie sofort.
   const welt = rahmen.parentElement;
-  welt?.setAttribute("data-stunde", String(stundeJetzt(stand)));
+  welt?.setAttribute("data-stunde", String(w.stunde));
   const statisten = (namen: string[]) => welt?.setAttribute("data-statisten", namen.join(","));
   const anmelden = (s: Phaser.Game) => s.events.on(BELEBUNG_EREIGNIS, statisten);
   const spiel = zeigeKarte(
@@ -148,8 +162,9 @@ function starteSpiel(
       hintergrund: w.hintergrund,
       belebungsbilder: w.belebungsbilder,
       toenung,
-      // Statisten nach der Spieluhr (regeln/spieluhr.ts), nur beim Aufbau der Karte.
-      stunde: stundeJetzt(stand),
+      // Statisten nach der Spieluhr (regeln/spieluhr.ts), nur beim Aufbau der Karte; auf derselben
+      // Karte nach der Stunde des letzten Aufbaus (regeln/auftritt.ts, aufstellungsstunde).
+      stunde: w.stunde,
       // Teilchen der Karte aus orte.json (T8); Winterkarten haben Schnee.
       teilchen: istTeilchenart(eintrag?.teilchen) ? eintrag.teilchen : null,
       // Wer hereinkommt, hinausgeht oder wartet (auftrittsschicht.ts).
@@ -233,9 +248,11 @@ export function useWeltladen(k: Oberweltkern, a: Weltanschluss): string | null {
   const karte = k.stand?.position.karte;
   const figur = k.stand?.held.figur;
   useEffect(() => {
-    const stand = k.stand;
-    if (!stand || !karte) return;
+    // Der Stand, den der Rückweg gerade geschrieben hat (merke setzt die Referenz sofort).
+    const stand = k.standRef.current ?? k.stand;
+    if (!stand || !karte || !a.bereit) return;
     let aktiv = true;
+    let geladen: Weltdaten | null = null;
     let abmelden: (() => void) | null = null;
     // Beginn dieser Sitzung in der Welt, für die Spielzeit im Spielstand.
     let begonnen = Date.now();
@@ -267,6 +284,7 @@ export function useWeltladen(k: Oberweltkern, a: Weltanschluss): string | null {
     Promise.all([ladeWelt(karte, stand.held.figur, variablen, stand, vorher), moebelliste])
       .then(([w, moebel]) => {
         if (!aktiv || !a.rahmen.current) return;
+        geladen = w;
         k.setzeWelt(w);
         merkeBesuch(k, w);
         // Karte betreten (Quests), dann Ergebnisse, die auf die Welt gewartet haben.
@@ -280,16 +298,17 @@ export function useWeltladen(k: Oberweltkern, a: Weltanschluss): string | null {
       document.removeEventListener("visibilitychange", beiSichtwechsel);
       meldeStandquelle(null);
       sichereSitzung(k, karte, begonnen, stand.begonnen);
-      merkeAbbau(k, karte, stand.begonnen);
+      merkeAbbau(k, karte, stand.begonnen, geladen);
       abmelden?.();
       if (k.spiel.current) raeumeKarteAb(k.spiel.current);
       k.spiel.current = null;
     };
     // Nur die Karte zählt: Ein Kartenwechsel baut die Welt neu auf, alles andere nicht; dazu das
     // Warten (useWarten.ts), das dieselbe Karte nach der neuen Uhrzeit aufstellt, und die Wahl
-    // von Held oder Heldin im Spielmenü (neuer Bogen auf derselben Karte).
+    // von Held oder Heldin im Spielmenü (neuer Bogen auf derselben Karte); und das Ende des
+    // Rückwegs einer Partie oder Runde (`bereit`).
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [karte, k.aufbau, figur]);
+  }, [karte, k.aufbau, figur, a.bereit]);
   // Die Oberwelt verlässt den Bildschirm (Partie, Startkarte): das Spiel schläft, statt zu enden.
   // Nach dem Effekt oben angemeldet, damit dessen Abbau (Position sichern) vorher läuft.
   useEffect(() => {

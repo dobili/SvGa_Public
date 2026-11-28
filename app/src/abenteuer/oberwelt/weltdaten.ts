@@ -23,6 +23,7 @@ import type { SprechblasenInhalt } from "./Sprechblase";
 import { ohneAbwesende } from "../regeln/abwesenheit";
 import { ohneFigurenNachBedingung } from "../regeln/figurbedingung";
 import {
+  aufstellungsstunde,
   gehendeFiguren,
   weltauftritt,
   type Aufstellung,
@@ -32,6 +33,8 @@ import type { Abenteuerstand, Heldfigur } from "../schnittstelle/spielstand";
 import { ERSATZFIGUR, heldbogenpfad } from "../regeln/heldfigur";
 import { rivalinbogen, rivalinGewaehlt } from "../regeln/rivalform";
 import { ladeTagesablaeufe, nachUhr } from "./tagesaufstellung";
+import { stundeJetzt } from "../regeln/spieluhr";
+import { mitSichtsperre } from "../regeln/sichtsperre";
 import { figurenbildAdresse } from "./figurbogen";
 import type { Standbildindex } from "./figurzustand";
 import { figurstandbilderFuer, ladeStandbildindex } from "./standbildindex";
@@ -91,6 +94,8 @@ export interface Weltdaten {
   readonly begleiter: readonly string[];
   /** Auftritte (regeln/auftritt.ts): Wartende, nur zum Hinausgehen Behaltene, Übergang je Figur. */
   readonly auftritt: Weltauftritt;
+  /** Stunde, nach der Figuren und Statisten stehen (regeln/auftritt.ts, aufstellungsstunde). */
+  readonly stunde: number;
 }
 
 /**
@@ -220,6 +225,8 @@ export async function ladeWelt(
   const begleiter =
     fund.ort.art === "erinnerung" ? [] : begleiterFuer(fund.ort.begleiter, variablen);
   // Tagesabläufe (regeln/tagesablauf.ts): die Uhr stellt die Figuren auf, die Geschichte geht vor.
+  // Auf derselben Karte bleibt die Stunde des letzten Aufbaus (Coach nach der Partie, 28.11.2026).
+  const stunde = aufstellungsstunde(vorher, kartenkennung, stundeJetzt(stand ?? {}));
   const aufgestellt = stand
     ? nachUhr(
         ohneVerborgene,
@@ -229,9 +236,17 @@ export async function ladeWelt(
         daten,
         variablen,
         await ladeTagesablaeufe(),
+        stunde,
       )
     : ohneVerborgene;
-  const karte = ohneBegleiter(aufgestellt, fund.ort, begleiter);
+  // Sichtsperre (regeln/sichtsperre.ts): Wer im Bild stand, springt nicht und verschwindet nicht.
+  const gesperrt = mitSichtsperre(
+    ohneBegleiter(aufgestellt, fund.ort, begleiter),
+    vorher,
+    kartenkennung,
+    new Set(begleiter),
+  );
+  const karte = gesperrt.karte;
   const erinnerung = fund.ort.art === "erinnerung";
   const spriteVon = (name: string) => spriteZu(daten.orte, fund.ort, name);
   const standbildindex = await ladeStandbildindex();
@@ -281,9 +296,10 @@ export async function ladeWelt(
     zustand: fassung.zustand,
     jahreszeit: jahreszeitDer(karte),
     auftritt: weltauftritt(figurennamen(karte), (n) => figurZu(fund.ort, n)?.auftritt, {
-      gehend,
+      gehend: [...new Set([...gehend, ...gesperrt.gehend])],
       variablen,
     }),
+    stunde,
   };
 }
 

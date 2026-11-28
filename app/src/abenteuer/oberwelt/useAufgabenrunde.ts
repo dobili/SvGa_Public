@@ -37,6 +37,8 @@ export interface Runden {
   readonly starteRunde: (runde: string) => void;
   /** Eine bestandene Runde als Quest-Ereignis, sobald die Welt da ist. */
   readonly meldeRunde: (w: Weltdaten) => void;
+  /** Der Rückweg wertet die Runde noch aus; solange wartet die Welt (useWeltladen.ts). */
+  readonly rueckwegOffen: boolean;
   /** Die Gedächtnisstellung, die gerade offen ist. */
   readonly gedaechtnis: string | null;
   readonly starteGedaechtnis: (kennung: string) => void;
@@ -64,6 +66,8 @@ function useRueckwegDerRunde(
     readonly offen: (auftrag: Aufgabenauftrag) => void;
     readonly ergebnis: (e: Rundenergebnis) => void;
     readonly bestanden: (runde: string) => void;
+    /** Ausgewertet (oder ohne Ergebnis, oder gescheitert): Die Welt darf laden. */
+    readonly fertig: () => void;
   },
 ): void {
   useEffect(() => {
@@ -72,24 +76,27 @@ function useRueckwegDerRunde(
     const gemerkt = k.stand?.ergebniskarte;
     if (!auftrag && gemerkt?.art === "runde") setzen.ergebnis(gemerkt);
     if (!auftrag) return;
-    void Promise.all([k.dienste.liesAufgabenergebnis(auftrag.kennung), ladeSpieldaten()]).then(
-      ([ergebnis, daten]) => {
-        const aktuell = k.standRef.current;
-        if (!aktuell) return;
-        if (!ergebnis) {
-          setzen.offen(auftrag);
-          return;
-        }
-        const r = standNachRunde(aktuell, auftrag, ergebnis, daten);
-        // Steigerung des Kampfthemas je bestandener Runde (Klangplan A0.1, ton/mischregie.ts).
-        tonregie.ergebnis(r.bestanden);
-        const { stand, ...werte } = r;
-        const karte = { art: "runde", auftrag, ...werte } as const;
-        setzen.ergebnis(karte);
-        k.schreibe({ ...stand, ergebniskarte: karte });
-        if (r.bestanden) setzen.bestanden(auftrag.runde);
-      },
-    );
+    const auswertung = Promise.all([
+      k.dienste.liesAufgabenergebnis(auftrag.kennung),
+      ladeSpieldaten(),
+    ]).then(([ergebnis, daten]) => {
+      const aktuell = k.standRef.current;
+      if (!aktuell) return;
+      if (!ergebnis) {
+        setzen.offen(auftrag);
+        return;
+      }
+      const r = standNachRunde(aktuell, auftrag, ergebnis, daten);
+      // Steigerung des Kampfthemas je bestandener Runde (Klangplan A0.1, ton/mischregie.ts).
+      tonregie.ergebnis(r.bestanden);
+      const { stand, ...werte } = r;
+      const karte = { art: "runde", auftrag, ...werte } as const;
+      setzen.ergebnis(karte);
+      k.schreibe({ ...stand, ergebniskarte: karte });
+      if (r.bestanden) setzen.bestanden(auftrag.runde);
+    });
+    // Erst mit dem neuen Stand baut die Welt auf, wie nach einer Partie (usePartiestart.ts).
+    void auswertung.finally(setzen.fertig);
     // Nur beim Aufbau, wie der Rückweg der Partie.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -154,7 +161,9 @@ export function useAufgabenrunde(k: Oberweltkern, partie: Partien): Runden {
     offeneRundenmeldung.current = null;
     k.melde({ art: "aufgaben", runde }, w);
   };
+  const [rueckwegOffen, setzeRueckwegOffen] = useState(() => Boolean(k.stand?.laufendeAufgaben));
   useRueckwegDerRunde(k, {
+    fertig: () => setzeRueckwegOffen(false),
     offen: setzeOffeneRunde,
     ergebnis: setzeRundenergebnis,
     bestanden: (runde) => {
@@ -164,6 +173,7 @@ export function useAufgabenrunde(k: Oberweltkern, partie: Partien): Runden {
   });
   const s = simultan(k, partie);
   return {
+    rueckwegOffen,
     rundenergebnis,
     schliesseRundenergebnis: () => {
       setzeRundenergebnis(null);

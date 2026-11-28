@@ -4,6 +4,30 @@ Jede Entscheidung zum Spiel steht hier, damit spätere Sitzungen (auch mit Opus)
 können. Neueste Einträge oben. Offene Fragen stehen unten in „Offen“; der Autor antwortet über
 die Entscheidungsseite (Claude-Artefakt „Schach-Abenteuer Entscheidungen“) oder im Chat.
 
+## 28.11.2026 – Welt erst nach dem Ergebnis, stehende Aufstellung, Sichtsperre (N2845)
+
+- **Fehler (Bericht des Autors, Foto):** Nach dem Clubkampf sprach Graham Hale, aber Hale,
+  {rivale} und Pratt waren im Clubraum nicht zu sehen. Ursache: Der Rückweg einer Partie las das
+  Ergebnis asynchron (usePartiestart.ts), die Welt lud schon vorher mit dem Stand von vor der
+  Partie (ohne Nadel: Grundfassung der Karte ohne ihre Objekte, Bedingungen falsch), und das
+  `#gehe:haleClub>…;victorClub>…` fand keine Figur. Jetzt lädt die Welt erst, wenn der Rückweg
+  einer Partie oder Runde ausgewertet ist (useWeltladen.ts `bereit`, Tests rueckweg.test.ts,
+  auftrittswarten.test.ts). Geprüft: alle Figuren mit `auftritt.wartet` (haleClub, victorClub,
+  junoClub, ironwood.mama) haben ein `#gehe` und ein Objekt auf einer Fassung ihrer Karte.
+- **Coach nach der Partie gegen {rivale} fort (Zusatzbefund):** Pratts Heimweg setzt mitten in der
+  Szene `#uhr:abend`; der Neuaufbau nach der Partie stellte den Coach nach ihrem Tagesablauf (18 bis
+  21 Uhr Park) weg. Die Spieluhr steht während Partien, Runden und Brettansichten schon still
+  (useSpieluhr.ts läuft nur in freier Welt; Wunsch des Autors „Zeit während Partien nicht
+  weiterlaufen lassen“ ist damit erfüllt; die Spielzeit des Spielstands zählt getrennt, nur in
+  der Welt). Neu: Auf derselben Karte stellt ein Neuaufbau nach der Stunde des letzten Aufbaus
+  auf (regeln/auftritt.ts `aufstellungsstunde`), Licht und Tönung folgen der Uhr; nach einem
+  Kartenwechsel, dem Neuladen oder dem Warten gilt die Uhr.
+- **Sichtsperre (Wunsch des Autors):** Eine Figur im Bildausschnitt (Kamera plus ein Feld Rand)
+  wird durch Tagesablauf, Ende einer Festhaltung, Bedingung oder Neuaufbau nie versetzt oder
+  entfernt: Fehlt sie in der neuen Aufstellung, steht sie wieder auf ihrem Feld und geht durch die
+  nächste Tür hinaus (Auftrittsschicht); wäre sie versetzt worden, bleibt sie, bis sie außer Sicht
+  ist. Außerhalb des Bildes darf sie springen (regeln/sichtsperre.ts, Test sichtsperre.test.ts).
+
 ## 28.11.2026 – Kein Versetzen durch Gespräche; Mrs. Calloway ruft vor der Haustür (N2844)
 
 - **Fehler (Bericht des Autors):** Nach dem ersten Gespräch mit Juno stand der Held wieder vor

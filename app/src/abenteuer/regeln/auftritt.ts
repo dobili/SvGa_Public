@@ -19,6 +19,7 @@
  * Abhängigkeiten: regeln/bedingung.ts.
  */
 import { erfuellt } from "./bedingung";
+import type { Figurobjekt, Sichtfeld } from "./sichtsperre";
 
 /** Ein Feld der Karte in Kachelkoordinaten. */
 export interface Auftrittsfeld {
@@ -30,6 +31,32 @@ export interface Auftrittsfeld {
 export interface Aufstellung {
   readonly karte: string;
   readonly figuren: ReadonlyMap<string, Auftrittsfeld>;
+  /** Stunde der Spieluhr, nach der die Karte aufgestellt war (aufstellungsstunde). */
+  readonly stunde?: number;
+  /** Bildausschnitt beim Abbau in Kacheln (regeln/sichtsperre.ts). */
+  readonly sicht?: Sichtfeld;
+  /** Tiled-Objekte der Figuren beim Aufbau (Sitzen, Blick), für die Sichtsperre. */
+  readonly objekte?: ReadonlyMap<string, Figurobjekt>;
+}
+
+/**
+ * Nach welcher Stunde die Uhr die Figuren einer Karte aufstellt (Tagesabläufe, Statisten).
+ * Warum (Befund des Autors, 28.11.2026): Nach der Partie gegen {rivale} war Coach Delgado aus dem
+ * Clubraum verschwunden. Mitten in der Szene hatte Ink die Uhr auf den Abend gestellt (`#uhr:abend`,
+ * Pratts Heimweg), und der Neuaufbau nach der Partie stellte den Coach nach ihrem Tagesablauf in den
+ * Park. Regel der Tagesabläufe: gewechselt wird nur beim Kartenwechsel, nie vor den Augen des
+ * Spielers. Bleibt der Held auf derselben Karte (Partie, Runde, Neuaufbau nach einem Gespräch),
+ * gilt deshalb die Stunde des letzten Aufbaus weiter; Tönung und Licht folgen trotzdem der Uhr.
+ * Eingaben: gemerkte Aufstellung (oder null), Kennung der Karte, Stunde der Uhr jetzt.
+ * Beispiel: Clubraum um 15 Uhr aufgestellt, jetzt 19 Uhr, wieder der Clubraum → 15.
+ * Sonderfall: andere Karte, nichts gemerkt (Neuladen, Warten) oder ohne Stunde → die Uhr jetzt.
+ */
+export function aufstellungsstunde(
+  vorher: Aufstellung | null,
+  karte: string,
+  jetzt: number,
+): number {
+  return vorher?.karte === karte && vorher.stunde !== undefined ? vorher.stunde : jetzt;
 }
 
 /** Was die Szene beim Aufbau mit den Figuren tun soll. */

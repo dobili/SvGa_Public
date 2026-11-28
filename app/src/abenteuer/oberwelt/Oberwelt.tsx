@@ -98,6 +98,7 @@ export function Oberwelt() {
     rahmen,
     kachelanzeige,
     beiTreffer: ausl.beiTreffer,
+    bereit: !partie.rueckwegOffen && !runden.rueckwegOffen, // erst mit dem Stand nach dem Ergebnis
     beiWelt: (w) => {
       ausl.setzeTreffer(null);
       partie.meldeErgebnis(w);
@@ -122,8 +123,7 @@ export function Oberwelt() {
     vorfuehrung !== null ||
     gedaechtnis !== null ||
     offenerLaden !== null ||
-    // Auch der Abspann: Eine Meldung lag sonst unter ihm, ihr „Weiter“ verdeckt (eiliger Spieler,
-    // Akt 4, 20.11.2026); sie wartet jetzt, bis er zu ist.
+    // Auch der Abspann: Eine Meldung lag sonst unter ihm (eiliger Spieler, Akt 4, 20.11.2026).
     abspann;
   useEffect(() => {
     szeneAus(spiel)?.laufenErlaubt(!fensterOffen);

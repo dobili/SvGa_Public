@@ -208,8 +208,8 @@ export class Oberweltszene extends Phaser.Scene {
     this.auftritte?.gibFrei();
   }
 
-  /** Wer sichtbar auf der Karte steht und wo (Gedächtnis der Auftritte); vor create() null. */
-  aufstellung(): Map<string, Feld> | null {
+  /** Wer sichtbar wo steht und der Bildausschnitt (Gedächtnis der Auftritte); vor create() null. */
+  aufstellung(): ReturnType<typeof aufgestellteFiguren> {
     return aufgestellteFiguren(this.fuehrungszugang());
   }
 

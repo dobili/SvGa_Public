@@ -16,7 +16,8 @@
  * Sonderfälle: Partie ohne Uhr zeigt keine Uhren; Blindschach blendet die Figuren aus; eine
  * unbekannte Id zeigt einen Hinweis und den Weg zurück. Partiemomente der Begegnung (T5,
  * anbindung/Momentzeile.tsx), Schutzengel, Karten und das Tischgespräch (Tischgespraech.tsx)
- * sprechen in die Sprechblasen über und unter dem Brett (Tischblase.tsx, docs/spiel/29).
+ * sprechen in den Kopf der Partie: der Satz neben dem Porträt, bei anderen Sprechern deren
+ * Porträt (Sprechkopf.tsx, Wunsch des Autors 28.11.2026; vorher Blasen über und unter dem Brett).
  * Bedienung mit dem Daumen (docs/spiel/30): Brett und rechte Spalte sind eigene Blöcke; hoch
  * stehen sie untereinander (kein Knopf über dem Brett), quer nebeneinander, das Brett links in
  * voller Höhe (huellenlage.css). Drehen baut nur die Ansicht neu, der Zustand bleibt.
@@ -42,7 +43,7 @@ import { Erzaehlvorhang, Kurzformzeile, Nachwort } from "./Kurzformzeile";
 import { endgrund, gegnerName, sprecherAusPfad, statustext } from "./huellentexte";
 import { Momentzeile } from "./Momentzeile";
 import { Schutzengelzeile } from "./Schutzengelzeile";
-import { BrettfreieZeile, Tischblase, TischblasenRahmen } from "./Tischblase";
+import { BrettfreieZeile, TischblasenRahmen } from "./Tischblase";
 import { Tischgespraech } from "./Tischgespraech";
 import { Zeithinweis } from "./Zeithinweis";
 import { useBegegnung } from "./useBegegnung";
@@ -175,8 +176,6 @@ function EigenesSpielfeld(werte: {
 }) {
   return (
     <>
-      <Tischblase lage="oben" />
-      <Tischblase lage="unten" />
       {werte.da === "komponente" ? (
         <EigeneVariantenpartie partie={werte.partie} />
       ) : (
@@ -238,10 +237,8 @@ function Spielfeld({ s, partie }: { s: Partiesteuerung; partie: Partie }) {
   const amZug = leserAmZug(partie) && !partie.ende && !wertet;
   return (
     <>
-      {/* Sprechblasen am Brett (docs/spiel/29): oben der Gegner, unten Ambrose oder der Held. */}
-      <Tischblase lage="oben" />
-      <Tischblase lage="unten" />
-      {/* Partiemomente der Begegnung (T5) und das Tischgespräch sprechen in die Blasen. */}
+      {/* Partiemomente der Begegnung (T5) und das Tischgespräch sprechen in den Kopf der Partie
+          (Sprechkopf.tsx, Wunsch des Autors 28.11.2026): kein Fenster mehr über dem Brett. */}
       <Momentzeile s={s} partie={partie} />
       <Tischgespraech
         partie={partie}
@@ -345,6 +342,7 @@ export function PartieHuelle({ wert }: { readonly wert: string | null }) {
         figur={gegnerName(partie)}
         sprecher={sprecherAusPfad(partie?.einstellung.abenteuer?.portraet)}
         testid="partie"
+        sprechend={{ zugzahl: partie?.zuege.filter((z) => z.von === "leser").length ?? 0 }}
         klasse={`abenteuer-huelle-partie ${blind ? "abenteuer-huelle-blind" : ""}`}
       >
         {!s.geladen && <p className="lade">{tSpiel("huelle.laedt")}</p>}

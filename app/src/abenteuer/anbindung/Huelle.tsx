@@ -20,6 +20,7 @@ import "../raetsel.css";
 import { Portraet } from "../dialog/Portraet";
 import { tSpiel } from "../texte/texte";
 import { useAbenteuerstand } from "./dienste";
+import { Sprechkopf } from "./Sprechkopf";
 import { useKopfstimmung } from "./tischkontext";
 import { usePixelrahmen } from "./pixelrahmen";
 
@@ -36,7 +37,9 @@ function useOrtsname(): string {
  * Der Rahmen der Hülle.
  * Eingaben: Name der Figur (Gegner oder wer die Aufgaben stellt), ihre Sprecherkennung für das
  * Porträt („sam“, „coachDelgado“ oder „coach-delgado“; null ohne Bild),
- * Testkennung des Wurzelelements, zusätzliche Klasse (etwa für Blindschach), der Inhalt.
+ * Testkennung des Wurzelelements, zusätzliche Klasse (etwa für Blindschach), der Inhalt; mit
+ * `sprechend` (Partie) ist der Kopf die Sprechzeile (Sprechkopf.tsx), `zugzahl` zählt dann die
+ * Züge des Helden (ein Zug nimmt den gezeigten Satz weg).
  * Beispiel: Partie gegen Skater Jo auf der Hauptstraße → Kopf „Skater Jo / Maple Falls,
  * Hauptstraße“, darunter Brett und Uhren.
  */
@@ -45,12 +48,14 @@ export function Huelle({
   sprecher,
   testid,
   klasse = "",
+  sprechend = null,
   children,
 }: {
   readonly figur: string;
   readonly sprecher: string | null;
   readonly testid: string;
   readonly klasse?: string;
+  readonly sprechend?: { readonly zugzahl: number } | null;
   readonly children: ReactNode;
 }) {
   const pixelrahmen = usePixelrahmen();
@@ -63,13 +68,17 @@ export function Huelle({
       style={pixelrahmen?.stil}
       data-testid={testid}
     >
-      <header className="abenteuer-huelle-kopf" data-testid="abenteuer-huelle-kopf">
-        {sprecher && <Portraet sprecher={sprecher} stimmung={stimmung} />}
-        <div>
-          <p className="abenteuer-huelle-figur">{figur}</p>
-          {ort && <p className="abenteuer-huelle-ort">{ort}</p>}
-        </div>
-      </header>
+      {sprechend ? (
+        <Sprechkopf figur={figur} sprecher={sprecher} ort={ort} zugzahl={sprechend.zugzahl} />
+      ) : (
+        <header className="abenteuer-huelle-kopf" data-testid="abenteuer-huelle-kopf">
+          {sprecher && <Portraet sprecher={sprecher} stimmung={stimmung} />}
+          <div>
+            <p className="abenteuer-huelle-figur">{figur}</p>
+            {ort && <p className="abenteuer-huelle-ort">{ort}</p>}
+          </div>
+        </header>
+      )}
       <div className="abenteuer-huelle-inhalt">{children}</div>
     </div>
   );

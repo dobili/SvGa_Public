@@ -4,7 +4,8 @@
  * hält die Warteschlange je Lage als reine Rechnung (getestet in tischblasen.test.ts).
  *
  * Rolle im Gesamtbild: anbindung/Tischblase.tsx hält den Stand im Kontext und zeigt die erste
- * Zeile jeder Lage; Partiemomente (Momentzeile.tsx), der Schutzengel (Schutzengelzeile.tsx), die
+ * Zeile jeder Lage (Rätselrunde), der Sprechkopf der Partie (Sprechkopf.tsx) über `ersteZeile` die
+ * älteste beider Lagen; Partiemomente (Momentzeile.tsx), der Schutzengel (Schutzengelzeile.tsx), die
  * Karten (KartenleisteAnzeige.tsx) und das Tischgespräch (Tischgespraech.tsx) legen Zeilen hinein.
  * Grundsatz: Geschriebenes geht vor. Eine geschriebene Zeile (Moment, Spruch, Karte, Schutzengel)
  * verdrängt das Tischgespräch in beiden Lagen; solange Geschriebenes steht oder wartet, schweigt
@@ -41,9 +42,11 @@ export interface Blasenzeile {
 export interface Blasenstand {
   readonly oben: readonly Blasenzeile[];
   readonly unten: readonly Blasenzeile[];
+  /** Schlüssel beider Lagen in der Reihenfolge, in der sie kamen (Sprechkopf der Partie). */
+  readonly reihe: readonly string[];
 }
 
-export const LEERE_BLASEN: Blasenstand = { oben: [], unten: [] };
+export const LEERE_BLASEN: Blasenstand = { oben: [], unten: [], reihe: [] };
 
 /** Mehr Zeilen wartet keine Lage; was darüber kommt, entfällt (die Partie läuft weiter). */
 const HOECHSTENS_WARTEND = 3;
@@ -70,18 +73,44 @@ export function mitZeile(stand: Blasenstand, zeile: Blasenzeile): Blasenstand {
   if (zeile.vorrang === "tisch" && hatGeschriebenes(stand)) return stand;
   const basis =
     zeile.vorrang === "geschrieben"
-      ? { oben: ohneTisch(stand.oben), unten: ohneTisch(stand.unten) }
+      ? mitReihe({ oben: ohneTisch(stand.oben), unten: ohneTisch(stand.unten) }, stand.reihe)
       : stand;
   const lage = basis[zeile.lage];
   if (lage.length >= HOECHSTENS_WARTEND) return basis;
-  return { ...basis, [zeile.lage]: [...lage, zeile] };
+  return { ...basis, [zeile.lage]: [...lage, zeile], reihe: [...basis.reihe, zeile.schluessel] };
+}
+
+/** Die Reihe nur mit den Schlüsseln, die in einer Lage noch stehen oder warten. */
+function mitReihe(
+  lagen: Pick<Blasenstand, "oben" | "unten">,
+  reihe: readonly string[],
+): Blasenstand {
+  const da = new Set([...lagen.oben, ...lagen.unten].map((z) => z.schluessel));
+  return { ...lagen, reihe: reihe.filter((s) => da.has(s)) };
 }
 
 /** Die gezeigte Zeile einer Lage ist gelesen (Lesedauer um oder Tipp); die nächste rückt nach. */
 export function ohneErste(stand: Blasenstand, lage: Lage, schluessel: string): Blasenstand {
   const erste = stand[lage][0];
   if (!erste || erste.schluessel !== schluessel) return stand;
-  return { ...stand, [lage]: stand[lage].slice(1) };
+  return {
+    ...stand,
+    [lage]: stand[lage].slice(1),
+    reihe: stand.reihe.filter((s) => s !== schluessel),
+  };
+}
+
+/**
+ * Die Zeile, die als nächste dran ist, über beide Lagen hinweg: die älteste noch wartende. Sie
+ * steht immer vorn in ihrer Lage, denn jede Lage wartet in der Reihenfolge der Ankunft. Für den
+ * Sprechkopf der Partie (anbindung/Sprechkopf.tsx), der nur eine Zeile zugleich zeigt.
+ * Beispiel: Der Gegner spricht oben, danach Ambrose unten → erst der Gegner, nach ihm Ambrose.
+ * Sonderfall: nichts wartet → null.
+ */
+export function ersteZeile(stand: Blasenstand): Blasenzeile | null {
+  const schluessel = stand.reihe[0];
+  if (schluessel === undefined) return null;
+  return [...stand.oben, ...stand.unten].find((z) => z.schluessel === schluessel) ?? null;
 }
 
 /** Lesedauer: Grundzeit plus je Zeichen, höchstens so lange (ms), wie die Partiemomente. */

@@ -197,7 +197,8 @@ function gehoertZurWelt(k: Knopf): boolean {
     k.kennung === "abenteuer-aktion" ||
     k.kennung === "abenteuer-menueknopf" ||
     k.klasse.includes("abenteuer-tagebuchknopf") ||
-    k.klasse.includes("abenteuer-tischblase")
+    k.klasse.includes("abenteuer-tischblase") ||
+    k.klasse.includes("abenteuer-sprechkopf-zeile")
   );
 }
 

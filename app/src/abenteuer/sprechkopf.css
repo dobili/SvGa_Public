@@ -1,0 +1,136 @@
+/*
+ * Der Kopf der Partie als Sprechzeile (anbindung/Sprechkopf.tsx, Wunsch des Autors 28.11.2026):
+ * links das Porträt, rechts klein der Name und darunter der Ort oder der Satz, der gerade fällt.
+ * Die Höhe ist fest (hoch die des großen Porträts, huellenlage.css --kopf-hoch; quer knapp), damit
+ * kein Satz das Brett verschiebt; ein langer Satz bricht um und blättert in Seiten weiter.
+ */
+.abenteuer-sprechkopf {
+  /* Zeilen des Satzes, bevor er weiterblättert. */
+  --sprechkopf-zeilen: 4;
+  --sprechkopf-zeilenhoehe: 1.25;
+  --sprechkopf-bild: 96px;
+
+  box-sizing: border-box;
+  align-items: center;
+  overflow: hidden;
+}
+
+.abenteuer-huelle-partie > .abenteuer-sprechkopf {
+  height: var(--kopf-hoch);
+}
+
+/* Das Bildfeld behält seine Breite, auch wenn der Held spricht (kein Porträt): Der Text springt
+   nicht hin und her. */
+.abenteuer-sprechkopf-bild {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--sprechkopf-bild);
+  height: var(--sprechkopf-bild);
+  animation: abenteuer-sprechkopf-ein 0.4s ease-out;
+}
+
+/* Ambrose leicht durchsichtig wie im Dialog (regeln/geist.ts, abenteuer-atmosphaere.css). */
+.abenteuer-sprechkopf-bild[data-erscheinung="geisterhaft"] .abenteuer-dialog-portraet {
+  opacity: 0.75;
+  filter: saturate(0.8) brightness(1.05);
+}
+
+.abenteuer-sprechkopf-rechts {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Spricht jemand, steht der Name klein über dem Satz. */
+.abenteuer-sprechkopf:not([data-art="ort"]) .abenteuer-huelle-figur {
+  font-size: var(--groesse-klein);
+}
+
+.abenteuer-sprechkopf-zeile {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  animation: abenteuer-sprechkopf-ein 0.4s ease-out;
+}
+
+.abenteuer-sprechkopf-text {
+  display: block;
+  max-height: calc(1em * var(--sprechkopf-zeilenhoehe) * var(--sprechkopf-zeilen));
+  overflow: hidden;
+  font-size: 0.95rem;
+  line-height: var(--sprechkopf-zeilenhoehe);
+  overflow-wrap: anywhere;
+  scroll-behavior: smooth;
+}
+
+/* Erzählzeilen ohne Sprecher kursiv wie im Dialog. */
+.abenteuer-sprechkopf[data-art="erzaehlung"] .abenteuer-sprechkopf-text {
+  font-style: italic;
+}
+
+/* Nur für Bildschirmleser: wer spricht. */
+.abenteuer-sprechkopf-vorlesen {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@keyframes abenteuer-sprechkopf-ein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .abenteuer-sprechkopf-bild,
+  .abenteuer-sprechkopf-zeile {
+    animation: none;
+  }
+
+  .abenteuer-sprechkopf-text {
+    scroll-behavior: auto;
+  }
+}
+
+/* Quer steht der Kopf rechts neben dem Brett über der Spalte, die Uhr des Gegners rechts darin
+   (huellenlage.css): kleineres Porträt, drei Zeilen, Platz für die Uhr. */
+@media (min-aspect-ratio: 5/4) and (min-width: 600px),
+  (orientation: landscape) and (max-height: 600px) {
+  .abenteuer-sprechkopf {
+    --sprechkopf-zeilen: 3;
+    --sprechkopf-bild: 58px;
+  }
+
+  .abenteuer-huelle-partie > .abenteuer-sprechkopf {
+    height: 4.75rem;
+  }
+
+  .abenteuer-sprechkopf-bild > .abenteuer-dialog-portraet {
+    zoom: 0.6;
+  }
+
+  .abenteuer-sprechkopf-text {
+    font-size: 0.85rem;
+  }
+
+  .abenteuer-huelle-partie:has(.abenteuer-huelle-uhr-gegner) > .abenteuer-sprechkopf {
+    padding-right: 7.5rem;
+  }
+}

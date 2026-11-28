@@ -39,6 +39,16 @@ async function schneidetBrett(page: Page, testid: string): Promise<boolean> {
   return waagerecht && senkrecht;
 }
 
+/** Tippt auf die Zeile im Kopf, bis sie fort ist (ein langer Satz blättert erst weiter). */
+async function tippeWeg(page: Page, testid: string): Promise<void> {
+  const zeile = page.getByTestId(testid);
+  for (let i = 0; i < 5 && (await zeile.isVisible().catch(() => false)); i++) {
+    await zeile.click().catch(() => undefined);
+    await page.waitForTimeout(250);
+  }
+  await expect(zeile).toHaveCount(0);
+}
+
 function schreibeStand(stand: object): Promise<boolean> {
   return new Promise<boolean>((fertig, fehler) => {
     const anfrage = indexedDB.open("schach-von-grund-auf");
@@ -96,17 +106,35 @@ test("Blitz gegen Skater Jo und der Spruch „Großes Maul“", async ({ page })
   await expect(karte).toHaveAttribute("data-ansicht", "hell", { timeout: 15000 });
   await karte.click();
   await page.getByTestId("abenteuer-karte-ausspielen").click();
-  // Seit dem Tischgespräch (docs/spiel/29) spricht der Held unten, Jo antwortet oben, danach
-  // erklärt Ambrose unten, wo Sprüche hingehören; die Leiste nennt nur die Wirkung.
-  await expect(page.getByTestId("abenteuer-spruch-held")).toBeVisible();
-  await expect(page.getByTestId("abenteuer-spruch-antwort")).toBeVisible();
+  // Seit dem Sprechkopf (Wunsch des Autors, 28.11.2026) sprechen alle nacheinander im Kopf der
+  // Partie neben dem Porträt: erst der Held (ohne Porträt), dann Jo (sein Porträt), dann erklärt
+  // Ambrose (sein Porträt statt Jos), wo Sprüche hingehören; die Leiste nennt nur die Wirkung.
+  const kopf = page.getByTestId("abenteuer-huelle-kopf");
+  await expect(kopf.getByTestId("abenteuer-spruch-held")).toBeVisible();
   await expect(page.getByTestId("abenteuer-spruch-held")).toHaveAttribute("data-lage", "unten");
-  // Keine Blase auf dem Brett (Wunsch des Autors, 19.11.2026).
-  for (const kennung of ["abenteuer-spruch-held", "abenteuer-spruch-antwort"]) {
-    expect(await schneidetBrett(page, kennung), kennung).toBe(false);
-  }
-  await page.getByTestId("abenteuer-spruch-held").click();
+  await expect(kopf).toHaveAttribute("data-bild", "ohne");
+  // Kein Fenster über dem Brett (Wunsch des Autors, 19. und 28.11.2026).
+  expect(await schneidetBrett(page, "abenteuer-spruch-held")).toBe(false);
+  await expect(page.locator(".abenteuer-tischblase")).toHaveCount(0);
+  await tippeWeg(page, "abenteuer-spruch-held");
+  await expect(kopf.getByTestId("abenteuer-spruch-antwort")).toBeVisible();
+  await expect(kopf).toHaveAttribute("data-bild", "gegner");
+  await expect(kopf).toHaveAttribute("data-art", "rede");
+  expect(await schneidetBrett(page, "abenteuer-spruch-antwort")).toBe(false);
+  await tippeWeg(page, "abenteuer-spruch-antwort");
   await expect(page.getByTestId("abenteuer-spruch-erklaerung")).toContainText("im Park redet man");
+  await expect(kopf).toHaveAttribute("data-bild", "andere");
+  await expect(kopf.locator(".abenteuer-sprechkopf-bild")).toHaveAttribute(
+    "data-erscheinung",
+    "geisterhaft",
+  );
+  if (process.env.SPRECHKOPF_FOTOS) {
+    await page.screenshot({ path: `${process.env.SPRECHKOPF_FOTOS}/ambrose.png` });
+  }
+  await tippeWeg(page, "abenteuer-spruch-erklaerung");
+  // Danach wieder Jo und der Ort.
+  await expect(kopf).toHaveAttribute("data-art", "ort", { timeout: 15000 });
+  await expect(kopf).toHaveAttribute("data-bild", "gegner");
   await expect(page.locator(".abenteuer-karte-meldung")).toContainText("Ein frecher Satz");
   // Verbraucht: Die Karte liegt umgedreht im Fächer.
   await expect(karte).toHaveAttribute("data-ansicht", "rueckseite");

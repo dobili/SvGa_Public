@@ -1067,7 +1067,7 @@ Profil › Einstellungen › Fehler melden.
       Gespräch lesen, dann zu Juno an der Haltestelle. Stimmt die Reihenfolge, bleibt der Held
       nach beiden Gesprächen, wo er stand, klingt der Ruf über die Straße natürlich?
       **Antwort:** „N2844 ok“ oder was stört.
-- [ ] N2845. **Hale und {rivale} kommen nach dem Clubkampf herein, der Coach bleibt da (28.11.2026,
+- [ ] N2845. **Hale und Victor oder Victoria kommen nach dem Clubkampf herein, der Coach bleibt da (28.11.2026,
       dein Fehlerbericht mit Foto):** Nach dem Sieg gegen Coach Delgado sprach Graham Hale, aber
       weder er noch {rivale} (noch Mr. Pratt) waren im Clubraum zu sehen. Ursache: Nach jeder
       Partie baute das Spiel die Welt auf, bevor das Ergebnis im Spielstand war, also ohne die neue
@@ -1089,6 +1089,21 @@ Profil › Einstellungen › Fehler melden.
       Fenster); nach der Partie gegen {rivale} stehen Coach, Hale und {rivale} noch da, und nach dem
       Nachgespräch gehen Hale und {rivale} durch die Tür hinaus.
       **Antwort:** „N2845 ok“ oder was stört.
+- [ ] N2846. **Sätze im Kopf der Partie statt Fenster über dem Brett (28.11.2026, dein Wunsch):**
+      Was während einer Partie gesagt wird, steht jetzt oben rechts neben dem Porträt, wo sonst
+      Name und Ort stehen: der Name klein darüber, der Satz darunter, sanft eingeblendet. Spricht
+      der Gegner, bleibt sein Porträt (in der Stimmung des Satzes); spricht jemand anderes, etwa
+      Ambrose, steht für diesen Satz dessen Porträt da (Ambrose leicht durchsichtig wie im
+      Dialog), danach wieder der Gegner und der Ort. Erzählzeilen („Jo dreht das Brett …“) stehen
+      kursiv neben dem Gegner; deine eigenen Sätze (Sprüche) ohne Porträt mit „Du“. Kommen mehrere
+      Sätze kurz hintereinander, kommen sie nacheinander dran, keiner geht verloren. Ein Satz
+      bleibt so lange, wie man zum Lesen braucht, oder bis du ziehst (frühestens nach zwei
+      Sekunden); Tippen auf den Satz springt zum nächsten. Die Höhe des Kopfs bleibt fest (hoch
+      vier Zeilen, quer drei), ein sehr langer Satz blättert weiter, das Brett rückt nie. Die
+      Fenster über und unter dem Brett gibt es in der Partie nicht mehr (in der Rätselrunde noch).
+      Bitte: gegen Skater Jo mit „Großes Maul“ spielen und die Karte ausspielen (du, dann Jo,
+      dann Ambrose), hoch und quer. Passt die Lesezeit, ist der Wechsel der Porträts ruhig genug?
+      **Antwort:** „N2846 ok“ oder was stört (etwa länger stehen lassen, Ort ganz weglassen).
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

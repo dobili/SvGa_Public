@@ -8,6 +8,8 @@
  * Steuerung und legt Zeilen hinein (Warteschlange und Vorrang: anbindung/tischblasen.ts). Die
  * Blase legt sich nie aufs Brett und hält nichts an: Sie verschwindet nach der Lesedauer oder auf
  * Tipp. Der Kopf der Hülle zeigt das Porträt in der Stimmung der oberen Zeile (useKopfstimmung).
+ * In der Partie zeigt seit dem 28.11.2026 der Kopf selbst die Zeilen (Sprechkopf.tsx, Wunsch des
+ * Autors); die Blasen hier stehen nur noch in der Rätselrunde (AufgabenAnsicht.tsx).
  * Abhängigkeiten: anbindung/tischblasen.ts, dialog/Portraet.tsx, texte/texte.ts.
  */
 import { useEffect, useMemo, useReducer, useRef, type ReactNode } from "react";

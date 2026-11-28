@@ -969,6 +969,14 @@ Profil › Einstellungen › Fehler melden.
       liegen Zeitungen und Laub, die Blitzspieler sitzen auf Flaschenkästen. Passt das, wirkt noch
       etwas fremd?
       **Antwort:** „N2821 ok“ oder was stört.
+- [ ] N2830. **Chessfare, Schriftzug und Holz (28.11.2026):** Das Spiel heißt jetzt Chessfare (deine
+      Wahl). Auf dem Startbild, im Hauptmenü und auf der Startkarte steht ein Schriftzug: goldener
+      Pixel-Bauer, „Chess“ in Gold, „fare“ hell, darunter ein Band aus Schachfeldern; auf dem
+      Startbild hüpft der Bauer im Schritt. Das Brett klappt jetzt fließend auf (vorher in 12
+      Stufen), Brett und Weg sind aus Ahorn und Nussbaum wie die Brettfarbe der App. Im Querformat
+      steht „Weiter“ tiefer. Öffne das Abenteuer in einem neuen Tab: Ruckelt noch etwas, passt der
+      Schriftzug, ist das Holz auf dem Weg gut zu erkennen?
+      **Antwort:** „N2830 ok“ oder was stört.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,
@@ -2756,25 +2764,6 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
       GitHub rote Prüfungen trotzdem per Mail.
 
 ### Q27 Name des Spiels und Fragen aus dem Lektorat (27.11.2026)
-
-- [ ] Q27-1. **Name des Spiels** (Stand 28.11.2026): „Schach-Abenteuer“ ist nur ein Arbeitstitel.
-      Dein Wunsch „Chessbound“ ist nicht frei genug: Seit 6.11.2026 gibt es das fast gleiche
-      Browserspiel „Chessbound: The Crown's Gambit“ (Pixel-Schach-RPG mit Oberwelt und Elo-Gegnern),
-      dazu drei itch.io-Projekte und eine Store-App, die bis Oktober so hieß; chessbound.com ist
-      vergeben. „Gambit Road“ scheidet ebenfalls aus (Android-App „Gambit Road: Chess Puzzles“).
-      Neu geprüft wurden 34 Namen gegen App Store (US, DE), Google Play, Steam, itch.io, GitHub,
-      US-Marken (USPTO) und Domains (.com, .de, .app, .games). Ohne jeden Treffer blieben drei:
-      **Wanderpawn** (Empfehlung): wandern/wander und pawn, der Bauer, der zur Dame wird; ein
-      Kunstwort, also starker Schutz, im Deutschen gut sprechbar. **Pawnfarer**: wie „wayfarer“,
-      der Bauer auf Reisen, am nächsten an der Idee von Chessbound; „-farer“ ist im Deutschen
-      weniger geläufig. **Chessfare**: „Chess“ versteht jedes Kind, „-fare“ steht für Reise; etwas
-      schwächerer Schutz, weil „Chess“ beschreibend ist.
-      Nicht abfragbar waren EUIPO, DPMA, WIPO und der Nintendo eShop. Vor der Veröffentlichung
-      amtlich in DE, EU und US (Klassen 9, 28, 41) suchen, am besten mit Fachleuten, dann Domains
-      sichern und den Namen in beiden Stores reservieren. Noch nicht umgesetzt, weil der Name nach
-      außen geht. Nach deiner Wahl baue ich ihn ein, dazu einen eigenen Schriftzug auf dem
-      Startbild und Entwürfe für das App-Icon.
-      **Antwort:**
 
 - [ ] Q27-2. **Clubkampf in Cedar Creek vor dem Bus:** Man kann den Clubkampf bei Mrs. Okafor am
       Morgen spielen, bevor das Team mit dem Bus ankommt. Schon umgesetzt: Der Coach reagiert darauf

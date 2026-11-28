@@ -3430,7 +3430,7 @@
   "lizenzen.schriftpixel.herkunft": "github.com/eifetx/Pixelify-Sans, via Fontsource; the capital Z was redrawn for the game",
   "lizenzen.holzbilder.name": "Wood images of the “Maple & Walnut” board (Wood095, Wood026)",
   "lizenzen.holzbilder.lizenz": "CC0 1.0 (public domain)",
-  "lizenzen.holzbilder.herkunft": "ambientCG.com; rotated, lightened, saved as WebP",
+  "lizenzen.holzbilder.herkunft": "ambientCG.com; rotated, lightened, saved as WebP; also used in the chess adventure (opening scene, “Maple & Walnut” board)",
   "lizenzen.materialbretter.name": "Material boards Maple & Cherry Inlay, Classic Wood, Green Marble (the lila authors and pirouetti)",
   "lizenzen.materialbretter.lizenz": "GNU AGPL 3.0 or later",
   "lizenzen.materialbretter.herkunft": "via Lichess (github.com/lichess-org/lila, public/images/board); converted to WebP on 18 Oct 2026, originals in pipeline/bretter/bilder",

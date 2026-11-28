@@ -19,8 +19,8 @@ const KANTENABSTAND = 2;
 const KOERPERABSTAND_SCHIEFER = 3.5;
 
 describe("Brettstile", () => {
-  it("hat die zwölf Stile der Tabelle", () => {
-    expect(BRETTSTILE).toHaveLength(12);
+  it("hat die dreizehn Stile der Tabelle", () => {
+    expect(BRETTSTILE).toHaveLength(13);
     expect(Object.keys(STILTABELLE).sort()).toEqual([...BRETTSTILE].sort());
   });
 

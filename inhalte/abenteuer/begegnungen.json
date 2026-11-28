@@ -145,7 +145,6 @@
     },
     {
       "kennung": "mapleFalls.victor",
-      "brett": "abgegriffen",
       "gegner": "mapleFalls.victor",
       "farbe": "black",
       "format": {
@@ -1160,6 +1159,7 @@
     },
     {
       "kennung": "wegDesertSummit.kreideblitz",
+      "brett": "abgegriffen",
       "gegner": "wegDesertSummit.mags",
       "farbe": "white",
       "format": {
@@ -1341,6 +1341,7 @@
     },
     {
       "kennung": "wegRivertonIronwood.dime",
+      "brett": "abgegriffen",
       "gegner": "wegRivertonIronwood.dime",
       "farbe": "zufall",
       "format": {

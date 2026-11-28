@@ -3430,7 +3430,7 @@
   "lizenzen.schriftpixel.herkunft": "github.com/eifetx/Pixelify-Sans, über Fontsource; das große Z ist für das Spiel neu gezeichnet",
   "lizenzen.holzbilder.name": "Holzbilder des Bretts „Ahorn & Nussbaum“ (Wood095, Wood026)",
   "lizenzen.holzbilder.lizenz": "CC0 1.0 (gemeinfrei)",
-  "lizenzen.holzbilder.herkunft": "ambientCG.com; gedreht, aufgehellt, als WebP gespeichert",
+  "lizenzen.holzbilder.herkunft": "ambientCG.com; gedreht, aufgehellt, als WebP gespeichert; auch im Schach-Abenteuer (Startbild, Brett „Ahorn & Nussbaum“)",
   "lizenzen.materialbretter.name": "Materialbretter Intarsie Ahorn & Kirsche, Holz klassisch, Marmor grün (the lila authors and pirouetti)",
   "lizenzen.materialbretter.lizenz": "GNU AGPL 3.0 oder neuer",
   "lizenzen.materialbretter.herkunft": "über Lichess (github.com/lichess-org/lila, public/images/board); am 18.10.2026 in WebP umgewandelt, Originale in pipeline/bretter/bilder",

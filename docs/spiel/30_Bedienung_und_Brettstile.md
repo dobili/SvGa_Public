@@ -89,21 +89,24 @@ Die Schachansichten übernehmen das Farbsystem des Spiels, nicht das der App:
 Das Brett zeigt, wo man ist und gegen wen man spielt. Jeder Ort bekommt einen Stil, einzelne
 Gegner dürfen ihn ändern (Feld `brett` in `begegnungen.json`, Vorgabe aus `orte.json`).
 
-| Ort oder Lage           | Brett                         | Figuren        |
-| ----------------------- | ----------------------------- | -------------- |
-| Dachboden (Ambrose)     | altes Holzbrett, warm         | Pixel, Holz    |
-| Maple Falls, Schulclub  | Turnier-Vinyl grün und weiß   | Pixel, Plastik |
-| Diner, Straßengegner    | abgegriffenes Holz            | Pixel, Holz    |
-| Cedar Creek, Bibliothek | Intarsie Ahorn                | Pixel, Holz    |
-| Riverton, Park          | Steintisch grau               | Pixel, Stein   |
-| Ironwood                | Stahlplatten, blau angelaufen | Pixel, Metall  |
-| Silicon Bay, Konzern    | Glas, kühles Weiß und Cyan    | Pixel, glatt   |
-| Port Delacroix          | verwittertes Holz, Salzspuren | Pixel, Holz    |
-| Desert Springs          | Sandstein                     | Pixel, Ton     |
-| Summit City             | Schiefer                      | Pixel, Stein   |
-| Capital Arena           | Turnierbrett, edel            | Pixel, poliert |
-| Erinnerungen 1857/1858  | Sepia-Holz                    | Pixel, Sepia   |
+| Ort oder Lage                             | Brett                         | Figuren        |
+| ----------------------------------------- | ----------------------------- | -------------- |
+| Dachboden (Ambrose)                       | altes Holzbrett, warm         | Pixel, Holz    |
+| Maple Falls, Schulclub                    | Turnier-Vinyl grün und weiß   | Pixel, Plastik |
+| Straßenbretter (Jo, Juno, Kreidespringer) | abgegriffenes Holz            | Pixel, Holz    |
+| Wege, Orte ohne eigenes Brett             | Ahorn & Nussbaum (Vorgabe)    | Pixel, Holz    |
+| Cedar Creek, Bibliothek                   | Intarsie Ahorn                | Pixel, Holz    |
+| Riverton, Park                            | Steintisch grau               | Pixel, Stein   |
+| Ironwood                                  | Stahlplatten, blau angelaufen | Pixel, Metall  |
+| Silicon Bay, Konzern                      | Glas, kühles Weiß und Cyan    | Pixel, glatt   |
+| Port Delacroix                            | verwittertes Holz, Salzspuren | Pixel, Holz    |
+| Desert Springs                            | Sandstein                     | Pixel, Ton     |
+| Summit City                               | Schiefer                      | Pixel, Stein   |
+| Capital Arena                             | Turnierbrett, edel            | Pixel, poliert |
+| Erinnerungen 1857/1858                    | Sepia-Holz                    | Pixel, Sepia   |
 
+- **Vorgabe (Wunsch des Autors, 28.11.2026):** Ahorn & Nussbaum in den Feldfarben des Holzbretts der
+  App, sofern Club, Region, Stadt oder Figur nicht aus Gründen der Geschichte ein eigenes Brett haben.
 - **Pixelfiguren:** ein eigener Satz im Pixelstil des Spiels, abgeleitet vom gemeinfreien Satz
   „Kiefer & Kirsche“ (RhosGFX, CC0) auf ein grobes Raster gerechnet und von Hand nachgebessert;
   Farbvarianten je Material als Tönung, nicht als neue Zeichnung.

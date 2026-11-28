@@ -118,6 +118,9 @@
   Bearbeitung (14.10.2026): um 90° gedreht, damit die Faser längs läuft; das helle Bild ist
   nahtlos nebeneinandergelegt, bis es quadratisch ist; das dunkle um 30 % aufgehellt, damit
   schwarze Figuren sich abheben; als WebP (Qualität 80) gespeichert.
+  Auch im Schach-Abenteuer (seit 28.11.2026): im Startbild der Reise als Holz von Brett und Weg;
+  der Brettstil „Ahorn & Nussbaum“ (`nussbaum`, Vorgabe für Wege und Orte ohne eigenes Brett)
+  übernimmt die Feldfarben des Bretts und zeichnet die Faser als Pixelmaserung.
 
 - **Prüfung der Lizenzen (1.11.2026, Auftrag des Autors „Lizenzen noch einmal von allem prüfen“):**
   Alle Laufzeitpakete aus `app/package-lock.json`, die Pakete des Service Workers und die in

@@ -53,9 +53,28 @@ describe("Stilwahl", () => {
     ).toBe("sepia");
   });
 
-  it("gibt Wegen und Orten ohne Stil das abgegriffene Holz", () => {
+  it("gibt Wegen und Orten ohne Stil Ahorn & Nussbaum (Wunsch des Autors, 28.11.2026)", () => {
     expect(waehleBrettstil({ art: "partie", begegnung: "wegGhostCapital.simultan1" }, daten)).toBe(
-      "abgegriffen",
+      "nussbaum",
+    );
+  });
+
+  it("lässt Straßenbrettern mit Grund aus der Geschichte das abgegriffene Holz", () => {
+    const strassenbretter = [
+      "reisebrett.juno",
+      "mapleFalls.skaterJo",
+      "wegRivertonIronwood.dime",
+      "wegDesertSummit.kreideblitz",
+      "capitalArena.kreidenacht1",
+    ];
+    for (const begegnung of strassenbretter) {
+      expect(waehleBrettstil({ art: "partie", begegnung }, daten), begegnung).toBe("abgegriffen");
+    }
+  });
+
+  it("gibt Victors Partie im Clubraum das Brett des Clubs von Maple Falls", () => {
+    expect(waehleBrettstil({ art: "partie", begegnung: "mapleFalls.victor" }, daten)).toBe(
+      "turniervinyl",
     );
   });
 
@@ -115,6 +134,6 @@ describe("Pixelfiguren", () => {
 
   it("nimmt für Vorführung und Gedächtnisstellung den Ort, an dem der Held steht", () => {
     expect(waehleBrettstil({ art: "ort", ort: "ironwood" }, daten)).toBe("stahl");
-    expect(waehleBrettstil({ art: "ort", ort: "unbekannterWeg" }, daten)).toBe("abgegriffen");
+    expect(waehleBrettstil({ art: "ort", ort: "unbekannterWeg" }, daten)).toBe("nussbaum");
   });
 });

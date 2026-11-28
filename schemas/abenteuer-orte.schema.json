@@ -29,7 +29,16 @@
       "pattern": "^[a-z][a-zA-Z0-9]*(\\.[a-zA-Z0-9]+)+$"
     },
     "licht": {
-      "enum": ["tag", "abend", "nacht", "nebel", "dunst", "serverblau", "sepia", "dunkel"]
+      "enum": [
+        "tag",
+        "abend",
+        "nacht",
+        "nebel",
+        "dunst",
+        "serverblau",
+        "sepia",
+        "dunkel"
+      ]
     },
     "karte": {
       "type": "object",
@@ -237,7 +246,14 @@
     "ort": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["kennung", "name", "nummer", "karten", "figuren", "ausloeser"],
+      "required": [
+        "kennung",
+        "name",
+        "nummer",
+        "karten",
+        "figuren",
+        "ausloeser"
+      ],
       "properties": {
         "kennung": { "$ref": "#/$defs/kennung" },
         "name": { "$ref": "#/$defs/textschluessel" },
@@ -248,11 +264,12 @@
           "maximum": 12
         },
         "brett": {
-          "description": "Brettstil der Partien und Rätselrunden an diesem Ort (docs/spiel/30, Abschnitt 5; app/src/abenteuer/brett/brettstile.ts): Feldfarben, Pixelstruktur, Rahmen und Material der Pixelfiguren. Eine Begegnung darf ihn mit eigenem brett ändern. Fehlend: abgegriffen (abgegriffenes Holz, für Wege und Dörfer)",
+          "description": "Brettstil der Partien und Rätselrunden an diesem Ort (docs/spiel/30, Abschnitt 5; app/src/abenteuer/brett/brettstile.ts): Feldfarben, Pixelstruktur, Rahmen und Material der Pixelfiguren. Eine Begegnung darf ihn mit eigenem brett ändern. Fehlend: nussbaum (Ahorn & Nussbaum wie das Holzbrett der App, für Wege und Dörfer)",
           "enum": [
             "dachboden",
             "turniervinyl",
             "abgegriffen",
+            "nussbaum",
             "ahorn",
             "steintisch",
             "stahl",

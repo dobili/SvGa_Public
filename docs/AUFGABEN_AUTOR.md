@@ -977,6 +977,18 @@ Profil › Einstellungen › Fehler melden.
       steht „Weiter“ tiefer. Öffne das Abenteuer in einem neuen Tab: Ruckelt noch etwas, passt der
       Schriftzug, ist das Holz auf dem Weg gut zu erkennen?
       **Antwort:** „N2830 ok“ oder was stört.
+- [ ] N2831. **Ahorn & Nussbaum als Standardbrett (28.11.2026, dein Wunsch):** Auf allen Wegen
+      und an Orten ohne eigenes Brett (Lockport, Steinbruch, Sternwarte, Goldmine, Pelikaninsel,
+      Hochebene, Crossroads, Jahrmarkt, Pinewood Camp, Ghost Town, Bayou, Kürbishof) spielst du
+      jetzt auf „Ahorn & Nussbaum“ in den Farben des Holzbretts der App, mit Holzfiguren und
+      feiner Maserung. Die Städte behalten ihr Brett. Das abgegriffene Holz bleibt nur dort, wo
+      die Geschichte es trägt: Jos zerkratztes Brett im Park, Junos Reisebrett und die
+      Kreidespringer (Dime unter der Brücke, Mags im Hinterzimmer des Diners, Kreidenacht im
+      U-Bahnhof). Victors Partie im Clubraum hatte das abgegriffene Holz ohne Grund
+      und spielt jetzt auf dem Turnier-Vinyl des Clubs von Maple Falls. Bitte eine Partie an einem
+      Weg spielen (etwa auf dem ersten Weg nach Cedar Creek): Wirkt das Brett wie das Holzbrett
+      der App, sind Figuren und Pfeile gut zu sehen?
+      **Antwort:** „N2831 ok“ oder was stört.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

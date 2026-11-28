@@ -31,11 +31,12 @@ from PIL import Image
 from pipeline.abenteuer.brettbild import FELDER, schneide_brett
 from pipeline.abenteuer.figurenblatt import DECKEND, FIGURENFOLGE, schneide_figuren
 
-# Die zwölf Kennungen wie in app/src/abenteuer/brett/brettstile.ts (ein Test vergleicht beide).
+# Die dreizehn Kennungen wie in app/src/abenteuer/brett/brettstile.ts (ein Test vergleicht beide).
 BRETTSTILE = (
     "dachboden",
     "turniervinyl",
     "abgegriffen",
+    "nussbaum",
     "ahorn",
     "steintisch",
     "stahl",

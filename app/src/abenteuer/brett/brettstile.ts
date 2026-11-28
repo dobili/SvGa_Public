@@ -1,5 +1,5 @@
 /**
- * Die Brettstile des Schach-Abenteuers: zwölf Bretter je Ort und Lage, mit Pixelfiguren.
+ * Die Brettstile des Schach-Abenteuers: dreizehn Bretter je Ort und Lage, mit Pixelfiguren.
  *
  * Rolle im Gesamtbild: Das Brett zeigt, wo man ist und gegen wen man spielt
  * (docs/spiel/30_Bedienung_und_Brettstile.md, Abschnitt 5). Diese Tabelle hält je Stil die
@@ -14,11 +14,12 @@
 import type { Markierungsfarbe } from "../../analyse/werkzeug";
 import { MATERIALFARBEN, type Figurfarben, type Figurmaterial } from "./materialien";
 
-/** Die zwölf Stile in der Reihenfolge der Tabelle im Dokument. */
+/** Die dreizehn Stile in der Reihenfolge der Tabelle im Dokument. */
 export const BRETTSTILE = [
   "dachboden",
   "turniervinyl",
   "abgegriffen",
+  "nussbaum",
   "ahorn",
   "steintisch",
   "stahl",
@@ -31,8 +32,12 @@ export const BRETTSTILE = [
 ] as const;
 export type Brettstilkennung = (typeof BRETTSTILE)[number];
 
-/** Stil, wenn weder Ort noch Begegnung einen nennen: Wege, Dörfer, Straßengegner. */
-export const VORGABESTIL: Brettstilkennung = "abgegriffen";
+/**
+ * Stil, wenn weder Ort noch Begegnung einen nennen: Wege, Dörfer, kleine Orte ohne eigenes Brett.
+ * Wunsch des Autors (28.11.2026): als Standard „Ahorn & Nussbaum“ wie das Holzbrett der App;
+ * nur Club, Region, Stadt oder Figur mit einem Grund aus der Geschichte haben ein eigenes Brett.
+ */
+export const VORGABESTIL: Brettstilkennung = "nussbaum";
 
 /** Arten der feinen Pixelstruktur auf den Feldern (feldstruktur.ts). */
 export type Strukturart =
@@ -99,12 +104,25 @@ export const STILTABELLE: Readonly<Record<Brettstilkennung, Brettstil>> = {
     marken: MARKEN_HELL,
     zug: ZUG_GELB,
   },
-  // Diner, Straßengegner, Wege: abgegriffenes Holz.
+  // Straßengegner mit eigenem, abgenutztem Brett (Jo, Juno, Kreidespringer): abgegriffenes Holz.
   abgegriffen: {
     hell: "#CDAB78",
     dunkel: "#80593A",
     struktur: ["maserung", "kratzer"],
     rahmen: ["#241409", "#5A3A22", "#A57B4F"],
+    material: "holz",
+    kontur: KONTUR_DUNKEL,
+    marken: MARKEN_HELL,
+    zug: ZUG_GELB,
+  },
+  // Vorgabe für Wege und Orte ohne eigenes Brett: „Ahorn & Nussbaum“ mit den Feldfarben des
+  // Holzbretts der App (ui/brett/masse.ts, BRETTFARBEN.holz), Faser als Maserung, Rahmen aus
+  // dunklem Nussbaum. Wunsch des Autors, 28.11.2026.
+  nussbaum: {
+    hell: "#E4C38E",
+    dunkel: "#8E5E36",
+    struktur: ["maserung"],
+    rahmen: ["#1F1108", "#5B3519", "#C9A06A"],
     material: "holz",
     kontur: KONTUR_DUNKEL,
     marken: MARKEN_HELL,

@@ -43,7 +43,7 @@ function stilDesOrtes(daten: Stildaten, ort: string): Brettstilkennung {
  * „reisebrett.ambrose“ mit „brett: dachboden“ → „dachboden“; Runde „summitCity.reiheWard“ →
  * „schiefer“; eine Erinnerung Ambroses → „sepia“; Ort „ironwood“ (Vorführung dort) → „stahl“.
  * Sonderfälle: Unbekannte Kennungen in den Daten zählen nicht (Schema und Tests prüfen sie);
- * eine Begegnung an einem Ort ohne Stil (Wege, Dörfer) bekommt „abgegriffen“.
+ * eine Begegnung an einem Ort ohne Stil (Wege, Dörfer) bekommt „nussbaum“ (Ahorn & Nussbaum).
  */
 export function waehleBrettstil(
   quelle: Brettquelle | null,

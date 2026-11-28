@@ -314,7 +314,8 @@
       "art": "gebaeude",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "industrie"
+      "stil": "industrie",
+      "sortierlinie": 96
     },
     "st5Stollenmund": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_4_23.png",

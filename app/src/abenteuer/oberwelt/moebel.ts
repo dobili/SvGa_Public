@@ -17,7 +17,7 @@
  * moebelfelder), damit kein Möbel einen Auslöser zustellt.
  * Abhängigkeiten: Phaser, paket/paketlader.ts.
  */
-import { moebeltiefe } from "./zeichentiefe";
+import { bildteile, type Teilbereich } from "./teilbereiche";
 import { sorte, type Texturteil } from "./jahreszeitfarben";
 import type Phaser from "phaser";
 import { liesPaketJson, paketdateiAlsAdresse } from "../paket/paketlader";
@@ -54,6 +54,10 @@ export interface Moebelangabe {
   readonly sortierlinie?: number;
   /** „boden“: das Bild liegt unter allen Figuren (Treppe, Steg; zeichentiefe.ts BODENTIEFE). */
   readonly ebene?: string;
+  /** Teile des Bildes mit eigener Tiefe (Veranda, Vortreppe; teilbereiche.ts, KARTENREGELN 10.95). */
+  readonly teilbereiche?: readonly Teilbereich[];
+  /** Rechtecke im Bild: Fuß darin → Held über dem Bild (bauteilregeln.py, teilbereiche.ts). */
+  readonly boden_bereiche?: readonly (readonly [number, number, number, number])[];
 }
 
 /** Wo ein Möbel auf einem Bogen liegt. */
@@ -242,8 +246,24 @@ export function stelleMoebelAuf(
 ): Phaser.Physics.Arcade.StaticGroup {
   const gruppe = szene.physics.add.staticGroup();
   for (const m of moebel) {
+    const [erstes, ...weitere] = bildteile(m, kachel);
     const bild = szene.add.image(m.x, m.y, m.schluessel, rahmenname(m));
     bild.setOrigin(0, 0);
+    if (erstes && !erstes.ganz) {
+      // Teilbereiche (teilbereiche.ts): je Teil ein beschnittenes Bild mit eigener Tiefe; nur
+      // ungeformt, deshalb ohne Ursprung, Maßstab und Spiegeln.
+      const a = erstes.ausschnitt;
+      bild.setCrop(a.x, a.y, a.breite, a.hoehe).setDepth(erstes.tiefe);
+      for (const t of weitere) {
+        const s = t.ausschnitt;
+        szene.add
+          .image(m.x, m.y, m.schluessel, rahmenname(m))
+          .setOrigin(0, 0)
+          .setCrop(s.x, s.y, s.breite, s.hoehe)
+          .setAlpha(m.deckkraft ?? 1)
+          .setDepth(t.tiefe);
+      }
+    }
     if (m.form) {
       // Gedreht, gespiegelt, skaliert oder beschnitten (moebelform.ts): um die Mitte des Rechtecks;
       // der Zuschnitt steckt schon im Rahmen (richteMoebelrahmenEin).
@@ -254,7 +274,7 @@ export function stelleMoebelAuf(
       bild.setAngle(m.form.drehung);
     }
     if (m.deckkraft !== undefined) bild.setAlpha(m.deckkraft); // nur das Bild, Kollision bleibt
-    bild.setDepth(moebeltiefe(m, kachel));
+    if (erstes?.ganz) bild.setDepth(erstes.tiefe);
     merke?.(m, bild);
     if (!(m.kollision ?? m.angabe.kollision)) continue;
     if (m.angabe.maske_fein) {

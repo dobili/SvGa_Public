@@ -20,7 +20,47 @@
       "art": "gebaeude",
       "gebaeude": false,
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "sortierlinie": 138,
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        ".##################.",
+        ".##################.",
+        ".##################.",
+        ".##################.",
+        ".##################.",
+        ".##################.",
+        ".##################.",
+        ".##################.",
+        ".##################.",
+        ".......#####........",
+        ".......#####........"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 138 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; Silo: runder Fuß und Leiter sperren, dahinter verdeckt der Turm den Helden"
     },
     "wr8GraffitiSpringer": {
       "quelle": "spiel/eigene/graffiti_springer_fein.png",
@@ -112,7 +152,8 @@
       "art": "gebaeude",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "sortierlinie": 160
     },
     "wr5Huehnerstall": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Chicken_Coop_16x16.png",
@@ -122,7 +163,31 @@
       "art": "gebaeude",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "sortierlinie": 64,
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################",
+        "................",
+        "................",
+        "................",
+        "................"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 64 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; Bretterboden vor dem Stall begehbar (ebenerdiger Absatz)"
     },
     "wr5Vogelscheuche": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Scarecrow_16x16.png",
@@ -750,7 +815,8 @@
       "zustand": "gebraucht",
       "stil": "industrie",
       "tuer": [[3, 7], [4, 7]],
-      "beschreibung": "Werkhalle aus Backstein am Kanal mit Sheddach (vier Oberlichter), zwei Schornsteinen, Sprossenfenstern und eisernem Doppeltor (Gemini K5, 26.11.2026); ersetzt die vergrößerte Blechhütte wr5Fabrikhalle, nicht begehbar"
+      "beschreibung": "Werkhalle aus Backstein am Kanal mit Sheddach (vier Oberlichter), zwei Schornsteinen, Sprossenfenstern und eisernem Doppeltor (Gemini K5, 26.11.2026); ersetzt die vergrößerte Blechhütte wr5Fabrikhalle, nicht begehbar",
+      "sortierlinie": 112
     },
     "wr20LattentorZu": {
       "quelle": "spiel/eigene/lattentor_zu.png",

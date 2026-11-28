@@ -1,103 +1,3628 @@
 {
+  "by9HuetteKrebs": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [2, 6, 78, 42],
+        "hinweis": "Bretterdach mit Loch, Draufsicht"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [4, 42, 76, 76],
+        "hinweis": "Bretterwand"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [8, 48, 22, 60],
+        "hinweis": "links"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [54, 46, 70, 62],
+        "hinweis": "zerbrochen"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [28, 46, 46, 76],
+        "hinweis": "Brettertür"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [16, 62, 28, 74],
+        "hinweis": "Eimer vor der Wand"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [4, 74, 76, 80],
+        "hinweis": "Bodenbretter am Fuß"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "cc27SchuppenBraun": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 48, 40],
+        "hinweis": "Satteldach, First zum Betrachter"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 30, 46, 72],
+        "hinweis": "Giebelwand"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [16, 40, 32, 72],
+        "hinweis": "Doppeltür"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [34, 44, 44, 56],
+        "hinweis": "rechts"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "cc27SchuppenRot": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 48, 40],
+        "hinweis": "Satteldach, First zum Betrachter"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 30, 46, 72],
+        "hinweis": "Giebelwand"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [16, 40, 32, 72],
+        "hinweis": "Doppeltür"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [34, 44, 44, 56],
+        "hinweis": "rechts"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "cc4Drechslerei": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [4, 0, 124, 112],
+        "hinweis": "gewölbtes Blechdach mit First in der Mitte"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [8, 96, 120, 158],
+        "hinweis": "Holzfassade mit Fachwerk"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [24, 124, 56, 158],
+        "hinweis": "Rolltor"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [80, 110, 104, 128],
+        "hinweis": "Fensterladen"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "cc5Seiteneingang": {
+    "bauteile": [
+      {
+        "typ": "gelaender",
+        "rahmen": [8, 6, 54, 64],
+        "hinweis": "Balkon mit Brüstung oben"
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [2, 8, 14, 156],
+        "hinweis": "Pfeiler links"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [12, 62, 54, 98],
+        "hinweis": "Wand mit Rundfenster über der Tür"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [30, 82, 46, 98],
+        "hinweis": "Seiteneingang"
+      },
+      {
+        "typ": "treppe",
+        "rahmen": [14, 98, 54, 156],
+        "richtung": "unten",
+        "hinweis": "führt zum Betrachter hinunter (Stufen waagerecht)"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "cc8KulisseBauernhaus": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [2, 56, 66, 130],
+        "hinweis": "Pultdach des Anbaus links"
+      },
+      {
+        "typ": "dach",
+        "rahmen": [52, 12, 126, 102],
+        "hinweis": "Satteldach Haupthaus"
+      },
+      {
+        "typ": "schornstein",
+        "rahmen": [82, 8, 96, 84]
+      },
+      {
+        "typ": "wand",
+        "rahmen": [6, 96, 122, 156],
+        "hinweis": "Fassade"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [22, 124, 54, 146],
+        "hinweis": "unten links"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [76, 92, 102, 112],
+        "hinweis": "Giebelfenster"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [78, 124, 98, 156],
+        "hinweis": "Haustür"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [6, 152, 122, 160],
+        "hinweis": "Steinsockel"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "cc8KulisseBauernhausBreit": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 8, 104, 112],
+        "hinweis": "Satteldach Haupthaus, Giebel zum Betrachter"
+      },
+      {
+        "typ": "schornstein",
+        "rahmen": [44, 6, 62, 80]
+      },
+      {
+        "typ": "dach",
+        "rahmen": [96, 54, 158, 104],
+        "hinweis": "Pultdach des Anbaus rechts, Balken davor"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [4, 78, 104, 140],
+        "hinweis": "Giebelwand Haupthaus"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [100, 104, 156, 140],
+        "hinweis": "Wand Anbau"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [48, 80, 62, 94],
+        "hinweis": "Rundfenster im Giebel"
+      },
+      {
+        "typ": "markise",
+        "rahmen": [22, 100, 82, 116],
+        "hinweis": "Vordach über dem Fenster"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [26, 112, 80, 128],
+        "hinweis": "breites Fenster"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [112, 108, 128, 140],
+        "hinweis": "Haustür im Anbau"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [134, 106, 148, 134],
+        "hinweis": "schmales Fenster"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [4, 136, 156, 144],
+        "hinweis": "Steinsockel"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "cr8Holzfaellerhuette": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [16, 4, 80, 44],
+        "hinweis": "Schindeldach, Draufsicht"
+      },
+      {
+        "typ": "schornstein",
+        "rahmen": [58, 0, 66, 10],
+        "hinweis": "Rohr mit Rauch"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [18, 40, 78, 74],
+        "hinweis": "Blockwand"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [24, 50, 38, 62]
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [60, 50, 74, 62]
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [42, 46, 56, 76]
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [8, 58, 24, 78],
+        "hinweis": "Hackklotz mit Axt"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [72, 46, 80, 76],
+        "hinweis": "Holzstapel an der Wand"
+      },
+      {
+        "typ": "absatz",
+        "rahmen": [40, 72, 58, 78],
+        "hinweis": "Schwelle vor der Tür"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "ds8Gemischtwaren": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 2, 128, 98],
+        "hinweis": "Flachdach mit Rand, Draufsicht"
+      },
+      {
+        "typ": "schild",
+        "rahmen": [42, 76, 90, 92],
+        "hinweis": "STORE"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [4, 96, 124, 140],
+        "hinweis": "Ladenfront"
+      },
+      {
+        "typ": "markise",
+        "rahmen": [8, 100, 120, 124],
+        "hinweis": "gestreift"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [16, 118, 98, 136],
+        "hinweis": "Schaufenster mit Türen"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [24, 118, 52, 138],
+        "hinweis": "Ladentür"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [4, 136, 124, 144]
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "gt8HuetteB": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [2, 6, 78, 42],
+        "hinweis": "Bretterdach mit Loch, Draufsicht"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [4, 42, 76, 76],
+        "hinweis": "Bretterwand"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [8, 48, 22, 60],
+        "hinweis": "links"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [54, 46, 70, 62],
+        "hinweis": "zerbrochen"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [28, 46, 46, 76],
+        "hinweis": "Brettertür"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [16, 62, 28, 74],
+        "hinweis": "Eimer vor der Wand"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [4, 74, 76, 80],
+        "hinweis": "Bodenbretter am Fuß"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "iw18BahnhofMuseum": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 160, 96],
+        "hinweis": "Walmdach, Draufsicht"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [64, 2, 96, 42],
+        "hinweis": "Gaube mit Uhr"
+      },
+      {
+        "typ": "schornstein",
+        "rahmen": [100, 10, 114, 30]
+      },
+      {
+        "typ": "wand",
+        "rahmen": [4, 92, 156, 140],
+        "hinweis": "Ziegelfassade"
+      },
+      {
+        "typ": "schild",
+        "rahmen": [62, 94, 98, 106]
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [26, 100, 46, 122],
+        "hinweis": "Rundbogen links"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [114, 100, 134, 122],
+        "hinweis": "Rundbogen rechts"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [70, 104, 90, 138],
+        "hinweis": "Rundbogentür"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [20, 128, 56, 144],
+        "hinweis": "Bank vor der Fassade"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [56, 122, 64, 144],
+        "hinweis": "Laterne"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [92, 122, 102, 144],
+        "hinweis": "Laterne"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "iw18KantineBreit": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 4, 352, 166],
+        "hinweis": "Walmdach aus Blech, Draufsicht"
+      },
+      {
+        "typ": "schornstein",
+        "rahmen": [64, 0, 80, 28],
+        "hinweis": "Lüftungsrohr"
+      },
+      {
+        "typ": "schornstein",
+        "rahmen": [88, 2, 100, 28],
+        "hinweis": "Lüftungsrohr"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [246, 2, 288, 36],
+        "hinweis": "Lüftungsgerät auf dem Dach"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [4, 164, 348, 256],
+        "hinweis": "Ziegelfassade"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [20, 182, 140, 238],
+        "hinweis": "vier Sprossenfenster links"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [222, 182, 334, 238],
+        "hinweis": "vier Sprossenfenster rechts"
+      },
+      {
+        "typ": "markise",
+        "rahmen": [140, 176, 212, 212],
+        "hinweis": "Vordach über dem Eingang"
+      },
+      {
+        "typ": "schild",
+        "rahmen": [146, 178, 206, 194]
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [144, 208, 152, 268],
+        "hinweis": "Pfosten des Vordachs links"
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [200, 208, 208, 268],
+        "hinweis": "Pfosten des Vordachs rechts"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [154, 206, 198, 252],
+        "hinweis": "Glas-Doppeltür"
+      },
+      {
+        "typ": "treppe",
+        "rahmen": [144, 254, 208, 272],
+        "richtung": "unten",
+        "hinweis": "Podest mit Stufe, führt zum Betrachter hinunter"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "iw5Kirche": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [8, 4, 72, 92],
+        "hinweis": "Steildach mit Giebel, Kreuz und Fialen"
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [0, 40, 18, 144],
+        "hinweis": "Pfeiler links bis zum Boden"
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [62, 40, 80, 144],
+        "hinweis": "Pfeiler rechts bis zum Boden"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [40, 78, 52, 92],
+        "hinweis": "Rosette"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [18, 90, 62, 128],
+        "hinweis": "Portalwand"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [26, 96, 56, 126],
+        "hinweis": "Spitzbogenportal (dunkel, ohne Übergang)"
+      },
+      {
+        "typ": "treppe",
+        "rahmen": [18, 126, 62, 144],
+        "richtung": "unten",
+        "hinweis": "zwei Stufen, führen zum Betrachter hinunter"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "iw5Laden": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 2, 128, 98],
+        "hinweis": "Flachdach mit Rand, Draufsicht"
+      },
+      {
+        "typ": "schild",
+        "rahmen": [50, 76, 96, 92],
+        "hinweis": "STORE"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [4, 96, 124, 140],
+        "hinweis": "Ladenfront"
+      },
+      {
+        "typ": "markise",
+        "rahmen": [8, 100, 122, 124],
+        "hinweis": "gestreift"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [16, 118, 98, 136],
+        "hinweis": "Schaufenster mit Türen"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [22, 118, 52, 138],
+        "hinweis": "Ladentür"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [4, 136, 124, 144]
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "iw5Pfoertner": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 64, 50],
+        "hinweis": "Flachdach, Draufsicht"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 48, 62, 80]
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [18, 56, 32, 78]
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [36, 56, 58, 68],
+        "hinweis": "Schalterfenster"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [2, 68, 62, 78],
+        "hinweis": "orange Leitplanken am Fuß"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "iw5Reihenhaus": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 96, 84],
+        "hinweis": "Flachdach, Draufsicht"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [16, 30, 36, 46],
+        "hinweis": "Dachluke"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [0, 82, 96, 128],
+        "hinweis": "Fassade"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [8, 90, 24, 114],
+        "hinweis": "mit Blumenkasten"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [56, 90, 88, 114],
+        "hinweis": "mit Blumenkasten"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [32, 94, 50, 126]
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [0, 118, 96, 128]
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "iw5ReihenhausHoch": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 96, 84],
+        "hinweis": "Flachdach, Draufsicht"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [58, 0, 90, 36],
+        "hinweis": "Satellitenschüsseln"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [16, 20, 34, 34],
+        "hinweis": "Dachluke"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [0, 82, 96, 160],
+        "hinweis": "Fassade, zwei Geschosse"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [12, 76, 84, 100],
+        "hinweis": "Obergeschoss"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [8, 120, 24, 146],
+        "hinweis": "mit Blumenkasten"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [56, 120, 88, 146],
+        "hinweis": "mit Blumenkasten"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [32, 124, 50, 158]
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [0, 150, 96, 160]
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "iw5Schornstein": {
+    "bauteile": [
+      {
+        "typ": "schornstein",
+        "rahmen": [0, 0, 32, 127],
+        "hinweis": "Fabrikschlot, runder Fuß ab etwa 104"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "iw5Schuppen": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 48, 36],
+        "hinweis": "Satteldach, First zum Betrachter"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 28, 46, 64],
+        "hinweis": "Bretterwand"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [14, 36, 34, 64],
+        "hinweis": "Doppeltür"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "iw5StadthausBlau": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 8, 96, 58],
+        "hinweis": "Flachdach mit Rand, Draufsicht"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 56, 94, 166],
+        "hinweis": "Fassade, drei Geschosse"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [14, 62, 82, 82],
+        "hinweis": "Obergeschoss 2"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [14, 94, 82, 114],
+        "hinweis": "Obergeschoss 1"
+      },
+      {
+        "typ": "schild",
+        "rahmen": [10, 124, 86, 138],
+        "hinweis": "Gesims über dem Eingang"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [6, 138, 30, 156],
+        "hinweis": "Gitterfenster links"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [66, 138, 90, 156],
+        "hinweis": "Gitterfenster rechts"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [30, 128, 66, 164],
+        "hinweis": "Doppeltür in einer Nische"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [0, 158, 96, 170],
+        "hinweis": "Sockel mit runden Ecken"
+      },
+      {
+        "typ": "treppe",
+        "rahmen": [32, 160, 64, 176],
+        "richtung": "unten",
+        "hinweis": "Eingangsstufe, führt zum Betrachter hinunter"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "iw5StadthausGelb": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 8, 96, 58],
+        "hinweis": "Flachdach mit Rand, Draufsicht"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 56, 94, 166],
+        "hinweis": "Fassade, drei Geschosse"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [14, 62, 82, 82],
+        "hinweis": "Obergeschoss 2"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [14, 94, 82, 114],
+        "hinweis": "Obergeschoss 1"
+      },
+      {
+        "typ": "schild",
+        "rahmen": [10, 124, 86, 138],
+        "hinweis": "Gesims über dem Eingang"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [6, 138, 30, 156],
+        "hinweis": "Gitterfenster links"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [66, 138, 90, 156],
+        "hinweis": "Gitterfenster rechts"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [30, 128, 66, 164],
+        "hinweis": "Doppeltür in einer Nische"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [0, 158, 96, 170],
+        "hinweis": "Sockel mit runden Ecken"
+      },
+      {
+        "typ": "treppe",
+        "rahmen": [32, 160, 64, 176],
+        "richtung": "unten",
+        "hinweis": "Eingangsstufe, führt zum Betrachter hinunter"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "iw5StadthausGrau": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 8, 96, 58],
+        "hinweis": "Flachdach mit Rand, Draufsicht"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 56, 94, 166],
+        "hinweis": "Fassade, drei Geschosse"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [14, 62, 82, 82],
+        "hinweis": "Obergeschoss 2"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [14, 94, 82, 114],
+        "hinweis": "Obergeschoss 1"
+      },
+      {
+        "typ": "schild",
+        "rahmen": [10, 124, 86, 138],
+        "hinweis": "Gesims über dem Eingang"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [6, 138, 30, 156],
+        "hinweis": "Gitterfenster links"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [66, 138, 90, 156],
+        "hinweis": "Gitterfenster rechts"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [30, 128, 66, 164],
+        "hinweis": "Doppeltür in einer Nische"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [0, 158, 96, 170],
+        "hinweis": "Sockel mit runden Ecken"
+      },
+      {
+        "typ": "treppe",
+        "rahmen": [32, 160, 64, 176],
+        "richtung": "unten",
+        "hinweis": "Eingangsstufe, führt zum Betrachter hinunter"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "iw5Umkleide": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [6, 16, 76, 48],
+        "hinweis": "Flachdach"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [30, 10, 78, 42],
+        "hinweis": "Lüfter auf dem Dach"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [6, 46, 76, 80],
+        "hinweis": "Bretterwand"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [34, 50, 52, 80]
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [16, 50, 30, 62],
+        "hinweis": "Lüftungsgitter"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [54, 50, 70, 62],
+        "hinweis": "Lüftungsgitter"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "iw8Werkstatt": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 4, 64, 52],
+        "hinweis": "Flachdach, Draufsicht"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 50, 62, 80]
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [18, 56, 32, 78]
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [38, 56, 58, 68]
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [2, 68, 62, 78],
+        "hinweis": "orange Leitplanken am Fuß"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "ld14BlockhuetteGruen": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 80, 50],
+        "hinweis": "Satteldach, Giebel zum Betrachter"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 44, 78, 74],
+        "hinweis": "Blockwand"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [22, 48, 36, 72]
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [46, 50, 62, 64]
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [44, 62, 72, 80],
+        "hinweis": "Holzstapel vor der Wand"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [2, 72, 78, 76],
+        "hinweis": "unterster Balken"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "ld14BlockhuetteKamin": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 72, 48],
+        "hinweis": "Satteldach, Giebel zum Betrachter"
+      },
+      {
+        "typ": "schornstein",
+        "rahmen": [62, 4, 80, 64],
+        "hinweis": "Steinkamin an der rechten Seite"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 44, 74, 74],
+        "hinweis": "Blockwand"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [18, 48, 34, 72],
+        "hinweis": "offene Tür"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [44, 50, 58, 64]
+      },
+      {
+        "typ": "treppe",
+        "rahmen": [14, 72, 38, 80],
+        "richtung": "unten",
+        "hinweis": "Holzstufe vor der Tür, führt zum Betrachter hinunter"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "ld14Bootsschuppen": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 48, 40],
+        "hinweis": "Satteldach, First zum Betrachter"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 34, 46, 70],
+        "hinweis": "Bretterwand"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [16, 40, 40, 70],
+        "hinweis": "Schiebetor"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [4, 48, 16, 62],
+        "hinweis": "Rettungsring an der Wand"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "ld14HausBlau": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [2, 56, 66, 130],
+        "hinweis": "Pultdach des Anbaus links"
+      },
+      {
+        "typ": "dach",
+        "rahmen": [52, 12, 126, 102],
+        "hinweis": "Satteldach Haupthaus"
+      },
+      {
+        "typ": "schornstein",
+        "rahmen": [82, 8, 96, 84]
+      },
+      {
+        "typ": "wand",
+        "rahmen": [6, 96, 122, 156],
+        "hinweis": "Fassade"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [22, 124, 54, 146],
+        "hinweis": "unten links"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [76, 92, 102, 112],
+        "hinweis": "Giebelfenster"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [78, 124, 98, 156],
+        "hinweis": "Haustür"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [6, 152, 122, 160],
+        "hinweis": "Steinsockel"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "ld14HausGruen": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 8, 104, 112],
+        "hinweis": "Satteldach Haupthaus, Giebel zum Betrachter"
+      },
+      {
+        "typ": "schornstein",
+        "rahmen": [44, 6, 62, 80]
+      },
+      {
+        "typ": "dach",
+        "rahmen": [96, 54, 158, 104],
+        "hinweis": "Pultdach des Anbaus rechts, Balken davor"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [4, 78, 104, 140],
+        "hinweis": "Giebelwand Haupthaus"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [100, 104, 156, 140],
+        "hinweis": "Wand Anbau"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [48, 80, 62, 94],
+        "hinweis": "Rundfenster im Giebel"
+      },
+      {
+        "typ": "markise",
+        "rahmen": [22, 100, 82, 116],
+        "hinweis": "Vordach über dem Fenster"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [26, 112, 80, 128],
+        "hinweis": "breites Fenster"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [112, 108, 128, 140],
+        "hinweis": "Haustür im Anbau"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [134, 106, 148, 134],
+        "hinweis": "schmales Fenster"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [4, 136, 156, 144],
+        "hinweis": "Steinsockel"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "ld14SchuppenBlau": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 48, 40],
+        "hinweis": "Satteldach, First zum Betrachter"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 30, 46, 72],
+        "hinweis": "Giebelwand"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [16, 40, 32, 72],
+        "hinweis": "Doppeltür"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [34, 44, 44, 56],
+        "hinweis": "rechts"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [2, 66, 46, 72],
+        "hinweis": "farbiger Sockel"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "ld14SchuppenBraun": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 48, 40],
+        "hinweis": "Satteldach, First zum Betrachter"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 30, 46, 72],
+        "hinweis": "Giebelwand"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [16, 40, 32, 72],
+        "hinweis": "Doppeltür"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [34, 44, 44, 56],
+        "hinweis": "rechts"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [2, 66, 46, 72],
+        "hinweis": "farbiger Sockel"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "ld14SchuppenRot": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 48, 40],
+        "hinweis": "Satteldach, First zum Betrachter"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 30, 46, 72],
+        "hinweis": "Giebelwand"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [16, 40, 32, 72],
+        "hinweis": "Doppeltür"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [34, 44, 44, 56],
+        "hinweis": "rechts"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [2, 66, 46, 72],
+        "hinweis": "farbiger Sockel"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "lp8Schuppen": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [6, 0, 90, 66],
+        "hinweis": "Wellblechdach, Draufsicht"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [10, 60, 86, 96],
+        "hinweis": "Bretterwand"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [30, 66, 50, 80],
+        "hinweis": "Lüftungsklappe"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [16, 78, 52, 96],
+        "hinweis": "Rolltor"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [52, 66, 74, 96],
+        "hinweis": "Brettertor"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "mf2Bibliothek": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 8, 90, 94],
+        "hinweis": "Turmdach (Walm), Draufsicht"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [32, 2, 58, 26],
+        "hinweis": "Gaube auf dem Turm"
+      },
+      {
+        "typ": "dach",
+        "rahmen": [88, 46, 284, 124],
+        "hinweis": "Dach des Langhauses"
+      },
+      {
+        "typ": "schornstein",
+        "rahmen": [208, 70, 238, 108],
+        "hinweis": "Schornsteinkopf"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [4, 92, 90, 240],
+        "hinweis": "Turmfassade"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [88, 122, 278, 240],
+        "hinweis": "Fassade Langhaus"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [28, 100, 62, 132],
+        "hinweis": "Rundfenster"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [28, 140, 62, 224],
+        "hinweis": "hohes Bogenfenster"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [102, 142, 258, 224],
+        "hinweis": "sechs Bogenfenster in zwei Reihen"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [258, 116, 280, 238],
+        "hinweis": "Steigleiter an der rechten Kante"
+      },
+      {
+        "typ": "absatz",
+        "rahmen": [16, 222, 78, 238],
+        "hinweis": "Stufen unter dem Turmfenster, über dem Sockel (nicht erreichbar)"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [2, 236, 282, 256],
+        "hinweis": "hoher Sockel mit Kellerfenstern"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "mf2Waschsalon": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 2, 128, 98],
+        "hinweis": "Flachdach mit Rand, Draufsicht"
+      },
+      {
+        "typ": "schild",
+        "rahmen": [26, 74, 108, 92],
+        "hinweis": "LAUNDROMAT"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [4, 96, 124, 140],
+        "hinweis": "Ladenfront"
+      },
+      {
+        "typ": "markise",
+        "rahmen": [8, 98, 122, 122],
+        "hinweis": "gestreift"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [18, 120, 98, 138],
+        "hinweis": "Schaufenster mit Türen"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [20, 120, 48, 138],
+        "hinweis": "Ladentür"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [4, 136, 124, 144]
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "mf4Bauernhaus": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [2, 56, 66, 130],
+        "hinweis": "Pultdach des Anbaus links"
+      },
+      {
+        "typ": "dach",
+        "rahmen": [52, 12, 126, 102],
+        "hinweis": "Satteldach Haupthaus"
+      },
+      {
+        "typ": "schornstein",
+        "rahmen": [82, 8, 96, 84]
+      },
+      {
+        "typ": "wand",
+        "rahmen": [6, 96, 122, 156],
+        "hinweis": "Fassade"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [22, 124, 54, 146],
+        "hinweis": "unten links"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [76, 92, 102, 112],
+        "hinweis": "Giebelfenster"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [78, 124, 98, 156],
+        "hinweis": "Haustür"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [6, 152, 122, 160],
+        "hinweis": "Steinsockel"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "mf4BauernhausBreit": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 8, 104, 112],
+        "hinweis": "Satteldach Haupthaus, Giebel zum Betrachter"
+      },
+      {
+        "typ": "schornstein",
+        "rahmen": [44, 6, 62, 80]
+      },
+      {
+        "typ": "dach",
+        "rahmen": [96, 54, 158, 104],
+        "hinweis": "Pultdach des Anbaus rechts, Balken davor"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [4, 78, 104, 140],
+        "hinweis": "Giebelwand Haupthaus"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [100, 104, 156, 140],
+        "hinweis": "Wand Anbau"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [48, 80, 62, 94],
+        "hinweis": "Rundfenster im Giebel"
+      },
+      {
+        "typ": "markise",
+        "rahmen": [22, 100, 82, 116],
+        "hinweis": "Vordach über dem Fenster"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [26, 112, 80, 128],
+        "hinweis": "breites Fenster"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [112, 108, 128, 140],
+        "hinweis": "Haustür im Anbau"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [134, 106, 148, 134],
+        "hinweis": "schmales Fenster"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [4, 136, 156, 144],
+        "hinweis": "Steinsockel"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "mf8FlohmarktHof": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 8, 104, 112],
+        "hinweis": "Satteldach Haupthaus, Giebel zum Betrachter"
+      },
+      {
+        "typ": "schornstein",
+        "rahmen": [44, 6, 62, 80]
+      },
+      {
+        "typ": "dach",
+        "rahmen": [96, 54, 158, 104],
+        "hinweis": "Pultdach des Anbaus rechts, Balken davor"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [4, 78, 104, 140],
+        "hinweis": "Giebelwand Haupthaus"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [100, 104, 156, 140],
+        "hinweis": "Wand Anbau"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [48, 80, 62, 94],
+        "hinweis": "Rundfenster im Giebel"
+      },
+      {
+        "typ": "markise",
+        "rahmen": [22, 100, 82, 116],
+        "hinweis": "Vordach über dem Fenster"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [26, 112, 80, 128],
+        "hinweis": "breites Fenster"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [112, 108, 128, 140],
+        "hinweis": "Haustür im Anbau"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [134, 106, 148, 134],
+        "hinweis": "schmales Fenster"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [4, 136, 156, 144],
+        "hinweis": "Steinsockel"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "n5Sternwarte": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [16, 4, 96, 62],
+        "hinweis": "Kuppel mit Spalt, Draufsicht"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 44, 110, 120],
+        "hinweis": "runde Steinmauer"
+      },
+      {
+        "typ": "schild",
+        "rahmen": [30, 70, 82, 84],
+        "hinweis": "OBSERVATORY"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [12, 76, 22, 94],
+        "hinweis": "schmal links"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [86, 76, 96, 94],
+        "hinweis": "schmal rechts"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [46, 86, 66, 120],
+        "hinweis": "Rundbogentür"
+      },
+      {
+        "typ": "treppe",
+        "rahmen": [42, 118, 68, 126],
+        "richtung": "unten",
+        "hinweis": "Stufe vor der Tür, führt zum Betrachter hinunter"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "pd10HausBlau": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [2, 56, 66, 130],
+        "hinweis": "Pultdach des Anbaus links"
+      },
+      {
+        "typ": "dach",
+        "rahmen": [52, 12, 126, 102],
+        "hinweis": "Satteldach Haupthaus"
+      },
+      {
+        "typ": "schornstein",
+        "rahmen": [82, 8, 96, 84]
+      },
+      {
+        "typ": "wand",
+        "rahmen": [6, 96, 122, 156],
+        "hinweis": "Fassade"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [22, 124, 54, 146],
+        "hinweis": "unten links"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [76, 92, 102, 112],
+        "hinweis": "Giebelfenster"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [78, 124, 98, 156],
+        "hinweis": "Haustür"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [6, 152, 122, 160],
+        "hinweis": "Steinsockel"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "pd10HausGruen": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [2, 56, 66, 130],
+        "hinweis": "Pultdach des Anbaus links"
+      },
+      {
+        "typ": "dach",
+        "rahmen": [52, 12, 126, 102],
+        "hinweis": "Satteldach Haupthaus"
+      },
+      {
+        "typ": "schornstein",
+        "rahmen": [82, 8, 96, 84]
+      },
+      {
+        "typ": "wand",
+        "rahmen": [6, 96, 122, 156],
+        "hinweis": "Fassade"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [22, 124, 54, 146],
+        "hinweis": "unten links"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [76, 92, 102, 112],
+        "hinweis": "Giebelfenster"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [78, 124, 98, 156],
+        "hinweis": "Haustür"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [6, 152, 122, 160],
+        "hinweis": "Steinsockel"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "pd10WerkGrau": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 8, 104, 112],
+        "hinweis": "Satteldach Haupthaus, Giebel zum Betrachter"
+      },
+      {
+        "typ": "schornstein",
+        "rahmen": [44, 6, 62, 80]
+      },
+      {
+        "typ": "dach",
+        "rahmen": [96, 54, 158, 104],
+        "hinweis": "Pultdach des Anbaus rechts, Balken davor"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [4, 78, 104, 140],
+        "hinweis": "Giebelwand Haupthaus"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [100, 104, 156, 140],
+        "hinweis": "Wand Anbau"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [48, 80, 62, 94],
+        "hinweis": "Rundfenster im Giebel"
+      },
+      {
+        "typ": "markise",
+        "rahmen": [22, 100, 82, 116],
+        "hinweis": "Vordach über dem Fenster"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [26, 112, 80, 128],
+        "hinweis": "breites Fenster"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [112, 108, 128, 140],
+        "hinweis": "Haustür im Anbau"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [134, 106, 148, 134],
+        "hinweis": "schmales Fenster"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [4, 136, 156, 144],
+        "hinweis": "Steinsockel"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "pd10WerkGruen": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 8, 104, 112],
+        "hinweis": "Satteldach Haupthaus, Giebel zum Betrachter"
+      },
+      {
+        "typ": "schornstein",
+        "rahmen": [44, 6, 62, 80]
+      },
+      {
+        "typ": "dach",
+        "rahmen": [96, 54, 158, 104],
+        "hinweis": "Pultdach des Anbaus rechts, Balken davor"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [4, 78, 104, 140],
+        "hinweis": "Giebelwand Haupthaus"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [100, 104, 156, 140],
+        "hinweis": "Wand Anbau"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [48, 80, 62, 94],
+        "hinweis": "Rundfenster im Giebel"
+      },
+      {
+        "typ": "markise",
+        "rahmen": [22, 100, 82, 116],
+        "hinweis": "Vordach über dem Fenster"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [26, 112, 80, 128],
+        "hinweis": "breites Fenster"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [112, 108, 128, 140],
+        "hinweis": "Haustür im Anbau"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [134, 106, 148, 134],
+        "hinweis": "schmales Fenster"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [4, 136, 156, 144],
+        "hinweis": "Steinsockel"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "pd17Turnhalle": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [10, 14, 140, 130],
+        "hinweis": "Flachdach Hauptbau, Draufsicht"
+      },
+      {
+        "typ": "dach",
+        "rahmen": [138, 72, 192, 134],
+        "hinweis": "Dach des Treppenhauses mit Dachtür"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [140, 96, 152, 120],
+        "hinweis": "Tür auf dem Dach (nicht erreichbar)"
+      },
+      {
+        "typ": "dach",
+        "rahmen": [138, 128, 208, 212],
+        "hinweis": "Flachdach Anbau mit Lüftern"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [4, 126, 140, 256],
+        "hinweis": "Fassade Hauptbau"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [18, 136, 124, 208],
+        "hinweis": "vier Bogenfenster"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [138, 208, 206, 256],
+        "hinweis": "Fassade Anbau"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [22, 218, 92, 254],
+        "hinweis": "Eingang mit Glastüren"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [148, 218, 188, 256],
+        "hinweis": "Rolltor"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "pd18MusikhausNeu": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [32, 0, 192, 92],
+        "hinweis": "Schindeldach, Draufsicht"
+      },
+      {
+        "typ": "schild",
+        "rahmen": [80, 60, 138, 78]
+      },
+      {
+        "typ": "wand",
+        "rahmen": [36, 92, 184, 128],
+        "hinweis": "Holzwand hinter der Veranda"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [50, 96, 82, 124],
+        "hinweis": "zwei Fenster links"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [134, 96, 166, 124],
+        "hinweis": "zwei Fenster rechts"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [92, 96, 124, 128],
+        "hinweis": "Doppeltür"
+      },
+      {
+        "typ": "veranda",
+        "rahmen": [30, 128, 180, 154],
+        "hinweis": "Veranda vor der Wand, Boden in der Mitte sichtbar"
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [30, 128, 84, 146],
+        "hinweis": "Geländer links"
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [124, 128, 180, 146],
+        "hinweis": "Geländer rechts"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [30, 146, 180, 154],
+        "hinweis": "Verandasockel"
+      },
+      {
+        "typ": "treppe",
+        "rahmen": [88, 146, 120, 160],
+        "richtung": "unten",
+        "hinweis": "führt zum Betrachter hinunter"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "pd18MusikhausRuine": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [40, 0, 212, 86],
+        "hinweis": "eingestürztes Dach"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [80, 0, 200, 62],
+        "hinweis": "Planen und Wäscheleine"
+      },
+      {
+        "typ": "schild",
+        "rahmen": [80, 60, 138, 78],
+        "hinweis": "verwittert"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [44, 80, 212, 150],
+        "hinweis": "zerfallene Holzwand"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [48, 94, 204, 130],
+        "hinweis": "vernagelte Fenster"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [112, 96, 132, 140],
+        "hinweis": "schiefe Tür"
+      },
+      {
+        "typ": "pflanze",
+        "rahmen": [34, 132, 226, 160],
+        "hinweis": "Gestrüpp am Fuß"
+      },
+      {
+        "typ": "treppe",
+        "rahmen": [104, 146, 140, 160],
+        "richtung": "unten",
+        "hinweis": "kaputte Stufen, führen zum Betrachter hinunter"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "pd6HausGross": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [2, 56, 66, 130],
+        "hinweis": "Pultdach des Anbaus links"
+      },
+      {
+        "typ": "dach",
+        "rahmen": [52, 12, 126, 102],
+        "hinweis": "Satteldach Haupthaus"
+      },
+      {
+        "typ": "schornstein",
+        "rahmen": [82, 8, 96, 84]
+      },
+      {
+        "typ": "wand",
+        "rahmen": [6, 96, 122, 156],
+        "hinweis": "Fassade"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [22, 124, 54, 146],
+        "hinweis": "unten links"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [76, 92, 102, 112],
+        "hinweis": "Giebelfenster"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [78, 124, 98, 156],
+        "hinweis": "Haustür"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [6, 152, 122, 160],
+        "hinweis": "Steinsockel"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "pd6HausGruen": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [12, 0, 70, 32],
+        "hinweis": "Walmdach mit Gaube"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [12, 28, 72, 54]
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [16, 34, 30, 46]
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [54, 34, 68, 46]
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [34, 30, 48, 50]
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [10, 48, 76, 56],
+        "hinweis": "Sockel mit Gras"
+      },
+      {
+        "typ": "treppe",
+        "rahmen": [32, 52, 48, 60],
+        "richtung": "unten",
+        "hinweis": "Stufe, führt zum Betrachter hinunter"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "pd6Rohbau": {
+    "bauteile": [
+      {
+        "typ": "sonstiges",
+        "rahmen": [0, 6, 96, 108],
+        "hinweis": "Stahlgerüst des Rohbaus, zwei Ebenen"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [28, 16, 82, 98],
+        "hinweis": "Bewehrungsstäbe"
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [2, 100, 12, 126],
+        "hinweis": "Stütze"
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [44, 100, 54, 126],
+        "hinweis": "Stütze"
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [86, 100, 96, 126],
+        "hinweis": "Stütze"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [96, 56, 112, 128],
+        "hinweis": "Schatten (halb durchsichtig)"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "pd6Werkhalle": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [2, 12, 96, 46],
+        "hinweis": "Sheddach mit Oberlichtern"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [0, 44, 96, 96],
+        "hinweis": "Ziegelwand"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [8, 56, 28, 74]
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [70, 56, 90, 74]
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [32, 56, 64, 96],
+        "hinweis": "Tor"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "pd6Werkstatt": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 8, 104, 112],
+        "hinweis": "Satteldach Haupthaus, Giebel zum Betrachter"
+      },
+      {
+        "typ": "schornstein",
+        "rahmen": [44, 6, 62, 80]
+      },
+      {
+        "typ": "dach",
+        "rahmen": [96, 54, 158, 104],
+        "hinweis": "Pultdach des Anbaus rechts, Balken davor"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [4, 78, 104, 140],
+        "hinweis": "Giebelwand Haupthaus"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [100, 104, 156, 140],
+        "hinweis": "Wand Anbau"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [48, 80, 62, 94],
+        "hinweis": "Rundfenster im Giebel"
+      },
+      {
+        "typ": "markise",
+        "rahmen": [22, 100, 82, 116],
+        "hinweis": "Vordach über dem Fenster"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [26, 112, 80, 128],
+        "hinweis": "breites Fenster"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [112, 108, 128, 140],
+        "hinweis": "Haustür im Anbau"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [134, 106, 148, 134],
+        "hinweis": "schmales Fenster"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [4, 136, 156, 144],
+        "hinweis": "Steinsockel"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "pd6Zelt": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [4, 2, 60, 62],
+        "hinweis": "Zeltbahn mit Spitze und Abspannung"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [22, 34, 42, 62],
+        "hinweis": "Zelteingang"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "pd6ZeltFlach": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [4, 2, 60, 40],
+        "hinweis": "Zeltdach auf vier Stangen"
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [4, 2, 60, 44],
+        "hinweis": "Stangen an den Ecken"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "pd7Laden1": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 80, 76],
+        "hinweis": "Flachdach, Draufsicht"
+      },
+      {
+        "typ": "schild",
+        "rahmen": [10, 74, 42, 88],
+        "hinweis": "FISH"
+      },
+      {
+        "typ": "markise",
+        "rahmen": [50, 80, 78, 94],
+        "hinweis": "gestreift"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [0, 72, 80, 128],
+        "hinweis": "Ladenfront"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [16, 90, 36, 124]
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [50, 94, 76, 118],
+        "hinweis": "Schaufenster"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [0, 120, 80, 128]
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "pd7Laden10": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 4, 80, 78],
+        "hinweis": "Flachdach mit Rand, Draufsicht"
+      },
+      {
+        "typ": "schild",
+        "rahmen": [8, 74, 40, 90]
+      },
+      {
+        "typ": "markise",
+        "rahmen": [42, 78, 74, 94],
+        "hinweis": "gestreift"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [0, 74, 80, 128],
+        "hinweis": "Ladenfront"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [16, 90, 34, 126],
+        "hinweis": "Ladentür"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [0, 118, 80, 128],
+        "hinweis": "Ziegelsockel"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [42, 94, 74, 118],
+        "hinweis": "Schaufenster"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "pd7Laden4": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 4, 80, 78],
+        "hinweis": "Flachdach mit Rand, Draufsicht"
+      },
+      {
+        "typ": "schild",
+        "rahmen": [8, 72, 40, 88]
+      },
+      {
+        "typ": "markise",
+        "rahmen": [42, 78, 74, 94],
+        "hinweis": "gestreift"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [0, 74, 80, 128],
+        "hinweis": "Ladenfront"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [16, 90, 34, 126],
+        "hinweis": "Ladentür"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [0, 118, 80, 128],
+        "hinweis": "Ziegelsockel"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [40, 90, 76, 128],
+        "hinweis": "Erker mit schrägem Sockel, ragt vor"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "pd7Laden7": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 4, 80, 78],
+        "hinweis": "Flachdach mit Rand, Draufsicht"
+      },
+      {
+        "typ": "schild",
+        "rahmen": [8, 72, 40, 88]
+      },
+      {
+        "typ": "markise",
+        "rahmen": [42, 78, 74, 94],
+        "hinweis": "gestreift"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [0, 74, 80, 128],
+        "hinweis": "Ladenfront"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [16, 90, 34, 126],
+        "hinweis": "Ladentür"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [0, 118, 80, 128],
+        "hinweis": "Ziegelsockel"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [40, 90, 76, 128],
+        "hinweis": "Erker mit schrägem Sockel, ragt vor"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "pd7Markt2": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 4, 112, 92],
+        "hinweis": "Flachdach mit Rand, Draufsicht"
+      },
+      {
+        "typ": "schild",
+        "rahmen": [32, 74, 82, 98]
+      },
+      {
+        "typ": "markise",
+        "rahmen": [4, 96, 108, 114],
+        "hinweis": "zwei gestreifte Markisen"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [0, 90, 112, 144],
+        "hinweis": "Ladenfront"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [6, 108, 38, 134],
+        "hinweis": "Schaufenster links"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [74, 108, 106, 134],
+        "hinweis": "Schaufenster rechts"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [44, 104, 68, 142],
+        "hinweis": "Ladentür in Nische"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [0, 134, 112, 144],
+        "hinweis": "Ziegelsockel"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "pd7Markt5": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 4, 112, 92],
+        "hinweis": "Flachdach mit Rand, Draufsicht"
+      },
+      {
+        "typ": "schild",
+        "rahmen": [32, 74, 82, 98]
+      },
+      {
+        "typ": "markise",
+        "rahmen": [4, 96, 108, 114],
+        "hinweis": "zwei gestreifte Markisen"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [0, 90, 112, 144],
+        "hinweis": "Ladenfront"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [6, 108, 38, 134],
+        "hinweis": "Schaufenster links"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [74, 108, 106, 134],
+        "hinweis": "Schaufenster rechts"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [44, 104, 68, 142],
+        "hinweis": "Ladentür in Nische"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [0, 134, 112, 144],
+        "hinweis": "Ziegelsockel"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "pd7Reihenhaus2": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 4, 48, 82],
+        "hinweis": "Flachdach mit Dachaufbau, Draufsicht"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [0, 80, 48, 176],
+        "hinweis": "schmale Fassade, zwei Geschosse"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [10, 90, 36, 112],
+        "hinweis": "mit Läden"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [14, 120, 34, 136]
+      },
+      {
+        "typ": "markise",
+        "rahmen": [10, 144, 38, 158],
+        "hinweis": "Vordach über der Tür"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [16, 156, 32, 176]
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [4, 158, 14, 192],
+        "hinweis": "Wange der Vortreppe links"
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [34, 158, 44, 192],
+        "hinweis": "Wange der Vortreppe rechts"
+      },
+      {
+        "typ": "treppe",
+        "rahmen": [14, 176, 34, 192],
+        "richtung": "unten",
+        "hinweis": "Vortreppe, führt zum Betrachter hinunter"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "pd7Stadthaus": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 96, 84],
+        "hinweis": "Flachdach, Draufsicht"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [16, 30, 36, 46],
+        "hinweis": "Dachluke"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [0, 82, 96, 128],
+        "hinweis": "Fassade"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [8, 90, 24, 114],
+        "hinweis": "mit Blumenkasten"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [56, 90, 88, 114],
+        "hinweis": "mit Blumenkasten"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [32, 94, 50, 126]
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [0, 118, 96, 128]
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "pd7Villa2": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 128, 104],
+        "hinweis": "Satteldach, First zum Betrachter, Giebel mit Rundfenster"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 76, 126, 150],
+        "hinweis": "Obergeschoss, Giebelwand"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [14, 94, 124, 118],
+        "hinweis": "drei Fenster im Obergeschoss"
+      },
+      {
+        "typ": "dach",
+        "rahmen": [20, 110, 62, 148],
+        "hinweis": "Ziergiebel über der Veranda"
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [88, 108, 124, 142],
+        "hinweis": "Balkon mit Brüstung (nicht erreichbar)"
+      },
+      {
+        "typ": "dach",
+        "rahmen": [0, 116, 128, 152],
+        "hinweis": "Vordach der Veranda"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [14, 150, 104, 170],
+        "hinweis": "Erdgeschoss hinter der Veranda"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [30, 150, 46, 172],
+        "hinweis": "Haustür"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [62, 152, 94, 170],
+        "hinweis": "Fenster im Erdgeschoss"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [30, 172, 46, 178],
+        "hinweis": "Fußmatte"
+      },
+      {
+        "typ": "veranda",
+        "rahmen": [0, 164, 128, 208],
+        "hinweis": "Verandaboden; Eingang links offen (x 16 bis 60)"
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [2, 150, 16, 184],
+        "hinweis": "Pfosten links"
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [104, 150, 120, 184],
+        "hinweis": "Pfosten rechts"
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [0, 180, 16, 206],
+        "hinweis": "Geländer links"
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [60, 182, 122, 206],
+        "hinweis": "Geländer rechts"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [128, 120, 144, 208],
+        "hinweis": "Schlagschatten (halb durchsichtig)"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "rv14Fahrradschuppen": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 48, 40],
+        "hinweis": "Satteldach, First zum Betrachter"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 30, 46, 72],
+        "hinweis": "Giebelwand"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [16, 40, 32, 72],
+        "hinweis": "Doppeltür"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [34, 44, 44, 56],
+        "hinweis": "rechts"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [2, 66, 46, 72],
+        "hinweis": "farbiger Sockel"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "rv14Pegelhaus": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 48, 40],
+        "hinweis": "Satteldach, First zum Betrachter"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 30, 46, 72],
+        "hinweis": "Giebelwand"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [16, 40, 32, 72],
+        "hinweis": "Doppeltür"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [34, 44, 44, 56],
+        "hinweis": "rechts"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [2, 66, 46, 72],
+        "hinweis": "farbiger Sockel"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "rv5Cafe": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 2, 128, 98],
+        "hinweis": "Flachdach mit Rand, Draufsicht"
+      },
+      {
+        "typ": "schild",
+        "rahmen": [44, 76, 84, 96],
+        "hinweis": "CAFÉ"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [4, 96, 124, 140],
+        "hinweis": "Ladenfront"
+      },
+      {
+        "typ": "markise",
+        "rahmen": [8, 98, 122, 124],
+        "hinweis": "gestreift"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [16, 120, 98, 138],
+        "hinweis": "Schaufenster mit Türen"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [16, 120, 46, 138],
+        "hinweis": "Tür"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [4, 136, 124, 144]
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "rv5Gueterschuppen": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [4, 0, 124, 112],
+        "hinweis": "gewölbtes Blechdach mit First in der Mitte"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [8, 96, 120, 158],
+        "hinweis": "Holzfassade mit Fachwerk"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [24, 124, 56, 158],
+        "hinweis": "Rolltor"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [80, 110, 104, 128],
+        "hinweis": "Fensterladen"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "rv5Handyladen": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 4, 80, 78],
+        "hinweis": "Flachdach mit Rand, Draufsicht"
+      },
+      {
+        "typ": "schild",
+        "rahmen": [8, 74, 40, 90]
+      },
+      {
+        "typ": "markise",
+        "rahmen": [42, 80, 74, 96],
+        "hinweis": "gestreift"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [0, 74, 80, 128],
+        "hinweis": "Ladenfront"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [16, 90, 34, 126],
+        "hinweis": "Ladentür"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [0, 118, 80, 128],
+        "hinweis": "Ziegelsockel"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [42, 94, 74, 118],
+        "hinweis": "Schaufenster"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "rv5Lagerhaus": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [6, 0, 90, 66],
+        "hinweis": "Wellblechdach, Draufsicht"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [10, 60, 86, 96],
+        "hinweis": "Bretterwand"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [30, 66, 50, 80],
+        "hinweis": "Lüftungsklappe"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [16, 78, 52, 96],
+        "hinweis": "Rolltor"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [52, 66, 74, 96],
+        "hinweis": "Brettertor"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "rv5Reihenhaus": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 48, 64],
+        "hinweis": "Flachdach mit Dachaufbau, Draufsicht"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [0, 62, 48, 112],
+        "hinweis": "schmale Fassade"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [14, 66, 34, 76]
+      },
+      {
+        "typ": "markise",
+        "rahmen": [10, 80, 38, 94],
+        "hinweis": "Vordach über der Tür"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [16, 92, 32, 112]
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [4, 96, 14, 128],
+        "hinweis": "Wange der Vortreppe links"
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [34, 96, 44, 128],
+        "hinweis": "Wange der Vortreppe rechts"
+      },
+      {
+        "typ": "treppe",
+        "rahmen": [14, 112, 34, 128],
+        "richtung": "unten",
+        "hinweis": "Vortreppe, führt zum Betrachter hinunter"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "rv5Wasserturm": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [8, 8, 42, 40],
+        "hinweis": "Kegeldach des Kessels"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [8, 30, 42, 80],
+        "hinweis": "Wasserkessel, erhöht"
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [16, 76, 32, 96],
+        "hinweis": "Mast mit Fuß"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [0, 80, 48, 108],
+        "hinweis": "Schlagschatten (halb durchsichtig)"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "rv5Werkstatt": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 4, 64, 52],
+        "hinweis": "Flachdach, Draufsicht"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 50, 62, 80]
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [18, 56, 32, 78]
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [38, 56, 58, 68]
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [2, 68, 62, 78],
+        "hinweis": "orange Leitplanken am Fuß"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "rv5Wohnwagen": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 10, 80, 52],
+        "hinweis": "Dach des Wohnwagens"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 50, 80, 84],
+        "hinweis": "Seitenwand"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [6, 58, 22, 72]
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [58, 58, 76, 72]
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [30, 56, 48, 80]
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [0, 80, 80, 92],
+        "hinweis": "Räder und Unterbau"
+      },
+      {
+        "typ": "treppe",
+        "rahmen": [30, 78, 50, 96],
+        "richtung": "unten",
+        "hinweis": "Trittstufen, führen zum Betrachter hinunter"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [78, 56, 96, 82],
+        "hinweis": "Grill neben dem Wagen"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "rv8Baeckerei": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 112, 98],
+        "hinweis": "Ziegeldach in zwei Stufen, Draufsicht"
+      },
+      {
+        "typ": "schild",
+        "rahmen": [18, 72, 96, 108],
+        "hinweis": "Bakery mit Brot und Käse"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [0, 98, 112, 144],
+        "hinweis": "Ladenfront"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [6, 106, 70, 140],
+        "hinweis": "Auslage"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [72, 106, 104, 142],
+        "hinweis": "Glas-Doppeltür"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "rv8Bahnhof": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 80, 112, 178],
+        "hinweis": "Ziegeldach Flügel links"
+      },
+      {
+        "typ": "dach",
+        "rahmen": [240, 80, 352, 178],
+        "hinweis": "Ziegeldach Flügel rechts"
+      },
+      {
+        "typ": "dach",
+        "rahmen": [132, 2, 232, 82],
+        "hinweis": "Turmdach (Walm), Draufsicht"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [116, 80, 248, 232],
+        "hinweis": "Uhrturm mit Eckpfeilern"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [158, 82, 204, 128],
+        "hinweis": "Uhr"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [0, 176, 112, 240],
+        "hinweis": "Fassade Flügel links"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [240, 176, 352, 240],
+        "hinweis": "Fassade Flügel rechts"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [22, 190, 92, 222],
+        "hinweis": "Bogenfenster"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [260, 190, 330, 222],
+        "hinweis": "Bogenfenster"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [158, 174, 206, 226],
+        "hinweis": "Bogenportal"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [116, 222, 248, 234],
+        "hinweis": "Sockel des Turms, schräge Ecken"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "rv8Infokiosk": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [4, 2, 76, 50],
+        "hinweis": "achteckiges Dach, Draufsicht"
+      },
+      {
+        "typ": "schild",
+        "rahmen": [30, 38, 46, 52],
+        "hinweis": "i"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [4, 44, 76, 92],
+        "hinweis": "Kiosk mit Schalter"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [20, 50, 60, 72],
+        "hinweis": "Schalteröffnung"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [4, 82, 76, 96],
+        "hinweis": "Sockel"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [76, 40, 80, 92],
+        "hinweis": "Schatten"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "rv8Stellwerk": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 64, 36],
+        "hinweis": "Bretterdach, Draufsicht"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 34, 62, 64],
+        "hinweis": "Holzwand"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [10, 42, 26, 52]
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [32, 38, 50, 64]
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "rvPavillonAchteck": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 2, 128, 92],
+        "hinweis": "achteckiges Zeltdach"
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [0, 76, 128, 140],
+        "hinweis": "Pfosten des Pavillons"
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [0, 96, 50, 140],
+        "hinweis": "Geländer links"
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [78, 96, 128, 140],
+        "hinweis": "Geländer rechts"
+      },
+      {
+        "typ": "veranda",
+        "rahmen": [20, 90, 108, 140],
+        "hinweis": "Boden des Pavillons mit Tischen"
+      },
+      {
+        "typ": "treppe",
+        "rahmen": [50, 130, 78, 144],
+        "richtung": "unten",
+        "hinweis": "Stufe am Eingang, führt zum Betrachter hinunter"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "sa8LadenC": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 112, 96],
+        "hinweis": "Ziegeldach in zwei Stufen, Draufsicht"
+      },
+      {
+        "typ": "schild",
+        "rahmen": [32, 96, 82, 108]
+      },
+      {
+        "typ": "wand",
+        "rahmen": [0, 94, 112, 144],
+        "hinweis": "Ladenfront"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [6, 104, 70, 140],
+        "hinweis": "Schaufenster"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [72, 106, 104, 142],
+        "hinweis": "Glas-Doppeltür"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "sa8LadenD": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 112, 98],
+        "hinweis": "Flachdach mit Rand, Draufsicht"
+      },
+      {
+        "typ": "schild",
+        "rahmen": [32, 96, 80, 110],
+        "hinweis": "Groove"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [0, 96, 112, 144],
+        "hinweis": "Ladenfront"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [6, 108, 70, 140],
+        "hinweis": "Schaufenster mit Figuren"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [72, 108, 104, 142],
+        "hinweis": "Glas-Doppeltür"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "sc7Ferienhuette": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 2, 80, 46],
+        "hinweis": "Schindeldach, Draufsicht"
+      },
+      {
+        "typ": "schornstein",
+        "rahmen": [14, 0, 26, 18]
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 44, 78, 74],
+        "hinweis": "Blockwand"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [10, 50, 30, 66],
+        "hinweis": "mit Läden und Blumenkasten"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [52, 50, 72, 66],
+        "hinweis": "mit Läden und Blumenkasten"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [32, 48, 48, 76]
+      },
+      {
+        "typ": "absatz",
+        "rahmen": [30, 74, 50, 78],
+        "hinweis": "Schwelle vor der Tür"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "sd6Steuerhaus": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 48, 42],
+        "hinweis": "Walmdach, Draufsicht"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [0, 40, 48, 72],
+        "hinweis": "Wand mit Schaltkästen"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [2, 46, 46, 66],
+        "hinweis": "drei Schaltkästen"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [46, 50, 54, 72],
+        "hinweis": "Schatten"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "st14StolleneingangFels": {
+    "bauteile": [
+      {
+        "typ": "wand",
+        "rahmen": [0, 0, 64, 56],
+        "hinweis": "Felswand"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [14, 10, 52, 56],
+        "hinweis": "Stollenöffnung mit Holzrahmen"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [0, 54, 64, 64],
+        "hinweis": "Geröll am Fuß"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "st5Bude": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [6, 0, 90, 66],
+        "hinweis": "Wellblechdach, Draufsicht"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [10, 60, 86, 96],
+        "hinweis": "Bretterwand"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [30, 66, 50, 80],
+        "hinweis": "Lüftungsklappe"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [16, 78, 52, 96],
+        "hinweis": "Rolltor"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [52, 66, 74, 96],
+        "hinweis": "Brettertor"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "wc14SchuppenBlau": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 48, 40],
+        "hinweis": "Satteldach, First zum Betrachter"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 30, 46, 72],
+        "hinweis": "Giebelwand"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [16, 40, 32, 72],
+        "hinweis": "Doppeltür"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [34, 44, 44, 56],
+        "hinweis": "rechts"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [2, 66, 46, 72],
+        "hinweis": "farbiger Sockel"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "wc14SchuppenRot": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 48, 40],
+        "hinweis": "Satteldach, First zum Betrachter"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 30, 46, 72],
+        "hinweis": "Giebelwand"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [16, 40, 32, 72],
+        "hinweis": "Doppeltür"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [34, 44, 44, 56],
+        "hinweis": "rechts"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [2, 66, 46, 72],
+        "hinweis": "farbiger Sockel"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "wc14Stellwerk": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 50, 26],
+        "hinweis": "Walmdach, Draufsicht"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [2, 22, 48, 38],
+        "hinweis": "Fensterband des Stellwerks oben"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 36, 48, 63],
+        "hinweis": "Ziegelwand"
+      },
+      {
+        "typ": "treppe",
+        "rahmen": [46, 28, 64, 63],
+        "richtung": "rechts",
+        "hinweis": "Außentreppe, führt nach rechts hinunter (zum Obergeschoss, Geländer)"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "wc5Gartenhaus": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 48, 36],
+        "hinweis": "Satteldach, First zum Betrachter"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 28, 46, 64],
+        "hinweis": "Bretterwand"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [14, 36, 34, 64],
+        "hinweis": "Doppeltür"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "wc5GartenhausB": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 48, 36],
+        "hinweis": "Satteldach, First zum Betrachter"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 28, 46, 64],
+        "hinweis": "Bretterwand"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [14, 36, 34, 64],
+        "hinweis": "Doppeltür"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "wc5Zelt": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [4, 2, 60, 62],
+        "hinweis": "Zeltbahn mit Spitze und Abspannung"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [22, 34, 42, 62],
+        "hinweis": "Zelteingang"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "wc5ZeltB": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [4, 2, 60, 62],
+        "hinweis": "Zeltbahn mit Spitze und Abspannung"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [22, 34, 42, 62],
+        "hinweis": "Zelteingang"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "wr18WerkhalleKanal": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 18, 128, 74],
+        "hinweis": "Sheddach mit Oberlichtern"
+      },
+      {
+        "typ": "schornstein",
+        "rahmen": [72, 0, 88, 34]
+      },
+      {
+        "typ": "schornstein",
+        "rahmen": [102, 0, 118, 34]
+      },
+      {
+        "typ": "wand",
+        "rahmen": [0, 60, 128, 106],
+        "hinweis": "Ziegelwand"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [8, 76, 42, 102],
+        "hinweis": "Sprossenfenster links"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [86, 76, 120, 102],
+        "hinweis": "Sprossenfenster rechts"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [46, 80, 82, 108],
+        "hinweis": "Doppeltor"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [0, 100, 128, 112],
+        "hinweis": "Bruchsteinsockel"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "wr5Huehnerstall": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 64, 34],
+        "hinweis": "Bretterdach, Draufsicht"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 32, 62, 64],
+        "hinweis": "rote Bretterwand"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [10, 42, 24, 52]
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [30, 38, 52, 62],
+        "hinweis": "Stalltür mit Kreuz"
+      },
+      {
+        "typ": "absatz",
+        "rahmen": [0, 62, 64, 80],
+        "hinweis": "Bretterboden vor dem Stall, ebenerdig"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "wr5Scheune": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [4, 0, 124, 112],
+        "hinweis": "gewölbtes Blechdach mit First in der Mitte"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [8, 96, 120, 158],
+        "hinweis": "Holzfassade mit Fachwerk"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [24, 124, 56, 158],
+        "hinweis": "Rolltor"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [80, 110, 104, 128],
+        "hinweis": "Fensterladen"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "wr8SiloKurz": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [8, 0, 72, 52],
+        "hinweis": "Kuppel des Silos"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [4, 40, 76, 140],
+        "hinweis": "runder Silokörper, Fuß ab etwa 100"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [28, 46, 48, 144],
+        "hinweis": "Leiter"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [70, 40, 80, 136],
+        "hinweis": "Rohr an der Seite"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
+  "ws5Huette": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [0, 0, 48, 36],
+        "hinweis": "Satteldach, First zum Betrachter"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [2, 28, 46, 64],
+        "hinweis": "Bretterwand"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [14, 36, 34, 64],
+        "hinweis": "Doppeltür"
+      }
+    ],
+    "geprueft": "von Hand am vergrößerten Bild, 28.11.2026 (Phase 2B)"
+  },
   "hb7Schule": {
     "bauteile": [
       {
         "typ": "dach",
-        "rahmen": [
-          0,
-          16,
-          384,
-          196
-        ]
+        "rahmen": [0, 16, 384, 196]
       },
       {
         "typ": "wand",
-        "rahmen": [
-          8,
-          196,
-          376,
-          320
-        ],
+        "rahmen": [8, 196, 376, 320],
         "hinweis": "Fassade mit Fenstern und Rundbögen"
       },
       {
         "typ": "fenster",
-        "rahmen": [
-          56,
-          200,
-          352,
-          312
-        ]
+        "rahmen": [56, 200, 352, 312]
       },
       {
         "typ": "tuer",
-        "rahmen": [
-          112,
-          256,
-          176,
-          322
-        ],
+        "rahmen": [112, 256, 176, 322],
         "hinweis": "Doppeltür links"
       },
       {
         "typ": "tuer",
-        "rahmen": [
-          208,
-          256,
-          272,
-          322
-        ],
+        "rahmen": [208, 256, 272, 322],
         "hinweis": "Doppeltür rechts"
       },
       {
         "typ": "sockel",
-        "rahmen": [
-          0,
-          320,
-          384,
-          336
-        ]
+        "rahmen": [0, 320, 384, 336]
       },
       {
         "typ": "absatz",
-        "rahmen": [
-          112,
-          326,
-          272,
-          352
-        ],
+        "rahmen": [112, 326, 272, 352],
         "hinweis": "Podest vor beiden Türen, begehbar"
       },
       {
         "typ": "treppe",
-        "rahmen": [
-          96,
-          326,
-          112,
-          368
-        ],
+        "rahmen": [96, 326, 112, 368],
         "hinweis": "seitlich, gestreift: führt vom Podest nach links hinunter zum Rasen",
         "richtung": "links"
       },
       {
         "typ": "treppe",
-        "rahmen": [
-          272,
-          326,
-          288,
-          368
-        ],
+        "rahmen": [272, 326, 288, 368],
         "hinweis": "seitlich, gestreift: führt vom Podest nach rechts hinunter zum Rasen",
         "richtung": "rechts"
       },
       {
         "typ": "mauer",
-        "rahmen": [
-          112,
-          352,
-          272,
-          368
-        ],
+        "rahmen": [112, 352, 272, 368],
         "hinweis": "Vorderkante des Podests ist eine Mauer, keine Stufe"
       }
     ],
@@ -107,109 +3632,54 @@
     "bauteile": [
       {
         "typ": "dach",
-        "rahmen": [
-          0,
-          0,
-          144,
-          112
-        ]
+        "rahmen": [0, 0, 144, 112]
       },
       {
         "typ": "wand",
-        "rahmen": [
-          0,
-          96,
-          144,
-          172
-        ],
+        "rahmen": [0, 96, 144, 172],
         "hinweis": "Holzfassade, Giebel"
       },
       {
         "typ": "fenster",
-        "rahmen": [
-          24,
-          100,
-          120,
-          140
-        ]
+        "rahmen": [24, 100, 120, 140]
       },
       {
         "typ": "gelaender",
-        "rahmen": [
-          96,
-          112,
-          128,
-          140
-        ],
+        "rahmen": [96, 112, 128, 140],
         "hinweis": "Balkon im Obergeschoss, nicht begehbar"
       },
       {
         "typ": "tuer",
-        "rahmen": [
-          32,
-          150,
-          48,
-          172
-        ]
+        "rahmen": [32, 150, 48, 172]
       },
       {
         "typ": "saeule",
-        "rahmen": [
-          8,
-          150,
-          16,
-          180
-        ],
+        "rahmen": [8, 150, 16, 180],
         "hinweis": "Verandapfosten links"
       },
       {
         "typ": "saeule",
-        "rahmen": [
-          112,
-          150,
-          120,
-          180
-        ],
+        "rahmen": [112, 150, 120, 180],
         "hinweis": "Verandapfosten rechts"
       },
       {
         "typ": "veranda",
-        "rahmen": [
-          0,
-          170,
-          128,
-          208
-        ],
+        "rahmen": [0, 170, 128, 208],
         "hinweis": "Verandaboden vor der Tür, begehbar"
       },
       {
         "typ": "gelaender",
-        "rahmen": [
-          0,
-          180,
-          16,
-          208
-        ],
+        "rahmen": [0, 180, 16, 208],
         "hinweis": "Geländer links"
       },
       {
         "typ": "gelaender",
-        "rahmen": [
-          64,
-          180,
-          128,
-          208
-        ],
+        "rahmen": [64, 180, 128, 208],
         "hinweis": "Geländer rechts"
       },
       {
         "typ": "sonstiges",
-        "rahmen": [
-          128,
-          112,
-          144,
-          208
-        ],
+        "rahmen": [128, 112, 144, 208],
         "hinweis": "Schatten am Boden"
       }
     ],
@@ -219,81 +3689,41 @@
     "bauteile": [
       {
         "typ": "dach",
-        "rahmen": [
-          0,
-          0,
-          272,
-          64
-        ],
+        "rahmen": [0, 0, 272, 64],
         "hinweis": "Flachdach von Laden und Waschanlage"
       },
       {
         "typ": "wand",
-        "rahmen": [
-          0,
-          64,
-          80,
-          108
-        ],
+        "rahmen": [0, 64, 80, 108],
         "hinweis": "Ladenfront mit Tür"
       },
       {
         "typ": "tuer",
-        "rahmen": [
-          32,
-          72,
-          48,
-          104
-        ]
+        "rahmen": [32, 72, 48, 104]
       },
       {
         "typ": "dach",
-        "rahmen": [
-          80,
-          64,
-          192,
-          120
-        ],
+        "rahmen": [80, 64, 192, 120],
         "hinweis": "Vordach über der Zapfinsel, verdeckt"
       },
       {
         "typ": "wand",
-        "rahmen": [
-          192,
-          64,
-          272,
-          108
-        ],
+        "rahmen": [192, 64, 272, 108],
         "hinweis": "Waschanlage"
       },
       {
         "typ": "schild",
-        "rahmen": [
-          196,
-          72,
-          256,
-          84
-        ],
+        "rahmen": [196, 72, 256, 84],
         "hinweis": "CAR WASH"
       },
       {
         "typ": "sonstiges",
-        "rahmen": [
-          80,
-          120,
-          196,
-          160
-        ],
+        "rahmen": [80, 120, 196, 160],
         "hinweis": "Zapfinsel mit zwei Pfeilern und Zapfsäulen, sperrt"
       },
       {
         "typ": "sonstiges",
-        "rahmen": [
-          208,
-          108,
-          256,
-          120
-        ],
+        "rahmen": [208, 108, 256, 120],
         "hinweis": "Abflussrinne am Boden"
       }
     ],
@@ -303,50 +3733,25 @@
     "bauteile": [
       {
         "typ": "dach",
-        "rahmen": [
-          0,
-          0,
-          112,
-          56
-        ],
+        "rahmen": [0, 0, 112, 56],
         "hinweis": "Vordach, verdeckt"
       },
       {
         "typ": "saeule",
-        "rahmen": [
-          0,
-          48,
-          16,
-          88
-        ]
+        "rahmen": [0, 48, 16, 88]
       },
       {
         "typ": "saeule",
-        "rahmen": [
-          96,
-          48,
-          112,
-          88
-        ]
+        "rahmen": [96, 48, 112, 88]
       },
       {
         "typ": "sonstiges",
-        "rahmen": [
-          16,
-          48,
-          104,
-          88
-        ],
+        "rahmen": [16, 48, 104, 88],
         "hinweis": "Zapfsäulen und Automat auf der Insel, sperren"
       },
       {
         "typ": "sockel",
-        "rahmen": [
-          0,
-          64,
-          112,
-          88
-        ],
+        "rahmen": [0, 64, 112, 88],
         "hinweis": "Insel"
       }
     ],
@@ -356,109 +3761,54 @@
     "bauteile": [
       {
         "typ": "dach",
-        "rahmen": [
-          0,
-          8,
-          80,
-          56
-        ]
+        "rahmen": [0, 8, 80, 56]
       },
       {
         "typ": "wand",
-        "rahmen": [
-          0,
-          56,
-          80,
-          84
-        ]
+        "rahmen": [0, 56, 80, 84]
       },
       {
         "typ": "fenster",
-        "rahmen": [
-          8,
-          60,
-          72,
-          76
-        ]
+        "rahmen": [8, 60, 72, 76]
       },
       {
         "typ": "tuer",
-        "rahmen": [
-          32,
-          60,
-          48,
-          84
-        ]
+        "rahmen": [32, 60, 48, 84]
       },
       {
         "typ": "sonstiges",
-        "rahmen": [
-          0,
-          84,
-          80,
-          92
-        ],
+        "rahmen": [0, 84, 80, 92],
         "hinweis": "Räder"
       },
       {
         "typ": "sonstiges",
-        "rahmen": [
-          80,
-          56,
-          92,
-          84
-        ],
+        "rahmen": [80, 56, 92, 84],
         "hinweis": "Deichsel"
       },
       {
         "typ": "veranda",
-        "rahmen": [
-          28,
-          84,
-          52,
-          112
-        ],
+        "rahmen": [28, 84, 52, 112],
         "hinweis": "Holzpodest vor der Tür, begehbar"
       },
       {
         "typ": "saeule",
-        "rahmen": [
-          24,
-          80,
-          28,
-          112
-        ],
+        "rahmen": [24, 80, 28, 112],
         "hinweis": "Pfosten links"
       },
       {
         "typ": "saeule",
-        "rahmen": [
-          52,
-          80,
-          56,
-          96
-        ],
+        "rahmen": [52, 80, 56, 96],
         "hinweis": "Pfosten rechts"
       },
       {
         "typ": "treppe",
-        "rahmen": [
-          54,
-          96,
-          64,
-          114
-        ],
+        "rahmen": [54, 96, 64, 114],
         "hinweis": "zwei Stufen rechts vom Podest hinunter (Zugang)",
         "richtung": "rechts"
       },
       {
         "typ": "gelaender",
-        "rahmen": [
-          24,
-          112,
-          56,
-          128
-        ],
+        "rahmen": [24, 112, 56, 128],
         "hinweis": "Vordergeländer, sperrt"
       }
     ],
@@ -468,90 +3818,45 @@
     "bauteile": [
       {
         "typ": "dach",
-        "rahmen": [
-          0,
-          0,
-          400,
-          272
-        ],
+        "rahmen": [0, 0, 400, 272],
         "hinweis": "Kuppeln, Glasdach, Dachgauben"
       },
       {
         "typ": "wand",
-        "rahmen": [
-          0,
-          272,
-          400,
-          448
-        ]
+        "rahmen": [0, 272, 400, 448]
       },
       {
         "typ": "saeule",
-        "rahmen": [
-          160,
-          400,
-          256,
-          448
-        ],
+        "rahmen": [160, 400, 256, 448],
         "hinweis": "Portikus mit vier Säulen"
       },
       {
         "typ": "tuer",
-        "rahmen": [
-          192,
-          416,
-          224,
-          448
-        ]
+        "rahmen": [192, 416, 224, 448]
       },
       {
         "typ": "sockel",
-        "rahmen": [
-          0,
-          448,
-          400,
-          464
-        ]
+        "rahmen": [0, 448, 400, 464]
       },
       {
         "typ": "absatz",
-        "rahmen": [
-          160,
-          448,
-          240,
-          464
-        ],
+        "rahmen": [160, 448, 240, 464],
         "hinweis": "Podest vor dem Portal, begehbar"
       },
       {
         "typ": "treppe",
-        "rahmen": [
-          160,
-          464,
-          240,
-          544
-        ],
+        "rahmen": [160, 464, 240, 544],
         "hinweis": "Freitreppe nach unten zum Betrachter",
         "richtung": "unten"
       },
       {
         "typ": "mauer",
-        "rahmen": [
-          144,
-          464,
-          160,
-          544
-        ],
+        "rahmen": [144, 464, 160, 544],
         "hinweis": "Treppenwange links"
       },
       {
         "typ": "mauer",
-        "rahmen": [
-          240,
-          464,
-          256,
-          544
-        ],
+        "rahmen": [240, 464, 256, 544],
         "hinweis": "Treppenwange rechts"
       }
     ],
@@ -561,33 +3866,18 @@
     "bauteile": [
       {
         "typ": "treppe",
-        "rahmen": [
-          0,
-          8,
-          64,
-          48
-        ],
+        "rahmen": [0, 8, 64, 48],
         "hinweis": "Seitentreppe, Lauf von links unten nach rechts oben, begehbar",
         "richtung": "links"
       },
       {
         "typ": "gelaender",
-        "rahmen": [
-          0,
-          0,
-          64,
-          20
-        ],
+        "rahmen": [0, 0, 64, 20],
         "hinweis": "oberer Handlauf (schräg)"
       },
       {
         "typ": "wand",
-        "rahmen": [
-          0,
-          40,
-          64,
-          64
-        ],
+        "rahmen": [0, 40, 64, 64],
         "hinweis": "Treppenwange mit unterem Handlauf, sperrt"
       }
     ],
@@ -597,32 +3887,17 @@
     "bauteile": [
       {
         "typ": "treppe",
-        "rahmen": [
-          0,
-          8,
-          64,
-          48
-        ],
+        "rahmen": [0, 8, 64, 48],
         "hinweis": "Seitentreppe, steigt nach links",
         "richtung": "rechts"
       },
       {
         "typ": "gelaender",
-        "rahmen": [
-          0,
-          0,
-          64,
-          20
-        ]
+        "rahmen": [0, 0, 64, 20]
       },
       {
         "typ": "wand",
-        "rahmen": [
-          0,
-          40,
-          64,
-          64
-        ],
+        "rahmen": [0, 40, 64, 64],
         "hinweis": "Wange"
       }
     ],
@@ -632,32 +3907,17 @@
     "bauteile": [
       {
         "typ": "treppe",
-        "rahmen": [
-          0,
-          8,
-          64,
-          48
-        ],
+        "rahmen": [0, 8, 64, 48],
         "hinweis": "Seitentreppe, steigt nach rechts",
         "richtung": "links"
       },
       {
         "typ": "gelaender",
-        "rahmen": [
-          0,
-          0,
-          64,
-          20
-        ]
+        "rahmen": [0, 0, 64, 20]
       },
       {
         "typ": "wand",
-        "rahmen": [
-          0,
-          40,
-          64,
-          64
-        ],
+        "rahmen": [0, 40, 64, 64],
         "hinweis": "Wange"
       }
     ],
@@ -667,50 +3927,25 @@
     "bauteile": [
       {
         "typ": "treppe",
-        "rahmen": [
-          32,
-          24,
-          64,
-          80
-        ],
+        "rahmen": [32, 24, 64, 80],
         "hinweis": "führt nach unten (zum Betrachter hin ab)",
         "richtung": "oben"
       },
       {
         "typ": "saeule",
-        "rahmen": [
-          24,
-          8,
-          32,
-          80
-        ]
+        "rahmen": [24, 8, 32, 80]
       },
       {
         "typ": "saeule",
-        "rahmen": [
-          64,
-          8,
-          72,
-          80
-        ]
+        "rahmen": [64, 8, 72, 80]
       },
       {
         "typ": "gelaender",
-        "rahmen": [
-          0,
-          8,
-          24,
-          40
-        ]
+        "rahmen": [0, 8, 24, 40]
       },
       {
         "typ": "gelaender",
-        "rahmen": [
-          72,
-          8,
-          96,
-          40
-        ]
+        "rahmen": [72, 8, 96, 40]
       }
     ],
     "geprueft": "von Hand, 28.11.2026 (Helfer C, Bild vergrößert angesehen)"
@@ -719,50 +3954,25 @@
     "bauteile": [
       {
         "typ": "treppe",
-        "rahmen": [
-          32,
-          24,
-          64,
-          80
-        ],
+        "rahmen": [32, 24, 64, 80],
         "hinweis": "führt nach unten",
         "richtung": "oben"
       },
       {
         "typ": "saeule",
-        "rahmen": [
-          24,
-          8,
-          32,
-          80
-        ]
+        "rahmen": [24, 8, 32, 80]
       },
       {
         "typ": "saeule",
-        "rahmen": [
-          64,
-          8,
-          72,
-          80
-        ]
+        "rahmen": [64, 8, 72, 80]
       },
       {
         "typ": "gelaender",
-        "rahmen": [
-          0,
-          8,
-          24,
-          40
-        ]
+        "rahmen": [0, 8, 24, 40]
       },
       {
         "typ": "gelaender",
-        "rahmen": [
-          72,
-          8,
-          96,
-          40
-        ]
+        "rahmen": [72, 8, 96, 40]
       }
     ],
     "geprueft": "von Hand, 28.11.2026 (Helfer C, Bild vergrößert angesehen)"
@@ -771,41 +3981,21 @@
     "bauteile": [
       {
         "typ": "saeule",
-        "rahmen": [
-          0,
-          0,
-          8,
-          80
-        ],
+        "rahmen": [0, 0, 8, 80],
         "hinweis": "Laternenpfosten links"
       },
       {
         "typ": "saeule",
-        "rahmen": [
-          40,
-          0,
-          48,
-          80
-        ],
+        "rahmen": [40, 0, 48, 80],
         "hinweis": "Laternenpfosten rechts"
       },
       {
         "typ": "gelaender",
-        "rahmen": [
-          0,
-          16,
-          48,
-          40
-        ]
+        "rahmen": [0, 16, 48, 40]
       },
       {
         "typ": "treppe",
-        "rahmen": [
-          8,
-          48,
-          40,
-          80
-        ],
+        "rahmen": [8, 48, 40, 80],
         "hinweis": "führt in den Untergrund hinab",
         "richtung": "oben"
       }
@@ -816,41 +4006,21 @@
     "bauteile": [
       {
         "typ": "saeule",
-        "rahmen": [
-          0,
-          16,
-          8,
-          80
-        ]
+        "rahmen": [0, 16, 8, 80]
       },
       {
         "typ": "saeule",
-        "rahmen": [
-          40,
-          16,
-          48,
-          80
-        ]
+        "rahmen": [40, 16, 48, 80]
       },
       {
         "typ": "treppe",
-        "rahmen": [
-          8,
-          32,
-          40,
-          72
-        ],
+        "rahmen": [8, 32, 40, 72],
         "hinweis": "führt in den Untergrund hinab",
         "richtung": "oben"
       },
       {
         "typ": "wand",
-        "rahmen": [
-          0,
-          64,
-          48,
-          80
-        ]
+        "rahmen": [0, 64, 48, 80]
       }
     ],
     "geprueft": "von Hand, 28.11.2026 (Helfer C, Bild vergrößert angesehen)"
@@ -859,22 +4029,12 @@
     "bauteile": [
       {
         "typ": "steg",
-        "rahmen": [
-          0,
-          0,
-          48,
-          32
-        ],
+        "rahmen": [0, 0, 48, 32],
         "hinweis": "Planken, begehbar"
       },
       {
         "typ": "sockel",
-        "rahmen": [
-          0,
-          32,
-          48,
-          48
-        ],
+        "rahmen": [0, 32, 48, 48],
         "hinweis": "Pfähle im Wasser"
       }
     ],
@@ -884,21 +4044,11 @@
     "bauteile": [
       {
         "typ": "steg",
-        "rahmen": [
-          0,
-          0,
-          16,
-          32
-        ]
+        "rahmen": [0, 0, 16, 32]
       },
       {
         "typ": "sockel",
-        "rahmen": [
-          0,
-          32,
-          16,
-          48
-        ],
+        "rahmen": [0, 32, 16, 48],
         "hinweis": "Pfähle im Wasser"
       }
     ],
@@ -908,32 +4058,17 @@
     "bauteile": [
       {
         "typ": "sonstiges",
-        "rahmen": [
-          0,
-          0,
-          160,
-          56
-        ],
+        "rahmen": [0, 0, 160, 56],
         "hinweis": "Felsbogen oben (Bogen), verdeckt"
       },
       {
         "typ": "wand",
-        "rahmen": [
-          0,
-          56,
-          48,
-          144
-        ],
+        "rahmen": [0, 56, 48, 144],
         "hinweis": "linker Pfeiler, Fuß sperrt"
       },
       {
         "typ": "wand",
-        "rahmen": [
-          96,
-          56,
-          160,
-          144
-        ],
+        "rahmen": [96, 56, 160, 144],
         "hinweis": "rechter Pfeiler, Fuß sperrt"
       }
     ],
@@ -943,32 +4078,17 @@
     "bauteile": [
       {
         "typ": "sonstiges",
-        "rahmen": [
-          0,
-          0,
-          48,
-          12
-        ],
+        "rahmen": [0, 0, 48, 12],
         "hinweis": "Querbalken, verdeckt"
       },
       {
         "typ": "saeule",
-        "rahmen": [
-          4,
-          12,
-          16,
-          48
-        ],
+        "rahmen": [4, 12, 16, 48],
         "hinweis": "Pfosten links, Fuß sperrt"
       },
       {
         "typ": "saeule",
-        "rahmen": [
-          32,
-          12,
-          44,
-          48
-        ],
+        "rahmen": [32, 12, 44, 48],
         "hinweis": "Pfosten rechts, Fuß sperrt"
       }
     ],
@@ -978,31 +4098,16 @@
     "bauteile": [
       {
         "typ": "schornstein",
-        "rahmen": [
-          8,
-          0,
-          40,
-          28
-        ]
+        "rahmen": [8, 0, 40, 28]
       },
       {
         "typ": "wand",
-        "rahmen": [
-          0,
-          28,
-          48,
-          48
-        ],
+        "rahmen": [0, 28, 48, 48],
         "hinweis": "Kaminsims und Feueröffnung"
       },
       {
         "typ": "sockel",
-        "rahmen": [
-          0,
-          48,
-          48,
-          64
-        ],
+        "rahmen": [0, 48, 48, 64],
         "hinweis": "Herdplatte, sperrt"
       }
     ],
@@ -1012,109 +4117,54 @@
     "bauteile": [
       {
         "typ": "dach",
-        "rahmen": [
-          0,
-          0,
-          144,
-          112
-        ]
+        "rahmen": [0, 0, 144, 112]
       },
       {
         "typ": "wand",
-        "rahmen": [
-          0,
-          96,
-          144,
-          172
-        ],
+        "rahmen": [0, 96, 144, 172],
         "hinweis": "Holzfassade, Giebel"
       },
       {
         "typ": "fenster",
-        "rahmen": [
-          24,
-          100,
-          120,
-          140
-        ]
+        "rahmen": [24, 100, 120, 140]
       },
       {
         "typ": "gelaender",
-        "rahmen": [
-          96,
-          112,
-          128,
-          140
-        ],
+        "rahmen": [96, 112, 128, 140],
         "hinweis": "Balkon im Obergeschoss, nicht begehbar"
       },
       {
         "typ": "tuer",
-        "rahmen": [
-          32,
-          150,
-          48,
-          172
-        ]
+        "rahmen": [32, 150, 48, 172]
       },
       {
         "typ": "saeule",
-        "rahmen": [
-          8,
-          150,
-          16,
-          180
-        ],
+        "rahmen": [8, 150, 16, 180],
         "hinweis": "Verandapfosten links"
       },
       {
         "typ": "saeule",
-        "rahmen": [
-          112,
-          150,
-          120,
-          180
-        ],
+        "rahmen": [112, 150, 120, 180],
         "hinweis": "Verandapfosten rechts"
       },
       {
         "typ": "veranda",
-        "rahmen": [
-          0,
-          170,
-          128,
-          208
-        ],
+        "rahmen": [0, 170, 128, 208],
         "hinweis": "Verandaboden vor der Tür, begehbar"
       },
       {
         "typ": "gelaender",
-        "rahmen": [
-          0,
-          180,
-          16,
-          208
-        ],
+        "rahmen": [0, 180, 16, 208],
         "hinweis": "Geländer links"
       },
       {
         "typ": "gelaender",
-        "rahmen": [
-          64,
-          180,
-          128,
-          208
-        ],
+        "rahmen": [64, 180, 128, 208],
         "hinweis": "Geländer rechts"
       },
       {
         "typ": "sonstiges",
-        "rahmen": [
-          128,
-          112,
-          144,
-          208
-        ],
+        "rahmen": [128, 112, 144, 208],
         "hinweis": "Schatten am Boden"
       }
     ],

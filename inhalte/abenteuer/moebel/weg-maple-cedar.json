@@ -1157,7 +1157,8 @@
       "art": "gebaeude",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "sortierlinie": 144
     },
     "mf8FlohmarktPlakat": {
       "quelle": "spiel/eigene/plakat_flohmarkt.png",

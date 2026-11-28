@@ -948,7 +948,8 @@
       "art": "gebaeude",
       "zustand": "alt",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 144
     },
     "pd6Musikhaus": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Post_Apocalyptic_House_1_16x16.png",
@@ -982,7 +983,27 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 54,
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "....................",
+        "...................."
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 54 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
     },
     "pd6HausKleinRot": {
       "quelle": "spiel/serene/serene_47.png",
@@ -1013,7 +1034,8 @@
       "zustand": "gebraucht",
       "stil": "rustikal",
       "blick": "unten",
-      "gebaeude": false
+      "gebaeude": false,
+      "sortierlinie": 64
     },
     "pd6ZeltFlach": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tent_4.png",
@@ -1023,7 +1045,23 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "gebaeude": false
+      "gebaeude": false,
+      "sortierlinie": 43,
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################",
+        "................"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 43 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
     },
     "pd6Gebaeckstand": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Street_Food_Cart_6.png",
@@ -1122,7 +1160,43 @@
       "kollision": true,
       "art": "gebaeude",
       "zustand": "gebraucht",
-      "stil": "industrie"
+      "stil": "industrie",
+      "sortierlinie": 124,
+      "maske_fein": [
+        "............................",
+        "............................",
+        "............................",
+        "............................",
+        "########################....",
+        "########################....",
+        "########################....",
+        "########################....",
+        "########################....",
+        "########################....",
+        "########################....",
+        "########################....",
+        "########################....",
+        "########################....",
+        "########################....",
+        "########################....",
+        "########################....",
+        "########################....",
+        "########################....",
+        "########################....",
+        "########################....",
+        "########################....",
+        "########################....",
+        "########################....",
+        "########################....",
+        "########################....",
+        "########################....",
+        "########################....",
+        "########################....",
+        "########################....",
+        "########################....",
+        "............................"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 124 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; Rohbau: Gerüst bis zu den Füßen der Stützen, der Schatten rechts frei"
     },
     "pd6Prellbock": {
       "quelle": "spiel/eigene/prellbock_stahl_oben.png",
@@ -1194,7 +1268,51 @@
         [6, 10],
         [7, 10]
       ],
-      "beschreibung": "Musikhaus von Port Delacroix als Ruine vor dem Wiederaufbau (Gemini K6, 26.11.2026): Schindeldach mit Loch und Planen, vernagelte Fenster, schiefe Tür, Gras am Sockel; etwa 10 Kacheln breit, mittig auf 13"
+      "beschreibung": "Musikhaus von Port Delacroix als Ruine vor dem Wiederaufbau (Gemini K6, 26.11.2026): Schindeldach mit Loch und Planen, vernagelte Fenster, schiefe Tür, Gras am Sockel; etwa 10 Kacheln breit, mittig auf 13",
+      "sortierlinie": 155,
+      "maske_fein": [
+        "....................................................",
+        "....................................................",
+        "....................................................",
+        "....................................................",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "...................................................."
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 155 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
     },
     "pd18MusikhausNeu": {
       "quelle": "spiel/eigene/musikhaus_neu.png",
@@ -1209,7 +1327,52 @@
         [6, 10],
         [7, 10]
       ],
-      "beschreibung": "Musikhaus von Port Delacroix nach dem Wiederaufbau (Gemini K6, 26.11.2026): dunkles Schindeldach, leere Schildtafel, Holzfront mit Veranda, Doppeltür mittig; Gegenstück zu pd18MusikhausRuine"
+      "beschreibung": "Musikhaus von Port Delacroix nach dem Wiederaufbau (Gemini K6, 26.11.2026): dunkles Schindeldach, leere Schildtafel, Holzfront mit Veranda, Doppeltür mittig; Gegenstück zu pd18MusikhausRuine",
+      "sortierlinie": 152,
+      "teilbereiche": [{"rechteck": [84, 92, 124, 160], "sortierlinie": 128}],
+      "maske_fein": [
+        "....................................................",
+        "....................................................",
+        "....................................................",
+        "....................................................",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "####################################################",
+        "#####################..........#####################",
+        "#####################..........#####################",
+        "#####################..........#####################",
+        "#####################..........#####################",
+        "######################........######################",
+        "######################........######################",
+        "....................................................",
+        "...................................................."
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 152 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; Veranda: Stufen und Boden vor der Tür begehbar, Geländer und Sockel daneben sperren; Teilbereich Tür und Stufen mit Sortierlinie an der Wand (128), damit der Held auf der Veranda vor der Tür steht"
     },
     "pd6MusikhausSolar": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Post_Apocalyptic_House_2_16x16.png",
@@ -1514,7 +1677,8 @@
       "tuer": [
         [2, 6],
         [3, 6]
-      ]
+      ],
+      "sortierlinie": 96
     },
     "pd6Gueterhalle": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Barn_Small_16x16.png",
@@ -1546,7 +1710,8 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 160
     },
     "pd6PlaneDach": {
       "quelle": "spiel/eigene/plane_dach.png",
@@ -1590,7 +1755,64 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten",
-      "gebaeude": true
+      "gebaeude": true,
+      "sortierlinie": 206,
+      "teilbereiche": [{"rechteck": [16, 0, 104, 182], "sortierlinie": 170}],
+      "maske_fein": [
+        "....................................",
+        "....................................",
+        "....................................",
+        "....................................",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####################################",
+        "####......................######....",
+        "####......................######....",
+        "####......................######....",
+        "####......................######....",
+        "####...........#################....",
+        "####...........#################....",
+        "####...........#################....",
+        "####...........#################....",
+        "####...........#################....",
+        "####...........#################...."
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 170 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; Veranda begehbar (Eingang links offen), Pfosten und Geländer sperren; Sortierlinie am Geländer (206), Teilbereich Haus über der Veranda mit Sortierlinie an der Wand (170): der Held steht vor der Wand und hinter dem Geländer"
     },
     "pd7Villa3": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/7_Villas_Singles_16x16/ME_Singles_Villas_16x16_Villa_3.png",
@@ -1634,7 +1856,8 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten",
-      "gebaeude": true
+      "gebaeude": true,
+      "sortierlinie": 128
     },
     "pd7Markt1": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/9_Shopping_Center_and_Markets_Singles_16x16/ME_Singles_Shopping_Center_and_Markets_16x16_Market_Medium_1.png",
@@ -1667,7 +1890,8 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten",
-      "gebaeude": true
+      "gebaeude": true,
+      "sortierlinie": 144
     },
     "pd7Laden3": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/9_Shopping_Center_and_Markets_Singles_16x16/ME_Singles_Shopping_Center_and_Markets_16x16_Market_Small_3.png",
@@ -1700,7 +1924,43 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten",
-      "gebaeude": true
+      "gebaeude": true,
+      "sortierlinie": 123,
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "...................."
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 123 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
     },
     "pd7Markt4": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/9_Shopping_Center_and_Markets_Singles_16x16/ME_Singles_Shopping_Center_and_Markets_16x16_Market_Medium_4.png",
@@ -1733,7 +1993,8 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten",
-      "gebaeude": true
+      "gebaeude": true,
+      "sortierlinie": 144
     },
     "pd7Laden6": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/9_Shopping_Center_and_Markets_Singles_16x16/ME_Singles_Shopping_Center_and_Markets_16x16_Market_Small_6.png",
@@ -1766,7 +2027,43 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten",
-      "gebaeude": true
+      "gebaeude": true,
+      "sortierlinie": 123,
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "...................."
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 123 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
     },
     "pd7Markt7": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/9_Shopping_Center_and_Markets_Singles_16x16/ME_Singles_Shopping_Center_and_Markets_16x16_Market_Medium_7.png",
@@ -1832,7 +2129,8 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten",
-      "gebaeude": true
+      "gebaeude": true,
+      "sortierlinie": 128
     },
     "pd7Markt10": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/9_Shopping_Center_and_Markets_Singles_16x16/ME_Singles_Shopping_Center_and_Markets_16x16_Market_Medium_10.png",
@@ -1898,7 +2196,59 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten",
-      "gebaeude": true
+      "gebaeude": true,
+      "sortierlinie": 176,
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        ".###....###.",
+        ".###....###.",
+        ".###....###.",
+        ".###....###."
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 176 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; Vortreppe begehbar bis zur Tür, ihre Wangen sperren"
     },
     "pd7Reihenhaus3": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_7_Example_3.png",
@@ -1920,7 +2270,8 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten",
-      "gebaeude": true
+      "gebaeude": true,
+      "sortierlinie": 128
     },
     "pd7Stadthaus5_1": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_5_1.png",
@@ -2618,7 +2969,8 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 160
     },
     "pd10HausGruen": {
       "quelle": "spiel/eigene/haus_farm1_gruen.png",
@@ -2628,7 +2980,8 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 160
     },
     "pd10WerkGrau": {
       "quelle": "spiel/eigene/haus_farm2_grau.png",
@@ -2639,7 +2992,8 @@
       "zustand": "alt",
       "stil": "rustikal",
       "blick": "unten",
-      "tuer": [[7, 9]]
+      "tuer": [[7, 9]],
+      "sortierlinie": 144
     },
     "pd10WerkGruen": {
       "quelle": "spiel/eigene/haus_farm2_gruen.png",
@@ -2649,7 +3003,8 @@
       "art": "gebaeude",
       "zustand": "alt",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 144
     },
     "pd10Wegweiser": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_6.png",
@@ -2800,7 +3155,8 @@
         [3, 16],
         [4, 16]
       ],
-      "beschreibung": "Turnhalle der Schule in Port Delacroix: Bild wie pd6Turnhalle, dazu die Türfelder vor der Glas-Doppeltür (Grundriss 13 × 8, Regel 10.74)"
+      "beschreibung": "Turnhalle der Schule in Port Delacroix: Bild wie pd6Turnhalle, dazu die Türfelder vor der Glas-Doppeltür (Grundriss 13 × 8, Regel 10.74)",
+      "sortierlinie": 256
     },
     "pd27HolzscheiteInnen": {
       "quelle": "spiel/eigene/holzscheite_innen.png",

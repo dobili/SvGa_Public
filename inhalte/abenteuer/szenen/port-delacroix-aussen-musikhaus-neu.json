@@ -1083,11 +1083,17 @@
     },
     {
       "name": "musikhausTuer",
-      "feld": [45, 41]
+      "feld": [45, 41],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
     },
     {
       "name": "musikhausTuer",
-      "feld": [46, 41]
+      "feld": [46, 41],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
     },
     {
       "name": "wuestenzug",

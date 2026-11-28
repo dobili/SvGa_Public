@@ -1036,7 +1036,8 @@
       "art": "gebaeude",
       "blick": "unten",
       "zustand": "alt",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "sortierlinie": 256
     },
     "mf2Waschsalon": {
       "quelle": "spiel/eigene/fassade_waschsalon.png",
@@ -1050,7 +1051,47 @@
       "tuer": [
         [1, 9],
         [2, 9]
-      ]
+      ],
+      "sortierlinie": 138,
+      "maske_fein": [
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "................................",
+        "................................"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 138 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
     },
     "mf2Plakatwand": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Billboard_8.png",
@@ -1870,7 +1911,8 @@
       "art": "gebaeude",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "sortierlinie": 160
     },
     "mf4BauernhausBreit": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Farmer_House_2_16x16.png",
@@ -1881,7 +1923,8 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "tuer": [[7, 9]]
+      "tuer": [[7, 9]],
+      "sortierlinie": 144
     },
     "mf4Briefkasten": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/22_Post_Office_Singles_16x16/22_Post_Office_16x16_Black_Mailbox_1_Front.png",

@@ -44,6 +44,9 @@ Grundlagen (Claude Docs, nur lesen):
 6. **Alles auf Deutsch:** Oberflächentexte (über `src/i18n/de.json`), Kommentare, Commit-Texte mit
    dem Warum.
 7. **Keine Zugangsdaten** im Chat oder im Repository. Verknüpfungen bestätigt der Autor selbst.
+7a. **Gemini nur für Bilderzeugung** (Wunsch des Autors, 28.11.2026): Die Gemini-Schnittstelle
+   erzeugt ausschließlich Bilder. Analyse, Erkennung und Beurteilung von Bildern (Bauteile,
+   Kollision, Prüfungen) und alles andere, was Claude kann, machen Claude und seine Helfer selbst.
 8. **Eine Datei für den Autor:** Alles, was der Autor testen oder entscheiden soll, steht
    vollständig in `docs/AUFGABEN_AUTOR.md` (Teil 1 Tests, Teil 2 Rückfragen), mit allen nötigen
    Informationen im Text, ohne Verweise auf andere Dateien, und nur Offenes (Wunsch des Autors,
@@ -173,7 +176,7 @@ python -m pipeline.abenteuer.ansprechziel [--hinweise] [--liste]   # Hauptfigure
 python -m pipeline.abenteuer.ansprechzeile [--alle]   # erste Zeilen der ansprechenden Figuren, die das Ansprechen durch den Helden voraussetzen („An der Haltestelle steht …“) oder die Figur bei der Arbeit an ihrem Platz zeigen („dreht ein Stück Ahorn“, „sortiert Muscheln“, seit 26.11.2026): Fassung mit {angesprochen: …|…} oder in GEPRUEFT mit Grund; Dauertest „0 offen“
 python -m pipeline.abenteuer.schwimmweg [--alle]   # Schwimmer (Enten, Alligator, Nutria) bleiben auf ihrem Weg im Wasser: Start, von–bis und zurück wie die App; Dauertest „0 Befunde“
 python -m pipeline.abenteuer.bankblick   # Sitzstellen auf Bänken und Sitzmöbeln: Blick von der Lehne weg (gespiegelt, gedreht), Sitzpunkt auf der Sitzfläche; Dauertest „0 Befunde“
-python -m pipeline.abenteuer.bauteilerkennung liste|probe NAME …|stapel [--neu] [--nur A,B]|abholen|nachbessern   # Bauteile zusammengesetzter Bilder (Gebäude, Brücken, Stände; Regel 10.95, Wunsch des Autors 28.11.2026) per Gemini (gemini-3.5-flash, Bild vergrößert, Rahmen 0–1000 umgerechnet) nach katalog_korrekturen/bauteile_gemini.json; von Hand in bauteile.json geht vor und wird nie überschrieben; nachbessern wandelt bekannte Irrtümer (bauteilpruefung.py: „Treppe unten“ zwischen Seitentreppen → Mauer), Verdachtsmuster auf den Bögen; Stapel in buch/arbeit/bauteile/
+python -m pipeline.abenteuer.bauteilerkennung liste|probe NAME …|stapel [--neu] [--nur A,B]|abholen|nachbessern   # Bauteile zusammengesetzter Bilder (Gebäude, Brücken, Stände; Regel 10.95, Wunsch des Autors 28.11.2026) (Gemini-Aufruf seit 28.11.2026 verboten, Regel 7a; die alten Vorschläge in katalog_korrekturen/bauteile_gemini.json werden durch eigene Durchsicht in bauteile.json ersetzt); von Hand in bauteile.json geht vor und wird nie überschrieben; nachbessern wandelt bekannte Irrtümer (bauteilpruefung.py: „Treppe unten“ zwischen Seitentreppen → Mauer), Verdachtsmuster auf den Bögen; Stapel in buch/arbeit/bauteile/
 python -m pipeline.abenteuer.bauteilregeln NAME … [--schreiben]   # aus den Bauteilen Sperre (maske_fein), Sortierlinie, Zugänge, boden_bereiche, ebene ableiten (Körper sperrt den Grundriss, Dach verdeckt, Treppe nur von ihrer offenen Seite, Absatz ohne Treppe mit Mauer); --schreiben nur für die genannten Einträge
 python -m pipeline.abenteuer.bauteil_bogen [NAME …] [--ziel buch/arbeit/bauteile]   # Kontaktbögen: Bauteilrahmen beschriftet, daneben rot Sperre, grün begehbar, gelb verdeckt, blau Sortierlinie (nur lokal)
 python -m pipeline.abenteuer.konturkollision [--ort mapleFalls] [--schreiben] [--boegen buch/arbeit/kontur]   # Kollision und Zeichentiefe nach der Kontur (Regel 10.95): Sperre, Sortierlinie, Bodenebene je Katalogeintrag, Befunde nach katalog_korrekturen/kontur.json, Handangaben in kontur_hand.json (sperre, kollision, sortierlinie, ebene), Bögen nur lokal

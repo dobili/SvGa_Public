@@ -177,3 +177,31 @@ def test_bank_ohne_lehne_und_laengs():
     assert ohne_lehne(46, 14)  # Bank längs
     assert not ohne_lehne(14, 14, flach_moeglich=False)  # Stuhl von hinten: Lehne vorn
     assert not ohne_lehne(22, 14)  # Stuhl
+
+
+def test_handangabe_mit_sortierlinie_und_teilbereichen():
+    """Phase 2B: Handangaben tragen Sortierlinie und Teilbereiche (Veranda der Villa) mit."""
+    hand = {
+        "sperre": [[0, 16, 32, 48]],
+        "sortierlinie": 60,
+        "teilbereiche": [{"rechteck": [0, 0, 16, 48], "sortierlinie": 40}],
+        "grund": "Probe",
+    }
+    kontur = handkontur(Kontur("probe", set(), 56), hand, {"breite": 32, "hoehe": 64})
+    assert kontur.neue_sperre and kontur.sortierlinie == 60
+    assert kontur.teilbereiche == hand["teilbereiche"]
+    assert kontur.befunde
+    fertig = {"sortierlinie": 60, "teilbereiche": hand["teilbereiche"]}
+    assert handkontur(Kontur("probe", kontur.sperre, 56), hand, fertig).befunde == []
+
+
+def test_gebaeude_akt_1_bis_2_ohne_offenen_befund():
+    """Phase 2B (28.11.2026): Die Gebäude von Cedar Creek bis Port Delacroix stehen im Katalog wie in
+    kontur_hand.json; die Villa in Port Delacroix hat ihre Teilbereiche."""
+    moebel = lade_moebel()
+    orte = ["cedarCreek", "riverton", "ironwood", "portDelacroix", "lockport", "steinbruch"]
+    orte += ["sternwarte", "goldmine", "wegMapleCedar", "wegCedarRiverton", "wegRivertonIronwood"]
+    konturen = vorschlaege(moebel_der_orte(orte), moebel)
+    offen = {n: k.befunde for n, k in konturen.items() if any(b.startswith("von Hand") for b in k.befunde)}
+    assert offen == {}
+    assert moebel["pd7Villa2"]["teilbereiche"][0]["sortierlinie"] == 170

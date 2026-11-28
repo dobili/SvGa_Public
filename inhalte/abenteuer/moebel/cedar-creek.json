@@ -1218,7 +1218,8 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "laendlich",
-      "tuer": [[2, 10]]
+      "tuer": [[2, 10]],
+      "sortierlinie": 160
     },
     "cc4Wohnhaus": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Farmer_House_1_16x16.png",
@@ -2366,7 +2367,8 @@
       "art": "gebaeude",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "sortierlinie": 160
     },
     "cc8KulisseBauernhausBreit": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Farmer_House_2_16x16.png",
@@ -2376,7 +2378,8 @@
       "art": "gebaeude",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "sortierlinie": 144
     },
     "cc8KulisseHausFlach": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_3_44.png",
@@ -3083,7 +3086,8 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "laendlich",
-      "hinweis": "roter Bretterschuppen mit grauem Schindeldach statt flachem Schwarz (Kartenblick C8) (Gemini C2, 27.11.2026, werkzeuge/gemini_cedar_2711.py)"
+      "hinweis": "roter Bretterschuppen mit grauem Schindeldach statt flachem Schwarz (Kartenblick C8) (Gemini C2, 27.11.2026, werkzeuge/gemini_cedar_2711.py)",
+      "sortierlinie": 72
     },
     "cc27SchuppenBraun": {
       "quelle": "spiel/eigene/schuppen_braun_dach.png",
@@ -3094,7 +3098,8 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "laendlich",
-      "hinweis": "brauner Bretterschuppen mit Schieferschindeln statt flachem Grau (Kartenblick C8) (Gemini C3, 27.11.2026, werkzeuge/gemini_cedar_2711.py)"
+      "hinweis": "brauner Bretterschuppen mit Schieferschindeln statt flachem Grau (Kartenblick C8) (Gemini C3, 27.11.2026, werkzeuge/gemini_cedar_2711.py)",
+      "sortierlinie": 72
     },
     "cc27SchlafsackGruen": {
       "quelle": "spiel/eigene/schlafsack_gruen.png",

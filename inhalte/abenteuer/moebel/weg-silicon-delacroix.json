@@ -131,7 +131,31 @@
       "art": "gebaeude",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "sortierlinie": 71,
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################",
+        "................",
+        "................"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 71 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
     },
     "sd6Liegestuhl": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Modern_House_Deck_Chair_White_16x16.png",

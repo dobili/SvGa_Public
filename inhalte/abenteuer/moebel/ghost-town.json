@@ -990,7 +990,31 @@
       "art": "gebaeude",
       "blick": "unten",
       "stil": "rustikal",
-      "zustand": "verwittert"
+      "zustand": "verwittert",
+      "sortierlinie": 73,
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "....................",
+        "...................."
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 73 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
     },
     "gt9StollenOffen": {
       "quelle": "spiel/eigene/stollen_eingang_offen.png",

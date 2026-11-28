@@ -465,7 +465,8 @@
       "art": "haus",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "einfach"
+      "stil": "einfach",
+      "sortierlinie": 64
     },
     "wc5ZeltB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tent_2.png",
@@ -475,7 +476,8 @@
       "art": "haus",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "einfach"
+      "stil": "einfach",
+      "sortierlinie": 64
     },
     "wc5Trittstein": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rock_5.png",
@@ -838,7 +840,8 @@
       "art": "haus",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "landhaus"
+      "stil": "landhaus",
+      "sortierlinie": 64
     },
     "wc5GartenhausB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Red_Brown_Wood_Storage.png",
@@ -848,7 +851,8 @@
       "art": "haus",
       "blick": "unten",
       "zustand": "neu",
-      "stil": "landhaus"
+      "stil": "landhaus",
+      "sortierlinie": 64
     },
     "wc5Setzling": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Medium_Sprout_1.png",
@@ -1209,7 +1213,8 @@
       "art": "haus",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "landhaus"
+      "stil": "landhaus",
+      "sortierlinie": 72
     },
     "wc14SchuppenBlau": {
       "quelle": "spiel/eigene/schuppen_blau.png",
@@ -1219,7 +1224,8 @@
       "art": "haus",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "landhaus"
+      "stil": "landhaus",
+      "sortierlinie": 72
     },
     "wc15GleisbogenObenRechts": {
       "quelle": "spiel/eigene/gleisbogen_oben_rechts.png",

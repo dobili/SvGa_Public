@@ -22,7 +22,7 @@
 import { sperreMoebel, type Sperrangabe } from "./begehbar";
 import { ZELLEN } from "./feinsperren";
 import type { Moebel } from "./moebel";
-import { moebeltiefe } from "./zeichentiefe";
+import { bildteile, bodenbereiche, type Bildausschnitt } from "./teilbereiche";
 
 /** Halbe Breite des Heldenkörpers (12 von 16 Pixeln, figurbilder.ts) in Pixeln. */
 const KOERPER_HALB = 6;
@@ -48,6 +48,8 @@ export interface Tiefenmoebel {
   readonly unterkante: ReadonlyMap<number, number>;
   /** Oberkante der obersten gesperrten Zelle in Pixeln. */
   readonly oberkante: number;
+  /** Bodenbereiche in Weltpixeln (teilbereiche.ts): Fuß darin → der Held liegt über dem Bild. */
+  readonly boden?: readonly Bildrechteck[];
 }
 
 /** Ein Möbel, so weit die Regel es braucht (moebel.ts, Moebel; im Test aus der Karte gebaut). */
@@ -58,6 +60,32 @@ export interface Tiefenquelle {
   readonly angabe: Sperrangabe & { readonly art?: string };
   readonly kollision?: boolean;
   readonly tiefe: number;
+  /** Nur dieses Teil des Bildes (teilbereiche.ts): Bild und Sperrzellen darin, eigene Tiefe. */
+  readonly ausschnitt?: Bildausschnitt;
+  /** Bodenbereiche des Bildes in Weltpixeln (Katalogfeld `boden_bereiche`, bodenbereiche()). */
+  readonly boden?: readonly Bildrechteck[];
+}
+
+/**
+ * Die Quellen eines Möbels: eine je Bildteil (teilbereiche.ts), sonst das ganze Bild mit seiner Tiefe.
+ * Beispiel: Villa mit Teilbereich Haus über der Veranda → vier Quellen (Teil, drei Restteile).
+ */
+export function tiefenquellen(m: Moebel, kachel: number): Tiefenquelle[] {
+  const boden = bodenbereiche(m);
+  const mitBoden = boden.length > 0 ? { boden } : {};
+  return bildteile(m, kachel).map((t) =>
+    t.ganz
+      ? { ...m, tiefe: t.tiefe, ...mitBoden }
+      : { ...m, tiefe: t.tiefe, ausschnitt: t.ausschnitt, ...mitBoden },
+  );
+}
+
+/** Liegt die Mitte der Zelle (sx, sy) im Ausschnitt (Weltpixel)? Ohne Ausschnitt immer. */
+function imAusschnitt(sx: number, sy: number, zelle: number, r: Bildrechteck | undefined): boolean {
+  if (!r) return true;
+  const mx = (sx + 0.5) * zelle;
+  const my = (sy + 0.5) * zelle;
+  return mx >= r.x && mx < r.x + r.breite && my >= r.y && my < r.y + r.hoehe;
 }
 
 /**
@@ -72,16 +100,23 @@ export function tiefenmoebel(quellen: readonly Tiefenquelle[], kachel: number): 
     if (!(q.kollision ?? q.angabe.kollision) || OHNE_SEITENREGEL.has(q.angabe.art ?? "")) continue;
     const zellen = new Set<string>();
     sperreMoebel(zellen, q, q.angabe, kachel, zelle);
-    if (zellen.size === 0) continue;
+    const a = q.ausschnitt;
+    const bild = a
+      ? { x: q.x + a.x, y: q.y + a.y, breite: a.breite, hoehe: a.hoehe }
+      : { x: q.x, y: q.y, breite: q.angabe.breite, hoehe: q.angabe.hoehe };
     const unterkante = new Map<number, number>();
     let oberkante = Infinity;
     for (const k of zellen) {
       const [sx, sy] = k.split(",").map(Number) as [number, number];
-      unterkante.set(sx, Math.max(unterkante.get(sx) ?? 0, (sy + 1) * zelle));
+      // Die Oberkante gilt für das ganze Möbel: Nördlich eines Bildteils (neben der Kirche, auf
+      // Höhe ihres Dachs) steht der Held nicht hinter dem Teil, nur nördlich des ganzen Möbels.
       oberkante = Math.min(oberkante, sy * zelle);
+      if (!imAusschnitt(sx, sy, zelle, a && bild)) continue;
+      unterkante.set(sx, Math.max(unterkante.get(sx) ?? 0, (sy + 1) * zelle));
     }
-    const bild = { x: q.x, y: q.y, breite: q.angabe.breite, hoehe: q.angabe.hoehe };
-    ergebnis.push({ name: q.name, tiefe: q.tiefe, bild, unterkante, oberkante });
+    if (unterkante.size === 0) continue;
+    const boden = q.boden ? { boden: q.boden } : {};
+    ergebnis.push({ name: q.name, tiefe: q.tiefe, bild, unterkante, oberkante, ...boden });
   }
   return ergebnis;
 }
@@ -103,6 +138,13 @@ export function stehtDahinter(m: Tiefenmoebel, x: number, y: number, kachel: num
     if ((m.unterkante.get(s) ?? -Infinity) > unten) return true;
   }
   return false;
+}
+
+/** Steht der Fuß (x, y) in einem Bodenbereich des Möbels (Katalogfeld `boden_bereiche`)? */
+function aufDemBoden(m: Tiefenmoebel, x: number, y: number): boolean {
+  return (m.boden ?? []).some(
+    (r) => x >= r.x && x < r.x + r.breite && y >= r.y && y < r.y + r.hoehe,
+  );
 }
 
 /** Ergebnis der Regel: die Tiefe und ob sich vor und hinter widersprachen. */
@@ -131,6 +173,11 @@ export function heldtiefe(
   let ueber = -Infinity;
   let unter = Infinity;
   for (const m of moebel) {
+    if (aufDemBoden(m, x, y)) {
+      // Bodenbereich (Treppe, Absatz über der Sortierlinie): der Held steht auf dem Bild.
+      ueber = Math.max(ueber, m.tiefe);
+      continue;
+    }
     if (m.tiefe < y || !schneiden(bild, m.bild)) continue;
     if (stehtDahinter(m, x, y, kachel)) unter = Math.min(unter, m.tiefe);
     else ueber = Math.max(ueber, m.tiefe);
@@ -143,7 +190,7 @@ export function heldtiefe(
 /** Die Angaben aus den Möbeln der Szene (moebel.ts) mit ihrer Zeichentiefe (zeichentiefe.ts). */
 export function tiefenmoebelAus(moebel: readonly Moebel[], kachel: number): Tiefenmoebel[] {
   return tiefenmoebel(
-    moebel.map((m) => ({ ...m, tiefe: moebeltiefe(m, kachel) })),
+    moebel.flatMap((m) => tiefenquellen(m, kachel)),
     kachel,
   );
 }

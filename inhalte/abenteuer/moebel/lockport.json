@@ -474,7 +474,8 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 96
     },
     "lp6Brunnen": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Well_Usable_16x16.png",
@@ -614,7 +615,31 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "tuer": [[1, 5]]
+      "tuer": [[1, 5]],
+      "sortierlinie": 72,
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "...........#######..",
+        "...........#######.."
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 72 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; Holzstapel vor der Wand sperrt"
     },
     "ld14BlockhuetteKamin": {
       "quelle": "spiel/eigene/blockhuette_kamin.png",
@@ -625,7 +650,31 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "tuer": [[1, 5], [2, 5]]
+      "tuer": [[1, 5], [2, 5]],
+      "sortierlinie": 72,
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "....................",
+        "...................."
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 72 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; Holzstufe vor der Tür begehbar (führt zum Betrachter hinunter)"
     },
     "ld14HausBlau": {
       "quelle": "spiel/eigene/haus_farm1_blau.png",
@@ -635,7 +684,8 @@
       "art": "haus",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "sortierlinie": 160
     },
     "ld14HausGruen": {
       "quelle": "spiel/eigene/haus_farm2_gruen.png",
@@ -645,7 +695,8 @@
       "art": "haus",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "sortierlinie": 144
     },
     "ld14Bootsschuppen": {
       "quelle": "spiel/eigene/bootsschuppen_grau.png",
@@ -656,7 +707,8 @@
       "art": "haus",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "sortierlinie": 71
     },
     "ld14SchuppenBlau": {
       "quelle": "spiel/eigene/schuppen_blau.png",
@@ -666,7 +718,8 @@
       "art": "haus",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "sortierlinie": 72
     },
     "ld14SchuppenBraun": {
       "quelle": "spiel/eigene/schuppen_braun.png",
@@ -676,7 +729,8 @@
       "art": "haus",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "sortierlinie": 72
     },
     "ld14SchuppenRot": {
       "quelle": "spiel/eigene/schuppen_rot.png",
@@ -686,7 +740,8 @@
       "art": "haus",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "sortierlinie": 72
     },
     "ld14Lastkahn": {
       "quelle": "spiel/eigene/lastkahn_lang_links.png",

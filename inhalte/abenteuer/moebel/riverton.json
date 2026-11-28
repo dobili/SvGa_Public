@@ -1288,7 +1288,8 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "stil": "industrie",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 160
     },
     "rv5Wasserturm": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Water_Tower_1.png",
@@ -1297,7 +1298,39 @@
       "kollision": true,
       "art": "gebaeude",
       "zustand": "alt",
-      "stil": "industrie"
+      "stil": "industrie",
+      "sortierlinie": 96,
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "....####....",
+        "....####....",
+        "....####....",
+        "............",
+        "............",
+        "............",
+        "............"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 96 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; nur der Fuß des Mastes sperrt, unter dem Kessel verdeckt er den Helden"
     },
     "rv5Reihenhaus": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_7_Example_1.png",
@@ -1307,7 +1340,43 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 112,
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        ".###....###.",
+        ".###....###.",
+        ".###....###.",
+        ".###....###."
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 112 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; Vortreppe begehbar bis zur Tür, ihre Wangen sperren"
     },
     "rv5Handyladen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/9_Shopping_Center_and_Markets_Singles_16x16/ME_Singles_Shopping_Center_and_Markets_16x16_Market_Small_1.png",
@@ -1317,7 +1386,8 @@
       "art": "gebaeude",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 128
     },
     "rv5Baeckerei": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/5_Floor_Modular_Building_Singles_16x16/ME_Singles_Floor_Modular_Building_16x16_Ground_Floor_Bakery_1.png",
@@ -1337,7 +1407,47 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 138,
+      "maske_fein": [
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "################################",
+        "................................",
+        "................................"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 138 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
     },
     "rv5Lagerhaus": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Junk_Shack_1.png",
@@ -1347,7 +1457,8 @@
       "art": "gebaeude",
       "zustand": "alt",
       "stil": "industrie",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 96
     },
     "rv5Wohnwagen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Mobile_House_Small_1.png",
@@ -1358,7 +1469,35 @@
       "zustand": "gebraucht",
       "stil": "modern",
       "blick": "unten",
-      "tuer": [[2, 6]]
+      "tuer": [[2, 6]],
+      "sortierlinie": 84,
+      "maske_fein": [
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########################",
+        "########....########....",
+        "########....########....",
+        "........................"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 84 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; Stufen vor der Tür begehbar (führen zum Betrachter hinunter), Räder und Grill sperren"
     },
     "rv5Werkstatt": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Orange_Structure.png",
@@ -1368,7 +1507,8 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "stil": "industrie",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 80
     },
     "rv5Schuppen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Brown_Wood_Storage.png",
@@ -2096,7 +2236,8 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 144
     },
     "rv8Obstkarren": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Fruit_Flowers_Cart_2.png",
@@ -2632,7 +2773,8 @@
       "tuer": [
         [10, 15],
         [11, 15]
-      ]
+      ],
+      "sortierlinie": 240
     },
     "rv8Brueckenschatten": {
       "quelle": "spiel/eigene/riverton_brueckenschatten.png",
@@ -2679,7 +2821,8 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 96
     },
     "rv8Poller": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_14.png",
@@ -2843,7 +2986,8 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 64
     },
     "rv8Bahnsteigbank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Three_Seats_Green_Bench_Lateral_1.png",
@@ -3102,7 +3246,8 @@
       "kollision": true,
       "art": "gebaeude",
       "blick": "unten",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "sortierlinie": 72
     },
     "rv14Pumpenhaus": {
       "quelle": "spiel/eigene/schuppen_rot.png",
@@ -3122,7 +3267,8 @@
       "kollision": true,
       "art": "gebaeude",
       "blick": "unten",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "sortierlinie": 72
     },
     "rv14Bruecke": {
       "quelle": "spiel/eigene/bruecke_strasse_gehweg_laengs_5.png",

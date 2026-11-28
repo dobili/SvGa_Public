@@ -962,9 +962,7 @@
     "material": "holz",
     "zustand": "gebraucht",
     "epoche": "gegenwart",
-    "orte": [
-      "wegMapleCedar.landstrasse"
-    ],
+    "orte": ["wegMapleCedar.landstrasse"],
     "nur_pfad": true,
     "sicher": 0.9,
     "korrektur": "mittel-2"
@@ -980,9 +978,7 @@
     "material": "holz",
     "zustand": "gebraucht",
     "epoche": "gegenwart",
-    "orte": [
-      "wegMapleCedar.landstrasse"
-    ],
+    "orte": ["wegMapleCedar.landstrasse"],
     "nur_pfad": true,
     "sicher": 0.9,
     "korrektur": "mittel-2"
@@ -998,9 +994,7 @@
     "material": "holz",
     "zustand": "gebraucht",
     "epoche": "gegenwart",
-    "orte": [
-      "wegMapleCedar.landstrasse"
-    ],
+    "orte": ["wegMapleCedar.landstrasse"],
     "nur_pfad": true,
     "sicher": 0.9,
     "korrektur": "mittel-2"
@@ -1016,9 +1010,7 @@
     "material": "holz",
     "zustand": "gebraucht",
     "epoche": "gegenwart",
-    "orte": [
-      "cedarCreek.drechslerei"
-    ],
+    "orte": ["cedarCreek.drechslerei"],
     "nur_pfad": true,
     "sicher": 0.9,
     "korrektur": "mittel-2"
@@ -1034,9 +1026,7 @@
     "material": "holz",
     "zustand": "gebraucht",
     "epoche": "gegenwart",
-    "orte": [
-      "cedarCreek.drechslerei"
-    ],
+    "orte": ["cedarCreek.drechslerei"],
     "nur_pfad": true,
     "sicher": 0.9,
     "korrektur": "mittel-2"
@@ -1052,9 +1042,7 @@
     "material": "holz",
     "zustand": "gebraucht",
     "epoche": "gegenwart",
-    "orte": [
-      "cedarCreek.drechslerei"
-    ],
+    "orte": ["cedarCreek.drechslerei"],
     "nur_pfad": true,
     "sicher": 0.9,
     "korrektur": "mittel-2"

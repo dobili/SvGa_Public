@@ -2757,7 +2757,8 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 144
     },
     "sa8LadenD": {
       "quelle": "spiel/eigene/altstadt_laden_d.png",
@@ -2767,7 +2768,8 @@
       "art": "gebaeude",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 144
     },
     "sa8Schneemann": {
       "quelle": "spiel/eigene/schneemann.png",

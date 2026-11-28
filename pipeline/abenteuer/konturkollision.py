@@ -19,16 +19,10 @@ Modell je Katalogeintrag (KARTENREGELN 10.95), drei Angaben im Bild des Katalogs
 - **Bodenebene** (`ebene: "boden"`): Das ganze Bild liegt unter den Figuren (Treppe, Steg, Brücke,
   Fußmatte); die Sperre (Holme, Geländer) bleibt. Alle deckenden Pixel außerhalb der Sperre grün.
 
-Befunde je Eintrag (nur Vorschläge, nichts ändert sich ohne ``--schreiben``):
-
-- „Linie zu tief“: Die alte Linie liegt mehr als eine halbe Körperhöhe (6 Pixel) unter dem Fuß der
-  Sperre. Wer direkt vor der Sperre steht, verschwindet hinter dem Bild. Vorschlag: Unterkante der
-  Sperre.
-- „Linie zu hoch“: Die alte Linie liegt über der Sperre minus 6 Pixel; wer direkt dahinter steht,
-  stünde davor. Vorschlag wie oben.
-- „Boden“: Treppe, Steg, Brücke, Matte mit Kollision ohne `ebene: "boden"`; die Figur steht im Bild
-  und wurde vom Bild verdeckt (Dachbodentreppe im Zimmer, Maple Falls).
-- „von Hand“: Gebäude mit begehbaren Reihen im Bild (Vortreppe, Veranda): Liste zur Prüfung.
+Befunde je Eintrag (nur Vorschläge, nichts ändert sich ohne ``--schreiben``): „Linie zu tief/hoch“
+(alte Linie mehr als 6 Pixel unter bzw. über dem Fuß der Sperre; Vorschlag: Unterkante der Sperre),
+„Boden“ (Treppe, Steg, Brücke, Matte mit Kollision ohne `ebene: "boden"`, etwa die Dachbodentreppe)
+und „von Hand“ (Gebäude mit begehbaren Reihen im Bild wie Vortreppe oder Veranda).
 
 Aufruf: ``python -m pipeline.abenteuer.konturkollision [--alle] [--ort mapleFalls] [--schreiben]
 [--boegen ORDNER]``. Vorschläge nach ``inhalte/abenteuer/katalog_korrekturen/kontur.json``; Bögen
@@ -85,6 +79,7 @@ class Kontur:
     neue_sperre: bool = False  # die Sperre ist neu (Sitzfläche, von Hand), nicht die des Katalogs
     flach: bool = False  # ohne Kollision: der Kartenbau legt das Bild unter alle Figuren
     kollision: bool | None = None  # von Hand: Bild ohne Kollision bekommt eine (Felsbogen, Boot an Land)
+    teilbereiche: list[dict] | None = None  # Teile mit eigener Tiefe (Veranda), nur von Hand
     breite: int = K
     hoehe: int = K
     grund: str = HAND_GRUND
@@ -186,13 +181,13 @@ def handkontur(kontur: Kontur, hand: dict, angabe: dict) -> Kontur:
     ein Bild ohne Kollision), ``sortierlinie`` und ``ebene``; Befund nur, wo der Katalog abweicht.
     Beispiel: Felsbogen ohne Kollision, Sperre an den Pfeilerfüßen → kollision true, maske_fein."""
     neu = zellen_der_rechtecke(hand.get("sperre", []))
-    felder = {f: hand[f] for f in ("kollision", "sortierlinie", "ebene") if f in hand}
+    felder = {f: hand[f] for f in ("kollision", "sortierlinie", "ebene", "teilbereiche") if f in hand}
     if neu != kontur.sperre or any(angabe.get(f) != w for f, w in felder.items()):
         if neu or "sperre" in hand:  # leere Liste: Bild mit Kollision, aber ohne Sperre
             kontur.sperre, kontur.neue_sperre = neu, True
         kontur.grund = hand["grund"]
         kontur.kollision, kontur.ebene = felder.get("kollision"), felder.get("ebene")
-        kontur.sortierlinie = felder.get("sortierlinie")
+        kontur.sortierlinie, kontur.teilbereiche = felder.get("sortierlinie"), felder.get("teilbereiche")
         if kontur.sortierlinie is None and neu and angabe.get("art") not in GEBAEUDE:
             kontur.sortierlinie = mittellinie(neu)  # Möbel: Mitte der Sperre (Fuß), Gebäude: Maske
         kontur.befunde.append(f"von Hand: Kontur aus {len(hand.get('sperre', []))} Rechtecken")
@@ -326,6 +321,8 @@ def als_json(konturen: dict[str, Kontur]) -> dict:
             eintrag["sortierlinie"] = k.sortierlinie
         if k.ebene:
             eintrag["ebene"] = k.ebene
+        if k.teilbereiche:
+            eintrag["teilbereiche"] = k.teilbereiche
         if k.neue_sperre:
             eintrag["maske_fein"] = feine_maske(k.sperre, k.breite, k.hoehe)
         aus[name] = eintrag
@@ -347,6 +344,7 @@ def schreibe_katalog(konturen: dict[str, Kontur], ordner: Path = ORDNER) -> int:
             if k is None:
                 continue
             felder = [("kollision", k.kollision), ("sortierlinie", k.sortierlinie), ("ebene", k.ebene)]
+            felder.append(("teilbereiche", k.teilbereiche))
             if k.neue_sperre:
                 felder += [("maske_fein", feine_maske(k.sperre, k.breite, k.hoehe)), (FELD_HAND, k.grund)]
             for feld_name, wert in felder:

@@ -140,7 +140,8 @@
       "kollision": true,
       "art": "haus",
       "zustand": "neu",
-      "stil": "landhaus"
+      "stil": "landhaus",
+      "sortierlinie": 64
     },
     "ws5Erle": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_170.png",

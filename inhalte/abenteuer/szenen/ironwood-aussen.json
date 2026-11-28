@@ -1591,11 +1591,17 @@
     },
     {
       "name": "kantineTuer",
-      "feld": [66, 17]
+      "feld": [66, 17],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
     },
     {
       "name": "kantineTuer",
-      "feld": [67, 17]
+      "feld": [67, 17],
+      "eigenschaften": {
+        "durchgang": "oben"
+      }
     },
     {
       "name": "umkleideTuer",

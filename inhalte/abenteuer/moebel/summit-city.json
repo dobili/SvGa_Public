@@ -191,7 +191,31 @@
       "art": "gebaeude",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "sortierlinie": 74,
+      "maske_fein": [
+        "....................",
+        "....................",
+        "....................",
+        "....................",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "####################",
+        "....................",
+        "...................."
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 74 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
     },
     "sc7FerienhuetteB": {
       "quelle": "spiel/eigene/huette_b.png",

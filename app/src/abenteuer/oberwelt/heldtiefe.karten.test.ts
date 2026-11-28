@@ -18,13 +18,13 @@ import {
   heldtiefe,
   stehtDahinter,
   tiefenmoebel,
+  tiefenquellen,
   type Bildrechteck,
   type Tiefenmoebel,
 } from "./heldtiefe";
 import { sperrzellen } from "./mittenkacheln";
 import type { Moebel } from "./moebel";
-import { geformtAusObjekt } from "./moebelform";
-import { moebeltiefe } from "./zeichentiefe";
+import { formAus, geformtAusObjekt, hatForm } from "./moebelform";
 
 const KACHEL = 16;
 const ZELLE = KACHEL / ZELLEN;
@@ -59,13 +59,14 @@ function moebelDer(karte: Tiledkarte): Tiefenmoebel[] {
       if (!roh || !o.name) return [];
       const angabe = geformtAusObjekt(roh, o.properties);
       const eigen = o.properties?.find((p) => p.name === "tiefe")?.value;
-      const lage = { name: o.name, x: o.x ?? 0, y: o.y ?? 0, angabe };
-      const tiefe = moebeltiefe(
+      const form = hatForm(formAus(o.properties)) ? { form: formAus(o.properties) } : {};
+      const lage = { name: o.name, x: o.x ?? 0, y: o.y ?? 0, angabe, ...form };
+      const kollision = hatKollision(o.properties);
+      // Je Bildteil eine Quelle (teilbereiche.ts: Veranda mit eigener Tiefe), wie in der Szene.
+      return tiefenquellen(
         { ...lage, ...(typeof eigen === "number" ? { tiefe: eigen } : {}) } as Moebel,
         KACHEL,
-      );
-      const kollision = hatKollision(o.properties);
-      return [{ ...lage, tiefe, ...(kollision === undefined ? {} : { kollision }) }];
+      ).map((q) => ({ ...q, ...(kollision === undefined ? {} : { kollision }) }));
     }),
   );
   return tiefenmoebel(quellen, KACHEL);

@@ -12453,9 +12453,18 @@
       "breite": 22,
       "tiefe": 10,
       "geschosse": 1,
-      "tueren": [{"von": 11, "bis": 12}],
+      "tueren": [{ "von": 11, "bis": 12 }],
       "fenster": {
-        "EG": [{"von": 2, "bis": 3}, {"von": 4, "bis": 5}, {"von": 6, "bis": 7}, {"von": 8, "bis": 8}, {"von": 15, "bis": 16}, {"von": 17, "bis": 17}, {"von": 18, "bis": 19}, {"von": 20, "bis": 21}]
+        "EG": [
+          { "von": 2, "bis": 3 },
+          { "von": 4, "bis": 5 },
+          { "von": 6, "bis": 7 },
+          { "von": 8, "bis": 8 },
+          { "von": 15, "bis": 16 },
+          { "von": 17, "bis": 17 },
+          { "von": 18, "bis": 19 },
+          { "von": 20, "bis": 21 }
+        ]
       },
       "hinweis": "Werkskantine Ironwood (Gemini B30, 25.11.2026): flaches Blechdach über zehn Reihen, Backsteinfront mit acht hohen Werksfenstern, gläserne Doppeltür in der Mitte unter einem Vordach mit Stufe",
       "aufgang": null
@@ -12468,9 +12477,12 @@
       "breite": 10,
       "tiefe": 6,
       "geschosse": 1,
-      "tueren": [{"von": 5, "bis": 6}],
+      "tueren": [{ "von": 5, "bis": 6 }],
       "fenster": {
-        "EG": [{"von": 2, "bis": 3}, {"von": 8, "bis": 9}]
+        "EG": [
+          { "von": 2, "bis": 3 },
+          { "von": 8, "bis": 9 }
+        ]
       },
       "hinweis": "alter Ziegelbahnhof mit Uhrgiebel, heute Heimatmuseum (Gemini B31, 25.11.2026): Schieferdach über sechs Reihen, Rundbogenfenster links und rechts, Doppeltür mit Rundbogen in der Mitte",
       "aufgang": null
@@ -12483,9 +12495,14 @@
       "breite": 10,
       "tiefe": 6,
       "geschosse": 1,
-      "tueren": [{"von": 7, "bis": 8}],
+      "tueren": [{ "von": 7, "bis": 8 }],
       "fenster": {
-        "EG": [{"von": 3, "bis": 3}, {"von": 4, "bis": 5}, {"von": 9, "bis": 10}, {"von": 11, "bis": 11}]
+        "EG": [
+          { "von": 3, "bis": 3 },
+          { "von": 4, "bis": 5 },
+          { "von": 9, "bis": 10 },
+          { "von": 11, "bis": 11 }
+        ]
       },
       "hinweis": "Musikhaus Port Delacroix als Ruine (Gemini K6): Schindeldach über sechs Reihen, Front mit vernagelten Fenstern, schiefe Tür mittig; Haus etwa 10 Kacheln breit, mittig auf dem 13 Kacheln breiten Bild",
       "aufgang": null
@@ -12498,9 +12515,14 @@
       "breite": 10,
       "tiefe": 6,
       "geschosse": 1,
-      "tueren": [{"von": 7, "bis": 8}],
+      "tueren": [{ "von": 7, "bis": 8 }],
       "fenster": {
-        "EG": [{"von": 3, "bis": 3}, {"von": 4, "bis": 5}, {"von": 9, "bis": 10}, {"von": 11, "bis": 11}]
+        "EG": [
+          { "von": 3, "bis": 3 },
+          { "von": 4, "bis": 5 },
+          { "von": 9, "bis": 10 },
+          { "von": 11, "bis": 11 }
+        ]
       },
       "hinweis": "Musikhaus Port Delacroix wiederaufgebaut (Gemini K6): Schindeldach über sechs Reihen, Holzfront mit Veranda, Doppeltür mittig; Haus etwa 10 Kacheln breit, mittig auf dem 13 Kacheln breiten Bild",
       "aufgang": null

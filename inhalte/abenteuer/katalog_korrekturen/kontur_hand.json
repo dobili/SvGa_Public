@@ -156,5 +156,522 @@
   "n6Karussell": {
     "sperre": [[4, 58, 92, 96]],
     "grund": "Kontur (Phase 2A, 28.11.2026): die Drehscheibe am Boden sperrt; das Dach darüber verdeckt den Helden dahinter"
+  },
+  "by9HuetteKrebs": {
+    "sperre": [[0, 16, 80, 72]],
+    "sortierlinie": 73,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 73 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "cc27SchuppenBraun": {
+    "sperre": [[0, 16, 48, 64]],
+    "sortierlinie": 72,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 72 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "cc27SchuppenRot": {
+    "sperre": [[0, 16, 48, 64]],
+    "sortierlinie": 72,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 72 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "cc4Drechslerei": {
+    "sperre": [[0, 16, 128, 160]],
+    "sortierlinie": 160,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 160 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "cc8KulisseBauernhaus": {
+    "sperre": [[0, 16, 128, 160]],
+    "sortierlinie": 160,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 160 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "cc8KulisseBauernhausBreit": {
+    "sperre": [[0, 16, 160, 144]],
+    "sortierlinie": 144,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 144 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "cr8Holzfaellerhuette": {
+    "sperre": [[0, 16, 80, 72]],
+    "sortierlinie": 74,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 74 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "ds8Gemischtwaren": {
+    "sperre": [[0, 16, 128, 136]],
+    "sortierlinie": 138,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 138 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "gt8HuetteB": {
+    "sperre": [[0, 16, 80, 72]],
+    "sortierlinie": 73,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 73 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "iw18BahnhofMuseum": {
+    "sperre": [
+      [0, 16, 160, 136],
+      [20, 136, 56, 144],
+      [56, 136, 64, 144],
+      [92, 136, 100, 144]
+    ],
+    "sortierlinie": 138,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 138 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; Bank und Laternen vor der Fassade sperren"
+  },
+  "iw18KantineBreit": {
+    "sperre": [
+      [0, 16, 352, 256],
+      [144, 252, 152, 268],
+      [200, 252, 208, 268]
+    ],
+    "sortierlinie": 254,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 254 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; Freitreppe unter dem Vordach begehbar bis zur Tür, die Pfosten des Vordachs sperren"
+  },
+  "iw5Kirche": {
+    "sperre": [
+      [0, 16, 80, 128],
+      [0, 128, 20, 144],
+      [60, 128, 80, 144]
+    ],
+    "sortierlinie": 136,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 144 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; Stufen vor dem Portal zwischen den Pfeilern begehbar (führen zum Betrachter hinunter), die Pfeiler sperren bis unten; Teilbereich Portal und Stufen mit Sortierlinie an der Schwelle (128), damit der Held auf den Stufen vor dem Portal steht",
+    "teilbereiche": [
+      {
+        "rechteck": [18, 88, 62, 144],
+        "sortierlinie": 128
+      }
+    ]
+  },
+  "iw5Laden": {
+    "sperre": [[0, 16, 128, 136]],
+    "sortierlinie": 138,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 138 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "iw5Pfoertner": {
+    "sperre": [[0, 16, 64, 80]],
+    "sortierlinie": 80,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 80 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "iw5Reihenhaus": {
+    "sperre": [[0, 16, 96, 128]],
+    "sortierlinie": 128,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 128 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "iw5ReihenhausHoch": {
+    "sperre": [[0, 16, 96, 160]],
+    "sortierlinie": 160,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 160 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "iw5Schornstein": {
+    "sperre": [[0, 92, 32, 112]],
+    "sortierlinie": 116,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 116 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; Schlot: nur der Fuß sperrt (bis zur letzten ganzen Kachelreihe, das Bild ist 127 px hoch), dahinter verdeckt der Schlot den Helden"
+  },
+  "iw5Schuppen": {
+    "sperre": [[0, 16, 48, 64]],
+    "sortierlinie": 64,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 64 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "iw5StadthausBlau": {
+    "sperre": [[0, 16, 96, 168]],
+    "sortierlinie": 169,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 169 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "iw5StadthausGelb": {
+    "sperre": [[0, 16, 96, 168]],
+    "sortierlinie": 169,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 169 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "iw5StadthausGrau": {
+    "sperre": [[0, 16, 96, 168]],
+    "sortierlinie": 169,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 169 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "iw5Umkleide": {
+    "sperre": [[0, 16, 80, 80]],
+    "sortierlinie": 80,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 80 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "iw8Werkstatt": {
+    "sperre": [[0, 16, 64, 80]],
+    "sortierlinie": 80,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 80 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "ld14BlockhuetteGruen": {
+    "sperre": [
+      [0, 16, 80, 72],
+      [44, 64, 72, 80]
+    ],
+    "sortierlinie": 72,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 72 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; Holzstapel vor der Wand sperrt"
+  },
+  "ld14BlockhuetteKamin": {
+    "sperre": [[0, 16, 80, 72]],
+    "sortierlinie": 72,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 72 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; Holzstufe vor der Tür begehbar (führt zum Betrachter hinunter)"
+  },
+  "ld14Bootsschuppen": {
+    "sperre": [[0, 16, 48, 64]],
+    "sortierlinie": 71,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 71 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "ld14HausBlau": {
+    "sperre": [[0, 16, 128, 160]],
+    "sortierlinie": 160,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 160 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "ld14HausGruen": {
+    "sperre": [[0, 16, 160, 144]],
+    "sortierlinie": 144,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 144 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "ld14SchuppenBlau": {
+    "sperre": [[0, 16, 48, 64]],
+    "sortierlinie": 72,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 72 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "ld14SchuppenBraun": {
+    "sperre": [[0, 16, 48, 64]],
+    "sortierlinie": 72,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 72 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "ld14SchuppenRot": {
+    "sperre": [[0, 16, 48, 64]],
+    "sortierlinie": 72,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 72 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "lp8Schuppen": {
+    "sperre": [[0, 16, 96, 96]],
+    "sortierlinie": 96,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 96 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "mf2Bibliothek": {
+    "sperre": [[0, 16, 288, 256]],
+    "sortierlinie": 256,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 256 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "mf2Waschsalon": {
+    "sperre": [[0, 16, 128, 136]],
+    "sortierlinie": 138,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 138 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "mf4Bauernhaus": {
+    "sperre": [[0, 16, 128, 160]],
+    "sortierlinie": 160,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 160 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "mf4BauernhausBreit": {
+    "sperre": [[0, 16, 160, 144]],
+    "sortierlinie": 144,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 144 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "mf8FlohmarktHof": {
+    "sperre": [[0, 16, 160, 144]],
+    "sortierlinie": 144,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 144 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "n5Sternwarte": {
+    "sperre": [[0, 16, 112, 120]],
+    "sortierlinie": 119,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 119 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "pd10HausBlau": {
+    "sperre": [[0, 16, 128, 160]],
+    "sortierlinie": 160,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 160 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "pd10HausGruen": {
+    "sperre": [[0, 16, 128, 160]],
+    "sortierlinie": 160,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 160 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "pd10WerkGrau": {
+    "sperre": [[0, 16, 160, 144]],
+    "sortierlinie": 144,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 144 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "pd10WerkGruen": {
+    "sperre": [[0, 16, 160, 144]],
+    "sortierlinie": 144,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 144 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "pd17Turnhalle": {
+    "sperre": [[0, 16, 208, 256]],
+    "sortierlinie": 256,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 256 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "pd18MusikhausNeu": {
+    "sperre": [
+      [0, 16, 208, 128],
+      [0, 146, 88, 152],
+      [120, 146, 208, 152],
+      [0, 128, 84, 146],
+      [124, 128, 208, 146]
+    ],
+    "sortierlinie": 152,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 152 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; Veranda: Stufen und Boden vor der Tür begehbar, Geländer und Sockel daneben sperren; Teilbereich Tür und Stufen mit Sortierlinie an der Wand (128), damit der Held auf der Veranda vor der Tür steht",
+    "teilbereiche": [
+      {
+        "rechteck": [84, 92, 124, 160],
+        "sortierlinie": 128
+      }
+    ]
+  },
+  "pd18MusikhausRuine": {
+    "sperre": [[0, 16, 208, 156]],
+    "sortierlinie": 155,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 155 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "pd6HausGross": {
+    "sperre": [[0, 16, 128, 160]],
+    "sortierlinie": 160,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 160 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "pd6HausGruen": {
+    "sperre": [[0, 16, 80, 56]],
+    "sortierlinie": 54,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 54 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "pd6Rohbau": {
+    "sperre": [[0, 16, 96, 124]],
+    "sortierlinie": 124,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 124 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; Rohbau: Gerüst bis zu den Füßen der Stützen, der Schatten rechts frei"
+  },
+  "pd6Werkhalle": {
+    "sperre": [[0, 16, 96, 96]],
+    "sortierlinie": 96,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 96 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "pd6Werkstatt": {
+    "sperre": [[0, 16, 160, 144]],
+    "sortierlinie": 144,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 144 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "pd6Zelt": {
+    "sperre": [[0, 16, 64, 64]],
+    "sortierlinie": 64,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 64 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "pd6ZeltFlach": {
+    "sperre": [[0, 16, 64, 44]],
+    "sortierlinie": 43,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 43 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "pd7Laden1": {
+    "sperre": [[0, 16, 80, 128]],
+    "sortierlinie": 128,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 128 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "pd7Laden10": {
+    "sperre": [[0, 16, 80, 128]],
+    "sortierlinie": 128,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 128 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "pd7Laden4": {
+    "sperre": [[0, 16, 80, 124]],
+    "sortierlinie": 123,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 123 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "pd7Laden7": {
+    "sperre": [[0, 16, 80, 124]],
+    "sortierlinie": 123,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 123 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "pd7Markt2": {
+    "sperre": [[0, 16, 112, 144]],
+    "sortierlinie": 144,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 144 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "pd7Markt5": {
+    "sperre": [[0, 16, 112, 144]],
+    "sortierlinie": 144,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 144 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "pd7Reihenhaus2": {
+    "sperre": [
+      [0, 16, 48, 176],
+      [4, 160, 16, 192],
+      [32, 160, 44, 192]
+    ],
+    "sortierlinie": 176,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 176 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; Vortreppe begehbar bis zur Tür, ihre Wangen sperren"
+  },
+  "pd7Stadthaus": {
+    "sperre": [[0, 16, 96, 128]],
+    "sortierlinie": 128,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 128 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "pd7Villa2": {
+    "sperre": [
+      [0, 16, 144, 168],
+      [0, 168, 16, 208],
+      [60, 184, 120, 208],
+      [104, 168, 120, 184],
+      [116, 168, 128, 208]
+    ],
+    "sortierlinie": 206,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 170 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; Veranda begehbar (Eingang links offen), Pfosten und Geländer sperren; Sortierlinie am Geländer (206), Teilbereich Haus über der Veranda mit Sortierlinie an der Wand (170): der Held steht vor der Wand und hinter dem Geländer",
+    "teilbereiche": [
+      {
+        "rechteck": [16, 0, 104, 182],
+        "sortierlinie": 170
+      }
+    ]
+  },
+  "rv14Fahrradschuppen": {
+    "sperre": [[0, 16, 48, 64]],
+    "sortierlinie": 72,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 72 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "rv14Pegelhaus": {
+    "sperre": [[0, 16, 48, 64]],
+    "sortierlinie": 72,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 72 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "rv5Cafe": {
+    "sperre": [[0, 16, 128, 136]],
+    "sortierlinie": 138,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 138 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "rv5Gueterschuppen": {
+    "sperre": [[0, 16, 128, 160]],
+    "sortierlinie": 160,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 160 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "rv5Handyladen": {
+    "sperre": [[0, 16, 80, 128]],
+    "sortierlinie": 128,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 128 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "rv5Lagerhaus": {
+    "sperre": [[0, 16, 96, 96]],
+    "sortierlinie": 96,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 96 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "rv5Reihenhaus": {
+    "sperre": [
+      [0, 16, 48, 112],
+      [4, 96, 16, 128],
+      [32, 96, 44, 128]
+    ],
+    "sortierlinie": 112,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 112 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; Vortreppe begehbar bis zur Tür, ihre Wangen sperren"
+  },
+  "rv5Wasserturm": {
+    "sperre": [[16, 84, 32, 96]],
+    "sortierlinie": 96,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 96 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; nur der Fuß des Mastes sperrt, unter dem Kessel verdeckt er den Helden"
+  },
+  "rv5Werkstatt": {
+    "sperre": [[0, 16, 64, 80]],
+    "sortierlinie": 80,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 80 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "rv5Wohnwagen": {
+    "sperre": [
+      [0, 16, 96, 84],
+      [0, 80, 32, 92],
+      [48, 80, 80, 92],
+      [76, 56, 96, 84]
+    ],
+    "sortierlinie": 84,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 84 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; Stufen vor der Tür begehbar (führen zum Betrachter hinunter), Räder und Grill sperren"
+  },
+  "rv8Baeckerei": {
+    "sperre": [[0, 16, 112, 144]],
+    "sortierlinie": 144,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 144 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "rv8Bahnhof": {
+    "sperre": [[0, 16, 352, 240]],
+    "sortierlinie": 240,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 240 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "rv8Infokiosk": {
+    "sperre": [[0, 16, 80, 96]],
+    "sortierlinie": 96,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 96 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "rv8Stellwerk": {
+    "sperre": [[0, 16, 64, 64]],
+    "sortierlinie": 64,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 64 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "sa8LadenC": {
+    "sperre": [[0, 16, 112, 144]],
+    "sortierlinie": 144,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 144 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "sa8LadenD": {
+    "sperre": [[0, 16, 112, 144]],
+    "sortierlinie": 144,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 144 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "sc7Ferienhuette": {
+    "sperre": [[0, 16, 80, 72]],
+    "sortierlinie": 74,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 74 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "sd6Steuerhaus": {
+    "sperre": [[0, 16, 64, 72]],
+    "sortierlinie": 71,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 71 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "st5Bude": {
+    "sperre": [[0, 16, 96, 96]],
+    "sortierlinie": 96,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 96 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "wc14SchuppenBlau": {
+    "sperre": [[0, 16, 48, 64]],
+    "sortierlinie": 72,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 72 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "wc14SchuppenRot": {
+    "sperre": [[0, 16, 48, 64]],
+    "sortierlinie": 72,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 72 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "wc5Gartenhaus": {
+    "sperre": [[0, 16, 48, 64]],
+    "sortierlinie": 64,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 64 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "wc5GartenhausB": {
+    "sperre": [[0, 16, 48, 64]],
+    "sortierlinie": 64,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 64 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "wc5Zelt": {
+    "sperre": [[0, 16, 64, 64]],
+    "sortierlinie": 64,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 64 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "wc5ZeltB": {
+    "sperre": [[0, 16, 64, 64]],
+    "sortierlinie": 64,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 64 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "wr18WerkhalleKanal": {
+    "sperre": [[0, 16, 128, 112]],
+    "sortierlinie": 112,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 112 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "wr5Huehnerstall": {
+    "sperre": [[0, 16, 64, 64]],
+    "sortierlinie": 64,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 64 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; Bretterboden vor dem Stall begehbar (ebenerdiger Absatz)"
+  },
+  "wr5Scheune": {
+    "sperre": [[0, 16, 128, 160]],
+    "sortierlinie": 160,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 160 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
+  },
+  "wr8SiloKurz": {
+    "sperre": [
+      [4, 100, 76, 136],
+      [28, 128, 48, 144]
+    ],
+    "sortierlinie": 138,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 138 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar; Silo: runder Fuß und Leiter sperren, dahinter verdeckt der Turm den Helden"
+  },
+  "ws5Huette": {
+    "sperre": [[0, 16, 48, 64]],
+    "sortierlinie": 64,
+    "grund": "Kontur (konturkollision.py, Phase 2B, 28.11.2026) aus den Bauteilen (bauteile.json): Dach und Wand sperren als Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß bei 64 px über die ganze Bildbreite (seitlich bis an den Rand wie bisher), Sortierlinie am Fassadenfuß; Treppen und Absätze darunter begehbar"
   }
 }

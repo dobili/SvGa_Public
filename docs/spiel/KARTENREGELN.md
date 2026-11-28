@@ -1468,7 +1468,8 @@ Dachboden liegt unter dem Helden, wenn er sie betritt. Erweitert 10.88, ersetzt 
   über Kreuz).
 - **Von Hand** (`katalog_korrekturen/kontur_hand.json`, Rechtecke in Pixeln mit Grund): Gebäude mit
   Vortreppe oder Veranda, Sockel. Mit `szenen` gilt die Sperre nur an der Stelle in diesen Szenen
-  (`maske_fein` am Objekt), wenn dasselbe Bild anderswo anders steht.
+  (`maske_fein` am Objekt), wenn dasselbe Bild anderswo anders steht. Optional `sortierlinie` und
+  `teilbereiche` (siehe unten); `--schreiben` trägt sie mit der Sperre in den Katalog ein.
 - **Werkzeug:** `python -m pipeline.abenteuer.konturkollision [--ort mapleFalls] [--schreiben]
   [--boegen ORDNER]`: Befunde („Sitzfläche“, „Boden“, „Linie zu tief/hoch“, „von Hand“) nach
   `katalog_korrekturen/kontur.json`, Kontaktbögen je Art (rot Sperre, gelb Held dahinter, grün Held
@@ -1520,3 +1521,38 @@ Dachboden liegt unter dem Helden, wenn er sie betritt. Erweitert 10.88, ersetzt 
   hinten nicht (die Lehne steht vorn). Masten, Ständer, Stative, das Karussell: nur der Fuß sperrt
   (von Hand). Steht in einer Szene ein Stuhl oder Hocker in der obersten Kachelreihe eines Tisches,
   behält diese Stelle die alte Maske (`maske_fein` am Objekt), der Stuhl sperrt dort ohnehin.
+
+- **Teilbereiche** (`teilbereiche`, Phase 2B, 28.11.2026): Teile eines Bildes mit eigener Tiefe,
+  wenn eine Sortierlinie nicht reicht (Veranda: der Held steht vor der Hauswand, aber hinter dem
+  Geländer). Format im Katalog oder in `kontur_hand.json`:
+  `"teilbereiche": [{"rechteck": [x0, y0, x1, y1], "sortierlinie": n}]` oder statt der Linie
+  `"ebene": "boden"` (Teil unter allen Figuren); Pixel des ungeformten Katalogbilds, Ende
+  ausschließlich, Bereiche ohne Überlappung. Der Rest des Bildes behält `sortierlinie` des Eintrags.
+  Die App (`oberwelt/teilbereiche.ts`) zeichnet jedes Teil als beschnittenes Bild mit eigener Tiefe,
+  die Zeichentiefe des Helden (`heldtiefe.ts`) sieht jedes Teil als eigenes Möbel mit den
+  Sperrzellen darin. Die Sperre bleibt `maske_fein` des ganzen Bildes. Mit Form aus dem Karteneditor
+  (Drehung, Spiegeln, Maßstab, Zuschnitt) oder eigener Tiefe bleibt das Bild ganz. Beispiel: Villa
+  in Port Delacroix (`pd7Villa2`), Linie 206 am Geländer, Teil Haus über der Veranda
+  `[16, 0, 104, 182]` mit Linie 170 an der Wand. Daneben liest die App `boden_bereiche`
+  (bauteilregeln.py): Rechtecke im Bild, steht der Fuß des Helden darin, wird er über dem ganzen
+  Bild gezeichnet (`heldtiefe.ts`, `teilbereiche.ts bodenbereiche`); einfacher, aber ohne Geländer
+  vor dem Helden. Teilbereiche, wo der Held vor einem Teil und hinter einem anderen steht.
+- **Bauteile** (`katalog_korrekturen/bauteile.json`, Vorgabe des Autors 28.11.2026: „Nur mit diesem
+  Wissen lässt sich sinnvoll über die Kollision entscheiden“): je Bild aus mehreren Objekten die
+  Bauteile mit Typ (dach, wand, sockel, fenster, tuer, treppe, absatz, veranda, gelaender, saeule,
+  markise, schild, schornstein, zaun, pflanze, sonstiges), Rahmen in Bildpixeln und Hinweis (bei
+  Treppen die Richtung), dazu `geprueft`. Die Sperren in `kontur_hand.json` folgen daraus (Grund).
+- **Gebäude Akt 1 bis 2 (Phase 2B, 28.11.2026):** Cedar Creek, Riverton, Ironwood, Lockport, Port
+  Delacroix, Steinbruch, Sternwarte, Goldmine und die Wege dazwischen. Je Gebäude in
+  `kontur_hand.json`: Grundfläche von 16 px unter der Oberkante bis zum Fassadenfuß über die ganze
+  Bildbreite (seitlich bis an den Rand wie bisher, schmale durchsichtige Ränder öffneten sonst
+  Lücken zum Nachbarn und Widersprüche der Zeichentiefe), `sortierlinie` am Fassadenfuß; was unter
+  dem Fuß liegt (Vortreppe, Stufen unter dem Vordach), ist begehbar, Wangen, Pfosten, Bänke und
+  Laternen davor sperren. Türme (Schlot, Silo, Wasserturm) sperren nur am Fuß und verdecken den
+  Helden dahinter. Teilbereiche: Villa und Musikhaus in Port Delacroix, Kirche in Ironwood (Stufen
+  zwischen den Pfeilern). Türauslöser vor einer jetzt begehbaren Treppe tragen `durchgang: "oben"`
+  (Kantine Ironwood, Musikhaus). Ausgelassen mit Grund:
+  Seiteneingang der Bibliothek (eigene Treppenmaske), Pavillon Riverton (Maske der Szene mit
+  Maßstab), Stolleneingang, Stellwerk am Bahndamm (Bild 63 px hoch, Fuß im Raster nicht
+  darstellbar). Bilder mit Maßstab in der Szene behalten dort die grobe Regel, die Sortierlinie
+  gilt skaliert.

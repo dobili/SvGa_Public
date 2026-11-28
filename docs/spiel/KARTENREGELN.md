@@ -1473,6 +1473,23 @@ Dachboden liegt unter dem Helden, wenn er sie betritt. Erweitert 10.88, ersetzt 
   [--boegen ORDNER]`: Befunde („Sitzfläche“, „Boden“, „Linie zu tief/hoch“, „von Hand“) nach
   `katalog_korrekturen/kontur.json`, Kontaktbögen je Art (rot Sperre, gelb Held dahinter, grün Held
   davor oder darauf, blaue Linie die Sortierlinie) nur lokal nach `buch/arbeit/kontur/`.
+- **Bauteile zusammengesetzter Bilder (Wunsch des Autors, 28.11.2026):** „Bei den Gebäudeassets muss
+  eine Erkennung drübergehen, die die enthaltenen Komponenten zuordnet: Wand, Treppe, Fenster,
+  Veranda, Dach usw.“ (Anlass: Treppen und Mauer der Schule vertauscht.) Je Gebäude, Brücke, Stand,
+  Bühne, Pavillon eine Bauteilliste (Typ und Rahmen in Pixeln, Treppe mit `richtung` ihrer offenen
+  Seite): von Hand in `katalog_korrekturen/bauteile.json`, Vorschläge von Gemini in
+  `bauteile_gemini.json` (von Hand geht vor). Regeln (`bauteilregeln.py`): Wand oder Sockel mit Dach
+  (auch Flachdach auf gleicher Höhe) oder eine Wand ab zwei Kacheln Höhe ist ein Körper und sperrt den Grundriss bis eine Kachel unter die Dachoberkante; Dach, Schornstein,
+  Markise, Schild, Fenster verdecken nur; freistehende Wand, Mauer, Zaun sperren ihren Fuß (8 px),
+  Geländer, Säule, Pflanze 4 px, Geländer und Zaun in die Tiefe ganz; Treppe, Absatz, Veranda, Steg,
+  Brücke sind begehbar; eine Treppe sperrt ihre beiden Seiten neben der offenen als Wangen; ein Absatz
+  oder eine Veranda hat links, rechts und vorn eine Mauer, wo keine Treppe anschließt; eine Tür im
+  Körper ist Zugang von der Schwelle bis zum Fuß. Sortierlinie am Fuß des Körpers; begehbare Teile
+  darüber werden `boden_bereiche` (Held steht auf dem Bild); ohne Sperre über begehbarem Grund
+  `ebene: "boden"`. Grenze: ein Bild hat eine Sortierlinie; unter einem Dach (Pavillon, Tankstelle)
+  steht der Held entweder ganz vor oder ganz hinter dem Bild. Erkennung und Prüfung:
+  `bauteilerkennung.py` (Gemini, Stapelbetrieb), `bauteilpruefung.py` (Verdachtsmuster, Nachbesserung
+  „Treppe unten zwischen Seitentreppen“ → Mauer), Bögen `bauteil_bogen.py` nach `buch/arbeit/bauteile/`.
 - **Pilot Maple Falls (28.11.2026):** Dachbodentreppe im Zimmer auf der Bodenebene, Freitreppe der
   Schule begehbar bis zur untersten Stufe mit sperrenden Wangen, Sockel des Fahnenmasts, Laternen
   ohne Zaun mit Sockel (die in der Zaunlinie behalten `vorn`), Sitzflächen der Stühle, Bänke und

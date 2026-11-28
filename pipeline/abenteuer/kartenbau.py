@@ -116,7 +116,10 @@ def platziere(szene: dict, moebel: dict) -> tuple[list[dict], list[str]]:
             vorn = eintrag.get("vorn", False)
             # Ohne Kollision (Teppich, flache Dinge am Boden) liegt das Möbel unter allem. Die Tiefe
             # folgt dem Katalog: Ein an einer Stelle durchgehbares Sofa bleibt nach dem Fuß gezeichnet.
-            flach = not angabe.get("kollision") and not an_wand and not vorn
+            # Bodenebene (``ebene: "boden"``, konturkollision.py): Treppe, Steg, Brücke liegen unter
+            # den Figuren, auch wenn ihre Holme sperren (Auftrag des Autors, 28.11.2026).
+            boden = angabe.get("ebene") == "boden" or not angabe.get("kollision")
+            flach = boden and not an_wand and not vorn
             tiefe = 0 if an_wand else 1 if flach else y + angabe["hoehe"] - K // 2
             # Übersteuerung „kollision“ am Eintrag (Karteneditor, objektkollision.py).
             kollision = kollision_an(angabe, eintrag) and not an_wand and not vorn

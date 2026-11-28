@@ -73,11 +73,13 @@ def test_deckende_zellen_zaehlen_pixel():
 
 
 def test_katalog_typische_moebel_oben_frei():
-    """Für typische Möbel mit Lehne oder Mast ist die obere Hälfte des Bildes frei."""
+    """Für typische Möbel mit Lehne oder Mast sind die oberen drei Achtel des Bildes frei (Lehne,
+    Mast; seit der Kontur vom 28.11.2026 sperrt bei Seitenstühlen die ganze Sitzfläche,
+    konturkollision.py)."""
     moebel = lade_moebel()
     for name in TYPISCHE:
         fein = moebel[name]["maske_fein"]
-        assert all(set(z) == {"."} for z in fein[: len(fein) // 2]), name
+        assert all(set(z) == {"."} for z in fein[: len(fein) * 3 // 8]), name
         assert any("#" in z for z in fein), name
 
 

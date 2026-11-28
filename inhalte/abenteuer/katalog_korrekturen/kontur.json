@@ -1,0 +1,569 @@
+{
+  "ca27Bierkastenhocker": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 14,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####"
+    ]
+  },
+  "ca7Arena": {
+    "befunde": [
+      "von Hand: begehbare Reihen im Gebäudebild (Vortreppe, Veranda)"
+    ]
+  },
+  "ca7StuhlLinks": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 18,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      "..#.",
+      "....",
+      "...."
+    ]
+  },
+  "ca7StuhlRechts": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 18,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      ".#..",
+      "....",
+      "...."
+    ]
+  },
+  "ca9UbahnSchacht": {
+    "befunde": [
+      "von Hand: begehbare Reihen im Gebäudebild (Vortreppe, Veranda)"
+    ]
+  },
+  "cc6StuhlLinks": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 16,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      "....",
+      "....",
+      "...."
+    ]
+  },
+  "cc6StuhlRechts": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 16,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      "....",
+      "....",
+      "...."
+    ]
+  },
+  "ds6BahnhofAlt": {
+    "befunde": [
+      "von Hand: begehbare Reihen im Gebäudebild (Vortreppe, Veranda)"
+    ]
+  },
+  "ds6Motel": {
+    "befunde": [
+      "von Hand: begehbare Reihen im Gebäudebild (Vortreppe, Veranda)"
+    ]
+  },
+  "ds6TankstelleGross": {
+    "befunde": [
+      "von Hand: begehbare Reihen im Gebäudebild (Vortreppe, Veranda)"
+    ]
+  },
+  "es7StuhlL": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 18,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      "..#.",
+      "....",
+      "...."
+    ]
+  },
+  "es7StuhlR": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 18,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      ".#..",
+      "....",
+      "...."
+    ]
+  },
+  "gt27SaloonTreppe": {
+    "befunde": [
+      "Boden: wird betreten, liegt aber über dem Helden"
+    ],
+    "ebene": "boden"
+  },
+  "gt7StuhlL": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 18,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      "..#.",
+      "....",
+      "...."
+    ]
+  },
+  "gt7StuhlR": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 18,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      ".#..",
+      "....",
+      "...."
+    ]
+  },
+  "ld5Stuhl1": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 18,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      ".#..",
+      "....",
+      "...."
+    ]
+  },
+  "ld5Stuhl2": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 18,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      "..#.",
+      "....",
+      "...."
+    ]
+  },
+  "ld5StuhlDunkelL": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 18,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      "..#.",
+      "....",
+      "...."
+    ]
+  },
+  "ld5StuhlDunkelR": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 18,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      ".#..",
+      "....",
+      "...."
+    ]
+  },
+  "mf3StuhlOrangeLinks": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 18,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      "..#.",
+      "....",
+      "...."
+    ]
+  },
+  "mf3StuhlOrangeRechts": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 18,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      ".#..",
+      "....",
+      "...."
+    ]
+  },
+  "mf4Fahnenmast": {
+    "befunde": [
+      "von Hand: an der Stelle in maple-falls-aussen"
+    ]
+  },
+  "mf4VillaOrange": {
+    "befunde": [
+      "von Hand: begehbare Reihen im Gebäudebild (Vortreppe, Veranda)"
+    ]
+  },
+  "mf4VillaWhitlock": {
+    "befunde": [
+      "von Hand: begehbare Reihen im Gebäudebild (Vortreppe, Veranda)"
+    ]
+  },
+  "mf5NischenstuhlLinks": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 18,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      "..#.",
+      "....",
+      "...."
+    ]
+  },
+  "mf5NischenstuhlRechts": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 18,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      ".#..",
+      "....",
+      "...."
+    ]
+  },
+  "mf7StuhlLinks": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 18,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      "..#.",
+      "....",
+      "...."
+    ]
+  },
+  "mf7StuhlRechts": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 18,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      ".#..",
+      "....",
+      "...."
+    ]
+  },
+  "mf8Pokaltisch": {
+    "befunde": [
+      "Linie zu tief: 40 statt 28 (Fuß der Sperre)"
+    ],
+    "sortierlinie": 28
+  },
+  "mf8StuhlHellLinks": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 18,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      "..#.",
+      "....",
+      "...."
+    ]
+  },
+  "mf8StuhlHellRechts": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 18,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      ".#..",
+      "....",
+      "...."
+    ]
+  },
+  "pd6StuhlLinks": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 18,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      "..#.",
+      "....",
+      "...."
+    ]
+  },
+  "pd6StuhlRechts": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 18,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      ".#..",
+      "....",
+      "...."
+    ]
+  },
+  "rv15BankLangSenkrecht": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 34,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      "####",
+      "####",
+      "####",
+      "####",
+      "####"
+    ]
+  },
+  "rv18SchraegzaunObenLinks": {
+    "befunde": [
+      "Linie zu tief: 88 statt 80 (Fuß der Sperre)"
+    ],
+    "sortierlinie": 80
+  },
+  "rv18SchraegzaunObenRechts": {
+    "befunde": [
+      "Linie zu tief: 88 statt 80 (Fuß der Sperre)"
+    ],
+    "sortierlinie": 80
+  },
+  "rv18SchraegzaunUntenLinks": {
+    "befunde": [
+      "Linie zu tief: 88 statt 80 (Fuß der Sperre)"
+    ],
+    "sortierlinie": 80
+  },
+  "rv18SchraegzaunUntenRechts": {
+    "befunde": [
+      "Linie zu tief: 88 statt 80 (Fuß der Sperre)"
+    ],
+    "sortierlinie": 80
+  },
+  "rv5BankSeite": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 34,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      "####",
+      "####",
+      "####",
+      "####",
+      "####"
+    ]
+  },
+  "rv5Pokaltisch": {
+    "befunde": [
+      "Linie zu tief: 40 statt 28 (Fuß der Sperre)"
+    ],
+    "sortierlinie": 28
+  },
+  "rv5StuhlLinks": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 18,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      "..#.",
+      "....",
+      "...."
+    ]
+  },
+  "rv5StuhlRechts": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 18,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      ".#..",
+      "....",
+      "...."
+    ]
+  },
+  "sc27BankHolz": {
+    "befunde": [
+      "Sitzfläche: 9 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 14,
+    "maske_fein": [
+      "............",
+      "............",
+      "............",
+      "############"
+    ]
+  },
+  "sc7Huette": {
+    "befunde": [
+      "von Hand: begehbare Reihen im Gebäudebild (Vortreppe, Veranda)"
+    ]
+  },
+  "wzStuhlLinks": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 18,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      "###.",
+      "....",
+      "...."
+    ]
+  },
+  "wzStuhlRechts": {
+    "befunde": [
+      "Sitzfläche: 4 Zellen mehr, Lehne frei"
+    ],
+    "sortierlinie": 18,
+    "maske_fein": [
+      "....",
+      "....",
+      "....",
+      "####",
+      "####",
+      "###.",
+      "....",
+      "...."
+    ]
+  }
+}

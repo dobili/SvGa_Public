@@ -1447,3 +1447,33 @@ Maßstab und Sicht.
    `kartenbild`) neben dem Zustand vorher; fällt das neue Teil aus der Umgebung heraus (Farbe,
    Kontur, Pixelgröße, Kanten), wird nachgebessert, bevor es gemeldet wird. Das Foto gehört zur
    Meldung des Helfers.
+
+### 10.95 Kollision und Zeichentiefe nach der Kontur (Autor, 28.11.2026)
+
+Auftrag des Autors: „Die Kollision der Objekte in allen Karten möglichst genau an ihre Konturen
+anpassen […] Die Assets in der Bibliothek pixelweise beurteilen, ob der Held vor oder hinter dem
+Pixel sein darf oder nichts von beiden.“ Beispiele: hinter der Lehne eines Stuhls darf der Held
+entlanglaufen, hinter der Sitzfläche nicht; an der Laterne sperrt nur der Sockel; die Treppe zum
+Dachboden liegt unter dem Helden, wenn er sie betritt. Erweitert 10.88, ersetzt es nicht.
+
+- **Drei Angaben je Katalogeintrag** (Pixel des ungeformten Katalogbilds): `maske_fein` (Sperre,
+  Zellen 4 × 4: weder davor noch dahinter), `sortierlinie` (Fuß des Helden darunter: vor dem Bild,
+  darüber: dahinter; ohne Angabe die Regel der Maske in `oberwelt/zeichentiefe.ts`) und
+  `ebene: "boden"` (das ganze Bild liegt unter den Figuren, die Sperre bleibt: Treppen, Stege,
+  Brücken, Matten). Vorrang in der App: Bodenebene, Sortierlinie, Regel der Maske; eine Ebene oder
+  Tiefe aus dem Karteneditor geht allem vor. Der Kartenbau legt Bilder der Bodenebene wie flache
+  Möbel auf Tiefe 1.
+- **Sitzmöbel:** Sitzfläche und Beine sperren ganz (ab 3 Pixeln unter der hinteren Sitzkante), die
+  Lehne nicht; Sortierlinie in der Mitte der Sperre (so liegen Stuhl und Tisch nebeneinander nicht
+  über Kreuz).
+- **Von Hand** (`katalog_korrekturen/kontur_hand.json`, Rechtecke in Pixeln mit Grund): Gebäude mit
+  Vortreppe oder Veranda, Sockel. Mit `szenen` gilt die Sperre nur an der Stelle in diesen Szenen
+  (`maske_fein` am Objekt), wenn dasselbe Bild anderswo anders steht.
+- **Werkzeug:** `python -m pipeline.abenteuer.konturkollision [--ort mapleFalls] [--schreiben]
+  [--boegen ORDNER]`: Befunde („Sitzfläche“, „Boden“, „Linie zu tief/hoch“, „von Hand“) nach
+  `katalog_korrekturen/kontur.json`, Kontaktbögen je Art (rot Sperre, gelb Held dahinter, grün Held
+  davor oder darauf, blaue Linie die Sortierlinie) nur lokal nach `buch/arbeit/kontur/`.
+- **Pilot Maple Falls (28.11.2026):** Dachbodentreppe im Zimmer auf der Bodenebene, Freitreppe der
+  Schule begehbar bis zur untersten Stufe mit sperrenden Wangen, Sockel des Fahnenmasts, Laternen
+  ohne Zaun mit Sockel (die in der Zaunlinie behalten `vorn`), Sitzflächen der Stühle, Bänke und
+  Sessel. Die übrigen Orte folgen in Phase 2.

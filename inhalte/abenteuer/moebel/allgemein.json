@@ -1192,7 +1192,8 @@
       "art": "treppe",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "hinweis": "Holztreppe, die zum Betrachter hin ansteigt: unterste Stufe oben (dort betritt die Figur sie), oberste Stufe und Absatz unten; Handläufe von oben gesehen, Pfosten an beiden Enden. Vom Autor aus Geminis Bild gebaut (16.11.2026); Holme sperren, die Mitte ist frei"
+      "hinweis": "Holztreppe, die zum Betrachter hin ansteigt: unterste Stufe oben (dort betritt die Figur sie), oberste Stufe und Absatz unten; Handläufe von oben gesehen, Pfosten an beiden Enden. Vom Autor aus Geminis Bild gebaut (16.11.2026); Holme sperren, die Mitte ist frei",
+      "ebene": "boden"
     },
     "treppeNachRechts": {
       "quelle": "spiel/eigene/treppe_nach_rechts.png",

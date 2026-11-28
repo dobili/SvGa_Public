@@ -6,6 +6,29 @@
 import type { Moebel } from "./moebel";
 
 /**
+ * Tiefe eines Bildes der Bodenebene (`ebene: "boden"` im Katalog): wie flache Möbel des Kartenbaus
+ * (pipeline/abenteuer/kartenbau.py, Tiefe 1), unter jeder Figur.
+ */
+export const BODENTIEFE = 1;
+const ZUSCHNITT_OBEN = 1;
+
+/**
+ * Die Sortierlinie eines Möbels in Kartenpixeln oder undefined (Katalogfeld `sortierlinie`, Pixel ab
+ * der Oberkante des Katalogbilds; pipeline/abenteuer/konturkollision.py, KARTENREGELN 10.95).
+ * Warum: Steht der Fuß des Helden unter der Linie, gehört er vor das Bild, darüber dahinter; die
+ * Linie folgt der Kontur des Bildes statt dem Kachelraster der Maske (Auftrag des Autors,
+ * 28.11.2026: Stuhl, Laterne). Mit Zuschnitt rückt sie um den oberen Rand, mit Maßstab wächst sie;
+ * gedreht gilt sie nicht (undefined, dann die Regel der Maske).
+ * Beispiel: Laterne auf y 400 mit sortierlinie 64 → 464; mit Maßstab 0,75 → 448.
+ */
+export function sortierlinie(m: Moebel): number | undefined {
+  const linie = m.angabe.sortierlinie;
+  if (typeof linie !== "number" || (m.form && m.form.drehung !== 0)) return undefined;
+  const oben = m.form?.zuschnitt?.[ZUSCHNITT_OBEN] ?? 0;
+  return m.y + Math.max(0, linie - oben) * (m.form?.massstab ?? 1);
+}
+
+/**
  * Zeichentiefe eines Möbels: die Mitte seiner untersten Kachelreihe, damit Figuren davor stehen.
  * Warum die Maske zählt: Bei Häusern mit Veranda oder Stufen im Bild (Whitlock-Haus) sind die
  * untersten Reihen begehbar; die Figur stand dort im Bild und wurde vom Haus verdeckt. Hat die Maske
@@ -19,8 +42,13 @@ import type { Moebel } from "./moebel";
  * sie galt bisher immer die Bildunterkante, und das Haus des Helden lag über ihm, wenn er vor der
  * Haustür stand.
  * Beispiel: Whitlock-Haus 13 Reihen, Reihe 9 ganz gesperrt → Tiefe y + 10 · 16 − 8.
+ * Vorrang (Kontur, 28.11.2026): Bodenebene (BODENTIEFE), dann die Sortierlinie des Katalogs, dann
+ * die Regel der Maske.
  */
 export function zeichentiefe(m: Moebel, kachel: number): number {
+  if (m.angabe.ebene === "boden") return BODENTIEFE;
+  const linie = sortierlinie(m);
+  if (linie !== undefined) return linie;
   const unten = m.y + m.angabe.hoehe - kachel / 2;
   const maske = m.angabe.maske;
   if (!maske) return unten;

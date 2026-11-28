@@ -50,6 +50,10 @@ export interface Moebelangabe {
   readonly blick?: string;
   /** Waagrechte Anlagen: Seite des Endstücks; bei Betten die Seite des Kopfendes (sitzrichtung.ts). */
   readonly ende?: string;
+  /** Sortierlinie in Pixeln ab der Oberkante des Bildes (zeichentiefe.ts, konturkollision.py). */
+  readonly sortierlinie?: number;
+  /** „boden“: das Bild liegt unter allen Figuren (Treppe, Steg; zeichentiefe.ts BODENTIEFE). */
+  readonly ebene?: string;
 }
 
 /** Wo ein Möbel auf einem Bogen liegt. */

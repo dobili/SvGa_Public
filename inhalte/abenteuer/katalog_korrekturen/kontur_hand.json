@@ -1,0 +1,51 @@
+{
+  "mf4Fahnenmast": {
+    "sperre": [
+      [
+        0,
+        102,
+        48,
+        141
+      ]
+    ],
+    "grund": "Kontur (konturkollision.py, 28.11.2026): der Sockel aus Sandstein sperrt ganz, der Mast darüber nicht (hinter ihm verdeckt er den Helden); nur in Maple Falls an der Stelle (Pilot), der Katalog bleibt grob, weil derselbe Mast im Pinewood Camp und am Geysirbecken steht (Phase 2)",
+    "szenen": [
+      "maple-falls-aussen"
+    ]
+  },
+  "mf4Schule": {
+    "sperre": [
+      [
+        0,
+        16,
+        384,
+        324
+      ],
+      [
+        0,
+        324,
+        98,
+        336
+      ],
+      [
+        286,
+        324,
+        384,
+        336
+      ],
+      [
+        96,
+        324,
+        112,
+        364
+      ],
+      [
+        272,
+        324,
+        288,
+        364
+      ]
+    ],
+    "grund": "Kontur (konturkollision.py, 28.11.2026): Fassade bis zum Sockel (Pixel 336), Freitreppe begehbar bis zur untersten Stufe, ihre Seitenwangen sperren, Rasen neben der Treppe frei; seitlich bis an den Bildrand wie bisher (sonst öffnet sich die Lücke zum Nachbarhaus) (Auftrag des Autors: Vortreppe vor dem ersten Club)"
+  }
+}

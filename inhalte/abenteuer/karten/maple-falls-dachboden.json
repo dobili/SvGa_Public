@@ -1333,7 +1333,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": -2
+       "value": -137
       },
       {
        "name": "kollision",

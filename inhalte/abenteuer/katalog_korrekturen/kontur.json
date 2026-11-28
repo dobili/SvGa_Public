@@ -11,11 +11,6 @@
       "####"
     ]
   },
-  "ca7Arena": {
-    "befunde": [
-      "von Hand: begehbare Reihen im Gebäudebild (Vortreppe, Veranda)"
-    ]
-  },
   "ca7StuhlLinks": {
     "befunde": [
       "Sitzfläche: 4 Zellen mehr, Lehne frei"
@@ -95,11 +90,6 @@
       "von Hand: begehbare Reihen im Gebäudebild (Vortreppe, Veranda)"
     ]
   },
-  "ds6TankstelleGross": {
-    "befunde": [
-      "von Hand: begehbare Reihen im Gebäudebild (Vortreppe, Veranda)"
-    ]
-  },
   "es7StuhlL": {
     "befunde": [
       "Sitzfläche: 4 Zellen mehr, Lehne frei"
@@ -131,12 +121,6 @@
       "....",
       "...."
     ]
-  },
-  "gt27SaloonTreppe": {
-    "befunde": [
-      "Boden: wird betreten, liegt aber über dem Helden"
-    ],
-    "ebene": "boden"
   },
   "gt7StuhlL": {
     "befunde": [

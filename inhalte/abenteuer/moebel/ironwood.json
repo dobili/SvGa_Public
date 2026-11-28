@@ -193,13 +193,22 @@
       "quelle": "spiel/eigene/garderobe_helm.png",
       "breite": 32,
       "hoehe": 32,
-      "kollision": false,
       "art": "garderobe",
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "industrie",
-      "begehbar": true,
-      "begehbar_grund": "hängt an der Wand"
+      "kollision": true,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "#####...",
+        "#####...",
+        "#####...",
+        "#####..."
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_tiefe.py, Phase 2C, 28.11.2026): Garderobe mit Helm: der Fuß des Ständers sperrt, Haken und Helm verdecken den Helden dahinter; vorher ohne Kollision flach, der Held stand auf ihr"
     },
     "iw8Garderobe": {
       "quelle": "spiel/eigene/garderobe_jacken.png",

@@ -12096,7 +12096,7 @@
     },
     {
      "id": 191,
-     "name": "pd9BootAuf",
+     "name": "sb7BootAnLand",
      "type": "moebel",
      "x": 688,
      "y": 352,
@@ -12108,12 +12108,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 408
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },

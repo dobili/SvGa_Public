@@ -1320,6 +1320,28 @@
       "stil": "natur",
       "maske_fein": ["....", "....", ".##.", ".##."],
       "beschreibung": "Holzzaun mit Pfosten und Riegeln, senkrechter Pfosten; passt zum Weidetor wg4Tor (Landstraße, Gutachten L1, 24.11.2026)"
+    },
+    "wg6BootLaengsAnLand": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Left_1.png",
+      "lauf": "waagrecht",
+      "breite": 64,
+      "hoehe": 32,
+      "kollision": true,
+      "art": "fahrzeug",
+      "blick": "links",
+      "zustand": "neu",
+      "stil": "modern",
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        ".##############.",
+        ".##############.",
+        ".##############.",
+        "................"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_tiefe.py, 28.11.2026): Henriks Boot an Land (Lockport), der Rumpf sperrt; wg6BootLaengs liegt sonst im Wasser"
     }
   }
 }

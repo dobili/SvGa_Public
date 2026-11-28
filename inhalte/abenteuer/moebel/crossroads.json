@@ -1530,6 +1530,36 @@
         "..########..",
         "..########.."
       ]
+    },
+    "cr7AutoParkendAuf": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Car_Up_2.png",
+      "lauf": "senkrecht",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "fahrzeug",
+      "zustand": "gebraucht",
+      "stil": "modern",
+      "blick": "oben",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        ".######."
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_tiefe.py, 28.11.2026): geparkt auf dem Parkplatz, die Karosserie sperrt wie ws5AutoBlau; wsgAutoAuf2 fährt ohne Kollision unter der Glasbrücke"
     }
   }
 }

@@ -16,12 +16,25 @@
       "quelle": "spiel/eigene/stollen_stuetze.png",
       "breite": 48,
       "hoehe": 48,
-      "kollision": false,
       "art": "stuetze",
       "zustand": "alt",
       "stil": "industrie",
-      "begehbar": true,
-      "begehbar_grund": "Durchgang, man geht hindurch"
+      "kollision": true,
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".###....###.",
+        ".###....###."
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_tiefe.py, Phase 2C, 28.11.2026): Stützrahmen im Stollen: die Füße der Pfosten sperren, unter dem Querbalken geht man hindurch und wird von ihm verdeckt; vorher flach unter dem Helden"
     },
     "n7Grubenlampe": {
       "quelle": "spiel/eigene/grubenlampe_haken.png",

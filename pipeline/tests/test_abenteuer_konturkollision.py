@@ -1,11 +1,14 @@
 """Tests für pipeline/abenteuer/konturkollision.py (Kollision und Zeichentiefe nach der Kontur,
 KARTENREGELN 10.95): Sitzfläche aus dem Bild, alte und neue Sortierlinie, Bodenebene, Handangaben,
-und der Pilot Maple Falls bleibt ohne offenen Befund (nur Handprüfung der Villa)."""
+und der Pilot Maple Falls bleibt ohne offenen Befund (nur Handprüfung der Villa); dazu die Z-Prüfung
+aller Karten (konturkollision_tiefe.py, Phase 2C) als Dauertest „0 Befunde“."""
 
 from pipeline.abenteuer.konturkollision import (
     BODEN,
+    Kontur,
     alte_linie,
     feine_maske,
+    handkontur,
     ist_boden,
     linienbefund,
     mittellinie,
@@ -15,6 +18,8 @@ from pipeline.abenteuer.konturkollision import (
     zellen_der_rechtecke,
 )
 from pipeline.abenteuer.konturkollision_sitz import sitzflaeche
+from pipeline.abenteuer.konturkollision_tiefe import app_tiefe, betretbar, steht_dahinter
+from pipeline.abenteuer.konturkollision_tiefe import pruefe as pruefe_z
 from pipeline.abenteuer.moebelliste import lade_moebel
 
 DECKEND = 255
@@ -88,3 +93,46 @@ def test_pilot_maple_falls_ohne_offenen_befund():
     }
     assert offen == {}
     assert moebel["treppeZumBetrachter"].get("ebene") == BODEN
+
+
+def test_keine_kiste_als_steg():
+    """„kisteGrau“ enthält „steg“ (ki-steg-rau), ist aber kein Boden (Phase 2C, 28.11.2026)."""
+    assert not ist_boden("kisteGrau", {"kollision": True})
+
+
+def test_handkontur_mit_kollision_linie_und_leerer_sperre():
+    hand = {"sperre": [], "kollision": True, "sortierlinie": 44, "grund": "Probe"}
+    kontur = handkontur(Kontur("boot", set(), 56), hand, {"breite": 32, "hoehe": 64})
+    assert kontur.kollision and kontur.sortierlinie == 44 and kontur.neue_sperre
+    assert set("".join(feine_maske(kontur.sperre, 32, 64))) == {"."}
+    # Steht alles schon im Katalog, gibt es keinen Befund mehr.
+    fertig = {"breite": 32, "hoehe": 64, "kollision": True, "sortierlinie": 44}
+    assert not handkontur(Kontur("boot", set(), 56), hand, fertig).befunde
+
+
+def test_tiefe_wie_die_app():
+    stueck = {"name": "x", "x": 0, "y": 100, "breite": 16, "hoehe": 64, "tiefe": 156}
+    assert app_tiefe(stueck, {"sortierlinie": 60}) == 160
+    assert app_tiefe(stueck, {"ebene": "boden"}) == 1
+    assert app_tiefe({**stueck, "tiefe": 1}, {}) == 1  # flach (ohne Kollision)
+    assert app_tiefe(stueck, {}) == 156  # Bildunterkante minus halbe Kachel
+
+
+def test_steht_dahinter_wie_heldtiefe():
+    wange = {(x, 10) for x in range(8)}  # Sperre in Pixelreihe 40 bis 44, Spalten 0 bis 32
+    assert steht_dahinter(wange, 16, 30)  # darüber im Lauf der Treppe: die Wange reicht tiefer
+    assert not steht_dahinter(wange, 16, 50)  # davor
+    assert not steht_dahinter(wange, 60, 40)  # daneben
+
+
+def test_betretbar_nach_art_und_name():
+    assert betretbar("gt27SaloonTreppe", {"art": "treppe"})
+    assert betretbar("dd6Bruecke1879", {"art": "bruecke"})
+    assert not betretbar("pd6Turnmatte", {"art": "deko"})  # Mattenstapel, keine Matte am Boden
+    assert not betretbar("kisteGrau", {})
+
+
+def test_z_pruefung_ohne_befund():
+    """Dauertest (Auftrag des Autors, 28.11.2026: „lag eine Treppe über dem Helden“): Kein Bild liegt
+    über dem Helden, der darauf steht, und kein aufrechtes Bild unter ihm, wenn er dahinter steht."""
+    assert [b.text() for b in pruefe_z()] == []

@@ -1,45 +1,116 @@
 {
   "mf4Fahnenmast": {
-    "sperre": [
-      [
-        0,
-        102,
-        48,
-        141
-      ]
-    ],
+    "sperre": [[0, 102, 48, 141]],
     "grund": "Kontur (konturkollision.py, 28.11.2026): der Sockel aus Sandstein sperrt ganz, der Mast darüber nicht (hinter ihm verdeckt er den Helden); nur in Maple Falls an der Stelle (Pilot), der Katalog bleibt grob, weil derselbe Mast im Pinewood Camp und am Geysirbecken steht (Phase 2)",
-    "szenen": [
-      "maple-falls-aussen"
-    ]
+    "szenen": ["maple-falls-aussen"]
   },
   "mf4Schule": {
     "sperre": [
-      [
-        0,
-        16,
-        384,
-        324
-      ],
-      [
-        0,
-        324,
-        98,
-        336
-      ],
-      [
-        286,
-        324,
-        384,
-        336
-      ],
-      [
-        98,
-        352,
-        286,
-        368
-      ]
+      [0, 16, 384, 324],
+      [0, 324, 98, 336],
+      [286, 324, 384, 336],
+      [98, 352, 286, 368]
     ],
     "grund": "Kontur (konturkollision.py, 28.11.2026, berichtigt nach Foto des Autors): Fassade bis zum Sockel; der Treppenabsatz vor den Türen ist über die beiden seitlichen Treppen (gestreift, links und rechts) begehbar, seine Vorderkante ist eine Mauer und sperrt; seitlich am Gebäudesockel bis an den Bildrand wie bisher"
+  },
+  "dd6Felsbogen": {
+    "sperre": [
+      [0, 120, 48, 144],
+      [96, 120, 160, 144]
+    ],
+    "kollision": true,
+    "grund": "Kontur aus den Bauteilen (bauteile.json, Phase 2C, 28.11.2026): die Füße beider Pfeiler sperren, durch den Bogen geht man hindurch; vorher ohne Kollision flach unter dem Helden (am Canyonrand lief er über den Bogen); mit „vorn“ (Felsbogen-Weg) bleibt er ohne Kollision"
+  },
+  "n7Stuetze": {
+    "sperre": [
+      [4, 40, 16, 48],
+      [32, 40, 44, 48]
+    ],
+    "kollision": true,
+    "grund": "Kontur aus den Bauteilen (bauteile.json, Phase 2C, 28.11.2026): Stützrahmen im Stollen: die Füße der Pfosten sperren, unter dem Querbalken geht man hindurch und wird von ihm verdeckt; vorher flach unter dem Helden"
+  },
+  "pd7Hausboot": {
+    "sperre": [],
+    "kollision": true,
+    "sortierlinie": 44,
+    "grund": "Kontur (konturkollision_tiefe.py, Phase 2C, 28.11.2026): Hausboot im Bayou liegt im Wasser (das Wasser sperrt schon), deshalb keine eigene Sperre; mit Kollision ohne Sperrzelle wird es nach der Sortierlinie am Rumpf (44) gezeichnet, Dach und Veranda verdecken den Helden, der am Ufer dahinter steht; vorher flach unter ihm"
+  },
+  "iw9GarderobeHelm": {
+    "sperre": [[0, 16, 20, 32]],
+    "kollision": true,
+    "grund": "Kontur (konturkollision_tiefe.py, Phase 2C, 28.11.2026): Garderobe mit Helm: der Fuß des Ständers sperrt, Haken und Helm verdecken den Helden dahinter; vorher ohne Kollision flach, der Held stand auf ihr"
+  },
+  "hb7Basketballkorb": {
+    "sperre": [[8, 20, 24, 32]],
+    "kollision": true,
+    "grund": "Kontur (konturkollision_tiefe.py, Phase 2C, 28.11.2026): Basketballkorb am Platzrand: der Fuß des Mastes sperrt, Brett und Korb verdecken den Helden dahinter; vorher flach unter ihm"
+  },
+  "hb7Schule": {
+    "sperre": [
+      [0, 16, 384, 326],
+      [0, 326, 96, 336],
+      [288, 326, 384, 336],
+      [112, 352, 272, 368]
+    ],
+    "sortierlinie": 326,
+    "grund": "Kontur aus den Bauteilen (bauteile.json, Phase 2C, 28.11.2026): Fassade mit Sockel sperrt bis 326; der Absatz vor den Türen (112–272, 326–352) und die beiden seitlichen Treppen (96–112 und 272–288, gestreift, führen links und rechts zum Rasen hinunter) sind begehbar; die Vorderkante des Absatzes (352–368) ist eine Mauer und sperrt (Befund des Hauptchats an mf4Schule: Treppen und Mauer waren vertauscht); Sortierlinie an der Fassadenunterkante"
+  },
+  "sc8ChaletBlau": {
+    "sperre": [
+      [0, 16, 144, 172],
+      [0, 180, 16, 208],
+      [64, 180, 128, 208],
+      [8, 172, 16, 180],
+      [112, 172, 120, 180]
+    ],
+    "sortierlinie": 172,
+    "grund": "Kontur aus den Bauteilen (bauteile.json, Phase 2C, 28.11.2026): Chalet mit Veranda: Haus bis zur Fassadenunterkante (172), Verandaboden und Aufgang zwischen den Geländern begehbar, Geländer und Pfosten sperren; Sortierlinie an der Fassade, vor der Haustür steht der Held vor dem Haus; vorher sperrte das ganze Bild"
+  },
+  "sc8ChaletBraun": {
+    "sperre": [
+      [0, 16, 144, 172],
+      [0, 180, 16, 208],
+      [64, 180, 128, 208],
+      [8, 172, 16, 180],
+      [112, 172, 120, 180]
+    ],
+    "sortierlinie": 172,
+    "grund": "Kontur aus den Bauteilen (bauteile.json, Phase 2C, 28.11.2026): Chalet mit Veranda: Haus bis zur Fassadenunterkante (172), Verandaboden und Aufgang zwischen den Geländern begehbar, Geländer und Pfosten sperren; Sortierlinie an der Fassade, vor der Haustür steht der Held vor dem Haus; vorher sperrte das ganze Bild"
+  },
+  "ds6TankstelleGross": {
+    "sperre": [
+      [0, 16, 272, 96],
+      [80, 120, 196, 160]
+    ],
+    "sortierlinie": 120,
+    "grund": "Kontur aus den Bauteilen (bauteile.json, Phase 2C, 28.11.2026): Tankstelle: Laden und Waschanlage sperren wie bisher, die Zapfinsel mit beiden Pfeilern sperrt (vorher stand der linke Pfeiler frei); unter dem Vordach geht man hindurch und wird vom Dach verdeckt (Sortierlinie an der Unterkante des Vordachs, 120: tiefer läge sie unter dem geparkten Auto daneben, heldtiefe.karten.test.ts)"
+  },
+  "wds6Tankstelle": {
+    "sperre": [[0, 56, 112, 88]],
+    "sortierlinie": 88,
+    "grund": "Kontur aus den Bauteilen (bauteile.json, Phase 2C, 28.11.2026): Zapfsäulen am Diner: nur die Zapfinsel mit Pfeilern und Säulen sperrt, das Vordach verdeckt den Helden, der dahinter steht, statt zu sperren; vorher sperrte das ganze Bild"
+  },
+  "ds6Wohnwagen": {
+    "sperre": [
+      [0, 8, 80, 84],
+      [0, 84, 24, 92],
+      [56, 84, 80, 92],
+      [80, 56, 92, 84],
+      [24, 80, 28, 112],
+      [52, 80, 56, 96],
+      [24, 112, 56, 128]
+    ],
+    "sortierlinie": 84,
+    "grund": "Kontur aus den Bauteilen (bauteile.json, Phase 2C, 28.11.2026): Wohnwagen mit Rädern und Deichsel sperrt bis zur Unterkante (84, Räder bis 92); Holzpodest vor der Tür (28–52, 84–112) und die kleine Treppe rechts (54–64, 96–114) sind begehbar; Pfosten links und rechts und das Vordergeländer (112–126) sperren, man betritt das Podest über die Treppe rechts; vorher sperrte das ganze Bild"
+  },
+  "ca7Arena": {
+    "sperre": [
+      [0, 16, 400, 448],
+      [0, 448, 160, 464],
+      [240, 448, 400, 464],
+      [144, 464, 160, 544],
+      [240, 464, 256, 544]
+    ],
+    "grund": "Kontur aus den Bauteilen (bauteile.json, Phase 2C, 28.11.2026): geprüft, wie die grobe Maske: Palast bis zum Sockel, Freitreppe und Podest vor dem Portal begehbar, die Wangen der Treppe sperren"
   }
 }

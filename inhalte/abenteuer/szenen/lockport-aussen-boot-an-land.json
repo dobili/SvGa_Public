@@ -333,8 +333,9 @@
       "feld": [9, 23]
     },
     {
-      "moebel": "wg6BootLaengs",
-      "feld": [62, 22],
+      "moebel": "wg6BootLaengsAnLand",
+      "feld": [61, 22],
+      "versatz": [-8, 0],
       "id": "henriksBoot",
       "bauteil_ok": true
     },

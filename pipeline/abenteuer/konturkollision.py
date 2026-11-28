@@ -64,7 +64,7 @@ BODEN = "boden"
 BODEN_ARTEN = {"treppe", "steg", "bruecke", "fussmatte", "matte", "teppich", "boden", "boden_teil"}
 BODEN_NAMEN = ("treppe", "stufen", "steg", "bruecke", "fussmatte")
 # Diese Namen gehören zu keinem Bodenteil (Treppenloch, Geländer an der Treppe, Poller am Steg).
-KEIN_BODEN = ("loch", "gelaender", "schacht", "haus", "turm", "poller")
+KEIN_BODEN = ("loch", "gelaender", "schacht", "haus", "turm", "poller", "kiste")
 GEBAEUDE = {"gebaeude", "haus", "kiosk", "turm"}
 # Sitzmöbel: Sitzfläche und Beine sperren ganz, die Lehne nicht (Beispiel des Autors, 28.11.2026).
 SITZ_ARTEN = {"stuhl", "hocker", "sessel", "bank", "sofa"}
@@ -83,6 +83,7 @@ class Kontur:
     befunde: list[str] = field(default_factory=list)
     neue_sperre: bool = False  # die Sperre ist neu (Sitzfläche, von Hand), nicht die des Katalogs
     flach: bool = False  # ohne Kollision: der Kartenbau legt das Bild unter alle Figuren
+    kollision: bool | None = None  # von Hand: Bild ohne Kollision bekommt eine (Felsbogen, Boot an Land)
     breite: int = K
     hoehe: int = K
     grund: str = HAND_GRUND
@@ -179,6 +180,22 @@ def lade_hand(pfad: Path = HANDDATEI) -> dict[str, dict]:
     return json.loads(pfad.read_text(encoding="utf-8")) if pfad.is_file() else {}
 
 
+def handkontur(kontur: Kontur, hand: dict, angabe: dict) -> Kontur:
+    """Vorschlag aus einer Handangabe: Sperre aus Rechtecken, dazu wahlweise ``kollision`` (true für
+    ein Bild ohne Kollision), ``sortierlinie`` und ``ebene``; Befund nur, wo der Katalog abweicht.
+    Beispiel: Felsbogen ohne Kollision, Sperre an den Pfeilerfüßen → kollision true, maske_fein."""
+    neu = zellen_der_rechtecke(hand.get("sperre", []))
+    felder = {f: hand[f] for f in ("kollision", "sortierlinie", "ebene") if f in hand}
+    if neu != kontur.sperre or any(angabe.get(f) != w for f, w in felder.items()):
+        if neu or "sperre" in hand:  # leere Liste: Bild mit Kollision, aber ohne Sperre
+            kontur.sperre, kontur.neue_sperre = neu, True
+        kontur.grund = hand["grund"]
+        kontur.kollision, kontur.ebene = felder.get("kollision"), felder.get("ebene")
+        kontur.sortierlinie = felder.get("sortierlinie")
+        kontur.befunde.append(f"von Hand: Kontur aus {len(hand.get('sperre', []))} Rechtecken")
+    return kontur
+
+
 def sitzbefund(name: str, angabe: dict, alpha: bytes) -> set[Zelle] | None:
     """Neue Sperre für ein Sitzmöbel, wenn die Sitzfläche bisher nicht ganz sperrt; sonst None."""
     if angabe.get("art") not in SITZ_ARTEN or not angabe.get("kollision") or FELD_HAND in angabe:
@@ -224,11 +241,8 @@ def vorschlag(name: str, angabe: dict, alpha: bytes | None = None) -> Kontur:
         kontur.befunde.append(f"von Hand: an der Stelle in {', '.join(hand['szenen'])}")
         return kontur
     if hand:
-        neu = zellen_der_rechtecke(hand["sperre"])
-        if neu != sperre:
-            kontur.sperre, kontur.neue_sperre, kontur.grund = neu, True, hand["grund"]
-            kontur.befunde.append(f"von Hand: Kontur aus {len(hand['sperre'])} Rechtecken")
-        return kontur
+        return handkontur(kontur, hand, angabe)
+
     sitz = sitzbefund(name, angabe, alpha) if alpha is not None else None
     if sitz:
         kontur.sperre, kontur.neue_sperre = sitz, True
@@ -321,7 +335,7 @@ def schreibe_katalog(konturen: dict[str, Kontur], ordner: Path = ORDNER) -> int:
             k = konturen.get(name)
             if k is None:
                 continue
-            felder = [("sortierlinie", k.sortierlinie), ("ebene", k.ebene)]
+            felder = [("kollision", k.kollision), ("sortierlinie", k.sortierlinie), ("ebene", k.ebene)]
             if k.neue_sperre:
                 felder += [("maske_fein", feine_maske(k.sperre, k.breite, k.hoehe)), (FELD_HAND, k.grund)]
             for feld_name, wert in felder:

@@ -1962,7 +1962,6 @@
       "blick": "keine"
     },
     "pd7Hausboot": {
-      "kollision": false,
       "zustand": "alt",
       "stil": "rustikal",
       "quelle": "spiel/eigene/hausboot.png",
@@ -1971,8 +1970,27 @@
       "hoehe": 64,
       "art": "boot",
       "gebaeude": false,
-      "begehbar": true,
-      "begehbar_grund": "liegt im Wasser, dort läuft niemand"
+      "kollision": true,
+      "sortierlinie": 44,
+      "maske_fein": [
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_tiefe.py, Phase 2C, 28.11.2026): Hausboot im Bayou liegt im Wasser (das Wasser sperrt schon), deshalb keine eigene Sperre; mit Kollision ohne Sperrzelle wird es nach der Sortierlinie am Rumpf (44) gezeichnet, Dach und Veranda verdecken den Helden, der am Ufer dahinter steht; vorher flach unter ihm"
     },
     "pd7Finkenzeichen": {
       "kollision": false,

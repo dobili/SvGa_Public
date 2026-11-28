@@ -55,13 +55,15 @@
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_19.png",
       "breite": 48,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "ebene": "boden"
     },
     "caStegSchmal": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_20.png",
       "breite": 16,
       "hoehe": 48,
-      "kollision": true
+      "kollision": true,
+      "ebene": "boden"
     },
     "caFaesser": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Barrel_3.png",
@@ -1584,7 +1586,8 @@
       "zustand": "alt",
       "stil": "industrie",
       "blick": "unten",
-      "gebaeude": false
+      "gebaeude": false,
+      "ebene": "boden"
     },
     "ci8UBahnAbgangB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Stairs_Complete_3.png",
@@ -1596,7 +1599,8 @@
       "zustand": "alt",
       "stil": "industrie",
       "blick": "unten",
-      "gebaeude": false
+      "gebaeude": false,
+      "ebene": "boden"
     },
     "ci8Haltestelle": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Bus_Stop_1.png",

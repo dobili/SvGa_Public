@@ -13651,9 +13651,9 @@
     },
     {
      "id": 97,
-     "name": "wg6BootLaengs",
+     "name": "wg6BootLaengsAnLand",
      "type": "moebel",
-     "x": 992,
+     "x": 968,
      "y": 352,
      "width": 64,
      "height": 32,
@@ -13663,12 +13663,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 376
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },

@@ -1965,7 +1965,8 @@
       "blick": "unten",
       "zustand": "alt",
       "stil": "rustikal",
-      "maske": ["##..##", "##..##", "##..##", "##..##", "##..##"]
+      "maske": ["##..##", "##..##", "##..##", "##..##", "##..##"],
+      "ebene": "boden"
     },
     "mf4Fussmatte": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/26_Condominium_Singles/Condominium_Singles_66.png",

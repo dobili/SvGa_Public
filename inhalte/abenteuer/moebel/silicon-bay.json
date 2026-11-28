@@ -3488,6 +3488,36 @@
       "zustand": "gebraucht",
       "stil": "maritim",
       "hinweis": "Signalmast mit drei bunten Signalflaggen statt der weißen Fahne an der Hafenmeisterei (Kartenblick F8) (von Hand gezeichnet nach Gemini E13, 27.11.2026, werkzeuge/signalmast_2711.py)"
+    },
+    "sb7BootAnLand": {
+      "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Up_2.png",
+      "lauf": "senkrecht",
+      "breite": 32,
+      "hoehe": 64,
+      "kollision": true,
+      "art": "boot",
+      "zustand": "gebraucht",
+      "stil": "klassisch",
+      "blick": "oben",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".######.",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        ".######.",
+        "........"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_tiefe.py, 28.11.2026): Beiboot auf dem Kai, der Rumpf sperrt, der Bug darüber verdeckt den Helden dahinter; pd9BootAuf liegt sonst im Wasser"
     }
   }
 }

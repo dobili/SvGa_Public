@@ -1208,7 +1208,8 @@
       "art": "treppe",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "hinweis": "Holztreppe quer im Raum, steigt nach rechts an: Antritt links, Absatz rechts; Stufen von oben als Streifen mit heller Vorderkante, darunter die Wange mit den Stufenkanten, zwei schräge Handläufe, dazwischen gut zwei Kacheln frei; die Wange aus Brettern. Gebaut mit pipeline/abenteuer/seitentreppe.py aus Farben und Bauweise von treppeZumBetrachter (17.11.2026); Handläufe und Wange sperren, der Lauf dazwischen ist frei; noch in keiner Karte"
+      "hinweis": "Holztreppe quer im Raum, steigt nach rechts an: Antritt links, Absatz rechts; Stufen von oben als Streifen mit heller Vorderkante, darunter die Wange mit den Stufenkanten, zwei schräge Handläufe, dazwischen gut zwei Kacheln frei; die Wange aus Brettern. Gebaut mit pipeline/abenteuer/seitentreppe.py aus Farben und Bauweise von treppeZumBetrachter (17.11.2026); Handläufe und Wange sperren, der Lauf dazwischen ist frei; noch in keiner Karte",
+      "ebene": "boden"
     },
     "treppeNachLinks": {
       "quelle": "spiel/eigene/treppe_nach_links.png",
@@ -1223,7 +1224,8 @@
       "art": "treppe",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "hinweis": "Spiegelbild von treppeNachRechts: steigt nach links an, Antritt rechts, Absatz links; Pfostenköpfe mit Licht von links oben. Gebaut mit pipeline/abenteuer/seitentreppe.py (17.11.2026); noch in keiner Karte"
+      "hinweis": "Spiegelbild von treppeNachRechts: steigt nach links an, Antritt rechts, Absatz links; Pfostenköpfe mit Licht von links oben. Gebaut mit pipeline/abenteuer/seitentreppe.py (17.11.2026); noch in keiner Karte",
+      "ebene": "boden"
     },
     "kt10KlapptischTablet": {
       "quelle": "spiel/eigene/klapptisch_tablet.png",

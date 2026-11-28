@@ -2661,7 +2661,8 @@
       "zustand": "alt",
       "stil": "klassisch",
       "maske": ["......", "##..##", "##..##", "##..##", "##..##"],
-      "hinweis": "NICHT MEHR VERWENDEN (Regel 10.89, Autor, 16.11.2026: Treppenloch aus Bildern statt Lochbild); früher der Abgang zur Kellertreppe in der Bibliothek"
+      "hinweis": "NICHT MEHR VERWENDEN (Regel 10.89, Autor, 16.11.2026: Treppenloch aus Bildern statt Lochbild); früher der Abgang zur Kellertreppe in der Bibliothek",
+      "ebene": "boden"
     },
     "cc13MatteGruenLinks": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/4_Bedroom_Singles/Bedroom_Singles_357.png",

@@ -860,13 +860,13 @@
       "bauteil_ok": true
     },
     {
-      "moebel": "wsgAutoAb1",
+      "moebel": "ws5AutoBlau",
       "feld": [16, 37],
       "versatz": [8, 0],
       "bauteil_ok": true
     },
     {
-      "moebel": "wsgAutoAuf2",
+      "moebel": "cr7AutoParkendAuf",
       "feld": [19, 37],
       "versatz": [8, 0],
       "bauteil_ok": true

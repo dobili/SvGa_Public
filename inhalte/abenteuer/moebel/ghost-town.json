@@ -1384,7 +1384,8 @@
       "art": "treppe",
       "zustand": "alt",
       "stil": "rustikal",
-      "hinweis": "Saloontreppe in verwittertem Graubraun statt frischem Orange (Kartenblick S1) (umgefärbt, 27.11.2026, werkzeuge/gemini_akt4_2711.py)"
+      "hinweis": "Saloontreppe in verwittertem Graubraun statt frischem Orange (Kartenblick S1) (umgefärbt, 27.11.2026, werkzeuge/gemini_akt4_2711.py)",
+      "ebene": "boden"
     },
     "gt27HolzZaunOL": {
       "quelle": "spiel/eigene/friedhofszaun_holz_ol.png",

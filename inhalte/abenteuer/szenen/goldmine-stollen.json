@@ -240,7 +240,7 @@
     },
     {
       "moebel": "es7Kiste",
-      "feld": [28, 8]
+      "feld": [28, 10]
     },
     {
       "moebel": "es7Kiste",
@@ -263,70 +263,194 @@
     {
       "moebel": "n7Stuetze",
       "feld": [18, 6],
-      "zuschnitt": [0, 0, 24, 0]
+      "zuschnitt": [0, 0, 24, 0],
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".###....",
+        ".###...."
+      ]
     },
     {
       "moebel": "n7Stuetze",
       "feld": [19, 6],
       "versatz": [8, 0],
-      "zuschnitt": [16, 0, 16, 36]
+      "zuschnitt": [16, 0, 16, 36],
+      "kollision": false,
+      "begehbar_grund": "Querbalken über dem Gleis, man geht darunter hindurch; die Pfosten sperren in den Nachbarstücken",
+      "ebene": 36
     },
     {
       "moebel": "n7Stuetze",
       "feld": [20, 6],
       "versatz": [8, 0],
-      "zuschnitt": [24, 0, 0, 0]
+      "zuschnitt": [24, 0, 0, 0],
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..###...",
+        "..###..."
+      ]
     },
     {
       "moebel": "n7Stuetze",
       "feld": [18, 10],
-      "zuschnitt": [0, 0, 24, 0]
+      "zuschnitt": [0, 0, 24, 0],
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".###....",
+        ".###...."
+      ]
     },
     {
       "moebel": "n7Stuetze",
       "feld": [19, 10],
       "versatz": [8, 0],
-      "zuschnitt": [16, 0, 16, 36]
+      "zuschnitt": [16, 0, 16, 36],
+      "kollision": false,
+      "begehbar_grund": "Querbalken über dem Gleis, man geht darunter hindurch; die Pfosten sperren in den Nachbarstücken",
+      "ebene": 36
     },
     {
       "moebel": "n7Stuetze",
       "feld": [20, 10],
       "versatz": [8, 0],
-      "zuschnitt": [24, 0, 0, 0]
+      "zuschnitt": [24, 0, 0, 0],
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..###...",
+        "..###..."
+      ]
     },
     {
       "moebel": "n7Stuetze",
       "feld": [18, 14],
-      "zuschnitt": [0, 0, 24, 0]
+      "zuschnitt": [0, 0, 24, 0],
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".###....",
+        ".###...."
+      ]
     },
     {
       "moebel": "n7Stuetze",
       "feld": [19, 14],
       "versatz": [8, 0],
-      "zuschnitt": [16, 0, 16, 36]
+      "zuschnitt": [16, 0, 16, 36],
+      "kollision": false,
+      "begehbar_grund": "Querbalken über dem Gleis, man geht darunter hindurch; die Pfosten sperren in den Nachbarstücken",
+      "ebene": 36
     },
     {
       "moebel": "n7Stuetze",
       "feld": [20, 14],
       "versatz": [8, 0],
-      "zuschnitt": [24, 0, 0, 0]
+      "zuschnitt": [24, 0, 0, 0],
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..###...",
+        "..###..."
+      ]
     },
     {
       "moebel": "n7Stuetze",
       "feld": [18, 18],
-      "zuschnitt": [0, 0, 24, 0]
+      "zuschnitt": [0, 0, 24, 0],
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        ".###....",
+        ".###...."
+      ]
     },
     {
       "moebel": "n7Stuetze",
       "feld": [19, 18],
       "versatz": [8, 0],
-      "zuschnitt": [16, 0, 16, 36]
+      "zuschnitt": [16, 0, 16, 36],
+      "kollision": false,
+      "begehbar_grund": "Querbalken über dem Gleis, man geht darunter hindurch; die Pfosten sperren in den Nachbarstücken",
+      "ebene": 36
     },
     {
       "moebel": "n7Stuetze",
       "feld": [20, 18],
       "versatz": [8, 0],
-      "zuschnitt": [24, 0, 0, 0]
+      "zuschnitt": [24, 0, 0, 0],
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..###...",
+        "..###..."
+      ]
     },
     {
       "moebel": "n7Stuetze",

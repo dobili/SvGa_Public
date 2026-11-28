@@ -1494,3 +1494,18 @@ Dachboden liegt unter dem Helden, wenn er sie betritt. Erweitert 10.88, ersetzt 
   Schule begehbar bis zur untersten Stufe mit sperrenden Wangen, Sockel des Fahnenmasts, Laternen
   ohne Zaun mit Sockel (die in der Zaunlinie behalten `vorn`), Sitzflächen der Stühle, Bänke und
   Sessel. Die übrigen Orte folgen in Phase 2.
+- **Handangaben erweitert (Phase 2C):** In `kontur_hand.json` stehen neben `sperre` wahlweise
+  `kollision: true` (ein Bild ohne Kollision bekommt eine, etwa Felsbogen, Stützrahmen im Stollen,
+  Basketballkorb), `sortierlinie` und `ebene`; eine leere `sperre` heißt: mit Kollision gezeichnet
+  (Tiefe nach der Linie), aber ohne Sperrzelle (Hausboot im Wasser, das Wasser sperrt schon).
+  Gebäude mit Vortreppe oder Veranda: Haus bis zur Fassadenunterkante, Treppe und Veranda frei,
+  Wangen, Geländer und Pfosten sperren (Schule Hochebene, Chalets Summit City, Wohnwagen);
+  Vordächer sperren nicht, die Zapfinsel darunter schon (Tankstellen).
+- **Z-Prüfung** (`python -m pipeline.abenteuer.konturkollision_tiefe [--ort KENNUNG] [SZENE …]`,
+  Dauertest „0 Befunde“, ohne Bilder): an jeder erreichbaren Stelle des Helden mit der Tiefe der App
+  (Karte, Bodenebene, Sortierlinie, Maske; `heldtiefe.ts`) zwei Fehler: ein Bild, das man betritt
+  (Treppe, Steg, Brücke, Teppich, Rampe), liegt über dem Helden, der darauf steht (Saloontreppe
+  Ghost Town); ein aufrechtes Bild (Haus, Zaun, Fahrzeug, Boot, Stütze, Kamin …) liegt flach unter
+  ihm, obwohl er dahinter steht (geparkte Autos in Crossroads, Kamin an der Wand der Hütte in Summit
+  City, Felsbogen am Canyonrand). Bilder mit `vorn` (Überführung über dem Pfad) zählen nicht als
+  betreten; geprüfte Ausnahmen mit Grund in `GEPRUEFT` (Glasbrücke: Autos fahren darunter).

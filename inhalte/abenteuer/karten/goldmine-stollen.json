@@ -4037,7 +4037,7 @@
      "name": "es7Kiste",
      "type": "moebel",
      "x": 448,
-     "y": 128,
+     "y": 160,
      "width": 16,
      "height": 16,
      "rotation": 0,
@@ -4046,7 +4046,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 136
+       "value": 168
       },
       {
        "name": "kollision",
@@ -4161,17 +4161,27 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 136
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       },
       {
        "name": "zuschnitt",
        "type": "string",
        "value": "0,0,24,0"
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../../#."
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": "......../......../......../......../......../......../......../......../......../......../.###..../.###...."
       }
      ]
     },
@@ -4189,7 +4199,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 136
       },
       {
        "name": "kollision",
@@ -4217,17 +4227,27 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 136
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       },
       {
        "name": "zuschnitt",
        "type": "string",
        "value": "24,0,0,0"
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../../##"
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": "......../......../......../......../......../......../......../......../......../......../..###.../..###..."
       }
      ]
     },
@@ -4245,17 +4265,27 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 200
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       },
       {
        "name": "zuschnitt",
        "type": "string",
        "value": "0,0,24,0"
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../../#."
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": "......../......../......../......../......../......../......../......../......../......../.###..../.###...."
       }
      ]
     },
@@ -4273,7 +4303,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 200
       },
       {
        "name": "kollision",
@@ -4301,17 +4331,27 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 200
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       },
       {
        "name": "zuschnitt",
        "type": "string",
        "value": "24,0,0,0"
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../../##"
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": "......../......../......../......../......../......../......../......../......../......../..###.../..###..."
       }
      ]
     },
@@ -4329,17 +4369,27 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 264
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       },
       {
        "name": "zuschnitt",
        "type": "string",
        "value": "0,0,24,0"
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../../#."
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": "......../......../......../......../......../......../......../......../......../......../.###..../.###...."
       }
      ]
     },
@@ -4357,7 +4407,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 264
       },
       {
        "name": "kollision",
@@ -4385,17 +4435,27 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 264
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       },
       {
        "name": "zuschnitt",
        "type": "string",
        "value": "24,0,0,0"
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../../##"
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": "......../......../......../......../......../......../......../......../......../......../..###.../..###..."
       }
      ]
     },
@@ -4413,17 +4473,27 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 328
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       },
       {
        "name": "zuschnitt",
        "type": "string",
        "value": "0,0,24,0"
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../../#."
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": "......../......../......../......../......../......../......../......../......../......../.###..../.###...."
       }
      ]
     },
@@ -4441,7 +4511,7 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 328
       },
       {
        "name": "kollision",
@@ -4469,17 +4539,27 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 328
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       },
       {
        "name": "zuschnitt",
        "type": "string",
        "value": "24,0,0,0"
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../../##"
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": "......../......../......../......../......../......../......../......../......../......../..###.../..###..."
       }
      ]
     },
@@ -4497,12 +4577,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 136
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
@@ -4520,12 +4600,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 136
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },

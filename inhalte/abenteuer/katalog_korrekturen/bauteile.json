@@ -1,0 +1,1123 @@
+{
+  "hb7Schule": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [
+          0,
+          16,
+          384,
+          196
+        ]
+      },
+      {
+        "typ": "wand",
+        "rahmen": [
+          8,
+          196,
+          376,
+          320
+        ],
+        "hinweis": "Fassade mit Fenstern und Rundbögen"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [
+          56,
+          200,
+          352,
+          312
+        ]
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [
+          112,
+          256,
+          176,
+          322
+        ],
+        "hinweis": "Doppeltür links"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [
+          208,
+          256,
+          272,
+          322
+        ],
+        "hinweis": "Doppeltür rechts"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [
+          0,
+          320,
+          384,
+          336
+        ]
+      },
+      {
+        "typ": "absatz",
+        "rahmen": [
+          112,
+          326,
+          272,
+          352
+        ],
+        "hinweis": "Podest vor beiden Türen, begehbar"
+      },
+      {
+        "typ": "treppe",
+        "rahmen": [
+          96,
+          326,
+          112,
+          368
+        ],
+        "hinweis": "seitlich, gestreift: führt vom Podest nach links hinunter zum Rasen",
+        "richtung": "links"
+      },
+      {
+        "typ": "treppe",
+        "rahmen": [
+          272,
+          326,
+          288,
+          368
+        ],
+        "hinweis": "seitlich, gestreift: führt vom Podest nach rechts hinunter zum Rasen",
+        "richtung": "rechts"
+      },
+      {
+        "typ": "mauer",
+        "rahmen": [
+          112,
+          352,
+          272,
+          368
+        ],
+        "hinweis": "Vorderkante des Podests ist eine Mauer, keine Stufe"
+      }
+    ],
+    "geprueft": "von Hand, 28.11.2026 (Helfer C, Bild vergrößert angesehen)"
+  },
+  "sc8ChaletBlau": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [
+          0,
+          0,
+          144,
+          112
+        ]
+      },
+      {
+        "typ": "wand",
+        "rahmen": [
+          0,
+          96,
+          144,
+          172
+        ],
+        "hinweis": "Holzfassade, Giebel"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [
+          24,
+          100,
+          120,
+          140
+        ]
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [
+          96,
+          112,
+          128,
+          140
+        ],
+        "hinweis": "Balkon im Obergeschoss, nicht begehbar"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [
+          32,
+          150,
+          48,
+          172
+        ]
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [
+          8,
+          150,
+          16,
+          180
+        ],
+        "hinweis": "Verandapfosten links"
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [
+          112,
+          150,
+          120,
+          180
+        ],
+        "hinweis": "Verandapfosten rechts"
+      },
+      {
+        "typ": "veranda",
+        "rahmen": [
+          0,
+          170,
+          128,
+          208
+        ],
+        "hinweis": "Verandaboden vor der Tür, begehbar"
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [
+          0,
+          180,
+          16,
+          208
+        ],
+        "hinweis": "Geländer links"
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [
+          64,
+          180,
+          128,
+          208
+        ],
+        "hinweis": "Geländer rechts"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [
+          128,
+          112,
+          144,
+          208
+        ],
+        "hinweis": "Schatten am Boden"
+      }
+    ],
+    "geprueft": "von Hand, 28.11.2026 (Helfer C, Bild vergrößert angesehen)"
+  },
+  "ds6TankstelleGross": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [
+          0,
+          0,
+          272,
+          64
+        ],
+        "hinweis": "Flachdach von Laden und Waschanlage"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [
+          0,
+          64,
+          80,
+          108
+        ],
+        "hinweis": "Ladenfront mit Tür"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [
+          32,
+          72,
+          48,
+          104
+        ]
+      },
+      {
+        "typ": "dach",
+        "rahmen": [
+          80,
+          64,
+          192,
+          120
+        ],
+        "hinweis": "Vordach über der Zapfinsel, verdeckt"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [
+          192,
+          64,
+          272,
+          108
+        ],
+        "hinweis": "Waschanlage"
+      },
+      {
+        "typ": "schild",
+        "rahmen": [
+          196,
+          72,
+          256,
+          84
+        ],
+        "hinweis": "CAR WASH"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [
+          80,
+          120,
+          196,
+          160
+        ],
+        "hinweis": "Zapfinsel mit zwei Pfeilern und Zapfsäulen, sperrt"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [
+          208,
+          108,
+          256,
+          120
+        ],
+        "hinweis": "Abflussrinne am Boden"
+      }
+    ],
+    "geprueft": "von Hand, 28.11.2026 (Helfer C, Bild vergrößert angesehen)"
+  },
+  "wds6Tankstelle": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [
+          0,
+          0,
+          112,
+          56
+        ],
+        "hinweis": "Vordach, verdeckt"
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [
+          0,
+          48,
+          16,
+          88
+        ]
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [
+          96,
+          48,
+          112,
+          88
+        ]
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [
+          16,
+          48,
+          104,
+          88
+        ],
+        "hinweis": "Zapfsäulen und Automat auf der Insel, sperren"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [
+          0,
+          64,
+          112,
+          88
+        ],
+        "hinweis": "Insel"
+      }
+    ],
+    "geprueft": "von Hand, 28.11.2026 (Helfer C, Bild vergrößert angesehen)"
+  },
+  "ds6Wohnwagen": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [
+          0,
+          8,
+          80,
+          56
+        ]
+      },
+      {
+        "typ": "wand",
+        "rahmen": [
+          0,
+          56,
+          80,
+          84
+        ]
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [
+          8,
+          60,
+          72,
+          76
+        ]
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [
+          32,
+          60,
+          48,
+          84
+        ]
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [
+          0,
+          84,
+          80,
+          92
+        ],
+        "hinweis": "Räder"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [
+          80,
+          56,
+          92,
+          84
+        ],
+        "hinweis": "Deichsel"
+      },
+      {
+        "typ": "veranda",
+        "rahmen": [
+          28,
+          84,
+          52,
+          112
+        ],
+        "hinweis": "Holzpodest vor der Tür, begehbar"
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [
+          24,
+          80,
+          28,
+          112
+        ],
+        "hinweis": "Pfosten links"
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [
+          52,
+          80,
+          56,
+          96
+        ],
+        "hinweis": "Pfosten rechts"
+      },
+      {
+        "typ": "treppe",
+        "rahmen": [
+          54,
+          96,
+          64,
+          114
+        ],
+        "hinweis": "zwei Stufen rechts vom Podest hinunter (Zugang)",
+        "richtung": "rechts"
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [
+          24,
+          112,
+          56,
+          128
+        ],
+        "hinweis": "Vordergeländer, sperrt"
+      }
+    ],
+    "geprueft": "von Hand, 28.11.2026 (Helfer C, Bild vergrößert angesehen)"
+  },
+  "ca7Arena": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [
+          0,
+          0,
+          400,
+          272
+        ],
+        "hinweis": "Kuppeln, Glasdach, Dachgauben"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [
+          0,
+          272,
+          400,
+          448
+        ]
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [
+          160,
+          400,
+          256,
+          448
+        ],
+        "hinweis": "Portikus mit vier Säulen"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [
+          192,
+          416,
+          224,
+          448
+        ]
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [
+          0,
+          448,
+          400,
+          464
+        ]
+      },
+      {
+        "typ": "absatz",
+        "rahmen": [
+          160,
+          448,
+          240,
+          464
+        ],
+        "hinweis": "Podest vor dem Portal, begehbar"
+      },
+      {
+        "typ": "treppe",
+        "rahmen": [
+          160,
+          464,
+          240,
+          544
+        ],
+        "hinweis": "Freitreppe nach unten zum Betrachter",
+        "richtung": "unten"
+      },
+      {
+        "typ": "mauer",
+        "rahmen": [
+          144,
+          464,
+          160,
+          544
+        ],
+        "hinweis": "Treppenwange links"
+      },
+      {
+        "typ": "mauer",
+        "rahmen": [
+          240,
+          464,
+          256,
+          544
+        ],
+        "hinweis": "Treppenwange rechts"
+      }
+    ],
+    "geprueft": "von Hand, 28.11.2026 (Helfer C, Bild vergrößert angesehen)"
+  },
+  "gt27SaloonTreppe": {
+    "bauteile": [
+      {
+        "typ": "treppe",
+        "rahmen": [
+          0,
+          8,
+          64,
+          48
+        ],
+        "hinweis": "Seitentreppe, Lauf von links unten nach rechts oben, begehbar",
+        "richtung": "links"
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [
+          0,
+          0,
+          64,
+          20
+        ],
+        "hinweis": "oberer Handlauf (schräg)"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [
+          0,
+          40,
+          64,
+          64
+        ],
+        "hinweis": "Treppenwange mit unterem Handlauf, sperrt"
+      }
+    ],
+    "geprueft": "von Hand, 28.11.2026 (Helfer C, Bild vergrößert angesehen)"
+  },
+  "treppeNachLinks": {
+    "bauteile": [
+      {
+        "typ": "treppe",
+        "rahmen": [
+          0,
+          8,
+          64,
+          48
+        ],
+        "hinweis": "Seitentreppe, steigt nach links",
+        "richtung": "rechts"
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [
+          0,
+          0,
+          64,
+          20
+        ]
+      },
+      {
+        "typ": "wand",
+        "rahmen": [
+          0,
+          40,
+          64,
+          64
+        ],
+        "hinweis": "Wange"
+      }
+    ],
+    "geprueft": "von Hand, 28.11.2026 (Helfer C, Bild vergrößert angesehen)"
+  },
+  "treppeNachRechts": {
+    "bauteile": [
+      {
+        "typ": "treppe",
+        "rahmen": [
+          0,
+          8,
+          64,
+          48
+        ],
+        "hinweis": "Seitentreppe, steigt nach rechts",
+        "richtung": "links"
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [
+          0,
+          0,
+          64,
+          20
+        ]
+      },
+      {
+        "typ": "wand",
+        "rahmen": [
+          0,
+          40,
+          64,
+          64
+        ],
+        "hinweis": "Wange"
+      }
+    ],
+    "geprueft": "von Hand, 28.11.2026 (Helfer C, Bild vergrößert angesehen)"
+  },
+  "cc12TreppeAb": {
+    "bauteile": [
+      {
+        "typ": "treppe",
+        "rahmen": [
+          32,
+          24,
+          64,
+          80
+        ],
+        "hinweis": "führt nach unten (zum Betrachter hin ab)",
+        "richtung": "oben"
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [
+          24,
+          8,
+          32,
+          80
+        ]
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [
+          64,
+          8,
+          72,
+          80
+        ]
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [
+          0,
+          8,
+          24,
+          40
+        ]
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [
+          72,
+          8,
+          96,
+          40
+        ]
+      }
+    ],
+    "geprueft": "von Hand, 28.11.2026 (Helfer C, Bild vergrößert angesehen)"
+  },
+  "mf4TreppeAb": {
+    "bauteile": [
+      {
+        "typ": "treppe",
+        "rahmen": [
+          32,
+          24,
+          64,
+          80
+        ],
+        "hinweis": "führt nach unten",
+        "richtung": "oben"
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [
+          24,
+          8,
+          32,
+          80
+        ]
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [
+          64,
+          8,
+          72,
+          80
+        ]
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [
+          0,
+          8,
+          24,
+          40
+        ]
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [
+          72,
+          8,
+          96,
+          40
+        ]
+      }
+    ],
+    "geprueft": "von Hand, 28.11.2026 (Helfer C, Bild vergrößert angesehen)"
+  },
+  "ci8UBahnAbgang": {
+    "bauteile": [
+      {
+        "typ": "saeule",
+        "rahmen": [
+          0,
+          0,
+          8,
+          80
+        ],
+        "hinweis": "Laternenpfosten links"
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [
+          40,
+          0,
+          48,
+          80
+        ],
+        "hinweis": "Laternenpfosten rechts"
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [
+          0,
+          16,
+          48,
+          40
+        ]
+      },
+      {
+        "typ": "treppe",
+        "rahmen": [
+          8,
+          48,
+          40,
+          80
+        ],
+        "hinweis": "führt in den Untergrund hinab",
+        "richtung": "oben"
+      }
+    ],
+    "geprueft": "von Hand, 28.11.2026 (Helfer C, Bild vergrößert angesehen)"
+  },
+  "ci8UBahnAbgangB": {
+    "bauteile": [
+      {
+        "typ": "saeule",
+        "rahmen": [
+          0,
+          16,
+          8,
+          80
+        ]
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [
+          40,
+          16,
+          48,
+          80
+        ]
+      },
+      {
+        "typ": "treppe",
+        "rahmen": [
+          8,
+          32,
+          40,
+          72
+        ],
+        "hinweis": "führt in den Untergrund hinab",
+        "richtung": "oben"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [
+          0,
+          64,
+          48,
+          80
+        ]
+      }
+    ],
+    "geprueft": "von Hand, 28.11.2026 (Helfer C, Bild vergrößert angesehen)"
+  },
+  "caSteg": {
+    "bauteile": [
+      {
+        "typ": "steg",
+        "rahmen": [
+          0,
+          0,
+          48,
+          32
+        ],
+        "hinweis": "Planken, begehbar"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [
+          0,
+          32,
+          48,
+          48
+        ],
+        "hinweis": "Pfähle im Wasser"
+      }
+    ],
+    "geprueft": "von Hand, 28.11.2026 (Helfer C, Bild vergrößert angesehen)"
+  },
+  "caStegSchmal": {
+    "bauteile": [
+      {
+        "typ": "steg",
+        "rahmen": [
+          0,
+          0,
+          16,
+          32
+        ]
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [
+          0,
+          32,
+          16,
+          48
+        ],
+        "hinweis": "Pfähle im Wasser"
+      }
+    ],
+    "geprueft": "von Hand, 28.11.2026 (Helfer C, Bild vergrößert angesehen)"
+  },
+  "dd6Felsbogen": {
+    "bauteile": [
+      {
+        "typ": "sonstiges",
+        "rahmen": [
+          0,
+          0,
+          160,
+          56
+        ],
+        "hinweis": "Felsbogen oben (Bogen), verdeckt"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [
+          0,
+          56,
+          48,
+          144
+        ],
+        "hinweis": "linker Pfeiler, Fuß sperrt"
+      },
+      {
+        "typ": "wand",
+        "rahmen": [
+          96,
+          56,
+          160,
+          144
+        ],
+        "hinweis": "rechter Pfeiler, Fuß sperrt"
+      }
+    ],
+    "geprueft": "von Hand, 28.11.2026 (Helfer C, Bild vergrößert angesehen)"
+  },
+  "n7Stuetze": {
+    "bauteile": [
+      {
+        "typ": "sonstiges",
+        "rahmen": [
+          0,
+          0,
+          48,
+          12
+        ],
+        "hinweis": "Querbalken, verdeckt"
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [
+          4,
+          12,
+          16,
+          48
+        ],
+        "hinweis": "Pfosten links, Fuß sperrt"
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [
+          32,
+          12,
+          44,
+          48
+        ],
+        "hinweis": "Pfosten rechts, Fuß sperrt"
+      }
+    ],
+    "geprueft": "von Hand, 28.11.2026 (Helfer C, Bild vergrößert angesehen)"
+  },
+  "sc7Kamin": {
+    "bauteile": [
+      {
+        "typ": "schornstein",
+        "rahmen": [
+          8,
+          0,
+          40,
+          28
+        ]
+      },
+      {
+        "typ": "wand",
+        "rahmen": [
+          0,
+          28,
+          48,
+          48
+        ],
+        "hinweis": "Kaminsims und Feueröffnung"
+      },
+      {
+        "typ": "sockel",
+        "rahmen": [
+          0,
+          48,
+          48,
+          64
+        ],
+        "hinweis": "Herdplatte, sperrt"
+      }
+    ],
+    "geprueft": "von Hand, 28.11.2026 (Helfer C, Bild vergrößert angesehen)"
+  },
+  "sc8ChaletBraun": {
+    "bauteile": [
+      {
+        "typ": "dach",
+        "rahmen": [
+          0,
+          0,
+          144,
+          112
+        ]
+      },
+      {
+        "typ": "wand",
+        "rahmen": [
+          0,
+          96,
+          144,
+          172
+        ],
+        "hinweis": "Holzfassade, Giebel"
+      },
+      {
+        "typ": "fenster",
+        "rahmen": [
+          24,
+          100,
+          120,
+          140
+        ]
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [
+          96,
+          112,
+          128,
+          140
+        ],
+        "hinweis": "Balkon im Obergeschoss, nicht begehbar"
+      },
+      {
+        "typ": "tuer",
+        "rahmen": [
+          32,
+          150,
+          48,
+          172
+        ]
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [
+          8,
+          150,
+          16,
+          180
+        ],
+        "hinweis": "Verandapfosten links"
+      },
+      {
+        "typ": "saeule",
+        "rahmen": [
+          112,
+          150,
+          120,
+          180
+        ],
+        "hinweis": "Verandapfosten rechts"
+      },
+      {
+        "typ": "veranda",
+        "rahmen": [
+          0,
+          170,
+          128,
+          208
+        ],
+        "hinweis": "Verandaboden vor der Tür, begehbar"
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [
+          0,
+          180,
+          16,
+          208
+        ],
+        "hinweis": "Geländer links"
+      },
+      {
+        "typ": "gelaender",
+        "rahmen": [
+          64,
+          180,
+          128,
+          208
+        ],
+        "hinweis": "Geländer rechts"
+      },
+      {
+        "typ": "sonstiges",
+        "rahmen": [
+          128,
+          112,
+          144,
+          208
+        ],
+        "hinweis": "Schatten am Boden"
+      }
+    ],
+    "geprueft": "von Hand, 28.11.2026 (Helfer C, Bild vergrößert angesehen)"
+  }
+}

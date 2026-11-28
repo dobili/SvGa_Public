@@ -14173,7 +14173,7 @@
     },
     {
      "id": 211,
-     "name": "wsgAutoAb1",
+     "name": "ws5AutoBlau",
      "type": "moebel",
      "x": 264,
      "y": 592,
@@ -14185,18 +14185,18 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 648
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
     {
      "id": 212,
-     "name": "wsgAutoAuf2",
+     "name": "cr7AutoParkendAuf",
      "type": "moebel",
      "x": 312,
      "y": 592,
@@ -14208,12 +14208,12 @@
       {
        "name": "tiefe",
        "type": "int",
-       "value": 1
+       "value": 648
       },
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },

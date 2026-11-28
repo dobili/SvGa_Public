@@ -17,7 +17,7 @@
         "............",
         "............",
         "............",
-        "...#########",
+        "............",
         "..##########",
         "..##########",
         "..##########",
@@ -25,7 +25,8 @@
         "....#.....#.",
         "............",
         "............"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Liegefläche sperrt, das Kopfteil darüber verdeckt nur"
     },
     "es15BettKopfWest": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_514.png",
@@ -44,7 +45,7 @@
         "............",
         "............",
         "............",
-        "#########...",
+        "............",
         "##########..",
         "##########..",
         "##########..",
@@ -52,7 +53,8 @@
         ".#.....#....",
         "............",
         "............"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Liegefläche sperrt, das Kopfteil darüber verdeckt nur"
     },
     "es7Tisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_3.png",
@@ -63,16 +65,18 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "rustikal",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
         "........",
-        "........",
+        ".######.",
         ".######.",
         ".######.",
         ".######.",
         ".##..##."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "es7Brett": {
       "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
@@ -177,7 +181,9 @@
       "blick": "rechts",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "maske_fein": ["....", "....", "....", "....", "####", ".#..", "....", "...."]
+      "sortierlinie": 18,
+      "maske_fein": ["....", "....", "....", "####", "####", ".#..", "....", "...."],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "es7StuhlL": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_286.png",
@@ -188,7 +194,9 @@
       "blick": "links",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "maske_fein": ["....", "....", "....", "....", "####", "..#.", "....", "...."]
+      "sortierlinie": 18,
+      "maske_fein": ["....", "....", "....", "####", "####", "..#.", "....", "...."],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "es7Tuch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_98.png",
@@ -291,16 +299,18 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "rustikal",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
         "........",
-        "........",
+        ".######.",
         ".######.",
         ".######.",
         ".######.",
         ".##..##."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     }
   }
 }

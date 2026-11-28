@@ -1314,16 +1314,18 @@
       "blick": "keine",
       "zustand": "gebraucht",
       "stil": "industrie",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
-        "........",
-        "........",
+        "########",
+        "########",
         "########",
         "########",
         "########",
         "........"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "cr9PicknicktischLang": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Benched_Table_4.png",

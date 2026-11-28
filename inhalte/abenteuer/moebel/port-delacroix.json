@@ -103,11 +103,12 @@
       "blick": "rechts",
       "zustand": "gebraucht",
       "stil": "klassisch",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
         "........",
-        "........",
+        "....####",
         "..#.####",
         ".##.####",
         ".#######",
@@ -116,7 +117,8 @@
         "....####",
         "....#.##",
         "........"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "pd6Plakat": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_32.png",
@@ -261,7 +263,9 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten",
-      "maske_fein": ["............", "............", "############", "############"]
+      "sortierlinie": 10,
+      "maske_fein": ["............", "############", "############", "############"],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "pd6Kiste": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Crates_1.png",
@@ -314,7 +318,19 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 16,
+      "maske_fein": [
+        "............",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "pd6TischGelb": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Table_2.png",
@@ -323,7 +339,10 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "sortierlinie": 16,
+      "maske_fein": ["....", "####", "####", "####", "####", "####", "####", "####"],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "pd6Hocker": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Stool_Wood_1_16x16.png",
@@ -364,16 +383,18 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "klassisch",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
         "........",
-        "........",
+        ".######.",
         ".######.",
         ".######.",
         ".######.",
         ".##..##."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "pd6StuhlRechts": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_284.png",
@@ -384,7 +405,9 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "rechts",
-      "maske_fein": ["....", "....", "....", "....", "####", ".#..", "....", "...."]
+      "sortierlinie": 18,
+      "maske_fein": ["....", "....", "....", "####", "####", ".#..", "....", "...."],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "pd6StuhlLinks": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_288.png",
@@ -395,7 +418,9 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "links",
-      "maske_fein": ["....", "....", "....", "....", "####", "..#.", "....", "...."]
+      "sortierlinie": 18,
+      "maske_fein": ["....", "....", "....", "####", "####", "..#.", "....", "...."],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "pd6Pflanze": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_16.png",
@@ -494,11 +519,12 @@
       "zustand": "alt",
       "stil": "rustikal",
       "blick": "unten",
+      "sortierlinie": 16,
       "maske_fein": [
         "....................",
         "....................",
-        "....................",
-        "....................",
+        "...##############...",
+        "..###############...",
         "..###############...",
         "...##############...",
         "...##############...",
@@ -511,7 +537,8 @@
         ".##############.....",
         ".######..#####......",
         "..###..............."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "pd6KlavierHell": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_1.png",
@@ -616,7 +643,23 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 16,
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "....########",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "pd6Keyboard": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_174.png",
@@ -765,16 +808,18 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "klassisch",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
         "........",
-        "........",
+        ".######.",
         ".######.",
         ".######.",
         ".######.",
         ".##..##."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "pd6Notenregal": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_69.png",
@@ -872,16 +917,18 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "klassisch",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
         "........",
-        "........",
+        ".######.",
         ".######.",
         ".######.",
         ".######.",
         ".##..##."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "pd6Turnhalle": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_6.png",
@@ -1416,7 +1463,9 @@
       "kollision": true,
       "art": "bett",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "maske_fein": ["....", "####", "####", "####", "####", "####", "####", "####"],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Liegefläche sperrt, das Kopfteil darüber verdeckt nur"
     },
     "pd6Leiter": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Medium_Stairs.png",
@@ -2049,11 +2098,12 @@
       "zustand": "gebraucht",
       "stil": "rustikal",
       "blick": "unten",
+      "sortierlinie": 16,
       "maske_fein": [
         "............",
         "............",
         "............",
-        "............",
+        "......######",
         "...#########",
         "############",
         "############",
@@ -2062,7 +2112,8 @@
         "############",
         "############",
         "############"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "pd9Spaene": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/Shavings_Woodwork_Crafting_Table_16x16.png",
@@ -2085,16 +2136,18 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
-        "........",
-        "........",
+        "########",
+        "########",
         "########",
         "########",
         "########",
         ".#....#."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "pd9Ziegel": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Brick_5.png",
@@ -2190,16 +2243,18 @@
       "zustand": "gebraucht",
       "stil": "industrie",
       "blick": "unten",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
         "........",
-        "........",
+        ".#######",
         ".#######",
         ".#######",
         ".#######",
         ".#######"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "pd9Klavierhocker": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_171.png",

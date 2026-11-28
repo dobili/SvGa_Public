@@ -89,7 +89,9 @@
       "blick": "rechts",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "maske_fein": ["....", "....", "....", "....", "####", ".#..", "....", "...."]
+      "sortierlinie": 18,
+      "maske_fein": ["....", "....", "....", "####", "####", ".#..", "....", "...."],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "ld5Stuhl2": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_288.png",
@@ -100,7 +102,9 @@
       "blick": "links",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "maske_fein": ["....", "....", "....", "....", "####", "..#.", "....", "...."]
+      "sortierlinie": 18,
+      "maske_fein": ["....", "....", "....", "####", "####", "..#.", "....", "...."],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "ld5StuhlDunkelR": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_282.png",
@@ -111,7 +115,9 @@
       "blick": "rechts",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "maske_fein": ["....", "....", "....", "....", "####", ".#..", "....", "...."]
+      "sortierlinie": 18,
+      "maske_fein": ["....", "....", "....", "####", "####", ".#..", "....", "...."],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "ld5StuhlDunkelL": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_286.png",
@@ -122,7 +128,9 @@
       "blick": "links",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "maske_fein": ["....", "....", "....", "....", "####", "..#.", "....", "...."]
+      "sortierlinie": 18,
+      "maske_fein": ["....", "....", "....", "####", "####", "..#.", "....", "...."],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "ld5Rundtisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_2.png",
@@ -133,16 +141,18 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "rustikal",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
         "........",
-        "........",
+        ".######.",
         ".######.",
         ".######.",
         ".######.",
         ".##..##."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "ld5LangtischL": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_100.png",
@@ -294,7 +304,9 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "maske_fein": ["....", "....", "....", "....", "####", "####", ".##.", "...."]
+      "sortierlinie": 16,
+      "maske_fein": ["....", "....", "....", "####", "####", "####", ".##.", "...."],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "ld5Seil": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Rope_1.png",

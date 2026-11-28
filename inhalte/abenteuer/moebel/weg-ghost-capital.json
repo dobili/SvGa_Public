@@ -58,6 +58,7 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "modern",
+      "sortierlinie": 58,
       "maske_fein": [
         "............",
         "............",
@@ -67,15 +68,16 @@
         "............",
         "............",
         "............",
-        "###########.",
-        ".##########.",
-        "..########..",
-        ".....##.....",
-        ".....##.....",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
         "....####....",
         "....####....",
         "....####...."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (Phase 2A, 28.11.2026): nur der Ständer am Boden sperrt; Mast und offener Schirm verdecken den Helden dahinter"
     },
     "gc7SchirmZu": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Blue_Beach_Umbrella_Closed.png",
@@ -85,6 +87,7 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "modern",
+      "sortierlinie": 58,
       "maske_fein": [
         "....",
         "....",
@@ -95,14 +98,15 @@
         "....",
         "....",
         "....",
-        "####",
-        "####",
-        "####",
-        ".##.",
+        "....",
+        "....",
+        "....",
+        "....",
         "####",
         "####",
         "####"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (Phase 2A, 28.11.2026): nur der Ständer am Boden sperrt; der zusammengelegte Schirm darüber verdeckt nur"
     },
     "gc7Handtuch": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Blue_Beach_Towel_1.png",
@@ -131,7 +135,9 @@
       "zustand": "gebraucht",
       "stil": "natur",
       "blick": "unten",
-      "maske_fein": ["....", "....", "....", "....", "####", "####", ".##.", "...."]
+      "sortierlinie": 16,
+      "maske_fein": ["....", "....", "....", "####", "####", "####", ".##.", "...."],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "gc7Treibholz": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Floating_Wood_2.png",
@@ -223,7 +229,19 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "natur",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 16,
+      "maske_fein": [
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "gc7Bank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Big_Bench_Horizontal.png",
@@ -274,7 +292,24 @@
       "art": "baum",
       "zustand": "gebraucht",
       "stil": "natur",
-      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)"
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "......####......",
+        "......####......",
+        "......####......"
+      ]
     },
     "gc7Birke": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_50.png",
@@ -284,7 +319,24 @@
       "art": "baum",
       "zustand": "gebraucht",
       "stil": "natur",
-      "ohne_maske_fein": "Gegenprobe: feine Maske öffnet eine abgeschlossene Fläche in einer Variante (feinmasken_pruefung)"
+      "maske_fein": [
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        ".....#####......",
+        ".....#####......"
+      ]
     },
     "gc7SchirmRot": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/21_Beach_Singles_16x16/21_Beach_16x16_Green_Beach_Umbrella_Closed.png",
@@ -294,6 +346,7 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "modern",
+      "sortierlinie": 58,
       "maske_fein": [
         "....",
         "....",
@@ -304,14 +357,15 @@
         "....",
         "....",
         "....",
-        "####",
-        "####",
-        "####",
-        ".##.",
+        "....",
+        "....",
+        "....",
+        "....",
         "####",
         "####",
         "####"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (Phase 2A, 28.11.2026): nur der Ständer am Boden sperrt; der zusammengelegte Schirm darüber verdeckt nur"
     },
     "gc7Schilf": {
       "quelle": "spiel/eigene/schilf.png",

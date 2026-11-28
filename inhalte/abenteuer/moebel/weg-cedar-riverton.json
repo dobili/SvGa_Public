@@ -8,7 +8,24 @@
       "art": "baum",
       "zustand": "neu",
       "stil": "einfach",
-      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)"
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "...##...",
+        "...##..."
+      ]
     },
     "wc5ZederSchmal": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Tree_6.png",
@@ -18,7 +35,24 @@
       "art": "baum",
       "zustand": "neu",
       "stil": "einfach",
-      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)"
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "...##...",
+        "...##..."
+      ]
     },
     "wc5Kegelbaum": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_206.png",
@@ -28,8 +62,25 @@
       "art": "baum",
       "zustand": "neu",
       "stil": "einfach",
-      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)",
-      "untergrund": "gras"
+      "untergrund": "gras",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..####.."
+      ]
     },
     "wc5Farn": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Medium_Sprout_7.png",
@@ -302,7 +353,28 @@
       "art": "baum",
       "zustand": "neu",
       "stil": "laendlich",
-      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)"
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".....##.....",
+        "....###.....",
+        ".....##....."
+      ]
     },
     "wc5BirkeKlein": {
       "quelle": "modern-farm/Single_Files_16x16/Trees_16x16/Tree_Birch_Green_Medium_16x16.png",
@@ -312,7 +384,24 @@
       "art": "baum",
       "zustand": "neu",
       "stil": "laendlich",
-      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)"
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".....##.....",
+        ".....##.....",
+        ".....##....."
+      ]
     },
     "wc5BirkeHerbst": {
       "quelle": "modern-farm/Single_Files_16x16/Trees_16x16/Tree_Birch_Brown_Big_16x16.png",
@@ -322,7 +411,28 @@
       "art": "baum",
       "zustand": "neu",
       "stil": "laendlich",
-      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)"
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".....##.....",
+        "....###.....",
+        ".....##....."
+      ]
     },
     "wc5ToteZeder": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_Dead_15.png",
@@ -459,7 +569,9 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "einfach",
-      "maske_fein": ["........", "........", "########", "########"]
+      "sortierlinie": 10,
+      "maske_fein": ["........", "########", "########", "########"],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "wc5Bahnbank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Three_Seats_Green_Bench_Frontal_1.png",
@@ -595,7 +707,9 @@
       "hoehe": 16,
       "kollision": true,
       "art": "zaun",
-      "maske_fein": ["....", "....", "##..", "##.."]
+      "sortierlinie": 8,
+      "maske_fein": ["....", "##..", "##..", "##.."],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "wc5ZaunMR": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Middle_Right_16x16.png",
@@ -603,7 +717,9 @@
       "hoehe": 16,
       "kollision": true,
       "art": "zaun",
-      "maske_fein": ["....", "....", "..##", "..##"]
+      "sortierlinie": 8,
+      "maske_fein": ["....", "..##", "..##", "..##"],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "wc5ZaunUL": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Bottom_Left_16x16.png",
@@ -901,7 +1017,9 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "laendlich",
-      "maske_fein": ["........", "........", "########", "########"]
+      "sortierlinie": 10,
+      "maske_fein": ["........", "########", "########", "########"],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "wc8ZaunEndeRechts": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Top_Right_16x16.png",

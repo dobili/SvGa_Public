@@ -334,13 +334,11 @@
     },
     {
       "moebel": "ca7Laterne",
-      "feld": [36, 38],
-      "vorn": true
+      "feld": [36, 38]
     },
     {
       "moebel": "ca7Laterne",
-      "feld": [45, 44],
-      "vorn": true
+      "feld": [45, 44]
     },
     {
       "moebel": "ca7Blumenbeet",

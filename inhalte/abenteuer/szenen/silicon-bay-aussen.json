@@ -488,28 +488,23 @@
     },
     {
       "moebel": "sbLaterne",
-      "feld": [12, 35],
-      "vorn": true
+      "feld": [12, 35]
     },
     {
       "moebel": "sbLaterne",
-      "feld": [24, 35],
-      "vorn": true
+      "feld": [24, 35]
     },
     {
       "moebel": "sbLaterne",
-      "feld": [36, 35],
-      "vorn": true
+      "feld": [36, 35]
     },
     {
       "moebel": "sbLaterne",
-      "feld": [48, 35],
-      "vorn": true
+      "feld": [48, 35]
     },
     {
       "moebel": "sbLaterne",
-      "feld": [60, 35],
-      "vorn": true
+      "feld": [60, 35]
     },
     {
       "moebel": "sb8Condo52",
@@ -863,7 +858,6 @@
     {
       "moebel": "sb9TunnelportalFlach",
       "feld": [0, 33],
-      "vorn": true,
       "bauteil_ok": true
     },
     {
@@ -985,7 +979,13 @@
     },
     {
       "moebel": "ca7BankGarten",
-      "feld": [10, 65]
+      "feld": [10, 65],
+      "maske_fein": [
+        "............",
+        "............",
+        "############",
+        "############"
+      ]
     },
     {
       "moebel": "rvLaubbaumDunkel",

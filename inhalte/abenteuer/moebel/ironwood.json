@@ -177,7 +177,9 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "industrie",
-      "maske_fein": ["............", "............", "###########.", ".#........#."]
+      "sortierlinie": 10,
+      "maske_fein": ["............", "############", "###########.", ".#........#."],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "iw9UmkleidebankSenkrecht": {
       "quelle": "spiel/eigene/umkleidebank_senkrecht.png",
@@ -540,7 +542,9 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "maske_fein": ["........", "........", "########", "########"]
+      "sortierlinie": 10,
+      "maske_fein": ["........", "########", "########", "########"],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "iw8Pflanze": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_197.png",
@@ -1012,6 +1016,7 @@
       "zustand": "gebraucht",
       "stil": "modern",
       "blick": "unten",
+      "sortierlinie": 44,
       "maske_fein": [
         "....",
         "....",
@@ -1020,12 +1025,13 @@
         "....",
         "....",
         "....",
-        "####",
-        ".##.",
-        ".##.",
+        "....",
+        "....",
+        "....",
         ".##.",
         ".##."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (Phase 2A, 28.11.2026): nur der Fuß des Pfostens sperrt; Schild und Pfosten verdecken"
     },
     "iw5Muelltonne": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Small_Closed_Trash_Can.png",
@@ -1106,7 +1112,7 @@
         "............",
         "............",
         "............",
-        "...#########",
+        "............",
         "..##########",
         "..##########",
         "..##########",
@@ -1114,7 +1120,8 @@
         "....#.....#.",
         "............",
         "............"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Liegefläche sperrt, das Kopfteil darüber verdeckt nur"
     },
     "iw5BettLila": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_523.png",
@@ -1134,7 +1141,7 @@
         "............",
         "............",
         "............",
-        "#########...",
+        "............",
         "##########..",
         "##########..",
         "##########..",
@@ -1142,7 +1149,8 @@
         ".#.....#....",
         "............",
         "............"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Liegefläche sperrt, das Kopfteil darüber verdeckt nur"
     },
     "iw5Duschwanne": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_156.png",

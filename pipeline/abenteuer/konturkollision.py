@@ -49,6 +49,7 @@ from pipeline.abenteuer.feinmasken import (
     genutzte_moebel,
 )
 from pipeline.abenteuer.kollisionfein import ZP, K, Z
+from pipeline.abenteuer.konturkollision_arten import artbefund, automatisch
 from pipeline.abenteuer.konturkollision_sitz import sitzflaeche
 from pipeline.abenteuer.moebelliste import ORDNER, lade_moebel
 
@@ -192,6 +193,8 @@ def handkontur(kontur: Kontur, hand: dict, angabe: dict) -> Kontur:
         kontur.grund = hand["grund"]
         kontur.kollision, kontur.ebene = felder.get("kollision"), felder.get("ebene")
         kontur.sortierlinie = felder.get("sortierlinie")
+        if kontur.sortierlinie is None and neu and angabe.get("art") not in GEBAEUDE:
+            kontur.sortierlinie = mittellinie(neu)  # Möbel: Mitte der Sperre (Fuß), Gebäude: Maske
         kontur.befunde.append(f"von Hand: Kontur aus {len(hand.get('sperre', []))} Rechtecken")
     return kontur
 
@@ -200,7 +203,8 @@ def sitzbefund(name: str, angabe: dict, alpha: bytes) -> set[Zelle] | None:
     """Neue Sperre für ein Sitzmöbel, wenn die Sitzfläche bisher nicht ganz sperrt; sonst None."""
     if angabe.get("art") not in SITZ_ARTEN or not angabe.get("kollision") or FELD_HAND in angabe:
         return None
-    neu = sitzflaeche(alpha, angabe["breite"], angabe["hoehe"])
+    flach = angabe.get("art") == "bank" and not any(t in name.lower() for t in ("hinten", "ruecken"))
+    neu = sitzflaeche(alpha, angabe["breite"], angabe["hoehe"], flach)
     alt = sperrzellen_des_katalogs(angabe)
     spalten, reihen = max(1, angabe["breite"] // K) * Z, max(1, angabe["hoehe"] // K) * Z
     if any(x >= spalten or y >= reihen for x, y in neu):
@@ -248,6 +252,13 @@ def vorschlag(name: str, angabe: dict, alpha: bytes | None = None) -> Kontur:
         kontur.sperre, kontur.neue_sperre = sitz, True
         kontur.sortierlinie = mittellinie(sitz)
         kontur.befunde.append(f"Sitzfläche: {len(sitz - sperre)} Zellen mehr, Lehne frei")
+        return kontur
+    art = artbefund(name, angabe, alpha, sperre) if alpha is not None and automatisch(angabe) else None
+    if art:
+        kontur.sperre, kontur.neue_sperre, kontur.grund = art.sperre, True, art.grund
+        if "sortierlinie" not in angabe:
+            kontur.sortierlinie = art.linie or linienbefund(art.sperre, kontur.linie_alt)[0]
+        kontur.befunde.append(art.befund)
         return kontur
     if ist_boden(name, angabe):
         if angabe.get("kollision") and angabe.get("ebene") != BODEN:

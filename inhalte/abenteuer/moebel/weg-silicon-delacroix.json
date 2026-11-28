@@ -38,7 +38,9 @@
       "art": "zaun",
       "zustand": "gebraucht",
       "stil": "modern",
-      "maske_fein": ["....", "....", "##..", "##.."]
+      "sortierlinie": 8,
+      "maske_fein": ["....", "##..", "##..", "##.."],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "sd6RelingSeiteRechts": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_2_Middle_Right_16x16.png",
@@ -48,7 +50,9 @@
       "art": "zaun",
       "zustand": "gebraucht",
       "stil": "modern",
-      "maske_fein": ["....", "....", "..##", "..##"]
+      "sortierlinie": 8,
+      "maske_fein": ["....", "..##", "..##", "..##"],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "sd6RelingUntenLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_2_Bottom_Left_16x16.png",
@@ -207,7 +211,9 @@
       "art": "zaun",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "maske_fein": ["....", "....", "##..", "##.."]
+      "sortierlinie": 8,
+      "maske_fein": ["....", "##..", "##..", "##.."],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "sd6RelingBSeiteRechts": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Middle_Right_16x16.png",
@@ -217,7 +223,9 @@
       "art": "zaun",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "maske_fein": ["....", "....", "..##", "..##"]
+      "sortierlinie": 8,
+      "maske_fein": ["....", "..##", "..##", "..##"],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "sd6RelingBUntenLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Bottom_Left_16x16.png",
@@ -287,7 +295,9 @@
       "art": "zaun",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "maske_fein": ["....", "....", "##..", "##.."]
+      "sortierlinie": 8,
+      "maske_fein": ["....", "##..", "##..", "##.."],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "sd6RelingCSeiteRechts": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_6_Middle_Right_16x16.png",
@@ -297,7 +307,9 @@
       "art": "zaun",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "maske_fein": ["....", "....", "..##", "..##"]
+      "sortierlinie": 8,
+      "maske_fein": ["....", "..##", "..##", "..##"],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "sd6RelingCUntenLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_6_Bottom_Left_16x16.png",
@@ -559,7 +571,9 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "modern",
-      "maske_fein": ["....", "....", "....", "....", ".##.", ".##.", ".##.", ".##."]
+      "sortierlinie": 26,
+      "maske_fein": ["....", "....", "....", "....", "....", "....", ".##.", "...."],
+      "maske_fein_von_hand": "Kontur (Phase 2A, 28.11.2026): nur der Fuß der Säule sperrt; Säule und Fernglas verdecken"
     },
     "dz10Boje": {
       "quelle": "spiel/eigene/boje_frei.png",

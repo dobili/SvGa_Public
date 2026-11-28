@@ -1509,3 +1509,14 @@ Dachboden liegt unter dem Helden, wenn er sie betritt. Erweitert 10.88, ersetzt 
   ihm, obwohl er dahinter steht (geparkte Autos in Crossroads, Kamin an der Wand der Hütte in Summit
   City, Felsbogen am Canyonrand). Bilder mit `vorn` (Überführung über dem Pfad) zählen nicht als
   betreten; geprüfte Ausnahmen mit Grund in `GEPRUEFT` (Glasbrücke: Autos fahren darunter).
+
+- **Phase 2A Katalogarten (28.11.2026, `konturkollision_arten.py`):** Tische und Schreibtische,
+  niedrige Schränke, Kommoden, Theken und Tresen (bis 24 Pixel sichtbar) sperren die ganze Platte
+  ab der Zelle unter der hinteren Kante (man steht nicht hinter der Tischplatte im Tisch); Buden
+  und Stände mit Dach, Schalter mit Rückwand und Einträge mit grober `maske` samt Grund bleiben.
+  Betten sperren die Liegefläche, das Kopfteil verdeckt. Zäune und Geländer, die längs laufen
+  (höchstens eine halbe Kachel breit, keine Pfosten oder Poller), sperren die ganze Linie. Bänke
+  ohne Lehne (bis 18 Pixel sichtbar) und Bänke längs sperren die ganze Sitzfläche; Stühle von
+  hinten nicht (die Lehne steht vorn). Masten, Ständer, Stative, das Karussell: nur der Fuß sperrt
+  (von Hand). Steht in einer Szene ein Stuhl oder Hocker in der obersten Kachelreihe eines Tisches,
+  behält diese Stelle die alte Maske (`maske_fein` am Objekt), der Stuhl sperrt dort ohnehin.

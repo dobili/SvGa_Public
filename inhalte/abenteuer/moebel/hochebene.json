@@ -333,16 +333,18 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "natur",
+      "sortierlinie": 16,
       "maske_fein": [
         "............",
-        "............",
-        "............",
-        "............",
+        "############",
+        "############",
+        "############",
         "############",
         "############",
         "############",
         "..########.."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "hb7Brett": {
       "quelle": "spiel/eigene/schachbrett_klein_figuren.png",

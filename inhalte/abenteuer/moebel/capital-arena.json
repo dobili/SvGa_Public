@@ -184,16 +184,18 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "klassisch",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
         "........",
-        "........",
+        ".######.",
         ".######.",
         ".######.",
         ".######.",
         ".##..##."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "ca7StuhlRechts": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_284.png",
@@ -204,7 +206,9 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "rechts",
-      "maske_fein": ["....", "....", "....", "....", "####", ".#..", "....", "...."]
+      "sortierlinie": 18,
+      "maske_fein": ["....", "....", "....", "####", "####", ".#..", "....", "...."],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "ca7StuhlLinks": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_288.png",
@@ -215,7 +219,9 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "links",
-      "maske_fein": ["....", "....", "....", "....", "####", "..#.", "....", "...."]
+      "sortierlinie": 18,
+      "maske_fein": ["....", "....", "....", "####", "####", "..#.", "....", "...."],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "ca7StuhlVorn": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_1.png",
@@ -360,7 +366,19 @@
       "art": "tisch",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 16,
+      "maske_fein": [
+        "................",
+        ".####.#.#.####..",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################",
+        "################"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "ca7Fanshop": {
       "quelle": "spiel/eigene/fanshop.png",
@@ -430,7 +448,9 @@
       "zustand": "neu",
       "stil": "modern",
       "blick": "unten",
-      "maske_fein": ["....", "....", "....", "....", ".##.", ".##.", ".##.", "####"]
+      "sortierlinie": 28,
+      "maske_fein": ["....", "....", "....", "....", "....", "....", "####", "####"],
+      "maske_fein_von_hand": "Kontur (Phase 2A, 28.11.2026): nur der Dreifuß sperrt, der Ständer darüber verdeckt"
     },
     "ca7Arena": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Palace_Example_1.png",
@@ -741,16 +761,18 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "klassisch",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
         "........",
-        "........",
+        ".######.",
         ".######.",
         ".######.",
         ".######.",
         ".##..##."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "ca7Pflanzekl": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_16.png",
@@ -847,7 +869,9 @@
       "zustand": "neu",
       "stil": "klassisch",
       "blick": "unten",
-      "maske_fein": ["............", "............", "############", "############"]
+      "sortierlinie": 10,
+      "maske_fein": ["............", "############", "############", "############"],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "ca7LaterneBogen": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Street_Lamp_1.png",
@@ -1822,16 +1846,18 @@
       "hoehe": 32,
       "art": "tisch",
       "blick": "unten",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
-        "........",
-        "........",
+        "########",
+        "########",
         "########",
         "########",
         "########",
         "##....##"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "ci8Gitter": {
       "kollision": true,
@@ -2957,8 +2983,10 @@
       "zustand": "alt",
       "stil": "modern",
       "blick": "unten",
-      "maske_fein": ["....", ".##.", ".##.", "...."],
-      "hinweis": "zwei gestapelte Flaschenkästen als Hocker statt grauer Klötze (Kartenblick U8) (Gemini F12, 27.11.2026, werkzeuge/gemini_akt4_2711.py)"
+      "hinweis": "zwei gestapelte Flaschenkästen als Hocker statt grauer Klötze (Kartenblick U8) (Gemini F12, 27.11.2026, werkzeuge/gemini_akt4_2711.py)",
+      "sortierlinie": 12,
+      "maske_fein": ["....", "....", "####", "####"],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "ca27Cafetisch": {
       "quelle": "spiel/eigene/cafe_tisch.png",

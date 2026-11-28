@@ -459,8 +459,7 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [19, 14],
-      "vorn": true
+      "feld": [19, 14]
     },
     {
       "moebel": "mf4Laterne",
@@ -469,13 +468,11 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [20, 18],
-      "vorn": true
+      "feld": [20, 18]
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [38, 18],
-      "vorn": true
+      "feld": [38, 18]
     },
     {
       "moebel": "mfBank",
@@ -566,8 +563,7 @@
     },
     {
       "moebel": "gt7Haltestelle",
-      "feld": [5, 19],
-      "vorn": true
+      "feld": [5, 19]
     },
     {
       "feld": [3, 29],
@@ -583,13 +579,11 @@
     },
     {
       "feld": [29, 29],
-      "moebel": "mf4Laterne",
-      "vorn": true
+      "moebel": "mf4Laterne"
     },
     {
       "feld": [36, 29],
-      "moebel": "mf4Laterne",
-      "vorn": true
+      "moebel": "mf4Laterne"
     },
     {
       "feld": [30, 29],

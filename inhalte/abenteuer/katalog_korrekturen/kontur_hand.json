@@ -112,5 +112,49 @@
       [240, 464, 256, 544]
     ],
     "grund": "Kontur aus den Bauteilen (bauteile.json, Phase 2C, 28.11.2026): geprüft, wie die grobe Maske: Palast bis zum Sockel, Freitreppe und Podest vor dem Portal begehbar, die Wangen der Treppe sperren"
+  },
+  "gc7Schirm": {
+    "sperre": [[16, 52, 32, 64]],
+    "grund": "Kontur (Phase 2A, 28.11.2026): nur der Ständer am Boden sperrt; Mast und offener Schirm verdecken den Helden dahinter"
+  },
+  "gc7SchirmRot": {
+    "sperre": [[0, 52, 16, 64]],
+    "grund": "Kontur (Phase 2A, 28.11.2026): nur der Ständer am Boden sperrt; der zusammengelegte Schirm darüber verdeckt nur"
+  },
+  "gc7SchirmZu": {
+    "sperre": [[0, 52, 16, 64]],
+    "grund": "Kontur (Phase 2A, 28.11.2026): nur der Ständer am Boden sperrt; der zusammengelegte Schirm darüber verdeckt nur"
+  },
+  "ca7Mikrofon2": {
+    "sperre": [[0, 26, 16, 32]],
+    "grund": "Kontur (Phase 2A, 28.11.2026): nur der Dreifuß sperrt, der Ständer darüber verdeckt"
+  },
+  "fz10Fernglas": {
+    "sperre": [[4, 24, 12, 30]],
+    "grund": "Kontur (Phase 2A, 28.11.2026): nur der Fuß der Säule sperrt; Säule und Fernglas verdecken"
+  },
+  "n5Teleskop": {
+    "sperre": [[4, 60, 48, 80]],
+    "grund": "Kontur (Phase 2A, 28.11.2026): nur das Stativ am Boden sperrt; Rohr und Kopf verdecken"
+  },
+  "n9Fernrohr": {
+    "sperre": [[8, 46, 36, 64]],
+    "grund": "Kontur (Phase 2A, 28.11.2026): nur der Sockel sperrt; Säule und Rohr verdecken"
+  },
+  "iw5Haltestellenschild": {
+    "sperre": [[4, 40, 12, 47]],
+    "grund": "Kontur (Phase 2A, 28.11.2026): nur der Fuß des Pfostens sperrt; Schild und Pfosten verdecken"
+  },
+  "mf4Basketballkorb": {
+    "sperre": [[0, 39, 16, 47]],
+    "grund": "Kontur (Phase 2A, 28.11.2026): nur der Sockel sperrt; Mast und Korb verdecken"
+  },
+  "ccStehlampe": {
+    "sperre": [[0, 32, 16, 41]],
+    "grund": "Kontur (Phase 2A, 28.11.2026): nur der Fuß sperrt (wie mf2Stehlampe); Stange und Schirm verdecken"
+  },
+  "n6Karussell": {
+    "sperre": [[4, 58, 92, 96]],
+    "grund": "Kontur (Phase 2A, 28.11.2026): die Drehscheibe am Boden sperrt; das Dach darüber verdeckt den Helden dahinter"
   }
 }

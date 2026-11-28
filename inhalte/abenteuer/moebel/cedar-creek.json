@@ -119,7 +119,23 @@
       "kollision": true,
       "art": "lampe",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "sortierlinie": 36,
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "....",
+        "...."
+      ],
+      "maske_fein_von_hand": "Kontur (Phase 2A, 28.11.2026): nur der Fuß sperrt (wie mf2Stehlampe); Stange und Schirm verdecken"
     },
     "ccKistenstapel": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/2_LivingRoom_Black_Shadow_Singles_16x16/Living_Room_Black_Shadow_Singles_100.png",
@@ -256,16 +272,18 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
-        "........",
-        "........",
+        "########",
+        "########",
         "########",
         "########",
         "########",
         ".#....#."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "cc3StuhlVonHinten": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_1.png",
@@ -700,7 +718,19 @@
       "art": "tisch",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "sortierlinie": 16,
+      "maske_fein": [
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "cc4StuhlHinten": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_1.png",
@@ -745,11 +775,12 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "rustikal",
+      "sortierlinie": 16,
       "maske_fein": [
         "....................",
         "....................",
-        "....................",
-        "....................",
+        "...##############...",
+        "..###############...",
         "..###############...",
         "...##############...",
         "...##############...",
@@ -762,7 +793,8 @@
         ".##############.....",
         ".######..#####......",
         "..###..............."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "cc4Werktisch": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/DIY_Crafting_Table_Full_16x16.png",
@@ -772,7 +804,23 @@
       "art": "tisch",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "sortierlinie": 16,
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "....########",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "cc4Spaene": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Shavings_Woodwork_Crafting_Table_16x16.png",
@@ -1190,8 +1238,21 @@
       "art": "baum",
       "zustand": "neu",
       "stil": "natur",
-      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)",
-      "untergrund": "gras"
+      "untergrund": "gras",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..####.."
+      ]
     },
     "cc4NadelbaumB": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_186.png",
@@ -1279,8 +1340,10 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "einfach",
-      "maske_fein": ["............", "............", ".##########.", "..#########."],
-      "untergrund": "gras"
+      "untergrund": "gras",
+      "sortierlinie": 10,
+      "maske_fein": ["............", "..########..", ".##########.", "..#########."],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "cc4WaschmaschineKorb": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_93.png",
@@ -1557,20 +1620,22 @@
       "blick": "rechts",
       "zustand": "gebraucht",
       "stil": "klassisch",
+      "sortierlinie": 34,
       "maske_fein": [
         "....",
         "....",
         "....",
         "....",
         "....",
-        "....",
-        "....",
+        "####",
+        "####",
         "####",
         "####",
         "####",
         "####",
         "####"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "cc5Poller": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Pedestrian_Barrier_Post_1.png",
@@ -1593,16 +1658,18 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "klassisch",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
-        "........",
-        "........",
+        "########",
+        ".#######",
         ".#######",
         ".#######",
         ".######.",
         "........"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "cc5Tisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_1.png",
@@ -1653,11 +1720,12 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "rustikal",
+      "sortierlinie": 16,
       "maske_fein": [
         "............",
         "............",
         "............",
-        "............",
+        "......######",
         "...#########",
         "############",
         "############",
@@ -1666,7 +1734,8 @@
         "############",
         "############",
         "############"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "cc5Hammer": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Hammer_DIY_Crafting_Table_16x16.png",
@@ -1707,7 +1776,19 @@
       "art": "tisch",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "laendlich"
+      "stil": "laendlich",
+      "sortierlinie": 16,
+      "maske_fein": [
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "cc7Blumenkasten": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Flower_Bush_4.png",
@@ -1939,16 +2020,18 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "klassisch",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
         "........",
-        "........",
+        ".######.",
         ".######.",
         ".######.",
         ".######.",
         ".##..##."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "cc6TischDunkel": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_3.png",
@@ -1959,16 +2042,18 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "klassisch",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
         "........",
-        "........",
+        ".######.",
         ".######.",
         ".######.",
         ".######.",
         ".##..##."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "cc6SesselRechts": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_214.png",
@@ -2039,7 +2124,9 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "links",
-      "maske_fein": ["....", "....", "....", "....", "####", "....", "....", "...."]
+      "sortierlinie": 16,
+      "maske_fein": ["....", "....", "....", "####", "####", "....", "....", "...."],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "cc6StuhlRechts": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_4.png",
@@ -2050,7 +2137,9 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "rechts",
-      "maske_fein": ["....", "....", "....", "....", "####", "....", "....", "...."]
+      "sortierlinie": 16,
+      "maske_fein": ["....", "....", "....", "####", "####", "....", "....", "...."],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "cc7Fussbruecke": {
       "quelle": "spiel/eigene/bruecke_fuss_quer_7.png",
@@ -2113,7 +2202,19 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "rustikal"
+      "stil": "rustikal",
+      "sortierlinie": 16,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "cc6TuerSued": {
       "quelle": "spiel/eigene/tuer_sued_holz.png",
@@ -2448,7 +2549,17 @@
       "art": "bank",
       "zustand": "gebraucht",
       "stil": "landhaus",
-      "blick": "oben"
+      "blick": "oben",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "############",
+        "############",
+        "##........##",
+        "#..........#"
+      ]
     },
     "cc11BankHintenBraun": {
       "quelle": "spiel/eigene/bank_hinten_braun.png",
@@ -2888,7 +2999,9 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "hinweis": "linke Seite: Holzbalustrade der Reling C (wie das Geländer am Treppenloch in Maple Falls) im Stil der Bibliothek: Geländer am Treppenloch zur Kellertreppe (Regel 10.89, Autor, 16.11.2026)",
-      "maske_fein": ["....", "....", "##..", "##.."]
+      "sortierlinie": 8,
+      "maske_fein": ["....", "##..", "##..", "##.."],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "cc15GelaenderSeiteRechts": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_6_Middle_Right_16x16.png",
@@ -2899,7 +3012,9 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "hinweis": "rechte Seite: Holzbalustrade der Reling C (wie das Geländer am Treppenloch in Maple Falls) im Stil der Bibliothek: Geländer am Treppenloch zur Kellertreppe (Regel 10.89, Autor, 16.11.2026)",
-      "maske_fein": ["....", "....", "..##", "..##"]
+      "sortierlinie": 8,
+      "maske_fein": ["....", "..##", "..##", "..##"],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "cc15GelaenderUntenLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_6_Bottom_Left_16x16.png",
@@ -2945,17 +3060,19 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "keine",
+      "hinweis": "Langer Holztisch des Schachclubs im Lesesaal (Kartenblick B1, 24.11.2026): vier Kacheln breit, Platz für zwei Bretter nebeneinander; dasselbe Bild wie der Tisch im Pavillon von Riverton",
+      "sortierlinie": 16,
       "maske_fein": [
         "................",
         "................",
         "................",
-        "................",
+        "###############.",
         "###############.",
         "###############.",
         "###############.",
         "###############."
       ],
-      "hinweis": "Langer Holztisch des Schachclubs im Lesesaal (Kartenblick B1, 24.11.2026): vier Kacheln breit, Platz für zwei Bretter nebeneinander; dasselbe Bild wie der Tisch im Pavillon von Riverton"
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "cc27SchuppenRot": {
       "quelle": "spiel/eigene/schuppen_rot_dach.png",

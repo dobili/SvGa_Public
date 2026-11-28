@@ -239,11 +239,12 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "modern",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
-        "........",
-        "........",
+        ".###....",
+        ".####...",
         ".######.",
         ".#######",
         ".#######",
@@ -252,7 +253,8 @@
         ".######.",
         "........",
         "........"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "sb5BildschirmtischB": {
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_321.png",
@@ -263,11 +265,12 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "modern",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
-        "........",
-        "........",
+        ".###....",
+        ".####...",
         ".######.",
         ".#######",
         ".#######",
@@ -276,7 +279,8 @@
         ".######.",
         "........",
         "........"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "sb5Stuhl": {
       "quelle": "modern-office/Modern Office Singles/Modern_Office_Singles_101.png",
@@ -843,7 +847,16 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "modern",
-      "maske_fein": ["....", "....", "....", "....", "....", "####", "####", ".##."]
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        ".##."
+      ]
     },
     "sb5GlasLinks": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Modern_House_Glass_Railing_Modular_Left_16x16.png",
@@ -1039,7 +1052,16 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "einfach",
-      "maske_fein": ["....", "....", "....", "....", "####", "####", "....", "...."]
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "....",
+        "...."
+      ]
     },
     "sb5FischkisteB": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/9_Fishing_Black_Shadow_Singles_16x16/Fishing_Shadow_Singles_10.png",
@@ -1050,7 +1072,16 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "einfach",
-      "maske_fein": ["....", "....", "....", "....", "####", "####", "....", "...."]
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "....",
+        "...."
+      ]
     },
     "sb5Fischeimer": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Fish_Bucket_1.png",
@@ -1060,7 +1091,16 @@
       "art": "behaelter",
       "zustand": "gebraucht",
       "stil": "einfach",
-      "maske_fein": ["....", "....", "....", "....", "###.", "####", ".##.", "...."]
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "###.",
+        "####",
+        ".##.",
+        "...."
+      ]
     },
     "sb5Kiste": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Pier_Crates_3.png",
@@ -1252,11 +1292,12 @@
       "stil": "modern",
       "zustand": "neu",
       "blick": "unten",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
-        "........",
-        "........",
+        "########",
+        "########",
         "########",
         ".######.",
         "#######.",
@@ -1265,7 +1306,8 @@
         "#######.",
         "........",
         "........"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "sb5Empfang": {
       "quelle": "spiel/eigene/empfang_tresen.png",
@@ -2136,16 +2178,18 @@
       "zustand": "neu",
       "stil": "modern",
       "blick": "keine",
+      "sortierlinie": 16,
       "maske_fein": [
         "................",
-        "................",
-        "................",
-        "................",
+        "..####....####..",
+        "###############.",
+        "###############.",
         "###############.",
         "###############.",
         "###############.",
         "###############."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "sb8Schreibtisch": {
       "quelle": "spiel/eigene/akademie_schreibtisch.png",
@@ -2157,16 +2201,18 @@
       "zustand": "neu",
       "stil": "modern",
       "blick": "keine",
+      "sortierlinie": 16,
       "maske_fein": [
         "............",
         "............",
         "............",
-        "............",
+        "###########.",
         "###########.",
         "###########.",
         "###########.",
         "###########."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "sb8Glaswand": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/16_Grocery_Store_Singles/Grocery_Store_Singles_157.png",
@@ -2197,7 +2243,16 @@
       "zustand": "neu",
       "stil": "modern",
       "blick": "oben",
-      "maske_fein": ["....", "....", "....", "....", "....", "####", "####", "####"]
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####"
+      ]
     },
     "sb8Sofa": {
       "quelle": "spiel/eigene/akademie_sofa.png",
@@ -2227,7 +2282,8 @@
       "art": "tisch",
       "zustand": "neu",
       "stil": "modern",
-      "blick": "keine"
+      "blick": "keine",
+      "maske_fein": ["........", ".######.", ".######.", ".######."]
     },
     "sb8Wasserspender": {
       "quelle": "spiel/eigene/akademie_wasserspender.png",
@@ -2318,7 +2374,16 @@
       "zustand": "neu",
       "stil": "modern",
       "blick": "keine",
-      "maske_fein": ["....", "....", "....", "....", "....", "####", "####", ".###"]
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        ".###"
+      ]
     },
     "sb8StuhlLinks": {
       "quelle": "spiel/eigene/akademie_stuhl_links.png",
@@ -2329,7 +2394,16 @@
       "zustand": "neu",
       "stil": "modern",
       "blick": "links",
-      "maske_fein": ["....", "....", "....", "....", "....", "####", "####", "####"]
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####"
+      ]
     },
     "sb8StuhlRechts": {
       "quelle": "spiel/eigene/akademie_stuhl_rechts.png",
@@ -2340,7 +2414,16 @@
       "zustand": "neu",
       "stil": "modern",
       "blick": "rechts",
-      "maske_fein": ["....", "....", "....", "....", "....", "####", "####", "####"]
+      "maske_fein": [
+        "....",
+        "....",
+        "....",
+        "....",
+        "....",
+        "####",
+        "####",
+        "####"
+      ]
     },
     "sa8Baeckerei": {
       "quelle": "spiel/eigene/altstadt_baeckerei.png",
@@ -2569,16 +2652,18 @@
       "zustand": "neu",
       "stil": "modern",
       "blick": "keine",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
         "........",
-        "........",
+        "#######.",
         "#######.",
         "#######.",
         "#######.",
         "#######."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "sb8KaffeeautomatVorn": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/20_Subway_and_Train_Station_Singles_16x16/ME_Singles_Subway_and_Train_Station_16x16_Coffee_Machine_Front.png",
@@ -3487,7 +3572,21 @@
       "art": "mast",
       "zustand": "gebraucht",
       "stil": "maritim",
-      "hinweis": "Signalmast mit drei bunten Signalflaggen statt der weißen Fahne an der Hafenmeisterei (Kartenblick F8) (von Hand gezeichnet nach Gemini E13, 27.11.2026, werkzeuge/signalmast_2711.py)"
+      "hinweis": "Signalmast mit drei bunten Signalflaggen statt der weißen Fahne an der Hafenmeisterei (Kartenblick F8) (von Hand gezeichnet nach Gemini E13, 27.11.2026, werkzeuge/signalmast_2711.py)",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "...##...",
+        "..####.."
+      ]
     },
     "sb7BootAnLand": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/10_Vehicles_Singles_16x16/ME_Singles_Vehicles_16x16_Boat_1_Up_2.png",

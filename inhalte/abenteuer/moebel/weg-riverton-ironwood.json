@@ -588,16 +588,18 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "klassisch",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
-        "........",
-        "........",
+        "########",
+        "########",
         "########",
         "########",
         "########",
         "##....##"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "ri8Kreidespringer": {
       "quelle": "spiel/eigene/kreidespringer.png",
@@ -640,7 +642,9 @@
       "art": "zaun",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "maske_fein": ["....", "....", "..##", "..##"]
+      "sortierlinie": 8,
+      "maske_fein": ["....", "..##", "..##", "..##"],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "wr14Kutter": {
       "quelle": "spiel/eigene/kutter_laengs.png",

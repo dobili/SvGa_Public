@@ -3814,7 +3814,7 @@
     2,
     2,
     0,
-    0,
+    2,
     0,
     2,
     2,
@@ -3874,8 +3874,8 @@
     2,
     2,
     0,
-    0,
-    0,
+    2,
+    2,
     2,
     2,
     0,
@@ -10321,7 +10321,7 @@
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
@@ -10344,7 +10344,7 @@
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
@@ -12332,7 +12332,7 @@
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
@@ -12355,7 +12355,7 @@
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
@@ -14938,6 +14938,11 @@
    "name": "kennung",
    "type": "string",
    "value": "cedarCreek.aussen"
+  },
+  {
+   "name": "sperren",
+   "type": "string",
+   "value": "57,12;57,13;58,13"
   },
   {
    "name": "geraeuschquellen",

@@ -130,13 +130,11 @@
     {
       "moebel": "mfLaterne",
       "feld": [19, 16],
-      "vorn": true,
       "versatz": [14, 0]
     },
     {
       "moebel": "mfLaterne",
       "feld": [24, 16],
-      "vorn": true,
       "versatz": [13, 0]
     },
     {
@@ -543,13 +541,11 @@
     },
     {
       "moebel": "mfLaterne",
-      "feld": [7, 16],
-      "vorn": true
+      "feld": [7, 16]
     },
     {
       "moebel": "mfLaterne",
-      "feld": [40, 16],
-      "vorn": true
+      "feld": [40, 16]
     },
     {
       "moebel": "mf2Zeder",
@@ -1336,5 +1332,10 @@
   ],
   "zustand": ["neu", "gebraucht", "alt"],
   "markierung": ["s"],
-  "wasserton": "bach"
+  "wasserton": "bach",
+  "sperren": [
+    [57, 12],
+    [57, 13],
+    [58, 13]
+  ]
 }

@@ -3814,7 +3814,7 @@
     2,
     2,
     0,
-    0,
+    2,
     0,
     2,
     2,
@@ -3874,8 +3874,8 @@
     2,
     2,
     0,
-    0,
-    0,
+    2,
+    2,
     2,
     2,
     0,
@@ -10231,7 +10231,7 @@
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
@@ -10254,7 +10254,7 @@
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
@@ -12242,7 +12242,7 @@
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
@@ -12265,7 +12265,7 @@
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
@@ -14853,6 +14853,11 @@
    "name": "zustand_der_karte",
    "type": "string",
    "value": "teamAngekommen und nicht endeAkt1Gesehen"
+  },
+  {
+   "name": "sperren",
+   "type": "string",
+   "value": "57,12;57,13;58,13"
   },
   {
    "name": "geraeuschquellen",

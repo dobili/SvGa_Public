@@ -744,33 +744,27 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [6, 22],
-      "vorn": true
+      "feld": [6, 22]
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [32, 22],
-      "vorn": true
+      "feld": [32, 22]
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [51, 22],
-      "vorn": true
+      "feld": [51, 22]
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [10, 39],
-      "vorn": true
+      "feld": [10, 39]
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [30, 39],
-      "vorn": true
+      "feld": [30, 39]
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [37, 39],
-      "vorn": true
+      "feld": [37, 39]
     },
     {
       "moebel": "rvLaubbaum",

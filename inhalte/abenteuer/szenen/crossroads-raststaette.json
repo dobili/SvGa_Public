@@ -69,8 +69,8 @@
     {
       "moebel": "mf5Spuele",
       "feld": [10, 2],
-      "vorn": true,
-      "versatz": [0, 2]
+      "versatz": [0, 2],
+      "vorn": true
     },
     {
       "moebel": "cr7Theke8",
@@ -110,25 +110,21 @@
     {
       "moebel": "ld5Barhocker",
       "feld": [3, 7],
-      "vorn": true,
       "versatz": [0, -14]
     },
     {
       "moebel": "ld5Barhocker",
       "feld": [5, 7],
-      "vorn": true,
       "versatz": [0, -14]
     },
     {
       "moebel": "ld5Barhocker",
       "feld": [7, 7],
-      "vorn": true,
       "versatz": [0, -14]
     },
     {
       "moebel": "ld5Barhocker",
       "feld": [9, 7],
-      "vorn": true,
       "versatz": [0, -14]
     },
     {

@@ -118,14 +118,38 @@
       "hoehe": 32,
       "platte": [2, 4, 30, 18],
       "kollision": true,
-      "art": "tisch"
+      "art": "tisch",
+      "sortierlinie": 16,
+      "maske_fein": [
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "rvPicknicktischLang": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Benched_Table_3.png",
       "breite": 48,
       "hoehe": 32,
       "kollision": true,
-      "art": "tisch"
+      "art": "tisch",
+      "sortierlinie": 16,
+      "maske_fein": [
+        "............",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "rvHolzbank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Bench_2.png",
@@ -416,16 +440,18 @@
       "blick": "rechts",
       "breite": 32,
       "hoehe": 32,
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
         "........",
-        "........",
+        "######..",
         "########",
         "########",
         "########",
         "#######."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "rv5Werkbank": {
       "quelle": "modern-farm/Single_Files_16x16/0_Complete_Tileset_Singles_16x16/DIY_Crafting_Table_Full_16x16.png",
@@ -435,7 +461,23 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 16,
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "....########",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "rv5Werkzeugschrank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/8_Worksite_Singles_16x16/ME_Singles_Worksite_16x16_Tool_Box_2.png",
@@ -522,16 +564,18 @@
       "art": "geraet",
       "zustand": "gebraucht",
       "stil": "rustikal",
+      "sortierlinie": 16,
       "maske_fein": [
         "............",
         "............",
         "............",
-        "............",
+        ".########...",
         ".########...",
         "#########...",
         "#######.....",
         "..#####....."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "rv5TuerSuedHolz": {
       "quelle": "spiel/eigene/tuer_sued_holz.png",
@@ -575,7 +619,22 @@
       "art": "bett",
       "zustand": "gebraucht",
       "stil": "modern",
-      "blick": "rechts"
+      "blick": "rechts",
+      "maske_fein": [
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        "##########..",
+        "##########..",
+        "##########..",
+        "##########..",
+        ".#.....#....",
+        "............",
+        "............"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Liegefläche sperrt, das Kopfteil darüber verdeckt nur"
     },
     "rv5Pokaltisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/6_Music_and_Sport_Black_Shadow_Singles_16x16/Music_and_Sport_Black_Shadow_Singles_157.png",
@@ -586,11 +645,12 @@
       "zustand": "gebraucht",
       "stil": "modern",
       "blick": "unten",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
-        "........",
-        "........",
+        "###.###.",
+        "###.###.",
         "########",
         "########",
         ".######.",
@@ -599,7 +659,8 @@
         "........",
         "........",
         "........"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "rv5Buecherregal": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_71.png",
@@ -634,16 +695,18 @@
       "zustand": "gebraucht",
       "stil": "modern",
       "blick": "unten",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
-        "........",
-        "........",
+        "########",
+        "########",
         "########",
         "........",
         "........",
         "........"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "rv5Klapptisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_273.png",
@@ -732,7 +795,19 @@
       "kollision": true,
       "art": "tisch",
       "zustand": "gebraucht",
-      "stil": "klassisch"
+      "stil": "klassisch",
+      "sortierlinie": 16,
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        ".######.",
+        "########",
+        "########",
+        "########",
+        "########"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "rv5StuhlVorn": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/5_Classroom_and_Library_Black_Shadow_Singles_16x16/Classroom_and_Library_Singles_1.png",
@@ -815,20 +890,22 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "links",
+      "sortierlinie": 26,
       "maske_fein": [
         "....",
-        "....",
-        "....",
-        "....",
-        "....",
-        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
         "####",
         "####",
         "####",
         "####",
         "####",
         "####"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "rv5Blumenbank": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Flowers_Bench_Vertical.png",
@@ -866,20 +943,22 @@
       "art": "bank",
       "zustand": "gebraucht",
       "stil": "klassisch",
+      "sortierlinie": 26,
       "maske_fein": [
         "....",
-        "....",
-        "....",
-        "....",
-        "....",
-        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
         "####",
         "####",
         "####",
         "####",
         "####",
         "####"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "rv5BankLang": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/17_Garden_Singles_16x16/ME_Singles_Garden_16x16_Big_Bench_Horizontal.png",
@@ -890,7 +969,9 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten",
-      "maske_fein": ["............", "............", "############", "############"]
+      "sortierlinie": 10,
+      "maske_fein": ["............", "############", "############", "############"],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "rv5Schalter": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/22_Museum_Black_Shadow_Singles_16x16/Museum_Black_Shadow_Singles_6.png",
@@ -1531,16 +1612,18 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "klassisch",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
         "........",
-        "........",
+        ".######.",
         ".######.",
         ".######.",
         ".######.",
         ".##..##."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "rv5StuhlRechts": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_284.png",
@@ -1551,7 +1634,9 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "rechts",
-      "maske_fein": ["....", "....", "....", "....", "####", ".#..", "....", "...."]
+      "sortierlinie": 18,
+      "maske_fein": ["....", "....", "....", "####", "####", ".#..", "....", "...."],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "rv5StuhlLinks": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_288.png",
@@ -1562,7 +1647,9 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "links",
-      "maske_fein": ["....", "....", "....", "....", "####", "..#.", "....", "...."]
+      "sortierlinie": 18,
+      "maske_fein": ["....", "....", "....", "####", "####", "..#.", "....", "...."],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "rv5SesselGelb": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/14_Basement_Singles/Basement_Singles_202.png",
@@ -1592,7 +1679,10 @@
       "art": "sessel",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 20,
+      "maske_fein": ["....", "....", "....", "####", "####", "####", "####", "...."],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "rv5PokalKlein": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Singles/6_Music_and_Sport/Music_and_Sport_Singles_135.png",
@@ -1658,7 +1748,7 @@
         "............",
         "............",
         "............",
-        "............",
+        ".##########.",
         ".##########.",
         ".##########.",
         ".##########.",
@@ -1667,7 +1757,8 @@
         ".##########.",
         ".##########.",
         ".##########."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Liegefläche sperrt, das Kopfteil darüber verdeckt nur"
     },
     "rv5Kommode": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_322.png",
@@ -1913,7 +2004,19 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "klassisch",
-      "blick": "unten"
+      "blick": "unten",
+      "sortierlinie": 16,
+      "maske_fein": [
+        "............",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "rv8StadthausBlau": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/4_Generic_Building_Singles_16x16/ME_Singles_Generic_Building_16x16_Condo_5_2.png",
@@ -2127,8 +2230,8 @@
       "maske_fein": [
         "........",
         "........",
-        "........",
-        "........",
+        "########",
+        "########",
         "########",
         "########",
         "########",
@@ -2137,7 +2240,8 @@
         "#......#",
         "........",
         "........"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Liegefläche sperrt, das Kopfteil darüber verdeckt nur"
     },
     "rv8Nasszelle": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/3_Bathroom_Black_Shadow_Singles_16x16/Bathroom_Black_Shadow_Singles_63.png",
@@ -2629,16 +2733,18 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "keine",
+      "sortierlinie": 16,
       "maske_fein": [
         "................",
         "................",
         "................",
-        "................",
+        "###############.",
         "###############.",
         "###############.",
         "###############.",
         "###############."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "rv8Truhe": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Trunk_Closed_1_16x16.png",
@@ -2748,20 +2854,22 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "rechts",
+      "sortierlinie": 26,
       "maske_fein": [
         "....",
-        "....",
-        "....",
-        "....",
-        "....",
-        "....",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
         "####",
         "####",
         "####",
         "####",
         "####",
         "####"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "rv9Bildschirmtisch": {
       "quelle": "spiel/eigene/bildschirmtisch.png",
@@ -2773,11 +2881,12 @@
       "art": "tisch",
       "zustand": "neu",
       "stil": "modern",
+      "sortierlinie": 16,
       "maske_fein": [
         "............",
-        "............",
-        "............",
-        "............",
+        "..########..",
+        "#.########.#",
+        "############",
         "############",
         "############",
         "############",
@@ -2786,7 +2895,8 @@
         "############",
         "..########..",
         "...#....#..."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "rv9BildschirmtischKaputt": {
       "quelle": "spiel/eigene/bildschirmtisch_kaputt.png",
@@ -2796,11 +2906,12 @@
       "art": "tisch",
       "zustand": "kaputt",
       "stil": "modern",
+      "sortierlinie": 16,
       "maske_fein": [
         "............",
-        "............",
-        "............",
-        "............",
+        "..########..",
+        "############",
+        "############",
         "############",
         "############",
         "############",
@@ -2809,7 +2920,8 @@
         "############",
         "..########..",
         "...#....#..."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "rv9Bogenfenster": {
       "quelle": "spiel/eigene/bogenfenster_halle.png",
@@ -3250,8 +3362,10 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "blick": "unten",
-      "maske_fein": ["....", "....", "....", "....", "####", "####", "####", "...."],
-      "beschreibung": "Freistehender Herd mit vier Kochplatten und Ofen, von vorn (Wohnwagen Riverton, RO34)"
+      "beschreibung": "Freistehender Herd mit vier Kochplatten und Ofen, von vorn (Wohnwagen Riverton, RO34)",
+      "sortierlinie": 16,
+      "maske_fein": ["....", "####", "####", "####", "####", "####", "####", "...."],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "rv18PavillonEingang": {
       "quelle": "spiel/eigene/schraegzaun_durchgang.png",
@@ -3300,7 +3414,8 @@
         "...................."
       ],
       "maske_fein_von_hand": "Schräges Geländer: gesperrt nur das Band über den Dielen (schraegzaun.feinmaske), die Wiese sperrt das Raster",
-      "beschreibung": "Weißes Metallgeländer unter 45° an der Schräge oben links des achteckigen Pavillons, mit Eckpfosten an der Seite und Wiese außen (eigenes Bild aus LimeZus Fence_2, schraegzaun.py)"
+      "beschreibung": "Weißes Metallgeländer unter 45° an der Schräge oben links des achteckigen Pavillons, mit Eckpfosten an der Seite und Wiese außen (eigenes Bild aus LimeZus Fence_2, schraegzaun.py)",
+      "sortierlinie": 80
     },
     "rv18SchraegzaunObenRechts": {
       "quelle": "spiel/eigene/schraegzaun_oben_rechts.png",
@@ -3337,7 +3452,8 @@
         "...................."
       ],
       "maske_fein_von_hand": "Schräges Geländer: gesperrt nur das Band über den Dielen (schraegzaun.feinmaske), die Wiese sperrt das Raster",
-      "beschreibung": "Weißes Metallgeländer unter 45° an der Schräge oben rechts des achteckigen Pavillons, mit Eckpfosten an der Seite und Wiese außen (eigenes Bild aus LimeZus Fence_2, schraegzaun.py)"
+      "beschreibung": "Weißes Metallgeländer unter 45° an der Schräge oben rechts des achteckigen Pavillons, mit Eckpfosten an der Seite und Wiese außen (eigenes Bild aus LimeZus Fence_2, schraegzaun.py)",
+      "sortierlinie": 80
     },
     "rv18SchraegzaunUntenLinks": {
       "quelle": "spiel/eigene/schraegzaun_unten_links.png",
@@ -3374,7 +3490,8 @@
         "...................."
       ],
       "maske_fein_von_hand": "Schräges Geländer: gesperrt nur das Band über den Dielen (schraegzaun.feinmaske), die Wiese sperrt das Raster",
-      "beschreibung": "Weißes Metallgeländer unter 45° an der Schräge unten links des achteckigen Pavillons, mit Eckpfosten an der Seite und Wiese außen (eigenes Bild aus LimeZus Fence_2, schraegzaun.py)"
+      "beschreibung": "Weißes Metallgeländer unter 45° an der Schräge unten links des achteckigen Pavillons, mit Eckpfosten an der Seite und Wiese außen (eigenes Bild aus LimeZus Fence_2, schraegzaun.py)",
+      "sortierlinie": 80
     },
     "rv18SchraegzaunUntenRechts": {
       "quelle": "spiel/eigene/schraegzaun_unten_rechts.png",
@@ -3411,7 +3528,8 @@
         "...................."
       ],
       "maske_fein_von_hand": "Schräges Geländer: gesperrt nur das Band über den Dielen (schraegzaun.feinmaske), die Wiese sperrt das Raster",
-      "beschreibung": "Weißes Metallgeländer unter 45° an der Schräge unten rechts des achteckigen Pavillons, mit Eckpfosten an der Seite und Wiese außen (eigenes Bild aus LimeZus Fence_2, schraegzaun.py)"
+      "beschreibung": "Weißes Metallgeländer unter 45° an der Schräge unten rechts des achteckigen Pavillons, mit Eckpfosten an der Seite und Wiese außen (eigenes Bild aus LimeZus Fence_2, schraegzaun.py)",
+      "sortierlinie": 80
     },
     "rv18GelaenderOben": {
       "quelle": "spiel/eigene/schraegzaun_gerade_oben.png",
@@ -3432,7 +3550,8 @@
       "art": "zaun",
       "zustand": "gebraucht",
       "stil": "modern",
-      "beschreibung": "Gerades weißes Metallgeländer am Südrand des Pavillons, unten Wiese statt Dielen (LimeZus Fence_2, schraegzaun.py)"
+      "beschreibung": "Gerades weißes Metallgeländer am Südrand des Pavillons, unten Wiese statt Dielen (LimeZus Fence_2, schraegzaun.py)",
+      "maske_fein": ["....", "....", "####", "####"]
     },
     "rv27Bildschirmtisch": {
       "quelle": "spiel/eigene/bildschirmtisch_park.png",
@@ -3444,11 +3563,13 @@
       "art": "tisch",
       "zustand": "neu",
       "stil": "modern",
+      "hinweis": "Bildschirmtisch mit dunklem Metallgestell, Bänken mit Beinen und Schatten, Platte leuchtet bläulich (Kartenblick R2, R24, P11) (Gemini D1, 27.11.2026, werkzeuge/gemini_riverton_2711.py)",
+      "sortierlinie": 16,
       "maske_fein": [
         "............",
-        "............",
-        "............",
-        "............",
+        "...######...",
+        "##.######.##",
+        "############",
         "############",
         "############",
         "############",
@@ -3456,9 +3577,9 @@
         "############",
         "############",
         "..########..",
-        "...#....#..."
+        "...######..."
       ],
-      "hinweis": "Bildschirmtisch mit dunklem Metallgestell, Bänken mit Beinen und Schatten, Platte leuchtet bläulich (Kartenblick R2, R24, P11) (Gemini D1, 27.11.2026, werkzeuge/gemini_riverton_2711.py)"
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "rv27Gedenktafel": {
       "quelle": "spiel/eigene/gedenktafel_odum.png",

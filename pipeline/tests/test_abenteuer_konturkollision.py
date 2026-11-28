@@ -1,7 +1,8 @@
 """Tests für pipeline/abenteuer/konturkollision.py (Kollision und Zeichentiefe nach der Kontur,
-KARTENREGELN 10.95): Sitzfläche aus dem Bild, alte und neue Sortierlinie, Bodenebene, Handangaben,
-und der Pilot Maple Falls bleibt ohne offenen Befund (nur Handprüfung der Villa); dazu die Z-Prüfung
-aller Karten (konturkollision_tiefe.py, Phase 2C) als Dauertest „0 Befunde“."""
+KARTENREGELN 10.95): Sitzfläche aus dem Bild, Draufsicht (Tische, Längszäune, Betten, Phase 2A),
+alte und neue Sortierlinie, Bodenebene, Handangaben, und der Pilot Maple Falls bleibt ohne offenen
+Befund (nur Handprüfung der Villa); dazu die Z-Prüfung aller Karten (konturkollision_tiefe.py,
+Phase 2C) als Dauertest „0 Befunde“."""
 
 from pipeline.abenteuer.konturkollision import (
     BODEN,
@@ -17,7 +18,8 @@ from pipeline.abenteuer.konturkollision import (
     vorschlag,
     zellen_der_rechtecke,
 )
-from pipeline.abenteuer.konturkollision_sitz import sitzflaeche
+from pipeline.abenteuer.konturkollision_arten import artbefund, laengs, liegeflaeche
+from pipeline.abenteuer.konturkollision_sitz import ohne_lehne, sitzflaeche
 from pipeline.abenteuer.konturkollision_tiefe import app_tiefe, betretbar, steht_dahinter
 from pipeline.abenteuer.konturkollision_tiefe import pruefe as pruefe_z
 from pipeline.abenteuer.moebelliste import lade_moebel
@@ -136,3 +138,42 @@ def test_z_pruefung_ohne_befund():
     """Dauertest (Auftrag des Autors, 28.11.2026: „lag eine Treppe über dem Helden“): Kein Bild liegt
     über dem Helden, der darauf steht, und kein aufrechtes Bild unter ihm, wenn er dahinter steht."""
     assert [b.text() for b in pruefe_z()] == []
+
+
+def _rundtisch(x: int, y: int) -> bool:
+    """Tisch 32 × 32: Platte von Pixel 6 bis 23, Beine bis 29 (wie ca7Rundtisch)."""
+    return (2 <= x <= 29 and 6 <= y <= 23) or (x in (4, 5, 26, 27) and 24 <= y <= 29)
+
+
+def test_draufsicht_tisch_sperrt_die_ganze_platte():
+    """Phase 2A: Die Platte sperrt ab der Zelle unter der hinteren Kante, nicht nur die untere
+    Kachel (man steht nicht hinter der Tischplatte im Tisch)."""
+    alt = {(x, y) for x in range(8) for y in range(4, 8)}
+    bild = _bild(32, 32, _rundtisch)
+    neu, grund, befund, linie = artbefund("probe", {"breite": 32, "hoehe": 32, "art": "tisch"}, bild, alt)
+    assert {y for _, y in neu} == {2, 3, 4, 5, 6, 7} and alt <= neu
+    assert "Draufsicht (platte)" in befund and "Platte" in grund and linie == 16
+    # Buden mit Dach und Ausnahmen mit Grund bleiben, wie sie sind.
+    assert artbefund("probe", {"breite": 32, "hoehe": 32, "art": "stand"}, bild, alt) is None
+    assert artbefund("ca27Cafetisch", {"breite": 32, "hoehe": 32, "art": "tisch"}, bild, alt) is None
+
+
+def test_laengszaun_aber_kein_pfosten_und_keine_mauer():
+    assert laengs("gt7ZaunML", (6, 0, 10, 16))
+    assert not laengs("mf4Poller", (6, 2, 10, 16))
+    assert not laengs("wr5Mauer", (0, 0, 16, 48))  # Mauer von vorn in einer Ost-West-Reihe
+
+
+def test_bett_liegeflaeche_ohne_kopfpfosten():
+    def bett(x: int, y: int) -> bool:
+        return (x <= 2 and 2 <= y <= 30) or (3 <= x <= 45 and 8 <= y <= 30)
+
+    zellen = liegeflaeche(_bild(48, 32, bett), 48, 32)
+    assert min(y for _, y in zellen) * 4 >= 8 + 3  # Pfosten (ab Pixel 2) und hintere Kante frei
+
+
+def test_bank_ohne_lehne_und_laengs():
+    assert ohne_lehne(14, 46)  # flache Bank von vorn
+    assert ohne_lehne(46, 14)  # Bank längs
+    assert not ohne_lehne(14, 14, flach_moeglich=False)  # Stuhl von hinten: Lehne vorn
+    assert not ohne_lehne(22, 14)  # Stuhl

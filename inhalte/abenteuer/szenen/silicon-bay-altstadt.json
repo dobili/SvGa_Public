@@ -536,18 +536,15 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [27, 19],
-      "vorn": true
+      "feld": [27, 19]
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [42, 19],
-      "vorn": true
+      "feld": [42, 19]
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [57, 19],
-      "vorn": true
+      "feld": [57, 19]
     },
     {
       "moebel": "mf4Laterne",

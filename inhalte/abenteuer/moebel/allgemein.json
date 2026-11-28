@@ -774,7 +774,29 @@
       "art": "fahrzeug",
       "blick": "rechts",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "maske_fein": [
+        "............................................",
+        "............................................",
+        "............................................",
+        "............................................",
+        "............................................",
+        "............................................",
+        "............................................",
+        "............................................",
+        "###########################################.",
+        "###########################################.",
+        "###########################################.",
+        "###########################################.",
+        "###########################################.",
+        "###########################################.",
+        "###########################################.",
+        "###########################################.",
+        ".##########################################.",
+        "...#############................##########..",
+        "....##..###..##..................###..###...",
+        "............................................"
+      ]
     },
     "fz12SattelzugVorn": {
       "quelle": "spiel/eigene/sattelzug_vorn.png",
@@ -982,7 +1004,8 @@
       "art": "fahrzeug",
       "blick": "rechts",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "sortierlinie": 32
     },
     "fz12LieferwagenLinks": {
       "quelle": "spiel/eigene/lieferwagen_links.png",
@@ -992,7 +1015,8 @@
       "art": "fahrzeug",
       "blick": "links",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "sortierlinie": 32
     },
     "fz12BaggerLinks": {
       "quelle": "spiel/eigene/bagger_links.png",
@@ -1235,17 +1259,19 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "modern",
+      "hinweis": "Klapptisch des Testteams von Perfect Move (Zoe, Benji, Imani) an den Wegsperren Zedernwald, Raststätte und Diner: Schachbrett, Tablet mit Hülle und Wasserflasche (Gemini B32/G10, 25.11.2026, RO39)",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
-        "........",
-        "........",
+        "########",
+        "########",
         "########",
         "########",
         "########",
         "##....##"
       ],
-      "hinweis": "Klapptisch des Testteams von Perfect Move (Zoe, Benji, Imani) an den Wegsperren Zedernwald, Raststätte und Diner: Schachbrett, Tablet mit Hülle und Wasserflasche (Gemini B32/G10, 25.11.2026, RO39)"
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     }
   }
 }

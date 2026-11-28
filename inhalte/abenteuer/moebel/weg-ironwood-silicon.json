@@ -97,7 +97,9 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "einfach",
-      "maske_fein": ["........", "........", "########", "########"]
+      "sortierlinie": 10,
+      "maske_fein": ["........", "########", "########", "########"],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "ws5Schild": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_4.png",
@@ -296,7 +298,19 @@
       "art": "tisch",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "einfach"
+      "stil": "einfach",
+      "sortierlinie": 16,
+      "maske_fein": [
+        "........",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########",
+        "########"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "ws5PicknickLang": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Benched_Table_3.png",
@@ -306,7 +320,19 @@
       "art": "tisch",
       "blick": "unten",
       "zustand": "gebraucht",
-      "stil": "einfach"
+      "stil": "einfach",
+      "sortierlinie": 16,
+      "maske_fein": [
+        "............",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############",
+        "############"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "ws5Muell": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Trashbin_1.png",
@@ -635,7 +661,9 @@
       "art": "zaun",
       "zustand": "gebraucht",
       "stil": "modern",
-      "maske_fein": ["....", "....", ".##.", ".##."]
+      "sortierlinie": 8,
+      "maske_fein": ["....", ".##.", ".##.", ".##."],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "ws5Planke5": {
       "quelle": "spiel/eigene/leitplanke_laengs_5.png",
@@ -1075,7 +1103,9 @@
       "art": "zaun",
       "zustand": "neu",
       "stil": "modern",
-      "maske_fein": ["....", "....", "....", "....", "....", "....", ".##.", ".##."]
+      "sortierlinie": 24,
+      "maske_fein": ["....", "....", ".##.", ".##.", ".##.", ".##.", ".##.", ".##."],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "wsgLinie16": {
       "quelle": "spiel/eigene/fahrbahn_linie_16.png",
@@ -1896,11 +1926,12 @@
       "art": "zaun",
       "zustand": "neu",
       "stil": "modern",
+      "sortierlinie": 16,
       "maske_fein": [
         "....",
-        "....",
-        "....",
-        "....",
+        ".##.",
+        ".##.",
+        ".##.",
         ".##.",
         ".##.",
         ".##.",
@@ -1909,7 +1940,8 @@
         ".##.",
         ".##.",
         ".##."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "wsgLinie11": {
       "quelle": "spiel/eigene/fahrbahn_linie_11.png",

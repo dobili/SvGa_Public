@@ -129,13 +129,11 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [2, 6],
-      "vorn": true
+      "feld": [2, 6]
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [15, 6],
-      "vorn": true
+      "feld": [15, 6]
     },
     {
       "moebel": "mf4Laterne",
@@ -144,18 +142,15 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [38, 12],
-      "vorn": true
+      "feld": [38, 12]
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [9, 16],
-      "vorn": true
+      "feld": [9, 16]
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [21, 16],
-      "vorn": true
+      "feld": [21, 16]
     },
     {
       "moebel": "mf4Laterne",

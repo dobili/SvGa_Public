@@ -258,28 +258,23 @@
     },
     {
       "moebel": "sbLaterne",
-      "feld": [8, 17],
-      "vorn": true
+      "feld": [8, 17]
     },
     {
       "moebel": "sbLaterne",
-      "feld": [18, 17],
-      "vorn": true
+      "feld": [18, 17]
     },
     {
       "moebel": "sbLaterne",
-      "feld": [28, 17],
-      "vorn": true
+      "feld": [28, 17]
     },
     {
       "moebel": "sbLaterne",
-      "feld": [38, 17],
-      "vorn": true
+      "feld": [38, 17]
     },
     {
       "moebel": "sbLaterne",
-      "feld": [48, 17],
-      "vorn": true
+      "feld": [48, 17]
     },
     {
       "moebel": "caKisten",

@@ -83,8 +83,7 @@
     },
     {
       "moebel": "sc7Mast",
-      "feld": [54, 7],
-      "vorn": true
+      "feld": [54, 7]
     },
     {
       "moebel": "sc7Seil",
@@ -562,7 +561,17 @@
     },
     {
       "moebel": "sc17Drachenbrett",
-      "feld": [28, 31]
+      "feld": [28, 31],
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "##....##"
+      ]
     },
     {
       "moebel": "gc10Hocker",
@@ -938,5 +947,9 @@
   "hochflaeche": "gras",
   "markierung": ["s"],
   "klippenhoehe": 6,
-  "fels": "grau"
+  "fels": "grau",
+  "sperren": [
+    [77, 31],
+    [78, 31]
+  ]
 }

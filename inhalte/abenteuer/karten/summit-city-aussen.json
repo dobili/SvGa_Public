@@ -7394,8 +7394,8 @@
     0,
     0,
     0,
-    0,
-    0,
+    2,
+    2,
     2,
     2,
     0,
@@ -15462,7 +15462,7 @@
       {
        "name": "kollision",
        "type": "bool",
-       "value": false
+       "value": true
       }
      ]
     },
@@ -18161,6 +18161,16 @@
        "name": "kollision",
        "type": "bool",
        "value": true
+      },
+      {
+       "name": "maske",
+       "type": "string",
+       "value": "../##"
+      },
+      {
+       "name": "maske_fein",
+       "type": "string",
+       "value": "......../......../......../......../########/########/########/##....##"
       }
      ]
     },
@@ -18492,6 +18502,11 @@
    "name": "kennung",
    "type": "string",
    "value": "summitCity.aussen"
+  },
+  {
+   "name": "sperren",
+   "type": "string",
+   "value": "77,31;78,31"
   }
  ]
 }

@@ -32,8 +32,21 @@
       "art": "baum",
       "zustand": "neu",
       "stil": "natur",
-      "ohne_maske_fein": "Baum am Waldrand: Mit feiner Maske gehen Lücken zwischen den Stämmen auf (Gegenprobe feinmasken_pruefung)",
-      "untergrund": "gras"
+      "untergrund": "gras",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "..####..",
+        "..####.."
+      ]
     },
     "wds6Kegelbaum": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Tree_206.png",
@@ -148,8 +161,10 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "natur",
-      "maske_fein": ["............", "............", ".##########.", "..#########."],
-      "untergrund": "gras"
+      "untergrund": "gras",
+      "sortierlinie": 10,
+      "maske_fein": ["............", "..########..", ".##########.", "..#########."],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "wds6Wegweiser": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_8.png",
@@ -242,7 +257,10 @@
       "kollision": true,
       "art": "gelaender",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "sortierlinie": 16,
+      "maske_fein": ["....", ".##.", ".##.", ".##.", "####", "####", "####", "####"],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "wds6LeitplankeL3": {
       "quelle": "spiel/eigene/leitplanke_laengs_3.png",
@@ -262,11 +280,12 @@
       "art": "gelaender",
       "zustand": "gebraucht",
       "stil": "modern",
+      "sortierlinie": 16,
       "maske_fein": [
         "....",
-        "....",
-        "....",
-        "....",
+        ".##.",
+        ".##.",
+        ".##.",
         ".##.",
         ".##.",
         ".##.",
@@ -275,7 +294,8 @@
         ".##.",
         ".##.",
         ".##."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "wds6LeitplankeL4": {
       "quelle": "spiel/eigene/leitplanke_laengs_4.png",
@@ -295,7 +315,27 @@
       "kollision": true,
       "art": "gelaender",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "sortierlinie": 16,
+      "maske_fein": [
+        "....",
+        ".##.",
+        ".##.",
+        ".##.",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "wds6LeitplankeL5": {
       "quelle": "spiel/eigene/leitplanke_laengs_5.png",
@@ -320,7 +360,31 @@
       "kollision": true,
       "art": "gelaender",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "sortierlinie": 16,
+      "maske_fein": [
+        "....",
+        ".##.",
+        ".##.",
+        ".##.",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "wds6LeitplankeL6": {
       "quelle": "spiel/eigene/leitplanke_laengs_6.png",
@@ -345,7 +409,35 @@
       "kollision": true,
       "art": "gelaender",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "sortierlinie": 16,
+      "maske_fein": [
+        "....",
+        ".##.",
+        ".##.",
+        ".##.",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "wds6LeitplankeL7": {
       "quelle": "spiel/eigene/leitplanke_laengs_7.png",
@@ -370,7 +462,39 @@
       "kollision": true,
       "art": "gelaender",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "sortierlinie": 16,
+      "maske_fein": [
+        "....",
+        ".##.",
+        ".##.",
+        ".##.",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "wds6LeitplankeL8": {
       "quelle": "spiel/eigene/leitplanke_laengs_8.png",
@@ -395,7 +519,43 @@
       "kollision": true,
       "art": "gelaender",
       "zustand": "gebraucht",
-      "stil": "modern"
+      "stil": "modern",
+      "sortierlinie": 16,
+      "maske_fein": [
+        "....",
+        ".##.",
+        ".##.",
+        ".##.",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####",
+        "####"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "wds6Spieltisch": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Modern_House_Umbrella_Composition_16x16.png",
@@ -407,11 +567,12 @@
       "blick": "unten",
       "zustand": "gebraucht",
       "stil": "modern",
+      "sortierlinie": 16,
       "maske_fein": [
         "....................",
         "....................",
         "....................",
-        "....................",
+        "...############.....",
         ".##############.....",
         ".##############.....",
         ".##############.....",
@@ -428,7 +589,8 @@
         "..............###...",
         "....................",
         "...................."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "wds6Container": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/3_City_Props_Singles_16x16/ME_Singles_City_Props_16x16_Dumpster_1.png",

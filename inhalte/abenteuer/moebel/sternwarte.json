@@ -16,7 +16,7 @@
         "............",
         "............",
         "............",
-        "#########...",
+        "............",
         "##########..",
         "##########..",
         "##########..",
@@ -24,7 +24,8 @@
         ".#.....#....",
         "............",
         "............"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Liegefläche sperrt, das Kopfteil darüber verdeckt nur"
     },
     "n9Kuppelspalt": {
       "quelle": "spiel/eigene/kuppelspalt.png",
@@ -47,6 +48,7 @@
       "blick": "unten",
       "zustand": "alt",
       "stil": "klassisch",
+      "sortierlinie": 54,
       "maske_fein": [
         "............",
         "............",
@@ -56,15 +58,16 @@
         "............",
         "............",
         "............",
-        "....###.....",
-        "....###.....",
-        "....###.....",
-        "...#####....",
-        "...#####....",
+        "............",
+        "............",
+        "............",
         "..#######...",
-        "...######...",
-        "...#####...."
-      ]
+        "..#######...",
+        "..#######...",
+        "..#######...",
+        "..#######..."
+      ],
+      "maske_fein_von_hand": "Kontur (Phase 2A, 28.11.2026): nur der Sockel sperrt; Säule und Rohr verdecken"
     },
     "n9Beobachterstuhl": {
       "quelle": "spiel/eigene/beobachterstuhl.png",
@@ -85,16 +88,18 @@
       "blick": "unten",
       "zustand": "alt",
       "stil": "klassisch",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
-        "........",
-        "........",
-        "........",
+        "#######.",
+        "########",
+        "########",
         "########",
         "########",
         "########",
         "#......#"
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "n5Sternwarte": {
       "quelle": "spiel/eigene/sternwarte_aussen.png",
@@ -120,6 +125,7 @@
       "art": "geraet",
       "zustand": "alt",
       "stil": "klassisch",
+      "sortierlinie": 70,
       "maske_fein": [
         "............",
         "............",
@@ -131,17 +137,18 @@
         "............",
         "............",
         "............",
-        "..#########.",
-        ".###.###.##.",
-        "##...###....",
-        ".....###....",
-        ".....###....",
-        "....#####...",
-        "..##########",
-        ".##...#...##",
-        ".....##.....",
-        ".....#......"
-      ]
+        "............",
+        "............",
+        "............",
+        "............",
+        "............",
+        ".###########",
+        ".###########",
+        ".###########",
+        ".###########",
+        ".###########"
+      ],
+      "maske_fein_von_hand": "Kontur (Phase 2A, 28.11.2026): nur das Stativ am Boden sperrt; Rohr und Kopf verdecken"
     },
     "n5Sternkarte": {
       "quelle": "spiel/eigene/sternkarte_wand.png",

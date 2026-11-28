@@ -268,7 +268,9 @@
       "blick": "unten",
       "zustand": "neu",
       "stil": "einfach",
-      "maske_fein": ["........", "........", "########", "########"]
+      "sortierlinie": 10,
+      "maske_fein": ["........", "########", "########", "########"],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "gt7Schild": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/11_Camping_Singles_16x16/ME_Singles_Camping_16x16_Sign_4.png",
@@ -411,7 +413,9 @@
       "art": "zaun",
       "stil": "rustikal",
       "zustand": "alt",
-      "maske_fein": ["....", "....", "##..", "##.."]
+      "sortierlinie": 8,
+      "maske_fein": ["....", "##..", "##..", "##.."],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "gt7ZaunMR": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Middle_Right_16x16.png",
@@ -421,7 +425,9 @@
       "art": "zaun",
       "stil": "rustikal",
       "zustand": "alt",
-      "maske_fein": ["....", "....", "..##", "..##"]
+      "sortierlinie": 8,
+      "maske_fein": ["....", "..##", "..##", "..##"],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "gt7ZaunUL": {
       "quelle": "modern-exteriors/Modern_Exteriors_16x16/ME_Theme_Sorter_16x16/24_Additional_Houses_Singles_16x16/24_Additional_Houses_Fence_4_Bottom_Left_16x16.png",
@@ -567,7 +573,9 @@
       "blick": "rechts",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "maske_fein": ["....", "....", "....", "....", "####", ".#..", "....", "...."]
+      "sortierlinie": 18,
+      "maske_fein": ["....", "....", "....", "####", "####", ".#..", "....", "...."],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "gt7StuhlL": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/12_Kitchen_Black_Shadow_Singles_16x16/Kitchen_Shadow_Singles_286.png",
@@ -578,7 +586,9 @@
       "blick": "links",
       "zustand": "gebraucht",
       "stil": "rustikal",
-      "maske_fein": ["....", "....", "....", "....", "####", "..#.", "....", "...."]
+      "sortierlinie": 18,
+      "maske_fein": ["....", "....", "....", "####", "####", "..#.", "....", "...."],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "gt7Tisch": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_1.png",
@@ -589,16 +599,18 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "klassisch",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
         "........",
-        "........",
+        ".######.",
         ".######.",
         ".######.",
         ".######.",
         ".##..##."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "gt7TischDunkel": {
       "quelle": "modern-interiors/1_Interiors/16x16/Theme_Sorter_Black_Shadow_Singles/14_Basement_Black_Shadow_Singles_16x16/Basement_Shadow_Singles_3.png",
@@ -609,16 +621,18 @@
       "art": "tisch",
       "zustand": "gebraucht",
       "stil": "klassisch",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
         "........",
-        "........",
+        ".######.",
         ".######.",
         ".######.",
         ".######.",
         ".##..##."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "gt7Brett": {
       "quelle": "spiel/eigene/schachbrett_klein_figuren.png",
@@ -1015,16 +1029,18 @@
       "art": "tisch",
       "zustand": "alt",
       "stil": "rustikal",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
         "........",
         "........",
-        "........",
+        ".######.",
         ".######.",
         ".######.",
         ".######.",
         ".##..##."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "gt10Traenke": {
       "quelle": "modern-farm/Single_Files_16x16/Props_and_Buildings_16x16/Drinking_Trough_Horizontal_Full_16x16.png",
@@ -1269,7 +1285,21 @@
       "blick": "unten",
       "zustand": "alt",
       "stil": "rustikal",
-      "beschreibung": "Leeres, verstaubtes Holzregal mit Spinnweben; in der verlassenen Stadt steht es leer (Gemini K31, Schnittstelle 26.11.2026, statt des Käseregals gt14RegalLeer)."
+      "beschreibung": "Leeres, verstaubtes Holzregal mit Spinnweben; in der verlassenen Stadt steht es leer (Gemini K31, Schnittstelle 26.11.2026, statt des Käseregals gt14RegalLeer).",
+      "maske_fein": [
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "########",
+        "########",
+        "########",
+        "########"
+      ]
     },
     "gt21WuestensteinRot": {
       "quelle": "spiel/eigene/wuestenstein_rot.png",
@@ -1428,8 +1458,10 @@
       "art": "zaun",
       "stil": "rustikal",
       "zustand": "alt",
-      "maske_fein": ["....", "....", "##..", "##.."],
-      "hinweis": "Friedhofszaun aus grauem, altem Holz statt blaugrauem Stahlrohr (Kartenblick G7) (umgefärbt, 27.11.2026, werkzeuge/gemini_akt4_2711.py)"
+      "hinweis": "Friedhofszaun aus grauem, altem Holz statt blaugrauem Stahlrohr (Kartenblick G7) (umgefärbt, 27.11.2026, werkzeuge/gemini_akt4_2711.py)",
+      "sortierlinie": 8,
+      "maske_fein": ["....", "##..", "##..", "##.."],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "gt27HolzZaunMR": {
       "quelle": "spiel/eigene/friedhofszaun_holz_mr.png",
@@ -1439,8 +1471,10 @@
       "art": "zaun",
       "stil": "rustikal",
       "zustand": "alt",
-      "maske_fein": ["....", "....", "..##", "..##"],
-      "hinweis": "Friedhofszaun aus grauem, altem Holz statt blaugrauem Stahlrohr (Kartenblick G7) (umgefärbt, 27.11.2026, werkzeuge/gemini_akt4_2711.py)"
+      "hinweis": "Friedhofszaun aus grauem, altem Holz statt blaugrauem Stahlrohr (Kartenblick G7) (umgefärbt, 27.11.2026, werkzeuge/gemini_akt4_2711.py)",
+      "sortierlinie": 8,
+      "maske_fein": ["....", "..##", "..##", "..##"],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): längs laufender Zaun sperrt seine ganze Linie ab 3 Pixeln unter der Oberkante"
     },
     "gt27HolzZaunUL": {
       "quelle": "spiel/eigene/friedhofszaun_holz_ul.png",

@@ -71,13 +71,11 @@
     {
       "moebel": "el7Gaslaterne",
       "feld": [5, 11],
-      "vorn": true,
       "versatz": [8, 0]
     },
     {
       "moebel": "el7Gaslaterne",
       "feld": [9, 11],
-      "vorn": true,
       "versatz": [8, 0]
     },
     {
@@ -89,7 +87,6 @@
     {
       "moebel": "el7Gaslaterne",
       "feld": [17, 11],
-      "vorn": true,
       "versatz": [8, 0]
     },
     {

@@ -15,6 +15,8 @@ SITZ_ANTEIL = 0.7  # höchstens dieser Anteil der sichtbaren Höhe ist Sitzfläc
 # Die hintere Kante der Sitzfläche (oberste Pixel) gehört nicht zur Standfläche: Wer hinter dem Stuhl
 # steht, verschwindet mit den Füßen hinter ihr (Durchlass Dachboden Maple Falls, 28.11.2026).
 SITZ_RAND = ZP - 1
+FLACH = 18  # sichtbare Höhe einer Bank ohne Lehne (ohne_lehne)
+LAENGS = 2  # ab diesem Verhältnis Höhe zu Breite läuft die Bank längs
 
 
 def deckende_breite(alpha: bytes, breite: int, hoehe: int) -> list[int]:
@@ -22,7 +24,19 @@ def deckende_breite(alpha: bytes, breite: int, hoehe: int) -> list[int]:
     return [sum(1 for a in alpha[y * breite : (y + 1) * breite] if a > DECKEND) for y in range(hoehe)]
 
 
-def sitzflaeche(alpha: bytes, breite: int, hoehe: int) -> set[Zelle]:
+def ohne_lehne(hoehe: int, breite: int, flach_moeglich: bool = True) -> bool:
+    """Ob ein Sitzmöbel keine aufragende Lehne vor oder über der Sitzfläche zeigen kann: flach (bis
+    ``FLACH`` Pixel sichtbar, Bank ohne Lehne von vorn) oder längs (mehr als doppelt so hoch wie breit,
+    Bank von oben in Nord–Süd-Richtung). Dann gilt die Obergrenze SITZ_ANTEIL nicht: Die ganze
+    Sitzfläche ist Tiefe in der Draufsicht (Auftrag des Autors, 28.11.2026, Phase 2A).
+    Flach gilt nur, wenn ``flach_moeglich`` (Bänke, nicht von hinten gesehen): Ein Stuhl von hinten
+    ist ebenso niedrig, seine Lehne steht aber vorn und ragt in die Höhe; er steht am Tisch, dessen
+    Kachel er sonst überdeckte (cc4StuhlRuecken am Clubtisch, Cedar Creek).
+    Beispiel: pd6Bank 46 × 14 → True; rv15BankLangSenkrecht 14 × 46 → True; Stuhl 14 × 22 → False."""
+    return (flach_moeglich and hoehe <= FLACH) or hoehe > LAENGS * breite
+
+
+def sitzflaeche(alpha: bytes, breite: int, hoehe: int, flach_moeglich: bool = True) -> set[Zelle]:
     """Die Zellen von Sitzfläche, Beinen und Fuß eines Sitzmöbels, ohne die Lehne darüber.
 
     Regel: Von der untersten breiten Reihe (über den Beinen) nach oben, solange die Reihe
@@ -42,7 +56,10 @@ def sitzflaeche(alpha: bytes, breite: int, hoehe: int) -> set[Zelle]:
     kante = max(y for y in reihen if werte[y] >= grenze)  # unterste breite Reihe (über den Beinen)
     while kante - 1 >= oben and werte[kante - 1] >= grenze:
         kante -= 1
-    kante = max(kante, round(unten - SITZ_ANTEIL * (unten - oben)))
+    links = min(x for y in reihen for x in range(breite) if alpha[y * breite + x] > DECKEND)
+    rechts = max(x for y in reihen for x in range(breite) if alpha[y * breite + x] > DECKEND) + 1
+    if not ohne_lehne(unten - oben, rechts - links, flach_moeglich):
+        kante = max(kante, round(unten - SITZ_ANTEIL * (unten - oben)))
     zellen: dict[Zelle, int] = {}
     for y in range(kante, unten):
         for x in range(breite):

@@ -96,8 +96,7 @@
     },
     {
       "moebel": "pg7Kletterwand",
-      "feld": [100, 17],
-      "vorn": true
+      "feld": [100, 17]
     },
     {
       "moebel": "dd6Felsbogen",

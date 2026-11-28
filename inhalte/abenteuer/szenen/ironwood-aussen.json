@@ -700,78 +700,63 @@
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [34, 25],
-      "vorn": true
+      "feld": [34, 25]
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [52, 25],
-      "vorn": true
+      "feld": [52, 25]
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [70, 25],
-      "vorn": true
+      "feld": [70, 25]
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [22, 29],
-      "vorn": true
+      "feld": [22, 29]
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [40, 29],
-      "vorn": true
+      "feld": [40, 29]
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [58, 29],
-      "vorn": true
+      "feld": [58, 29]
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [74, 29],
-      "vorn": true
+      "feld": [74, 29]
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [19, 12],
-      "vorn": true
+      "feld": [19, 12]
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [29, 12],
-      "vorn": true
+      "feld": [29, 12]
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [38, 12],
-      "vorn": true
+      "feld": [38, 12]
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [27, 43],
-      "vorn": true
+      "feld": [27, 43]
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [37, 43],
-      "vorn": true
+      "feld": [37, 43]
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [49, 43],
-      "vorn": true
+      "feld": [49, 43]
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [61, 43],
-      "vorn": true
+      "feld": [61, 43]
     },
     {
       "moebel": "mf9LaterneLang",
-      "feld": [75, 43],
-      "vorn": true
+      "feld": [75, 43]
     },
     {
       "moebel": "wr5Container",

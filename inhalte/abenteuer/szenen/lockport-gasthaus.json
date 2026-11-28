@@ -141,13 +141,11 @@
     {
       "moebel": "ld5Barhocker",
       "feld": [17, 10],
-      "vorn": true,
       "versatz": [0, -13]
     },
     {
       "moebel": "ld5Barhocker",
       "feld": [19, 10],
-      "vorn": true,
       "versatz": [0, -13]
     },
     {
@@ -279,7 +277,6 @@
     {
       "moebel": "ld5Barhocker",
       "feld": [21, 10],
-      "vorn": true,
       "versatz": [0, -13]
     }
   ],

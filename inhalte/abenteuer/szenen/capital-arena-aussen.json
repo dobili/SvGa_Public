@@ -195,23 +195,19 @@
     },
     {
       "moebel": "ca7Laterne",
-      "feld": [20, 39],
-      "vorn": true
+      "feld": [20, 39]
     },
     {
       "moebel": "ca7Laterne",
-      "feld": [58, 39],
-      "vorn": true
+      "feld": [58, 39]
     },
     {
       "moebel": "ca7Laterne",
-      "feld": [35, 41],
-      "vorn": true
+      "feld": [35, 41]
     },
     {
       "moebel": "ca7Laterne",
-      "feld": [43, 41],
-      "vorn": true
+      "feld": [43, 41]
     },
     {
       "moebel": "ca7Nadelbaum",

@@ -491,13 +491,11 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [4, 4],
-      "vorn": true
+      "feld": [4, 4]
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [9, 4],
-      "vorn": true
+      "feld": [9, 4]
     },
     {
       "moebel": "rv5Brunnen",
@@ -526,18 +524,15 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [30, 18],
-      "vorn": true
+      "feld": [30, 18]
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [43, 18],
-      "vorn": true
+      "feld": [43, 18]
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [58, 18],
-      "vorn": true
+      "feld": [58, 18]
     },
     {
       "moebel": "mf4Laterne",
@@ -551,8 +546,7 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [56, 44],
-      "vorn": true
+      "feld": [56, 44]
     },
     {
       "moebel": "pw7Kiefer",
@@ -667,23 +661,19 @@
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [13, 34],
-      "vorn": true
+      "feld": [13, 34]
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [27, 34],
-      "vorn": true
+      "feld": [27, 34]
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [39, 34],
-      "vorn": true
+      "feld": [39, 34]
     },
     {
       "moebel": "mf4Laterne",
-      "feld": [48, 34],
-      "vorn": true
+      "feld": [48, 34]
     },
     {
       "moebel": "mfBank",

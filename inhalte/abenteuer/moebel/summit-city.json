@@ -866,16 +866,18 @@
       "zustand": "gebraucht",
       "stil": "klassisch",
       "hinweis": "Holztisch mit Brett und rotem Drachen in der Mitte (Drachenschach am Brunnen, M2 26.11.); Maske wie der Klapptisch",
+      "sortierlinie": 16,
       "maske_fein": [
         "........",
-        "........",
-        "........",
-        "........",
         "########",
         "########",
         "########",
-        "##....##"
-      ]
+        "########",
+        "########",
+        "########",
+        "########"
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "sc27Latschenkiefer": {
       "quelle": "spiel/eigene/latschenkiefer.png",
@@ -965,10 +967,12 @@
       "hoehe": 16,
       "kollision": true,
       "art": "bank",
-      "maske_fein": ["............", "############", "############", ".#...#....#."],
       "zustand": "neu",
       "stil": "modern",
-      "hinweis": "helle Holzbank auf Stahlbeinen für die neue Bergstation statt rostiger Bahnsteigbank (Kartenblick T4) (Gemini F13, 27.11.2026, werkzeuge/gemini_akt4_2711.py)"
+      "hinweis": "helle Holzbank auf Stahlbeinen für die neue Bergstation statt rostiger Bahnsteigbank (Kartenblick T4) (Gemini F13, 27.11.2026, werkzeuge/gemini_akt4_2711.py)",
+      "sortierlinie": 12,
+      "maske_fein": ["............", "............", "############", "############"],
+      "maske_fein_von_hand": "Kontur (konturkollision.py, 28.11.2026): Sitzfläche und Beine ganz, Lehne frei"
     },
     "sc27Festbuehne": {
       "quelle": "spiel/eigene/festbuehne_aufbau.png",
@@ -990,16 +994,18 @@
       "stil": "rustikal",
       "blick": "unten",
       "hinweis": "Biertisch mit Bank für das Sommerfest (Kartenblick M12) (Gemini F16, 27.11.2026, werkzeuge/gemini_akt4_2711.py)",
+      "sortierlinie": 16,
       "maske_fein": [
         "............",
         "............",
-        "............",
-        "............",
+        "############",
+        "############",
         ".##########.",
         "############",
         "############",
         ".#........#."
-      ]
+      ],
+      "maske_fein_von_hand": "Kontur (konturkollision_arten.py, 28.11.2026): Platte oder Oberseite in der Draufsicht sperrt ab der Zelle unter der hinteren Kante, man steht nicht hinter der Platte im Möbel"
     },
     "sc27OhrensesselBlickRechts": {
       "quelle": "spiel/eigene/ohrensessel_gruen_rechts.png",

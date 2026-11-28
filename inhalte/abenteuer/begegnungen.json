@@ -727,6 +727,7 @@
     },
     {
       "kennung": "summitCity.victorFrei",
+      "brett": "abgegriffen",
       "gegner": "summitCity.victor",
       "farbe": "zufall",
       "format": {
@@ -813,6 +814,7 @@
     },
     {
       "kennung": "ghostTown.fernpartie",
+      "brett": "dachboden",
       "gegner": "ghostTown.victor",
       "farbe": "white",
       "format": {

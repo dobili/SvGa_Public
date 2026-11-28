@@ -9,7 +9,7 @@
  */
 import type { Pixelklasse } from "./pixelfiguren";
 
-/** Die Materialien aus der Tabelle des Dokuments. */
+/** Die Materialien aus der Tabelle des Dokuments (Messing seit 28.11.2026 für die Goldmine). */
 export const FIGURMATERIALIEN = [
   "holz",
   "plastik",
@@ -19,6 +19,7 @@ export const FIGURMATERIALIEN = [
   "ton",
   "poliert",
   "sepia",
+  "messing",
 ] as const;
 export type Figurmaterial = (typeof FIGURMATERIALIEN)[number];
 
@@ -67,5 +68,10 @@ export const MATERIALFARBEN: Readonly<Record<Figurmaterial, Materialfarben>> = {
   sepia: {
     weiss: { umriss: "#3A2A18", koerper: "#F3E6CC", schatten: "#CDB48C" },
     schwarz: { umriss: "#1E140A", koerper: "#5A4128", schatten: "#3E2C1A" },
+  },
+  // Goldmine (28.11.2026): Weiß blankes Messing, Schwarz geschwärztes Eisen wie die Loren.
+  messing: {
+    weiss: { umriss: "#3A2508", koerper: "#F6DE8C", schatten: "#D1A94E" },
+    schwarz: { umriss: "#120C06", koerper: "#3B2A1C", schatten: "#261A10" },
   },
 };

@@ -104,9 +104,20 @@ Gegner dürfen ihn ändern (Feld `brett` in `begegnungen.json`, Vorgabe aus `ort
 | Summit City                               | Schiefer                      | Pixel, Stein   |
 | Capital Arena                             | Turnierbrett, edel            | Pixel, poliert |
 | Erinnerungen 1857/1858                    | Sepia-Holz                    | Pixel, Sepia   |
+| Lockport                                  | Kreidetafel im Holzrahmen     | Pixel, Holz    |
+| Sternwarte am Canyon                      | Nachthimmel mit Sternpunkten  | Pixel, Metall  |
+| Goldmine                                  | Bahnschwellen, Grubenlampe    | Pixel, Messing |
+| Crossroads, Raststätte                    | Resopal Mint und Creme, Chrom | Pixel, Plastik |
+| Pinewood Camp                             | Kiefer und Rotholz mit Ästen  | Pixel, Holz    |
+| Bayou                                     | Zypressenholz mit Moos        | Pixel, Holz    |
+| Kürbishof                                 | Scheunenrot und Kalkweiß      | Pixel, Holz    |
 
 - **Vorgabe (Wunsch des Autors, 28.11.2026):** Ahorn & Nussbaum in den Feldfarben des Holzbretts der
   App, sofern Club, Region, Stadt oder Figur nicht aus Gründen der Geschichte ein eigenes Brett haben.
+- **Leitidee (Wunsch des Autors, 28.11.2026):** „Die verwendeten Bretterdesigns sollen Ausdruck der
+  Atmosphäre und der Persönlichkeit der Städte, Orte und Clubs sein.“ Ein eigenes Brett gibt es nur,
+  wo es die Persönlichkeit deutlich trägt und dort wirklich gespielt oder gerätselt wird; Wege und
+  Durchgangsorte teilen sich die Vorgabe. Bestandsaufnahme und Begründung im Abschnitt 5a.
 - **Pixelfiguren:** ein eigener Satz im Pixelstil des Spiels, abgeleitet vom gemeinfreien Satz
   „Kiefer & Kirsche“ (RhosGFX, CC0) auf ein grobes Raster gerechnet und von Hand nachgebessert;
   Farbvarianten je Material als Tönung, nicht als neue Zeichnung.
@@ -115,6 +126,37 @@ Gegner dürfen ihn ändern (Feld `brett` in `begegnungen.json`, Vorgabe aus `ort
 - **Lesbarkeit:** Markierungen (letzter Zug, Pfeile, Karten wie Fingerzeig) bekommen je Stil eine
   Farbe mit genug Abstand; Blindschach bleibt wie es ist.
 - In der App selbst ändert sich nichts; die Wahl des Lesers für Brett und Figuren gilt dort weiter.
+
+## 5a. Bretter nach Atmosphäre (Bestandsaufnahme 28.11.2026)
+
+Gelesen: Ortsdokumente (`orte/`), Weltbeschreibung (09), Story-Bibel, Ink-Dialoge der Orte, wo dort
+gespielt wird (`beginnePartie`, `beginneAufgaben`) und auf was für Brettern. Neue Stile in
+`app/src/abenteuer/brett/brettstile.ts`, Zuweisung über `brett` in `orte.json` und `begegnungen.json`.
+
+| Ort, Club, Gegner                                          | Atmosphäre                                                | Brett                          | Begründung (Fundstelle)                                                                                                                                                                    |
+| ---------------------------------------------------------- | --------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Lockport (3 Rätselrunden)                                  | Schleusendorf im Herbst, Ölzeug, Wassersprache            | **kreidetafel** (neu)          | Gelöst wird an Imogens Rätseltafel und Rubens Kreidetafel am Kahn (14_Akt2_Leben_teil1, 4.2/4.3; lockport-aussen.ink)                                                                      |
+| Sternwarte (Runde `sterne`)                                | Kuppel auf der Felsnase, nachts, Funkschach über die Erde | **sternenhimmel** (neu)        | Ngatas „Mattbilder für lange Nächte“, Lucías Sternbild Springer (sternwarte.ink; orte/nebenorte-sued)                                                                                      |
+| Goldmine (Runde `loren`)                                   | dunkler Stollen, Laterne, Pruitts dreißig Jahre Goldsuche | **grubenlampe** (neu, Messing) | „Kreidestriche auf die Schwellen: lauter kleine Endspiele“ (goldmine.ink)                                                                                                                  |
+| Crossroads, Raststätte (Varianten-Tisch, Tandem mit Slick) | lautes, warmes Diner an vier Straßen, alle kommen wieder  | **resopal** (neu)              | Darlenes Diner mit Tresen, „Jeder, der hier durchkommt, bringt ein Spiel mit“ (09, 5.11; crossroads-raststaette.ink)                                                                       |
+| Pinewood Camp (Hollis, Räuberschach, Tandem)               | Sommercamp im Red-Giants-Park, Lagerfeuer                 | **rotholz** (neu)              | Riesenbäume mit roten Stämmen, Brett auf einer Wurzel, Ezras Brett im Rucksack (09, 5.12; pinewood-camp-aussen.ink)                                                                        |
+| Bayou (Nebelschach, Hausboot)                              | Sumpf, Nebel, Luftboote, Zypressen                        | **zypresse** (neu)             | „Bayou Noir“, Brett mit Stein gegen den Wind auf der Bank des Luftboots (09, 5.9; bayou.ink)                                                                                               |
+| Kürbishof (Runde `irrgarten`)                              | Farm im Spätsommer, Scheune, Maisirrgarten                | **scheune** (neu)              | Hofhaus und Scheune, Stellungen an den Kreuzungen, Morphy mit Schachbrettflicken (orte/kuerbishof; kuerbishof.ink)                                                                         |
+| Pelikaninsel (Runde `netze`)                               | Fischerinsel, Netze, Pfahlhäuser, Winterwind              | treibholz (vorhanden)          | wie Port Delacroix verwittertes Holz und Salz; Silicon Bays Glas passt nicht (orte/pelikaninsel)                                                                                           |
+| Hochebene (Kira, Diplom)                                   | Felstürme, gewöhnliche Schule, Steintische                | abgegriffen (vorhanden)        | „stellt Figuren auf ein abgegriffenes Brett“ auf einem flachen Steintisch (hochebene.ink)                                                                                                  |
+| Ghost Town (Ort)                                           | verlassene Goldgräberstadt, silberne Bretter              | sepia (vorhanden)              | „Sepia auch am Tag“ (09, 5.13), die Karte ist sepia getönt                                                                                                                                 |
+| Ghost Town, Fernpartie mit Victor                          | Saloon, Lichtsäule durch das Dach                         | dachboden (Begegnung)          | „Du legst das Brett auf den Tisch. Altes Holz, dunkle Ecken. A. W. 1857.“ Ambroses Brett (ghost-town-saloon.ink)                                                                           |
+| Summit City, Victors freie Partie                          | Bergstation über den Wolken                               | abgegriffen (Begegnung)        | gespielt auf Junos Reisebrett („Das ist ein Kinderbrett“, summit-city-bergstation.ink), wie `reisebrett.juno`                                                                              |
+| Summit City, Wards Hütte (Club, Reihen)                    | Berghütte, Kaminfeuer, kahle Wände, streng                | schiefer (bleibt)              | geprüft: „altes Holzbrett“ (09, 5.10) spräche für Holz, aber Schiefer ist das vom Autor abgenommene Brett der Stadt (14.11.2026) und trägt Wards Strenge; Änderung nur auf Wunsch          |
+| Clubs der Städte                                           | je Stadt ein Clubraum anderer Form (09, 3.5)              | Stadtbrett (bleibt)            | Glas der Akademie, Stahlbrett von Big Joe, Steintische im Pavillon, Bibliothekstisch passen bereits; Turnhalle und Musikhaus in Port Delacroix sammeln „Bretter aus der Stadt“ (Treibholz) |
+| Steinbruch, Jahrmarkt, Wege                                | Durchgang, keine Partie, keine Runde                      | nussbaum (Vorgabe)             | dort wird nicht gespielt; ein eigenes Brett wäre nie zu sehen                                                                                                                              |
+
+Lesbarkeit der neuen Stile: helle und dunkle Felder klar getrennt (2,1:1 bei Resopal bis 7,2:1 beim
+Sternenhimmel; Untergrenze aller Stile 1,75:1 wegen Glas), Marken mit Kontur 3:1 gegen beide Felder,
+schwarze Figuren auf dunklen Feldern mit Kupfer- oder Messingkante (Kreidetafel, Sternenhimmel,
+Grubenlampe) oder fast schwarzem Körper (Rotholz, Zypresse, Scheune); geprüft in `brettstile.test.ts`.
+Neue Strukturen in `feldstruktur.ts`: Kreide, Sterne, Äste, Moos; neues Figurenmaterial Messing
+(`materialien.ts`).
 
 ## 6. Reihenfolge
 

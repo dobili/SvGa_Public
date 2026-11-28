@@ -72,6 +72,59 @@ describe("Stilwahl", () => {
     }
   });
 
+  it("gibt Orten mit eigener Atmosphäre ihr Brett (Leitidee des Autors, 28.11.2026)", () => {
+    const erwartet: Record<string, string> = {
+      "pinewoodCamp.hollis": "rotholz",
+      "pinewoodCamp.raeuberschach": "rotholz",
+      "pinewoodCamp.tandem": "rotholz",
+      "crossroads.schach960": "resopal",
+      "crossroads.tandem": "resopal",
+      "bayou.nebelschach": "zypresse",
+      "bayou.hausboot": "zypresse",
+      "hochebene.falkeUndBison": "abgegriffen",
+    };
+    for (const [begegnung, stil] of Object.entries(erwartet)) {
+      expect(waehleBrettstil({ art: "partie", begegnung }, daten), begegnung).toBe(stil);
+    }
+  });
+
+  it("gibt den Rätselrunden der Nebenorte das Brett ihres Ortes", () => {
+    const erwartet: Record<string, string> = {
+      "lockport.tafelSchleuse": "kreidetafel",
+      "sternwarte.sterne": "sternenhimmel",
+      "goldmine.loren": "grubenlampe",
+      "kuerbishof.irrgarten": "scheune",
+      "pelikaninsel.netze": "treibholz",
+      "hochebene.diplom": "abgegriffen",
+    };
+    for (const [runde, stil] of Object.entries(erwartet)) {
+      const quelle = { art: "runde", runde, erinnerung: false } as const;
+      expect(waehleBrettstil(quelle, daten), runde).toBe(stil);
+    }
+  });
+
+  it("legt die Fernpartie in Ghost Town auf Ambroses Brett, die Stadt selbst in Sepia", () => {
+    expect(waehleBrettstil({ art: "partie", begegnung: "ghostTown.fernpartie" }, daten)).toBe(
+      "dachboden",
+    );
+    expect(waehleBrettstil({ art: "ort", ort: "ghostTown" }, daten)).toBe("sepia");
+  });
+
+  it("spielt Victors freie Partie an der Bergstation auf Junos Reisebrett", () => {
+    expect(waehleBrettstil({ art: "partie", begegnung: "summitCity.victorFrei" }, daten)).toBe(
+      "abgegriffen",
+    );
+    expect(waehleBrettstil({ art: "partie", begegnung: "summitCity.clubkampf" }, daten)).toBe(
+      "schiefer",
+    );
+  });
+
+  it("lässt Steinbruch, Jahrmarkt und Wege bei Ahorn & Nussbaum", () => {
+    for (const ort of ["steinbruch", "jahrmarkt", "wegCrossroadsPinewood", "wegPinewoodGhost"]) {
+      expect(waehleBrettstil({ art: "ort", ort }, daten), ort).toBe("nussbaum");
+    }
+  });
+
   it("gibt Victors Partie im Clubraum das Brett des Clubs von Maple Falls", () => {
     expect(waehleBrettstil({ art: "partie", begegnung: "mapleFalls.victor" }, daten)).toBe(
       "turniervinyl",

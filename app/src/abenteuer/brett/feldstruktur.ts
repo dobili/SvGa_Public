@@ -1,5 +1,6 @@
 /**
- * Feine Pixelstruktur der Bretter des Schach-Abenteuers: Maserung, Körnung, Platten, Glanz …
+ * Feine Pixelstruktur der Bretter des Schach-Abenteuers: Maserung, Körnung, Platten, Glanz, Kreide,
+ * Sterne, Äste, Moos …
  *
  * Rolle im Gesamtbild: Die Bretter sind Farbpaare mit feiner Pixelstruktur, ohne Bilddatei
  * (docs/spiel/30, Abschnitt 5 „Bretter“). Diese Datei rechnet die Pixel einer Kachel von zwei
@@ -170,6 +171,91 @@ function schichten(z: () => number): Strukturpixel[] {
   return pixel;
 }
 
+/** Kreide: lange, blasse Wischspuren und Kreidestaub (Lockport, Tafel). */
+const KREIDE = { wischAnteil: 0.25, laenge: [8, 20], staub: 0.03 } as const;
+/** Sterne: einzelne Punkte und wenige Kreuze aus fünf Pixeln (Sternwarte). */
+const STERNE = {
+  punkte: 14,
+  kreuze: 2,
+  hell: 0.55,
+  schwach: 0.3,
+  anteilHell: 0.5,
+  rand: 2,
+} as const;
+/** Äste: wenige Ringe von drei mal zwei Pixeln mit dunklem Kern (Kiefer, Rotholz). */
+const AESTE = { anzahl: 2, rand: 4 } as const;
+/**
+ * Moos: kleine dunkle Flecken aus einigen Pixeln, dazu helle Spitzen (Zypresse im Bayou). Der
+ * Rand ist so groß wie der längste Fleck, damit kein Pixel aus der Kachel fällt.
+ */
+const MOOS = { flecken: 5, pixel: [3, 6], rand: 7 } as const;
+
+/** Kreide: blasse waagrechte Wischer, Staub als einzelne helle Pixel. */
+function kreide(z: () => number): Strukturpixel[] {
+  const wischer: Strukturpixel[] = [];
+  for (let y = 0; y < KACHEL; y += 1) {
+    if (z() < KREIDE.wischAnteil) wischer.push(strich(z, y, KREIDE.laenge, true));
+  }
+  const staub = koernung(z, KREIDE.staub, MITTEL).map((p) => ({ ...p, hell: true }));
+  return [...wischer, ...staub];
+}
+
+/** Ein Kreuz aus fünf Pixeln um (x, y): ein heller Stern. */
+function kreuz(x: number, y: number, deckkraft: number): Strukturpixel[] {
+  const mitte = { x, y, breite: 1, hell: true, deckkraft: STERNE.hell };
+  const arme = [
+    [x - 1, y],
+    [x + 1, y],
+    [x, y - 1],
+    [x, y + 1],
+  ] as const;
+  return [mitte, ...arme.map(([ax, ay]) => ({ x: ax, y: ay, breite: 1, hell: true, deckkraft }))];
+}
+
+/** Sterne: verstreute helle Punkte, zwei davon als Kreuz, nie am Rand der Kachel abgeschnitten. */
+function sterne(z: () => number): Strukturpixel[] {
+  const pixel: Strukturpixel[] = [];
+  const lage = () => ganz(z, STERNE.rand, KACHEL - 1 - STERNE.rand);
+  for (let i = 0; i < STERNE.punkte; i += 1) {
+    const deckkraft = z() < STERNE.anteilHell ? STERNE.hell : STERNE.schwach;
+    pixel.push({ x: lage(), y: lage(), breite: 1, hell: true, deckkraft });
+  }
+  for (let i = 0; i < STERNE.kreuze; i += 1) pixel.push(...kreuz(lage(), lage(), STERNE.schwach));
+  return pixel;
+}
+
+/** Äste: ein dunkler Ring von drei mal zwei Pixeln um einen kräftigen Kern. */
+function aeste(z: () => number): Strukturpixel[] {
+  const pixel: Strukturpixel[] = [];
+  for (let i = 0; i < AESTE.anzahl; i += 1) {
+    const x = ganz(z, AESTE.rand, KACHEL - AESTE.rand);
+    const y = ganz(z, AESTE.rand, KACHEL - AESTE.rand);
+    pixel.push({ x: x - 1, y: y - 1, breite: 3, hell: false, deckkraft: MITTEL });
+    pixel.push({ x: x - 2, y, breite: 1, hell: false, deckkraft: MITTEL });
+    pixel.push({ x, y, breite: 1, hell: false, deckkraft: KRAEFTIG });
+    pixel.push({ x: x + 2, y, breite: 1, hell: false, deckkraft: MITTEL });
+    pixel.push({ x: x - 1, y: y + 1, breite: 3, hell: false, deckkraft: MITTEL });
+  }
+  return pixel;
+}
+
+/** Moos: Flecken aus benachbarten dunklen Pixeln, je einer mit heller Spitze. */
+function moos(z: () => number): Strukturpixel[] {
+  const pixel: Strukturpixel[] = [];
+  for (let f = 0; f < MOOS.flecken; f += 1) {
+    let x = ganz(z, MOOS.rand, KACHEL - MOOS.rand);
+    let y = ganz(z, MOOS.rand, KACHEL - MOOS.rand);
+    const anzahl = ganz(z, MOOS.pixel[0], MOOS.pixel[1]);
+    for (let i = 0; i < anzahl; i += 1) {
+      pixel.push({ x, y, breite: 1, hell: false, deckkraft: MITTEL });
+      x += ganz(z, -1, 1);
+      y += ganz(z, -1, 1);
+    }
+    pixel.push({ x, y: y - 1, breite: 1, hell: true, deckkraft: ZART });
+  }
+  return pixel;
+}
+
 /**
  * Die Pixel einer Kachel für einen Stil.
  *
@@ -193,6 +279,10 @@ export function strukturpixel(
     salz: () => koernung(z, SALZDICHTE, KRAEFTIG).map((p) => ({ ...p, hell: true })),
     schichten: () => schichten(z),
     vinyl: () => koernung(z, VINYLDICHTE, ZART).map((p) => ({ ...p, hell: false })),
+    kreide: () => kreide(z),
+    sterne: () => sterne(z),
+    aeste: () => aeste(z),
+    moos: () => moos(z),
   };
   return arten.flatMap((art) => erzeuger[art]());
 }

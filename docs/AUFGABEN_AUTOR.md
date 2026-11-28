@@ -989,6 +989,21 @@ Profil › Einstellungen › Fehler melden.
       Weg spielen (etwa auf dem ersten Weg nach Cedar Creek): Wirkt das Brett wie das Holzbrett
       der App, sind Figuren und Pfeile gut zu sehen?
       **Antwort:** „N2831 ok“ oder was stört.
+- [ ] N2832. **Bretter nach Atmosphäre (28.11.2026, deine Leitidee):** Orte mit eigener Stimmung
+      haben jetzt ein eigenes Brett, schon umgesetzt, Widerspruch genügt. Neu: Lockport →
+      Kreidetafel (grün, Kreidewischer, Holzrahmen); Sternwarte → Sternenhimmel (Nachtblau mit
+      Sternen, Silberfiguren); Goldmine → Grubenlampe (dunkle Schwellen, Ocker, Messingfiguren);
+      Crossroads → Resopal (Mint und Creme mit Chromrand wie im Diner); Pinewood Camp → Rotholz
+      (helle Kiefer und rotbraunes Holz der Riesenbäume mit Ästen); Bayou → Zypresse
+      (graugrünes Holz mit Moos); Kürbishof → Scheune (Scheunenrot und Kalkweiß). Vorhandene
+      Bretter: Pelikaninsel → Treibholz, Hochebene → abgegriffenes Holz (Kiras Brett), Ghost Town
+      → Sepia; die Fernpartie im Saloon liegt auf Ambroses altem Brett vom Dachboden, Victors
+      freie Partie an der Bergstation auf Junos Reisebrett (abgegriffen). Unverändert: alle
+      Städte und Clubs, Wards Hütte bleibt Schiefer (Holz am Kamin wäre möglich, sag Bescheid),
+      Steinbruch, Jahrmarkt und alle Wege Ahorn & Nussbaum. Bitte an zwei oder drei Orten
+      spielen oder eine Rätselrunde lösen (etwa Lockport-Tafel, Sternwarte, Crossroads): Passt
+      das Brett zum Ort, sind Figuren, letzter Zug und Pfeile gut zu sehen?
+      **Antwort:** „N2832 ok“ oder was stört.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

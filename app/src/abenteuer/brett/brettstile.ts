@@ -1,5 +1,5 @@
 /**
- * Die Brettstile des Schach-Abenteuers: dreizehn Bretter je Ort und Lage, mit Pixelfiguren.
+ * Die Brettstile des Schach-Abenteuers: zwanzig Bretter je Ort und Lage, mit Pixelfiguren.
  *
  * Rolle im Gesamtbild: Das Brett zeigt, wo man ist und gegen wen man spielt
  * (docs/spiel/30_Bedienung_und_Brettstile.md, Abschnitt 5). Diese Tabelle hält je Stil die
@@ -14,7 +14,11 @@
 import type { Markierungsfarbe } from "../../analyse/werkzeug";
 import { MATERIALFARBEN, type Figurfarben, type Figurmaterial } from "./materialien";
 
-/** Die dreizehn Stile in der Reihenfolge der Tabelle im Dokument. */
+/**
+ * Die zwanzig Stile in der Reihenfolge der Tabelle im Dokument; die letzten sieben kamen mit der
+ * Leitidee des Autors (28.11.2026): „Die verwendeten Bretterdesigns sollen Ausdruck der
+ * Atmosphäre und der Persönlichkeit der Städte, Orte und Clubs sein.“
+ */
 export const BRETTSTILE = [
   "dachboden",
   "turniervinyl",
@@ -29,6 +33,13 @@ export const BRETTSTILE = [
   "schiefer",
   "turnier",
   "sepia",
+  "kreidetafel",
+  "sternenhimmel",
+  "grubenlampe",
+  "resopal",
+  "rotholz",
+  "zypresse",
+  "scheune",
 ] as const;
 export type Brettstilkennung = (typeof BRETTSTILE)[number];
 
@@ -41,7 +52,18 @@ export const VORGABESTIL: Brettstilkennung = "nussbaum";
 
 /** Arten der feinen Pixelstruktur auf den Feldern (feldstruktur.ts). */
 export type Strukturart =
-  "maserung" | "kratzer" | "koernung" | "platten" | "glanz" | "salz" | "schichten" | "vinyl";
+  | "maserung"
+  | "kratzer"
+  | "koernung"
+  | "platten"
+  | "glanz"
+  | "salz"
+  | "schichten"
+  | "vinyl"
+  | "kreide"
+  | "sterne"
+  | "aeste"
+  | "moos";
 
 /** Ein Stil. Alle Farben in Hex-Schreibweise, damit die Tests ihren Kontrast rechnen können. */
 export interface Brettstil {
@@ -75,6 +97,21 @@ const MARKEN_HELL: Brettstil["marken"] = {
   gruen: "#4CC77E",
   blau: "#66A3FF",
 };
+/** Markenfarben auf Brettern mit dunklen Feldern: Rot, Blau und Grün heller als im Buch. */
+const MARKEN_LEUCHTEND: Brettstil["marken"] = {
+  ...MARKEN_HELL,
+  rot: "#FF7A7A",
+  blau: "#8CC0FF",
+  gruen: "#5EE08F",
+};
+/** Letzter Zug auf dunklen Feldern: helleres Gelb. */
+const ZUG_HELLGELB = {
+  farbe: "#FFE870",
+  kante: KONTUR_DUNKEL,
+  schimmer: "rgba(255, 232, 112, 0.30)",
+};
+/** Schwarze Holzfiguren auf rötlichen oder olivgrünen Feldern: fast schwarzer Körper. */
+const KOERPER_DUNKELHOLZ = "#2A160A";
 /** Letzter Zug auf warmen Brettern: Gelb mit dunkler Kante. */
 const ZUG_GELB = { farbe: "#FFE36E", kante: KONTUR_DUNKEL, schimmer: "rgba(255, 227, 110, 0.30)" };
 /** Letzter Zug auf kühlen Brettern: Cyan mit dunkler Kante. */
@@ -159,7 +196,7 @@ export const STILTABELLE: Readonly<Record<Brettstilkennung, Brettstil>> = {
     material: "metall",
     kanteSchwarz: "#DA9A5E",
     kontur: KONTUR_DUNKEL,
-    marken: { ...MARKEN_HELL, rot: "#FF7A7A", blau: "#8CC0FF", gruen: "#5EE08F" },
+    marken: MARKEN_LEUCHTEND,
     zug: { ...ZUG_GELB, farbe: "#FFE870" },
   },
   // Silicon Bay, Konzern: Glas, kühles Weiß und Cyan.
@@ -207,7 +244,7 @@ export const STILTABELLE: Readonly<Record<Brettstilkennung, Brettstil>> = {
     kanteSchwarz: "#D29A4E",
     koerperSchwarz: "#15171A",
     kontur: KONTUR_DUNKEL,
-    marken: { ...MARKEN_HELL, rot: "#FF7A7A", blau: "#8CC0FF", gruen: "#5EE08F" },
+    marken: MARKEN_LEUCHTEND,
     zug: { ...ZUG_GELB, farbe: "#FFE870" },
   },
   // Capital Arena: Turnierbrett, edel (Mahagoni und Elfenbein, poliert).
@@ -232,6 +269,97 @@ export const STILTABELLE: Readonly<Record<Brettstilkennung, Brettstil>> = {
     kontur: KONTUR_DUNKEL,
     marken: MARKEN_HELL,
     zug: { farbe: "#FFF1C2", kante: KONTUR_DUNKEL, schimmer: "rgba(255, 241, 194, 0.32)" },
+  },
+  // Lockport: Kreidetafel im Holzrahmen. Imogens Rätseltafel am Steg und Rubens Kreidetafel am
+  // Kahn (14_Akt2_Leben_teil1.md, 4.2 und 4.3): Gelöst wird hier an der Tafel.
+  kreidetafel: {
+    hell: "#93A99A",
+    dunkel: "#2F4B3E",
+    struktur: ["kreide"],
+    rahmen: ["#20140A", "#6B4A2A", "#B58A55"],
+    material: "holz",
+    kanteSchwarz: "#BE945A",
+    koerperSchwarz: KOERPER_DUNKELHOLZ,
+    kontur: KONTUR_DUNKEL,
+    marken: MARKEN_LEUCHTEND,
+    zug: ZUG_HELLGELB,
+  },
+  // Sternwarte am Canyon: Nachthimmel mit Sternpunkten, Silberfiguren. Dr. Ngata sammelt
+  // Mattbilder „für lange Nächte“ (sternwarte.ink), Lucía zeichnet das Sternbild Springer.
+  sternenhimmel: {
+    hell: "#AEB9D6",
+    dunkel: "#1E2A4E",
+    struktur: ["sterne"],
+    rahmen: ["#070B18", "#1A2444", "#8C97B8"],
+    material: "metall",
+    kanteSchwarz: "#C79A4E",
+    kontur: KONTUR_DUNKEL,
+    marken: MARKEN_LEUCHTEND,
+    zug: ZUG_HELLGELB,
+  },
+  // Goldmine: Bahnschwellen im Licht der Grubenlampe, Messingfiguren. Pruitt malt kleine Endspiele
+  // mit Kreide auf die Schwellen (goldmine.ink); helle Körner wie Goldglimmer im Fels.
+  grubenlampe: {
+    hell: "#D8B572",
+    dunkel: "#4A3524",
+    struktur: ["maserung", "kratzer", "salz"],
+    rahmen: ["#120C06", "#3A2A1A", "#B98A38"],
+    material: "messing",
+    kanteSchwarz: "#B98A38",
+    kontur: KONTUR_DUNKEL,
+    marken: MARKEN_LEUCHTEND,
+    zug: ZUG_CYAN,
+  },
+  // Crossroads, Raststätte: Resopal in Mint und Creme mit Chromrand wie die Tische des Diners;
+  // Darlenes Varianten-Tisch, an dem jeder ein Spiel mitbringt (crossroads-raststaette.ink).
+  resopal: {
+    hell: "#F4EBD6",
+    dunkel: "#6FB39C",
+    struktur: ["vinyl", "glanz"],
+    rahmen: ["#2B3033", "#9AA3A8", "#E8EDEF"],
+    material: "plastik",
+    kontur: KONTUR_DUNKEL,
+    marken: MARKEN_HELL,
+    zug: ZUG_GELB,
+  },
+  // Pinewood Camp: helle Kiefer und Rotholz der Riesenbäume (Red Giants), mit Ästen; Tandem und
+  // Räuberschach am Lagerfeuer, Hollis' Brett auf einer Wurzel (09, 5.12; pinewood-camp-aussen.ink).
+  rotholz: {
+    hell: "#EACB8E",
+    dunkel: "#A65E3E",
+    struktur: ["maserung", "aeste"],
+    rahmen: ["#2A1208", "#6E2E1A", "#E0B97E"],
+    material: "holz",
+    koerperSchwarz: KOERPER_DUNKELHOLZ,
+    kontur: KONTUR_DUNKEL,
+    marken: MARKEN_HELL,
+    zug: ZUG_GELB,
+  },
+  // Bayou: graugrünes Zypressenholz mit Moos, Therons Nebelschach am Bootssteg und das Brett mit
+  // dem Stein gegen den Wind auf der Bank des Luftboots (bayou.ink; 09, 5.9 „Bayou Noir“).
+  zypresse: {
+    hell: "#C9CBA3",
+    dunkel: "#627150",
+    struktur: ["maserung", "moos"],
+    rahmen: ["#151810", "#3E4430", "#A9A585"],
+    material: "holz",
+    koerperSchwarz: KOERPER_DUNKELHOLZ,
+    kontur: KONTUR_DUNKEL,
+    marken: MARKEN_HELL,
+    zug: ZUG_CYAN,
+  },
+  // Kürbishof Miller: Scheunenrot und weiß gekalkte Bretter, rissig; die Stellungen hängen an den
+  // Kreuzungen des Maisirrgartens, Morphy trägt Schachbrettflicken (orte/kuerbishof.md).
+  scheune: {
+    hell: "#F1E8D4",
+    dunkel: "#B8402F",
+    struktur: ["maserung", "kratzer"],
+    rahmen: ["#2A1008", "#8A2A20", "#F1E8D4"],
+    material: "holz",
+    koerperSchwarz: KOERPER_DUNKELHOLZ,
+    kontur: KONTUR_DUNKEL,
+    marken: MARKEN_HELL,
+    zug: ZUG_GELB,
   },
 };
 

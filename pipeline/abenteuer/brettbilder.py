@@ -31,7 +31,7 @@ from PIL import Image
 from pipeline.abenteuer.brettbild import FELDER, schneide_brett
 from pipeline.abenteuer.figurenblatt import DECKEND, FIGURENFOLGE, schneide_figuren
 
-# Die dreizehn Kennungen wie in app/src/abenteuer/brett/brettstile.ts (ein Test vergleicht beide).
+# Die zwanzig Kennungen wie in app/src/abenteuer/brett/brettstile.ts (ein Test vergleicht beide).
 BRETTSTILE = (
     "dachboden",
     "turniervinyl",
@@ -46,6 +46,13 @@ BRETTSTILE = (
     "schiefer",
     "turnier",
     "sepia",
+    "kreidetafel",
+    "sternenhimmel",
+    "grubenlampe",
+    "resopal",
+    "rotholz",
+    "zypresse",
+    "scheune",
 )
 FIGURNAMEN = tuple(f"{farbe}{f}" for farbe in "wb" for f in FIGURENFOLGE)
 WEBP_GUETE = 90

@@ -1802,6 +1802,7 @@
     },
     {
       "kennung": "lockport",
+      "brett": "kreidetafel",
       "name": "ort.lockport.name",
       "nummer": 0,
       "groesse": "klein",
@@ -2338,6 +2339,7 @@
     },
     {
       "kennung": "sternwarte",
+      "brett": "sternenhimmel",
       "name": "ort.sternwarte.name",
       "nummer": 0,
       "staffel": 2,
@@ -2436,6 +2438,7 @@
     },
     {
       "kennung": "goldmine",
+      "brett": "grubenlampe",
       "name": "ort.goldmine.name",
       "nummer": 0,
       "staffel": 2,
@@ -3041,6 +3044,7 @@
     },
     {
       "kennung": "pelikaninsel",
+      "brett": "treibholz",
       "name": "ort.pelikaninsel.name",
       "nummer": 0,
       "staffel": 2,
@@ -4098,6 +4102,7 @@
     },
     {
       "kennung": "hochebene",
+      "brett": "abgegriffen",
       "name": "ort.hochebene.name",
       "nummer": 0,
       "staffel": 2,
@@ -4658,6 +4663,7 @@
     },
     {
       "kennung": "crossroads",
+      "brett": "resopal",
       "begleiter": [
         {
           "name": "juno",
@@ -5006,6 +5012,7 @@
     },
     {
       "kennung": "pinewoodCamp",
+      "brett": "rotholz",
       "begleiter": [
         {
           "name": "juno",
@@ -5278,6 +5285,7 @@
     },
     {
       "kennung": "ghostTown",
+      "brett": "sepia",
       "begleiter": [
         {
           "name": "juno",
@@ -5919,6 +5927,7 @@
     },
     {
       "kennung": "bayou",
+      "brett": "zypresse",
       "name": "ort.bayou.name",
       "nummer": 0,
       "staffel": 2,
@@ -6001,6 +6010,7 @@
     },
     {
       "kennung": "kuerbishof",
+      "brett": "scheune",
       "name": "ort.kuerbishof.name",
       "nummer": 0,
       "staffel": 1,

@@ -78,8 +78,9 @@ Statist `busfahrer`), Silas Reed (Angler am Flussweg, heute Statist `angler`, oh
   - Owen Fisk (Kind mit Ball): als Statist `kindMitBall` da; ab Stufe C bei Mrs. Calloway.
   - Victors schwarzer Wagen vor der Schule nur während der Szene (Roman Kap. 9).
 - **Auslöser:** `haustuer`, `schule`, `dinerTuer`, `park` vorhanden; `calloway`, `carla`,
-  `kreidebrett` fehlen (siehe Übersicht). Mrs. Calloway am ersten Schultag auf dem Weg zur
-  Haltestelle: `maple-falls-aussen.calloway_auf_dem_weg` (Pflichtgespräch).
+  `kreidebrett` fehlen (siehe Übersicht). Mrs. Calloway ruft am ersten Schultag, sobald
+  der Held aus der Haustür tritt: Eingang der Karte, `maple-falls-aussen.calloway_ruft`
+  (Pflichtgespräch, seit 28.11.2026; vorher `calloway_auf_dem_weg` in Junos Gespräch).
 - **Zustände:** Kreidebrett nach `lilyGeholfen` mit dazugemalten Springerzügen; Veranda nach den
   Stufen A bis D (Ding oder Zustandsfassung, Ortsblatt Punkt 4).
 - **Licht, Ton:** Spätsommer, Nachmittagslicht. Musik `mapleFalls`; Dauergeräusch `wasserfall` leise,

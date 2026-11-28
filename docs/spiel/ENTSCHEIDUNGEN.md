@@ -4,6 +4,28 @@ Jede Entscheidung zum Spiel steht hier, damit spätere Sitzungen (auch mit Opus)
 können. Neueste Einträge oben. Offene Fragen stehen unten in „Offen“; der Autor antwortet über
 die Entscheidungsseite (Claude-Artefakt „Schach-Abenteuer Entscheidungen“) oder im Chat.
 
+## 28.11.2026 – Kein Versetzen durch Gespräche; Mrs. Calloway ruft vor der Haustür (N2844)
+
+- **Fehler (Bericht des Autors):** Nach dem ersten Gespräch mit Juno stand der Held wieder vor
+  der Haustür. Ursache: Schlägt nach einem Gespräch die Bedingung einer Figur des Orts um (hier
+  `junoGetroffen` für Juno im Clubraum), baut die Oberwelt die Karte neu auf
+  (useDialogende.ts → kern.stelleNeuAuf), und der Aufbau nahm die Position aus dem Spielstand. Die
+  stand noch auf dem Feld, auf dem der Held die Karte betreten hatte (die Szene führt sie beim
+  Laufen selbst). Jetzt schreibt jeder Neuaufbau zuerst das Feld aus der Szene in den Stand
+  (oberwelt/neuaufbau.ts, Test neuaufbau.test.ts); das gilt für alle Gespräche und das Warten.
+- **Reihenfolge (Empfehlung nach Regel 9, umgesetzt):** Stufe A von Mrs. Calloway bleibt Pflicht
+  vor Juno, läuft aber nicht mehr in Junos Gespräch hinein (Wer Juno anspricht, redet mit Juno).
+  Sie ruft über den Eingang der Karte mapleFalls.aussen (Knoten `eingang`, Bedingung
+  `ersteNachtGesehen und nicht callowayGetroffen und nicht junoGetroffen und nicht
+clubBeigetreten`), sobald der Held am ersten Morgen aus der Haustür tritt; erste Zeilen mit
+  `{angesprochen: …|…}`, Kamera zu ihr und zur Bushaltestelle. Junos Knoten geht direkt zu
+  `juno_trifft`; `calloway_auf_dem_weg` entfällt. Warum der Eingang statt „Hauptfiguren sprechen
+  an“: Sie sitzt zehn Felder entfernt auf der Veranda und steht nicht in einem Questschritt;
+  der Kegel des Ansprechens (3 Felder) erreicht den Helden an der Tür nicht. Wer sie trotzdem
+  verpasst (alte Stände, Juno an der Schultür), bekommt Stufe A später über ihren eigenen
+  Einstieg; keine Quest und kein Tagebuch hängen an `callowayGetroffen`, also geht nichts verloren
+  und nichts läuft doppelt.
+
 ## 26.11.2026 – Wirtschaft und Archivquest: Langläufe der Gesamtsimulation wieder grün
 
 - **Archiv 1858 hing (Spielfehler):** Seit Mrs. Okafor im Archiv steht (25.11., Anwesenheit),

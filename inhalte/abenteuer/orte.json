@@ -61,8 +61,8 @@
           "musik": "musik/maple-falls.m4a",
           "geraeusch": "klang/wasserfall.m4a",
           "eingang": {
-            "dialog": "maple-falls-aussen.einleitung",
-            "wenn": "nicht einleitungGesehen und nicht brettBeruehrt"
+            "dialog": "maple-falls-aussen.eingang",
+            "wenn": "(nicht einleitungGesehen und nicht brettBeruehrt) oder (ersteNachtGesehen und nicht callowayGetroffen und nicht junoGetroffen und nicht clubBeigetreten)"
           },
           "musik_nacht": "musik/maple-falls.nacht.m4a"
         },

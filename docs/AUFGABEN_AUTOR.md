@@ -1050,6 +1050,23 @@ Profil › Einstellungen › Fehler melden.
       Einstellungen zeigen ihn nur). Das Spielmenü zeigt ihn weiter an. Bitte das Spielmenü
       öffnen: Steht dein Name da, und gibt es kein Eingabefeld mehr?
       **Antwort:** „N2842 ok“ oder was stört.
+- [ ] N2844. **Juno ansprechen führt zu Juno, Mrs. Calloway ruft vor der Haustür (28.11.2026,
+      dein Fehlerbericht):** Wer nach der ersten Nacht Juno ansprach, bekam das Gespräch mit Mrs.
+      Calloway und stand danach wieder vor der Haustür. Zwei Ursachen, beide behoben, schon
+      umgesetzt, Widerspruch genügt. Erstens der Sprung: Das Gespräch mit Juno setzt „Juno
+      getroffen“; davon hängt Juno im Clubraum ab, also baute das Spiel die Karte neu auf und
+      stellte den Helden dorthin, wo er die Straße betreten hatte (die Haustür). Jetzt behält
+      jeder Neuaufbau nach einem Gespräch oder beim Warten das Feld, auf dem der Held gerade
+      steht, überall im Spiel. Zweitens die Reihenfolge: Mrs. Calloway (Pflicht vor Juno) lief
+      bisher in Junos Gespräch hinein. Jetzt ruft sie von ihrer Veranda gegenüber, sobald du am
+      ersten Morgen aus der Haustür trittst („Kaum stehst du vor der Tür, ruft jemand von
+      gegenüber …“, „Kind! Ja, du.“). Sie bleibt sitzen, du bleibst stehen, die Kamera fährt zu
+      ihr und am Ende zur Bushaltestelle, wo dir jemand winkt. Wer Juno danach anspricht, redet
+      mit Juno. Wer Mrs. Calloway auf anderem Weg verpasst, findet ihr erstes Gespräch später auf
+      ihrer Veranda. Bitte: neues Spiel bis zum ersten Morgen, aus der Haustür treten, das
+      Gespräch lesen, dann zu Juno an der Haltestelle. Stimmt die Reihenfolge, bleibt der Held
+      nach beiden Gesprächen, wo er stand, klingt der Ruf über die Straße natürlich?
+      **Antwort:** „N2844 ok“ oder was stört.
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

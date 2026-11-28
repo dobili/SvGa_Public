@@ -25,6 +25,7 @@ import { LEERER_STAU, mitMeldung, nachDialog, ohneGezeigte } from "./meldungssta
 import { szeneVon } from "./oberweltspiel";
 import type { Toenung } from "./toenung";
 import { ankunftsort } from "./ankunft";
+import { standFuerNeuaufbau } from "./neuaufbau";
 import type { Sperrangabe, Tiledkarte } from "./begehbar";
 import { objektposition, type Weltdaten } from "./weltdaten";
 
@@ -66,7 +67,10 @@ export interface Oberweltkern {
   readonly position: (aktuell: Abenteuerstand) => Weltposition;
   /** Zähler der Neuaufbauten derselben Karte (nach dem Warten, useWarten.ts). */
   readonly aufbau: number;
-  /** Baut die Karte neu auf (Statisten nach der Spieluhr), der Held bleibt, wo er steht. */
+  /**
+   * Baut die Karte neu auf (Statisten nach der Spieluhr, Figuren nach einem Gespräch); der Held
+   * bleibt, wo er steht: Das Feld aus der Szene kommt vorher in den Stand (neuaufbau.ts).
+   */
   readonly stelleNeuAuf: () => void;
 }
 
@@ -231,7 +235,18 @@ export function useOberweltkern(): Oberweltkern {
       return szene ? { ...szene.position(), karte: aktuell.position.karte } : aktuell.position;
     },
     aufbau,
-    stelleNeuAuf: () => setzeAufbau((n) => n + 1),
+    // Erst das Feld aus der Szene in den Stand (neuaufbau.ts): Sonst stellt der Neuaufbau den
+    // Helden dorthin, wo er die Karte betreten hat (Juno an der Haltestelle, 28.11.2026).
+    stelleNeuAuf: () => {
+      const aktuell = standRef.current;
+      const szene = szeneAus(spiel);
+      const karte = weltRef.current?.kennung;
+      if (aktuell && szene && karte) {
+        const neu = standFuerNeuaufbau(aktuell, { ...szene.position(), karte });
+        if (neu !== aktuell) schreibe(neu);
+      }
+      setzeAufbau((n) => n + 1);
+    },
   };
   useAufbaupruefungen(k);
   return k;

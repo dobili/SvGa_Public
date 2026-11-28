@@ -11,7 +11,9 @@
 //
 // Neu nach dem Roman zu Akt 1 (docs/spiel/roman/akt1_teil2.md, Kapitel 5) und dem Ortsblatt
 // (docs/spiel/20_Ortsblaetter.md, kleine Geschichten): Mrs. Calloway, die Nachbarin. Stufe A ist ein
-// Pflichtgespräch auf dem Weg zur Haltestelle; es läuft vor dem ersten Gespräch mit Juno. Die Stufen
+// Pflichtgespräch auf dem Weg zur Haltestelle; es läuft vor dem ersten Gespräch mit Juno: Sie ruft
+// den Helden an, sobald er nach der ersten Nacht vor die Haustür tritt (Einstieg „eingang“, Feld
+// „eingang“ der Karte in orte.json; Befund des Autors 28.11.2026, siehe calloway_ruft). Die Stufen
 // B bis D (Einstieg „calloway“) brauchen eine Figur auf der Birch Lane und je Stufe ein sichtbares
 // Ding (zweiter Stuhl, Kartenspiel, Tischchen mit Brett); das folgt mit den Karten.
 // Ebenso Carla Martínez, Junos ältere Schwester (Einstieg „carla“, Stufen A bis D), die drei Jahre im
@@ -54,8 +56,10 @@ VAR angesprochen = false
 {clubBeigetreten:
     ~ junoGetroffen = true
 }
+// Wer Juno anspricht, redet mit Juno (Befund des Autors 28.11.2026): Mrs. Calloway kommt vorher
+// über den Eingang der Karte (calloway_ruft); wer sie trotzdem nicht getroffen hat, findet sie
+// später auf ihrer Veranda (Einstieg „calloway“, Stufe A).
 {
-- not callowayGetroffen and not junoGetroffen and ausgangMapleFallsErsteLektion != "" and ausgangMapleFallsErsteLektion != "abgebrochen": -> calloway_auf_dem_weg
 - not junoGetroffen and ausgangMapleFallsErsteLektion != "" and ausgangMapleFallsErsteLektion != "abgebrochen": -> juno_trifft
 - not junoGetroffen: -> juno_frueh
 - not clubBeigetreten: -> juno_zum_club
@@ -227,10 +231,17 @@ Sie lässt das Plastikpferd über den ganzen Gehweg hüpfen, bis zur Ecke. #spre
 
 // Stufe A (Ankunft), Pflicht vor Juno: Sie spricht von Margaret Whitlock in der Gegenwart.
 // Stimmung: fremd, dann überrumpelt. Klang: Die Musik nimmt sich zurück, Vögel und Wasserfall.
-=== calloway_auf_dem_weg ===
+// Befund des Autors (28.11.2026): Bisher lief Stufe A, wenn man Juno ansprach; es redete dann
+// Mrs. Calloway statt Juno. Jetzt ruft sie den Helden von ihrer Veranda gegenüber an, sobald er nach
+// der ersten Nacht vor die Haustür tritt (Eingang der Karte, orte.json). Sie bleibt sitzen, der
+// Held bleibt stehen; die Kamera fährt zu ihr (#schwenk) und am Ende zurück. Danach weist sie auf
+// die Haltestelle, wo Juno wartet (nächstes Ziel).
+=== calloway_ruft ===
+~ angesprochen = true
 -> calloway_a ->
-Von der Haltestelle winkt dir jemand zu. #sprecher:erzaehler #schwenk:mfBushaltestelle
--> juno_trifft
+~ angesprochen = false
+Drüben an der Bushaltestelle winkt dir jemand zu. #sprecher:erzaehler #schwenk:mfBushaltestelle
+-> END
 
 === calloway ===
 {
@@ -243,9 +254,9 @@ Von der Haltestelle winkt dir jemand zu. #sprecher:erzaehler #schwenk:mfBushalte
 
 === calloway_a ===
 ~ callowayGetroffen = true
-Gegenüber sitzt eine alte Frau auf ihrer Veranda. Sie hat zwei Stühle. #sprecher:erzaehler #musik:aus
+{angesprochen:Kaum stehst du vor der Tür, ruft jemand von gegenüber. Auf der Veranda sitzt eine alte Frau. Sie hat zwei Stühle.|Gegenüber sitzt eine alte Frau auf ihrer Veranda. Sie hat zwei Stühle.} #sprecher:erzaehler #musik:aus #schwenk:calloway
 Auf dem zweiten sitzt niemand. #sprecher:erzaehler
-Du bist {held}. Ich bin Eunice Calloway. #sprecher:calloway #stimmung:laechelt
+{angesprochen:Kind! Ja, du. Du bist {held}. Ich bin Eunice Calloway.|Du bist {held}. Ich bin Eunice Calloway.} #sprecher:calloway #stimmung:laechelt
 Ich wohne hier seit vierundsechzig. #sprecher:calloway #stimmung:laechelt
 Ich habe gesehen, wie ihr die Kisten getragen habt. Alle auf einmal. #sprecher:calloway #stimmung:nachdenklich
 Das ist schlecht für den Rücken. #sprecher:calloway #stimmung:nachdenklich
@@ -261,7 +272,7 @@ Dann blinzelt sie, als käme sie von weit her zurück, und lächelt. #sprecher:e
 Du kommst zu spät zur Schule, Kind. #sprecher:calloway #stimmung:froh
 // Roman: Ambrose schweigt, bis sie außer Hörweite sind.
 {not abschiedGesehen:
-    Ambrose schweigt, bis ihr außer Hörweite seid. #sprecher:erzaehler #pause:3
+    Ambrose schweigt, bis ihr außer Hörweite seid. #sprecher:erzaehler #pause:3 #schwenk:held
     Per Post. Sechzig Jahre lang. #sprecher:ambrose #stimmung:still
     An meinem Tisch. #sprecher:ambrose #stimmung:still #musik:karte
 }
@@ -401,6 +412,15 @@ Hüpft der jetzt gerade oder schief? Zeig's mir noch mal, ja? #sprecher:lily #st
     -> END
 
 // ---------------------------------------------------------------- Einleitung
+
+// Eingang der Hauptstraße (orte.json, Feld „eingang“ von mapleFalls.aussen): beim ersten Betreten
+// die Einleitung, nach der ersten Nacht vor der Haustür der Ruf von Mrs. Calloway.
+=== eingang ===
+{
+- not einleitungGesehen and not brettBeruehrt: -> einleitung
+- not callowayGetroffen and not junoGetroffen and not clubBeigetreten: -> calloway_ruft
+- else: -> END
+}
 
 === einleitung ===
 // Spielbeginn nach dem Roman, Kapitel 1 (docs/spiel/roman/akt1_teil1.md) und der Story-Bibel 2.3:

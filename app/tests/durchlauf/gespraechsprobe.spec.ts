@@ -37,7 +37,10 @@ test("Gesprächsprobe: Ambrose flüstert neben dem Helden", async () => {
   const ding = wissen.dinge.find((d) => d.name === DING);
   expect(ding, `${DING} auf ${KARTE}`).toBeTruthy();
   const gang = await geheAn(lauf, wissen, ding?.felder ?? []);
-  console.log(`Gang zu ${DING}: ${gang}`);
+  // Feld des Helden vor und nach dem Gespräch (Befund des Autors 28.11.2026: nach dem Gespräch
+  // mit Juno stand der Held wieder vor der Haustür).
+  const vorher = (await liesLage(seite)).kachel;
+  console.log(`Gang zu ${DING}: ${gang}, Held auf ${vorher}`);
   if (gang === "aktion") {
     await tippe(lauf, seite.getByTestId("abenteuer-aktion"), "Aktionsknopf");
   }
@@ -70,6 +73,10 @@ test("Gesprächsprobe: Ambrose flüstert neben dem Helden", async () => {
         .catch(() => undefined);
     await seite.waitForTimeout(KURZ_MS);
   }
+  await seite.waitForTimeout(EINBLENDEN_MS * 2);
+  const nachher = (await liesLage(seite)).kachel;
+  console.log(`Held nach dem Gespräch auf ${nachher} (vorher ${vorher})`);
+  await seite.screenshot({ path: join(FOTOS || ordner, `${DING}-${FORMAT}-nachher.png`) });
   for (const z of zeilen) console.log(z);
   await browser.close();
   expect(zeilen.length).toBeGreaterThan(0);

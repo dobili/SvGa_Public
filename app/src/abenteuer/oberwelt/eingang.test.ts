@@ -18,9 +18,24 @@ const mapleFalls = orte.find((o) => o.kennung === "mapleFalls") as Ortdaten;
 describe("eingangsdialog", () => {
   it("ein neues Spiel beginnt vor dem Haus mit der Einleitung", () => {
     expect(STARTPOSITION.karte).toBe("mapleFalls.aussen");
-    expect(eingangsdialog(mapleFalls, STARTPOSITION.karte, {})).toBe(
-      "maple-falls-aussen.einleitung",
+    // Der Knoten „eingang“ verzweigt in die Einleitung (maple-falls-aussen.ink).
+    expect(eingangsdialog(mapleFalls, STARTPOSITION.karte, {})).toBe("maple-falls-aussen.eingang");
+  });
+
+  it("nach der ersten Nacht ruft Mrs. Calloway vor der Haustür, einmal und nur vor Juno", () => {
+    // Befund des Autors (28.11.2026): Sie kam bisher, wenn man Juno ansprach.
+    const morgen = { einleitungGesehen: true, brettBeruehrt: true, ersteNachtGesehen: true };
+    expect(eingangsdialog(mapleFalls, "mapleFalls.aussen", morgen)).toBe(
+      "maple-falls-aussen.eingang",
     );
+    const getroffen = { ...morgen, callowayGetroffen: true };
+    expect(eingangsdialog(mapleFalls, "mapleFalls.aussen", getroffen)).toBeNull();
+    // Wer Juno schon kennt (Schultür, alte Stände), wird nicht mehr gerufen.
+    const juno = { ...morgen, junoGetroffen: true };
+    expect(eingangsdialog(mapleFalls, "mapleFalls.aussen", juno)).toBeNull();
+    // Vor der ersten Nacht ist die Haustür zu; kein Ruf am Abend des Einzugs.
+    const abend = { einleitungGesehen: true, brettBeruehrt: true };
+    expect(eingangsdialog(mapleFalls, "mapleFalls.aussen", abend)).toBeNull();
   });
 
   it("nach der Einleitung läuft im Wohnzimmer die Ankunft, danach nichts mehr", () => {

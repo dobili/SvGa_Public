@@ -99,17 +99,23 @@
   display: grid;
   grid-template-columns: repeat(8, var(--startbild-feld));
   grid-auto-rows: var(--startbild-feld);
-  background: var(--spiel-pergament);
   box-shadow:
     0 0 0 var(--spiel-pixel) var(--spiel-gold-tief),
     0 0 0 calc(var(--spiel-pixel) * 2) var(--spiel-navy-tief);
   transform-origin: 50% 100%;
   translate: -50% 0;
-  animation: startbild-brett 2.88s steps(12) forwards;
+  /* Fließend statt in Stufen: in 12 Stufen ruckelte das Aufklappen (Autor, 28.11.2026). */
+  animation: startbild-brett 2.88s ease-in-out forwards;
+  will-change: transform, opacity;
+}
+
+/* Felder aus Ahorn und Nussbaum (HOLZSTIL in Startbild.tsx). */
+.startbild-brett > span {
+  background: var(--startbild-holzfarbe-hell) var(--startbild-holz-hell) center / cover;
 }
 
 .startbild-brett > .startbild-feld-dunkel {
-  background: var(--spiel-pergament-tief);
+  background: var(--startbild-holzfarbe-dunkel) var(--startbild-holz-dunkel) center / cover;
 }
 
 /* Ortsschilder: ein Brett am Pfahl, von rechts nach links am Weg vorbei. */
@@ -187,15 +193,6 @@
   animation: startbild-titel 1.2s 6.96s steps(6) forwards;
 }
 
-.startbild-titelzeile {
-  color: var(--spiel-gold);
-  font-size: clamp(26px, 9vw, 64px);
-  line-height: 1;
-  text-shadow:
-    var(--spiel-pixel) var(--spiel-pixel) 0 var(--spiel-navy-tief),
-    calc(var(--spiel-pixel) * 2) calc(var(--spiel-pixel) * 2) 0 var(--spiel-gold-tief);
-}
-
 .startbild-untertitel {
   font-size: clamp(14px, 4vmin, 24px);
 }
@@ -231,7 +228,7 @@
 /* Quer reicht der Platz unter dem Weg nicht: „Weiter“ steht dann unter dem Untertitel. */
 @media (orientation: landscape) {
   .startbild-weiter {
-    top: 42%;
+    top: 54%;
     bottom: auto;
   }
 }
@@ -307,7 +304,8 @@
 
 /* Bewegung reduzieren: das Endbild, still (Weg liegt, Figuren stehen, Titel steht). */
 .startbild-still,
-.startbild-still * {
+.startbild-still *,
+.startbild-still .startbild-weg::before {
   animation: none !important;
 }
 

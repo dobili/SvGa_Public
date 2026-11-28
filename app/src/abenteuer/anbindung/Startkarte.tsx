@@ -13,6 +13,7 @@ import type { Paketzustand } from "../schnittstelle/paket";
 import type { Heldfigur } from "../schnittstelle/spielstand";
 import { groessentext, mbText } from "./groesse";
 import { Heldwahl, Rivalwahl } from "./Heldwahl";
+import { Schriftzug } from "./Schriftzug";
 
 /** Längster Name des Helden (passt in die Dialogzeile). */
 export const NAME_HOECHSTENS = 16;
@@ -79,7 +80,9 @@ export function Startkarte({
   const laedt = zustand.art === "laedt";
   return (
     <section className="karte abenteuer-start" data-testid="abenteuer-start">
-      <h1 className="abenteuer-start-titel">{t("abenteuer.titel")}</h1>
+      <h1 className="abenteuer-start-titel">
+        <Schriftzug groesse="mittel" />
+      </h1>
       <p>{t("abenteuer.einleitung")}</p>
       {/* Kurze Sätze und die Größe vor dem Laden (Spieltest „einstieg“, R9). */}
       {zustand.art === "fehlt" && (

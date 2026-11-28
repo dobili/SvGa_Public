@@ -25,6 +25,7 @@ import { useFigurbogen } from "./useFigurbogen";
 import { akttext, nadeltext, orttext, platzzeile, zuletzttext } from "./platztext";
 import type { Platzzeile } from "./speicherplaetze";
 import "../hauptmenue.css";
+import { Schriftzug } from "./Schriftzug";
 
 /** Vergrößerung der Figur in Fortsetzen und Ladeliste. */
 const FIGUR_GROSS = 3;
@@ -226,7 +227,7 @@ export function Hauptmenue({
       aria-labelledby="abenteuer-hauptmenue-titel"
     >
       <h1 id="abenteuer-hauptmenue-titel" className="abenteuer-hauptmenue-titel">
-        {t("abenteuer.titel")}
+        <Schriftzug groesse="mittel" />
       </h1>
       <p className="abenteuer-hauptmenue-hinweis">{t("abenteuer.menueSpeichern")}</p>
       {erster && (

@@ -1,0 +1,94 @@
+/*
+ * Schriftzug „Chessfare“ (anbindung/Schriftzug.tsx, Wahl des Autors 28.11.2026).
+ * Pixelschrift mit Kontur ringsum (vier Schatten im Pixelmaß), dazu ein tiefer Schatten nach
+ * rechts unten wie bisher beim Titel; Band aus Schachfeldern darunter. Größen: gross
+ * (Startbild) und mittel (Hauptmenü, Startkarte). Farben aus spielfarben.css.
+ */
+.schriftzug {
+  --schriftzug-px: var(--spiel-pixel);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--schriftzug-px) * 2);
+  margin: 0;
+  font-family: var(--spiel-pixelschrift);
+  line-height: 1;
+}
+
+.schriftzug-gross {
+  font-size: clamp(30px, min(12vw, 13vh), 76px);
+}
+
+.schriftzug-mittel {
+  --schriftzug-px: 2px;
+  font-size: clamp(30px, 10vmin, 52px);
+}
+
+.schriftzug-zeile {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 0.08em;
+}
+
+.schriftzug-wort {
+  letter-spacing: 0.02em;
+  text-shadow: var(--schriftzug-px) var(--schriftzug-px) 0 var(--spiel-gold-tief);
+}
+
+.schriftzug-vorne {
+  color: var(--spiel-gold);
+}
+
+.schriftzug-hinten {
+  color: var(--spiel-creme);
+}
+
+/* Auf hellem Grund (Hauptmenü, Startkarte): „fare“ in Navy, ein Schatten in Navy-Tief. */
+.schriftzug-mittel .schriftzug-wort {
+  text-shadow: var(--schriftzug-px) var(--schriftzug-px) 0 var(--spiel-navy-tief);
+}
+
+.schriftzug-mittel .schriftzug-hinten {
+  color: var(--spiel-navy);
+  text-shadow: var(--schriftzug-px) var(--schriftzug-px) 0 var(--spiel-gold-tief);
+}
+
+/* Der Bauer steht auf der Grundlinie, etwas größer als die Kleinbuchstaben. */
+.schriftzug-bauer {
+  width: 1.05em;
+  height: 1.05em;
+  margin-bottom: -0.08em;
+  filter: drop-shadow(var(--schriftzug-px) var(--schriftzug-px) 0 var(--spiel-gold-tief));
+}
+
+.schriftzug-gross .schriftzug-bauer {
+  animation: schriftzug-hopsen 0.72s steps(1, end) infinite;
+}
+
+/* Band aus Schachfeldern in zwei Reihen, so breit wie der Schriftzug, Felder im Pixelmaß. */
+.schriftzug-felder {
+  --schriftzug-feld: calc(var(--schriftzug-px) * 3);
+  align-self: stretch;
+  height: calc(var(--schriftzug-feld) * 2);
+  border: var(--schriftzug-px) solid var(--spiel-navy-tief);
+  background: conic-gradient(
+      var(--spiel-gold) 25%,
+      var(--spiel-navy) 0 50%,
+      var(--spiel-gold) 0 75%,
+      var(--spiel-navy) 0
+    )
+    0 0 / calc(var(--schriftzug-feld) * 2) calc(var(--schriftzug-feld) * 2);
+  box-shadow: var(--schriftzug-px) var(--schriftzug-px) 0 var(--spiel-gold-tief);
+}
+
+@keyframes schriftzug-hopsen {
+  50% {
+    translate: 0 calc(var(--schriftzug-px) * -2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .schriftzug-gross .schriftzug-bauer {
+    animation: none;
+  }
+}

@@ -14,21 +14,29 @@
   right: 0;
   top: 18%;
   height: calc(var(--startbild-feld) * 2);
-  background-color: var(--spiel-pergament);
-  background-image: conic-gradient(
-    var(--spiel-pergament-tief) 0 25%,
-    transparent 0 50%,
-    var(--spiel-pergament-tief) 0 75%,
-    transparent 0
-  );
-  background-size: calc(var(--startbild-feld) * 2) calc(var(--startbild-feld) * 2);
+  /* Nussbaum als Grund, Ahorn darüber im Schachmuster (::before); beide laufen gleich mit. */
+  background: var(--startbild-holzfarbe-dunkel) var(--startbild-holz-dunkel) 0 0 /
+    calc(var(--startbild-feld) * 2) calc(var(--startbild-feld) * 2);
   box-shadow:
     0 var(--spiel-pixel) 0 var(--spiel-gold-tief),
     0 calc(var(--spiel-pixel) * -1) 0 var(--spiel-gold-tief);
   opacity: 0;
   animation:
-    startbild-weg-da 1.08s 2.16s steps(4) forwards,
+    startbild-weg-da 1.08s 2.16s linear forwards,
     startbild-weg-laeuft 0.6s 2.88s linear infinite;
+}
+
+.startbild-weg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--startbild-holzfarbe-hell) var(--startbild-holz-hell) 0 0 /
+    calc(var(--startbild-feld) * 2) calc(var(--startbild-feld) * 2);
+  --startbild-schachmaske: conic-gradient(#000 0 25%, transparent 0 50%, #000 0 75%, transparent 0)
+    0 0 / calc(var(--startbild-feld) * 2) calc(var(--startbild-feld) * 2);
+  mask: var(--startbild-schachmaske);
+  -webkit-mask: var(--startbild-schachmaske);
+  animation: startbild-weg-laeuft-maske 0.6s 2.88s linear infinite;
 }
 
 /* Die Figuren: ein Streifen aus zwei gleichen Hälften (je STREIFENFELDER Felder in
@@ -52,7 +60,8 @@
   filter: drop-shadow(1px 1px 0 rgb(0 0 0 / 35%));
 }
 
-.startbild-fertig :is(.startbild-weg, .startbild-wegfiguren) {
+.startbild-fertig :is(.startbild-weg, .startbild-wegfiguren),
+.startbild-fertig .startbild-weg::before {
   animation-play-state: paused;
 }
 
@@ -63,6 +72,14 @@
 @keyframes startbild-weg-da {
   to {
     opacity: 1;
+  }
+}
+
+@keyframes startbild-weg-laeuft-maske {
+  to {
+    background-position-x: calc(var(--startbild-feld) * -2);
+    mask-position: calc(var(--startbild-feld) * -2) 0;
+    -webkit-mask-position: calc(var(--startbild-feld) * -2) 0;
   }
 }
 

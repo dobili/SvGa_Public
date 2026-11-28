@@ -28,8 +28,10 @@ import { figurfarben, type Brettstilkennung } from "../brett/brettstile";
 import { figurenraster, pixellaeufe, RASTERGROESSE } from "../brett/pixelfiguren";
 import { tSpiel } from "../texte/texte";
 import { Figurrahmen } from "./Figurrahmen";
+import { Schriftzug } from "./Schriftzug";
 import { useFigurbogen } from "./useFigurbogen";
 import { paketdateiAlsAdresseOderNull } from "../paket/paketlader";
+import { BRETTFARBEN, HOLZ } from "../../ui/brett/masse";
 import "../startbild.css";
 import "../startbild-weg.css";
 
@@ -162,6 +164,17 @@ function usePanorama(bereit: boolean): string | null {
   return bereit ? adresse : null;
 }
 
+/**
+ * Holz des Bretts und des Wegs: „Ahorn & Nussbaum“ wie die Brettfarbe der App (Wunsch des Autors,
+ * 28.11.2026), als CSS-Variablen am Startbild; die Grundfarben gelten, bis die Bilder geladen sind.
+ */
+const HOLZSTIL = {
+  "--startbild-holz-hell": `url("${import.meta.env.BASE_URL}${HOLZ.hell}")`,
+  "--startbild-holz-dunkel": `url("${import.meta.env.BASE_URL}${HOLZ.dunkel}")`,
+  "--startbild-holzfarbe-hell": BRETTFARBEN.holz.hell,
+  "--startbild-holzfarbe-dunkel": BRETTFARBEN.holz.dunkel,
+} as CSSProperties;
+
 /** Held und Ambrose, sobald ihre Bögen geladen sind; sonst nichts (schlichte Fassung). */
 function Reisende({
   figur,
@@ -228,6 +241,7 @@ export function Startbild({
       type="button"
       className={`startbild ${still ? "startbild-still" : ""} ${panorama ? "startbild-mit-panorama" : ""} ${fertig ? "startbild-fertig" : ""}`}
       data-testid="abenteuer-startbild"
+      style={HOLZSTIL}
       aria-label={t(fertig ? "abenteuer.startbild.weiter" : "abenteuer.startbild.ueberspringen")}
       onClick={() => ende.current()}
     >
@@ -257,7 +271,7 @@ export function Startbild({
         <Reisende figur={figur} bilder={bilder} gehend={!fertig} />
       </span>
       <span className="startbild-titel">
-        <span className="startbild-titelzeile">{t("abenteuer.titel")}</span>
+        <Schriftzug groesse="gross" />
         <span className="startbild-untertitel">{t("abenteuer.startbild.untertitel")}</span>
       </span>
       {fertig ? (

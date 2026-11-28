@@ -57,7 +57,7 @@ test("Hauptmenü: Startbild, zwei Spielstände, laden, neu laden, neuer Tab, lö
   await page.goto("/app/#abenteuer");
   const startbild = page.getByTestId("abenteuer-startbild");
   await expect(startbild).toBeVisible();
-  await expect(startbild).toContainText("Schach-Abenteuer");
+  await expect(startbild).toContainText("Chessfare");
   await startbild.click();
   await expect(startbild).toHaveCount(0);
   await ladeAbenteuerpaket(page, undefined, { mitHauptmenue: true });

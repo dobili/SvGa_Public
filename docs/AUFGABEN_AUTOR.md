@@ -1004,6 +1004,22 @@ Profil › Einstellungen › Fehler melden.
       spielen oder eine Rätselrunde lösen (etwa Lockport-Tafel, Sternwarte, Crossroads): Passt
       das Brett zum Ort, sind Figuren, letzter Zug und Pfeile gut zu sehen?
       **Antwort:** „N2832 ok“ oder was stört.
+- [ ] N2843. **Musik bei Startbild und Hauptmenü (28.11.2026, dein Wunsch):** Unter dem Startbild,
+      im Hauptmenü und bei der Wahl für ein neues Spiel läuft jetzt das Titelstück, schon
+      umgesetzt, Widerspruch genügt. Es ist das Stück „Titel“ aus dem Klangplan (57 s, Schleife):
+      zuerst nur die gezupfte Gitarre, nach gut 6 s setzt das Thema von Maple Falls ein (etwa
+      dann, wenn „Chessfare“ erscheint), dann Ambroses vier Töne auf dem alten Klavier, zum
+      Schluss das Glockenspiel-Aha. Die Musik läuft beim Übergang vom Startbild ins Hauptmenü
+      ohne Neubeginn weiter; bei „Fortsetzen“, „Laden“ oder „Spielen“ blendet sie in 1 s aus,
+      dann kommt die Musik der Karte. Zurück im Hauptmenü kommt das Titelstück wieder. Es gilt
+      dein Regler „Musik“ und der Stummschalter; wie im ganzen Spiel braucht es den Ton der App
+      (Einstellungen). Ohne geladenes Spiel (allererster Start) bleibt es still; die Musik
+      gehört bewusst nicht in die App selbst, sondern wie alle Musik ins Spielpaket. Startet die
+      App direkt im Abenteuer (Neuladen), beginnt die Musik mit dem ersten Tipp, das verlangt der
+      Browser. Bitte zweimal starten: über den Reiter „Abenteuer“ und nach dem Schließen der
+      App. Passt das Stück zum Startbild, setzt es zur rechten Zeit ein, ist der Übergang ins
+      Spiel weich?
+      **Antwort:** „N2843 ok“ oder was stört (etwa ein anderes Stück oder lauter/leiser).
 - [ ] N2666. **Figurengröße (deine Wahl vom 20.11.):** Innen sind alle PixelLab-Figuren (Held, Mama,
       Ambrose, alle Personen und Statisten) um ein Drittel größer, die Möbel unverändert. Bitte im
       Wohnzimmer, Clubraum, Diner und in einer Kantine ansehen: Passen die Figuren neben Stühlen,

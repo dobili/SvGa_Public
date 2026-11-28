@@ -6,7 +6,8 @@
  * über das Spielmenü ins Hauptmenü; zweites Spiel auf neuem Platz; Ladeliste mit beiden, Laden
  * des ersten; Neuladen bleibt in der Welt (Sitzung des Tabs); ein neuer Tab beginnt im Hauptmenü;
  * Löschen mit Rückfrage; Zurück-Taste (Spieler-Durchlauf 27.11.2026): in der Rückfrage „Nein“,
- * in der Ladeliste ins Hauptmenü, erst im Hauptmenü aus dem Abenteuer.
+ * in der Ladeliste ins Hauptmenü, erst im Hauptmenü aus dem Abenteuer. Titelmusik (28.11.2026):
+ * unter Startbild, Wahl und Hauptmenü das Stück „titel“, in der Welt die Musik der Karte.
  * Mit HAUPTMENUE_FOTOS=ORDNER legt der Test Bildschirmfotos für den Autor ab (nur lokal, mit Paket).
  */
 import { expect, test, type Page } from "@playwright/test";
@@ -133,6 +134,38 @@ test("Hauptmenü: Startbild, zwei Spielstände, laden, neu laden, neuer Tab, lö
   await page.goBack();
   await expect(page.getByTestId("abenteuer-hauptmenue")).toHaveCount(0);
   await expect(page.getByTestId("abenteuer")).toHaveCount(0);
+});
+
+/** Was der Tonmesser als Musik meldet (ton/tonregie.ts; null, solange nichts zu hören ist). */
+function musik(seite: Page): Promise<string | null> {
+  return seite.evaluate(() => {
+    const messer = (globalThis as { __tonmesser?: () => { musik: string | null } }).__tonmesser;
+    return messer ? messer().musik : null;
+  });
+}
+
+test("Titelmusik: unter Startbild und Hauptmenü, in der Welt die Musik der Karte (28.11.2026)", async ({
+  page,
+}) => {
+  test.slow();
+  await ohneSpringer(page);
+  // Musik des Abenteuers spielt nur mit dem Ton der App (Einstellungen, Vorgabe „aus“).
+  await page.addInitScript(() => {
+    const alt = JSON.parse(localStorage.getItem("svga.einstellungen") ?? "{}") as object;
+    localStorage.setItem("svga.einstellungen", JSON.stringify({ ...alt, ton: "an" }));
+  });
+  await page.goto("/app/#abenteuer");
+  const startbild = page.getByTestId("abenteuer-startbild");
+  await expect(startbild).toBeVisible();
+  await expect.poll(() => musik(page)).toBe("titel");
+  await startbild.click();
+  await ladeAbenteuerpaket(page, undefined, { mitHauptmenue: true });
+  // Wahl für das erste Spiel: dieselbe Musik weiter.
+  await expect.poll(() => musik(page)).toBe("titel");
+  await beginne(page, "Kim");
+  await expect.poll(() => musik(page)).not.toBe("titel");
+  await insHauptmenue(page);
+  await expect.poll(() => musik(page)).toBe("titel");
 });
 
 test("Hauptmenü quer und Startbild in Standbildern (nur mit HAUPTMENUE_FOTOS)", async ({

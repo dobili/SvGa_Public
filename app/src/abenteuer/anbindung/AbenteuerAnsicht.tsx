@@ -17,7 +17,8 @@
  * (spielsitzung.ts). Den Reiter „Abenteuer“ der App öffnet diese Ansicht.
  * Abhängigkeiten: anbindung/dienste.ts, usePaketzustand.ts, regeln/spielstand.ts, schnittstelle/modul.ts, i18n,
  * paket/paketlader.ts (Löschen), app/blattstapel.ts (Zurück-Taste schließt das Menü),
- * useSpeicherplaetze.ts, spielsitzung.ts, Hauptmenue.tsx, Startbild.tsx.
+ * useSpeicherplaetze.ts, spielsitzung.ts, Hauptmenue.tsx, Startbild.tsx, ton/useTitelmusik.ts
+ * (Titelmusik unter Startbild und Hauptmenü, 28.11.2026).
  * Bedienung mit dem Daumen (docs/spiel/30): Die Ansicht trägt data-steuerkreuz (rechts oder links,
  * Wahl im Spielmenü); bedienung.css legt danach Steuerkreuz, Aktionsknopf, Leiste und Menüknopf.
  */
@@ -37,6 +38,7 @@ import { loeschePaket } from "../paket/paketlader";
 import { leererAbenteuerstand } from "../regeln/spielstand";
 import type { Abenteuermodul, Appdienste } from "../schnittstelle/modul";
 import { useAbenteuerton } from "../ton/useAbenteuerton";
+import { useTitelmusik } from "../ton/useTitelmusik";
 import { useAktton } from "../paket/aktton";
 import { useAbenteuerstand, useAppdienste } from "./dienste";
 import { Spielmenue } from "./Spielmenue";
@@ -240,6 +242,8 @@ export function AbenteuerAnsicht({ wert }: { readonly wert: string | null }) {
   // Startkarte mit Wahl: neues Spiel oder erster Start ohne Spielstand. Vor dem Einstieg mit
   // Spielstand (Paket fehlt noch) führt „Spielen“ in ihn.
   const neu = ansicht === "neu" || (ansicht === "einstieg" && !stand);
+  // Titelmusik unter Startbild, Hauptmenü und Wahl für ein neues Spiel (ton/useTitelmusik.ts).
+  useTitelmusik(startbild || imMenue || ansicht === "neu", paket.da);
   return (
     <div
       className={`bildschirm bildschirm-abenteuer ${pixelrahmen?.klasse ?? ""}`}

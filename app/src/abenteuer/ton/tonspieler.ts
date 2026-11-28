@@ -149,13 +149,18 @@ export class Tonspieler {
   /**
    * Lässt auf der Spur die Angabe laufen (null: ausblenden), als Schleife außer bei einmaligen
    * Stücken. Ist sie schon die laufende (auch ein verklungenes einmaliges Stück), ändert sich
-   * nichts; sonst blendet die alte aus und die neue ein.
+   * nichts; sonst blendet die alte aus und die neue ein. `ausblenden` (Sekunden) gilt nur für
+   * null: Die Titelmusik geht beim Spielbeginn in 1 s (ton/tonregie.ts `titelAus`), sonst 2 s.
    */
-  async spieleSchleife(spur: Spur, angabe: string | null): Promise<void> {
+  async spieleSchleife(
+    spur: Spur,
+    angabe: string | null,
+    ausblenden: number = AUSBLENDEN_S,
+  ): Promise<void> {
     if (this.laufend[spur]?.angabe === angabe) return;
     if (spur === "musik" && angabe !== null && this.spuren.spielt(angabe)) return;
     const nummer = ++this.wunsch[spur];
-    const blende = angabe === null ? AUSBLENDEN_S : UEBERBLENDEN_S;
+    const blende = angabe === null ? ausblenden : UEBERBLENDEN_S;
     this.blendeAus(spur, blende);
     if (spur === "musik") this.spuren.stoppe(blende);
     if (angabe === null) return;

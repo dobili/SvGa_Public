@@ -8,6 +8,8 @@
  * Geräusche als Text (ton/untertitel.ts): Ist die Einstellung an, meldet die Regie Musik beim
  * Wechsel, das Dauergeräusch beim Betreten einer Karte oder beim Wechsel im Dialog und jedes
  * einmalige Geräusch, auch wenn der Ton aus ist (wer nicht hört, schaltet ihn oft gar nicht ein).
+ * Titelmusik (28.11.2026): Unter Startbild und Hauptmenü spielt das Titelstück durchgehend
+ * (`titelAn`, ton/useTitelmusik.ts); beim Spielbeginn blendet es in 1 s aus (`titelAus`).
  * Abhängigkeiten: ton/tonplan.ts, ton/tonspieler.ts, ton/untertitel.ts, app/ton.ts (Tonerzeuger),
  * paket/paketlader.ts (Dateien).
  */
@@ -34,13 +36,26 @@ import type { Mischlage } from "./spurenmischung";
 import { Tonspieler, type Laden } from "./tonspieler";
 import { leereUntertitel, meldeUntertitel, type Untertitelart } from "./untertitel";
 
+/**
+ * Das Titelstück (Klangplan A3 `titel`: Gitarre mit dem Thema von Maple Falls, Ambroses Kopf, das
+ * Aha; Schleife). Es spielt unter Startbild und Hauptmenü (Wunsch des Autors, 28.11.2026).
+ */
+export const TITELMUSIK = "titel";
+/** So schnell geht die Titelmusik, wenn das Spiel beginnt (Sekunden). */
+export const TITEL_AUSBLENDEN_S = 1;
+
 /** Was zuletzt als Text gemeldet wurde je Spur; undefined heißt „beim nächsten Mal melden“. */
 type Gemeldet = Partial<Record<"musik" | "geraeusch" | "quelle", string | null>>;
 
 /** Was die Regie vom Spieler braucht (im Test ein Mitschreiber). */
 export interface Spielwerk {
   setzePegel(musik: number, geraeusche: number): void;
-  spieleSchleife(spur: "musik" | "geraeusch" | "quelle", angabe: string | null): Promise<void>;
+  /** `ausblenden`: Sekunden für das Ausblenden bei null (sonst die Vorgabe des Spielers). */
+  spieleSchleife(
+    spur: "musik" | "geraeusch" | "quelle",
+    angabe: string | null,
+    ausblenden?: number,
+  ): Promise<void>;
   setzeNaehe(anteil: number): void;
   spieleEinmal(angabe: string): Promise<void>;
   stoppeAlles(): void;
@@ -115,6 +130,32 @@ export class Tonregie {
       raum: this.raum.pegel,
       mischlage: this.mischung.lage,
     };
+  }
+
+  /**
+   * Startbild oder Hauptmenü: die Titelmusik statt des Tons einer Karte (auch nach dem Rückweg aus
+   * der Welt). Läuft sie schon, spielt sie weiter, ohne neu zu beginnen; fehlte sie (Paket noch
+   * nicht da), versucht der Aufruf sie neu. Ohne Paket oder Ton bleibt es still.
+   */
+  titelAn(): void {
+    if (this.lage.karteMusik !== TITELMUSIK || this.lage.szeneMusik !== undefined) {
+      this.lage = { ...STILLE_LAGE, karteMusik: TITELMUSIK };
+      this.orte = [];
+      this.nah = KEINE_NAEHE;
+      this.setzeDialog(false);
+    }
+    this.mitWerk((w) => w.vergissFehlende?.());
+    this.spiele();
+  }
+
+  /**
+   * Das Spiel beginnt oder geht weiter: Die Titelmusik blendet in 1 s aus. Hat die Welt schon eine
+   * Karte betreten (deren Musik überblendet dann selbst), ändert sich nichts.
+   */
+  titelAus(): void {
+    if (this.lage.karteMusik !== TITELMUSIK) return;
+    this.lage = STILLE_LAGE;
+    this.spiele(TITEL_AUSBLENDEN_S);
   }
 
   /** Eine Partie oder Runde ist zu Ende (Steigerung des Kampfthemas je Sieg). */
@@ -237,14 +278,15 @@ export class Tonregie {
     }
   }
 
-  private spiele(): void {
+  /** Lässt klingen, was die Lage will; `ausblenden` (s) gilt, wenn die Musik dabei endet. */
+  private spiele(ausblenden?: number): void {
     this.meldeAenderungen();
     // Ein Geräusch aus dem Dialog (`#geraeusch`) hat eigene Quellen nicht: Es klingt im Grundpegel.
     this.raum.geraeusch(artVon(soll(this.lage).geraeusch));
     this.mischung.musikJetzt(soll(this.lage).musik, this.lage.szeneMusik);
     const s = this.laut ? soll(this.lage) : { musik: null, geraeusch: null };
     this.mitWerk((werk) => {
-      void werk.spieleSchleife("musik", s.musik).catch(tonfehler);
+      void werk.spieleSchleife("musik", s.musik, ausblenden).catch(tonfehler);
       void werk.spieleSchleife("geraeusch", s.geraeusch).catch(tonfehler);
       // Die Quelle schweigt im Dialog mit eigener Musik nicht: Sie gehört zum Ort, nicht zur Szene.
       void werk.spieleSchleife("quelle", this.laut ? this.nah.musik : null).catch(tonfehler);

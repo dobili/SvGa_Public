@@ -1,6 +1,7 @@
 /**
  * Tests für tonspieler.ts mit einem nachgebauten AudioContext: einmalige Stücke ohne Schleife,
- * Anhebung leiser Geräusche (musik/einmal.json, klang/pegel.json).
+ * Anhebung leiser Geräusche (musik/einmal.json, klang/pegel.json), Ausblenden der Titelmusik in
+ * 1 s statt 2 s (28.11.2026).
  */
 import { describe, expect, it } from "vitest";
 import { Tonspieler, type Laden } from "./tonspieler";
@@ -35,14 +36,17 @@ class Pufferquelle extends Knoten {
   buffer: unknown = null;
   loop = false;
   gestartet = false;
+  /** Wann die Quelle enden soll (Zeit des Tonerzeugers), null solange sie läuft. */
+  endetUm: number | null = null;
   constructor() {
     super("quelle");
   }
   start(): void {
     this.gestartet = true;
   }
-  stop(): void {
+  stop(zeit = 0): void {
     this.gestartet = false;
+    this.endetUm = zeit;
   }
 }
 
@@ -69,6 +73,7 @@ const DATEIEN: Record<string, string> = {
   "klang/pegel.json": '{"kerze": 8}',
   "musik/ambrose.walzer.m4a": "",
   "musik/maple-falls.m4a": "",
+  "musik/titel.m4a": "",
   "klang/kerze.m4a": "",
   "klang/wasserfall.m4a": "",
 };
@@ -93,5 +98,15 @@ describe("Tonspieler", () => {
     await spieler.spieleSchleife("geraeusch", "wasserfall");
     expect(quellen.map((q) => q.verbunden[0]?.art)).toEqual(["anhebung", "regler"]);
     expect(quellen.every((q) => q.loop)).toBe(true);
+  });
+
+  it("blendet beim Ende auf Wunsch schneller aus (Titelmusik 1 s), sonst in 2 s", async () => {
+    const { ctx, quellen } = nachbau();
+    const spieler = new Tonspieler(ctx, lade);
+    await spieler.spieleSchleife("musik", "titel");
+    await spieler.spieleSchleife("musik", null, 1);
+    await spieler.spieleSchleife("musik", "mapleFalls");
+    await spieler.spieleSchleife("musik", null);
+    expect(quellen.map((q) => q.endetUm)).toEqual([1, 2]);
   });
 });

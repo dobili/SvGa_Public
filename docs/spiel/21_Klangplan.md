@@ -466,7 +466,7 @@ läuft, ohne dass der Anfang hörbar „springt“ (Ende und Anfang auf derselbe
 | `ambrose.walzer`     | Erinnerung New York 1857 (Kap. 12, Szene 20)                 | hell, glänzend, jung | dieselbe Melodie als Walzer im Dreiertakt, kleines Streichorchester, Klavier                             | 138   | 60 s, einmal    | Beginn der Erinnerung                                                               | beim Damenopfer hält alles an (S16), dann volle Auflösung, Ende |
 | `ambrose.lassMich`   | „Lass mich“ im Clubkampf von Cedar Creek (Kap. 15)           | drängend, Versuchung | Ambroses Kopf, lauter als je zuvor, mit Streichern, immer wieder ansetzend                               | 72    | bis zur Zeile   | bei „Lass mich“                                                                     | reißt bei „Ich weiß es nicht“ ab (S23)                          |
 | `victor`             | Victor in Maple Falls (Kap. 9), an der Haltestelle (Kap. 13) | kalt, kurz           | trockenes Klavier, Victors Motiv in Achteln über dem Moll-Bass; in der Partie ersetzt durch das Metronom | 120   | 4 Töne bis 16 s | Kap. 9 nach der Musikpause beim Wagen; Kap. 13 als vier einzelne Töne beim Weggehen | nach dem Motiv; nie unter einem Dialog von Ambrose              |
-| `titel`              | Titelbild des Abenteuers                                     | Aufbruch, Staunen    | Gitarre mit dem Thema von Maple Falls, dann Ambroses Kopf auf dem alten Klavier, zum Schluss das Aha     | 76    | 75 s, Schleife  | Titelbild                                                                           | Start oder Fortsetzen                                           |
+| `titel`              | Startbild und Hauptmenü                                      | Aufbruch, Staunen    | Gitarre mit dem Thema von Maple Falls, dann Ambroses Kopf auf dem alten Klavier, zum Schluss das Aha     | 76    | 57 s, Schleife  | Startbild                                                                           | Start oder Fortsetzen                                           |
 
 ### A4. Kurzmotive (Stinger, einmalig, 1 bis 6 s)
 
@@ -1226,7 +1226,7 @@ Die Listen sind aus den Tabellen dieses Dokuments ausgezogen; eine Kennung steht
 | 1   | `niederlage`                | 3 s   | 0.04       |                                      | 1     |
 | 1   | `remis`                     | 2 s   | 0.02       |                                      | 1     |
 | 1   | `sieg`                      | 2.5 s | 0.03       |                                      | 1     |
-| 1   | `titel`                     | 75 s  | 0.90       |                                      | 1     |
+| 1   | `titel`                     | 57 s  | 0.90       |                                      | 1     |
 | 1   | `victor`                    | 16 s  | 0.19       |                                      | 1     |
 | 1   | `weg`                       | 90 s  | 1.08       |                                      | 1     |
 | 1   | `weg.fluss`                 | 90 s  | 1.08       |                                      | 1     |

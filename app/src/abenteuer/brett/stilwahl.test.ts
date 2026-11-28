@@ -114,9 +114,11 @@ describe("Stilwahl", () => {
     expect(waehleBrettstil({ art: "partie", begegnung: "summitCity.victorFrei" }, daten)).toBe(
       "abgegriffen",
     );
+    // Wards Clubkampf in der Hütte: altes Holzbrett am Kamin (Wunsch des Autors, 28.11.2026).
     expect(waehleBrettstil({ art: "partie", begegnung: "summitCity.clubkampf" }, daten)).toBe(
-      "schiefer",
+      "kaminholz",
     );
+    expect(waehleBrettstil({ art: "partie", begegnung: "summitCity.sol" }, daten)).toBe("schiefer");
   });
 
   it("lässt Steinbruch, Jahrmarkt und Wege bei Ahorn & Nussbaum", () => {
@@ -131,11 +133,11 @@ describe("Stilwahl", () => {
     );
   });
 
-  it("gibt Rätselrunden den Stil ihres Ortes und Erinnerungen Sepia", () => {
+  it("gibt Rätselrunden ihr eigenes Brett, sonst das des Ortes, Erinnerungen Sepia", () => {
     const runde = { runde: "summitCity.reiheKit", kennung: "x", steller: "y" };
     const auftrag = { ...runde, kapitel: 1, buchuebungen: [], themen: [], anzahl: 1 };
     const voll = { ...auftrag, schwierigkeit: 1, versuch: 1, zaehltFuerApp: false };
-    expect(waehleBrettstil(rundenBrettquelle(voll), daten)).toBe("schiefer");
+    expect(waehleBrettstil(rundenBrettquelle(voll), daten)).toBe("kaminholz");
     const erinnerung = { ...voll, erinnerung: { partie: "p", abZug: 1, seite: "white" as const } };
     expect(waehleBrettstil(rundenBrettquelle(erinnerung), daten)).toBe("sepia");
   });

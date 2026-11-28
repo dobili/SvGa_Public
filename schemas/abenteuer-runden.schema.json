@@ -36,6 +36,10 @@
           "type": "string",
           "pattern": "^[a-z][a-zA-Z0-9]*$"
         },
+        "brett": {
+          "description": "Eigener Brettstil der Runde statt des Ortsbretts (docs/spiel/30, Abschnitt 5; wie brett in begegnungen.json), etwa Wards Hütte in Summit City",
+          "enum": ["kaminholz"]
+        },
         "steller": {
           "description": "Figur, die die Aufgaben stellt (orte.json, figuren[].kennung)",
           "$ref": "#/$defs/kennung"

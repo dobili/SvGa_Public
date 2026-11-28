@@ -32,7 +32,14 @@
     },
     "temperament": {
       "description": "Wie die Figur am Brett spricht (Tischgespräch, docs/spiel/29_Tischgespraech.md, Abschnitt 4); fehlt es, gilt die Vorgabe der Rolle (strasse frech, clubmitglied herzlich, clubchef trocken, turnier ehrgeizig, story trocken)",
-      "enum": ["frech", "herzlich", "trocken", "ehrgeizig", "kuehl", "verschmitzt"]
+      "enum": [
+        "frech",
+        "herzlich",
+        "trocken",
+        "ehrgeizig",
+        "kuehl",
+        "verschmitzt"
+      ]
     },
     "stilname": {
       "enum": [

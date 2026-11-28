@@ -40,6 +40,7 @@ export const BRETTSTILE = [
   "rotholz",
   "zypresse",
   "scheune",
+  "kaminholz",
 ] as const;
 export type Brettstilkennung = (typeof BRETTSTILE)[number];
 
@@ -357,6 +358,17 @@ export const STILTABELLE: Readonly<Record<Brettstilkennung, Brettstil>> = {
     rahmen: ["#2A1008", "#8A2A20", "#F1E8D4"],
     material: "holz",
     koerperSchwarz: KOERPER_DUNKELHOLZ,
+    kontur: KONTUR_DUNKEL,
+    marken: MARKEN_HELL,
+    zug: ZUG_GELB,
+  },
+  // Wards Hütte, Summit City: altes Holzbrett am Kaminfeuer (Wunsch des Autors, 28.11.2026).
+  kaminholz: {
+    hell: "#E6BD82",
+    dunkel: "#8C5532",
+    struktur: ["maserung", "kratzer"],
+    rahmen: ["#1A0D05", "#4A2A14", "#C08A4E"],
+    material: "holz",
     kontur: KONTUR_DUNKEL,
     marken: MARKEN_HELL,
     zug: ZUG_GELB,

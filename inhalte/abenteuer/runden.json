@@ -354,6 +354,7 @@
     },
     {
       "kennung": "summitCity.reiheKit",
+      "brett": "kaminholz",
       "ort": "summitCity",
       "steller": "summitCity.kit",
       "reihe": true,
@@ -362,6 +363,7 @@
     },
     {
       "kennung": "summitCity.reiheHaraldsen",
+      "brett": "kaminholz",
       "ort": "summitCity",
       "steller": "summitCity.haraldsen",
       "reihe": true,

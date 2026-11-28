@@ -689,6 +689,7 @@
     },
     {
       "kennung": "summitCity.clubkampf",
+      "brett": "kaminholz",
       "gegner": "summitCity.ward",
       "farbe": "zufall",
       "format": {

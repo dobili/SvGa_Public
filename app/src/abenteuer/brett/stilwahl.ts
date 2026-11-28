@@ -21,7 +21,11 @@ export type Brettquelle =
 export interface Stildaten {
   readonly orte: readonly { readonly kennung: string; readonly brett?: string }[];
   readonly begegnungen: readonly { readonly kennung: string; readonly brett?: string }[];
-  readonly runden: readonly { readonly kennung: string; readonly ort: string }[];
+  readonly runden: readonly {
+    readonly kennung: string;
+    readonly ort: string;
+    readonly brett?: string;
+  }[];
 }
 
 /** Der Ort einer Kennung wie „ironwood.clubkampf“: der Teil vor dem ersten Punkt. */
@@ -57,6 +61,8 @@ export function waehleBrettstil(
   }
   if (quelle.art === "ort") return stilDesOrtes(daten, quelle.ort);
   if (quelle.erinnerung) return "sepia";
-  const ort = daten.runden.find((r) => r.kennung === quelle.runde)?.ort;
-  return stilDesOrtes(daten, ort ?? ortAusKennung(quelle.runde));
+  // Eine Runde darf wie eine Begegnung ihr eigenes Brett haben (Wards Hütte, 28.11.2026).
+  const runde = daten.runden.find((r) => r.kennung === quelle.runde);
+  if (istBrettstil(runde?.brett)) return runde.brett;
+  return stilDesOrtes(daten, runde?.ort ?? ortAusKennung(quelle.runde));
 }

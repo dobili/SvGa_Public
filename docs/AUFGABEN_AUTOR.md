@@ -999,7 +999,7 @@ Profil › Einstellungen › Fehler melden.
       Bretter: Pelikaninsel → Treibholz, Hochebene → abgegriffenes Holz (Kiras Brett), Ghost Town
       → Sepia; die Fernpartie im Saloon liegt auf Ambroses altem Brett vom Dachboden, Victors
       freie Partie an der Bergstation auf Junos Reisebrett (abgegriffen). Unverändert: alle
-      Städte und Clubs, Wards Hütte bleibt Schiefer (Holz am Kamin wäre möglich, sag Bescheid),
+      Städte und Clubs, Wards Hütte spielt auf deinen Wunsch auf einem alten Holzbrett am Kamin,
       Steinbruch, Jahrmarkt und alle Wege Ahorn & Nussbaum. Bitte an zwei oder drei Orten
       spielen oder eine Rätselrunde lösen (etwa Lockport-Tafel, Sternwarte, Crossroads): Passt
       das Brett zum Ort, sind Figuren, letzter Zug und Pfeile gut zu sehen?

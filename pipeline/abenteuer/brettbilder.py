@@ -53,6 +53,7 @@ BRETTSTILE = (
     "rotholz",
     "zypresse",
     "scheune",
+    "kaminholz",
 )
 FIGURNAMEN = tuple(f"{farbe}{f}" for farbe in "wb" for f in FIGURENFOLGE)
 WEBP_GUETE = 90

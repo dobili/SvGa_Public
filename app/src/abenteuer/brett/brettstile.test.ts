@@ -28,8 +28,8 @@ const FELDABSTAND = 1.75;
 const KOERPERABSTAND_SCHIEFER = 3.5;
 
 describe("Brettstile", () => {
-  it("hat die zwanzig Stile der Tabelle", () => {
-    expect(BRETTSTILE).toHaveLength(20);
+  it("hat die einundzwanzig Stile der Tabelle", () => {
+    expect(BRETTSTILE).toHaveLength(21);
     expect(Object.keys(STILTABELLE).sort()).toEqual([...BRETTSTILE].sort());
   });
 

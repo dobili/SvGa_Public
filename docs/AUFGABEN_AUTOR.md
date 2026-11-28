@@ -2757,23 +2757,25 @@ die 40 häufigsten Gambits. Ein paar Zahlen (Anteil an allen Partien des Bandes)
 
 ### Q27 Name des Spiels und Fragen aus dem Lektorat (27.11.2026)
 
-- [ ] Q27-1. **Name des Spiels:** „Schach-Abenteuer“ ist nur ein Arbeitstitel. Geprüft wurden 28
-      Namen per Websuche gegen App Store, Google Play, Steam, itch.io und Markenfunde, dazu ob die
-      .com-Domain frei ist. Ausgeschieden sind unter anderem Gambit (Schach-App, Poker-App von
-      Chess.com, Marvel-Figur), Zugzwang (Steam-Spiel, zwei Apps), Tempo (App „Chess Tempo“, Sega-
-      Spiel, Taschentuchmarke), Rookie Road (US-Marke) und Kingsroad. Nahe Konkurrenz: Chess Club
-      Valley, Pocket Pawns, CHECKBORNE. Empfehlung: „Gambit Road – Eine Reise von Stadt zu Stadt“
-      (englisch „Gambit Road – A Chess Journey“): sagt in beiden Sprachen Schach und Reise, nichts
-      Gleichnamiges gefunden, gambitroad.com, .net und .games frei; Schwäche: viele Marken mit
-      GAMBIT allein, daher nur mittlerer Schutz. Ausweichlösung mit dem stärksten Schutz:
-      „Wanderpawn“ (Kunstwort aus wander und pawn, der wandernde Bauer, der zur Dame wird; nichts
-      gefunden, .com frei). Weitere freie Kandidaten: „Ambrose“ (mit Untertitel „Schach“),
-      „Checkmate Trail“, „Sixty-Four Roads“. Die Websuche ersetzt keine Markenrecherche: Vor der
-      Veröffentlichung amtlich bei DPMA, EUIPO, USPTO und WIPO in den Klassen 9 und 41 suchen (am
-      besten mit einem Markenanwalt), dann Marke anmelden und Domains sichern, bevor der Name
-      öffentlich wird. Noch nicht umgesetzt, weil der Name nach außen geht; nach deiner Wahl ändere
-      ich Titel und Startbild.
-      **Antwort:** Name oder „Gambit Road“.
+- [ ] Q27-1. **Name des Spiels** (Stand 28.11.2026): „Schach-Abenteuer“ ist nur ein Arbeitstitel.
+      Dein Wunsch „Chessbound“ ist nicht frei genug: Seit 6.11.2026 gibt es das fast gleiche
+      Browserspiel „Chessbound: The Crown's Gambit“ (Pixel-Schach-RPG mit Oberwelt und Elo-Gegnern),
+      dazu drei itch.io-Projekte und eine Store-App, die bis Oktober so hieß; chessbound.com ist
+      vergeben. „Gambit Road“ scheidet ebenfalls aus (Android-App „Gambit Road: Chess Puzzles“).
+      Neu geprüft wurden 34 Namen gegen App Store (US, DE), Google Play, Steam, itch.io, GitHub,
+      US-Marken (USPTO) und Domains (.com, .de, .app, .games). Ohne jeden Treffer blieben drei:
+      **Wanderpawn** (Empfehlung): wandern/wander und pawn, der Bauer, der zur Dame wird; ein
+      Kunstwort, also starker Schutz, im Deutschen gut sprechbar. **Pawnfarer**: wie „wayfarer“,
+      der Bauer auf Reisen, am nächsten an der Idee von Chessbound; „-farer“ ist im Deutschen
+      weniger geläufig. **Chessfare**: „Chess“ versteht jedes Kind, „-fare“ steht für Reise; etwas
+      schwächerer Schutz, weil „Chess“ beschreibend ist.
+      Nicht abfragbar waren EUIPO, DPMA, WIPO und der Nintendo eShop. Vor der Veröffentlichung
+      amtlich in DE, EU und US (Klassen 9, 28, 41) suchen, am besten mit Fachleuten, dann Domains
+      sichern und den Namen in beiden Stores reservieren. Noch nicht umgesetzt, weil der Name nach
+      außen geht. Nach deiner Wahl baue ich ihn ein, dazu einen eigenen Schriftzug auf dem
+      Startbild und Entwürfe für das App-Icon.
+      **Antwort:**
+
 - [ ] Q27-2. **Clubkampf in Cedar Creek vor dem Bus:** Man kann den Clubkampf bei Mrs. Okafor am
       Morgen spielen, bevor das Team mit dem Bus ankommt. Schon umgesetzt: Der Coach reagiert darauf
       („Ihr habt schon gespielt? Ohne Pfiff?“). Empfehlung: so lassen, weil eine erzwungene
